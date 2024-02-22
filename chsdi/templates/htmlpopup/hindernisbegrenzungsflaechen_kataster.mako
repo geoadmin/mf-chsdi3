@@ -9,7 +9,7 @@
     <td class="cell-left">${_('ch.bazl.hindernisbegrenzungsflaechen-kataster.surfacetype')}</td>
     <td>${c['attributes']['surfacetype'] or '-'}</td>
   </tr>
-  %if c['attributes']['geom_type'] == 'ST_Polygon':
+  %if 'Polygon' in c['attributes']['geom_type']:
     <tr>
       <td class="cell-left">${_('ch.bazl.hindernisbegrenzungsflaechen-kataster.heightaccordingvil')}</td>
       %if c['attributes']['heightaccordingvil'] == 'Yes':
