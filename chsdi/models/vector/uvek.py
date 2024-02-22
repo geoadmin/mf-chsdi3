@@ -1718,6 +1718,7 @@ class HindernisbegrenzungsflaechenKataster:
     icaoloc = Column('icaoloc', Unicode)
     surfacetype = Column('surfacetype', Unicode)
     document = Column('document', Unicode)
+    geom_type = Column('geom_type', Unicode)
     the_geom = Column(Geometry2D)
 
 
