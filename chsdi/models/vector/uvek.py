@@ -4102,3 +4102,29 @@ class BakomchStandorteMobilfunkanlagen (Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bakom.standorte-mobilfunkanlagen', BakomchStandorteMobilfunkanlagen)
+
+
+class PhotovoltaikGrossanlagen (Base, Vector):
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __tablename__ = 'photovoltaik_grossanlagen'
+    __template__ = 'templates/htmlpopup/bfe_photovoltaik_grossanlagen.mako'
+    __bodId__ = 'ch.bfe.photovoltaik-grossanlagen'
+    __label__ = 'projectname'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    projectname = Column('projectname', Unicode)
+    projectmanagement = Column('projectmanagement', Unicode)
+    projectweb = Column('projectweb', Unicode)
+    elevation = Column('elevation', Integer)
+    power = Column('power', Unicode)
+    annualproduction = Column('annualproduction', Unicode)
+    winterproduction = Column('winterproduction', Unicode)
+    specificannualproduction = Column('specificannualproduction', Unicode)
+    specificwinterproduction = Column('specificwinterproduction', Unicode)
+    ref_status = Column('ref_status', Unicode)
+    statuscategory_de = Column('statuscategory_de', Unicode)
+    statuscategory_fr = Column('statuscategory_fr', Unicode)
+    statuscategory_it = Column('statuscategory_it', Unicode)
+    statuscategory_en = Column('statuscategory_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.photovoltaik-grossanlagen', PhotovoltaikGrossanlagen)
