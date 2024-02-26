@@ -60,7 +60,7 @@ class LuftbilderSwisstopoFarbe(Base, LuftbilderBaseStac, Vector):
 register('ch.swisstopo.lubis-luftbilder_farbe', LuftbilderSwisstopoFarbe)
 
 
-class LuftbilderSwisstopoIr(Base, LuftbilderBase, Vector):
+class LuftbilderSwisstopoIr(Base, LuftbilderBaseStac, Vector):
     __tablename__ = 'luftbilder_swisstopo_ir'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder_infrarot'
     image_height = Column('image_height', Integer)
