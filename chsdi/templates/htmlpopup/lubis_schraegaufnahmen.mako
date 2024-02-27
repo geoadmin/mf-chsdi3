@@ -29,7 +29,6 @@ def determinePreviewUrl(tileUrlBasePath, ebkey):
 
     return url
 
-
 def date_to_str(datum):
     try:
         return datetime.datetime.strptime(datum.strip(), "%Y%m%d").strftime("%d-%m-%Y")
@@ -49,6 +48,7 @@ def get_viewer_url(request, params):
     }
 
     return h.make_agnostic(route_url('luftbilder', request)) + '?' + urllib.parse.urlencode(f)
+
 %>
 
 <%def name="table_body(c, lang)">
@@ -57,26 +57,64 @@ def get_viewer_url(request, params):
 lang = lang if lang in ('fr','it','en') else 'de'
 c['stable_id'] = True
 request = context.get('request')
-tileUrlBasePath = request.registry.settings['aerialimages_data_host'] + '/tiles'
-preview_url = determinePreviewUrl(tileUrlBasePath, c['featureId'])
-
-image_rotation = 0
-wh = h.imagesize_from_metafile(tileUrlBasePath, c['featureId'])
-image_width = wh[0]
-image_height = wh[1]
+aerialimages_data_host = request.registry.settings['aerialimages_data_host']
+tileUrlBasePath = aerialimages_data_host + '/tiles'
 
 datum = date_to_str(c['attributes']['flightdate'])
-params = (
-    image_width,
-    image_height,
-    _('tt_lubis_ebkey'),
-    c['featureId'],
-    'swisstopo',
-    c['layerBodId'],
-    lang,
-    image_rotation)
-viewer_url = get_viewer_url(request, params)
+tt_lubis_Quickview='tt_lubis_Quickview'
+image_width = None
+
+# set true if featureId comes from stac
+isStac = c['featureId'].startswith('lubis-luftbilder_schraegaufnahmen')
+# new feature ids start with: lubis-luftbilder
+# simply create a link to the stac browser
+# there is no way to open to activate the orthophoto with the link parameters
+if isStac:
+  dataGeoAdminHost = request.registry.settings['datageoadminhost']
+  asset_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['featureId']}.tif"
+  preview_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['featureId']}.jpg"
+  meta_csv_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['featureId']}.csv"
+  viewer_url=asset_url
+  tt_lubis_Quickview='tt_lubis_Quickview_stac'
+# legacy: old ebkeys with fullresviewer in aerialimages bucket
+# this part can be removed when the migration of the aerialimages bucket to stac/data.geo.admin.ch is finished
+else:
+  preview_url = determinePreviewUrl(tileUrlBasePath, c['featureId'])
+  image_rotation = 0
+  wh = h.imagesize_from_metafile(tileUrlBasePath, c['featureId'])
+  image_width = wh[0]
+  image_height = wh[1]
+
+  params = (
+      image_width,
+      image_height,
+      _('tt_lubis_ebkey'),
+      c['featureId'],
+      'swisstopo',
+      c['layerBodId'],
+      lang,
+      image_rotation)
+  viewer_url = get_viewer_url(request, params)
+
 %>
+% if isStac: # STAC Tooltips
+    <tr><td class="cell-left">${_('tt_lubis_ebkey')}</td>                               <td>${c['featureId']}</td></tr>
+    <tr><td class="cell-left">${_('tt_lubis_Flugdatum')}</td>                           <td>${datum}</td></tr>
+    <tr><td class="cell-left">${_('tt_lubis_bildpfad')}</td>                            <td>${c['attributes']['filename']}</td></tr>
+    <tr><td class="cell-left">${_('tt_lubis_schraegaufnahmen_stereo_couple')}</td>      <td>${c['attributes']['stereo_couple']}</td></tr>
+    <tr><td class="cell-left">${_('tt_lubis_schraegaufnahmen_x')}</td>                  <td>${c['attributes']['x']}</td></tr>
+    <tr><td class="cell-left">${_('tt_lubis_schraegaufnahmen_y')}</td>                  <td>${c['attributes']['y']}</td></tr>
+    <tr><td class="cell-left">${_("zusatzinfo")}</td>
+      <td>
+        <a href="${meta_csv_url}" target="_blank">${_(f"{c['layerBodId']}.meta_csv_url")}</a>
+      </td>
+    </tr>
+    <tr><td class="cell-left">${_(tt_lubis_Quickview)}</td>
+      <td>
+        <a href="${viewer_url}" target="_blank"><img src="${preview_url}" alt="quickview"></a>
+      </td>
+    </tr>
+% else: # OLD Tooltips with GDWH datasource
     <tr><td class="cell-left">${_('tt_lubis_ebkey')}</td>                               <td>${c['featureId']}</td></tr>
     <tr><td class="cell-left">${_('tt_lubis_inventarnummer')}</td>                      <td>${c['attributes']['inventory_number']}</td></tr>
     <tr><td class="cell-left">${_('tt_lubis_Flugdatum')}</td>                           <td>${datum}</td></tr>
@@ -84,9 +122,7 @@ viewer_url = get_viewer_url(request, params)
 % if preview_url != "" and image_width != None:
 <tr>
   <td class="cell-left">${_('tt_lubis_Quickview')}</td>
-  <td>
-    <a href="${viewer_url}" target="_blank"><img src="${preview_url}" alt="quickview"></a>
-  </td>
+  <td><a href="${viewer_url}" target="_blank"><img src="${preview_url}" alt="quickview"></a></td>
 </tr>
 % else:
 <tr>
@@ -95,37 +131,57 @@ viewer_url = get_viewer_url(request, params)
 </tr>
 % endif
 
+% endif
 </tr>
 </%def>
 
+
 <%def name="extended_info(c, lang)">
 <%
+# TODO: extended tooltip can be completely removed after the migration to stac
 c['stable_id'] = True
 protocol = request.scheme
 c['baseUrl'] = h.make_agnostic(''.join((protocol, '://', request.registry.settings['geoadminhost'])))
-aerialimages_data_host = request.registry.settings['aerialimages_data_host']
-tileUrlBasePath =  aerialimages_data_host + '/tiles'
 topic = request.matchdict.get('map')
 lang = request.lang
 
-preview_url = determinePreviewUrl(tileUrlBasePath, c['featureId'])
-image_rotation = 0
-wh = h.imagesize_from_metafile(tileUrlBasePath, c['featureId'])
-image_width = wh[0]
-image_height = wh[1]
 datum = date_to_str(c['attributes']['flightdate'])
-params = (
-    image_width,
-    image_height,
-    _('tt_lubis_ebkey'),
-    c['featureId'],
-    'swisstopo',
-    c['layerBodId'],
-    lang,
-    image_rotation)
-viewer_url = get_viewer_url(request, params)
+
+isStac = c['featureId'].startswith('lubis-luftbilder_schraegaufnahmen')
+if not isStac:
+  aerialimages_data_host = request.registry.settings['aerialimages_data_host']
+  tileUrlBasePath =  aerialimages_data_host + '/tiles'
+  preview_url = determinePreviewUrl(tileUrlBasePath, c['featureId'])
+  image_rotation = 0
+  wh = h.imagesize_from_metafile(tileUrlBasePath, c['featureId'])
+  image_width = wh[0]
+  image_height = wh[1]
+  params = (
+      image_width,
+      image_height,
+      _('tt_lubis_ebkey'),
+      c['featureId'],
+      'swisstopo',
+      c['layerBodId'],
+      lang,
+      image_rotation)
+  viewer_url = get_viewer_url(request, params)
+
 %>
 
+% if isStac: # STAC Tooltips
+<title>${_('tt_lubis_ebkey')}: ${c['featureId']}</title>
+<body>
+  <table class="table-with-border kernkraftwerke-extended">
+    <tr><th class="cell-left">${_('tt_lubis_ebkey')}</th>                               <td>${c['featureId']}</td></tr>
+    <tr><th class="cell-left">${_('tt_lubis_Flugdatum')}</th>                           <td>${datum}</td></tr>
+    <tr><th class="cell-left">${_('tt_lubis_bildpfad')}</th>                            <td>${c['attributes']['filename']}</td></tr>
+    <tr><th class="cell-left">${_('tt_lubis_schraegaufnahmen_stereo_couple')}</th>      <td>${c['attributes']['stereo_couple']}</td></tr>
+    <tr><th class="cell-left">${_('tt_lubis_schraegaufnahmen_x')}</th>                  <td>${c['attributes']['x']}</td></tr>
+    <tr><th class="cell-left">${_('tt_lubis_schraegaufnahmen_y')}</th>                  <td>${c['attributes']['y']}</td></tr>
+  </table>
+</body>
+% else: # quickview and iframe are only activated for the old images
 <title>${_('tt_lubis_ebkey')}: ${c['featureId']}</title>
 
 <body onload="init()">
@@ -160,6 +216,8 @@ viewer_url = get_viewer_url(request, params)
   </script>
 
 </body>
+% endif
+
 </%def>
 
 <%def name="extended_resources(c, lang)">

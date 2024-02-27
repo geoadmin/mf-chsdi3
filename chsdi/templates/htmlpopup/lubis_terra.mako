@@ -11,7 +11,6 @@ import markupsafe
 def br(text):
     return text.replace('\n', markupsafe.Markup('<br />'))
 
-
 def determinePreviewUrl(tileUrlBasePath, ebkey):
 
     tileUrlBasePath = tileUrlBasePath

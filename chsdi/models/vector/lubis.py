@@ -13,7 +13,6 @@ class LuftbilderBase:
     __template__ = 'templates/htmlpopup/lubis.mako'
     __returnedGeometry__ = 'the_geom_footprint'
     __timeInstant__ = 'bgdi_flugjahr'
-    __extended_info__ = True
     __label__ = 'flugdatum'
     id = Column('ebkey', Unicode, primary_key=True)
     filename = Column('filename', Unicode)
@@ -61,6 +60,7 @@ register('ch.swisstopo.lubis-luftbilder_farbe', LuftbilderSwisstopoFarbe)
 
 
 class LuftbilderSwisstopoIr(Base, LuftbilderBaseStac, Vector):
+    __extended_info__ = True
     __tablename__ = 'luftbilder_swisstopo_ir'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder_infrarot'
     image_height = Column('image_height', Integer)
