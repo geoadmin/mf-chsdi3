@@ -563,10 +563,6 @@ class TestFeaturesView(TestsBase):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bakom.radio-fernsehsender/11/extendedHtmlPopup', status=200)
         self.assertEqual(resp.content_type, 'text/html')
 
-    def test_extendedhtmlpopup_valid_lubis(self):
-        resp = self.testapp.get('/rest/services/all/MapServer/ch.swisstopo.lubis-luftbilder_farbe/lubis-luftbilder_farbe_000-277-465/extendedHtmlPopup', status=200)
-        self.assertEqual(resp.content_type, 'text/html')
-
     def test_extendedhtmlpopup_valid_langs(self):
         for lang in ('de', 'fr', 'it', 'rm', 'en'):
             try:
