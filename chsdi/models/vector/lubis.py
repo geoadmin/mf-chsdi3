@@ -13,7 +13,6 @@ class LuftbilderBase:
     __template__ = 'templates/htmlpopup/lubis.mako'
     __returnedGeometry__ = 'the_geom_footprint'
     __timeInstant__ = 'bgdi_flugjahr'
-    __extended_info__ = True
     __label__ = 'flugdatum'
     id = Column('ebkey', Unicode, primary_key=True)
     filename = Column('filename', Unicode)
@@ -61,6 +60,7 @@ register('ch.swisstopo.lubis-luftbilder_farbe', LuftbilderSwisstopoFarbe)
 
 
 class LuftbilderSwisstopoIr(Base, LuftbilderBaseStac, Vector):
+    __extended_info__ = True
     __tablename__ = 'luftbilder_swisstopo_ir'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder_infrarot'
     image_height = Column('image_height', Integer)
@@ -143,6 +143,7 @@ class LuftbilderSchraegaufnahmen(Base, Vector):
     # Composite labels
     __label__ = 'flightdate'
     id = Column('ebkey', Unicode, primary_key=True)
+    ebkey_old = Column('ebkey_old', Unicode)
     inventory_number = Column('inventory_number', Unicode)
     flightdate = Column('flightdate', Unicode)
     medium_format = Column('medium_format', Unicode)
@@ -167,10 +168,10 @@ class LuftbilderTerrA(Base, Vector):
     __bodId__ = 'ch.swisstopo.lubis-terrestrische_aufnahmen'
     __timeInstant__ = 'bgdi_flugjahr'
     __returnedGeometry__ = 'the_geom_footprint'
-    __timeInstant__ = 'bgdi_flugjahr'
     __extended_info__ = True
     __label__ = 'flugdatum'
     id = Column('inventory_number', Unicode, primary_key=True)
+    inventarnummer_old = Column('inventarnummer_old', Unicode)
     inventarnummer = Column('objectid', Integer)
     image_number = Column('image_number', Integer)
     flugdatum = Column('bgdi_flugdatum', Unicode)
