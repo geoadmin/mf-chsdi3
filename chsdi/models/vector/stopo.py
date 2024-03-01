@@ -1309,7 +1309,7 @@ register('ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitae
 
 
 class GeologieGeothermie(Base, Vector):
-    __tablename__ = 'geophysik_geothermie'
+    __tablename__ = 'view_geophysik_geothermie_tooltip'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/geothermie.mako'
     __bodId__ = 'ch.swisstopo.geologie-geophysik-geothermie'
