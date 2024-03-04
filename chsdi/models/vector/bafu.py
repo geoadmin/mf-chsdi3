@@ -1708,7 +1708,6 @@ class Swissprtr(Base, Vector):
     id = Column('prtrnr', Integer, primary_key=True)
     betrieb = Column('betrieb', Unicode)
     ort = Column('ort', Unicode)
-    jahr = Column('jahr', Integer)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.swissprtr', Swissprtr)
