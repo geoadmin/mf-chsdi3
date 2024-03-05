@@ -14,6 +14,36 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20240313:
+
+Release 20240313 - Wednesday, March 13th 2024
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+- Bug fixes
+- Announcements:
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/>`__
+
+Geodata
+*******
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Employment (FTE) <//map.geo.admin.ch/?layers=ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente>`__ (ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente)                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Enterprises <//map.geo.admin.ch/?layers=ch.bfs.betriebszaehlungen-arbeitsstaetten>`__ (ch.bfs.betriebszaehlungen-arbeitsstaetten)                                                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Dwellings <//map.geo.admin.ch/?layers=ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen>`__ (ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen)                                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Buildings <//map.geo.admin.ch/?layers=ch.bfs.volkszaehlung-gebaeudestatistik_gebaeude>`__ (ch.bfs.volkszaehlung-gebaeudestatistik_gebaeude)                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Population (residents) <//map.geo.admin.ch/?layers=ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner>`__ (ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner)                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20240131:
 
 Release 20240131 - Wednesday, January 31st 2024
