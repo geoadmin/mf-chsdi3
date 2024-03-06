@@ -1724,8 +1724,6 @@ class HindernisbegrenzungsflaechenKataster:
 
 class HindernisbegrenzungsflaechenKatasterArea(Base, HindernisbegrenzungsflaechenKataster, Vector):
     __tablename__ = 'hindernisbegrenzungsflaechen_kataster_area'
-    heightaccordingvil = Column('heightaccordingvil', Unicode)
-    heightaboveground = Column('heightaboveground', Unicode)
 
 register('ch.bazl.hindernisbegrenzungsflaechen-kataster', HindernisbegrenzungsflaechenKatasterArea)
 

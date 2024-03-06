@@ -10,20 +10,6 @@
     <td>${c['attributes']['surfacetype'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-left">${_('ch.bazl.hindernisbegrenzungsflaechen-kataster.heightaccordingvil')}</td>
-    %if c['attributes']['heightaccordingvil'] == 'Yes':
-      <td>${_('yesText')}</td>
-    %elif c['attributes']['heightaccordingvil'] == 'No':
-      <td>${_('noText')}</td>
-    %else:
-      <td>-</td>
-    %endif
-  </tr>
-  <tr>
-    <td class="cell-left">${_('ch.bazl.hindernisbegrenzungsflaechen-kataster.heightaboveground')}</td>
-    <td>${c['attributes']['heightaboveground'] or '-'}</td>
-  </tr>
-  <tr>
     <td class="cell-left">${_('ch.bazl.hindernisbegrenzungsflaechen-kataster.document')}</td>
     %if c['attributes']['document'].startswith('http'):
       <td><a href="${c['attributes']['document']}" target="_blank">${_('ch.bazl.hindernisbegrenzungsflaechen-kataster.link')}</a></td>
