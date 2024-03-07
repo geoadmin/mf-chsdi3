@@ -27,6 +27,11 @@ API & applications
 
 - Bug fixes
 - Announcements:
+    - the layer *ch.swisstopo-vd.ortschaftenverzeichnis_plz* has now the additional attributes 'status' and 'modification', as previously announced
+    - the layer *ch.bfs.generalisierte-grenzen_agglomerationen_g2* has been removed from chsdi services as previously announced
+    - the layers *ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200* and *ch.swisstopo.geologie-geotechnik-gk200* have been removed from chsdi services as previously announced
+    - the layers *ch.bakom.mobil-antennenstandorte-5g, ch.bakom.mobil-antennenstandorte-gsm, ch.bakom.mobil-antennenstandorte-umts, ch.bakom.mobil-antennenstandorte-lte* have been removed from chsdi services as previously announced
+    - following attributes for the layers *ch.swisstopo.lubis-luftbilder_schwarzweiss*, *ch.swisstopo.lubis-luftbilder_farbe* and *ch.swisstopo.lubis-luftbilder_infrarot* will be removed from chsdi services later this year: 'inventarnummer', 'bildnummer', 'orientierung', 'rotation', 'filesize_mb', 'ort', 'image_height' and 'image_width'
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/>`__
 
 Geodata
