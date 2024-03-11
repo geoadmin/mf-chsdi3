@@ -22,7 +22,7 @@ def add_default_cache_control(request, response):
 
 def add_cors_header(request, response):
     response.headers['Access-Control-Allow-Origin'] = "*"
-    response.headers['Access-Control-Allow-Methods'] = "POST, GET, OPTIONS"
+    response.headers['Access-Control-Allow-Methods'] = request.registry.settings['request_method']
     response.headers['Access-Control-Allow-Headers'] = "*"
 
 

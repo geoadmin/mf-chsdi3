@@ -194,8 +194,8 @@ class TestFeaturesView(TestsBase):
         self.assertIn('Please provide an integer', resp.text)
 
     def test_find_boolean_true(self):
-        params = {'layer': 'ch.swisstopo.lubis-luftbilder_farbe',
-                  'searchField': 'orientierung',
+        params = {'layer': 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill',
+                  'searchField': 'is_current_jahr',
                   'searchText': 'True',
                   'returnGeometry': 'false',
                   'contains': 'false'}
@@ -205,8 +205,8 @@ class TestFeaturesView(TestsBase):
         self.assertEsrijsonFeature(resp.json['results'][0], 21781, hasGeometry=False)
 
     def test_find_boolean_false(self):
-        params = {'layer': 'ch.swisstopo.lubis-luftbilder_farbe',
-                  'searchField': 'orientierung',
+        params = {'layer': 'ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill',
+                  'searchField': 'is_current_jahr',
                   'searchText': 'FALSE',
                   'returnGeometry': 'false',
                   'contains': 'false'}
@@ -561,10 +561,6 @@ class TestFeaturesView(TestsBase):
 
     def test_extendedhtmlpopup_valid(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/ch.bakom.radio-fernsehsender/11/extendedHtmlPopup', status=200)
-        self.assertEqual(resp.content_type, 'text/html')
-
-    def test_extendedhtmlpopup_valid_lubis(self):
-        resp = self.testapp.get('/rest/services/all/MapServer/ch.swisstopo.lubis-luftbilder_farbe/19981551013722/extendedHtmlPopup', status=200)
         self.assertEqual(resp.content_type, 'text/html')
 
     def test_extendedhtmlpopup_valid_langs(self):

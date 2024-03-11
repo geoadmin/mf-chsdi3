@@ -1716,8 +1716,9 @@ class HindernisbegrenzungsflaechenKataster:
     __bodId__ = 'ch.bazl.hindernisbegrenzungsflaechen-kataster'
     id = Column('bgdi_id', Integer, primary_key=True)
     icaoloc = Column('icaoloc', Unicode)
-    validfrom = Column('validfrom', Unicode)
-    validuntil = Column('validuntil', Unicode)
+    surfacetype = Column('surfacetype', Unicode)
+    document = Column('document', Unicode)
+    geom_type = Column('geom_type', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -4062,3 +4063,67 @@ class LageStoerfallverordnungEisenbahnanlagen (Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bav.lage-stoerfallverordnung_eisenbahnanlagen', LageStoerfallverordnungEisenbahnanlagen)
+
+
+class BakomchStandorteMobilfunkanlagen (Base, Vector):
+    __table_args__ = ({'schema': 'bakom', 'autoload': False})
+    __tablename__ = 'standorte_mobilfunkanlagen'
+    __template__ = 'templates/htmlpopup/bakom_standorte_mobilfunkanlagen.mako'
+    __bodId__ = 'ch.bakom.standorte-mobilfunkanlagen'
+    __label__ = 'station'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    station = Column('station', Unicode)
+    typ_de = Column('typ_de', Unicode)
+    typ_fr = Column('typ_fr', Unicode)
+    typ_it = Column('typ_it', Unicode)
+    typ_en = Column('typ_en', Unicode)
+    koord = Column('koord', Unicode)
+    power_de = Column('power_de', Unicode)
+    power_fr = Column('power_fr', Unicode)
+    power_it = Column('power_it', Unicode)
+    power_en = Column('power_en', Unicode)
+    techno_de = Column('techno_de', Unicode)
+    techno_fr = Column('techno_fr', Unicode)
+    techno_it = Column('techno_it', Unicode)
+    techno_en = Column('techno_en', Unicode)
+    adaptiv_de = Column('adaptiv_de', Unicode)
+    adaptiv_fr = Column('adaptiv_fr', Unicode)
+    adaptiv_it = Column('adaptiv_it', Unicode)
+    adaptiv_en = Column('adaptiv_en', Unicode)
+    bewilligung_de = Column('bewilligung_de', Unicode)
+    bewilligung_fr = Column('bewilligung_fr', Unicode)
+    bewilligung_it = Column('bewilligung_it', Unicode)
+    bewilligung_en = Column('bewilligung_en', Unicode)
+    agw_de = Column('agw_de', Unicode)
+    agw_fr = Column('agw_fr', Unicode)
+    agw_it = Column('agw_it', Unicode)
+    agw_en = Column('agw_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bakom.standorte-mobilfunkanlagen', BakomchStandorteMobilfunkanlagen)
+
+
+class PhotovoltaikGrossanlagen (Base, Vector):
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __tablename__ = 'photovoltaik_grossanlagen'
+    __template__ = 'templates/htmlpopup/bfe_photovoltaik_grossanlagen.mako'
+    __bodId__ = 'ch.bfe.photovoltaik-grossanlagen'
+    __label__ = 'projectname'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    projectname = Column('projectname', Unicode)
+    projectmanagement = Column('projectmanagement', Unicode)
+    projectweb = Column('projectweb', Unicode)
+    elevation = Column('elevation', Integer)
+    power = Column('power', Unicode)
+    annualproduction = Column('annualproduction', Unicode)
+    winterproduction = Column('winterproduction', Unicode)
+    specificannualproduction = Column('specificannualproduction', Unicode)
+    specificwinterproduction = Column('specificwinterproduction', Unicode)
+    ref_status = Column('ref_status', Unicode)
+    statuscategory_de = Column('statuscategory_de', Unicode)
+    statuscategory_fr = Column('statuscategory_fr', Unicode)
+    statuscategory_it = Column('statuscategory_it', Unicode)
+    statuscategory_en = Column('statuscategory_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.photovoltaik-grossanlagen', PhotovoltaikGrossanlagen)

@@ -1307,7 +1307,7 @@ register('ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitae
 
 
 class GeologieGeothermie(Base, Vector):
-    __tablename__ = 'geophysik_geothermie'
+    __tablename__ = 'view_geophysik_geothermie_tooltip'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/geothermie.mako'
     __bodId__ = 'ch.swisstopo.geologie-geophysik-geothermie'
@@ -1922,7 +1922,7 @@ register('ch.swisstopo-karto.wanderwege', SwissmapOnlineWanderwege)
 
 
 class PLZOrtschaften(Base, Vector):
-    __tablename__ = 'gabmo_plz'
+    __tablename__ = 'amtovz_ortschaften'
     __table_args__ = ({'schema': 'vd', 'autoload': False})
     __template__ = 'templates/htmlpopup/gabmo_plz.mako'
     __bodId__ = 'ch.swisstopo-vd.ortschaftenverzeichnis_plz'
@@ -1931,6 +1931,8 @@ class PLZOrtschaften(Base, Vector):
     plz = Column('plz', Integer)
     zusziff = Column('zusziff', Unicode)
     langtext = Column('langtext', Unicode)
+    status = Column('status', Unicode)
+    modified = Column('modified', DateTimeChsdi)
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
