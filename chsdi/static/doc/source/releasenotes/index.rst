@@ -26,6 +26,7 @@ API & applications
 '''''''''''''''''''''''''''''
 
 - Bug fixes
+- **HTTP** **POST**, **PUT** and **DELETE** on api3.geo.admin.ch/rest/services/<topic>/MapServer/* are **no longer accepted**. This behavior has already been documented in the official API documentation and has been `announced <https://groups.google.com/g/geoadmin-api/c/OtsTDxpKDtM/m/IAqSrm3DBQAJ>`__ last year in September. All API REST endpoints support only the following HTTP methods (unless specified): GET, HEAD and OPTIONS
 - Announcements:
     - the layer *ch.swisstopo-vd.ortschaftenverzeichnis_plz* has now the additional attributes 'status' and 'modification', as previously announced
     - the layer *ch.bfs.generalisierte-grenzen_agglomerationen_g2* has been removed from chsdi services as previously announced
