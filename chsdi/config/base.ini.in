@@ -9,6 +9,7 @@
 use = egg:chsdi
 app_version = ${APP_VERSION}
 available_languages = de fr it en rm
+request_method = GET, HEAD, OPTIONS
 
 pyramid.reload_templates = false
 pyramid.debug_authorization = false

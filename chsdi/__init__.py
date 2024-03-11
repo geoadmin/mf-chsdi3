@@ -3,6 +3,7 @@ import os
 from distutils.util import strtobool
 import datetime
 from pyramid.config import Configurator
+from pyramid.response import Response
 from pyramid.renderers import JSONP
 from pyramid.request import Request
 from sqlalchemy.orm import scoped_session, sessionmaker
@@ -33,6 +34,16 @@ class WsgiSchemeAdaptedRequest(Request):
         super().__init__(environ, **kwargs)
 
 
+# This is a wrapper function around all views. If OPTIONS is given, an empty string will be returned
+# As HTTP OPTIONS is not cached, this wrapper will safe some power
+def options_view(view, info):
+    def wrapper_view(context, request):
+        if request.method == 'OPTIONS':
+            return Response('')
+        return view(context, request)
+    return wrapper_view
+
+
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
     """
@@ -42,9 +53,13 @@ def main(global_config, **settings):
 
     app_version = settings.get('app_version')
     settings['app_version'] = app_version
+    # request_method is the type tuple: string->string without space->array->tuple
+    request_method = tuple(settings.get('request_method').replace(' ', '').split(','))
     config = Configurator(settings=settings, request_factory=WsgiSchemeAdaptedRequest)
     config.include('pyramid_mako')
     config.include('akhet.static')
+    # wrapper around all views
+    config.add_view_deriver(options_view)
 
     # configure 'locale' dir as the translation dir for chsdi app
     config.add_translation_dirs('chsdi:locale/')
@@ -69,33 +84,33 @@ def main(global_config, **settings):
     initialize_sql(settings)
 
     # route definitions
-    config.add_route('dev', '/dev')
-    config.add_route('ga_api', '/loader.js')
-    config.add_route('testi18n', '/testi18n')
-    config.add_route('topics', '/rest/services')
-    config.add_route('mapservice', '/rest/services/{map}/MapServer')
-    config.add_route('layersConfig', '/rest/services/{map}/MapServer/layersConfig')
-    config.add_route('catalog', '/rest/services/{map}/CatalogServer')
-    config.add_route('identify', '/rest/services/{map}/MapServer/identify')
-    config.add_route('find', '/rest/services/{map}/MapServer/find')
-    config.add_route('attribute_values', '/rest/services/{map}/MapServer/{layerId}/attributes/{attribute}')
-    config.add_route('legend', '/rest/services/{map}/MapServer/{layerId}/legend')
-    config.add_route('releases', '/rest/services/{map}/MapServer/{layerId}/releases')
-    config.add_route('cacheUpdate', '/rest/services/{map}/MapServer/{layerId}/cacheUpdate')
-    config.add_route('featureAttributes', '/rest/services/{map}/MapServer/{layerId}')
-    config.add_route('feature', '/rest/services/{map}/MapServer/{layerId}/{featureId}')
-    config.add_route('htmlPopup', '/rest/services/{map}/MapServer/{layerId}/{featureId}/htmlPopup')
-    config.add_route('iframeHtmlPopup', '/rest/services/{map}/MapServer/{layerId}/{featureId}/iframeHtmlPopup')
-    config.add_route('extendedHtmlPopup', '/rest/services/{map}/MapServer/{layerId}/{featureId}/extendedHtmlPopup')
-    config.add_route('luftbilder', '/luftbilder/viewer.html')
-    config.add_route('historicalmaps', '/historicalmaps/viewer.html')
-    config.add_route('checker', '/checker')
-    config.add_route('checker_dev', '/checker_dev')
-    config.add_route('translations', '/rest/services/translations')
+    config.add_route('dev', '/dev', request_method=request_method)
+    config.add_route('ga_api', '/loader.js', request_method=request_method)
+    config.add_route('testi18n', '/testi18n', request_method=request_method)
+    config.add_route('topics', '/rest/services', request_method=request_method)
+    config.add_route('mapservice', '/rest/services/{map}/MapServer', request_method=request_method)
+    config.add_route('layersConfig', '/rest/services/{map}/MapServer/layersConfig', request_method=request_method)
+    config.add_route('catalog', '/rest/services/{map}/CatalogServer', request_method=request_method)
+    config.add_route('identify', '/rest/services/{map}/MapServer/identify', request_method=request_method)
+    config.add_route('find', '/rest/services/{map}/MapServer/find', request_method=request_method)
+    config.add_route('attribute_values', '/rest/services/{map}/MapServer/{layerId}/attributes/{attribute}', request_method=request_method)
+    config.add_route('legend', '/rest/services/{map}/MapServer/{layerId}/legend', request_method=request_method)
+    config.add_route('releases', '/rest/services/{map}/MapServer/{layerId}/releases', request_method=request_method)
+    config.add_route('cacheUpdate', '/rest/services/{map}/MapServer/{layerId}/cacheUpdate', request_method=request_method)
+    config.add_route('featureAttributes', '/rest/services/{map}/MapServer/{layerId}', request_method=request_method)
+    config.add_route('feature', '/rest/services/{map}/MapServer/{layerId}/{featureId}', request_method=request_method)
+    config.add_route('htmlPopup', '/rest/services/{map}/MapServer/{layerId}/{featureId}/htmlPopup', request_method=request_method)
+    config.add_route('iframeHtmlPopup', '/rest/services/{map}/MapServer/{layerId}/{featureId}/iframeHtmlPopup', request_method=request_method)
+    config.add_route('extendedHtmlPopup', '/rest/services/{map}/MapServer/{layerId}/{featureId}/extendedHtmlPopup', request_method=request_method)
+    config.add_route('luftbilder', '/luftbilder/viewer.html', request_method=request_method)
+    config.add_route('historicalmaps', '/historicalmaps/viewer.html', request_method=request_method)
+    config.add_route('checker', '/checker', request_method=request_method)
+    config.add_route('checker_dev', '/checker_dev', request_method=request_method)
+    config.add_route('translations', '/rest/services/translations', request_method=request_method)
 
-    config.add_route('stationboard', '/stationboard/stops/{id}')
-    config.add_route('faqlist', '/rest/services/{map}/faqlist')
-    config.add_route('color', '/color/{r},{g},{b}/{image}')
+    config.add_route('stationboard', '/stationboard/stops/{id}', request_method=request_method)
+    config.add_route('faqlist', '/rest/services/{map}/faqlist', request_method=request_method)
+    config.add_route('color', '/color/{r},{g},{b}/{image}', request_method=request_method)
 
     # Static route
     static_max_age = int(settings['static_max_age']) if settings['static_max_age'] else None
