@@ -54,4 +54,9 @@ ErrorLog /dev/stdout
   # ServerAlias mf-chsdi3.prod.bgdi.ch
   # ServerAlias s.geo.admin.ch
   SetEnvIf X-Forwarded-For "^.*\..*\..*\..*" forwarded
+
+  # WSGI response on OPTIONS is an empty body
+  # no need to zip an empty body
+  RewriteCond %{REQUEST_METHOD} OPTIONS
+  RewriteRule ^(.*)$ $1 [PT,E=no-gzip:1]
 </VirtualHost>
