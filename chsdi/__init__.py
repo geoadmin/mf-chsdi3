@@ -34,16 +34,6 @@ class WsgiSchemeAdaptedRequest(Request):
         super().__init__(environ, **kwargs)
 
 
-# This is a wrapper function around all views. If OPTIONS is given, an empty string will be returned
-# As HTTP OPTIONS is not cached, this wrapper will safe some power
-def options_view(view, info):
-    def wrapper_view(context, request):
-        if request.method == 'OPTIONS':
-            return Response('')
-        return view(context, request)
-    return wrapper_view
-
-
 def main(global_config, **settings):
     """ This function returns a Pyramid WSGI application.
     """
@@ -58,8 +48,21 @@ def main(global_config, **settings):
     config = Configurator(settings=settings, request_factory=WsgiSchemeAdaptedRequest)
     config.include('pyramid_mako')
     config.include('akhet.static')
+
     # wrapper around all views
-    config.add_view_deriver(options_view)
+    # This is a wrapper function around all views. If OPTIONS is given, an empty string will be returned
+    # As HTTP OPTIONS is not cached, this wrapper will safe some power
+    def methods_view(view, info):
+        def wrapper_view(context, request):
+            if request.method == 'OPTIONS':
+                return Response()
+            # HTTP 405: method not allowed
+            elif request.method not in request_method:
+                context.code = context.status_code = 405
+            return view(context, request)
+        return wrapper_view
+
+    config.add_view_deriver(methods_view)
 
     # configure 'locale' dir as the translation dir for chsdi app
     config.add_translation_dirs('chsdi:locale/')
