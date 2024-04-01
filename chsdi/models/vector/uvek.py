@@ -4127,3 +4127,73 @@ class PhotovoltaikGrossanlagen (Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.photovoltaik-grossanlagen', PhotovoltaikGrossanlagen)
+
+
+class SolarenergieEinstrahlung:
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __extended_info__ = True
+    __label__ = 'id'
+    id = Column('id', Integer, primary_key=True)
+    x = Column('x', Integer)
+    y = Column('y', Integer)
+    globalstrahlung_jahressumme_kwhm2 = Column('globalstrahlung_jahressumme_kwhm2', Integer)
+    globalstrahlung_wintersumme_kwhm2 = Column('globalstrahlung_wintersumme_kwhm2', Integer)
+    globalstrahlung_januar_kwhm2 = Column('globalstrahlung_januar_kwhm2', Integer)
+    globalstrahlung_februar_kwhm2 = Column('globalstrahlung_februar_kwhm2', Integer)
+    globalstrahlung_maerz_kwhm2 = Column('globalstrahlung_maerz_kwhm2', Integer)
+    globalstrahlung_april_kwhm2 = Column('globalstrahlung_april_kwhm2', Integer)
+    globalstrahlung_mai_kwhm2 = Column('globalstrahlung_mai_kwhm2', Integer)
+    globalstrahlung_juni_kwhm2 = Column('globalstrahlung_juni_kwhm2', Integer)
+    globalstrahlung_juli_kwhm2 = Column('globalstrahlung_juli_kwhm2', Integer)
+    globalstrahlung_august_kwhm2 = Column('globalstrahlung_august_kwhm2', Integer)
+    globalstrahlung_september_kwhm2 = Column('globalstrahlung_september_kwhm2', Integer)
+    globalstrahlung_oktober_kwhm2 = Column('globalstrahlung_oktober_kwhm2', Integer)
+    globalstrahlung_november_kwhm2 = Column('globalstrahlung_november_kwhm2', Integer)
+    globalstrahlung_dezember_kwhm2 = Column('globalstrahlung_dezember_kwhm2', Integer)
+    pvproduktion_jahressumme_kwhkwp = Column('pvproduktion_jahressumme_kwhkwp', Integer)
+    pvproduktion_wintersumme_kwhkwp = Column('pvproduktion_wintersumme_kwhkwp', Integer)
+    pvproduktion_januar_kwhkwp = Column('pvproduktion_januar_kwhkwp', Integer)
+    pvproduktion_februar_kwhkwp = Column('pvproduktion_februar_kwhkwp', Integer)
+    pvproduktion_maerz_kwhkwp = Column('pvproduktion_maerz_kwhkwp', Integer)
+    pvproduktion_april_kwhkwp = Column('pvproduktion_april_kwhkwp', Integer)
+    pvproduktion_mai_kwhkwp = Column('pvproduktion_mai_kwhkwp', Integer)
+    pvproduktion_juni_kwhkwp = Column('pvproduktion_juni_kwhkwp', Integer)
+    pvproduktion_juli_kwhkwp = Column('pvproduktion_juli_kwhkwp', Integer)
+    pvproduktion_august_kwhkwp = Column('pvproduktion_august_kwhkwp', Integer)
+    pvproduktion_september_kwhkwp = Column('pvproduktion_september_kwhkwp', Integer)
+    pvproduktion_oktober_kwhkwp = Column('pvproduktion_oktober_kwhkwp', Integer)
+    pvproduktion_november_kwhkwp = Column('pvproduktion_november_kwhkwp', Integer)
+    pvproduktion_dezember_kwhkwp = Column('pvproduktion_dezember_kwhkwp', Integer)
+    the_geom = Column(Geometry2D)
+
+
+class SolarenergieEinstrahlung0Grad (Base, SolarenergieEinstrahlung, Vector):
+    __tablename__ = 'solarenergie_einstrahlung_0_grad'
+    __bodId__ = 'ch.bfe.solarenergie-einstrahlung_0_grad'
+    __template__ = 'templates/htmlpopup/bfe_solarenergie_einstrahlung_0_grad.mako'
+
+register('ch.bfe.solarenergie-einstrahlung_0_grad', SolarenergieEinstrahlung0Grad)
+
+
+class SolarenergieEinstrahlung30Grad (Base, SolarenergieEinstrahlung, Vector):
+    __tablename__ = 'solarenergie_einstrahlung_30_grad'
+    __bodId__ = 'ch.bfe.solarenergie-einstrahlung_30_grad'
+    __template__ = 'templates/htmlpopup/bfe_solarenergie_einstrahlung_30_grad.mako'
+
+register('ch.bfe.solarenergie-einstrahlung_30_grad', SolarenergieEinstrahlung30Grad)
+
+
+class SolarenergieEinstrahlung75Grad (Base, SolarenergieEinstrahlung, Vector):
+    __tablename__ = 'solarenergie_einstrahlung_75_grad'
+    __bodId__ = 'ch.bfe.solarenergie-einstrahlung_75_grad'
+    __template__ = 'templates/htmlpopup/bfe_solarenergie_einstrahlung_75_grad.mako'
+
+register('ch.bfe.solarenergie-einstrahlung_75_grad', SolarenergieEinstrahlung75Grad)
+
+
+class SolarenergieEinstrahlung90Grad (Base, SolarenergieEinstrahlung, Vector):
+    __tablename__ = 'solarenergie_einstrahlung_90_grad'
+    __bodId__ = 'ch.bfe.solarenergie-einstrahlung_90_grad'
+    __template__ = 'templates/htmlpopup/bfe_solarenergie_einstrahlung_90_grad.mako'
+
+register('ch.bfe.solarenergie-einstrahlung_90_grad', SolarenergieEinstrahlung90Grad)
