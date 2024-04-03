@@ -1239,19 +1239,6 @@ class GeologieGeotechnikSteinbrueche1995(Base, Vector):
 register('ch.swisstopo.geologie-geotechnik-steinbrueche_1995', GeologieGeotechnikSteinbrueche1995)
 
 
-class GeologieGeotechnikZiegeleien1907(Base, Vector):
-    __tablename__ = 'geotechnik_ziegeleien_1907'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/ziegeleien_1907.mako'
-    __bodId__ = 'ch.swisstopo.geologie-geotechnik-ziegeleien_1907'
-    __label__ = 'ziegelei_2'
-    id = Column('id', Integer, primary_key=True)
-    ziegelei_2 = Column('ziegelei_2', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.geologie-geotechnik-ziegeleien_1907', GeologieGeotechnikZiegeleien1907)
-
-
 class GeologieHydroKarteGrundwasservorkommen(Base, Vector):
     __tablename__ = 'grundwasservorkommen'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
