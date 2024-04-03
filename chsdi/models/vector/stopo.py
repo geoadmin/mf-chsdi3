@@ -1239,32 +1239,6 @@ class GeologieGeotechnikSteinbrueche1995(Base, Vector):
 register('ch.swisstopo.geologie-geotechnik-steinbrueche_1995', GeologieGeotechnikSteinbrueche1995)
 
 
-class GeologieGeotechnikZementindustrie1965(Base, Vector):
-    __tablename__ = 'geotechnik_zementindustrie'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/zementindustrie_1965.mako'
-    __bodId__ = 'ch.swisstopo.geologie-geotechnik-zementindustrie_1965'
-    __label__ = 'stoff'
-    id = Column('id', Integer, primary_key=True)
-    stoff = Column('stoff', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.geologie-geotechnik-zementindustrie_1965', GeologieGeotechnikZementindustrie1965)
-
-
-class GeologieGeotechnikZementindustrie1995(Base, Vector):
-    __tablename__ = 'geotechnik_zementindustrie'
-    __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/zementindustrie_1995.mako'
-    __bodId__ = 'ch.swisstopo.geologie-geotechnik-zementindustrie_1995'
-    __label__ = 'stoff'
-    id = Column('id', Integer, primary_key=True)
-    stoff = Column('stoff', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.geologie-geotechnik-zementindustrie_1995', GeologieGeotechnikZementindustrie1995)
-
-
 class GeologieGeotechnikZiegeleien1907(Base, Vector):
     __tablename__ = 'geotechnik_ziegeleien_1907'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
@@ -1600,25 +1574,6 @@ class GeologieRohstoffeGipsAbbauVerarbeitung(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung', GeologieRohstoffeGipsAbbauVerarbeitung)
-
-
-class GeologieRohstoffeZiegelVerarbeitung(Base, Vector):
-    __tablename__ = 'rohstoffe_ziegel_verarbeitung'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung'
-    __template__ = 'templates/htmlpopup/rohstoffe_ziegel_verarbeitung.mako'
-    __label__ = 'obname'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    obname = Column('obname', Unicode)
-    pckind = Column('pckind', Unicode)
-    cpkind = Column('cpkind', Unicode)
-    stkind = Column('stkind', Unicode)
-    tlyearsformatted = Column('tlyearsformatted', Unicode)
-    clkind = Column('clkind', Unicode)
-    purl = Column('purl', Unicode)
-    the_geom = Column(Geometry2D)
-
-register(GeologieRohstoffeZiegelVerarbeitung.__bodId__, GeologieRohstoffeZiegelVerarbeitung)
 
 
 class GeologieTektonischeKarteLine(Base, Vector):
