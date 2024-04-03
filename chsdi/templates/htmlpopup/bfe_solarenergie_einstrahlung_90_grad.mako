@@ -3,11 +3,11 @@
 <%def name="table_body(c, lang)">
   <tr>
     <td class="cell-left-large">${_('ch.bfe.solarenergie-einstrahlung_0_grad.Ausrichtung')}</td>    
-    <td>Test</td>
+    <td>${_('Ausrichtung')}</td>
   </tr>
   <tr>
     <td class="cell-left-large">${_('ch.bfe.solarenergie-einstrahlung_0_grad.Neigung_Einstrahlungsebene')}</td>    
-    <td>Test</td>
+    <td>${_('Neigung_Einstrahlungsebene_90_grad')}</td>
   </tr>
   <tr>
     <td class="cell-left-large">${_('ch.bfe.solarenergie-einstrahlung_0_grad.globalstrahlung_jahressumme_kwhm2')}</td>    
@@ -31,11 +31,11 @@
   <table>
     <tr>
       <th class="cell-meta">${_('ch.bfe.solarenergie-einstrahlung_0_grad.Ausrichtung')}</td>    
-      <td class="cell-meta">Test</td>
+      <td class="cell-meta">${_('Ausrichtung')}</td>
     </tr>
     <tr>
       <th class="cell-meta">${_('ch.bfe.solarenergie-einstrahlung_0_grad.Neigung_Einstrahlungsebene')}</td>    
-      <td class="cell-meta">0</td>
+      <td class="cell-meta">${_('Neigung_Einstrahlungsebene_90_grad')}</td>
     </tr>
     <tr>
       <th class="cell-meta">${_('ch.bfe.solarenergie-einstrahlung_0_grad.Koordinaten')}</td>    
