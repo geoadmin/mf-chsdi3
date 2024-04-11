@@ -4233,3 +4233,112 @@ class Grundwasserwaermenutzungspotential (Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.grundwasserwaermenutzungspotential', Grundwasserwaermenutzungspotential)
+
+
+class LadebedarfsweltFahrzeuge (Base, Vector):
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __tablename__ = 'ladebedarfswelt_fahrzeuge'
+    __template__ = 'templates/htmlpopup/bfe_ladebedarfswelt_fahrzeuge.mako'
+    __bodId__ = 'ch.bfe.ladebedarfswelt-fahrzeuge'
+    __label__ = 'name_gemeinde'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name_gemeinde = Column('name_gemeinde', Unicode)
+    jahr = Column('jahr', Integer)
+    anzahl_fahrzeugbestand_personenwagen_phev = Column('anzahl_fahrzeugbestand_personenwagen_phev', Float)
+    anzahl_fahrzeugbestand_personenwagen_bev = Column('anzahl_fahrzeugbestand_personenwagen_bev', Float)
+    anteil_fahrzeugbestand_personenwagen_steckerfahrzeuge = Column('anteil_fahrzeugbestand_personenwagen_steckerfahrzeuge', Float)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.ladebedarfswelt-fahrzeuge', LadebedarfsweltFahrzeuge)
+
+
+class LadebedarfsweltHeimladeverfuegbarkeit:
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/bfe_ladebedarfswelt_heimladeverfuegbarkeit.mako'
+    __label__ = 'name_gemeinde'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name_gemeinde = Column('name_gemeinde', Unicode)
+    jahr = Column('jahr', Integer)
+    ladewelt = Column('ladewelt', Unicode)
+    anteil_weder_heim_noch_arbeit = Column('anteil_weder_heim_noch_arbeit', Float)
+    anteil_kein_heim = Column('anteil_kein_heim', Float)
+    the_geom = Column(Geometry2D)
+
+class LadebedarfsweltHeimladeverfuegbarkeitBequem (Base, LadebedarfsweltHeimladeverfuegbarkeit, Vector):
+    __bodId__ = 'ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_bequem'
+    __tablename__ = 'ladebedarfswelt_heimladeverfuegbarkeit_bequem'
+
+register('ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_bequem', LadebedarfsweltHeimladeverfuegbarkeitBequem)
+
+
+class LadebedarfsweltHeimladeverfuegbarkeitFlexibel (Base, LadebedarfsweltHeimladeverfuegbarkeit, Vector):
+    __bodId__ = 'ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_flexibel'
+    __tablename__ = 'ladebedarfswelt_heimladeverfuegbarkeit_flexibel'
+
+register('ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_flexibel', LadebedarfsweltHeimladeverfuegbarkeitFlexibel)
+
+
+class LadebedarfsweltHeimladeverfuegbarkeitGeplant (Base, LadebedarfsweltHeimladeverfuegbarkeit, Vector):
+    __bodId__ = 'ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_geplant'
+    __tablename__ = 'ladebedarfswelt_heimladeverfuegbarkeit_geplant'
+
+register('ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_geplant', LadebedarfsweltHeimladeverfuegbarkeitGeplant)
+
+
+class LadebedarfsweltLadepunkte:
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/bfe_ladebedarfswelt_ladepunkte.mako'
+    __label__ = 'name_gemeinde'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name_gemeinde = Column('name_gemeinde', Unicode)
+    jahr = Column('jahr', Integer)
+    allgemein_zugaenglich_anzahl_ladepunkte = Column('allgemein_zugaenglich_anzahl_ladepunkte', Float)
+    quartier_ac_ladepunkte = Column('quartier_ac_ladepunkte', Float)
+    zielort_ac_ladepunkte = Column('zielort_ac_ladepunkte', Float)
+    quartier_dc_150_ladepunkte = Column('quartier_dc_150_ladepunkte', Float)
+    schnell_dc_150_ladepunkte = Column('schnell_dc_150_ladepunkte', Float)
+    schnell_dc_350_ladepunkte = Column('schnell_dc_350_ladepunkte', Float)
+    heim_ac_ladepunkte = Column('heim_ac_ladepunkte', Float)
+    arbeit_ac_ladepunkte = Column('arbeit_ac_ladepunkte', Float)
+    the_geom = Column(Geometry2D)
+
+
+class LadebedarfsweltLadepunkteBequem (Base, LadebedarfsweltLadepunkte, Vector):
+    __tablename__ = 'ladebedarfswelt_ladepunkte_bequem'
+    __bodId__ = 'ch.bfe.ladebedarfswelt-ladepunkte_bequem'
+
+register('ch.bfe.ladebedarfswelt-ladepunkte_bequem', LadebedarfsweltLadepunkteBequem)
+
+
+class LadebedarfsweltLadepunkteFlexibel (Base, LadebedarfsweltLadepunkte, Vector):
+    __tablename__ = 'ladebedarfswelt_ladepunkte_flexibel'
+    __bodId__ = 'ch.bfe.ladebedarfswelt-ladepunkte_flexibel'
+
+register('ch.bfe.ladebedarfswelt-ladepunkte_flexibel', LadebedarfsweltLadepunkteFlexibel)
+
+
+class LadebedarfsweltLadepunkteGeplant (Base, LadebedarfsweltLadepunkte, Vector):
+    __tablename__ = 'ladebedarfswelt_ladepunkte_geplant'
+    __bodId__ = 'ch.bfe.ladebedarfswelt-ladepunkte_geplant'
+
+register('ch.bfe.ladebedarfswelt-ladepunkte_geplant', LadebedarfsweltLadepunkteGeplant)
+
+
+class LadebedarfsweltStrombedarf (Base, Vector):
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __tablename__ = 'ladebedarfswelt_strombedarf'
+    __template__ = 'templates/htmlpopup/bfe_ladebedarfswelt_strombedarf.mako'
+    __bodId__ = 'ch.bfe.ladebedarfswelt-strombedarf'
+    __label__ = 'name_gemeinde'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name_gemeinde = Column('name_gemeinde', Unicode)
+    jahr = Column('jahr', Integer)
+    summe_gwh = Column('summe_gwh', Float)
+    heim_energie_anteil = Column('heim_energie_anteil', Float)
+    arbeit_energie_anteil = Column('arbeit_energie_anteil', Float)
+    quartier_energie_anteil = Column('quartier_energie_anteil', Float)
+    zielort_energie_anteil = Column('zielort_energie_anteil', Float)
+    schnell_energie_anteil = Column('schnell_energie_anteil', Float)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.ladebedarfswelt-strombedarf', LadebedarfsweltStrombedarf)
