@@ -4197,3 +4197,39 @@ class SolarenergieEinstrahlung90Grad (Base, SolarenergieEinstrahlung, Vector):
     __template__ = 'templates/htmlpopup/bfe_solarenergie_einstrahlung_90_grad.mako'
 
 register('ch.bfe.solarenergie-einstrahlung_90_grad', SolarenergieEinstrahlung90Grad)
+
+
+class Grundwasserwaermenutzungspotential (Base, Vector):
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __tablename__ = 'grundwasserwaermenutzungspotential'
+    __template__ = 'templates/htmlpopup/bfe_grundwasserwaermenutzungspotential.mako'
+    __bodId__ = 'ch.bfe.grundwasserwaermenutzungspotential'
+    __label__ = 'uuid'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    fid = Column('fid', Integer)
+    name = Column('name', Unicode)
+    uuid = Column('uuid', Unicode)
+    area_m2 = Column('area_m2', Float)
+    groundwater_thickness_m = Column('groundwater_thickness_m', Float)
+    volume_m3 = Column('volume_m3', Float)
+    groundwater_depth_m = Column('groundwater_depth_m', Float)
+    multi_layer_aquifer = Column('multi_layer_aquifer', Unicode)
+    confined = Column('confined', Unicode)
+    energy_potential_kwh = Column('energy_potential_kwh', Float)
+    heat_potential_kw = Column('heat_potential_kw', Float)
+    heat_potential_w_per_m2 = Column('heat_potential_w_per_m2', Float)
+    reliability = Column('reliability', Unicode)
+    quality_heat_atmosphere = Column('quality_heat_atmosphere', Float)
+    heat_atmosphere_percent = Column('heat_atmosphere_percent', Float)
+    heat_atmosphere_kw = Column('heat_atmosphere_kw', Float)
+    heat_precipitation_percent = Column('heat_precipitation_percent', Float)
+    heat_precipitation_kw = Column('heat_precipitation_kw', Float)
+    heat_catchment_percent = Column('heat_catchment_percent', Float)
+    heat_catchment_kw = Column('heat_catchment_kw', Float)
+    catchment_area_m2 = Column('catchment_area_m2', Float)
+    heat_geothermal_percent = Column('heat_geothermal_percent', Float)
+    heat_geothermal_kw = Column('heat_geothermal_kw', Float)
+    comment = Column('comment', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.grundwasserwaermenutzungspotential', Grundwasserwaermenutzungspotential)
