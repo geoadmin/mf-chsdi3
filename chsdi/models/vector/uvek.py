@@ -4264,6 +4264,7 @@ class LadebedarfsweltHeimladeverfuegbarkeit:
     anteil_kein_heim = Column('anteil_kein_heim', Float)
     the_geom = Column(Geometry2D)
 
+
 class LadebedarfsweltHeimladeverfuegbarkeitBequem (Base, LadebedarfsweltHeimladeverfuegbarkeit, Vector):
     __bodId__ = 'ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_bequem'
     __tablename__ = 'ladebedarfswelt_heimladeverfuegbarkeit_bequem'
