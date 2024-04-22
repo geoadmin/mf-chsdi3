@@ -3033,10 +3033,10 @@ class SwisstneBaseLine(Base, SwisstneBase, Vector):
     __template__ = 'templates/htmlpopup/swisstne_base_line.mako'
     from_node_uuid = Column('from_node_uuid', Unicode)
     to_node_uuid = Column('to_node_uuid', Unicode)
-    rail = Column('rail', Integer)
-    road = Column('road', Integer)
-    cableway = Column('cableway', Integer)
-    water = Column('water', Integer)
+    basetype_de = Column('basetype_de', Unicode)
+    basetype_fr = Column('basetype_fr', Unicode)
+    basetype_it = Column('basetype_it', Unicode)
+    basetype_en = Column('basetype_en', Unicode)
 
 
 class SwisstneBasePoly(Base, SwisstneBase, Vector):
