@@ -471,6 +471,8 @@ def parse_date_datenstand(dateDatenstand):
             result += part
         elif len(part) == 5 and ':' in part:
             result += part
+        elif part == 'UTC':
+            result += part
         else:
             return '-'
     return result
