@@ -345,13 +345,6 @@ class GenGrenzenAggloG1(Base, GenGrenzenAgglo, Vector):
 register(GenGrenzenAggloG1.__bodId__, GenGrenzenAggloG1)
 
 
-class GenGrenzenAggloG2(Base, GenGrenzenAgglo, Vector):
-    __tablename__ = 'gen_grenzen_agglo_g2'
-    __bodId__ = 'ch.bfs.generalisierte-grenzen_agglomerationen_g2'
-
-register(GenGrenzenAggloG2.__bodId__, GenGrenzenAggloG2)
-
-
 class Landschaftswandel(Base, Vector):
     __tablename__ = 'landschaftswandel'
     __table_args__ = ({'schema': 'bfs', 'autoload': False})
