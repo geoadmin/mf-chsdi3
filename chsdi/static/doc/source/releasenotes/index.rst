@@ -27,6 +27,9 @@ API & applications
 
 - Bug fixes
 - Announcements:
+    - The vectortiles style *ch.swisstopo.leichte-basiskarte.vt* has been replaced by *ch.swisstopo.lightbasemap.vt*. The new style references the vectortiles sets *ch.swisstopo.base.vt* and *ch.swisstopo.relief.vt*
+    - The vectortiles style *ch.swisstopo.leichte-basiskarte-imagery.vt* has been replaced by *ch.swisstopo.imagerybasemap.vt*. The new style references the vectortiles set *ch.swisstopo.base.vt*
+    - The vectortiles services *ch.swisstopo.leichte-basiskarte.vt* and *ch.swisstopo.leichte-basiskarte-imagery.vt* will no longer be updated and will be removed by the end of the year 2024
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2024-03-13-rc1...2024-05-15-rc1>`__
 
 Geodata
@@ -110,6 +113,14 @@ Geodata
 | Update | `ISOS - Site records <//map.geo.admin.ch/?layers=ch.bak.bundesinventar-schuetzenswerte-ortsbilder>`__ (ch.bak.bundesinventar-schuetzenswerte-ortsbilder)                                                          |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `ISOS - Photos <//map.geo.admin.ch/?layers=ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos>`__ (ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos)                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Vectortiles set "base" <//vectortiles.geo.admin.ch/tiles/ch.swisstopo.base.vt/v1.0.0/tiles.json>`__ (ch.swisstopo.base.vt)                                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Base Map <//vectortiles.geo.admin.ch/styles/ch.swisstopo.basemap.vt/style.json>`__ (ch.swisstopo.basemap.vt)                                                                                                     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Light Base Map <//vectortiles.geo.admin.ch/styles/ch.swisstopo.lightbasemap.vt/style.json>`__ (ch.swisstopo.lightbasemap.vt)                                                                                     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Imagery Base Map <//https://vectortiles.geo.admin.ch/styles/ch.swisstopo.imagerybasemap.vt/style.json>`__ (ch.swisstopo.imagerybasemap.vt)                                                                       |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20240313:
