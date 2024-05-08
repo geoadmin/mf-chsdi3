@@ -1331,8 +1331,8 @@ A current (latest version) style request is in the following form:
 example of current maplibre styles of light base map and imagery base map:
 
 - https://vectortiles.geo.admin.ch/styles/ch.swisstopo.basemap.vt/style.json
-- https://vectortiles.geo.admin.ch/styles/ch.swisstopo.leichte-basiskarte.vt/style.json
-- https://vectortiles.geo.admin.ch/styles/ch.swisstopo.leichte-basiskarte-imagery.vt/style.json
+- https://vectortiles.geo.admin.ch/styles/ch.swisstopo.lightbasemap.vt/style.json
+- https://vectortiles.geo.admin.ch/styles/ch.swisstopo.imagerybasemap.vt/style.json
 
 .. _vectortiles GetTile:
 
@@ -1348,7 +1348,6 @@ A tile request is in the following form:
 example of one pbf tile:
 
 - https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.base.vt/v1.0.0/7/67/44.pbf
-- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v3.0.0/7/67/44.pbf
 - https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.relief.vt/v1.0.0/7/67/44.pbf
 
 
@@ -1364,7 +1363,6 @@ MBTiles for storing  tiled map data in SQLite databases for immediate or offline
 example of the .mbtiles file:
 
 - https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.base.vt/v1.0.0/ch.swisstopo.base.vt.mbtiles
-- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v3.0.0/ch.swisstopo.leichte-basiskarte.vt.mbtiles
 - https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.relief.vt/v1.0.0/ch.swisstopo.relief.vt.mbtiles
 
 
@@ -1388,7 +1386,6 @@ The URL of the metadata `json` file is :
 example of tileset:
 
 - https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.base.vt/v1.0.0/tiles.json
-- https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.leichte-basiskarte.vt/v3.0.0/tiles.json
 - https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.relief.vt/v1.0.0/tiles.json
 
 
