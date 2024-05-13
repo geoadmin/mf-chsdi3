@@ -4127,3 +4127,219 @@ class PhotovoltaikGrossanlagen (Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.photovoltaik-grossanlagen', PhotovoltaikGrossanlagen)
+
+
+class SolarenergieEinstrahlung:
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __extended_info__ = True
+    __label__ = 'id'
+    id = Column('id', Integer, primary_key=True)
+    x = Column('x', Integer)
+    y = Column('y', Integer)
+    globalstrahlung_jahressumme_kwhm2 = Column('globalstrahlung_jahressumme_kwhm2', Integer)
+    globalstrahlung_wintersumme_kwhm2 = Column('globalstrahlung_wintersumme_kwhm2', Integer)
+    globalstrahlung_januar_kwhm2 = Column('globalstrahlung_januar_kwhm2', Integer)
+    globalstrahlung_februar_kwhm2 = Column('globalstrahlung_februar_kwhm2', Integer)
+    globalstrahlung_maerz_kwhm2 = Column('globalstrahlung_maerz_kwhm2', Integer)
+    globalstrahlung_april_kwhm2 = Column('globalstrahlung_april_kwhm2', Integer)
+    globalstrahlung_mai_kwhm2 = Column('globalstrahlung_mai_kwhm2', Integer)
+    globalstrahlung_juni_kwhm2 = Column('globalstrahlung_juni_kwhm2', Integer)
+    globalstrahlung_juli_kwhm2 = Column('globalstrahlung_juli_kwhm2', Integer)
+    globalstrahlung_august_kwhm2 = Column('globalstrahlung_august_kwhm2', Integer)
+    globalstrahlung_september_kwhm2 = Column('globalstrahlung_september_kwhm2', Integer)
+    globalstrahlung_oktober_kwhm2 = Column('globalstrahlung_oktober_kwhm2', Integer)
+    globalstrahlung_november_kwhm2 = Column('globalstrahlung_november_kwhm2', Integer)
+    globalstrahlung_dezember_kwhm2 = Column('globalstrahlung_dezember_kwhm2', Integer)
+    pvproduktion_jahressumme_kwhkwp = Column('pvproduktion_jahressumme_kwhkwp', Integer)
+    pvproduktion_wintersumme_kwhkwp = Column('pvproduktion_wintersumme_kwhkwp', Integer)
+    pvproduktion_januar_kwhkwp = Column('pvproduktion_januar_kwhkwp', Integer)
+    pvproduktion_februar_kwhkwp = Column('pvproduktion_februar_kwhkwp', Integer)
+    pvproduktion_maerz_kwhkwp = Column('pvproduktion_maerz_kwhkwp', Integer)
+    pvproduktion_april_kwhkwp = Column('pvproduktion_april_kwhkwp', Integer)
+    pvproduktion_mai_kwhkwp = Column('pvproduktion_mai_kwhkwp', Integer)
+    pvproduktion_juni_kwhkwp = Column('pvproduktion_juni_kwhkwp', Integer)
+    pvproduktion_juli_kwhkwp = Column('pvproduktion_juli_kwhkwp', Integer)
+    pvproduktion_august_kwhkwp = Column('pvproduktion_august_kwhkwp', Integer)
+    pvproduktion_september_kwhkwp = Column('pvproduktion_september_kwhkwp', Integer)
+    pvproduktion_oktober_kwhkwp = Column('pvproduktion_oktober_kwhkwp', Integer)
+    pvproduktion_november_kwhkwp = Column('pvproduktion_november_kwhkwp', Integer)
+    pvproduktion_dezember_kwhkwp = Column('pvproduktion_dezember_kwhkwp', Integer)
+    the_geom = Column(Geometry2D)
+
+
+class SolarenergieEinstrahlung0Grad (Base, SolarenergieEinstrahlung, Vector):
+    __tablename__ = 'solarenergie_einstrahlung_0_grad'
+    __bodId__ = 'ch.bfe.solarenergie-einstrahlung_0_grad'
+    __template__ = 'templates/htmlpopup/bfe_solarenergie_einstrahlung_0_grad.mako'
+
+register('ch.bfe.solarenergie-einstrahlung_0_grad', SolarenergieEinstrahlung0Grad)
+
+
+class SolarenergieEinstrahlung30Grad (Base, SolarenergieEinstrahlung, Vector):
+    __tablename__ = 'solarenergie_einstrahlung_30_grad'
+    __bodId__ = 'ch.bfe.solarenergie-einstrahlung_30_grad'
+    __template__ = 'templates/htmlpopup/bfe_solarenergie_einstrahlung_30_grad.mako'
+
+register('ch.bfe.solarenergie-einstrahlung_30_grad', SolarenergieEinstrahlung30Grad)
+
+
+class SolarenergieEinstrahlung75Grad (Base, SolarenergieEinstrahlung, Vector):
+    __tablename__ = 'solarenergie_einstrahlung_75_grad'
+    __bodId__ = 'ch.bfe.solarenergie-einstrahlung_75_grad'
+    __template__ = 'templates/htmlpopup/bfe_solarenergie_einstrahlung_75_grad.mako'
+
+register('ch.bfe.solarenergie-einstrahlung_75_grad', SolarenergieEinstrahlung75Grad)
+
+
+class SolarenergieEinstrahlung90Grad (Base, SolarenergieEinstrahlung, Vector):
+    __tablename__ = 'solarenergie_einstrahlung_90_grad'
+    __bodId__ = 'ch.bfe.solarenergie-einstrahlung_90_grad'
+    __template__ = 'templates/htmlpopup/bfe_solarenergie_einstrahlung_90_grad.mako'
+
+register('ch.bfe.solarenergie-einstrahlung_90_grad', SolarenergieEinstrahlung90Grad)
+
+
+class Grundwasserwaermenutzungspotential (Base, Vector):
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __tablename__ = 'grundwasserwaermenutzungspotential'
+    __template__ = 'templates/htmlpopup/bfe_grundwasserwaermenutzungspotential.mako'
+    __bodId__ = 'ch.bfe.grundwasserwaermenutzungspotential'
+    __label__ = 'uuid'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    fid = Column('fid', Integer)
+    name = Column('name', Unicode)
+    uuid = Column('uuid', Unicode)
+    area_m2 = Column('area_m2', Float)
+    groundwater_thickness_m = Column('groundwater_thickness_m', Float)
+    volume_m3 = Column('volume_m3', Float)
+    groundwater_depth_m = Column('groundwater_depth_m', Float)
+    multi_layer_aquifer = Column('multi_layer_aquifer', Unicode)
+    confined = Column('confined', Unicode)
+    energy_potential_kwh = Column('energy_potential_kwh', Float)
+    heat_potential_kw = Column('heat_potential_kw', Float)
+    heat_potential_w_per_m2 = Column('heat_potential_w_per_m2', Float)
+    reliability = Column('reliability', Unicode)
+    quality_heat_atmosphere = Column('quality_heat_atmosphere', Float)
+    heat_atmosphere_percent = Column('heat_atmosphere_percent', Float)
+    heat_atmosphere_kw = Column('heat_atmosphere_kw', Float)
+    heat_precipitation_percent = Column('heat_precipitation_percent', Float)
+    heat_precipitation_kw = Column('heat_precipitation_kw', Float)
+    heat_catchment_percent = Column('heat_catchment_percent', Float)
+    heat_catchment_kw = Column('heat_catchment_kw', Float)
+    catchment_area_m2 = Column('catchment_area_m2', Float)
+    heat_geothermal_percent = Column('heat_geothermal_percent', Float)
+    heat_geothermal_kw = Column('heat_geothermal_kw', Float)
+    comment = Column('comment', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.grundwasserwaermenutzungspotential', Grundwasserwaermenutzungspotential)
+
+
+class LadebedarfsweltFahrzeuge (Base, Vector):
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __tablename__ = 'ladebedarfswelt_fahrzeuge'
+    __template__ = 'templates/htmlpopup/bfe_ladebedarfswelt_fahrzeuge.mako'
+    __bodId__ = 'ch.bfe.ladebedarfswelt-fahrzeuge'
+    __label__ = 'name_gemeinde'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name_gemeinde = Column('name_gemeinde', Unicode)
+    jahr = Column('jahr', Integer)
+    anzahl_fahrzeugbestand_personenwagen_phev = Column('anzahl_fahrzeugbestand_personenwagen_phev', Float)
+    anzahl_fahrzeugbestand_personenwagen_bev = Column('anzahl_fahrzeugbestand_personenwagen_bev', Float)
+    anteil_fahrzeugbestand_personenwagen_steckerfahrzeuge = Column('anteil_fahrzeugbestand_personenwagen_steckerfahrzeuge', Float)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.ladebedarfswelt-fahrzeuge', LadebedarfsweltFahrzeuge)
+
+
+class LadebedarfsweltHeimladeverfuegbarkeit:
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/bfe_ladebedarfswelt_heimladeverfuegbarkeit.mako'
+    __label__ = 'name_gemeinde'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name_gemeinde = Column('name_gemeinde', Unicode)
+    jahr = Column('jahr', Integer)
+    ladewelt = Column('ladewelt', Unicode)
+    anteil_weder_heim_noch_arbeit = Column('anteil_weder_heim_noch_arbeit', Float)
+    anteil_kein_heim = Column('anteil_kein_heim', Float)
+    the_geom = Column(Geometry2D)
+
+
+class LadebedarfsweltHeimladeverfuegbarkeitBequem (Base, LadebedarfsweltHeimladeverfuegbarkeit, Vector):
+    __bodId__ = 'ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_bequem'
+    __tablename__ = 'ladebedarfswelt_heimladeverfuegbarkeit_bequem'
+
+register('ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_bequem', LadebedarfsweltHeimladeverfuegbarkeitBequem)
+
+
+class LadebedarfsweltHeimladeverfuegbarkeitFlexibel (Base, LadebedarfsweltHeimladeverfuegbarkeit, Vector):
+    __bodId__ = 'ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_flexibel'
+    __tablename__ = 'ladebedarfswelt_heimladeverfuegbarkeit_flexibel'
+
+register('ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_flexibel', LadebedarfsweltHeimladeverfuegbarkeitFlexibel)
+
+
+class LadebedarfsweltHeimladeverfuegbarkeitGeplant (Base, LadebedarfsweltHeimladeverfuegbarkeit, Vector):
+    __bodId__ = 'ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_geplant'
+    __tablename__ = 'ladebedarfswelt_heimladeverfuegbarkeit_geplant'
+
+register('ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_geplant', LadebedarfsweltHeimladeverfuegbarkeitGeplant)
+
+
+class LadebedarfsweltLadepunkte:
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/bfe_ladebedarfswelt_ladepunkte.mako'
+    __label__ = 'name_gemeinde'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name_gemeinde = Column('name_gemeinde', Unicode)
+    jahr = Column('jahr', Integer)
+    allgemein_zugaenglich_anzahl_ladepunkte = Column('allgemein_zugaenglich_anzahl_ladepunkte', Float)
+    quartier_ac_ladepunkte = Column('quartier_ac_ladepunkte', Float)
+    zielort_ac_ladepunkte = Column('zielort_ac_ladepunkte', Float)
+    quartier_dc_150_ladepunkte = Column('quartier_dc_150_ladepunkte', Float)
+    schnell_dc_150_ladepunkte = Column('schnell_dc_150_ladepunkte', Float)
+    schnell_dc_350_ladepunkte = Column('schnell_dc_350_ladepunkte', Float)
+    heim_ac_ladepunkte = Column('heim_ac_ladepunkte', Float)
+    arbeit_ac_ladepunkte = Column('arbeit_ac_ladepunkte', Float)
+    the_geom = Column(Geometry2D)
+
+
+class LadebedarfsweltLadepunkteBequem (Base, LadebedarfsweltLadepunkte, Vector):
+    __tablename__ = 'ladebedarfswelt_ladepunkte_bequem'
+    __bodId__ = 'ch.bfe.ladebedarfswelt-ladepunkte_bequem'
+
+register('ch.bfe.ladebedarfswelt-ladepunkte_bequem', LadebedarfsweltLadepunkteBequem)
+
+
+class LadebedarfsweltLadepunkteFlexibel (Base, LadebedarfsweltLadepunkte, Vector):
+    __tablename__ = 'ladebedarfswelt_ladepunkte_flexibel'
+    __bodId__ = 'ch.bfe.ladebedarfswelt-ladepunkte_flexibel'
+
+register('ch.bfe.ladebedarfswelt-ladepunkte_flexibel', LadebedarfsweltLadepunkteFlexibel)
+
+
+class LadebedarfsweltLadepunkteGeplant (Base, LadebedarfsweltLadepunkte, Vector):
+    __tablename__ = 'ladebedarfswelt_ladepunkte_geplant'
+    __bodId__ = 'ch.bfe.ladebedarfswelt-ladepunkte_geplant'
+
+register('ch.bfe.ladebedarfswelt-ladepunkte_geplant', LadebedarfsweltLadepunkteGeplant)
+
+
+class LadebedarfsweltStrombedarf (Base, Vector):
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __tablename__ = 'ladebedarfswelt_strombedarf'
+    __template__ = 'templates/htmlpopup/bfe_ladebedarfswelt_strombedarf.mako'
+    __bodId__ = 'ch.bfe.ladebedarfswelt-strombedarf'
+    __label__ = 'name_gemeinde'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name_gemeinde = Column('name_gemeinde', Unicode)
+    jahr = Column('jahr', Integer)
+    summe_gwh = Column('summe_gwh', Float)
+    heim_energie_anteil = Column('heim_energie_anteil', Float)
+    arbeit_energie_anteil = Column('arbeit_energie_anteil', Float)
+    quartier_energie_anteil = Column('quartier_energie_anteil', Float)
+    zielort_energie_anteil = Column('zielort_energie_anteil', Float)
+    schnell_energie_anteil = Column('schnell_energie_anteil', Float)
+    the_geom = Column(Geometry2D)
+
+register('ch.bfe.ladebedarfswelt-strombedarf', LadebedarfsweltStrombedarf)
