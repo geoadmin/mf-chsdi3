@@ -14,6 +14,167 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20240515:
+
+Release 20240515 - Wednesday, May 15th 2024
+-------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+- Bug fixes
+- Announcements:
+    - The vectortiles style *ch.swisstopo.leichte-basiskarte.vt* has been replaced by *ch.swisstopo.lightbasemap.vt*. The new style references the vectortiles sets *ch.swisstopo.base.vt* and *ch.swisstopo.relief.vt*
+    - The vectortiles style *ch.swisstopo.leichte-basiskarte-imagery.vt* has been replaced by *ch.swisstopo.imagerybasemap.vt*. The new style references the vectortiles set *ch.swisstopo.base.vt*
+    - The vectortiles services *ch.swisstopo.leichte-basiskarte.vt* and *ch.swisstopo.leichte-basiskarte-imagery.vt* will no longer be updated and will be removed by the end of the year 2024
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2024-03-13-rc1...2024-05-15-rc1>`__
+
+Geodata
+*******
+
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `swissEO VHI <//map.geo.admin.ch/?layers=ch.swisstopo.swisseo_vhi_v100>`__ (ch.swisstopo.swisseo_vhi_v100)                                                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `swissEO S2-SR <//map.geo.admin.ch/?layers=ch.swisstopo.swisseo_s2-sr_v100>`__ (ch.swisstopo.swisseo_s2-sr_v100)                                                                                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Groundwater heat utilisation potential <//map.geo.admin.ch/?layers=ch.bfe.grundwasserwaermenutzungspotential>`__ (ch.bfe.grundwasserwaermenutzungspotential)                                                     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geochemical soil atlas of Switzerland: Thallium <//map.geo.admin.ch/?layers=ch.bafu.geochemischer-bodenatlas_schweiz_thallium>`__ (ch.bafu.geochemischer-bodenatlas_schweiz_thallium)                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geochemical soil atlas of Switzerland: Sulfur <//map.geo.admin.ch/?layers=ch.bafu.geochemischer-bodenatlas_schweiz_schwefel>`__ (ch.bafu.geochemischer-bodenatlas_schweiz_schwefel)                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geochemical soil atlas of Switzerland: Mercury <//map.geo.admin.ch/?layers=ch.bafu.geochemischer-bodenatlas_schweiz_quecksilber>`__ (ch.bafu.geochemischer-bodenatlas_schweiz_quecksilber)                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geochemical soil atlas of Switzerland: Sodium <//map.geo.admin.ch/?layers=ch.bafu.geochemischer-bodenatlas_schweiz_natrium>`__ (ch.bafu.geochemischer-bodenatlas_schweiz_natrium)                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geochemical soil atlas of Switzerland: Molybdenum <//map.geo.admin.ch/?layers=ch.bafu.geochemischer-bodenatlas_schweiz_molybdaen>`__ (ch.bafu.geochemischer-bodenatlas_schweiz_molybdaen)                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geochemical soil atlas of Switzerland: Manganese <//map.geo.admin.ch/?layers=ch.bafu.geochemischer-bodenatlas_schweiz_mangan>`__ (ch.bafu.geochemischer-bodenatlas_schweiz_mangan)                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geochemical soil atlas of Switzerland: Magnesium <//map.geo.admin.ch/?layers=ch.bafu.geochemischer-bodenatlas_schweiz_magnesium>`__ (ch.bafu.geochemischer-bodenatlas_schweiz_magnesium)                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geochemical soil atlas of Switzerland: Iron <//map.geo.admin.ch/?layers=ch.bafu.geochemischer-bodenatlas_schweiz_eisen>`__ (ch.bafu.geochemischer-bodenatlas_schweiz_eisen)                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geochemical soil atlas of Switzerland: Cobalt <//map.geo.admin.ch/?layers=ch.bafu.geochemischer-bodenatlas_schweiz_cobalt>`__ (ch.bafu.geochemischer-bodenatlas_schweiz_cobalt)                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geochemical soil atlas of Switzerland: Calcium <//map.geo.admin.ch/?layers=ch.bafu.geochemischer-bodenatlas_schweiz_calcium>`__ (ch.bafu.geochemischer-bodenatlas_schweiz_calcium)                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geochemical soil atlas of Switzerland: Lead <//map.geo.admin.ch/?layers=ch.bafu.geochemischer-bodenatlas_schweiz_blei>`__ (ch.bafu.geochemischer-bodenatlas_schweiz_blei)                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Geochemical soil atlas of Switzerland: Antimony <//map.geo.admin.ch/?layers=ch.bafu.geochemischer-bodenatlas_schweiz_antimon>`__ (ch.bafu.geochemischer-bodenatlas_schweiz_antimon)                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Horizontal solar irradiation <//map.geo.admin.ch/?layers=ch.bfe.solarenergie-einstrahlung_0_grad>`__ (ch.bfe.solarenergie-einstrahlung_0_grad)                                                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Solar irradiation 30° inclination south <//map.geo.admin.ch/?layers=ch.bfe.solarenergie-einstrahlung_30_grad>`__ (ch.bfe.solarenergie-einstrahlung_30_grad)                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Solar irradiation 75° inclination south <//map.geo.admin.ch/?layers=ch.bfe.solarenergie-einstrahlung_75_grad>`__ (ch.bfe.solarenergie-einstrahlung_75_grad)                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Solar irradiation 90° inclination south <//map.geo.admin.ch/?layers=ch.bfe.solarenergie-einstrahlung_90_grad>`__ (ch.bfe.solarenergie-einstrahlung_90_grad)                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Charging requirements: Plug-in vehicles <//map.geo.admin.ch/?layers=ch.bfe.ladebedarfswelt-fahrzeuge>`__ (ch.bfe.ladebedarfswelt-fahrzeuge)                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Charging requirements: Home charging availability - Convenient <//map.geo.admin.ch/?layers=ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_bequem>`__ (ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_bequem)       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Charging requirements: Home charging availability - Flexible <//map.geo.admin.ch/?layers=ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_flexibel>`__ (ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_flexibel)     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Charging requirements: Home charging availability - Planned <//map.geo.admin.ch/?layers=ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_geplant>`__ (ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_geplant)        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Charging requirements: Charging points - Convenient <//map.geo.admin.ch/?layers=ch.bfe.ladebedarfswelt-ladepunkte_bequem>`__ (ch.bfe.ladebedarfswelt-ladepunkte_bequem)                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Charging requirements: Charging points - Flexible <//map.geo.admin.ch/?layers=ch.bfe.ladebedarfswelt-ladepunkte_felxibel>`__ (ch.bfe.ladebedarfswelt-ladepunkte_felxibel)                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Charging requirements: Charging points - Planned <//map.geo.admin.ch/?layers=ch.bfe.ladebedarfswelt-ladepunkte_geplant>`__ (ch.bfe.ladebedarfswelt-ladepunkte_geplant)                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Charging requirements: Power requirements <//map.geo.admin.ch/?layers=ch.bfe.ladebedarfswelt-strombedarf>`__ (ch.bfe.ladebedarfswelt-strombedarf)                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Public transport connection quality ARE <//map.geo.admin.ch/?layers=ch.are.gueteklassen_oev>`__ (ch.are.gueteklassen_oev)                                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `NLA Natural values / habitats <//map.geo.admin.ch/?layers=ch.armasuisse.natur-landschaft_armee>`__ (ch.armasuisse.natur-landschaft_armee)                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Pollutant releases (SwissPRTR) <//map.geo.admin.ch/?layers=ch.bafu.swissprtr>`__ (ch.bafu.swissprtr)                                                                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Airspaces: Control zones - CTR <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-kontrollzonen>`__ (ch.bazl.luftraeume-kontrollzonen)                                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aeronautical Chart ICAO <//map.geo.admin.ch/?layers=ch.bazl.luftfahrtkarten-icao>`__ (ch.bazl.luftfahrtkarten-icao)                                                                                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Glider Chart <//map.geo.admin.ch/?layers=ch.bazl.segelflugkarte>`__ (ch.bazl.segelflugkarte)                                                                                                                     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerodromes + Heliports <//map.geo.admin.ch/?layers=ch.bazl.flugplaetze-heliports>`__ (ch.bazl.flugplaetze-heliports)                                                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Airspaces: Control areas - CTA <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-kontrollbezirke>`__ (ch.bazl.luftraeume-kontrollbezirke)                                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Airspaces: Flight information region - FIR <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-fluginformationsgebiet>`__ (ch.bazl.luftraeume-fluginformationsgebiet)                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Airspaces: Flight information zones - FIZ <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-fluginformationszonen>`__ (ch.bazl.luftraeume-fluginformationszonen)                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Airspaces: Terminal control areas - TMA <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-nahkontrollbezirke>`__ (ch.bazl.luftraeume-nahkontrollbezirke)                                                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Administrative borders G1, agglomerations <//map.geo.admin.ch/?layers=ch.bfs.generalisierte-grenzen_agglomerationen_g1>`__ (ch.bfs.generalisierte-grenzen_agglomerationen_g1)                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Meat products <//map.geo.admin.ch/?layers=ch.blw.ursprungsbezeichnungen-fleisch>`__ (ch.blw.ursprungsbezeichnungen-fleisch)                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cheese <//map.geo.admin.ch/?layers=ch.blw.ursprungsbezeichnungen-kaese>`__ (ch.blw.ursprungsbezeichnungen-kaese)                                                                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Confectionery <//map.geo.admin.ch/?layers=ch.blw.ursprungsbezeichnungen-konditoreiwaren>`__ (ch.blw.ursprungsbezeichnungen-konditoreiwaren)                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Plant products <//map.geo.admin.ch/?layers=ch.blw.ursprungsbezeichnungen-pflanzen>`__ (ch.blw.ursprungsbezeichnungen-pflanzen)                                                                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Spirits <//map.geo.admin.ch/?layers=ch.blw.ursprungsbezeichnungen-spirituosen>`__ (ch.blw.ursprungsbezeichnungen-spirituosen)                                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Surveyed sections <//map.geo.admin.ch/?layers=ch.bafu.wasserbau-vermessungsstrecken>`__ (ch.bafu.wasserbau-vermessungsstrecken)                                                                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cross section securing point <//map.geo.admin.ch/?layers=ch.bafu.wasserbau-querprofilmarken>`__ (ch.bafu.wasserbau-querprofilmarken)                                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. 1st night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde)                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. helicopters Lmax <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter-maximalpegel>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter-maximalpegel)  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. helicopters Lr <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter)                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. light / large airecrafts <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_klein-grossflugzeuge>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_klein-grossflugzeuge)|
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. ligt aircrafts <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_kleinluftfahrzeuge>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_kleinluftfahrzeuge)              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. last night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_letzte-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_letzte-nachtstunde)             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. milit. aerodr. (tot.) <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt)             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. 2nd night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde)              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SWISS MIL PILOTS CHART <//map.geo.admin.ch/?layers=ch.vbs.swissmilpilotschart>`__ (ch.vbs.swissmilpilotschart)                                                                                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Map of restricted and danger areas <//map.geo.admin.ch/?layers=ch.vbs.sperr-gefahrenzonenkarte>`__ (ch.vbs.sperr-gefahrenzonenkarte)                                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mil Airspace Chart <//map.geo.admin.ch/?layers=ch.vbs.milairspacechart>`__ (ch.vbs.milairspacechart)                                                                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP Military <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_kraft>`__ (ch.vbs.sachplan-infrastruktur-militaer_kraft)                                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SPM consultation <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_anhoerung>`__ (ch.vbs.sachplan-infrastruktur-militaer_anhoerung)                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Waste incineration plants <//map.geo.admin.ch/?layers=ch.bfe.kehrichtverbrennungsanlagen>`__ (ch.bfe.kehrichtverbrennungsanlagen)                                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wells > 500m <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-bohrungen_tiefer_500>`__ (ch.swisstopo.geologie-bohrungen_tiefer_500)                                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ISOS - Site records <//map.geo.admin.ch/?layers=ch.bak.bundesinventar-schuetzenswerte-ortsbilder>`__ (ch.bak.bundesinventar-schuetzenswerte-ortsbilder)                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ISOS - Photos <//map.geo.admin.ch/?layers=ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos>`__ (ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos)                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Vectortiles set "base" <//vectortiles.geo.admin.ch/tiles/ch.swisstopo.base.vt/v1.0.0/tiles.json>`__ (ch.swisstopo.base.vt)                                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Base Map <//vectortiles.geo.admin.ch/styles/ch.swisstopo.basemap.vt/style.json>`__ (ch.swisstopo.basemap.vt)                                                                                                     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Light Base Map <//vectortiles.geo.admin.ch/styles/ch.swisstopo.lightbasemap.vt/style.json>`__ (ch.swisstopo.lightbasemap.vt)                                                                                     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Imagery Base Map <//https://vectortiles.geo.admin.ch/styles/ch.swisstopo.imagerybasemap.vt/style.json>`__ (ch.swisstopo.imagerybasemap.vt)                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Bathing water quality <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-badewasserqualitaet>`__ (ch.bafu.gewaesserschutz-badewasserqualitaet)                                                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Base network swiss TNE <//map.geo.admin.ch/?layers=ch.swisstopo.swisstne-base>`__ (ch.swisstopo.swisstne-base)                                                                                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20240313:
 
 Release 20240313 - Wednesday, March 13th 2024
