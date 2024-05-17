@@ -5,7 +5,7 @@
     <tr>
         <td class="cell-left">${_('geocover_erl_num')}</td>
         % if c['attributes']['erl_num']:
-        <td><a target ="_blank" href="https://data.geo.admin.ch/ch.swisstopo.geologie-geologischer_atlas/erlaeuterungen/${c['attributes']['erl_num']}">${_('link')}</a></td>
+        <td><a target ="_blank" href="${c['attributes']['erl_num']}">${_('link')}</a></td>
         % else:
         <td>-</td>
         % endif
@@ -13,7 +13,7 @@
     <tr>
         <td class="cell-left">${_('linkzurlegende')}</td>
         % if c['attributes']['leg_num']:
-        <td><a target ="_blank" href="https://data.geo.admin.ch/ch.swisstopo.geologie-geologischer_atlas/legenden/${c['attributes']['leg_num']}">${_('link')}</a></td>
+        <td><a target ="_blank" href="${c['attributes']['leg_num']}">${_('link')}</a></td>
         % else:
         <td>-</td>
         % endif
