@@ -42,6 +42,7 @@ class AlpweidenHerdenschutzhunde(Base, Vector):
     code_refverhalten = Column('code_refverhalten', Integer)
     code_hundepraesenz = Column('code_hundepraesenz', Integer)
     code_hinweis = Column('code_hinweis', Integer)
+    refmeldungbeweidungszone = Column('refmeldungbeweidungszone', Unicode)
     the_geom = Column(Geometry2D)
 
 register(AlpweidenHerdenschutzhunde.__bodId__, AlpweidenHerdenschutzhunde)
