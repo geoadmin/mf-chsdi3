@@ -5,7 +5,8 @@
     {
       "geomType": "point",
       "value": "",
-      "maxResolution": 1,
+      "minResolution": 0,
+      "maxResolution": 0.8,
       "vectorOptions": {
         "type": "icon",
         "src": "https://data.geo.admin.ch/ch.swisstopo.treasurehunt/2020_icon.png"
