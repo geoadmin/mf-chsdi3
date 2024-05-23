@@ -1009,20 +1009,6 @@ class TestIdentifyService(TestsBase):
         self.assertEqual(resp.content_type, 'application/geo+json')
         self.assertEqual(len(resp.json['results']), 0)
 
-    def test_identify_treasurehunt_not_in_scale_range(self):
-        params = dict(geometryType='esriGeometryPoint',
-                      geometry='611334,271015',
-                      geometryFormat='geojson',
-                      imageDisplay='1920,730,96',
-                      layers='all:ch.swisstopo.treasurehunt',
-                      mapExtent='601163,260868,621504,281135',
-                      returnGeometry='true',
-                      tolerance='10',
-                      lang='fr')
-        resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp.content_type, 'application/geo+json')
-        self.assertEqual(len(resp.json['results']), 0)
-
     def test_identify_no_geotable(self):
         params = dict(geometryType='esriGeometryPoint',
                       geometry='612824.615589634,177050.95813678834',

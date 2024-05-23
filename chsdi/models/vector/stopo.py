@@ -2680,28 +2680,6 @@ class HiksSiegfriedTa50Metadata(Base, Vector):
 register('ch.swisstopo.hiks-siegfried-ta50.metadata', HiksSiegfriedTa50Metadata)
 
 
-class Treasurehunt(Base, Vector):
-    __tablename__ = 'treasurehunt'
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __template__ = 'templates/htmlpopup/treasurehunt.mako'
-    __bodId__ = 'ch.swisstopo.treasurehunt'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    title_de = Column('title_de', Unicode)
-    title_fr = Column('title_fr', Unicode)
-    title_it = Column('title_it', Unicode)
-    info_de = Column('info_de', Unicode)
-    info_fr = Column('info_fr', Unicode)
-    info_it = Column('info_it', Unicode)
-    link_de = Column('link_de', Unicode)
-    link_fr = Column('link_fr', Unicode)
-    link_it = Column('link_it', Unicode)
-    type_coord = Column('type_coord', Unicode)
-    the_geom = Column(Geometry2D)
-    __maxscale__ = 1500
-
-register('ch.swisstopo.treasurehunt', Treasurehunt)
-
-
 class SwissimageHistMetadata(Base, Vector):
     __tablename__ = 'swissimage_hist_chsdi'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
