@@ -3107,6 +3107,7 @@ class HartsteinabbauMining(Base, Hartsteinabbau, Vector):
     purl = Column('purl', Unicode)
     swissgeol_link = Column('swissgeol_link', Unicode)
 
+
 class HartsteinabbauProduction(Base, Hartsteinabbau, Vector):
     __tablename__ = 'hartstein_production'
     __template__ = 'templates/htmlpopup/hartsteinabbau_production.mako'
