@@ -3075,3 +3075,53 @@ class ReflexionsseismikPoly(Base, Reflexionsseismik, Vector):
     dim_km2 = Column('dim_km2', Float)
 
 register(Reflexionsseismik.__bodId__, ReflexionsseismikPoly)
+
+
+class Hartsteinabbau:
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.geologie-hartsteinabbau'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry2D)
+
+
+class HartsteinabbauMining(Base, Hartsteinabbau, Vector):
+    __tablename__ = 'hartstein_mining'
+    __template__ = 'templates/htmlpopup/hartsteinabbau_mining.mako'
+    __label__ = 'obname'
+    obname = Column('obname', Unicode)
+    cpkind = Column('cpkind', Unicode)
+    stkind_de = Column('stkind_de', Unicode)
+    stkind_fr = Column('stkind_fr', Unicode)
+    stkind_it = Column('stkind_it', Unicode)
+    stkind_en = Column('stkind_en', Unicode)
+    ltkinds_de = Column('ltkinds_de', Unicode)
+    ltkinds_fr = Column('ltkinds_fr', Unicode)
+    ltkinds_it = Column('ltkinds_it', Unicode)
+    ltkinds_en = Column('ltkinds_en', Unicode)
+    emkinds_de = Column('emkinds_de', Unicode)
+    emkinds_fr = Column('emkinds_fr', Unicode)
+    emkinds_it = Column('emkinds_it', Unicode)
+    emkinds_en = Column('emkinds_en', Unicode)
+    infos_url_de = Column('infos_url_de', Unicode)
+    infos_url_fr = Column('infos_url_fr', Unicode)
+    purl = Column('purl', Unicode)
+    swissgeol_link = Column('swissgeol_link', Unicode)
+
+class HartsteinabbauProduction(Base, Hartsteinabbau, Vector):
+    __tablename__ = 'hartstein_production'
+    __template__ = 'templates/htmlpopup/hartsteinabbau_production.mako'
+    __label__ = 'obname'
+    obname = Column('obname', Unicode)
+    cpkind = Column('cpkind', Unicode)
+    stkind_de = Column('stkind_de', Unicode)
+    stkind_fr = Column('stkind_fr', Unicode)
+    stkind_it = Column('stkind_it', Unicode)
+    stkind_en = Column('stkind_en', Unicode)
+    infos_url_de = Column('infos_url_de', Unicode)
+    infos_url_fr = Column('infos_url_fr', Unicode)
+    purl = Column('purl', Unicode)
+    swissgeol_link = Column('swissgeol_link', Unicode)
+
+
+register(Hartsteinabbau.__bodId__, HartsteinabbauMining)
+register(Hartsteinabbau.__bodId__, HartsteinabbauProduction)
