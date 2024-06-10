@@ -3080,7 +3080,7 @@ register(Reflexionsseismik.__bodId__, ReflexionsseismikPoly)
 class Hartsteinabbau:
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __bodId__ = 'ch.swisstopo.geologie-hartsteinabbau'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('bgdi_hartstein_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
 
