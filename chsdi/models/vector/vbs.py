@@ -153,7 +153,6 @@ class Armeelogistikcenter(Base, Vector):
     name = Column('name', Unicode)
     abkuerzung = Column('abkuerzung', Unicode)
     mail = Column('email', Unicode)
-    url = Column('url', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.vbs.armeelogistikcenter', Armeelogistikcenter)
