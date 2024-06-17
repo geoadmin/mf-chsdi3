@@ -408,7 +408,7 @@ class Ladestationen(Base, Vector):
     strasse = Column('strasse', Unicode)
     plz = Column('plz', Unicode)
     ort = Column('ort', Unicode)
-    oeffnungszeiten = Column('öffnungszeiten', Unicode)
+    oeffnungszeiten = Column('oeffnungszeiten', Unicode)
     anzahl_ladepunkte = Column('anzahl_ladepunkte', Integer)
     leistung = Column('leistung', Unicode)
     typ_stecker = Column('typ_stecker', Unicode)
