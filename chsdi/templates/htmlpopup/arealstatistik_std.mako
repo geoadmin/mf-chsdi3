@@ -4,7 +4,6 @@
 
 <%def name="table_body(c,lang)">
 <%
-    lang = lang if lang in ('fr','it','en') else 'de'
     desc_text = 'desc_as_72_%s' % lang
 %>
 
