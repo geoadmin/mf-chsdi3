@@ -108,7 +108,7 @@ register('ch.bfs.gebaeude_wohnungs_register', Gebaeuderegister)
 
 
 class Arealstatistik(Base, Vector):
-    __tablename__ = 'arealstatistik_std'
+    __tablename__ = 'view_arealstatistik'
     __table_args__ = ({'schema': 'bfs', 'autoload': False})
     __template__ = 'templates/htmlpopup/arealstatistik_std.mako'
     __bodId__ = 'ch.bfs.arealstatistik'
@@ -116,10 +116,12 @@ class Arealstatistik(Base, Vector):
     __maxscale__ = 10000
     # specially big layer
     __label__ = 'id'
+    __timeInstant__ = 'year'
     id = Column('bgdi_id', Integer, primary_key=True)
     survey = Column('survey', Integer)
+    year = Column('year', Integer)
     fj = Column('fj', Integer)
-    as_72 = Column('as_72', Integer)
+    as_72 = Column('as09r_72', Integer)
     desc_as_72_de = Column('desc_as_72_de', Integer)
     desc_as_72_fr = Column('desc_as_72_fr', Integer)
     desc_as_72_it = Column('desc_as_72_it', Integer)
