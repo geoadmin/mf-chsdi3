@@ -4343,3 +4343,23 @@ class LadebedarfsweltStrombedarf (Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.ladebedarfswelt-strombedarf', LadebedarfsweltStrombedarf)
+
+
+class Landschaftsruhezonen (Base, Vector):
+    __table_args__ = ({'schema': 'bazl', 'autoload': False})
+    __tablename__ = 'landschaftsruhezonen'
+    __template__ = 'templates/htmlpopup/bazl_landschaftsruhezonen.mako'
+    __bodId__ = 'ch.bazl.landschaftsruhezonen'
+    __label__ = 'name_de'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name_de = Column('name_de', Unicode)
+    name_fr = Column('name_fr', Unicode)
+    name_it = Column('name_it', Unicode)
+    name_en = Column('name_en', Unicode)
+    description_de = Column('description_de', Unicode)
+    description_fr = Column('description_fr', Unicode)
+    description_it = Column('description_it', Unicode)
+    description_en = Column('description_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bazl.landschaftsruhezonen', Landschaftsruhezonen)
