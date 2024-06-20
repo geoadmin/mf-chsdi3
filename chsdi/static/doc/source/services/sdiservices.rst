@@ -627,6 +627,12 @@ No css styling is provided per default so that you can use your own.
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 | **time (optional)**               | Time (YYYY) to filter out time enabled layers, e.g. LUBIS. Defaults to "none".            |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
+| **mapExtent (optional)**          | The extent of the map. (minx, miny, maxx, maxy).                                          |
++-----------------------------------+-------------------------------------------------------------------------------------------+
+| **imageDisplay (optional)**       | The screen image display parameters (width, height, and dpi) of the map.                  |
+|                                   | The combination of *mapExtent* and *imageDisplay* is used to compute a *resultion* or     |
+|                                   | *scale*. Some layer have *scale* dependant htmlpopup responses                            |
++-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 
