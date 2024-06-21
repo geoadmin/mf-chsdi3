@@ -1568,12 +1568,20 @@ class GeologieTektonischeKarteLine(Base, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/tektonische_karte_line.mako'
     __bodId__ = 'ch.swisstopo.geologie-tektonische_karte'
-    # Translatable labels in fr
-    __label__ = 'type_de'
+    __label__ = 'kind_de'
     id = Column('fid', Integer, primary_key=True)
-    line_id = Column('line_id', Integer)
-    type_de = Column('type_de', Unicode)
-    type_fr = Column('type_fr', Unicode)
+    kind_de = Column('kind_de', Unicode)
+    kind_fr = Column('kind_fr', Unicode)
+    kind_it = Column('kind_it', Unicode)
+    kind_en = Column('kind_en', Unicode)
+    name_de = Column('name_de', Unicode)
+    name_fr = Column('name_fr', Unicode)
+    name_it = Column('name_it', Unicode)
+    name_en = Column('name_en', Unicode)
+    status_de = Column('status_de', Unicode)
+    status_fr = Column('status_fr', Unicode)
+    status_it = Column('status_it', Unicode)
+    status_en = Column('status_en', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -1582,16 +1590,56 @@ class GeologieTektonischeKartePoly(Base, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/tektonische_karte_poly.mako'
     __bodId__ = 'ch.swisstopo.geologie-tektonische_karte'
-    # Translatable labels in fr
-    __label__ = 'type_de'
+    __label__ = 'litho_de'
     id = Column('fid', Integer, primary_key=True)
-    t2_id = Column('t2_id', Integer)
-    type_de = Column('type_de', Unicode)
-    type_fr = Column('type_fr', Unicode)
+    litho_de = Column('litho_de', Unicode)
+    litho_fr = Column('litho_fr', Unicode)
+    litho_it = Column('litho_it', Unicode)
+    litho_en = Column('litho_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class GeologieTektonischeKarteUnit(Base, Vector):
+    __tablename__ = 'tektonische_karte_units'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/tektonische_karte_unit.mako'
+    __bodId__ = 'ch.swisstopo.geologie-tektonische_karte'
+    __label__ = 'litho_de'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    tecto_1_de = Column('tecto_1_de', Unicode)
+    tecto_1_fr = Column('tecto_1_fr', Unicode)
+    tecto_1_it = Column('tecto_1_it', Unicode)
+    tecto_1_en = Column('tecto_1_en', Unicode)
+    tecto_2_de = Column('tecto_2_de', Unicode)
+    tecto_2_fr = Column('tecto_2_fr', Unicode)
+    tecto_2_it = Column('tecto_2_it', Unicode)
+    tecto_2_en = Column('tecto_2_en', Unicode)
+    tecto_3_de = Column('tecto_3_de', Unicode)
+    tecto_3_fr = Column('tecto_3_fr', Unicode)
+    tecto_3_it = Column('tecto_3_it', Unicode)
+    tecto_3_en = Column('tecto_3_en', Unicode)
+    tecto_4_de = Column('tecto_4_de', Unicode)
+    tecto_4_fr = Column('tecto_4_fr', Unicode)
+    tecto_4_it = Column('tecto_4_it', Unicode)
+    tecto_4_en = Column('tecto_4_en', Unicode)
+    litho_de = Column('litho_de', Unicode)
+    litho_fr = Column('litho_fr', Unicode)
+    litho_it = Column('litho_it', Unicode)
+    litho_en = Column('litho_en', Unicode)
+    origin_de = Column('origin_de', Unicode)
+    origin_fr = Column('origin_fr', Unicode)
+    origin_it = Column('origin_it', Unicode)
+    origin_en = Column('origin_en', Unicode)
+    notice = Column('notice', Unicode)
+    legende_de = Column('legende_de', Unicode)
+    legende_fr = Column('legende_fr', Unicode)
+    legende_it = Column('legende_it', Unicode)
+    legende_en = Column('legende_en', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-tektonische_karte', GeologieTektonischeKarteLine)
 register('ch.swisstopo.geologie-tektonische_karte', GeologieTektonischeKartePoly)
+register('ch.swisstopo.geologie-tektonische_karte', GeologieTektonischeKarteUnit)
 
 
 class GeologieEiszeitLgm(Base, Vector):
