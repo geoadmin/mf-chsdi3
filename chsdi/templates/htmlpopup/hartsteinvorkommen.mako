@@ -94,7 +94,7 @@
     </tr>
     <tr>
       <td class="cell-left">${_(f'{layerid}.elevation')}</td>
-      <td>${c['attributes']['elevation'] or '-'}</td>
+      <td>${int(round(c['attributes']['elevation'])) if c['attributes']['elevation'] is not None else '-'}</td>
     </tr>
     <tr>
       <td class="cell-left"">${_(f'{layerid}.legend')}</td>
@@ -108,11 +108,11 @@
     </tr>
     <tr>
       <td class="cell-left">${_(f'{layerid}.data_density_thickness')}</td>
-      <td>${c['attributes']['data_density_thickness'] or '-'}</td>
+      <td>${int(round(c['attributes']['data_density_thickness'])) if c['attributes']['data_density_thickness'] is not None else '-'}</td>
     </tr>
     <tr>
       <td class="cell-left">${_(f'{layerid}.data_density_usability')}</td>
-      <td>${c['attributes']['data_density_usability'] or '-'}</td>
+      <td>${int(round(c['attributes']['data_density_usability'])) if c['attributes']['data_density_usability'] is not None else '-'}</td>
     </tr>
     <tr>
       <td class="cell-left">${_(f'{layerid}.level_of_confidence')}</td>
