@@ -14,7 +14,7 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.vbs.ladestationen.PLZ')}</td>
-        <td>${int(c['attributes']['plz']) or '-'}</td>
+        <td>${int(round(c['attributes']['plz'])) if c['attributes']['plz'] is not None else '-'}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.vbs.ladestationen.Ort')}</td>
@@ -46,11 +46,11 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.vbs.ladestationen.XKoordinate')}</td>
-        <td>${int(c['attributes']['x_koordinate']) or '-'}</td>
+        <td>${int(round(c['attributes']['x_koordinate'])) if c['attributes']['x_koordinate'] is not None else '-'}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.vbs.ladestationen.YKoordinate')}</td>
-        <td>${int(c['attributes']['y_koordinate']) or '-'}</td>
+        <td>${int(round(c['attributes']['y_koordinate'])) if c['attributes']['y_koordinate'] is not None else '-'}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.vbs.ladestationen.Bemerkungen')}</td>
