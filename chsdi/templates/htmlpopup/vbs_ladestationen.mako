@@ -14,7 +14,7 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.vbs.ladestationen.PLZ')}</td>
-        <td>${c['attributes']['plz'] or '-'}</td>
+        <td>${int(c['attributes']['plz']) or '-'}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.vbs.ladestationen.Ort')}</td>
@@ -46,11 +46,11 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.vbs.ladestationen.XKoordinate')}</td>
-        <td>${c['attributes']['x_koordinate'] or '-'}</td>
+        <td>${int(c['attributes']['x_koordinate']) or '-'}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.vbs.ladestationen.YKoordinate')}</td>
-        <td>${c['attributes']['y_koordinate'] or '-'}</td>
+        <td>${int(c['attributes']['y_koordinate']) or '-'}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.vbs.ladestationen.Bemerkungen')}</td>
