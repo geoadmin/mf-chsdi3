@@ -1605,7 +1605,7 @@ class GeologieTektonischeKarteUnit(Base, Vector):
     __template__ = 'templates/htmlpopup/tektonische_karte_unit.mako'
     __bodId__ = 'ch.swisstopo.geologie-tektonische_karte'
     __label__ = 'litho_de'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('fid', Integer, primary_key=True)
     tecto_1_de = Column('tecto_1_de', Unicode)
     tecto_1_fr = Column('tecto_1_fr', Unicode)
     tecto_1_it = Column('tecto_1_it', Unicode)
