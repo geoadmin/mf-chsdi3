@@ -9,8 +9,14 @@
     <tr><td class="cell-left">${_('ch.bafu.wasser-vorfluter.ezgnr')}</td><td>${c['attributes']['ezgnr'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bafu.wasser-vorfluter.gewaessername')}</td><td>${c['attributes']['gewaessername'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.bafu.wasser-vorfluter.gwlnr')}</td><td>${c['attributes']['gwlnr'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bafu.wasser-vorfluter.unteresende')}</td><td>${c['attributes']['unteresende'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bafu.wasser-vorfluter.oberesende')}</td><td>${c['attributes']['oberesende'] or '-'}</td></tr>
+    <tr>
+        <td class="cell-left">${_('ch.bafu.wasser-vorfluter.unteresende')}</td>
+        <td>${c['attributes']['unteresende'] if c['attributes']['unteresende'] is not None else '-'}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_('ch.bafu.wasser-vorfluter.oberesende')}</td>
+        <td>${c['attributes']['oberesende'] if c['attributes']['oberesende'] is not None else '-'}</td>
+    </tr>
     <tr><td class="cell-left">${_('ch.bafu.wasser-vorfluter.nebenarm')}</td><td>${c['attributes'][nebenarm] or '-'}</td></tr>
 </%def>
 
