@@ -28,61 +28,34 @@ API & applications
 
 - Bug fixes
 - Announcements:
+    - the layer *ch.swisstopo.geologie-geologischer_atlas_vector.metadata* will be removed from chsdi services with the release of August 28th 2024
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2024-05-15-rc1...2024-07-03-rc1>`__
 
 Geodata
 *******
 
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hard rock aggregates: Production and mining sites of the hard rock industry <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-hartsteinabbau>`__ (ch.swisstopo.geologie-hartsteinabbau)                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Hard rock aggregates: Thickness and quality of geological occurrences <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-hartsteinvorkommen>`__ (ch.swisstopo.geologie-hartsteinvorkommen)                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Charging stations of the Federal Administration <//map.geo.admin.ch/?layers=ch.vbs.ladestationen>`__ (ch.vbs.ladestationen)                                                                                      |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `The Tectonic Map of Switzerland (GK500-Tekto) <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-tektonische_karte>`__ (ch.swisstopo.geologie-tektonische_karte)                                                  |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Geological Atlas GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)                                                                        |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Division Geological Atlas GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas.metadata>`__ (ch.swisstopo.geologie-geologischer_atlas.metadata)                                             |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `GeoCover - Vector Datasets <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover>`__ (ch.swisstopo.geologie-geocover)                                                                                       |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Division GeoCover <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover.metadata>`__ (ch.swisstopo.geologie-geocover.metadata)                                                                              |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Geographical Names swissNAMES3D <//map.geo.admin.ch/?layers=ch.swisstopo.swissnames3d>`__ (ch.swisstopo.swissnames3d)                                                                                            |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Traffic counting locations - principal <//map.geo.admin.ch/?layers=ch.astra.strassenverkehrszaehlung-uebergeordnet>`__ (ch.astra.strassenverkehrszaehlung-uebergeordnet)                                         |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Charging requirements: Charging points - Convenient <//map.geo.admin.ch/?layers=ch.bfe.ladebedarfswelt-ladepunkte_bequem>`__ (ch.bfe.ladebedarfswelt-ladepunkte_bequem)                                          |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Charging requirements: Charging points - Flexible <//map.geo.admin.ch/?layers=ch.bfe.ladebedarfswelt-ladepunkte_felxibel>`__ (ch.bfe.ladebedarfswelt-ladepunkte_felxibel)                                        |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Charging requirements: Charging points - Planned <//map.geo.admin.ch/?layers=ch.bfe.ladebedarfswelt-ladepunkte_geplant>`__ (ch.bfe.ladebedarfswelt-ladepunkte_geplant)                                           |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Type of flow regime <//map.geo.admin.ch/?layers=ch.bafu.wasser-vorfluter>`__ (ch.bafu.wasser-vorfluter)                                                                                                          |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `2km2 sub catchment areas <//map.geo.admin.ch/?layers=ch.bafu.wasser-teileinzugsgebiete_2>`__ (ch.bafu.wasser-teileinzugsgebiete_2)                                                                               |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `40km2 sub catchment areas <//map.geo.admin.ch/?layers=ch.bafu.wasser-teileinzugsgebiete_40>`__ (ch.bafu.wasser-teileinzugsgebiete_40)                                                                            |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Area outlets <//map.geo.admin.ch/?layers=ch.bafu.wasser-gebietsauslaesse>`__ (ch.bafu.wasser-gebietsauslaesse)                                                                                                   |
+| Update | `Alps with livestock guardian dogs <//map.geo.admin.ch/?layers=ch.bafu.alpweiden-herdenschutzhunde>`__ (ch.bafu.alpweiden-herdenschutzhunde)                                                                      |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Flussgebiete (Einzugsgebiete) HADES <//map.geo.admin.ch/?layers=ch.bafu.hydrologischer-atlas_flussgebiete>`__ (ch.bafu.hydrologischer-atlas_flussgebiete)                                                        |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Hydrological gauging stations <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-hydromessstationen>`__ (ch.bafu.hydrologie-hydromessstationen)                                                                      |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Alps with livestock guardian dogs <//map.geo.admin.ch/?layers=ch.bafu.alpweiden-herdenschutzhunde>`__ (ch.bafu.alpweiden-herdenschutzhunde)                                                                      |
+| Update | `Area outlets <//map.geo.admin.ch/?layers=ch.bafu.wasser-gebietsauslaesse>`__ (ch.bafu.wasser-gebietsauslaesse)                                                                                                   |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Deep geothermal projects <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-tiefengeothermie_projekte>`__ (ch.swisstopo.geologie-tiefengeothermie_projekte)                                                       |
+| Update | `2km2 sub catchment areas <//map.geo.admin.ch/?layers=ch.bafu.wasser-teileinzugsgebiete_2>`__ (ch.bafu.wasser-teileinzugsgebiete_2)                                                                               |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Geothermal potential studies <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geothermische_potenzialstudien_regional>`__ (ch.swisstopo.geologie-geothermische_potenzialstudien_regional)                       |
+| Update | `40km2 sub catchment areas <//map.geo.admin.ch/?layers=ch.bafu.wasser-teileinzugsgebiete_40>`__ (ch.bafu.wasser-teileinzugsgebiete_40)                                                                            |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Arsenals <//map.geo.admin.ch/?layers=ch.vbs.retablierungsstellen>`__ (ch.vbs.retablierungsstellen)                                                                                                               |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Sanctuaries for silence and nature for aviation <//map.geo.admin.ch/?layers=ch.bazl.landschaftsruhezonen>`__ (ch.bazl.landschaftsruhezonen)                                                                      |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Army logistics centre logistics areas <//map.geo.admin.ch/?layers=ch.vbs.logistikraeume-armeelogistikcenter>`__ (ch.vbs.logistikraeume-armeelogistikcenter)                                                      |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Crushed-rock aggregates <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau>`__ (ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau)                                    |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Regional geothermal potential studies <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geothermische_potenzialstudien_regional>`__ (ch.swisstopo.geologie-geothermische_potenzialstudien_regional)              |
+| Update | `Type of flow regime <//map.geo.admin.ch/?layers=ch.bafu.wasser-vorfluter>`__ (ch.bafu.wasser-vorfluter)                                                                                                          |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Emergency calls by comune <//map.geo.admin.ch/?layers=ch.bakom.notruf>`__ (ch.bakom.notruf)                                                                                                                      |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -116,6 +89,48 @@ Geodata
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `112 Satellite network <//map.geo.admin.ch/?layers=ch.bakom.notruf-112_satellit>`__ (ch.bakom.notruf-112_satellit)                                                                                                |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `112 Satellite network <//map.geo.admin.ch/?layers=ch.bakom.notruf-112_satellit>`__ (ch.bakom.notruf-112_satellit)                                                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Sanctuaries for silence and nature for aviation <//map.geo.admin.ch/?layers=ch.bazl.landschaftsruhezonen>`__ (ch.bazl.landschaftsruhezonen)                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Charging requirements: Charging points - Convenient <//map.geo.admin.ch/?layers=ch.bfe.ladebedarfswelt-ladepunkte_bequem>`__ (ch.bfe.ladebedarfswelt-ladepunkte_bequem)                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Charging requirements: Charging points - Flexible <//map.geo.admin.ch/?layers=ch.bfe.ladebedarfswelt-ladepunkte_felxibel>`__ (ch.bfe.ladebedarfswelt-ladepunkte_felxibel)                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Charging requirements: Charging points - Planned <//map.geo.admin.ch/?layers=ch.bfe.ladebedarfswelt-ladepunkte_geplant>`__ (ch.bfe.ladebedarfswelt-ladepunkte_geplant)                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Land use statistics standard <//map.geo.admin.ch/?layers=ch.bfs.arealstatistik>`__ (ch.bfs.arealstatistik)                                                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Land use statistics cover <//map.geo.admin.ch/?layers=ch.bfs.arealstatistik-bodenbedeckung>`__ (ch.bfs.arealstatistik-bodenbedeckung)                                                                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accessibility of pharmacies <//map.geo.admin.ch/?layers=ch.bfs.erreichbarkeit-apotheken>`__ (ch.bfs.erreichbarkeit-apotheken)                                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accessibility of restaurants <//map.geo.admin.ch/?layers=ch.bfs.erreichbarkeit-restaurants>`__ (ch.bfs.erreichbarkeit-restaurants)                                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `GeoCover - Vector Datasets <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover>`__ (ch.swisstopo.geologie-geocover)                                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division GeoCover <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover.metadata>`__ (ch.swisstopo.geologie-geocover.metadata)                                                                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geological Atlas GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division Geological Atlas GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas.metadata>`__ (ch.swisstopo.geologie-geologischer_atlas.metadata)                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geothermal potential studies <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geothermische_potenzialstudien_regional>`__ (ch.swisstopo.geologie-geothermische_potenzialstudien_regional)                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Crushed-rock aggregates <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau>`__ (ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau)                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `The Tectonic Map of Switzerland (GK500-Tekto) <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-tektonische_karte>`__ (ch.swisstopo.geologie-tektonische_karte)                                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Deep geothermal projects <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-tiefengeothermie_projekte>`__ (ch.swisstopo.geologie-tiefengeothermie_projekte)                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geographical Names swissNAMES3D <//map.geo.admin.ch/?layers=ch.swisstopo.swissnames3d>`__ (ch.swisstopo.swissnames3d)                                                                                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Army logistics centre logistics areas <//map.geo.admin.ch/?layers=ch.vbs.logistikraeume-armeelogistikcenter>`__ (ch.vbs.logistikraeume-armeelogistikcenter)                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Arsenals <//map.geo.admin.ch/?layers=ch.vbs.retablierungsstellen>`__ (ch.vbs.retablierungsstellen)                                                                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 
 .. _releasenotes_20240515:
 
