@@ -14,6 +14,33 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+
+.. _releasenotes_20240703:
+
+Release 20240515 - Wednesday, July 3rd 2024
+-------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+- Bug fixes
+- Announcements:
+    - The vectortiles style *ch.swisstopo.leichte-basiskarte.vt* has been replaced by *ch.swisstopo.lightbasemap.vt*. The new style references the vectortiles sets *ch.swisstopo.base.vt* and *ch.swisstopo.relief.vt*
+    - The vectortiles style *ch.swisstopo.leichte-basiskarte-imagery.vt* has been replaced by *ch.swisstopo.imagerybasemap.vt*. The new style references the vectortiles set *ch.swisstopo.base.vt*
+    - The vectortiles services *ch.swisstopo.leichte-basiskarte.vt* and *ch.swisstopo.leichte-basiskarte-imagery.vt* will no longer be updated and will be removed by the end of the year 2024
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2024-05-15-rc1...2024-07-03-rc1>`__
+
+Geodata
+*******
+
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `DUMMY <//map.geo.admin.ch/?layers=ch.swisstopo.swisseo_vhi_v100>`__ (ch.dummy)                                                                                                                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 .. _releasenotes_20240515:
 
 Release 20240515 - Wednesday, May 15th 2024
