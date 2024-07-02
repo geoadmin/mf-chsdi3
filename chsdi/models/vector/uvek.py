@@ -1128,213 +1128,228 @@ register('ch.bakom.notruf', BakomNotruf)
 
 
 class BakomNotruf112Fest(Base, Vector):
-    __tablename__ = 'notruf'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
+    __tablename__ = 'fn_112_tooltip'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __template__ = 'templates/htmlpopup/notruf_fn_112.mako'
     __bodId__ = 'ch.bakom.notruf-112_festnetz'
     __label__ = 'id'
     id = Column('bfs_nummer', Integer, primary_key=True)
-    festnetz_112 = Column('festnetz_112', Unicode)
-    fn_gemeinde_112 = Column('fn_gemeinde_112', Unicode)
-    fn_addresse_112 = Column('fn_addresse_112', Unicode)
+    festnetz_112 = Column('phone_number', Unicode)
+    fn_gemeinde_112 = Column('name', Unicode)
+    fn_addresse_112 = Column('address', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bakom.notruf-112_festnetz', BakomNotruf112Fest)
 
 
 class BakomNotruf117Fest(Base, Vector):
-    __tablename__ = 'notruf'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
+    __tablename__ = 'fn_117_tooltip'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __template__ = 'templates/htmlpopup/notruf_fn_117.mako'
     __bodId__ = 'ch.bakom.notruf-117_festnetz'
     __label__ = 'id'
     id = Column('bfs_nummer', Integer, primary_key=True)
-    festnetz_117 = Column('festnetz_117', Unicode)
-    fn_gemeinde_117 = Column('fn_gemeinde_117', Unicode)
-    fn_addresse_117 = Column('fn_addresse_117', Unicode)
+    festnetz_117 = Column('phone_number', Unicode)
+    fn_gemeinde_117 = Column('name', Unicode)
+    fn_addresse_117 = Column('address', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bakom.notruf-117_festnetz', BakomNotruf117Fest)
 
 
 class BakomNotruf118Fest(Base, Vector):
-    __tablename__ = 'notruf'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
+    __tablename__ = 'fn_118_tooltip'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __template__ = 'templates/htmlpopup/notruf_fn_118.mako'
     __bodId__ = 'ch.bakom.notruf-118_festnetz'
     __label__ = 'id'
     id = Column('bfs_nummer', Integer, primary_key=True)
-    festnetz_118 = Column('festnetz_118', Unicode)
-    fn_gemeinde_118 = Column('fn_gemeinde_118', Unicode)
-    fn_addresse_118 = Column('fn_addresse_118', Unicode)
+    festnetz_118 = Column('phone_number', Unicode)
+    fn_gemeinde_118 = Column('name', Unicode)
+    fn_addresse_118 = Column('address', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bakom.notruf-118_festnetz', BakomNotruf118Fest)
 
 
 class BakomNotruf143Fest(Base, Vector):
-    __tablename__ = 'notruf'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
+    __tablename__ = 'fn_143_tooltip'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __template__ = 'templates/htmlpopup/notruf_fn_143.mako'
     __bodId__ = 'ch.bakom.notruf-143_festnetz'
     __label__ = 'id'
     id = Column('bfs_nummer', Integer, primary_key=True)
-    festnetz_143 = Column('festnetz_143', Unicode)
-    fn_gemeinde_143 = Column('fn_gemeinde_143', Unicode)
-    fn_addresse_143 = Column('fn_addresse_143', Unicode)
+    festnetz_143 = Column('phone_number', Unicode)
+    fn_gemeinde_143 = Column('name', Unicode)
+    fn_addresse_143 = Column('address', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bakom.notruf-143_festnetz', BakomNotruf143Fest)
 
 
 class BakomNotruf144Fest(Base, Vector):
-    __tablename__ = 'notruf'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
+    __tablename__ = 'fn_144_tooltip'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __template__ = 'templates/htmlpopup/notruf_fn_144.mako'
     __bodId__ = 'ch.bakom.notruf-144_festnetz'
     __label__ = 'id'
     id = Column('bfs_nummer', Integer, primary_key=True)
-    festnetz_144 = Column('festnetz_144', Unicode)
-    fn_gemeinde_144 = Column('fn_gemeinde_144', Unicode)
-    fn_addresse_144 = Column('fn_addresse_144', Unicode)
+    festnetz_144 = Column('phone_number', Unicode)
+    fn_gemeinde_144 = Column('name', Unicode)
+    fn_addresse_144 = Column('address', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bakom.notruf-144_festnetz', BakomNotruf144Fest)
 
 
 class BakomNotruf145Fest(Base, Vector):
-    __tablename__ = 'notruf'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
+    __tablename__ = 'fn_145_tooltip'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __template__ = 'templates/htmlpopup/notruf_fn_145.mako'
     __bodId__ = 'ch.bakom.notruf-145_festnetz'
     __label__ = 'id'
     id = Column('bfs_nummer', Integer, primary_key=True)
-    festnetz_145 = Column('festnetz_145', Unicode)
-    fn_gemeinde_145 = Column('fn_gemeinde_145', Unicode)
-    fn_addresse_145 = Column('fn_addresse_145', Unicode)
+    festnetz_145 = Column('phone_number', Unicode)
+    fn_gemeinde_145 = Column('name', Unicode)
+    fn_addresse_145 = Column('address', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bakom.notruf-145_festnetz', BakomNotruf145Fest)
 
 
 class BakomNotruf147Fest(Base, Vector):
-    __tablename__ = 'notruf'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
+    __tablename__ = 'fn_147_tooltip'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __template__ = 'templates/htmlpopup/notruf_fn_147.mako'
     __bodId__ = 'ch.bakom.notruf-147_festnetz'
     __label__ = 'id'
     id = Column('bfs_nummer', Integer, primary_key=True)
-    festnetz_147 = Column('festnetz_147', Unicode)
-    fn_gemeinde_147 = Column('fn_gemeinde_147', Unicode)
-    fn_addresse_147 = Column('fn_addresse_147', Unicode)
+    festnetz_147 = Column('phone_number', Unicode)
+    fn_gemeinde_147 = Column('name', Unicode)
+    fn_addresse_147 = Column('address', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bakom.notruf-147_festnetz', BakomNotruf147Fest)
 
 
 class BakomNotruf112Mobil(Base, Vector):
-    __tablename__ = 'notruf'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
+    __tablename__ = 'mo_112_tooltip'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __template__ = 'templates/htmlpopup/notruf_mo_112.mako'
     __bodId__ = 'ch.bakom.notruf-112_mobilnetz'
     __label__ = 'id'
     id = Column('bfs_nummer', Integer, primary_key=True)
-    mobile_112 = Column('mobile_112', Unicode)
-    mo_gemeinde_112 = Column('mo_gemeinde_112', Unicode)
-    mo_addresse_112 = Column('mo_addresse_112', Unicode)
+    mobile_112 = Column('phone_number', Unicode)
+    mo_gemeinde_112 = Column('name', Unicode)
+    mo_addresse_112 = Column('address', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bakom.notruf-112_mobilnetz', BakomNotruf112Mobil)
 
 
 class BakomNotruf117Mobil(Base, Vector):
-    __tablename__ = 'notruf'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
+    __tablename__ = 'mo_117_tooltip'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __template__ = 'templates/htmlpopup/notruf_mo_117.mako'
     __bodId__ = 'ch.bakom.notruf-117_mobilnetz'
     __label__ = 'id'
     id = Column('bfs_nummer', Integer, primary_key=True)
-    mobile_117 = Column('mobile_117', Unicode)
-    mo_gemeinde_117 = Column('mo_gemeinde_117', Unicode)
-    mo_addresse_117 = Column('mo_addresse_117', Unicode)
+    mobile_117 = Column('phone_number', Unicode)
+    mo_gemeinde_117 = Column('name', Unicode)
+    mo_addresse_117 = Column('address', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bakom.notruf-117_mobilnetz', BakomNotruf117Mobil)
 
 
 class BakomNotruf118Mobil(Base, Vector):
-    __tablename__ = 'notruf'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
+    __tablename__ = 'mo_118_tooltip'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __template__ = 'templates/htmlpopup/notruf_mo_118.mako'
     __bodId__ = 'ch.bakom.notruf-118_mobilnetz'
     __label__ = 'id'
     id = Column('bfs_nummer', Integer, primary_key=True)
-    mobile_118 = Column('mobile_118', Unicode)
-    mo_gemeinde_118 = Column('mo_gemeinde_118', Unicode)
-    mo_addresse_118 = Column('mo_addresse_118', Unicode)
+    mobile_118 = Column('phone_number', Unicode)
+    mo_gemeinde_118 = Column('name', Unicode)
+    mo_addresse_118 = Column('address', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bakom.notruf-118_mobilnetz', BakomNotruf118Mobil)
 
 
 class BakomNotruf143Mobil(Base, Vector):
-    __tablename__ = 'notruf'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
+    __tablename__ = 'mo_143_tooltip'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __template__ = 'templates/htmlpopup/notruf_mo_143.mako'
     __bodId__ = 'ch.bakom.notruf-143_mobilnetz'
     __label__ = 'id'
     id = Column('bfs_nummer', Integer, primary_key=True)
-    mobile_143 = Column('mobile_143', Unicode)
-    mo_gemeinde_143 = Column('mo_gemeinde_143', Unicode)
-    mo_addresse_143 = Column('mo_addresse_143', Unicode)
+    mobile_143 = Column('phone_number', Unicode)
+    mo_gemeinde_143 = Column('name', Unicode)
+    mo_addresse_143 = Column('address', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bakom.notruf-143_mobilnetz', BakomNotruf143Mobil)
 
 
 class BakomNotruf144Mobil(Base, Vector):
-    __tablename__ = 'notruf'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
+    __tablename__ = 'mo_144_tooltip'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __template__ = 'templates/htmlpopup/notruf_mo_144.mako'
     __bodId__ = 'ch.bakom.notruf-144_mobilnetz'
     __label__ = 'id'
     id = Column('bfs_nummer', Integer, primary_key=True)
-    mobile_144 = Column('mobile_144', Unicode)
-    mo_gemeinde_144 = Column('mo_gemeinde_144', Unicode)
-    mo_addresse_144 = Column('mo_addresse_144', Unicode)
+    mobile_144 = Column('phone_number', Unicode)
+    mo_gemeinde_144 = Column('name', Unicode)
+    mo_addresse_144 = Column('address', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bakom.notruf-144_mobilnetz', BakomNotruf144Mobil)
 
 
 class BakomNotruf145Mobil(Base, Vector):
-    __tablename__ = 'notruf'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
+    __tablename__ = 'mo_145_tooltip'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __template__ = 'templates/htmlpopup/notruf_mo_145.mako'
     __bodId__ = 'ch.bakom.notruf-145_mobilnetz'
     __label__ = 'id'
     id = Column('bfs_nummer', Integer, primary_key=True)
-    mobile_145 = Column('mobile_145', Unicode)
-    mo_gemeinde_145 = Column('mo_gemeinde_145', Unicode)
-    mo_addresse_145 = Column('mo_addresse_145', Unicode)
+    mobile_145 = Column('phone_number', Unicode)
+    mo_gemeinde_145 = Column('name', Unicode)
+    mo_addresse_145 = Column('address', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bakom.notruf-145_mobilnetz', BakomNotruf145Mobil)
 
 
 class BakomNotruf147Mobil(Base, Vector):
-    __tablename__ = 'notruf'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
+    __tablename__ = 'mo_147_tooltip'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __template__ = 'templates/htmlpopup/notruf_mo_147.mako'
     __bodId__ = 'ch.bakom.notruf-147_mobilnetz'
     __label__ = 'id'
     id = Column('bfs_nummer', Integer, primary_key=True)
-    mobile_147 = Column('mobile_147', Unicode)
-    mo_gemeinde_147 = Column('mo_gemeinde_147', Unicode)
-    mo_addresse_147 = Column('mo_addresse_147', Unicode)
+    mobile_147 = Column('phone_number', Unicode)
+    mo_gemeinde_147 = Column('name', Unicode)
+    mo_addresse_147 = Column('address', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bakom.notruf-147_mobilnetz', BakomNotruf147Mobil)
+
+
+class BakomNotruf112Sat(Base, Vector):
+    __tablename__ = 'sa_112_tooltip'
+    __table_args__ = ({'schema': 'bakom', 'autoload': False})
+    __template__ = 'templates/htmlpopup/notruf_sa_112.mako'
+    __bodId__ = 'ch.bakom.notruf-112_satellit'
+    __label__ = 'id'
+    id = Column('bfs_nummer', Integer, primary_key=True)
+    satellit_112 = Column('phone_number', Unicode)
+    sa_gemeinde_112 = Column('name', Unicode)
+    sa_addresse_112 = Column('address', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bakom.notruf-112_satellit', BakomNotruf112Sat)
 
 
 class BakomNotruf112Zentral(Base, Vector):
@@ -1436,21 +1451,6 @@ class BakomNotruf147Zentral(Base, BakomNotrufBase, Vector):
     mo_zentrale_147 = Column('mo_zentrale_147', Unicode)
 
 register('ch.bakom.notruf-147_zentral', BakomNotruf147Zentral)
-
-
-class BakomNotruf112Sat(Base, Vector):
-    __tablename__ = 'notruf'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
-    __template__ = 'templates/htmlpopup/notruf_sa_112.mako'
-    __bodId__ = 'ch.bakom.notruf-112_satellit'
-    __label__ = 'id'
-    id = Column('bfs_nummer', Integer, primary_key=True)
-    satellit_112 = Column('satellit_112', Unicode)
-    sa_gemeinde_112 = Column('sa_gemeinde_112', Unicode)
-    sa_addresse_112 = Column('sa_addresse_112', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.bakom.notruf-112_satellit', BakomNotruf112Sat)
 
 
 class Bakomfernsehsender(Base, Vector):
@@ -4343,3 +4343,23 @@ class LadebedarfsweltStrombedarf (Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bfe.ladebedarfswelt-strombedarf', LadebedarfsweltStrombedarf)
+
+
+class Landschaftsruhezonen (Base, Vector):
+    __table_args__ = ({'schema': 'bazl', 'autoload': False})
+    __tablename__ = 'landschaftsruhezonen'
+    __template__ = 'templates/htmlpopup/bazl_landschaftsruhezonen.mako'
+    __bodId__ = 'ch.bazl.landschaftsruhezonen'
+    __label__ = 'name_de'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name_de = Column('name_de', Unicode)
+    name_fr = Column('name_fr', Unicode)
+    name_it = Column('name_it', Unicode)
+    name_en = Column('name_en', Unicode)
+    description_de = Column('description_de', Unicode)
+    description_fr = Column('description_fr', Unicode)
+    description_it = Column('description_it', Unicode)
+    description_en = Column('description_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.bazl.landschaftsruhezonen', Landschaftsruhezonen)

@@ -25,4 +25,12 @@
     <tr><td class="cell-left">${_('ch.bafu.alpweiden-herdenschutzhunde.kontname')}</td><td>${c['attributes']['kontname'] or '-'.strip()}</td></tr>
     <tr><td class="cell-left">${_('ch.bafu.alpweiden-herdenschutzhunde.konttel')}</td><td>${c['attributes']['konttel'] or '-'.strip()}</td></tr>
     <tr><td class="cell-left">${_('ch.bafu.alpweiden-herdenschutzhunde.kontemail')}</td><td>${c['attributes']['kontemail'] or '-'.strip()}</td></tr>
+    <tr>
+        <td class="cell-left">
+            ${_('ch.bafu.alpweiden-herdenschutzhunde.refmeldungbeweidungszone')}
+        </td>
+        <td>
+            <a href="${c['attributes']['refmeldungbeweidungszone'] or '-'.strip()}" target="_blank">Link</a>
+        </td>
+    </tr>
 </%def>

@@ -108,7 +108,7 @@ register('ch.bfs.gebaeude_wohnungs_register', Gebaeuderegister)
 
 
 class Arealstatistik(Base, Vector):
-    __tablename__ = 'arealstatistik_std'
+    __tablename__ = 'view_arealstatistik'
     __table_args__ = ({'schema': 'bfs', 'autoload': False})
     __template__ = 'templates/htmlpopup/arealstatistik_std.mako'
     __bodId__ = 'ch.bfs.arealstatistik'
@@ -116,10 +116,12 @@ class Arealstatistik(Base, Vector):
     __maxscale__ = 10000
     # specially big layer
     __label__ = 'id'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    __timeInstant__ = 'year'
+    id = Column('stable_id', Integer, primary_key=True)
     survey = Column('survey', Integer)
+    year = Column('year', Integer)
     fj = Column('fj', Integer)
-    as_72 = Column('as_72', Integer)
+    as_72 = Column('as09r_72', Integer)
     desc_as_72_de = Column('desc_as_72_de', Integer)
     desc_as_72_fr = Column('desc_as_72_fr', Integer)
     desc_as_72_it = Column('desc_as_72_it', Integer)
@@ -131,7 +133,7 @@ register('ch.bfs.arealstatistik', Arealstatistik)
 
 
 class ArealstatistikBodenbedeckung(Base, Vector):
-    __tablename__ = 'arealstatistik_nolc'
+    __tablename__ = 'view_bodenbedeckung'
     __table_args__ = ({'schema': 'bfs', 'autoload': False})
     __template__ = 'templates/htmlpopup/arealstatistik_nolc.mako'
     __bodId__ = 'ch.bfs.arealstatistik-bodenbedeckung'
@@ -139,15 +141,17 @@ class ArealstatistikBodenbedeckung(Base, Vector):
     __maxscale__ = 10000
     # specially big layer
     __label__ = 'id'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    __timeInstant__ = 'year'
+    id = Column('stable_id', Integer, primary_key=True)
     survey = Column('survey', Integer)
+    year = Column('year', Integer)
     fj = Column('fj', Integer)
-    lc_27 = Column('lc_27', Integer)
-    desc_lc_27_de = Column('desc_lc_27_de', Integer)
-    desc_lc_27_fr = Column('desc_lc_27_fr', Integer)
-    desc_lc_27_it = Column('desc_lc_27_it', Integer)
-    desc_lc_27_rm = Column('desc_lc_27_rm', Integer)
-    desc_lc_27_en = Column('desc_lc_27_en', Integer)
+    lc09r_27 = Column('lc09r_27', Integer)
+    desc_lc09r_27_de = Column('desc_lc09r_27_de', Integer)
+    desc_lc09r_27_fr = Column('desc_lc09r_27_fr', Integer)
+    desc_lc09r_27_it = Column('desc_lc09r_27_it', Integer)
+    desc_lc09r_27_rm = Column('desc_lc09r_27_rm', Integer)
+    desc_lc09r_27_en = Column('desc_lc09r_27_en', Integer)
     the_geom = Column(Geometry2D)
 
 register('ch.bfs.arealstatistik-bodenbedeckung', ArealstatistikBodenbedeckung)

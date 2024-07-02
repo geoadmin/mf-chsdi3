@@ -153,7 +153,6 @@ class Armeelogistikcenter(Base, Vector):
     name = Column('name', Unicode)
     abkuerzung = Column('abkuerzung', Unicode)
     mail = Column('email', Unicode)
-    url = Column('url', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.vbs.armeelogistikcenter', Armeelogistikcenter)
@@ -396,3 +395,28 @@ class ArmeeKriegsdenkmaeler(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.vbs.armee-kriegsdenkmaeler', ArmeeKriegsdenkmaeler)
+
+
+class Ladestationen(Base, Vector):
+    __tablename__ = 'elektrotankstellen'
+    __table_args__ = ({'schema': 'militaer', 'autoload': False})
+    __template__ = 'templates/htmlpopup/vbs_ladestationen.mako'
+    __bodId__ = 'ch.vbs.ladestationen'
+    __label__ = 'standort'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    standort = Column('standort', Unicode)
+    strasse = Column('strasse', Unicode)
+    plz = Column('plz', Integer)
+    ort = Column('ort', Unicode)
+    oeffnungszeiten = Column('oeffnungszeiten', Unicode)
+    anzahl_ladepunkte = Column('anzahl_ladepunkte', Unicode)
+    leistung = Column('leistung', Unicode)
+    typ_stecker = Column('typ_stecker', Unicode)
+    hinweis = Column('hinweis', Unicode)
+    kontakt = Column('kontakt', Unicode)
+    x_koordinate = Column('x_koordinate', Integer)
+    y_koordinate = Column('y_koordinate', Integer)
+    bemerkungen = Column('bemerkungen', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.vbs.ladestationen', Ladestationen)

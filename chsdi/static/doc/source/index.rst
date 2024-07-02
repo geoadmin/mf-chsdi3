@@ -138,7 +138,7 @@ Use the GeoAdmin API Forum to ask questions: http://groups.google.com/group/geoa
 
 To receive technical updates, we recommend to actively use the forum or mailing list at http://groups.google.com/group/geoadmin-api and RSS Feed https://groups.google.com/group/geoadmin-api/feed/rss_v2_0_msgs.xml.
 
-  **Note on web scraping**: Automatic parsing of the geoservices via bots with  `high query intensities <https://www.geo.admin.ch/terms-of-use>`_ is to be refrained from. For obtaining the datasets outside the context of the web services (use in offline systems, databases, etc.), the  `download service  <https://data.geo.admin.ch/api/stac/v0.9/static/api.html>`_ or  `file based download <https://data.geo.admin.ch>`_  has to be used.
+  **Note on web scraping**: Automatic parsing of the geoservices via bots with  `high query intensities <https://www.geo.admin.ch/terms-of-use>`_ is to be refrained from. For obtaining the datasets outside the context of the web services (use in offline systems, databases, etc.), the  `download service  <https://data.geo.admin.ch/api/stac/static/spec/v0.9/api.html>`_ or  `file based download <https://data.geo.admin.ch>`_  has to be used.
 
 
 API

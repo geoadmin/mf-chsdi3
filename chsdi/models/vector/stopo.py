@@ -1568,12 +1568,20 @@ class GeologieTektonischeKarteLine(Base, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/tektonische_karte_line.mako'
     __bodId__ = 'ch.swisstopo.geologie-tektonische_karte'
-    # Translatable labels in fr
-    __label__ = 'type_de'
+    __label__ = 'kind_de'
     id = Column('fid', Integer, primary_key=True)
-    line_id = Column('line_id', Integer)
-    type_de = Column('type_de', Unicode)
-    type_fr = Column('type_fr', Unicode)
+    kind_de = Column('kind_de', Unicode)
+    kind_fr = Column('kind_fr', Unicode)
+    kind_it = Column('kind_it', Unicode)
+    kind_en = Column('kind_en', Unicode)
+    name_de = Column('name_de', Unicode)
+    name_fr = Column('name_fr', Unicode)
+    name_it = Column('name_it', Unicode)
+    name_en = Column('name_en', Unicode)
+    status_de = Column('status_de', Unicode)
+    status_fr = Column('status_fr', Unicode)
+    status_it = Column('status_it', Unicode)
+    status_en = Column('status_en', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -1582,16 +1590,56 @@ class GeologieTektonischeKartePoly(Base, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/tektonische_karte_poly.mako'
     __bodId__ = 'ch.swisstopo.geologie-tektonische_karte'
-    # Translatable labels in fr
-    __label__ = 'type_de'
+    __label__ = 'litho_de'
     id = Column('fid', Integer, primary_key=True)
-    t2_id = Column('t2_id', Integer)
-    type_de = Column('type_de', Unicode)
-    type_fr = Column('type_fr', Unicode)
+    litho_de = Column('litho_de', Unicode)
+    litho_fr = Column('litho_fr', Unicode)
+    litho_it = Column('litho_it', Unicode)
+    litho_en = Column('litho_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class GeologieTektonischeKarteUnit(Base, Vector):
+    __tablename__ = 'tektonische_karte_units'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/tektonische_karte_unit.mako'
+    __bodId__ = 'ch.swisstopo.geologie-tektonische_karte'
+    __label__ = 'litho_de'
+    id = Column('fid', Integer, primary_key=True)
+    tecto_1_de = Column('tecto_1_de', Unicode)
+    tecto_1_fr = Column('tecto_1_fr', Unicode)
+    tecto_1_it = Column('tecto_1_it', Unicode)
+    tecto_1_en = Column('tecto_1_en', Unicode)
+    tecto_2_de = Column('tecto_2_de', Unicode)
+    tecto_2_fr = Column('tecto_2_fr', Unicode)
+    tecto_2_it = Column('tecto_2_it', Unicode)
+    tecto_2_en = Column('tecto_2_en', Unicode)
+    tecto_3_de = Column('tecto_3_de', Unicode)
+    tecto_3_fr = Column('tecto_3_fr', Unicode)
+    tecto_3_it = Column('tecto_3_it', Unicode)
+    tecto_3_en = Column('tecto_3_en', Unicode)
+    tecto_4_de = Column('tecto_4_de', Unicode)
+    tecto_4_fr = Column('tecto_4_fr', Unicode)
+    tecto_4_it = Column('tecto_4_it', Unicode)
+    tecto_4_en = Column('tecto_4_en', Unicode)
+    litho_de = Column('litho_de', Unicode)
+    litho_fr = Column('litho_fr', Unicode)
+    litho_it = Column('litho_it', Unicode)
+    litho_en = Column('litho_en', Unicode)
+    origin_de = Column('origin_de', Unicode)
+    origin_fr = Column('origin_fr', Unicode)
+    origin_it = Column('origin_it', Unicode)
+    origin_en = Column('origin_en', Unicode)
+    notice = Column('notice', Unicode)
+    legende_de = Column('legende_de', Unicode)
+    legende_fr = Column('legende_fr', Unicode)
+    legende_it = Column('legende_it', Unicode)
+    legende_en = Column('legende_en', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-tektonische_karte', GeologieTektonischeKarteLine)
 register('ch.swisstopo.geologie-tektonische_karte', GeologieTektonischeKartePoly)
+register('ch.swisstopo.geologie-tektonische_karte', GeologieTektonischeKarteUnit)
 
 
 class GeologieEiszeitLgm(Base, Vector):
@@ -2680,28 +2728,6 @@ class HiksSiegfriedTa50Metadata(Base, Vector):
 register('ch.swisstopo.hiks-siegfried-ta50.metadata', HiksSiegfriedTa50Metadata)
 
 
-class Treasurehunt(Base, Vector):
-    __tablename__ = 'treasurehunt'
-    __table_args__ = ({'schema': 'public', 'autoload': False})
-    __template__ = 'templates/htmlpopup/treasurehunt.mako'
-    __bodId__ = 'ch.swisstopo.treasurehunt'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    title_de = Column('title_de', Unicode)
-    title_fr = Column('title_fr', Unicode)
-    title_it = Column('title_it', Unicode)
-    info_de = Column('info_de', Unicode)
-    info_fr = Column('info_fr', Unicode)
-    info_it = Column('info_it', Unicode)
-    link_de = Column('link_de', Unicode)
-    link_fr = Column('link_fr', Unicode)
-    link_it = Column('link_it', Unicode)
-    type_coord = Column('type_coord', Unicode)
-    the_geom = Column(Geometry2D)
-    __maxscale__ = 1500
-
-register('ch.swisstopo.treasurehunt', Treasurehunt)
-
-
 class SwissimageHistMetadata(Base, Vector):
     __tablename__ = 'swissimage_hist_chsdi'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
@@ -3097,3 +3123,114 @@ class ReflexionsseismikPoly(Base, Reflexionsseismik, Vector):
     dim_km2 = Column('dim_km2', Float)
 
 register(Reflexionsseismik.__bodId__, ReflexionsseismikPoly)
+
+
+class Hartsteinabbau:
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.geologie-hartsteinabbau'
+    id = Column('bgdi_hartstein_id', Integer, primary_key=True)
+    the_geom = Column(Geometry2D)
+
+
+class HartsteinabbauMining(Base, Hartsteinabbau, Vector):
+    __tablename__ = 'hartstein_mining'
+    __template__ = 'templates/htmlpopup/hartsteinabbau_mining.mako'
+    __label__ = 'obname'
+    obname = Column('obname', Unicode)
+    cpkind = Column('cpkind', Unicode)
+    stkind_de = Column('stkind_de', Unicode)
+    stkind_fr = Column('stkind_fr', Unicode)
+    stkind_it = Column('stkind_it', Unicode)
+    stkind_en = Column('stkind_en', Unicode)
+    ltkinds_de = Column('ltkinds_de', Unicode)
+    ltkinds_fr = Column('ltkinds_fr', Unicode)
+    ltkinds_it = Column('ltkinds_it', Unicode)
+    ltkinds_en = Column('ltkinds_en', Unicode)
+    emkinds_de = Column('emkinds_de', Unicode)
+    emkinds_fr = Column('emkinds_fr', Unicode)
+    emkinds_it = Column('emkinds_it', Unicode)
+    emkinds_en = Column('emkinds_en', Unicode)
+    infos_url_de = Column('infos_url_de', Unicode)
+    infos_url_fr = Column('infos_url_fr', Unicode)
+    purl = Column('purl', Unicode)
+    swissgeol_link = Column('swissgeol_link', Unicode)
+
+
+class HartsteinabbauProduction(Base, Hartsteinabbau, Vector):
+    __tablename__ = 'hartstein_production'
+    __template__ = 'templates/htmlpopup/hartsteinabbau_production.mako'
+    __label__ = 'obname'
+    obname = Column('obname', Unicode)
+    cpkind = Column('cpkind', Unicode)
+    stkind_de = Column('stkind_de', Unicode)
+    stkind_fr = Column('stkind_fr', Unicode)
+    stkind_it = Column('stkind_it', Unicode)
+    stkind_en = Column('stkind_en', Unicode)
+    infos_url_de = Column('infos_url_de', Unicode)
+    infos_url_fr = Column('infos_url_fr', Unicode)
+    purl = Column('purl', Unicode)
+    swissgeol_link = Column('swissgeol_link', Unicode)
+
+
+register(Hartsteinabbau.__bodId__, HartsteinabbauMining)
+register(Hartsteinabbau.__bodId__, HartsteinabbauProduction)
+
+
+class HartsteinVorkommen(Base, Vector):
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __tablename__ = 'hartstein_vorkommen'
+    __bodId__ = 'ch.swisstopo.geologie-hartsteinvorkommen'
+    __template__ = 'templates/htmlpopup/hartsteinvorkommen.mako'
+    __extended_info__ = True
+    id = Column('bgdi_id', Integer, primary_key=True)
+    please_note_de = Column('please_note_de', Unicode)
+    please_note_fr = Column('please_note_fr', Unicode)
+    please_note_it = Column('please_note_it', Unicode)
+    please_note_en = Column('please_note_en', Unicode)
+    unit_de = Column('unit_de', Unicode)
+    unit_fr = Column('unit_fr', Unicode)
+    unit_it = Column('unit_it', Unicode)
+    unit_en = Column('unit_en', Unicode)
+    thickness_concat = Column('thickness_concat', Unicode)
+    usable_thickness_concat_de = Column('usable_thickness_concat_de', Unicode)
+    usable_thickness_concat_fr = Column('usable_thickness_concat_fr', Unicode)
+    usable_thickness_concat_it = Column('usable_thickness_concat_it', Unicode)
+    usable_thickness_concat_en = Column('usable_thickness_concat_en', Unicode)
+    usability_ratio_concat = Column('usability_ratio_concat', Unicode)
+    legend_simple_tooltip_de = Column('legend_simple_tooltip_de', Unicode)
+    legend_simple_tooltip_fr = Column('legend_simple_tooltip_fr', Unicode)
+    legend_simple_tooltip_it = Column('legend_simple_tooltip_it', Unicode)
+    legend_simple_tooltip_en = Column('legend_simple_tooltip_en', Unicode)
+    usable_lithologies_de = Column('usable_lithologies_de', Unicode)
+    usable_lithologies_fr = Column('usable_lithologies_fr', Unicode)
+    usable_lithologies_it = Column('usable_lithologies_it', Unicode)
+    usable_lithologies_en = Column('usable_lithologies_en', Unicode)
+    not_usable_lithologies_de = Column('not_usable_lithologies_de', Unicode)
+    not_usable_lithologies_fr = Column('not_usable_lithologies_fr', Unicode)
+    not_usable_lithologies_it = Column('not_usable_lithologies_it', Unicode)
+    not_usable_lithologies_en = Column('not_usable_lithologies_en', Unicode)
+    elevation = Column('elevation', Integer)
+    legend_de = Column('legend_de', Unicode)
+    legend_fr = Column('legend_fr', Unicode)
+    legend_it = Column('legend_it', Unicode)
+    legend_en = Column('legend_en', Unicode)
+    data_density_thickness = Column('data_density_thickness', Integer)
+    data_density_usability = Column('data_density_usability', Integer)
+    level_of_confidence_de = Column('level_of_confidence_de', Unicode)
+    level_of_confidence_fr = Column('level_of_confidence_fr', Unicode)
+    level_of_confidence_it = Column('level_of_confidence_it', Unicode)
+    level_of_confidence_en = Column('level_of_confidence_en', Unicode)
+    thickness_boxplot_descr_de = Column('thickness_boxplot_descr_de', Unicode)
+    thickness_boxplot_descr_fr = Column('thickness_boxplot_descr_fr', Unicode)
+    thickness_boxplot_descr_it = Column('thickness_boxplot_descr_it', Unicode)
+    thickness_boxplot_descr_en = Column('thickness_boxplot_descr_en', Unicode)
+    thickness_boxplot_filename = Column('thickness_boxplot_filename', Unicode)
+    hst_catalog_link = Column('hst_catalog_link', Unicode)
+    tech_doc_link = Column('tech_doc_link', Unicode)
+    auto_thickness_paper_link = Column('auto_thickness_paper_link', Unicode)
+    mat_min_link_de = Column('mat_min_link_en_de', Unicode)
+    mat_min_link_fr = Column('mat_min_link_fr_it', Unicode)
+    swissgeol_link = Column('swissgeol_link', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(HartsteinVorkommen.__bodId__, HartsteinVorkommen)
