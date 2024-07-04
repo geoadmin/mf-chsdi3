@@ -633,6 +633,9 @@ No css styling is provided per default so that you can use your own.
 |                                   | The combination of *mapExtent* and *imageDisplay* are used to compute a *resolution* or   |
 |                                   | *scale*. Some layer have *scale* dependant htmlpopup responses                            |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
+| **coord (optional)**              | The coordinates of interest (x, y). Some layers with external datasource need to know the |
+|                                   | cooridnates of the click on the map (p.e. ch.bafu.gefahren-aktuelle_erdbeben)             |
++-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 
