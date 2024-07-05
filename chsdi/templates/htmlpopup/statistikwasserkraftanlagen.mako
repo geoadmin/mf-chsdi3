@@ -133,7 +133,7 @@
   <tr>
     <td class="cell-meta">${_('ch.bfe.statistik-wasserkraftanlagen.enginepowerdemand')}</td>
     % if c['attributes']['enginepowerdemand'] != None:
-        <td class="cell-meta">${round(c['attributes']['enginepowerdemand'],2) or '-'}&nbsp;MW</td>
+        <td class="cell-meta">${round(c['attributes']['enginepowerdemand'],2) or '-'}&nbsp;GWh</td>
     % else:
         <td class="cell-meta">-</td>
     % endif
