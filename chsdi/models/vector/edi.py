@@ -474,8 +474,8 @@ class StatistischeGrundeinheitenStufe2(Base, Vector):
     __template__ = 'templates/htmlpopup/bfs_statistische_grundeinheiten_stufe2.mako'
     __label__ = 'u2_id'
     id = Column('bgdi_id', Integer, primary_key=True)
-    u2_id = Column('u1_id', Integer)
-    u2_name = Column('u1_name', Unicode)
+    u2_id = Column('u2_id', Integer)
+    u2_name = Column('u2_name', Unicode)
     kt_id = Column('kt_id', Integer)
     the_geom = Column('the_geom', Geometry2D)
 
