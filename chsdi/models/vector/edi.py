@@ -445,3 +445,38 @@ class GebaeudeWohnungsRegisterWaermequelle(Base, Vector):
     the_geom = Column('the_geom', Geometry2D)
 
 register('ch.bfs.gebaeude_wohnungs_register_waermequelle_heizung', GebaeudeWohnungsRegisterWaermequelle)
+
+
+class StatistischeGrundeinheitenStufe1(Base, Vector):
+    __tablename__ = 'grundeinheiten_stufe1'
+    __table_args__ = ({'schema': 'bfs', 'autoload': False})
+    __bodId__ = 'ch.bfs.statistische-grundeinheiten_stufe1'
+    __template__ = 'templates/htmlpopup/bfs_statistische_grundeinheiten_stufe1.mako'
+    __label__ = 'u1_id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    u1_id = Column('u1_id', Integer)
+    u1_name = Column('u1_name', Unicode)
+    kt_id = Column('kt_id', Integer)
+    u1_typ = Column('u1_typ', Integer)
+    u1_gr_typ = Column('u1_gr_typ', Integer)
+    u1_gr_jr = Column('u1_gr_jr', Integer)
+    typ_de = Column('typ_de', Unicode)
+    typ_fr = Column('typ_fr', Unicode)
+    the_geom = Column('the_geom', Geometry2D)
+
+register('ch.bfs.statistische-grundeinheiten_stufe1', StatistischeGrundeinheitenStufe1)
+
+
+class StatistischeGrundeinheitenStufe2(Base, Vector):
+    __tablename__ = 'grundeinheiten_stufe2'
+    __table_args__ = ({'schema': 'bfs', 'autoload': False})
+    __bodId__ = 'ch.bfs.statistische-grundeinheiten_stufe1'
+    __template__ = 'templates/htmlpopup/bfs_statistische_grundeinheiten_stufe2.mako'
+    __label__ = 'u2_id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    u2_id = Column('u1_id', Integer)
+    u2_name = Column('u1_name', Unicode)
+    kt_id = Column('kt_id', Integer)
+    the_geom = Column('the_geom', Geometry2D)
+
+register('ch.bfs.statistische-grundeinheiten_stufe2', StatistischeGrundeinheitenStufe2)
