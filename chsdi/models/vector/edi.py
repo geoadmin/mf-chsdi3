@@ -470,7 +470,7 @@ register('ch.bfs.statistische-grundeinheiten_stufe1', StatistischeGrundeinheiten
 class StatistischeGrundeinheitenStufe2(Base, Vector):
     __tablename__ = 'grundeinheiten_stufe2'
     __table_args__ = ({'schema': 'bfs', 'autoload': False})
-    __bodId__ = 'ch.bfs.statistische-grundeinheiten_stufe1'
+    __bodId__ = 'ch.bfs.statistische-grundeinheiten_stufe2'
     __template__ = 'templates/htmlpopup/bfs_statistische_grundeinheiten_stufe2.mako'
     __label__ = 'u2_id'
     id = Column('bgdi_id', Integer, primary_key=True)
