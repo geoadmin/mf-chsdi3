@@ -66,6 +66,8 @@ max_featureids_request = 20
 default_cache_control = ${CACHE_CONTROL}
 static_max_age = ${STATIC_MAX_AGE}
 robots_file = ${ROBOTS_FILE}
+disable_polyfill = ${DISABLE_POLYFILL}
+polyfill_url = ${POLYFILL_URL}
 
 # Use the BOD directly, no .po./mo files
 dynamic_translation = ${DYNAMIC_TRANSLATION}
