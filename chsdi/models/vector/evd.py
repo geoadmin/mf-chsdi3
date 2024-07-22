@@ -324,8 +324,6 @@ class LandwirtschaftlicheNutzungsflaechen(Base, Vector):
     nutzung_it = Column('nutzung_it', Unicode)
     betriebsnummer = Column('betriebsnummer', Unicode)
     bur_nr = Column('bur_nr', Unicode)
-    shape_length = Column('shape_length', Unicode)
-    shape_area = Column('shape_area', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.blw.landwirtschaftliche-nutzungsflaechen', LandwirtschaftlicheNutzungsflaechen)
