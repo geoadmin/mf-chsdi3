@@ -327,5 +327,3 @@ class LandwirtschaftlicheNutzungsflaechen(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.blw.landwirtschaftliche-nutzungsflaechen', LandwirtschaftlicheNutzungsflaechen)
-
-
