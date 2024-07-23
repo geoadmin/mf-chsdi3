@@ -28,7 +28,11 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.blw.landwirtschaftliche-nutzungsflaechen.bff_qualitaet_1')}</td>
-        <td>${c['attributes']['bff_qualitaet_1'] or '-'}</td>
+        % if c['attributes']['bff_qualitaet_1'] is not None:
+            <td>${c['attributes']['bff_qualitaet_1']}</td>
+        % else:
+            <td>-</td>
+        % endif
     </tr>
     <tr>
         <td class="cell-left">${_('ch.blw.landwirtschaftliche-nutzungsflaechen.bezugsjahr')}</td>
