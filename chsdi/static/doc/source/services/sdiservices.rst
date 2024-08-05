@@ -1379,7 +1379,7 @@ example of the .mbtiles file:
 Available datasets and styles as mapbox vector tiles
 ****************************************************
 
-The list of current datasets and styles is available visiting the `official service description <https://www.geo.admin.ch/en/geo-services/geo-services/portrayal-services-web-mapping/vector_tiles_service.html#available-geodata>`_
+The list of current datasets and styles is available visiting the `official service description <https://www.geo.admin.ch/en/vector-tiles-service-available-services-and-data>`_
 
 
 Metadata Service
