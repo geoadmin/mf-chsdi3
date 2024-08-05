@@ -2,7 +2,7 @@
 
 <%def name="table_body(c,lang)">
     <%
-        lang = 'de' if lang in ('de', 'rm', 'en') else 'fr'
+        lang = 'de' if lang in ('de', 'rm', 'en') else lang
         nutzung = 'nutzung_%s' % lang
         hauptkategorie = 'hauptkategorie_%s' % lang
     %>
