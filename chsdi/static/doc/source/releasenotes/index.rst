@@ -14,6 +14,28 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20240828:
+
+Release 20240828 - Wednesday, August 28th 2024
+----------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+- Bug fixes
+- Announcements:
+    - the layer *ch.swisstopo.geologie-geologischer_atlas_vector.metadata* will be removed from chsdi services with the release of August 28th 2024
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2024-07-03-rc1...2024-08-28-rc1>`__
+
+Geodata
+*******
+
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `dummy <//map.geo.admin.ch/?layers=ch.dummy>`__ (ch.dummy)                                                                                                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20240703:
 
