@@ -633,6 +633,9 @@ No css styling is provided per default so that you can use your own.
 |                                   | The combination of *mapExtent* and *imageDisplay* are used to compute a *resolution* or   |
 |                                   | *scale*. Some layer have *scale* dependant htmlpopup responses                            |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
+| **coord (optional)**              | The coordinates of interest (x, y). Some layers with external datasource need to know the |
+|                                   | cooridnates of the click on the map (p.e. ch.bafu.gefahren-aktuelle_erdbeben)             |
++-----------------------------------+-------------------------------------------------------------------------------------------+
 | **callback (optional)**           | The name of the callback function.                                                        |
 +-----------------------------------+-------------------------------------------------------------------------------------------+
 
@@ -1236,18 +1239,15 @@ Terrain tiles are served according to the `Tile Map Service (TMS) <http://wiki.o
 URL
 ***
 
-- https://terrain0.geo.admin.ch
-- https://terrain1.geo.admin.ch
-- https://terrain2.geo.admin.ch
-- https://terrain3.geo.admin.ch
-- https://terrain4.geo.admin.ch
+https://3d.geo.admin.ch
 
 Metadata Service
 ****************
 
 The `layer.json` file determines which terrain tiles are available.
 
-- https://3d.geo.admin.ch/1.0.0/ch.swisstopo.terrain.3d/default/20200520/4326/layer.json
+- https://3d.geo.admin.ch/ch.swisstopo.terrain.3d/v1/layer.json (alway most recent terrain tiles)
+- https://3d.geo.admin.ch/ch.swisstopo.terrain.3d/v1/20201203/layer.json (terrain tiles of the date 20201203)
 
 Parameters
 **********
@@ -1256,63 +1256,67 @@ A request is in the form:
 
 ::
 
-    GET https://<ServerName>/<ProtocoleVersion>/ch.swisstopo.terrain.3d/<Stylename>/<Time>/<TileMatrixSetId>/<Zoom>/<X>/<Y>.<FormatExtension>
+    GET https://<ServerName>/ch.swisstopo.terrain.3d/<Version>/<Time>/<Zoom>/<X>/<Y>.<FormatExtension>
 
 with the following parameters:
 
 ===================    ==================================   ==========================================================================
 Parameter              Example                              Explanation
 ===================    ==================================   ==========================================================================
-ServerName             terrain[0-5].geo.admin.ch
-Version                1.0.0                                The terrain service protocol version
+ServerName             3d.geo.admin.ch
+Version                v1                                   v1 means terrain tiles generated with cesium tiles
 Layername              ch.swisstopo.terrain.3d (constant)   The name of the terrain layer. (only one terrain layer is available)
-StyleName              default                              mostly constant
-Time                   2015311201                           Date of tile generation in (ISO-8601).
-TileMatrixSet          4326 (constant)                      EPSG code for WGS84
-TileSetId              12                                   Zoom level (see below)
+Time                   20201203                             Date of tile generation in (ISO-8601).
+Zoom                   12                                   Zoom level (see below)
 X                      4309                                 The longitue index
 Y                      3111                                 The latitude index
 FormatExtension        terrain                              The file extension (a gzipped binary terrain file)
 ===================    ==================================   ==========================================================================
 
 
-The *<TileMatrixSet>* **4326** is defined as follow::
+Example
+*******
 
-  MinX              5.013926957923385
-  MaxX              11.477436312994008
-  MinY              45.35600133779394
-  MaxY              48.27502358353741
-  TileWidth         256
+* A `Terrain tile <https://3d.geo.admin.ch/ch.swisstopo.terrain.3d/v1/20201203/7/136/98.terrain?v=3924.0.0>`_
 
-With the *<tileOrigin>* in the bottom left corner of the bounding box.
+.. _tiles3d_description:
 
-=============================== ========= ========================================
-Resoultion [m/pixel at equator] Zoomlevel Availability
-=============================== ========= ========================================
-78271.80469                     0         [-180, -90, 90, 180]
-39135.90234                     1         [-180, -90, 90, 180]
-19567.95117                     2         [-180, -90, 90, 180]
-9783.975586                     3         [-180, -90, 90, 180]
-4891.987793                     4         [-180, -90, 90, 180]
-2445.993896                     5         [-180, -90, 90, 180]
-1222.996948                     6         [-180, -90, 90, 180]
-611.4984741                     7         [-180, -90, 90, 180]
-305.749237                      8         Ranges as defined in the layer.json file
-152.8746185                     9         Ranges as defined in the layer.json file
-76.43730927                     10        Ranges as defined in the layer.json file
-38.21865463                     11        Ranges as defined in the layer.json file
-19.10932732                     12        Ranges as defined in the layer.json file
-9.554663658                     13        Ranges as defined in the layer.json file
-4.777331829                     14        Ranges as defined in the layer.json file
-2.388665915                     15        Ranges as defined in the layer.json file
-1.194332957                     16        Ranges as defined in the layer.json file
-0.597166479                     17        Ranges as defined in the layer.json file
-=============================== ========= ========================================
+----------
+
+3D Tiles
+----------
+A RESTFul implementation of "`Cesium <http://cesiumjs.org/>`_" `3D Tiles specification <https://github.com/CesiumGS/3d-tiles>`_.
+
+
+URL
+***
+
+- https://3d.geo.admin.ch
+
+
+Metadata Service
+****************
+
+The `tileset.json` file describes the available set of tiles. In order to use this service you can use `CesiumJS <https://github.com/CesiumGS/cesium>`_.
+
+Currently, 3 technical layers (ch.swisstopo.swisstlm3d.3d, ch.swisstopo.swissnames3d.3d, ch.swisstopo.vegetation.3d) are available and they contains all available 3D objects.
+
+Most recent 3D tiles:
+
+- https://3d.geo.admin.ch/ch.swisstopo.swissbuildings3d.3d/v1/tileset.json
+- https://3d.geo.admin.ch/ch.swisstopo.vegetation.3d/v1/tileset.json
+
+3D tiles of a specific date:
+
+- https://3d.geo.admin.ch/ch.swisstopo.swissbuildings3d.3d/v1/20240501/tileset.json
+- https://3d.geo.admin.ch/ch.swisstopo.vegetation.3d/v1/20240412/tileset.json
+- https://3d.geo.admin.ch/3d-tiles/ch.swisstopo.swissnames3d.3d/20180716/tileset.json
 
 Example
 *******
 
-* A `Terrain tile <https://terrain2.geo.admin.ch/1.0.0/ch.swisstopo.terrain.3d/default/20180601/4326/12/4309/970.terrain>`_
+* A `3D tile <https://3d.geo.admin.ch/ch.swisstopo.swissbuildings3d.3d/v1/20240501/7/54/21.b3dm>`_
+
 
 .. _vectortiles_description:
 
@@ -1376,7 +1380,7 @@ example of the .mbtiles file:
 Available datasets and styles as mapbox vector tiles
 ****************************************************
 
-The list of current datasets and styles is available visiting the `official service description <https://www.geo.admin.ch/en/geo-services/geo-services/portrayal-services-web-mapping/vector_tiles_service.html#available-geodata>`_
+The list of current datasets and styles is available visiting the `official service description <https://www.geo.admin.ch/en/vector-tiles-service-available-services-and-data>`_
 
 
 Metadata Service
@@ -1394,38 +1398,6 @@ example of tileset:
 - https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.base.vt/v1.0.0/tiles.json
 - https://vectortiles.geo.admin.ch/tiles/ch.swisstopo.relief.vt/v1.0.0/tiles.json
 
-
-
-.. _tiles3d_description:
-
-----------
-
-3D Tiles
-----------
-A RESTFul implementation of "`Cesium <http://cesiumjs.org/>`_" `3D Tiles specification <https://github.com/AnalyticalGraphicsInc/3d-tiles>`_.
-
-
-URL
-***
-
-- https://vectortiles.geo.admin.ch/3d-tiles/
-
-
-Metadata Service
-****************
-
-The `tileset.json` file describes the available set of tiles. In order to use this service, you must currently use a fork of CesiumJS, `the 3d-tiles branch <https://github.com/AnalyticalGraphicsInc/cesium/tree/3d-tiles>`_. Stay informed and have a look at the current `RoadMap for 3D Tiles <https://github.com/AnalyticalGraphicsInc/cesium/issues/3241>`_.
-
-Currently, 3 technical layers (ch.swisstopo.swisstlm3d.3d, ch.swisstopo.swissnames3d.3d, ch.swisstopo.vegetation.3d) are available and they contains all available 3D objects. Additional layers will be available in the future. Partial 3D buildings model coverage can be vizsualised `here <https://s.geo.admin.ch/70fb32e692>`_.
-
-- https://vectortiles.geo.admin.ch/3d-tiles/ch.swisstopo.swisstlm3d.3d/20201020/tileset.json
-- https://vectortiles.geo.admin.ch/3d-tiles/ch.swisstopo.swissnames3d.3d/20180716/tileset.json
-- https://vectortiles.geo.admin.ch/3d-tiles/ch.swisstopo.vegetation.3d/20190313/tileset.json
-
-Example
-*******
-
-* A `3D tile <https://vectortiles.geo.admin.ch/3d-tiles/ch.swisstopo.swisstlm3d.3d/20201020/8/41/50.b3dm?v=1.0>`_
 
 .. _sparql_description:
 

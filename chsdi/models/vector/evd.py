@@ -297,3 +297,29 @@ class SachplanCernAnhoerungPlmPoly(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.sbfi.sachplan-cern_anhoerung', SachplanCernAnhoerungPlmPoly)
+
+
+class LandwirtschaftlicheNutzungsflaechen(Base, Vector):
+    __tablename__ = 'landwirtschaftliche_nutzungsflaechen'
+    __table_args__ = ({'schema': 'blw', 'autoload': False})
+    __bodId__ = 'ch.blw.landwirtschaftliche-nutzungsflaechen'
+    __template__ = 'templates/htmlpopup/blw_landwirtschaftliche_nutzungsflaechen.mako'
+    __label__ = 't_id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    t_id = Column('t_id', Unicode)
+    bezugsjahr = Column('bezugsjahr', Integer)
+    lnf_code = Column('lnf_code', Integer)
+    nutzungsidentifikator = Column('nutzungsidentifikator', Unicode)
+    bewirtschaftungsgrad = Column('bewirtschaftungsgrad', Integer)
+    flaeche_m2 = Column('flaeche_m2', Integer)
+    bff_qualitaet_1 = Column('bff_qualitaet_1', Integer)
+    hauptkategorie_de = Column('hauptkategorie_de', Unicode)
+    hauptkategorie_fr = Column('hauptkategorie_fr', Unicode)
+    hauptkategorie_it = Column('hauptkategorie_it', Unicode)
+    nutzung_de = Column('nutzung_de', Unicode)
+    nutzung_fr = Column('nutzung_fr', Unicode)
+    nutzung_it = Column('nutzung_it', Unicode)
+    bur_nr = Column('bur_nr', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.blw.landwirtschaftliche-nutzungsflaechen', LandwirtschaftlicheNutzungsflaechen)

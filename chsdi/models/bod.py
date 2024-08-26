@@ -136,7 +136,9 @@ class LayersConfig(Base):
             del config['timeBehaviour']
 
         if config['type'] == 'wms':
-            config['wmsUrl'] = 'https://%s' % wmsHost
+            # do not use https if wmsUrl starts with localhost
+            protocol = "http" if wmsHost.lower().startswith('localhost') else "https"
+            config['wmsUrl'] = f'{protocol}://{wmsHost}'
         elif config['type'] == 'geojson':
             api_url = params.request.registry.settings['api_url']
             config['styleUrl'] = make_agnostic(
