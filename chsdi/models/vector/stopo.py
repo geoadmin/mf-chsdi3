@@ -2729,7 +2729,7 @@ register('ch.swisstopo.hiks-siegfried-ta50.metadata', HiksSiegfriedTa50Metadata)
 
 
 class SwissimageHistMetadata(Base, Vector):
-    __tablename__ = 'swissimage_hist_chsdi'
+    __tablename__ = 'view_swissimage_metadata'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __template__ = 'templates/htmlpopup/swissimagehist.mako'
     __bodId__ = 'ch.swisstopo.swissimage-product.metadata'
@@ -2740,7 +2740,7 @@ class SwissimageHistMetadata(Base, Vector):
     gsd = Column('gsd', Unicode)
     colormode = Column('colormode', Unicode)
     bgdi_flugjahr = Column('bgdi_flugjahr', Integer)
-    the_geom = Column(Geometry2D)
+    the_geom = Column('the_geom_tooltip', Geometry2D)
 
 register('ch.swisstopo.swissimage-product.metadata', SwissimageHistMetadata)
 
