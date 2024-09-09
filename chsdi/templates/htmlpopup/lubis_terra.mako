@@ -103,9 +103,8 @@ else:
 
 %>
 % if isStac: # STAC Tooltips
-<tr><td class="cell-left">${_(tt_lubis_ebkey)}</td>                       <td>${c['attributes']['image_number'] or '-'}</td></tr>
+<tr><td class="cell-left">${_(tt_lubis_ebkey)}</td>                       <td><a href="${asset_url}" target="_blank">${c['featureId'] or '-'}</a></td></tr>
 <tr><td class="cell-left">${_('ch.swisstopo.lubis-terrestrische_aufnahmen.tt_lubis_aufnahmedatum')}</td><td>${datum or '-'}</td></tr>
-<tr><td class="cell-left">${_('tt_lubis_bildpfad')}</td>                  <td>${c['attributes']['filename'] or '-'}</td></tr>
 <tr><td class="cell-left">${_('ch.swisstopo.lubis-terrestrische_aufnahmen.operate_name')}</td>      <td>${c['attributes']['ort'] or '-'}</td></tr>
 <tr><td class="cell-left">${_('ch.swisstopo.lubis-terrestrische_aufnahmen.station')}</td>      <td>${c['attributes']['station'] or '-'}</td></tr>
 <tr><td class="cell-left">${_('tt_lubis_schraegaufnahmen_x')}</td>        <td>${c['attributes']['x'] or '-'}</td></tr>
