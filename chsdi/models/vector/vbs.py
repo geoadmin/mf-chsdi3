@@ -198,6 +198,44 @@ class BundestankstellenBebecoZoom2(Base, BundestankstellenBebeco, Vector):
 register(BundestankstellenBebeco.__bodId__, BundestankstellenBebecoZoom2)
 
 
+class Notfalltreffpunkte:
+    __tablename__ = 'v_notfalltreffpunkte'
+    __table_args__ = ({'schema': 'babs', 'autoload': False, 'extend_existing': True})
+    __template__ = 'templates/htmlpopup/notfalltreffpunkte.mako'
+    __bodId__ = 'ch.babs.notfalltreffpunkte'
+    __label__ = 'id'
+    __returnedGeometry__ = 'the_geom_point'
+    id = Column('ntp_id', Unicode, primary_key=True)
+    gebbezeichnung = Column('gebbezeichnung', Unicode)
+    strasse = Column('strasse', Unicode)
+    haus_nummer = Column('haus_nummer', Unicode)
+    plz = Column('plz', Integer)
+    ort = Column('ort', Unicode)
+    gemeinde = Column('gemeinde', Unicode)
+    kanton = Column('kanton', Unicode)
+    xkoord = Column('xkoord', Integer)
+    ykoord  = Column('ykoord', Integer)
+    linkkanton = Column('linkkanton', Unicode)
+    linkbabs  = Column('linkbabs', Unicode)
+    bemerkungen = Column('bemerkungen', Unicode)
+    the_geom_point = Column('the_geom', Geometry2D)
+
+
+class NotfalltreffpunkteZoom1(Base, Notfalltreffpunkte, Vector):
+    __minscale__ = 1
+    __maxscale__ = 100000
+    the_geom = Column('the_geom_tooltip_2', Geometry2D)
+
+register(NotfalltreffpunkteZoom1.__bodId__, NotfalltreffpunkteZoom1)
+
+
+class NotfalltreffpunkteZoom2(Base, Notfalltreffpunkte, Vector):
+    __minscale__ = 100000
+    the_geom = Column('the_geom_tooltip', Geometry2D)
+
+register(NotfalltreffpunkteZoom2.__bodId__, NotfalltreffpunkteZoom2)
+
+
 class LogistikraeumeArmeelogistikcenter(Base, Vector):
     __tablename__ = 'abschnittsregionen_armeelogistikzentren'
     __table_args__ = ({'schema': 'militaer', 'autoload': False})
