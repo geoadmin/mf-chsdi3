@@ -235,6 +235,7 @@ class NotfalltreffpunkteZoom2(Base, Notfalltreffpunkte, Vector):
 
 register(NotfalltreffpunkteZoom2.__bodId__, NotfalltreffpunkteZoom2)
 
+
 class LogistikraeumeArmeelogistikcenter(Base, Vector):
     __tablename__ = 'abschnittsregionen_armeelogistikzentren'
     __table_args__ = ({'schema': 'militaer', 'autoload': False})
