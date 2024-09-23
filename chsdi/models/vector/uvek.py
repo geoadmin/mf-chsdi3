@@ -4296,6 +4296,7 @@ class LadebedarfsweltLadepunkte:
     allgemein_zugaenglich_anzahl_ladepunkte = Column('allgemein_zugaenglich_anzahl_ladepunkte', Float)
     quartier_ac_ladepunkte = Column('quartier_ac_ladepunkte', Float)
     zielort_ac_ladepunkte = Column('zielort_ac_ladepunkte', Float)
+    zielort_dc_50_ladepunkte = Column('zielort_dc_50_ladepunkte', Float)
     quartier_dc_150_ladepunkte = Column('quartier_dc_150_ladepunkte', Float)
     schnell_dc_150_ladepunkte = Column('schnell_dc_150_ladepunkte', Float)
     schnell_dc_350_ladepunkte = Column('schnell_dc_350_ladepunkte', Float)
