@@ -71,7 +71,7 @@ isStac = c['featureId'].startswith('lubis-luftbilder_schraegaufnahmen')
 # there is no way to open to activate the orthophoto with the link parameters
 if isStac:
   dataGeoAdminHost = request.registry.settings['datageoadminhost']
-  asset_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['featureId']}.tif"
+  asset_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['featureId']}_2056.tif"
   preview_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['featureId']}.jpg"
   meta_csv_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['featureId']}.csv"
   viewer_url=asset_url
@@ -166,7 +166,6 @@ if not isStac:
       lang,
       image_rotation)
   viewer_url = get_viewer_url(request, params)
-
 %>
 
 % if isStac: # STAC Tooltips
