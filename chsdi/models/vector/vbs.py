@@ -221,25 +221,18 @@ class Notfalltreffpunkte:
     the_geom_point = Column('the_geom', Geometry2D)
 
 
-class NotfalltreffpunkteZoom0(Base, Notfalltreffpunkte, Vector):
-    __minscale__ = 100000
-    the_geom = Column('the_geom_tooltip_0', Geometry2D)
-
-
 class NotfalltreffpunkteZoom1(Base, Notfalltreffpunkte, Vector):
+    __minscale__ = 1
     __maxscale__ = 100000
-    __minscale__ = 25000
-    the_geom = Column('the_geom_tooltip_1', Geometry2D)
+    the_geom = Column('the_geom_tooltip_2', Geometry2D)
+
+register(NotfalltreffpunkteZoom1.__bodId__, NotfalltreffpunkteZoom1)
 
 
 class NotfalltreffpunkteZoom2(Base, Notfalltreffpunkte, Vector):
-    __maxscale__ = 25000
-    __minscale__ = 1
-    the_geom = Column('the_geom_tooltip_2', Geometry2D)
+    __minscale__ = 100000
+    the_geom = Column('the_geom_tooltip', Geometry2D)
 
-
-register(NotfalltreffpunkteZoom0.__bodId__, NotfalltreffpunkteZoom0)
-register(NotfalltreffpunkteZoom1.__bodId__, NotfalltreffpunkteZoom1)
 register(NotfalltreffpunkteZoom2.__bodId__, NotfalltreffpunkteZoom2)
 
 
