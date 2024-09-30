@@ -14,6 +14,31 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20241009:
+
+Release 20241009 - Wednesday, October 9th 2024
+----------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+- Bug fixes
+- Announcements:
+    - TODO
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2024-08-28-rc1...2024-10-09-rc1>`__
+
+Geodata
+*******
+
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `TODO <//map.geo.admin.ch/?layers=ch.bfs.statistische-grundeinheiten_stufe1>`__ (ch.bfs.statistische-grundeinheiten_stufe1)                                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `TODO <//map.geo.admin.ch/?layers=ch.bfs.statistische-grundeinheiten_stufe1>`__ (ch.bfs.statistische-grundeinheiten_stufe1)                                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20240828:
 
 Release 20240828 - Wednesday, August 28th 2024
