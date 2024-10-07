@@ -14,6 +14,107 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20241009:
+
+Release 20241009 - Wednesday, October 9th 2024
+----------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+- Bug fixes
+- Announcements:
+    - the layers *ch.swisstopo.geologie-geotechnik-steinbrueche_1915*, *ch.swisstopo.geologie-geotechnik-steinbrueche_1965*, *ch.swisstopo.geologie-geotechnik-steinbrueche_1995* and *ch.swisstopo.geologie-geotechnik-steinbrueche_1980* have been removed from chsdi services as previously announced
+    - by the release of November 13th or December 18th the layers *ch.swisstopo-karto.skitouren* and *ch.swisstopo-karto.schneeschuhrouten* will no longer be raster maps but vector data sets
+    - important information about SSL certificates and http protocol for integrated symbols, KML’s or GPX files in map.geo.admin.ch. Details `read here <https://www.geo.admin.ch/en/important-imformation-ssl-certificates-http-protocols>`
+    - the layers *ch.swisstopo.lubis-luftbilder_schwarzweiss*, *ch.swisstopo.lubis-luftbilder_farbe*, *ch.swisstopo.lubis-luftbilder_infrarot* will get the following changes by the release of November 13th: no extended tooltip anymore and the attributes inventarnummer, bildnummer, orientierung, rotation, filesize_mb, ort, image_height and image_width will be removed from chsdi services, because they are no longer filled and used.
+    - the layer *ch.swisstopo.lubis-luftbilder_schraegaufnahmen* will get the following changes by the release of November 13th: no extended tooltip anymore and the attributes inventory_number, medium_format, filesize_mb, contact and contact_email will be removed from chsdi services, because they are no longer filled and used.
+    - the layer *ch.swisstopo.lubis-terrestrische_aufnahmen* will get the following changes by the release of November 13th: no extended tooltip anymore and the attributes image_number, filesize_mb, medium_format, image_height and image_width will be removed from chsdi services, because they are no longer filled and used.
+    - the object ID values of the layer *ch.vbs.schiessanzeigen* will change for all objects due to geometrical changes in the source data with the release of November 13th or December 18th. Existing permalinks to objects may not work anymore and will have to be replaced by the new object id’s (chsdi fields featureId and id). In addition there will be a new attribute bezeichnung_ort on the dataset. The other existing attributes will stay.
+    - decommission of various vectortile styles and datasets by January 2025. Details `read here <https://www.geo.admin.ch/en/old-styles-no-longer-available-from-january-2025>`
+    - the layer *ch.bakom.notruf-112_satellit* will be decommissioned with one of the first releases in 2025
+
+
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2024-08-28-rc1...2024-10-09-rc1>`__
+
+Geodata
+*******
+
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Emergency meeting points <//map.geo.admin.ch/?layers=ch.babs.notfalltreffpunkte>`__ (ch.babs.notfalltreffpunkte)                                                                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Amphibian migration conflicts <//map.geo.admin.ch/?layers=ch.bafu.amphibienwanderung-verkehrskonflikte>`__ (ch.bafu.amphibienwanderung-verkehrskonflikte)                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Vegetation height model NFI <//map.geo.admin.ch/?layers=ch.bafu.landesforstinventar-vegetationshoehenmodell>`__ (ch.bafu.landesforstinventar-vegetationshoehenmodell)                                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Surface model NFI <//map.geo.admin.ch/?layers=ch.bafu.landesforstinventar-vegetationshoehenmodell_relief>`__ (ch.bafu.landesforstinventar-vegetationshoehenmodell_relief)                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `CLN Exceedance <//map.geo.admin.ch/?layers=ch.bafu.luftreinhaltung-stickstoff_kritischer_eintrag>`__ (ch.bafu.luftreinhaltung-stickstoff_kritischer_eintrag)                                                     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Charging requirements: Plug-in vehicles <//map.geo.admin.ch/?layers=ch.bfe.ladebedarfswelt-fahrzeuge>`__ (ch.bfe.ladebedarfswelt-fahrzeuge)                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Charging requirements: Home charging availability - Convenient <//map.geo.admin.ch/?layers=ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_bequem>`__ (ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_bequem)       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Charging requirements: Home charging availability - Flexible <//map.geo.admin.ch/?layers=ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_flexibel>`__ (ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_flexibel)     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Charging requirements: Home charging availability - Planned <//map.geo.admin.ch/?layers=ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_geplant>`__ (ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_geplant)        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Charging requirements: Charging points - Convenient <//map.geo.admin.ch/?layers=ch.bfe.ladebedarfswelt-ladepunkte_bequem>`__ (ch.bfe.ladebedarfswelt-ladepunkte_bequem)                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Charging requirements: Charging points - Flexible <//map.geo.admin.ch/?layers=ch.bfe.ladebedarfswelt-ladepunkte_felxibel>`__ (ch.bfe.ladebedarfswelt-ladepunkte_felxibel)                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Charging requirements: Charging points - Planned <//map.geo.admin.ch/?layers=ch.bfe.ladebedarfswelt-ladepunkte_geplant>`__ (ch.bfe.ladebedarfswelt-ladepunkte_geplant)                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Charging requirements: Power requirements <//map.geo.admin.ch/?layers=ch.bfe.ladebedarfswelt-strombedarf>`__ (ch.bfe.ladebedarfswelt-strombedarf)                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Land use statistics standard <//map.geo.admin.ch/?layers=ch.bfs.arealstatistik>`__ (ch.bfs.arealstatistik)                                                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Land use statistics cover <//map.geo.admin.ch/?layers=ch.bfs.arealstatistik-bodenbedeckung>`__ (ch.bfs.arealstatistik-bodenbedeckung)                                                                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Employment (FTE) <//map.geo.admin.ch/?layers=ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente>`__ (ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente)                                     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Enterprises <//map.geo.admin.ch/?layers=ch.bfs.betriebszaehlungen-arbeitsstaetten>`__ (ch.bfs.betriebszaehlungen-arbeitsstaetten)                                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Dwellings <//map.geo.admin.ch/?layers=ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen>`__ (ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen)                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Buildings <//map.geo.admin.ch/?layers=ch.bfs.volkszaehlung-gebaeudestatistik_gebaeude>`__ (ch.bfs.volkszaehlung-gebaeudestatistik_gebaeude)                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Population (residents) <//map.geo.admin.ch/?layers=ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner>`__ (ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner)                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Landwirtschaftliche Nutzungsflächen Schweiz <//map.geo.admin.ch/?layers=ch.blw.landwirtschaftliche-nutzungsflaechen>`__ (ch.blw.landwirtschaftliche-nutzungsflaechen)                                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hiking trails <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-wanderwege>`__ (ch.swisstopo.swisstlm3d-wanderwege)                                                                                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Protected Areas swissTLMregio <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-adminboundaries-protectedarea>`__ (ch.swisstopo.vec200-adminboundaries-protectedarea)                                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Building generalized swissTLMregio <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-building>`__ (ch.swisstopo.vec200-building)                                                                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hydrology swissTLMregio <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-hydrography>`__ (ch.swisstopo.vec200-hydrography)                                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Land cover swissTLMregio <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-landcover>`__ (ch.swisstopo.vec200-landcover)                                                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Single objects swissTLMregio <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-miscellaneous>`__ (ch.swisstopo.vec200-miscellaneous)                                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Elevations swissTLMregio <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-miscellaneous-geodpoint>`__ (ch.swisstopo.vec200-miscellaneous-geodpoint)                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Names swissTLMregio <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-names-namedlocation>`__ (ch.swisstopo.vec200-names-namedlocation)                                                                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Public transportation swissTLMregio <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-transportation-oeffentliche-verkehr>`__ (ch.swisstopo.vec200-transportation-oeffentliche-verkehr)                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Road system swissTLMregio <//map.geo.admin.ch/?layers=ch.swisstopo.vec200-transportation-strassennetz>`__ (ch.swisstopo.vec200-transportation-strassennetz)                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial images cantons <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder-dritte-kantone>`__ (ch.swisstopo.lubis-luftbilder-dritte-kantone)                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SWISSIMAGE Journey through time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product>`__ (ch.swisstopo.swissimage-product)                                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division SWISSIMAGE 10 cm Raster <//map.geo.admin.ch/?layers=ch.swisstopo.images-swissimage-dop10.metadata>`__ (ch.swisstopo.images-swissimage-dop10.metadata)                                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Tiling SWISSIMAGE Journey thru time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product.metadata>`__ (ch.swisstopo.swissimage-product.metadata)                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20240828:
 
 Release 20240828 - Wednesday, August 28th 2024
@@ -61,6 +162,8 @@ Geodata
 | Update | `SP Military <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_kraft>`__ (ch.vbs.sachplan-infrastruktur-militaer_kraft)                                                                          |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `SPM consultation <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_anhoerung>`__ (ch.vbs.sachplan-infrastruktur-militaer_anhoerung)                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial images cantons <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder-dritte-kantone>`__ (ch.swisstopo.lubis-luftbilder-dritte-kantone)                                                                |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20240703:
