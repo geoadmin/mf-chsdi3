@@ -22,6 +22,10 @@
     <td>${c['attributes']['zielort_ac_ladepunkte'] or '-'}</td>
   </tr>
   <tr>
+    <td class="cell-left-large">${_('ch.bfe.ladebedarfswelt-ladepunkte_bequem.Zielort_DC_50_Ladepunkte')}</td>
+    <td>${c['attributes']['zielort_dc_50_ladepunkte'] or '-'}</td>
+  </tr>
+  <tr>
     <td class="cell-left-large">${_('ch.bfe.ladebedarfswelt-ladepunkte_bequem.Quartier_DC_150_Ladepunkte')}</td>
     <td>${c['attributes']['quartier_dc_150_ladepunkte'] or '-'}</td>
   </tr>

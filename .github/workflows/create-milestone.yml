@@ -8,4 +8,4 @@ jobs:
     uses: geoadmin/.github/.github/workflows/create-milestone.yml@master
     secrets: inherit
     with:
-      ci_status_check_name: 'AWS CodeBuild eu-central-1 (mf-chsdi3)'
+      ci_status_check_name: 'AWS CodeBuild eu-central-1 (mf-chsdi3-pr)'
