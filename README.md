@@ -150,13 +150,13 @@ summon make S3_TESTS=0 test
 In order to download all images of a layer in the correct format and with the correct dimensions, simply use:
 
 ```bash
-make legends BODID=ch.layername WMSHOST=wms.geo.admi.ch
+make legends BODID=ch.layername WMSHOST=wms.geo.admin.ch
 ```
 
 Alternatively, you can also download a WMS legend for a specific scale.
 
 ```bash
-make legends BODID=ch.layername WMSHOST=wms.geo.admi.ch WMSSCALELEGEND=1000
+make legends BODID=ch.layername WMSHOST=wms.geo.admin.ch WMSSCALELEGEND=1000
 ```
 
 You will need the `optipgn` tool order to download the legends, use `sudo apt install optipng` to install it.
