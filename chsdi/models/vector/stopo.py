@@ -391,13 +391,6 @@ class GeologischerAtlasRasterMeta(Base, GeologischerAtlasMeta, Vector):
 register('ch.swisstopo.geologie-geologischer_atlas.metadata', GeologischerAtlasRasterMeta)
 
 
-class GeologischerAtlasVectorMeta(Base, GeologischerAtlasMeta, Vector):
-    __tablename__ = 'geologischer_atlas_vector_meta'
-    __bodId__ = 'ch.swisstopo.geologie-geologischer_atlas_vector.metadata'
-
-register('ch.swisstopo.geologie-geologischer_atlas_vector.metadata', GeologischerAtlasVectorMeta)
-
-
 class GeolSpezialkartenMetadata:
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/spezialkarten_meta.mako'
