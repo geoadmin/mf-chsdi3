@@ -3231,7 +3231,7 @@ register(HartsteinVorkommen.__bodId__, HartsteinVorkommen)
 
 class GeologieThermaleWaesser(Base, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'thermale_waesser'
+    __tablename__ = 'thermal_waters'
     __bodId__ = 'ch.swisstopo.geologie-thermale_waesser'
     __template__ = 'templates/htmlpopup/stopo_geologie_thermale_waesser.mako'
     __extended_info__ = True
