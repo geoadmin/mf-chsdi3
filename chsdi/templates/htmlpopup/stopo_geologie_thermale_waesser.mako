@@ -96,15 +96,27 @@
     </tr>
     <tr>
       <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.x_lv95')}</td>
-      <td>${c['attributes']['x_lv95'] or '-'}</td>
+      % if c['attributes']['x_lv95']:
+      <td>${int(c['attributes']['x_lv95'])}</td>
+      % else:
+      <td>-</td>
+      % endif
     </tr>
     <tr>
       <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.y_lv95')}</td>
-      <td>${c['attributes']['y_lv95'] or '-'}</td>
+      % if c['attributes']['y_lv95']:
+      <td>${int(c['attributes']['y_lv95'])}</td>
+      % else:
+      <td>-</td>
+      % endif
     </tr>
     <tr>
       <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.elevation')}</td>
-      <td>${c['attributes']['elevation'] or '-'}</td>
+      % if c['attributes']['elevation']:
+      <td>${int(c['attributes']['elevation'])}</td>
+      % else:
+      <td>-</td>
+      % endif
     </tr>
     <tr>
       <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.source1')}</td>
