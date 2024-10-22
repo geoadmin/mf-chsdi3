@@ -140,15 +140,27 @@
     </tr>
     <tr>
       <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.swissgeol')}</td>
-      <td>${c['attributes']['swissgeol'] or '-'}</td>
+      % if c['attributes']['swissgeol'].startswith('http'):
+        <td><a href="${c['attributes']['swissgeol']}" target="_blank">${c['attributes']['swissgeol']}</a></td>
+      % else:
+        <td>-</td>
+      % endif
     </tr>
     <tr>
       <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.assets_swissgeol')}</td>
-      <td>${c['attributes']['assets_swissgeol'] or '-'}</td>
+      % if c['attributes']['assets_swissgeol'].startswith('http'):
+        <td><a href="${c['attributes']['assets_swissgeol']}" target="_blank">${c['attributes']['assets_swissgeol']}</a></td>
+      % else:
+        <td>-</td>
+      % endif
     </tr>
     <tr>
       <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.boreholes_swissgeol')}</td>
-      <td>${c['attributes']['boreholes_swissgeol'] or '-'}</td>
+      % if c['attributes']['boreholes_swissgeol'].startswith('http'):
+        <td><a href="${c['attributes']['boreholes_swissgeol']}" target="_blank">${c['attributes']['boreholes_swissgeol']}</a></td>
+      % else:
+        <td>-</td>
+      % endif
     </tr>
     % if c['attributes']['category_de'] == 'Quelle':
       <tr>
