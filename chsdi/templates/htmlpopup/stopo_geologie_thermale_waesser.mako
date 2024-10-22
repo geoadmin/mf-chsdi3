@@ -3,14 +3,9 @@
 <%def name="table_body(c, lang)">
     <%
       lang = lang if lang in ('fr','it','en') else 'de'
-      category_text = 'category_%s' % lang
       mineralisation_text = 'mineralisation_%s' % lang
       use_text = 'use_%s' % lang
     %>
-    <tr>
-      <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.category')}</td>
-      <td>${c['attributes'][category_text] or '-'}</td>
-    </tr>
     <tr>
       <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.name')}</td>
       <td>${c['attributes']['name'] or '-'}</td>
@@ -32,7 +27,7 @@
       <td>${c['attributes']['ph'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.mineralisation_')}</td>
+      <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.mineralisation')}</td>
       <td>${c['attributes'][mineralisation_text] or '-'}</td>
     </tr>
     <tr>
@@ -48,7 +43,6 @@
 <%def name="extended_info(c, lang)">
   <%
     lang = lang if lang in ('fr','it','en') else 'de'
-    category_text = 'category_%s' % lang
     mineralisation_text = 'mineralisation_%s' % lang
     use_text = 'use_%s' % lang
     annot_text = 'annot_%s' % lang
@@ -56,10 +50,6 @@
   %>
 
   <table class="table-with-border" cellpadding="5">
-    <tr>
-      <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.category')}</td>
-      <td>${c['attributes'][category_text] or '-'}</td>
-    </tr>
     <tr>
       <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.name')}</td>
       <td>${c['attributes']['name'] or '-'}</td>
@@ -85,7 +75,7 @@
       <td>${c['attributes']['ec'] or '-'}</td>
     </tr>
     <tr>
-      <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.mineralisation_')}</td>
+      <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.mineralisation')}</td>
       <td>${c['attributes'][mineralisation_text] or '-'}</td>
     </tr>
     <tr>
@@ -106,15 +96,27 @@
     </tr>
     <tr>
       <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.x_lv95')}</td>
-      <td>${c['attributes']['x_lv95'] or '-'}</td>
+      % if c['attributes']['x_lv95']:
+      <td>${int(c['attributes']['x_lv95'])}</td>
+      % else:
+      <td>-</td>
+      % endif
     </tr>
     <tr>
       <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.y_lv95')}</td>
-      <td>${c['attributes']['y_lv95'] or '-'}</td>
+      % if c['attributes']['y_lv95']:
+      <td>${int(c['attributes']['y_lv95'])}</td>
+      % else:
+      <td>-</td>
+      % endif
     </tr>
     <tr>
       <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.elevation')}</td>
-      <td>${c['attributes']['elevation'] or '-'}</td>
+      % if c['attributes']['elevation']:
+      <td>${int(c['attributes']['elevation'])}</td>
+      % else:
+      <td>-</td>
+      % endif
     </tr>
     <tr>
       <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.source1')}</td>
@@ -122,11 +124,19 @@
     </tr>
     <tr>
       <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.src_link')}</td>
-      <td>${c['attributes']['src_link'] or '-'}</td>
+      % if c['attributes']['src_link'].startswith('http'):
+        <td><a href="${c['attributes']['src_link']}" target="_blank">${c['attributes']['src_link']}</a></td>
+      % else:
+        <td>-</td>
+      % endif
     </tr>
     <tr>
       <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.download')}</td>
-      <td>${c['attributes']['download'] or '-'}</td>
+      % if c['attributes']['download'].startswith('http'):
+        <td><a href="${c['attributes']['download']}" target="_blank">${c['attributes']['download']}</a></td>
+      % else:
+        <td>-</td>
+      % endif
     </tr>
     <tr>
       <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.swissgeol')}</td>
@@ -140,12 +150,12 @@
       <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.boreholes_swissgeol')}</td>
       <td>${c['attributes']['boreholes_swissgeol'] or '-'}</td>
     </tr>
-    %if c['attributes']['category_de'] == 'Quelle':
+    % if c['attributes']['category_de'] == 'Quelle':
       <tr>
         <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.catchwork_type')}</td>
         <td>${c['attributes']['catchwork_type_de'] or '-'}</td>
       </tr>
-    %else if c['attributes']['category_de'] == 'Tunnel':
+    % elif c['attributes']['category_de'] == 'Tunnel':
       <tr>
         <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.rock_overlay')}</td>
         <td>${c['attributes']['rock_overlay'] or '-'}</td>
@@ -158,7 +168,7 @@
         <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.ref_portal')}</td>
         <td>${c['attributes']['ref_portal'] or '-'}</td>
       </tr>
-    %else if c['attributes']['category_de'] == 'Borehole':
+    %elif c['attributes']['category_de'] == 'Borehole':
       <tr>
         <td class="cell-left">${_(f'ch.swisstopo.geologie-thermale_waesser.borehole_name')}</td>
         <td>${c['attributes']['borehole_name'] or '-'}</td>
