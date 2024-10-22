@@ -180,7 +180,7 @@
         <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.ref_portal')}</td>
         <td>${c['attributes']['ref_portal'] or '-'}</td>
       </tr>
-    %elif c['attributes']['category_de'] == 'Borehole':
+    %elif c['attributes']['category_de'] == 'Bohrung':
       <tr>
         <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.borehole_name')}</td>
         <td>${c['attributes']['borehole_name'] or '-'}</td>
