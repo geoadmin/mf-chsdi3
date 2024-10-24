@@ -245,6 +245,48 @@ class DosisleistungTerrestrisch(Base, Vector):
 register('ch.swisstopo.geologie-dosisleistung-terrestrisch', DosisleistungTerrestrisch)
 
 
+class SchneeRouten:
+    __table_args__ = ({'schema': 'karto', 'autoload': False})
+    __label__ = 'target_name'
+    __template__ = 'templates/htmlpopup/karto_schneerouten.mako'
+    id = Column('route_uuid', Unicode, primary_key=True)
+    target_name = Column('target_name', Unicode)
+    target_altitude = Column('target_altitude', Integer)
+    name = Column('name', Unicode)
+    name_de = Column('name_de', Unicode)
+    name_fr = Column('name_fr', Unicode)
+    name_it = Column('name_it', Unicode)
+    name_en = Column('name_en', Unicode)
+    difficulty_de = Column('difficulty_de', Unicode)
+    difficulty_fr = Column('difficulty_fr', Unicode)
+    difficulty_it = Column('difficulty_it', Unicode)
+    difficulty_en = Column('difficulty_en', Unicode)
+    ascent_time_label = Column('ascent_time_label', Unicode)
+    ascent_altitude = Column('ascent_altitude', Unicode)
+    descent_altitude = Column('descent_altitude', Unicode)
+    url_sac_de = Column('url_sac_de', Unicode)
+    url_sac_fr = Column('url_sac_fr', Unicode)
+    url_sac_it = Column('url_sac_it', Unicode)
+    url_sac_en = Column('url_sac_en', Unicode)
+    source_url = Column('source_url', Unicode)
+    source_txt = Column('source_txt', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class SkiTouren(Base, SchneeRouten, Vector):
+    __tablename__ = 'ski_routes'
+    __bodId__ = 'ch.swisstopo-karto.skitouren'
+
+register(SkiTouren.__bodId__, SkiTouren)
+
+
+class SchneeSchuhRouten(Base, SchneeRouten, Vector):
+    __tablename__ = 'snowshoe_routes'
+    __bodId__ = 'ch.swisstopo-karto.schneeschuhrouten'
+
+register(SchneeSchuhRouten.__bodId__, SchneeSchuhRouten)
+
+
 class Landesschwerenetz:
     __table_args__ = ({'schema': 'fida', 'autoload': False})
     __template__ = 'templates/htmlpopup/landesschwerenetz.mako'
@@ -279,7 +321,6 @@ class LandesschwerenetzZoom1(Base, Landesschwerenetz, Vector):
 class LandesschwerenetzZoom2(Base, Landesschwerenetz, Vector):
     __tablename__ = 'landesschwerenetz_overview'
     __minscale__ = 3000
-
 
 register(Landesschwerenetz.__bodId__, LandesschwerenetzZoom1)
 register(Landesschwerenetz.__bodId__, LandesschwerenetzZoom2)
