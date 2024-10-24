@@ -1352,103 +1352,71 @@ class BakomNotruf112Sat(Base, Vector):
 register('ch.bakom.notruf-112_satellit', BakomNotruf112Sat)
 
 
-class BakomNotruf112Zentral(Base, Vector):
-    __tablename__ = 'notruf'
+class BakomNotrufZentral:
+    __tablename__ = 'notruf_pkt'
     __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
+    __label__ = 'alarmzentrale'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    alarmzentrale = Column('alarmzentrale', Unicode)
+    strasse = Column('strasse', Unicode)
+    nummer = Column('nummer', Unicode)
+    plz = Column('plz', Unicode)
+    ort = Column('ort', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class BakomNotruf112Zentral(Base, BakomNotrufZentral, Vector):
     __template__ = 'templates/htmlpopup/notruf_zentral_112.mako'
     __bodId__ = 'ch.bakom.notruf-112_zentral'
-    __label__ = 'id'
-    id = Column('bfs_nummer', Integer, primary_key=True)
-    gemeinde_112 = Column('gemeinde_112', Unicode)
-    festnetz_112 = Column('festnetz_112', Unicode)
-    fn_zentrale_112 = Column('fn_zentrale_112', Unicode)
-    mobile_112 = Column('mobile_112', Unicode)
-    mo_zentrale_112 = Column('mo_zentrale_112', Unicode)
-    satellit_112 = Column('satellit_112', Unicode)
-    sa_zentrale_112 = Column('sa_zentrale_112', Unicode)
-    the_geom = Column(Geometry2D)
+    rn_112 = Column('rn_112', Unicode)
 
 register('ch.bakom.notruf-112_zentral', BakomNotruf112Zentral)
 
 
-class BakomNotruf117Zentral(Base, Vector):
-    __tablename__ = 'notruf'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
+class BakomNotruf117Zentral(Base, BakomNotrufZentral, Vector):
     __template__ = 'templates/htmlpopup/notruf_zentral_117.mako'
     __bodId__ = 'ch.bakom.notruf-117_zentral'
-    __label__ = 'id'
-    id = Column('bfs_nummer', Integer, primary_key=True)
-    gemeinde_117 = Column('gemeinde_117', Unicode)
-    festnetz_117 = Column('festnetz_117', Unicode)
-    fn_zentrale_117 = Column('fn_zentrale_117', Unicode)
-    mobile_117 = Column('mobile_117', Unicode)
-    mo_zentrale_117 = Column('mo_zentrale_117', Unicode)
-    the_geom = Column(Geometry2D)
+    rn_117 = Column('rn_117', Unicode)
 
 register('ch.bakom.notruf-117_zentral', BakomNotruf117Zentral)
 
 
-class BakomNotruf118Zentral(Base, Vector):
-    __tablename__ = 'notruf'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
+class BakomNotruf118Zentral(Base, BakomNotrufZentral, Vector):
     __template__ = 'templates/htmlpopup/notruf_zentral_118.mako'
     __bodId__ = 'ch.bakom.notruf-118_zentral'
-    __label__ = 'id'
-    id = Column('bfs_nummer', Integer, primary_key=True)
-    gemeinde_118 = Column('gemeinde_118', Unicode)
-    festnetz_118 = Column('festnetz_118', Unicode)
-    fn_zentrale_118 = Column('fn_zentrale_118', Unicode)
-    mobile_118 = Column('mobile_118', Unicode)
-    mo_zentrale_118 = Column('mo_zentrale_118', Unicode)
-    the_geom = Column(Geometry2D)
+    rn_118 = Column('rn_118', Unicode)
 
 register('ch.bakom.notruf-118_zentral', BakomNotruf118Zentral)
 
 
-class BakomNotruf143Zentral(Base, BakomNotrufBase, Vector):
+class BakomNotruf143Zentral(Base, BakomNotrufZentral, Vector):
     __template__ = 'templates/htmlpopup/notruf_zentral_143.mako'
     __bodId__ = 'ch.bakom.notruf-143_zentral'
-    gemeinde_143 = Column('gemeinde_143', Unicode)
-    festnetz_143 = Column('festnetz_143', Unicode)
-    fn_zentrale_143 = Column('fn_zentrale_143', Unicode)
-    mobile_143 = Column('mobile_143', Unicode)
-    mo_zentrale_143 = Column('mo_zentrale_143', Unicode)
+    rn_143 = Column('rn_143', Unicode)
 
 register('ch.bakom.notruf-143_zentral', BakomNotruf143Zentral)
 
 
-class BakomNotruf144Zentral(Base, BakomNotrufBase, Vector):
+class BakomNotruf144Zentral(Base, BakomNotrufZentral, Vector):
     __template__ = 'templates/htmlpopup/notruf_zentral_144.mako'
     __bodId__ = 'ch.bakom.notruf-144_zentral'
-    gemeinde_144 = Column('gemeinde_144', Unicode)
-    festnetz_144 = Column('festnetz_144', Unicode)
-    fn_zentrale_144 = Column('fn_zentrale_144', Unicode)
-    mobile_144 = Column('mobile_144', Unicode)
-    mo_zentrale_144 = Column('mo_zentrale_144', Unicode)
+    rn_144 = Column('rn_144', Unicode)
 
 register('ch.bakom.notruf-144_zentral', BakomNotruf144Zentral)
 
 
-class BakomNotruf145Zentral(Base, BakomNotrufBase, Vector):
+class BakomNotruf145Zentral(Base, BakomNotrufZentral, Vector):
     __template__ = 'templates/htmlpopup/notruf_zentral_145.mako'
     __bodId__ = 'ch.bakom.notruf-145_zentral'
-    gemeinde_145 = Column('gemeinde_145', Unicode)
-    festnetz_145 = Column('festnetz_145', Unicode)
-    fn_zentrale_145 = Column('fn_zentrale_145', Unicode)
-    mobile_145 = Column('mobile_145', Unicode)
-    mo_zentrale_145 = Column('mo_zentrale_145', Unicode)
+    rn_145 = Column('rn_145', Unicode)
 
 register('ch.bakom.notruf-145_zentral', BakomNotruf145Zentral)
 
 
-class BakomNotruf147Zentral(Base, BakomNotrufBase, Vector):
+class BakomNotruf147Zentral(Base, BakomNotrufZentral, Vector):
     __template__ = 'templates/htmlpopup/notruf_zentral_147.mako'
     __bodId__ = 'ch.bakom.notruf-147_zentral'
-    gemeinde_147 = Column('gemeinde_147', Unicode)
-    festnetz_147 = Column('festnetz_147', Unicode)
-    fn_zentrale_147 = Column('fn_zentrale_147', Unicode)
-    mobile_147 = Column('mobile_147', Unicode)
-    mo_zentrale_147 = Column('mo_zentrale_147', Unicode)
+    rn_147 = Column('rn_147', Unicode)
 
 register('ch.bakom.notruf-147_zentral', BakomNotruf147Zentral)
 
@@ -4364,21 +4332,3 @@ class Landschaftsruhezonen (Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bazl.landschaftsruhezonen', Landschaftsruhezonen)
-
-
-class ReflektierendeFlaechenFlugplaetze (Base, Vector):
-    __table_args__ = ({'schema': 'bazl', 'autoload': False})
-    __tablename__ = 'reflektierende_flaechen_flugplaetze'
-    __template__ = 'templates/htmlpopup/bazl_reflektierende_flaechen_flugplaetze.mako'
-    __bodId__ = 'ch.bazl.reflektierende-flaechen_flugplaetze'
-    __label__ = 'name'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    icao = Column('icao', Unicode)
-    name = Column('name', Unicode)
-    status_de = Column('status_de', Unicode)
-    status_fr = Column('status_fr', Unicode)
-    status_it = Column('status_it', Unicode)
-    status_en = Column('status_en', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.bazl.reflektierende-flaechen_flugplaetze', ReflektierendeFlaechenFlugplaetze)
