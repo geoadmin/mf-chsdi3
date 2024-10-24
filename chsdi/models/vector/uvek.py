@@ -1353,7 +1353,6 @@ register('ch.bakom.notruf-112_satellit', BakomNotruf112Sat)
 
 
 class BakomNotrufZentral:
-    __tablename__ = 'notruf_pkt'
     __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __label__ = 'alarmzentrale'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -1366,6 +1365,7 @@ class BakomNotrufZentral:
 
 
 class BakomNotruf112Zentral(Base, BakomNotrufZentral, Vector):
+    __tablename__ = 'ze_112_tooltip'
     __template__ = 'templates/htmlpopup/notruf_zentral_112.mako'
     __bodId__ = 'ch.bakom.notruf-112_zentral'
     rn_112 = Column('rn_112', Unicode)
@@ -1374,6 +1374,7 @@ register('ch.bakom.notruf-112_zentral', BakomNotruf112Zentral)
 
 
 class BakomNotruf117Zentral(Base, BakomNotrufZentral, Vector):
+    __tablename__ = 'ze_117_tooltip'
     __template__ = 'templates/htmlpopup/notruf_zentral_117.mako'
     __bodId__ = 'ch.bakom.notruf-117_zentral'
     rn_117 = Column('rn_117', Unicode)
@@ -1382,6 +1383,7 @@ register('ch.bakom.notruf-117_zentral', BakomNotruf117Zentral)
 
 
 class BakomNotruf118Zentral(Base, BakomNotrufZentral, Vector):
+    __tablename__ = 'ze_118_tooltip'
     __template__ = 'templates/htmlpopup/notruf_zentral_118.mako'
     __bodId__ = 'ch.bakom.notruf-118_zentral'
     rn_118 = Column('rn_118', Unicode)
@@ -1390,6 +1392,7 @@ register('ch.bakom.notruf-118_zentral', BakomNotruf118Zentral)
 
 
 class BakomNotruf143Zentral(Base, BakomNotrufZentral, Vector):
+    __tablename__ = 'ze_143_tooltip'
     __template__ = 'templates/htmlpopup/notruf_zentral_143.mako'
     __bodId__ = 'ch.bakom.notruf-143_zentral'
     rn_143 = Column('rn_143', Unicode)
@@ -1398,6 +1401,7 @@ register('ch.bakom.notruf-143_zentral', BakomNotruf143Zentral)
 
 
 class BakomNotruf144Zentral(Base, BakomNotrufZentral, Vector):
+    __tablename__ = 'ze_144_tooltip'
     __template__ = 'templates/htmlpopup/notruf_zentral_144.mako'
     __bodId__ = 'ch.bakom.notruf-144_zentral'
     rn_144 = Column('rn_144', Unicode)
@@ -1406,6 +1410,7 @@ register('ch.bakom.notruf-144_zentral', BakomNotruf144Zentral)
 
 
 class BakomNotruf145Zentral(Base, BakomNotrufZentral, Vector):
+    __tablename__ = 'ze_145_tooltip'
     __template__ = 'templates/htmlpopup/notruf_zentral_145.mako'
     __bodId__ = 'ch.bakom.notruf-145_zentral'
     rn_145 = Column('rn_145', Unicode)
@@ -1414,6 +1419,7 @@ register('ch.bakom.notruf-145_zentral', BakomNotruf145Zentral)
 
 
 class BakomNotruf147Zentral(Base, BakomNotrufZentral, Vector):
+    __tablename__ = 'ze_147_tooltip'
     __template__ = 'templates/htmlpopup/notruf_zentral_147.mako'
     __bodId__ = 'ch.bakom.notruf-147_zentral'
     rn_147 = Column('rn_147', Unicode)
