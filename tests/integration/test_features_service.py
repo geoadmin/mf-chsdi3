@@ -216,7 +216,7 @@ class TestFeaturesView(TestsBase):
         self.assertEsrijsonFeature(resp.json['results'][0], 21781, hasGeometry=False)
 
     def test_find_wrong_boolean(self):
-        params = {'layer': 'ch.swisstopo.lubis-luftbilder_farbe',
+        params = {'layer': 'ch.swisstopo.lubis-luftbilder-dritte-firmen',
                   'searchField': 'orientierung',
                   'searchText': '3190',
                   'returnGeometry': 'false',

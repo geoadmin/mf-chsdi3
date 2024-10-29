@@ -58,7 +58,6 @@ apache_base_path = ${APACHE_BASE_PATH}
 loader_js_bucket_localhost = ${LOADER_JS_BUCKET_LOCALHOST}
 vector_bucket = ${VECTOR_BUCKET}
 datageoadminhost = ${DATAGEOADMINHOST}
-aerialimages_data_host = ${AERIALIMAGES_DATA_HOST}
 hist_maps_data_host = ${HIST_MAPS_DATA_HOST}
 opentrans_api_key = ${OPENTRANS_API_KEY}
 empty_geotables = ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung,ch.bfe.sachplan-uebertragungsleitungen_anhoerung,ch.blw.emapis-bewaesserung,ch.blw.emapis-elektrizitaetsversorgung,ch.blw.emapis-milchleitung,ch.blw.emapis-seilbahnen,ch.vbs.sachplan-infrastruktur-militaer_anhoerung,ch.sem.sachplan-asyl_anhoerung,ch.astra.sachplan-infrastruktur-strasse_anhoerung,ch.bav.sachplan-infrastruktur-schiene_anhorung
