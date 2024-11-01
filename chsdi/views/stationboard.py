@@ -18,7 +18,7 @@ class TransportView(object):
     def __init__(self, request):
         self.opentrans_api_key = get_current_registry().settings['opentrans_api_key']  # Get API key from config .ini
         if self.opentrans_api_key == '':
-            raise HTTPInternalServerError('The opentrans_api_key has no value, is registeret in .ini')
+            raise HTTPInternalServerError('The opentrans_api_key has no value, is registered in .ini')
         self.ot_api = opentransapi.OpenTrans(self.opentrans_api_key)
         self.request = request
         if request.matched_route.name == 'stationboard':
