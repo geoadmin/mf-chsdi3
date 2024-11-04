@@ -10,75 +10,70 @@ Base = bases['lubis']
 
 class LuftbilderBase:
     __table_args__ = ({'schema': 'public', 'autoload': False})
-    __template__ = 'templates/htmlpopup/lubis.mako'
     __returnedGeometry__ = 'the_geom_footprint'
     __timeInstant__ = 'bgdi_flugjahr'
     __label__ = 'flugdatum'
     id = Column('ebkey', Unicode, primary_key=True)
     filename = Column('filename', Unicode)
-    inventarnummer = Column('inventarnummer', Integer)
-    bildnummer = Column('bildnummer', Unicode)
     flugdatum = Column('flugdatum', Unicode)
     firma = Column('firma', Unicode)
     filmart = Column('filmart', Unicode)
     bgdi_flugjahr = Column('bgdi_flugjahr', Integer)
-    orientierung = Column('orientierung', Boolean)
-    rotation = Column('rotation', Integer)
     orthophoto = Column('orthophoto', Unicode)
     originalsize = Column('originalsize', Unicode)
     x = Column('x', Integer)
     y = Column('y', Integer)
     flughoehe = Column('flughoehe', Integer)
-    ort = Column('ort', Unicode)
-    massstab = Column('massstab', Integer)
-    filesize_mb = Column('filesize_mb', Unicode)
     bgdi_imagemode = Column('bgdi_imagemode', Unicode)
     the_geom_footprint = Column('the_geom_footprint', Geometry2D)
     the_geom = Column(Geometry2D)
 
 
-class LuftbilderBaseStac(LuftbilderBase):
+class LuftbilderBaseDritte(LuftbilderBase):
+    __template__ = 'templates/htmlpopup/lubis.mako'
+    inventarnummer = Column('inventarnummer', Integer)
+    bildnummer = Column('bildnummer', Unicode)
+    orientierung = Column('orientierung', Boolean)
+    rotation = Column('rotation', Integer)
+    ort = Column('ort', Unicode)
+    massstab = Column('massstab', Integer)
+    filesize_mb = Column('filesize_mb', Unicode)
+
+
+class LuftbilderBaseSwisstopo(LuftbilderBase):
     __template__ = 'templates/htmlpopup/lubis_stac.mako'
     ebkey_old = Column('ebkey_old', Unicode)
     feature_id = Column('feature_id', Unicode)
     acquired = Column('acquired', Date)
     film_type = Column('film_type', Unicode)
     orthofilename = Column('orthofilename', Unicode)
-    filename = Column('filename', Unicode)
     e = Column('e', Numeric)
     n = Column('n', Numeric)
     z = Column('z', Numeric)
 
 
-class LuftbilderSwisstopoFarbe(Base, LuftbilderBaseStac, Vector):
+class LuftbilderSwisstopoFarbe(Base, LuftbilderBaseSwisstopo, Vector):
     __tablename__ = 'luftbilder_swisstopo_color'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder_farbe'
-    image_height = Column('image_height', Integer)
-    image_width = Column('image_width', Integer)
 
 register('ch.swisstopo.lubis-luftbilder_farbe', LuftbilderSwisstopoFarbe)
 
 
-class LuftbilderSwisstopoIr(Base, LuftbilderBaseStac, Vector):
-    __extended_info__ = True
+class LuftbilderSwisstopoIr(Base, LuftbilderBaseSwisstopo, Vector):
     __tablename__ = 'luftbilder_swisstopo_ir'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder_infrarot'
-    image_height = Column('image_height', Integer)
-    image_width = Column('image_width', Integer)
 
 register('ch.swisstopo.lubis-luftbilder_infrarot', LuftbilderSwisstopoIr)
 
 
-class LuftbilderSwisstopoSw(Base, LuftbilderBaseStac, Vector):
+class LuftbilderSwisstopoSw(Base, LuftbilderBaseSwisstopo, Vector):
     __tablename__ = 'luftbilder_swisstopo_bw'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder_schwarzweiss'
-    image_height = Column('image_height', Integer)
-    image_width = Column('image_width', Integer)
 
 register('ch.swisstopo.lubis-luftbilder_schwarzweiss', LuftbilderSwisstopoSw)
 
 
-class LuftbilderDritteFirmen(Base, LuftbilderBase, Vector):
+class LuftbilderDritteFirmen(Base, LuftbilderBaseDritte, Vector):
     __tablename__ = 'luftbilder_dritte_firmen'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder-dritte-firmen'
     contact = Column('contact', Unicode)
@@ -89,7 +84,7 @@ class LuftbilderDritteFirmen(Base, LuftbilderBase, Vector):
 register('ch.swisstopo.lubis-luftbilder-dritte-firmen', LuftbilderDritteFirmen)
 
 
-class LuftbilderDritteKantone(Base, LuftbilderBase, Vector):
+class LuftbilderDritteKantone(Base, LuftbilderBaseDritte, Vector):
     __tablename__ = 'luftbilder_dritte_kantone'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder-dritte-kantone'
     contact = Column('contact', Unicode)
@@ -139,23 +134,16 @@ class LuftbilderSchraegaufnahmen(Base, Vector):
     __template__ = 'templates/htmlpopup/lubis_schraegaufnahmen.mako'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder_schraegaufnahmen'
     __timeInstant__ = 'bgdi_flugjahr'
-    __extended_info__ = True
-    # Composite labels
     __label__ = 'flightdate'
     id = Column('ebkey', Unicode, primary_key=True)
     ebkey_old = Column('ebkey_old', Unicode)
-    inventory_number = Column('inventory_number', Unicode)
     flightdate = Column('flightdate', Unicode)
-    medium_format = Column('medium_format', Unicode)
-    filesize_mb = Column('filesize_mb', Unicode)
     filename = Column('filename', Unicode)
     filmart = Column('filmart', Unicode)
     stereo_couple = Column('stereo_couple', Unicode)
     bgdi_flugjahr = Column('bgdi_flugjahr', Integer)
     x = Column('x', Integer)
     y = Column('y', Integer)
-    contact = Column('contact', Unicode)
-    contact_email = Column('contact_email', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.lubis-luftbilder_schraegaufnahmen', LuftbilderSchraegaufnahmen)
@@ -168,12 +156,10 @@ class LuftbilderTerrA(Base, Vector):
     __bodId__ = 'ch.swisstopo.lubis-terrestrische_aufnahmen'
     __timeInstant__ = 'bgdi_flugjahr'
     __returnedGeometry__ = 'the_geom_footprint'
-    __extended_info__ = True
     __label__ = 'flugdatum'
     id = Column('inventory_number', Unicode, primary_key=True)
     inventarnummer_old = Column('inventarnummer_old', Unicode)
     inventarnummer = Column('objectid', Integer)
-    image_number = Column('image_number', Integer)
     flugdatum = Column('bgdi_flugdatum', Unicode)
     bgdi_flugjahr = Column('year', Integer)
     filmart = Column('filmart', Unicode)
@@ -182,12 +168,8 @@ class LuftbilderTerrA(Base, Vector):
     base_uuid = Column('base_uuid', Unicode)
     x = Column('easting', Numeric)
     y = Column('northing', Numeric)
-    medium_format = Column('format', Unicode)
-    filesize_mb = Column('filesize_mb', Unicode)
     filename = Column('filename', Unicode)
     bgdi_imagemode = Column('bgdi_imagemode', Unicode)
-    image_height = Column('image_height', Integer)
-    image_width = Column('image_width', Integer)
     smapshot_id = Column('smapshot_id', Integer)
     the_geom_footprint = Column('the_geom_footprint', Geometry2D)
     the_geom = Column(Geometry2D)
