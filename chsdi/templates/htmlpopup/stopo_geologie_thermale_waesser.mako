@@ -48,7 +48,6 @@
     annot_text = 'annot_%s' % lang
     hydrogeologic_unit_text = 'hydrogeologic_unit_%s' % lang
   %>
-
   <table class="table-with-border" cellpadding="5">
     <tr>
       <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.name')}</td>
@@ -62,10 +61,30 @@
       <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.form_temp')}</td>
       <td>${c['attributes']['form_temp'] or '-'}</td>
     </tr>
-    <tr>
-      <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.discharge')}</td>
-      <td>${c['attributes']['discharge'] or '-'}</td>
-    </tr>
+    % if c['attributes']['category_de'] == 'Bohrung':
+      <tr>
+        <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.form_temp_depth')}</td>
+        <td>${c['attributes']['form_temp_depth'] or '-'}</td>
+      </tr>
+    % endif
+    %if c['attributes']['category_de'] == 'Quelle' or c['attributes']['category_de'] == 'Tunnel':
+      <tr>
+        <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.discharge')}</td>
+        <td>${c['attributes']['discharge'] or '-'}</td>
+      </tr>
+    %endif
+    % if c['attributes']['category_de'] == 'Tunnel':
+      <tr>
+        <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.rock_overlay')}</td>
+        <td>${c['attributes']['rock_overlay'] or '-'}</td>
+      </tr>
+    % endif
+    % if c['attributes']['category_de'] == 'Bohrung' or c['attributes']['category_de'] == 'Tunnel':
+      <tr>
+        <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.hydrogeologic_unit')}</td>
+        <td>${c['attributes'][hydrogeologic_unit_text] or '-'}</td>
+      </tr>
+    %endif
     <tr>
       <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.ph')}</td>
       <td>${c['attributes']['ph'] or '-'}</td>
@@ -86,6 +105,12 @@
       <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.use')}</td>
       <td>${c['attributes'][use_text] or '-'}</td>
     </tr>
+    % if c['attributes']['category_de'] == 'Quelle':
+      <tr>
+        <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.catchwork_type')}</td>
+        <td>${c['attributes']['catchwork_type_de'] or '-'}</td>
+      </tr>
+    %endif
     <tr>
       <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.date_measure')}</td>
       <td>${c['attributes']['date_measure'] or '-'}</td>
@@ -118,6 +143,16 @@
       <td>-</td>
       % endif
     </tr>
+    % if c['attributes']['category_de'] == 'Tunnel':
+      <tr>
+        <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.distance')}</td>
+        <td>${c['attributes']['distance'] or '-'}</td>
+      </tr>
+      <tr>
+        <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.ref_portal')}</td>
+        <td>${c['attributes']['ref_portal'] or '-'}</td>
+      </tr>
+    % endif
     <tr>
       <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.source1')}</td>
       <td>${c['attributes']['source1'] or '-'}</td>
@@ -162,41 +197,11 @@
         <td>-</td>
       % endif
     </tr>
-    % if c['attributes']['category_de'] == 'Quelle':
-      <tr>
-        <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.catchwork_type')}</td>
-        <td>${c['attributes']['catchwork_type_de'] or '-'}</td>
-      </tr>
-    % elif c['attributes']['category_de'] == 'Tunnel':
-      <tr>
-        <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.rock_overlay')}</td>
-        <td>${c['attributes']['rock_overlay'] or '-'}</td>
-      </tr>
-      <tr>
-        <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.distance')}</td>
-        <td>${c['attributes']['distance'] or '-'}</td>
-      </tr>
-      <tr>
-        <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.ref_portal')}</td>
-        <td>${c['attributes']['ref_portal'] or '-'}</td>
-      </tr>
-    %elif c['attributes']['category_de'] == 'Bohrung':
+    % if c['attributes']['category_de'] == 'Bohrung':
       <tr>
         <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.borehole_name')}</td>
         <td>${c['attributes']['borehole_name'] or '-'}</td>
       </tr>
-      <tr>
-        <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.sample_interval')}</td>
-        <td>${c['attributes']['sample_interval'] or '-'}</td>
-      </tr>
-      <tr>
-        <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.form_temp_depth')}</td>
-        <td>${c['attributes']['form_temp_depth'] or '-'}</td>
-      </tr>
-      <tr>
-        <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.hydrogeologic_unit')}</td>
-        <td>${c['attributes'][hydrogeologic_unit_text] or '-'}</td>
-      </tr>
-    %endif
+    % endif
   </table>
 </%def>
