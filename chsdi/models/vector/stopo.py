@@ -248,7 +248,6 @@ register('ch.swisstopo.geologie-dosisleistung-terrestrisch', DosisleistungTerres
 class SchneeRouten:
     __table_args__ = ({'schema': 'karto', 'autoload': False})
     __label__ = 'target_name'
-    __template__ = 'templates/htmlpopup/karto_schneerouten.mako'
     id = Column('route_uuid', Unicode, primary_key=True)
     target_name = Column('target_name', Unicode)
     target_altitude = Column('target_altitude', Integer)
@@ -275,6 +274,7 @@ class SchneeRouten:
 
 class SkiTouren(Base, SchneeRouten, Vector):
     __tablename__ = 'ski_routes'
+    __template__ = 'templates/htmlpopup/karto_skitouren.mako'
     __bodId__ = 'ch.swisstopo-karto.skitouren'
 
 register(SkiTouren.__bodId__, SkiTouren)
@@ -282,6 +282,7 @@ register(SkiTouren.__bodId__, SkiTouren)
 
 class SchneeSchuhRouten(Base, SchneeRouten, Vector):
     __tablename__ = 'snowshoe_routes'
+    __template__ = 'templates/htmlpopup/karto_schneeschuhrouten.mako'
     __bodId__ = 'ch.swisstopo-karto.schneeschuhrouten'
 
 register(SchneeSchuhRouten.__bodId__, SchneeSchuhRouten)
