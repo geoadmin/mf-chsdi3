@@ -11,7 +11,11 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.swisstopo.unterkuenfte-winter.url_sac')}</td>
-        <td>${c['attributes'][url_sac] or '-'}</td>
+        % if c['attributes'][url_sac].startswith('http'):
+            <td><a href="${c['attributes'][url_sac]}" target="_blank">${c['attributes'][url_sac]}</a></td>
+        % else:
+            <td>-</td>
+        % endif
     </tr>
 </%def>
 
