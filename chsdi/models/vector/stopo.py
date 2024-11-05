@@ -3334,6 +3334,7 @@ class UnterkuenfteWinter(Base, Vector):
     __tablename__ = 'unterkuenfte_winter'
     __bodId__ = 'ch.swisstopo.unterkuenfte-winter'
     __template__ = 'templates/htmlpopup/stopo_unterkuenfte_winter.mako'
+    __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
     url_sac_de = Column('url_sac_de', Unicode)
