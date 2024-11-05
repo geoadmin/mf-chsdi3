@@ -3327,3 +3327,19 @@ class GeologieThermaleWaesser(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(GeologieThermaleWaesser.__bodId__, GeologieThermaleWaesser)
+
+
+class UnterkuenfteWinter(Base, Vector):
+    __table_args__ = ({'schema': 'karto', 'autoload': False})
+    __tablename__ = 'unterkuenfte_winter'
+    __bodId__ = 'ch.swisstopo.unterkuenfte-winter'
+    __template__ = 'templates/htmlpopup/stopo_unterkuenfte_winter.mako'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    url_sac_de = Column('url_sac_de', Unicode)
+    url_sac_fr = Column('url_sac_fr', Unicode)
+    url_sac_it = Column('url_sac_it', Unicode)
+    url_sac_en = Column('url_sac_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(UnterkuenfteWinter.__bodId__, UnterkuenfteWinter)
