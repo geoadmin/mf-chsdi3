@@ -47,6 +47,7 @@
     use_text = 'use_%s' % lang
     annot_text = 'annot_%s' % lang
     hydrogeologic_unit_text = 'hydrogeologic_unit_%s' % lang
+    catchwork_type_text = 'catchwork_type_%s' % lang
   %>
   <table class="table-with-border" cellpadding="5">
     <tr>
@@ -57,6 +58,12 @@
       <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.sample_temp')}</td>
       <td>${c['attributes']['sample_temp'] or '-'}</td>
     </tr>
+    % if c['attributes']['category_de'] == 'Bohrung':
+      <tr>
+        <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.sample_interval')}</td>
+        <td>${c['attributes']['sample_interval'] or '-'}</td>
+      </tr>
+    % endif
     <tr>
       <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.form_temp')}</td>
       <td>${c['attributes']['form_temp'] or '-'}</td>
@@ -108,7 +115,7 @@
     % if c['attributes']['category_de'] == 'Quelle':
       <tr>
         <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.catchwork_type')}</td>
-        <td>${c['attributes']['catchwork_type_de'] or '-'}</td>
+        <td>${c['attributes'][catchwork_type_text] or '-'}</td>
       </tr>
     %endif
     <tr>
@@ -160,7 +167,7 @@
     <tr>
       <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.src_link')}</td>
       % if c['attributes']['src_link'].startswith('http'):
-        <td><a href="${c['attributes']['src_link']}" target="_blank">${c['attributes']['src_link']}</a></td>
+        <td><a href="${c['attributes']['src_link']}" target="_blank">${_('link')}</a></td>
       % else:
         <td>-</td>
       % endif
@@ -168,7 +175,7 @@
     <tr>
       <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.download')}</td>
       % if c['attributes']['download'].startswith('http'):
-        <td><a href="${c['attributes']['download']}" target="_blank">${c['attributes']['download']}</a></td>
+        <td><a href="${c['attributes']['download']}" target="_blank">${_('link')}</a></td>
       % else:
         <td>-</td>
       % endif
