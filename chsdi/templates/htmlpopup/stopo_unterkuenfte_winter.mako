@@ -9,6 +9,7 @@
         <td class="cell-left">${_('ch.swisstopo.unterkuenfte-winter.name')}</td>
         <td>${c['attributes']['name'] or '-'}</td>
     </tr>
+    %if c['attributes'][url_sac]:
     <tr>
         <td class="cell-left">${_('ch.swisstopo.unterkuenfte-winter.url_sac')}</td>
         % if c['attributes'][url_sac].startswith('http'):
@@ -17,5 +18,6 @@
             <td>-</td>
         % endif
     </tr>
+    %endif
 </%def>
 
