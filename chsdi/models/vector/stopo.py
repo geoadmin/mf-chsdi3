@@ -3277,6 +3277,7 @@ class GeologieThermaleWaesser(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-thermale_waesser'
     __template__ = 'templates/htmlpopup/stopo_geologie_thermale_waesser.mako'
     __extended_info__ = True
+    __label__ = 'category_de'
     id = Column('primary_key', Integer, primary_key=True)
     name = Column('name', Unicode)
     sample_temp = Column('sample_temp', Unicode)
