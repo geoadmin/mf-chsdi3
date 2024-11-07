@@ -27,7 +27,13 @@ API & applications
 
 - Bug fixes
 - Announcements:
-    - TODO
+    - the layers *ch.swisstopo-karto.skitouren* and *ch.swisstopo-karto.schneeschuhrouten* have been switched from raster to vector datasets as previously announced
+    - the layers *ch.swisstopo.lubis-luftbilder_schwarzweiss*, *ch.swisstopo.lubis-luftbilder_farbe*, *ch.swisstopo.lubis-luftbilder_infrarot* got the following changes as previously announced: no extended tooltip anymore and the attributes inventarnummer, bildnummer, orientierung, rotation, filesize_mb, ort, image_height and image_width have been removed
+    - the layer *ch.swisstopo.lubis-luftbilder_schraegaufnahmen* got the following changes as previously announced: no extended tooltip anymore and the attributes inventory_number, medium_format, filesize_mb, contact and contact_email have been removed
+    - the layer *ch.swisstopo.lubis-terrestrische_aufnahmen* got the following changes: no extended tooltip anymore and the attributes image_number, filesize_mb, medium_format, image_height and image_width have been removed
+    - the object ID values of the layer *ch.vbs.schiessanzeigen* will change for all objects due to geometrical changes in the source data with the release December 18th. Existing permalinks to objects may not work anymore and will have to be replaced by the new object id’s (chsdi fields featureId and id). In addition there will be a new attribute bezeichnung_ort on the dataset. The other existing attributes will stay
+    - decommission of various vectortile styles and datasets by January 2025. Details `read here <https://www.geo.admin.ch/en/old-styles-no-longer-available-from-january-2025>`__
+    - the layer *ch.bakom.notruf-112_satellit* will be decommissioned with the release of February 5th 2025
 
 
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2024-10-09-rc1...2024-11-13-rc1>`__
@@ -61,7 +67,7 @@ API & applications
     - the layer *ch.swisstopo.lubis-luftbilder_schraegaufnahmen* will get the following changes by the release of November 13th: no extended tooltip anymore and the attributes inventory_number, medium_format, filesize_mb, contact and contact_email will be removed from chsdi services, because they are no longer filled and used.
     - the layer *ch.swisstopo.lubis-terrestrische_aufnahmen* will get the following changes by the release of November 13th: no extended tooltip anymore and the attributes image_number, filesize_mb, medium_format, image_height and image_width will be removed from chsdi services, because they are no longer filled and used.
     - the object ID values of the layer *ch.vbs.schiessanzeigen* will change for all objects due to geometrical changes in the source data with the release of November 13th or December 18th. Existing permalinks to objects may not work anymore and will have to be replaced by the new object id’s (chsdi fields featureId and id). In addition there will be a new attribute bezeichnung_ort on the dataset. The other existing attributes will stay.
-    - decommission of various vectortile styles and datasets by January 2025. Details `read here <https://www.geo.admin.ch/en/old-styles-no-longer-available-from-january-2025>`
+    - decommission of various vectortile styles and datasets by January 2025. Details `read here <https://www.geo.admin.ch/en/old-styles-no-longer-available-from-january-2025>`__
     - the layer *ch.bakom.notruf-112_satellit* will be decommissioned with one of the first releases in 2025
 
 
