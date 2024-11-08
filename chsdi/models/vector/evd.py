@@ -251,7 +251,12 @@ class SachplanCernAnhoerungFac:
     description_fr = Column('description_fr', Unicode)
     description_it = Column('description_it', Unicode)
     validfrom = Column('validfrom', Unicode)
-    doc_web = Column('doc_web', Unicode)
+    title_de = Column('title_de', Unicode)
+    title_fr = Column('title_fr', Unicode)
+    title_it = Column('title_it', Unicode)
+    doc_web_de = Column('doc_web_de', Unicode)
+    doc_web_fr = Column('doc_web_fr', Unicode)
+    doc_web_it = Column('doc_web_it', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -293,7 +298,12 @@ class SachplanCernAnhoerungPlmPoly(Base, Vector):
     description_de = Column('description_de', Unicode)
     description_fr = Column('description_fr', Unicode)
     description_it = Column('description_it', Unicode)
-    doc_web = Column('doc_web', Unicode)
+    title_de = Column('title_de', Unicode)
+    title_fr = Column('title_fr', Unicode)
+    title_it = Column('title_it', Unicode)
+    doc_web_de = Column('doc_web_de', Unicode)
+    doc_web_fr = Column('doc_web_fr', Unicode)
+    doc_web_it = Column('doc_web_it', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.sbfi.sachplan-cern_anhoerung', SachplanCernAnhoerungPlmPoly)

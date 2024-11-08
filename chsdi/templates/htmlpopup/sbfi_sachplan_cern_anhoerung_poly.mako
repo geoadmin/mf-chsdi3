@@ -8,6 +8,8 @@
         coordlevel_text = 'coordlevel_text_%s' %lang
         plstatus_text = 'plstatus_text_%s' %lang
         description_text = 'description_%s' %lang
+        title_text = 'title_%s' %lang
+        doc_web_text = 'doc_web_%s' %lang
     %>
     <tr>
         <td class="cell-left">${_('ch.sbfi.sachplan-cern_anhoerung.pl_name')}</td>
@@ -39,7 +41,11 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.sbfi.sachplan-cern_anhoerung.web')}</td>
-        <td>${c['attributes']['doc_web'] or '-'}</td>
+        % if c['attributes'][doc_web_text].startswith('http'):
+            <td><a href="${c['attributes'][doc_web_text]}" target="_blank">${c['attributes'][title_text]}</a></td>
+        % else:
+            <td>-</td>
+        % endif
     </tr>
 </%def>
 
