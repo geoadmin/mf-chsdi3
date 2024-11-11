@@ -11,7 +11,8 @@ from chsdi.lib.opentransapi import opentransapi
 class Test_OpenTransApi(TestsBase):
     def _callOpenTrans(self):
         opentrans_api_key = self.testapp.app.registry.settings.get('opentrans_api_key')
-        api = opentransapi.OpenTrans(opentrans_api_key)
+        opentrans_url = self.testapp.app.registry.settings.get('opentrans_url')
+        api = opentransapi.OpenTrans(opentrans_api_key, opentrans_url)
         return api
 
     def test_if_key_is_registered(self):
