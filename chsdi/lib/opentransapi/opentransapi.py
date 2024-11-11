@@ -75,7 +75,6 @@ class OpenTrans:
             el_departure_date = self._check_element('TimetabledTime', el.find('.//ojp:ServiceDeparture/ojp:TimetabledTime', ns))
             el_destination_name = self._check_element('DestinationText', el.find('.//ojp:DestinationText/ojp:Text', ns))
             el_destination_id = self._check_element('DestinationStopPointRef', el.find('.//ojp:DestinationStopPointRef', ns))
-
             # Append the data to results
             results.append({
                 'id': el_id,
@@ -86,7 +85,6 @@ class OpenTrans:
                 'destinationName': el_destination_name,
                 'destinationId': el_destination_id
             })
-
         return results
 
     def create_ojp_payload(self, station_id, request_dt_time, number_results=5):
@@ -117,7 +115,9 @@ class OpenTrans:
             </OJPRequest>
         </OJP>
     """
-        return payload
+        # strip any non needed whitespaces from the payload in order to keep the data traffic to
+        # the minimum necessary
+        return re.sub(r">\s+<", "><", payload.strip())
 
     def send_post(self, station_id, request_dt_time, number_results=5):
         headers = {
