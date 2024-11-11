@@ -10,9 +10,9 @@ import re
 
 class OpenTrans:
 
-    def __init__(self, open_trans_api_key):
+    def __init__(self, open_trans_api_key, open_trans_url):
         self.open_trans_api_key = open_trans_api_key  # Get API key from config .ini
-        self.url = 'https://api.opentransportdata.swiss/ojp20'  # URL of API
+        self.url = open_trans_url  # URL of API
         self.station_id = None
 
     def get_departures(self, station_id, number_results=5, request_dt_time=False):
@@ -95,7 +95,7 @@ class OpenTrans:
             <OJPRequest>
                 <siri:ServiceRequest>
                     <siri:RequestTimestamp>{request_dt_time}</siri:RequestTimestamp>
-                    <siri:RequestorRef>MENTZRegTest</siri:RequestorRef>
+                    <siri:RequestorRef>swisstopo_Abfahrtsmonitor</siri:RequestorRef>
                     <OJPStopEventRequest>
                         <siri:RequestTimestamp>{request_dt_time}</siri:RequestTimestamp>
                         <siri:MessageIdentifier>SER</siri:MessageIdentifier>
