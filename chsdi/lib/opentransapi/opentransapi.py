@@ -117,7 +117,9 @@ class OpenTrans:
             </OJPRequest>
         </OJP>
     """
-        return payload
+        # strip any non needed whitespaces from the payload in order to keep the data traffic to
+        # the minimum necessary
+        return re.sub(r">\s+<", "><", payload.strip())
 
     def send_post(self, station_id, request_dt_time, number_results=5):
         headers = {

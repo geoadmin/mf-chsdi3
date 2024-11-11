@@ -59,4 +59,4 @@ class Test_OpenTransApi(TestsBase):
 
         time_next_dep_zurich = datetime.strptime(results[0]['departureDate'], '%d/%m/%Y %H:%M')
         time_diff = abs(time_zurich_tomorrow_12 - time_next_dep_zurich).seconds
-        self.assertLess(time_diff, 900)  # Assuming the next train in Zurich will depart within 15 minutes
+        self.assertLess(time_diff, 900)  # assuming, that the next train in Zurich at 12am will depart within 15 min
