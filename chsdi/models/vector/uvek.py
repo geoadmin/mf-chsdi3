@@ -4338,3 +4338,20 @@ class Landschaftsruhezonen (Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bazl.landschaftsruhezonen', Landschaftsruhezonen)
+
+
+class ReflektierendeFlaechenFlugplaetze (Base, Vector):
+    __table_args__ = ({'schema': 'bazl', 'autoload': False})
+    __tablename__ = 'reflektierende_flaechen_flugplaetze'
+    __template__ = 'templates/htmlpopup/bazl_reflektierende_flaechen_flugplaetze.mako'
+    __bodId__ = 'ch.bazl.reflektierende-flaechen_flugplaetze'
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    icao = Column('icao', Unicode)
+    name = Column('name', Unicode)
+    status_de = Column('status_de', Unicode)
+    status_fr = Column('status_fr', Unicode)
+    status_it = Column('status_it', Unicode)
+    status_en = Column('status_en', Unicode)
+    the_geom = Column(Geometry2D)
+register('ch.bazl.reflektierende-flaechen_flugplaetze', ReflektierendeFlaechenFlugplaetze)
