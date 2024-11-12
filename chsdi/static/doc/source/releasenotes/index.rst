@@ -14,6 +14,85 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20241113:
+
+Release 20241113 - Wednesday, November 13th 2024
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+- Bug fixes
+- Announcements:
+    - the layers *ch.swisstopo-karto.skitouren* and *ch.swisstopo-karto.schneeschuhrouten* have been switched from raster to vector datasets as previously announced
+    - the layers *ch.swisstopo.lubis-luftbilder_schwarzweiss*, *ch.swisstopo.lubis-luftbilder_farbe*, *ch.swisstopo.lubis-luftbilder_infrarot* got the following changes as previously announced: no extended tooltip anymore and the attributes inventarnummer, bildnummer, orientierung, rotation, filesize_mb, ort, image_height and image_width have been removed
+    - the layer *ch.swisstopo.lubis-luftbilder_schraegaufnahmen* got the following changes as previously announced: no extended tooltip anymore and the attributes inventory_number, medium_format, filesize_mb, contact and contact_email have been removed
+    - the layer *ch.swisstopo.lubis-terrestrische_aufnahmen* got the following changes: no extended tooltip anymore and the attributes image_number, filesize_mb, medium_format, image_height and image_width have been removed
+    - the object ID values of the layer *ch.vbs.schiessanzeigen* will change for all objects due to geometrical changes in the source data with the release December 18th. Existing permalinks to objects may not work anymore and will have to be replaced by the new object id’s (chsdi fields featureId and id). In addition there will be a new attribute bezeichnung_ort on the dataset. The other existing attributes will stay
+    - decommission of various vectortile styles and datasets by January 2025. Details `read here <https://www.geo.admin.ch/en/old-styles-no-longer-available-from-january-2025>`__
+    - the layer *ch.bakom.notruf-112_satellit* will be decommissioned with the release of February 5th 2025
+
+
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2024-10-09-rc1...2024-11-13-rc1>`__
+
+Geodata
+*******
+
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Settlement <//map.geo.admin.ch/?layers=ch.are.siedlung>`__ (ch.are.siedlung)                                                                                                                                     |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Reflective surfaces aerodromes <//map.geo.admin.ch/?layers=ch.bazl.reflektierende-flaechen_flugplaetze>`__ (ch.bazl.reflektierende-flaechen_flugplaetze)                                                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Snow depth, 10 min <//map.geo.admin.ch/?layers=ch.meteoschweiz.messwerte-schneehoehe-automatisch-10min>`__ (ch.meteoschweiz.messwerte-schneehoehe-automatisch-10min)                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Sectoral plan CERN consultation <//map.geo.admin.ch/?layers=ch.sbfi.sachplan-cern_anhoerung>`__ (ch.sbfi.sachplan-cern_anhoerung)                                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Cableways/skilifts winter <//map.geo.admin.ch/?layers=ch.swisstopo.bahnen-winter>`__ (ch.swisstopo.bahnen-winter)                                                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Thermal waters <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-thermale_waesser>`__ (ch.swisstopo.geologie-thermale_waesser)                                                                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Accommodations winter <//map.geo.admin.ch/?layers=ch.swisstopo.unterkuenfte-winter>`__ (ch.swisstopo.unterkuenfte-winter)                                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Ski routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.skitouren>`__ (ch.swisstopo-karto.skitouren)                                                                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Snowshoe routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.schneeschuhrouten>`__ (ch.swisstopo-schneeschuhrouten)                                                                                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Winter national map <//map.geo.admin.ch/?layers=ch.swisstopo.pixelkarte-farbe-winter>`__ (ch.swisstopo.pixelkarte-farbe-winter)                                                                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `swissBATHY3D Hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.swissbathy3d-reliefschattierung>`__ (ch.swisstopo.swissbathy3d-reliefschattierung)                                                               |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Low distortion area <//map.geo.admin.ch/?layers=ch.swisstopo-vd.spannungsarme-gebiete>`__ (ch.swisstopo-vd.spannungsarme-gebiete)                                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Seismic subsoil classes <//map.geo.admin.ch/?layers=ch.bafu.gefahren-baugrundklassen>`__ (ch.bafu.gefahren-baugrundklassen)                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Housing Inventory <//map.geo.admin.ch/?layers=ch.are.wohnungsinventar-zweitwohnungsanteil>`__ (ch.are.wohnungsinventar-zweitwohnungsanteil)                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Nitrogen Deposition <//map.geo.admin.ch/?layers=ch.bafu.luftreinhaltung-stickstoffdeposition>`__ (ch.bafu.luftreinhaltung-stickstoffdeposition)                                                                  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Ammonia Concentration <//map.geo.admin.ch/?layers=ch.bafu.luftreinhaltung-ammoniakkonzentration>`__ (ch.bafu.luftreinhaltung-ammoniakkonzentration)                                                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `swissEO VHI <//map.geo.admin.ch/?layers=ch.swisstopo.swisseo_vhi_v100>`__ (ch.swisstopo.swisseo_vhi_v100)                                                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `112 Alarm centers <//map.geo.admin.ch/?layers=ch.bakom.notruf-112_zentral>`__ (ch.bakom.notruf-112_zentral)                                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `117 Alarm centers <//map.geo.admin.ch/?layers=ch.bakom.notruf-117_zentral>`__ (ch.bakom.notruf-117_zentral)                                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `118 Alarm centers <//map.geo.admin.ch/?layers=ch.bakom.notruf-118_zentral>`__ (ch.bakom.notruf-118_zentral)                                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `143 Alarm centers <//map.geo.admin.ch/?layers=ch.bakom.notruf-143_zentral>`__ (ch.bakom.notruf-143_zentral)                                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `144 Alarm centers <//map.geo.admin.ch/?layers=ch.bakom.notruf-144_zentral>`__ (ch.bakom.notruf-144_zentral)                                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `145 Alarm centers <//map.geo.admin.ch/?layers=ch.bakom.notruf-145_zentral>`__ (ch.bakom.notruf-145_zentral)                                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `147 Alarm centers <//map.geo.admin.ch/?layers=ch.bakom.notruf-147_zentral>`__ (ch.bakom.notruf-147_zentral)                                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Deep geothermal projects <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-tiefengeothermie_projekte>`__ (ch.swisstopo.geologie-tiefengeothermie_projekte)                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20241009:
 
 Release 20241009 - Wednesday, October 9th 2024
@@ -29,12 +108,12 @@ API & applications
 - Announcements:
     - the layers *ch.swisstopo.geologie-geotechnik-steinbrueche_1915*, *ch.swisstopo.geologie-geotechnik-steinbrueche_1965*, *ch.swisstopo.geologie-geotechnik-steinbrueche_1995* and *ch.swisstopo.geologie-geotechnik-steinbrueche_1980* have been removed from chsdi services as previously announced
     - by the release of November 13th or December 18th the layers *ch.swisstopo-karto.skitouren* and *ch.swisstopo-karto.schneeschuhrouten* will no longer be raster maps but vector data sets
-    - important information about SSL certificates and http protocol for integrated symbols, KML’s or GPX files in map.geo.admin.ch. Details `read here <https://www.geo.admin.ch/en/important-imformation-ssl-certificates-http-protocols>`
+    - important information about SSL certificates and http protocol for integrated symbols, KML’s or GPX files in map.geo.admin.ch. Details `read here <https://www.geo.admin.ch/en/important-imformation-ssl-certificates-http-protocols>`__
     - the layers *ch.swisstopo.lubis-luftbilder_schwarzweiss*, *ch.swisstopo.lubis-luftbilder_farbe*, *ch.swisstopo.lubis-luftbilder_infrarot* will get the following changes by the release of November 13th: no extended tooltip anymore and the attributes inventarnummer, bildnummer, orientierung, rotation, filesize_mb, ort, image_height and image_width will be removed from chsdi services, because they are no longer filled and used.
     - the layer *ch.swisstopo.lubis-luftbilder_schraegaufnahmen* will get the following changes by the release of November 13th: no extended tooltip anymore and the attributes inventory_number, medium_format, filesize_mb, contact and contact_email will be removed from chsdi services, because they are no longer filled and used.
     - the layer *ch.swisstopo.lubis-terrestrische_aufnahmen* will get the following changes by the release of November 13th: no extended tooltip anymore and the attributes image_number, filesize_mb, medium_format, image_height and image_width will be removed from chsdi services, because they are no longer filled and used.
     - the object ID values of the layer *ch.vbs.schiessanzeigen* will change for all objects due to geometrical changes in the source data with the release of November 13th or December 18th. Existing permalinks to objects may not work anymore and will have to be replaced by the new object id’s (chsdi fields featureId and id). In addition there will be a new attribute bezeichnung_ort on the dataset. The other existing attributes will stay.
-    - decommission of various vectortile styles and datasets by January 2025. Details `read here <https://www.geo.admin.ch/en/old-styles-no-longer-available-from-january-2025>`
+    - decommission of various vectortile styles and datasets by January 2025. Details `read here <https://www.geo.admin.ch/en/old-styles-no-longer-available-from-january-2025>`__
     - the layer *ch.bakom.notruf-112_satellit* will be decommissioned with one of the first releases in 2025
 
 
