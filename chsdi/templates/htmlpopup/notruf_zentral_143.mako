@@ -1,29 +1,36 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
-
-<%
-    arr_fn_zentrale_143 = c['attributes']['fn_zentrale_143'].split('\n')
-    arr_len = len(arr_fn_zentrale_143)
-    str_output_fn = ''
-    for i in range(arr_len):
-        str_output_fn = str_output_fn + arr_fn_zentrale_143[i] + '<br />' if  i < (arr_len-1) else str_output_fn + arr_fn_zentrale_143[i]
-    endfor
-    
-    arr_mo_zentrale_143 = c['attributes']['mo_zentrale_143'].split('\n')
-    arr_len = len(arr_mo_zentrale_143)
-    str_output_mo = ''
-    for i in range(arr_len):
-        str_output_mo = str_output_mo + arr_mo_zentrale_143[i] + '<br />' if  i < (arr_len-1) else str_output_mo + arr_mo_zentrale_143[i]
-    endfor
-%>
-
-<% c['stable_id'] = True %>
-    <tr><td class="cell-left">${_('gemeinde')}</td>    	<td>${c['attributes']['gemeinde_143'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bakom.notruf-143_zentral.festnetz_143')}</td>    	<td>${c['attributes']['festnetz_143'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bakom.notruf-143_zentral.fn_zentrale_143')}</td>          <td>${_(str_output_fn)|n}</td></tr>
-    <tr><td class="cell-left">${_('ch.bakom.notruf-143_zentral.mobile_143')}</td>           <td>${c['attributes']['mobile_143'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('ch.bakom.notruf-143_zentral.mo_zentrale_143')}</td>     <td>${_(str_output_mo)|n}</td></tr>
-
+    <%
+        arr_rn_143 = c['attributes']['rn_143'].split(',')
+        arr_len = len(arr_rn_143)
+        str_output = ''
+        for i in range(arr_len):
+            str_output = str_output + arr_rn_143[i] + '<br />' if  i < (arr_len-1) else str_output + arr_rn_143[i]
+        endfor
+    %>
+    <tr>
+        <td class="cell-left">${_('ch.bakom.notruf-143_zentral.alarmzentrale')}</td>
+        <td>${c['attributes']['alarmzentrale'] or '-'}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_('ch.bakom.notruf-143_zentral.strasse')}</td>
+        <td>${c['attributes']['strasse'] or '-'}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_('ch.bakom.notruf-143_zentral.nummer')}</td>
+        <td>${c['attributes']['nummer'] or '-'}</td>
+    <tr>
+        <td class="cell-left">${_('ch.bakom.notruf-143_zentral.plz')}</td>
+        <td>${c['attributes']['plz'] or '-'}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_('ch.bakom.notruf-143_zentral.ort')}</td>
+        <td>${c['attributes']['ort'] or '-'}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_('ch.bakom.notruf-143_zentral.rn_143')}</td>
+        <td>${_(str_output)|n}</td>
+    </tr>
 </%def>
 

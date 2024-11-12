@@ -245,6 +245,49 @@ class DosisleistungTerrestrisch(Base, Vector):
 register('ch.swisstopo.geologie-dosisleistung-terrestrisch', DosisleistungTerrestrisch)
 
 
+class SchneeRouten:
+    __table_args__ = ({'schema': 'karto', 'autoload': False})
+    __label__ = 'target_name'
+    id = Column('route_uuid', Unicode, primary_key=True)
+    target_name = Column('target_name', Unicode)
+    target_altitude = Column('target_altitude', Integer)
+    name = Column('name', Unicode)
+    name_de = Column('name_de', Unicode)
+    name_fr = Column('name_fr', Unicode)
+    name_it = Column('name_it', Unicode)
+    name_en = Column('name_en', Unicode)
+    difficulty_de = Column('difficulty_de', Unicode)
+    difficulty_fr = Column('difficulty_fr', Unicode)
+    difficulty_it = Column('difficulty_it', Unicode)
+    difficulty_en = Column('difficulty_en', Unicode)
+    ascent_time_label = Column('ascent_time_label', Unicode)
+    ascent_altitude = Column('ascent_altitude', Unicode)
+    descent_altitude = Column('descent_altitude', Unicode)
+    url_sac_de = Column('url_sac_de', Unicode)
+    url_sac_fr = Column('url_sac_fr', Unicode)
+    url_sac_it = Column('url_sac_it', Unicode)
+    url_sac_en = Column('url_sac_en', Unicode)
+    source_url = Column('source_url', Unicode)
+    source_txt = Column('source_txt', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class SkiTouren(Base, SchneeRouten, Vector):
+    __tablename__ = 'ski_routes'
+    __template__ = 'templates/htmlpopup/karto_skitouren.mako'
+    __bodId__ = 'ch.swisstopo-karto.skitouren'
+
+register(SkiTouren.__bodId__, SkiTouren)
+
+
+class SchneeSchuhRouten(Base, SchneeRouten, Vector):
+    __tablename__ = 'snowshoe_routes'
+    __template__ = 'templates/htmlpopup/karto_schneeschuhrouten.mako'
+    __bodId__ = 'ch.swisstopo-karto.schneeschuhrouten'
+
+register(SchneeSchuhRouten.__bodId__, SchneeSchuhRouten)
+
+
 class Landesschwerenetz:
     __table_args__ = ({'schema': 'fida', 'autoload': False})
     __template__ = 'templates/htmlpopup/landesschwerenetz.mako'
@@ -279,7 +322,6 @@ class LandesschwerenetzZoom1(Base, Landesschwerenetz, Vector):
 class LandesschwerenetzZoom2(Base, Landesschwerenetz, Vector):
     __tablename__ = 'landesschwerenetz_overview'
     __minscale__ = 3000
-
 
 register(Landesschwerenetz.__bodId__, LandesschwerenetzZoom1)
 register(Landesschwerenetz.__bodId__, LandesschwerenetzZoom2)
@@ -389,13 +431,6 @@ class GeologischerAtlasRasterMeta(Base, GeologischerAtlasMeta, Vector):
     __bodId__ = 'ch.swisstopo.geologie-geologischer_atlas.metadata'
 
 register('ch.swisstopo.geologie-geologischer_atlas.metadata', GeologischerAtlasRasterMeta)
-
-
-class GeologischerAtlasVectorMeta(Base, GeologischerAtlasMeta, Vector):
-    __tablename__ = 'geologischer_atlas_vector_meta'
-    __bodId__ = 'ch.swisstopo.geologie-geologischer_atlas_vector.metadata'
-
-register('ch.swisstopo.geologie-geologischer_atlas_vector.metadata', GeologischerAtlasVectorMeta)
 
 
 class GeolSpezialkartenMetadata:
@@ -3234,3 +3269,80 @@ class HartsteinVorkommen(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(HartsteinVorkommen.__bodId__, HartsteinVorkommen)
+
+
+class GeologieThermaleWaesser(Base, Vector):
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __tablename__ = 'thermal_waters'
+    __bodId__ = 'ch.swisstopo.geologie-thermale_waesser'
+    __template__ = 'templates/htmlpopup/stopo_geologie_thermale_waesser.mako'
+    __extended_info__ = True
+    __label__ = 'category_en'
+    id = Column('primary_key', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    sample_temp = Column('sample_temp', Unicode)
+    form_temp = Column('form_temp', Unicode)
+    discharge = Column('discharge', Unicode)
+    ph = Column('ph', Unicode)
+    ec = Column('ec', Unicode)
+    mineralisation_de = Column('mineralisation_de', Unicode)
+    mineralisation_fr = Column('mineralisation_fr', Unicode)
+    mineralisation_it = Column('mineralisation_it', Unicode)
+    mineralisation_en = Column('mineralisation_en', Unicode)
+    chem_type = Column('chem_type', Unicode)
+    use_de = Column('use_de', Unicode)
+    use_fr = Column('use_fr', Unicode)
+    use_it = Column('use_it', Unicode)
+    use_en = Column('use_en', Unicode)
+    date_measure = Column('date_measure', Unicode)
+    annot_de = Column('annot_de', Unicode)
+    annot_fr = Column('annot_fr', Unicode)
+    annot_it = Column('annot_it', Unicode)
+    annot_en = Column('annot_en', Unicode)
+    x_lv95 = Column('x_lv95', Integer)
+    y_lv95 = Column('y_lv95', Integer)
+    elevation = Column('elevation', Integer)
+    source1 = Column('source1', Unicode)
+    src_link = Column('src_link', Unicode)
+    download = Column('download', Unicode)
+    swissgeol = Column('swissgeol', Unicode)
+    assets_swissgeol = Column('assets_swissgeol', Unicode)
+    boreholes_swissgeol = Column('boreholes_swissgeol', Unicode)
+    catchwork_type_de = Column('catchwork_type_de', Unicode)
+    catchwork_type_fr = Column('catchwork_type_fr', Unicode)
+    catchwork_type_it = Column('catchwork_type_it', Unicode)
+    catchwork_type_en = Column('catchwork_type_en', Unicode)
+    rock_overlay = Column('rock_overlay', Unicode)
+    distance = Column('distance', Unicode)
+    ref_portal = Column('ref_portal', Unicode)
+    borehole_name = Column('borehole_name', Unicode)
+    sample_interval = Column('sample_interval', Unicode)
+    form_temp_depth = Column('form_temp_depth', Unicode)
+    hydrogeologic_unit_de = Column('hydrogeologic_unit_de', Unicode)
+    hydrogeologic_unit_fr = Column('hydrogeologic_unit_fr', Unicode)
+    hydrogeologic_unit_it = Column('hydrogeologic_unit_it', Unicode)
+    hydrogeologic_unit_en = Column('hydrogeologic_unit_en', Unicode)
+    category_de = Column('category_de', Unicode)
+    category_fr = Column('category_fr', Unicode)
+    category_it = Column('category_it', Unicode)
+    category_en = Column('category_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(GeologieThermaleWaesser.__bodId__, GeologieThermaleWaesser)
+
+
+class UnterkuenfteWinter(Base, Vector):
+    __table_args__ = ({'schema': 'karto', 'autoload': False})
+    __tablename__ = 'unterkuenfte_winter'
+    __bodId__ = 'ch.swisstopo.unterkuenfte-winter'
+    __template__ = 'templates/htmlpopup/stopo_unterkuenfte_winter.mako'
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    url_sac_de = Column('url_sac_de', Unicode)
+    url_sac_fr = Column('url_sac_fr', Unicode)
+    url_sac_it = Column('url_sac_it', Unicode)
+    url_sac_en = Column('url_sac_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(UnterkuenfteWinter.__bodId__, UnterkuenfteWinter)

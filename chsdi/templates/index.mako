@@ -92,8 +92,6 @@ version = python_version()
 
       <h2>CatalogService (non ESRI)</h2>
           <a href="rest/services/blw/CatalogServer?callback=callback">Catalog for topic 'blw'</a>
-      <h2>Lubis Viewer</h2>
-          <a href="luftbilder/viewer.html?layer=Images+aériennes+swisstopo+n+%2F+b&title=No+de+l%27image&height=5952&width=5954&bildnummer=19460400270631&datenherr=swisstopo&x=3770.73&y=3384.70&zoom=1&rotation=0">Link to Lubis full screen Viewer</a>
 
       <h2>Search</h2>
       <h3>Layers Search (type=layers)</h3>

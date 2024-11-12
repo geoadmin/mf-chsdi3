@@ -105,7 +105,6 @@ def main(global_config, **settings):
     config.add_route('htmlPopup', '/rest/services/{map}/MapServer/{layerId}/{featureId}/htmlPopup', request_method=request_method)
     config.add_route('iframeHtmlPopup', '/rest/services/{map}/MapServer/{layerId}/{featureId}/iframeHtmlPopup', request_method=request_method)
     config.add_route('extendedHtmlPopup', '/rest/services/{map}/MapServer/{layerId}/{featureId}/extendedHtmlPopup', request_method=request_method)
-    config.add_route('luftbilder', '/luftbilder/viewer.html', request_method=request_method)
     config.add_route('historicalmaps', '/historicalmaps/viewer.html', request_method=request_method)
     config.add_route('checker', '/checker', request_method=request_method)
     config.add_route('checker_dev', '/checker_dev', request_method=request_method)
