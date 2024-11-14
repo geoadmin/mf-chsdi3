@@ -111,7 +111,6 @@ def main(global_config, **settings):
     config.add_route('translations', '/rest/services/translations', request_method=request_method)
 
     config.add_route('stationboard', '/stationboard/stops/{id}', request_method=request_method)
-    config.add_route('faqlist', '/rest/services/{map}/faqlist', request_method=request_method)
     config.add_route('color', '/color/{r},{g},{b}/{image}', request_method=request_method)
 
     # Static route

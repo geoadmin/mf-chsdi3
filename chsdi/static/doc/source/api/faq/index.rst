@@ -77,34 +77,60 @@ The following list contains all the free accessible layers:
 
 .. raw:: html
 
-   <script type="text/javascript">
+    <script type="text/javascript">
+        function init() {
+            const sections = [
+                {
+                    identifier: 'notChargeableLayers',
+                    filter: (layer) => !layer.chargeable,
+                },
+                {
+                    identifier: 'tooltipLayers',
+                    filter: (layer) => !!layer.tooltip
+                },
+                {
+                    identifier: 'searchableLayers',
+                    filter: (layer) => !!layer.searchable
+                },
+                {
+                    identifier: 'queryableLayers',
+                    filter: (layer) => layer.queryableAttributes?.length > 0
+                }
+            ];
 
-   function init() {
-    $.getJSON( "../../rest/services/api/faqlist", function( data ) {
-      var layersApi = data;
-      var translationsApi = data.translations;
-      var names = ["notChargeableLayers", "tooltipLayers", "searchableLayers", "queryableLayers"];
-      for (var index=0; index < names.length; index++) {
-        var name = names[index];
-        var newInner = "<br><table border=\"0\">";
-        var counter = 1;
-        for (var layer in layersApi[name]) {
-          newInner += '<tr><td>' + counter + '</td><td><a href="http://map3.geo.admin.ch/?layers=' +
-                layersApi[name][layer] + '" target="new"> ' + layersApi[name][layer] + '</a>&nbsp('+translationsApi[layersApi[name][layer]]+')</td></tr>';
-          counter++;
+            $.getJSON( "../../rest/services/all/MapServer/layersConfig", function( layersConfig ) {
+                const allLayers = Object.keys(layersConfig).map((layerId) => {
+                    return {
+                        id: layerId,
+                        ...layersConfig[layerId],
+                    }
+                }).filter((layer) => !layer.id.endsWith("_3d") && !layer.parentLayerId);
+
+                // sorting all layers alphabetically by ID
+                allLayers.sort((layer1, layer2) => layer1.id.localeCompare(layer2.id));
+                sections.forEach((section) => {
+                    const layers = allLayers.filter(section.filter);
+                    let layerTable = `<br /><table style="border: none;">`;
+                    layerTable += layers.map((layer, counter) => {
+                        let layerRow = `<tr>`;
+                        layerRow += `<td>${counter + 1}</td>`;
+                        layerRow += `<td style="text-transform: uppercase">${layer.type}</td>`;
+                        layerRow += `<td><a target="_blank" href="https://map.geo.admin.ch/?layers=${layer.id}">${layer.id}</a>&nbsp;${layer.label}</td>`;
+                        layerRow += `</tr>`;
+                        return layerRow;
+                    }).join('')
+                    layerTable += `</table>`;
+                    const sectionElement = document.getElementById(section.identifier);
+                    if (sectionElement) {
+                        sectionElement.innerHTML = layerTable;
+                    }
+                })
+            });
         }
-        if (document.getElementById(name)) {
-          document.getElementById(name).innerHTML = newInner;
-        }
-        newInner = [];
-      }
-    });
-   }
+    </script>
 
-   </script>
-
-   <body onload="init();">
-   </body>
+    <body onload="init();">
+    </body>
 
 .. _querybale_layers:
 
