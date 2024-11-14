@@ -147,51 +147,6 @@ def feature_attributes(request):
     return {'id': layerId, 'name': params.translate(layerId), 'fields': fields}
 
 
-@view_config(route_name='faqlist', renderer='jsonp')
-def faqlist(request):
-    params = BaseLayersValidation(request)
-    params.geodataStaging = 'prod'
-    translations = {}
-
-    # That there is a tooltip
-    tooltipLayers = []
-    # That you can search in layer search
-    searchableLayers = []
-    # That you need to pay for
-    chargeableLayers = []
-    # Free layers
-    notChargeableLayers = []
-    # queryable layer (filtering with where and layerDefs)
-    queryableLayers = []
-
-    query = params.request.db.query(LayersConfig)
-    for layer in get_layers_config_for_params(params, query, LayersConfig):
-        k = list(layer.keys()).pop()
-        lyr = list(layer.values()).pop()
-        if 'parentLayerId' not in lyr and not k.endswith('_3d'):
-            if k not in translations:
-                translations[k] = request.translate(k)
-            if 'tooltip' in lyr and lyr['tooltip'] and 'type' in lyr and lyr['type'] not in ('geojson',):
-                tooltipLayers.append(k)
-            if 'queryableAttributes' in lyr and lyr['queryableAttributes']:
-                queryableLayers.append(k)
-            if 'searchable' in lyr and lyr['searchable']:
-                searchableLayers.append(k)
-            if 'chargeable' in lyr and lyr['chargeable']:
-                chargeableLayers.append(k)
-            if 'chargeable' in lyr and not lyr['chargeable']:
-                notChargeableLayers.append(k)
-
-    return {
-        'translations': translations,
-        'tooltipLayers': sorted(tooltipLayers),
-        'searchableLayers': sorted(searchableLayers),
-        'chargeableLayers': sorted(chargeableLayers),
-        'notChargeableLayers': sorted(notChargeableLayers),
-        'queryableLayers': sorted(queryableLayers)
-    }
-
-
 def _has_legend(layerId, lang):
     legendsDir = os.path.join(os.path.dirname(__file__), '../static/images/legends')
     image = "%s_%s.png" % (layerId, lang)
