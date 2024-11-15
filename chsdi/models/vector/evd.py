@@ -304,6 +304,7 @@ class SachplanCernAnhoerungPlm:
     doc_web_it = Column('doc_web_it', Unicode)
     the_geom = Column(Geometry2D)
 
+
 class SachplanCernAnhoerungPlmPoly(Base, SachplanCernAnhoerungPlm, Vector):
     __tablename__ = 'sachplan_cern_anhoerung_plm_poly'
     __template__ = 'templates/htmlpopup/sbfi_sachplan_cern_anhoerung_plm_poly.mako'
