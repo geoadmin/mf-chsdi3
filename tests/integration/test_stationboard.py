@@ -1,11 +1,16 @@
 from datetime import datetime
-from unittest import TestCase
-from unittest.mock import patch
 import re
+from unittest.mock import Mock
+from unittest.mock import patch
 
 from pytz import timezone
 from dateutil import tz
+from pyramid.httpexceptions import HTTPBadRequest
+import requests_mock
+
 from chsdi.lib.opentransapi import opentransapi
+from chsdi.views.stationboard import TransportView
+from tests.integration import TestsBase
 
 
 def format_time(str_date_time, fmt="%Y-%m-%dT%H:%M:%SZ"):
@@ -15,13 +20,6 @@ def format_time(str_date_time, fmt="%Y-%m-%dT%H:%M:%SZ"):
     try:
         date_time = datetime.strptime(str_date_time, fmt)
     except ValueError:
-        # sometimes the timestamp of the OJP 2.0 API's response has 7 digits for the
-        # milliseconds. 6 are expected and only 6 can be handled by Python.
-        # Hence we need to safely truncate everything between the last . and
-        # the +01:00 part of the timestamp, e.g.:
-        # 2024-11-01T15:39:45.5348804+01:00
-        # Use regex to capture and truncate everything between the last '.' and
-        # the first '+' to 6 digits
         truncated_date_time = re.sub(r'(\.\d{6})\d*(?=\+)', r'\1', str_date_time)
         date_time = datetime.strptime(truncated_date_time, '%Y-%m-%dT%H:%M:%S.%f%z')
     date_time_utc = date_time.replace(tzinfo=from_zone)
@@ -29,7 +27,7 @@ def format_time(str_date_time, fmt="%Y-%m-%dT%H:%M:%SZ"):
     return date_time_zurich.strftime('%d/%m/%Y %H:%M')
 
 
-class TestStationboard(TestCase):
+class TestStationboard(TestsBase):
     def setUp(self):
         self.mock_api_key = "dummy_api_key"
         self.mock_url = "https://dummy-url.com"
@@ -66,7 +64,8 @@ class TestStationboard(TestCase):
             """
             for dep in departures
         )
-        return f"""<?xml version="1.0" ?>
+
+        mock_response = f"""<?xml version="1.0" ?>
         <OJP xmlns:siri="http://www.siri.org.uk/siri" xmlns="http://www.vdv.de/ojp" version="2.0">
             <OJPResponse>
                 <siri:ServiceDelivery>
@@ -79,14 +78,16 @@ class TestStationboard(TestCase):
             </OJPResponse>
         </OJP>"""
 
-    @patch.object(opentransapi.OpenTrans, "send_post")
-    def test_stationboard(self, mock_send_post):
-        """Test fetching stationboard with valid data."""
+        return mock_response
+
+    @requests_mock.Mocker()
+    def test_stationboard(self, mock_requests):
+        # Generate mock response
         now = datetime.now(timezone('Europe/Zurich')).isoformat(timespec="microseconds")
         mock_departures = [
             {
                 "id": "ch:1:sloid:30813::1",
-                "label": "Zurich, Diagon Alley",
+                "label": "Hogwarts Express",
                 "currentDate": now,
                 "departureDate": "2024-11-19T08:52:00Z",
                 "estimatedDate": "2024-11-19T08:52:00Z",
@@ -94,39 +95,65 @@ class TestStationboard(TestCase):
                 "destinationId": "ch:1:sloid:91178::3",
             }
         ]
-        mock_send_post.return_value = self.generate_mock_response(mock_departures, now).encode("utf-8")
+        mock_response = self.generate_mock_response(mock_departures, now)
 
+        mock_requests.post(
+            self.mock_url,
+            text=mock_response,
+            status_code=200
+        )
+
+        # Initialize API and make the call
         api = opentransapi.OpenTrans(self.mock_api_key, self.mock_url)
         results = api.get_departures(8501120, number_results=1)
 
+        # Assertions
         self.assertEqual(len(results), 1)
         self.assertEqual(results[0]["id"], "ch:1:sloid:30813::1")
-        self.assertEqual(results[0]["label"], "Zurich, Diagon Alley")
+        self.assertEqual(results[0]["label"], "Hogwarts Express")
         self.assertEqual(results[0]["currentDate"], format_time(now))
         self.assertEqual(results[0]["departureDate"], format_time("2024-11-19T08:52:00Z"))
         self.assertEqual(results[0]["estimatedDate"], format_time("2024-11-19T08:52:00Z"))
         self.assertEqual(results[0]["destinationName"], "Hogwarts")
         self.assertEqual(results[0]["destinationId"], "ch:1:sloid:91178::3")
 
-    @patch.object(opentransapi.OpenTrans, "send_post")
-    def test_stationboard_missing_station(self, mock_send_post):
+    @requests_mock.Mocker()
+    def test_stationboard_missing_station(self, mock_requests):
         now = datetime.now(timezone('Europe/Zurich')).isoformat(timespec="microseconds")
-        mock_send_post.return_value = self.generate_mock_response([], now).encode("utf-8")
+        mock_response = self.generate_mock_response([], now)
+        mock_requests.post(self.mock_url, text=mock_response, status_code=200)
+
         api = opentransapi.OpenTrans(self.mock_api_key, self.mock_url)
         with self.assertRaises(opentransapi.OpenTransNoStationException):
             api.get_departures(999999)
 
-    @patch.object(opentransapi.OpenTrans, "send_post")
-    def test_stationboard_invalid_id(self, mock_send_post):
+    @requests_mock.Mocker()
+    def test_stationboard_invalid_id(self, mock_requests):
         now = datetime.now(timezone('Europe/Zurich')).isoformat(timespec="microseconds")
-        mock_send_post.return_value = self.generate_mock_response([], now).encode("utf-8")
+        mock_response = self.generate_mock_response([], now)
+        mock_requests.post(self.mock_url, text=mock_response, status_code=200)
+
         api = opentransapi.OpenTrans(self.mock_api_key, self.mock_url)
         with self.assertRaises(opentransapi.OpenTransNoStationException):
             api.get_departures("invalid_id")
 
-    @patch.object(opentransapi.OpenTrans, "send_post")
-    def test_stationboard_invalid_number_results(self, mock_send_post):
-        mock_send_post.side_effect = opentransapi.OpenTransException("The limit parameter must be an integer.")
-        api = opentransapi.OpenTrans(self.mock_api_key, self.mock_url)
-        with self.assertRaises(opentransapi.OpenTransException):
-            api.get_departures(8501120, number_results="lalala")
+    @patch('chsdi.views.stationboard.get_current_registry')
+    def test_invalid_limit_param(self, mock_get_current_registry):
+
+        mock_request = Mock()
+        mock_request.matched_route.name = 'stationboard'
+        mock_request.params = {}
+        mock_request.matchdict = {'id': '8501120'}
+
+        mock_registry = Mock()
+        mock_registry.settings = {
+            'opentrans_api_key': 'dummy_api_key',
+            'opentrans_url': 'https://dummy-url.com',
+        }
+        mock_get_current_registry.return_value = mock_registry
+
+        mock_request.params['limit'] = 'lalala'
+
+        # Expect an HTTPBadRequest exception
+        with self.assertRaises(HTTPBadRequest):
+            TransportView(mock_request)
