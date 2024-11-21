@@ -8,6 +8,27 @@ from dateutil import tz
 import re
 
 
+def format_time(str_date_time, fmt="%Y-%m-%dT%H:%M:%SZ"):
+    from_zone = tz.tzutc()
+    to_zone = tz.gettz('Europe/Zurich')
+
+    try:
+        date_time = datetime.strptime(str_date_time, fmt)
+    except ValueError:
+        # sometimes the timestamp of the OJP 2.0 API's response has 7 digits for the
+        # milliseconds. 6 are expected and only 6 can be handled by Python.
+        # Hence we need to safely truncate everything between the last . and
+        # the +01:00 part of the timestamp, e.g.:
+        # 2024-11-01T15:39:45.5348804+01:00
+        # Use regex to capture and truncate everything between the last '.' and
+        # the first '+' to 6 digits
+        truncated_date_time = re.sub(r'(\.\d{6})\d*(?=\+)', r'\1', str_date_time)
+        date_time = datetime.strptime(truncated_date_time, '%Y-%m-%dT%H:%M:%S.%f%z')
+    date_time_utc = date_time.replace(tzinfo=from_zone)
+    date_time_zurich = date_time_utc.astimezone(to_zone)
+    return date_time_zurich.strftime('%d/%m/%Y %H:%M')
+
+
 class OpenTrans:
 
     def __init__(self, open_trans_api_key, open_trans_url):
@@ -23,31 +44,11 @@ class OpenTrans:
         results = self.xml_to_array(api_response_xml)
         return results
 
-    def _format_time(self, str_date_time, fmt="%Y-%m-%dT%H:%M:%SZ"):
-        from_zone = tz.tzutc()
-        to_zone = tz.gettz('Europe/Zurich')
-
-        try:
-            date_time = datetime.strptime(str_date_time, fmt)
-        except ValueError:
-            # sometimes the timestamp of the OJP 2.0 API's response has 7 digits for the
-            # milliseconds. 6 are expected and only 6 can be handled by Python.
-            # Hence we need to safely truncate everything between the last . and
-            # the +01:00 part of the timestamp, e.g.:
-            # 2024-11-01T15:39:45.5348804+01:00
-            # Use regex to capture and truncate everything between the last '.' and
-            # the first '+' to 6 digits
-            truncated_date_time = re.sub(r'(\.\d{6})\d*(?=\+)', r'\1', str_date_time)
-            date_time = datetime.strptime(truncated_date_time, '%Y-%m-%dT%H:%M:%S.%f%z')
-        date_time_utc = date_time.replace(tzinfo=from_zone)
-        date_time_zurich = date_time_utc.astimezone(to_zone)
-        return date_time_zurich.strftime('%d/%m/%Y %H:%M')
-
     def _convert_estimated_date(self, el_estimated):
         # the field estimatedDate is not mandatory
         if el_estimated == None:
             return 'nodata'
-        return self._format_time(el_estimated.text)
+        return format_time(el_estimated.text)
 
     def _check_element(self, el_name, el):
         if el == None:
@@ -79,8 +80,8 @@ class OpenTrans:
             results.append({
                 'id': el_id,
                 'label': el_service_name,
-                'currentDate': self._format_time(el_current_date, fmt="%Y-%m-%dT%H:%M:%S.%f%z"),
-                'departureDate': self._format_time(el_departure_date),
+                'currentDate': format_time(el_current_date, fmt="%Y-%m-%dT%H:%M:%S.%f%z"),
+                'departureDate': format_time(el_departure_date),
                 'estimatedDate': self._convert_estimated_date(el.find('.//ojp:ServiceDeparture/ojp:EstimatedTime', ns)),
                 'destinationName': el_destination_name,
                 'destinationId': el_destination_id
