@@ -51,6 +51,7 @@ sphinx-rtd-theme = "~=1.0"
 nose2 = "*"
 coverage = "~=4.5"
 numpy = "*"
+requests-mock = "~=1.12.1"
 
 [requires]
 python_version = "3.9"
