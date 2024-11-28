@@ -35,9 +35,6 @@ RewriteRule ^${APACHE_ENTRY_PATH}/info.json ${APACHE_ENTRY_PATH}/static/info.jso
 
 # Static for cross domain flash/arcgis
 RewriteRule ^${APACHE_ENTRY_PATH}/(crossdomain.xml|clientaccesspolicy.xml) ${APACHE_ENTRY_PATH}/static/$1 [PT]
-<LocationMatch ^${APACHE_ENTRY_PATH}/static/(crossdomain.xml|clientaccesspolicy.xml)>
-    Header set Content-type "text/x-cross-domain-policy"
-</LocationMatch>
 
 # New style config url (see mf-geoadmin3 #4687)
 RewriteRule ^${APACHE_ENTRY_PATH}/configs/(de|fr|it|rm|en)/layersConfig\.json ${APACHE_ENTRY_PATH}/rest/services/all/MapServer/layersConfig?lang=$1 [PT]
