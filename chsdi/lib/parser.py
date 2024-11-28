@@ -5,6 +5,7 @@ import logging
 
 
 log = logging.getLogger(__name__)
+log.setLevel('DEBUG')
 
 where_gram = """
 
@@ -35,7 +36,7 @@ ESCAPED_QUOTED_STRING: /'(?:[^'\\\\]|\\\\.)*'/
 OPERATORS: "<="|">="|"<"|">"|">="|"<="|"!="|"="
 LIKES: "ilike"|"not ilike"|"not like"|"like"
 OPERATORS_LIKES: OPERATORS | LIKES
-BOOLEAN: "true" | "false"
+BOOLEAN: /true|false/i
 and_or: /and|or/i
 is_not_null: /is( not)? null/i
 IS_NOT: "is not"|"!="|"="|"is"
@@ -59,7 +60,7 @@ class WhereParser(object):
         log.debug(u'WhereParser string to parse: {}'.format(str(text)))
 
         self.text = text
-        self.parser = Lark(where_gram, debug=True)
+        self.parser = Lark(where_gram, debug=True, ambiguity='resolve')
         self.transformer = WhereTransformer()
 
     @property
@@ -88,7 +89,9 @@ class WhereParser(object):
             r = tr.children
         else:
             r.append(tr)
-        # log.debug(u'tokens: {}'.format(str(r)))
+        log.debug(u'tokens: {}'.format(str(r)))
+        log.debug(u'tree: {}'.format(str(self._tree())))
+        log.debug(u'tr.children: {}'.format(str(tr.children)))
         return r
 
     def _tree(self):
