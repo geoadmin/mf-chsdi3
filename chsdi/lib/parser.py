@@ -108,20 +108,20 @@ class WhereTransformer(Transformer):
 
     def and_or(self, s):
         # log.debug(u'and_or: {}'.format(str(s[0]).lower()))
-        return str(s[0]).lower()
+        return s.lower()
 
     def is_not_null(self, s):
-        return str(s[0]).lower()
+        return s.lower()
 
     def ops(self, s):
-        return str(s[0]).lower()
+        return s.lower()
 
     def operators_likes(self, s):
-        return str(s[0]).lower()
+        return s.lower()
 
     def BOOLEAN(self, s):
         # log.debug(u'boolean: {}'.format(str(s)))
-        return "true" == str(s[0]).lower()
+        return "true" if s.lower() == "true" else "false"
 
     def IS_NOT(self, s):
-        return str(s[0]).lower()
+        return s.lower()
