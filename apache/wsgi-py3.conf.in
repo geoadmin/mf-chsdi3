@@ -48,7 +48,7 @@ RewriteRule ^${APACHE_ENTRY_PATH}/configs/services\.json ${APACHE_ENTRY_PATH}/re
 
 # Robots static files
 RewriteRule ^${APACHE_ENTRY_PATH}/robots.txt ${APACHE_ENTRY_PATH}/static/${ROBOTS_FILE} [PT]
-<LocationMatch ^${APACHE_ENTRY_PATH}/static/(robots.txt|robots_prod.txt)>
+<LocationMatch ^${APACHE_ENTRY_PATH}/static/(robots.txt|robots_dev.txt|robots_prod.txt)>
     Header set Content-type "text/plain"
 </LocationMatch>
 
