@@ -20,8 +20,6 @@ envsubst < apache/ports.conf.in > /etc/apache2/ports.conf
 
 envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf
 
-cd chsdi/static/ && ln -sf "${ROBOTS_FILE}" robots.txt && cd - || echo "FAILED TO CREATE ROBOTS LINK"
-
 if [ -n "${LOGS_DIR}" ]; then
     install -d -o "${USER}" -g "${GROUP}" -m 0777 "${LOGS_DIR}"
 fi
