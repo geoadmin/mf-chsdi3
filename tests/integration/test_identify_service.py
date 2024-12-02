@@ -749,7 +749,7 @@ class TestIdentifyService(TestsBase):
         params = {'geometry': '618953,170093',
                   'geometryType': 'esriGeometryPoint',
                   'imageDisplay': '1920,576,96',
-                  'layers': 'all:ch.bav.kataster-belasteter-standorte-oev.oereb,ch.bazl.sicherheitszonenplan.oereb',
+                  'layers': 'all:ch.bav.kataster-belasteter-standorte-oev_v2_0.oereb,ch.bazl.sicherheitszonenplan_v2_0.oereb',
                   'mapExtent': '671164.31244,253770,690364.31244,259530',
                   'tolerance': '5',
                   'geometryFormat': 'interlis'}
