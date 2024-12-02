@@ -919,7 +919,8 @@ class GridstandSwisssurface3d(Base, Vector):
     __template__ = 'templates/htmlpopup/swisssurface3d.mako'
     __label__ = 'id'
     id = Column('tilekey', Unicode, primary_key=True)
-    temporalkey = Column('temporalkey', Integer)
+    gpstime_min = Column('gpstime_min', Integer)
+    gpstime_max = Column('gpstime_max', Integer)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swisssurface3d.metadata', GridstandSwisssurface3d)
