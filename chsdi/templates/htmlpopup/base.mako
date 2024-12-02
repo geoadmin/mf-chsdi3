@@ -79,8 +79,12 @@
             <td class="cell-left"></td>
             <td>
           % endif
-              <a href="${''.join((c['baseUrl'], '?', c['layerBodId'], '=', str(c['featureId']), '&time={}'.format(timestamp), '&lang=', lang, '&topic=', topic))}" target="new">
-                ${_('Link to object')}
+            % if timestamp is None:
+              <a href="${''.join((c['baseUrl'], '?', c['layerBodId'], '=', str(c['featureId']), '&lang=', lang, '&topic=', topic))}" target="_blank">
+            % else:
+              <a href="${''.join((c['baseUrl'], '?', c['layerBodId'], '=', str(c['featureId']), '&time={}'.format(timestamp), '&lang=', lang, '&topic=', topic))}" target="_blank">
+            % endif
+             ${_('Link to object')}
               </a>
             </td>
           </tr>
@@ -95,7 +99,7 @@
     </a>
     <div class="float-right">
       % if c['stable_id'] is True:
-      <a class="link" href="${''.join((c['baseUrl'], '?', c['layerBodId'], '=', str(c['featureId']), '&lang=', lang, '&topic=', topic))}" target="new">
+      <a class="link" href="${''.join((c['baseUrl'], '?', c['layerBodId'], '=', str(c['featureId']), '&lang=', lang, '&topic=', topic))}" target="_blank">
         ${_('Link to object')}
       </a>
       &nbsp;|&nbsp;
