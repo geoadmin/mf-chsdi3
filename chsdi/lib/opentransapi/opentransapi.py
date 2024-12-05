@@ -89,6 +89,9 @@ class OpenTrans:
         return results
 
     def create_ojp_payload(self, station_id, request_dt_time, number_results=5):
+        # ATTENTION: The value "swisstopo_Abfahrtsmonitor" for the RequestorRef
+        # in the payload below is suggested by the OJP product owner.
+        # Hence it MUST NOT be changed!
         payload = f"""<?xml version="1.0" encoding="UTF-8"?>
         <OJP xmlns='http://www.vdv.de/ojp' xmlns:siri='http://www.siri.org.uk/siri' version='2.0' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://www.vdv.de/ojp ../../../../OJP4/OJP.xsd'>
             <OJPRequest>
