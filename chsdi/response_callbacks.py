@@ -24,9 +24,3 @@ def add_cors_header(request, response):
     response.headers['Access-Control-Allow-Origin'] = "*"
     response.headers['Access-Control-Allow-Methods'] = request.registry.settings['request_method']
     response.headers['Access-Control-Allow-Headers'] = "*"
-
-
-def add_cross_domain_policy(request, response):
-    # Check if the request is a cross domain policy request
-    if request.path in ['/crossdomain.xml', '/clientaccesspolicy.xml']:
-        response.headers['Content-Type'] = 'text/x-cross-domain-policy'
