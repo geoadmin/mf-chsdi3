@@ -80,19 +80,27 @@
     </tr>
     <tr>
       <th class="cell-meta">${_('ch.swisstopo.geologie-reflexionsseismik.link')}</td>
-      % if c['attributes']['link'] in [None, "-"]:
-        <td>${'-'}</td>
+      % if c['attributes']['link'] and c['attributes']['link'].startswith('http'):
+        <td><a href="${c['attributes']['link']}" target="_blank">${_('link')}</a></td>
       % else:
-        <td><a target="_blank" href="${c['attributes']['link']}">${_('link')}</a></td>
+        <td>-</td>
       % endif
     </tr>
     <tr>
       <th class="cell-meta">${_('ch.swisstopo.geologie-reflexionsseismik.download')}</td>
-      <td>${c['attributes']['download'] or '-'}</td>
+      % if c['attributes']['download'] and c['attributes']['download'].startswith('http'):
+        <td><a href="${c['attributes']['download']}" target="_blank">${_('link')}</a></td>
+      % else:
+        <td>-</td>
+      % endif
     </tr>
     <tr>
       <th class="cell-meta">${_('ch.swisstopo.geologie-reflexionsseismik.swissgeol')}</td>
-      <td>${c['attributes']['swissgeol'] or '-'}</td>
+      % if c['attributes']['swissgeol'] and c['attributes']['swissgeol'].startswith('http'):
+        <td><a href="${c['attributes']['swissgeol']}" target="_blank">${_('link')}</a></td>
+      % else:
+        <td>-</td>
+      % endif
     </tr>
   </table>
 </%def>
