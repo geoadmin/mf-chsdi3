@@ -1,40 +1,101 @@
 # -*- coding: utf-8 -*-
+from datetime import datetime
+from unittest.mock import Mock
+from unittest.mock import patch
 
-from tests.integration import TestsBase
-from chsdi.lib.opentransapi import opentransapi
-from datetime import datetime, timedelta
 from pytz import timezone
+from pyramid.httpexceptions import HTTPBadRequest
+import requests_mock
+
+from chsdi.lib.opentransapi import opentransapi
+from chsdi.lib.opentransapi.opentransapi import format_time
+from chsdi.views.stationboard import TransportView
+from tests.integration import TestsBase
+from tests.integration.helpers import generate_mock_response
+from tests.integration.helpers import generate_mock_empty_response
 
 
-class Test_OpenTransApi(TestsBase):
+class TestOpenTransApi(TestsBase):
+    def setUp(self):
+        self.mock_api_key = "dummy_api_key"
+        self.mock_url = "https://dummy-url.com"
 
-    def _callOpenTrans(self):
-        opentrans_api_key = self.testapp.app.registry.settings.get('opentrans_api_key')
-        api = opentransapi.OpenTrans(opentrans_api_key)
-        return api
+    @requests_mock.Mocker()
+    def test_stationboard(self, mock_requests):
+        now = datetime.now(timezone('Europe/Zurich')).isoformat(timespec="microseconds")
+        mock_departures = [
+            {
+                "id": "ch:1:sloid:30813::1",
+                "label": "Hogwarts Express",
+                "currentDate": now,
+                "departureDate": "2024-11-19T08:52:00Z",
+                "estimatedDate": "2024-11-19T08:52:00Z",
+                "destinationName": "Hogwarts",
+                "destinationId": "ch:1:sloid:91178::3",
+            }
+        ]
+        mock_response = generate_mock_response(mock_departures, now)
 
-    def test_if_key_is_registered(self):
-        opentrans_api_key = self.testapp.app.registry.settings.get('opentrans_api_key')
-        self.assertNotEqual(opentrans_api_key, '')
+        mock_requests.post(
+            self.mock_url,
+            text=mock_response,
+            status_code=200
+        )
 
-    def test_station_wabern(self):
-        api = self._callOpenTrans()
-        # valid station id should be requested from opentransport api p.e.
-        # https://api.opentransportdata.swiss/ckan-api/datastore_search?resource_id=b1a45b18-2a36-4582-a94d-71f2825e95e8&q=wabern
-        results = api.get_departures(8588562)
-        len_results = len(results)
-        self.assertEqual(len_results, 5)
+        api = opentransapi.OpenTrans(self.mock_api_key, self.mock_url)
+        results = api.get_departures(8501120, number_results=1)
 
-    def test_station_not_exist(self):
-        api = self._callOpenTrans()
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0]["id"], "ch:1:sloid:30813::1")
+        self.assertEqual(results[0]["label"], "Hogwarts Express")
+        self.assertEqual(results[0]["currentDate"], format_time(now))
+        self.assertEqual(results[0]["departureDate"], format_time("2024-11-19T08:52:00Z"))
+        self.assertEqual(results[0]["estimatedDate"], format_time("2024-11-19T08:52:00Z"))
+        self.assertEqual(results[0]["destinationName"], "Hogwarts")
+        self.assertEqual(results[0]["destinationId"], "ch:1:sloid:91178::3")
+
+    @requests_mock.Mocker()
+    def test_stationboard_nonexisting_station(self, mock_requests):
+        now = datetime.now(timezone('Europe/Zurich')).isoformat(timespec="microseconds")
+        # mock an empty response to simulate a "station not found" event.
+        mock_response = generate_mock_empty_response(now)
+        mock_requests.post(
+            self.mock_url,
+            text=mock_response,
+            status_code=200
+        )
+
+        api = opentransapi.OpenTrans(self.mock_api_key, self.mock_url)
         with self.assertRaises(opentransapi.OpenTransNoStationException):
-            api.get_departures(153)
+            api.get_departures(999999)
 
-    def test_time_utc_zurich(self):
-        api = self._callOpenTrans()
-        time_zurich_tomorrow = datetime.now(timezone('Europe/Zurich')) + timedelta(days=1)
-        time_zurich_tomorrow_12 = datetime.strptime('%s 12:00:00' % str(time_zurich_tomorrow.strftime('%d/%m/%Y')), '%d/%m/%Y %H:%M:%S')
-        results = api.get_departures(8503000, 1, time_zurich_tomorrow_12.strftime('%Y-%m-%dT%H:%M:%S'))  # API call Zurich HB next day 12:00
-        time_next_dep_zurich = datetime.strptime(results[0]['departureDate'], '%d/%m/%Y %H:%M')
-        time_diff = abs(time_zurich_tomorrow_12 - time_next_dep_zurich).seconds
-        self.assertLess(time_diff, 900)  # assuming, that the next train in Zurich at 12am will depart within 15 min
+    @requests_mock.Mocker()
+    def test_stationboard_invalid_id(self, mock_requests):
+        now = datetime.now(timezone('Europe/Zurich')).isoformat(timespec="microseconds")
+        mock_response = generate_mock_response([], now)
+        mock_requests.post(self.mock_url, text=mock_response, status_code=200)
+
+        api = opentransapi.OpenTrans(self.mock_api_key, self.mock_url)
+        with self.assertRaises(opentransapi.OpenTransNoStationException):
+            api.get_departures("invalid_id")
+
+    @patch('chsdi.views.stationboard.get_current_registry')
+    def test_invalid_limit_param(self, mock_get_current_registry):
+
+        mock_request = Mock()
+        mock_request.matched_route.name = 'stationboard'
+        mock_request.params = {}
+        mock_request.matchdict = {'id': '8501120'}
+
+        mock_registry = Mock()
+        mock_registry.settings = {
+            'opentrans_api_key': 'dummy_api_key',
+            'opentrans_url': 'https://dummy-url.com',
+        }
+        mock_get_current_registry.return_value = mock_registry
+
+        mock_request.params['limit'] = 'lalala'
+
+        # Expect an HTTPBadRequest exception
+        with self.assertRaises(HTTPBadRequest):
+            TransportView(mock_request)
