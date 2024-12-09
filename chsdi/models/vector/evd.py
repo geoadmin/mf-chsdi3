@@ -237,7 +237,7 @@ class SachplanCernAnhoerungFac:
     __table_args__ = ({'schema': 'sbfi', 'autoload': False})
     __bodId__ = 'ch.sbfi.sachplan-cern_anhoerung'
     __label__ = 'objname_de'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     objname_de = Column('objname_de', Unicode)
     objname_fr = Column('objname_fr', Unicode)
     objname_it = Column('objname_it', Unicode)
@@ -278,7 +278,7 @@ class SachplanCernAnhoerungPlm:
     __table_args__ = ({'schema': 'sbfi', 'autoload': False})
     __bodId__ = 'ch.sbfi.sachplan-cern_anhoerung'
     __label__ = 'plname_de'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     plname_de = Column('plname_de', Unicode)
     plname_fr = Column('plname_fr', Unicode)
     plname_it = Column('plname_it', Unicode)
