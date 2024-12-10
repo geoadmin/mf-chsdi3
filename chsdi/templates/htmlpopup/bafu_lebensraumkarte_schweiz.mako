@@ -20,8 +20,8 @@
   </tr>
   <tr>
     <td class="cell-left">${_('ch.bafu.lebensraumkarte-schweiz.cover')}</td>
-    % if c['attributes']['cover']:
-      <td>${round(c['attributes']['cover'], 5)}</td>
+    % if c['attributes']['cover'] and c['attributes']['cover'] < 9999:
+      <td>${c['attributes']['cover']}</td>
     % else:
       <td>-</td>
     % endif
