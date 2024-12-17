@@ -2499,8 +2499,6 @@ class SisPlanningA(Base, Vector):
     doc_web = Column('doc_web', Unicode)
     doc_title = Column('doc_title', Unicode)
     bgdi_created = Column('bgdi_created', Unicode)
-    __minscale__ = 20005
-    __maxscale__ = 500005
     the_geom = Column(Geometry2D)
 
 register('ch.bav.sachplan-infrastruktur-schiene_anhorung', SisPlanningA)
@@ -2529,44 +2527,6 @@ class SisAngaben(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.bav.sachplan-infrastruktur-schiene_ausgangslage', SisAngaben)
-
-
-class SisPlanningRasterA(Base, Vector):
-    __tablename__ = 'sis_pl_r_anhorung'
-    __table_args__ = ({'schema': 'bav', 'autoload': False})
-    __template__ = 'templates/htmlpopup/sis_planning.mako'
-    __bodId__ = 'ch.bav.sachplan-infrastruktur-schiene_anhorung'
-    # Translatable labels in fr, it
-    __label__ = 'facname_de'
-    id = Column('stabil_id', Unicode, primary_key=True)
-    facname_de = Column('facname_de', Unicode)
-    facname_fr = Column('facname_fr', Unicode)
-    facname_it = Column('facname_it', Unicode)
-    plname_de = Column('plname_de', Unicode)
-    plname_fr = Column('plname_fr', Unicode)
-    plname_it = Column('plname_it', Unicode)
-    meastype_text_de = Column('meastype_text_de', Unicode)
-    meastype_text_fr = Column('meastype_text_fr', Unicode)
-    meastype_text_it = Column('meastype_text_it', Unicode)
-    coordlevel_text_de = Column('coordlevel_text_de', Unicode)
-    coordlevel_text_fr = Column('coordlevel_text_fr', Unicode)
-    coordlevel_text_it = Column('coordlevel_text_it', Unicode)
-    plstatus_text_de = Column('plstatus_text_de', Unicode)
-    plstatus_text_fr = Column('plstatus_text_fr', Unicode)
-    plstatus_text_it = Column('plstatus_text_it', Unicode)
-    validfrom = Column('validfrom', Unicode)
-    validuntil = Column('validuntil', Unicode)
-    description_de = Column('description_de', Unicode)
-    description_fr = Column('description_fr', Unicode)
-    description_it = Column('description_it', Unicode)
-    doc_web = Column('doc_web', Unicode)
-    doc_title = Column('doc_title', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
-    __maxscale__ = 20005
-    __minscale__ = 1
-    the_geom = Column(Geometry2D)
-
-register('ch.bav.sachplan-infrastruktur-schiene_anhorung', SisPlanningRasterA)
 
 
 class SisFacilitiesK(Base, Vector):
@@ -2631,49 +2591,9 @@ class SisPlanningK(Base, Vector):
     doc_web = Column('doc_web', Unicode)
     doc_title = Column('doc_title', Unicode)
     bgdi_created = Column('bgdi_created', Unicode)
-    __minscale__ = 20005
-    __maxscale__ = 500005
     the_geom = Column(Geometry2D)
 
 register('ch.bav.sachplan-infrastruktur-schiene_kraft', SisPlanningK)
-
-
-class SisPlanningRasterK(Base, Vector):
-    __tablename__ = 'sis_pl_r_kraft'
-    __table_args__ = ({'schema': 'bav', 'autoload': False})
-    __template__ = 'templates/htmlpopup/sis_planning.mako'
-    __bodId__ = 'ch.bav.sachplan-infrastruktur-schiene_kraft'
-    # Translatable labels in fr, it
-    __label__ = 'facname_de'
-    id = Column('stabil_id', Unicode, primary_key=True)
-    facname_de = Column('facname_de', Unicode)
-    facname_fr = Column('facname_fr', Unicode)
-    facname_it = Column('facname_it', Unicode)
-    plname_de = Column('plname_de', Unicode)
-    plname_fr = Column('plname_fr', Unicode)
-    plname_it = Column('plname_it', Unicode)
-    meastype_text_de = Column('meastype_text_de', Unicode)
-    meastype_text_fr = Column('meastype_text_fr', Unicode)
-    meastype_text_it = Column('meastype_text_it', Unicode)
-    coordlevel_text_de = Column('coordlevel_text_de', Unicode)
-    coordlevel_text_fr = Column('coordlevel_text_fr', Unicode)
-    coordlevel_text_it = Column('coordlevel_text_it', Unicode)
-    plstatus_text_de = Column('plstatus_text_de', Unicode)
-    plstatus_text_fr = Column('plstatus_text_fr', Unicode)
-    plstatus_text_it = Column('plstatus_text_it', Unicode)
-    validfrom = Column('validfrom', Unicode)
-    validuntil = Column('validuntil', Unicode)
-    description_de = Column('description_de', Unicode)
-    description_fr = Column('description_fr', Unicode)
-    description_it = Column('description_it', Unicode)
-    doc_web = Column('doc_web', Unicode)
-    doc_title = Column('doc_title', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
-    __maxscale__ = 20005
-    __minscale__ = 1
-    the_geom = Column(Geometry2D)
-
-register('ch.bav.sachplan-infrastruktur-schiene_kraft', SisPlanningRasterK)
 
 
 class SugBaseClass:

@@ -14,6 +14,101 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+
+.. _releasenotes_20241218:
+
+Release 20241218 - Wednesday, December 18th 2024
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+- Bug fixes
+- Announcements:
+    - the object ID values of the layer *ch.vbs.schiessanzeigen* will change for all objects due to geometrical changes in the source data with one of the next releases in 2025. Existing permalinks to objects may not work anymore and will have to be replaced by the new object id’s (chsdi fields featureId and id). In addition there will be a new attribute bezeichnung_ort on the dataset. The other existing attributes will stay
+    - decommission of various vectortile styles and datasets by January 2025. Details `read here <https://www.geo.admin.ch/en/old-styles-no-longer-available-from-january-2025>`__
+    - the layer *ch.bakom.notruf-112_satellit* will be decommissioned with the release of February 5th 2025
+    - the fuzzy search behaviour of swisssearch will be changed. the new quorum operator will be used for the fuzzy search. this operator adds an additional fuzziness on the whole search string. the fuzzy search will therefore return more results than before when searching for multiple keywords.
+
+
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2024-11-13-rc1...2024-12-18-rc1>`__
+
+Geodata
+*******
+
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Residential areas according to AuLaV <//map.geo.admin.ch/?layers=ch.bazl.wohngebiete-aulav>`__ (ch.bazl.wohngebiete-aulav)                                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Municipal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill)                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `District boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill)                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cantonal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-kanton-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-kanton-flaeche.fill)                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-land-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-land-flaeche.fill)                                                          |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SIL consultation <//map.geo.admin.ch/?layers=ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung>`__ (ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung)                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP Aviation infrastructure <//map.geo.admin.ch/?layers=ch.bazl.sachplan-infrastruktur-luftfahrt_kraft>`__ (ch.bazl.sachplan-infrastruktur-luftfahrt_kraft)                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wells > 500m <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-bohrungen_tiefer_500>`__ (ch.swisstopo.geologie-bohrungen_tiefer_500)                                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Emergency calls by comune <//map.geo.admin.ch/?layers=ch.bakom.notruf>`__ (ch.bakom.notruf)                                                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `112 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-112_festnetz>`__ (ch.bakom.notruf-112_festnetz)                                                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `112 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-112_mobilnetz>`__ (ch.bakom.notruf-112_mobilnetz)                                                                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `112 Satellite network <//map.geo.admin.ch/?layers=ch.bakom.notruf-112_satellit>`__ (ch.bakom.notruf-112_satellit)                                                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `118 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-118_festnetz>`__ (ch.bakom.notruf-118_festnetz)                                                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `118 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-118_mobilnetz>`__ (ch.bakom.notruf-118_mobilnetz)                                                                                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Spitallandeplätze <//map.geo.admin.ch?layers=ch.bazl.spitallandeplaetze>`__ (ch.bazl.spitallandeplaetze)                                                                                                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Groundwater level/spring discharge <//map.geo.admin.ch/?layers=ch.bafu.hydroweb-messstationen_grundwasserzustand>`__ (ch.bafu.hydroweb-messstationen_grundwasserzustand)                                         |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Sectoral plan CERN consultation <//map.geo.admin.ch/?layers=ch.sbfi.sachplan-cern_anhoerung>`__ (ch.sbfi.sachplan-cern_anhoerung)                                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Habitat Map <//map.geo.admin.ch/?layers=ch.bafu.lebensraumkarte-schweiz>`__ (ch.bafu.lebensraumkarte-schweiz)                                                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cableways/skilifts winter <//map.geo.admin.ch/?layers=ch.swisstopo.bahnen-winter>`__ (ch.swisstopo.bahnen-winter)                                                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accommodations winter <//map.geo.admin.ch/?layers=ch.swisstopo.unterkuenfte-winter>`__ (ch.swisstopo.unterkuenfte-winter)                                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Ski routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.skitouren>`__ (ch.swisstopo-karto.skitouren)                                                                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Snowshoe routes <//map.geo.admin.ch/?layers=ch.swisstopo-karto.schneeschuhrouten>`__ (ch.swisstopo-schneeschuhrouten)                                                                                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Swiss Parks (Zones) <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-paerke_nationaler_bedeutung>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung)                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Swiss Parks (Perimeter) <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter)                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wildlife reserves <//map.geo.admin.ch/?layers=ch.bafu.wrz-jagdbanngebiete_select>`__ (ch.bafu.wrz-jagdbanngebiete_select)                                                                                        |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Designated wildlife areas <//map.geo.admin.ch/?layers=ch.bafu.wrz-wildruhezonen_portal>`__ (ch.bafu.wrz-wildruhezonen_portal)                                                                                    |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. 1st night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde)                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. helicopters Lmax <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter-maximalpegel>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter-maximalpegel)  |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. helicopters Lr <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter)                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. light / large airecrafts <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_klein-grossflugzeuge>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_klein-grossflugzeuge)|
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. ligt aircrafts <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_kleinluftfahrzeuge>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_kleinluftfahrzeuge)              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. last night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_letzte-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_letzte-nachtstunde)             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. milit. aerodr. (tot.) <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt)             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. 2nd night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde)              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20241113:
 
 Release 20241113 - Wednesday, November 13th 2024

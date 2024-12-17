@@ -19,7 +19,7 @@ expressions: expression (and_or expression)* [and_or]
 expression: WORD is_not_null
           | WORD IS_NOT BOOLEAN
           | WORD operators SIGNED_NUMBER
-          | WORD operators_likes  ESCAPED_QUOTED_STRING
+          | WORD operators_likes ESCAPED_QUOTED_STRING
 
 operators: OPERATORS   -> ops
 operators_likes: OPERATORS | LIKES
@@ -121,7 +121,7 @@ class WhereTransformer(Transformer):
 
     def BOOLEAN(self, s):
         # log.debug(u'boolean: {}'.format(str(s)))
-        return "true" == str(s[0]).lower()
+        return "true" if s.lower() == "true" else "false"
 
     def IS_NOT(self, s):
-        return str(s[0]).lower()
+        return s.lower()

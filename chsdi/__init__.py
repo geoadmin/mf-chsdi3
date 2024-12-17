@@ -47,7 +47,6 @@ def main(global_config, **settings):
     request_method = tuple(settings.get('request_method').replace(' ', '').split(','))
     config = Configurator(settings=settings, request_factory=WsgiSchemeAdaptedRequest)
     config.include('pyramid_mako')
-    config.include('akhet.static')
 
     # wrapper around all views
     # This is a wrapper function around all views. If OPTIONS is given, an empty string will be returned
@@ -111,12 +110,10 @@ def main(global_config, **settings):
     config.add_route('translations', '/rest/services/translations', request_method=request_method)
 
     config.add_route('stationboard', '/stationboard/stops/{id}', request_method=request_method)
-    config.add_route('faqlist', '/rest/services/{map}/faqlist', request_method=request_method)
     config.add_route('color', '/color/{r},{g},{b}/{image}', request_method=request_method)
 
     # Static route
     static_max_age = int(settings['static_max_age']) if settings['static_max_age'] else None
-    config.add_static_route('chsdi', 'static', cache_max_age=static_max_age)
 
     # Some views for specific routes
     config.add_view(route_name='dev', renderer='chsdi:templates/index.mako')

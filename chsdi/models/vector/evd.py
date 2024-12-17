@@ -237,7 +237,7 @@ class SachplanCernAnhoerungFac:
     __table_args__ = ({'schema': 'sbfi', 'autoload': False})
     __bodId__ = 'ch.sbfi.sachplan-cern_anhoerung'
     __label__ = 'objname_de'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     objname_de = Column('objname_de', Unicode)
     objname_fr = Column('objname_fr', Unicode)
     objname_it = Column('objname_it', Unicode)
@@ -262,25 +262,23 @@ class SachplanCernAnhoerungFac:
 
 class SachplanCernAnhoerungFacPnt(Base, SachplanCernAnhoerungFac, Vector):
     __tablename__ = 'sachplan_cern_anhoerung_fac_pnt'
-    __template__ = 'templates/htmlpopup/sbfi_sachplan_cern_anhoerung_pnt.mako'
+    __template__ = 'templates/htmlpopup/sbfi_sachplan_cern_anhoerung_fac_pnt.mako'
 
 register('ch.sbfi.sachplan-cern_anhoerung', SachplanCernAnhoerungFacPnt)
 
 
 class SachplanCernAnhoerungFacLine(Base, SachplanCernAnhoerungFac, Vector):
     __tablename__ = 'sachplan_cern_anhoerung_fac_line'
-    __template__ = 'templates/htmlpopup/sbfi_sachplan_cern_anhoerung_line.mako'
+    __template__ = 'templates/htmlpopup/sbfi_sachplan_cern_anhoerung_fac_line.mako'
 
 register('ch.sbfi.sachplan-cern_anhoerung', SachplanCernAnhoerungFacLine)
 
 
-class SachplanCernAnhoerungPlmPoly(Base, Vector):
-    __tablename__ = 'sachplan_cern_anhoerung_plm_poly'
+class SachplanCernAnhoerungPlm:
     __table_args__ = ({'schema': 'sbfi', 'autoload': False})
     __bodId__ = 'ch.sbfi.sachplan-cern_anhoerung'
-    __template__ = 'templates/htmlpopup/sbfi_sachplan_cern_anhoerung_poly.mako'
     __label__ = 'plname_de'
-    id = Column('bgdi_id', Integer, primary_key=True)
+    id = Column('stabil_id', Unicode, primary_key=True)
     plname_de = Column('plname_de', Unicode)
     plname_fr = Column('plname_fr', Unicode)
     plname_it = Column('plname_it', Unicode)
@@ -305,6 +303,11 @@ class SachplanCernAnhoerungPlmPoly(Base, Vector):
     doc_web_fr = Column('doc_web_fr', Unicode)
     doc_web_it = Column('doc_web_it', Unicode)
     the_geom = Column(Geometry2D)
+
+
+class SachplanCernAnhoerungPlmPoly(Base, SachplanCernAnhoerungPlm, Vector):
+    __tablename__ = 'sachplan_cern_anhoerung_plm_poly'
+    __template__ = 'templates/htmlpopup/sbfi_sachplan_cern_anhoerung_plm_poly.mako'
 
 register('ch.sbfi.sachplan-cern_anhoerung', SachplanCernAnhoerungPlmPoly)
 

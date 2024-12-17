@@ -145,35 +145,15 @@ class AsylPlanning:
 class AsylPlanningAnhoerung(Base, AsylPlanning, Vector):
     __tablename__ = 'sachplan_asyl_plmeasures_anhorung'
     __bodId__ = 'ch.sem.sachplan-asyl_anhoerung'
-    __minscale__ = 20005
-    __maxscale__ = 500005
-
-
-class AsylPlanningRasterAnhoerung(Base, AsylPlanning, Vector):
-    __tablename__ = 'sachplan_asyl_plmeasures_r_anhorung'
-    __bodId__ = 'ch.sem.sachplan-asyl_anhoerung'
-    __maxscale__ = 20005
-    __minscale__ = 1
 
 
 class AsylPlanningKraft(Base, AsylPlanning, Vector):
     __tablename__ = 'sachplan_asyl_plmeasures_kraft'
     __bodId__ = 'ch.sem.sachplan-asyl_kraft'
-    __minscale__ = 20005
-    __maxscale__ = 500005
-
-
-class AsylPlanningRasterKraft(Base, AsylPlanning, Vector):
-    __tablename__ = 'sachplan_asyl_plmeasures_r_kraft'
-    __bodId__ = 'ch.sem.sachplan-asyl_kraft'
-    __maxscale__ = 20005
-    __minscale__ = 1
 
 
 register('ch.sem.sachplan-asyl_anhoerung', AsylPlanningAnhoerung)
-register('ch.sem.sachplan-asyl_anhoerung', AsylPlanningRasterAnhoerung)
 register('ch.sem.sachplan-asyl_kraft', AsylPlanningKraft)
-register('ch.sem.sachplan-asyl_kraft', AsylPlanningRasterKraft)
 
 
 class ArmasuisseNaturLandschaftArmee(Base, Vector):

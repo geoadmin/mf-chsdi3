@@ -919,7 +919,8 @@ class GridstandSwisssurface3d(Base, Vector):
     __template__ = 'templates/htmlpopup/swisssurface3d.mako'
     __label__ = 'id'
     id = Column('tilekey', Unicode, primary_key=True)
-    temporalkey = Column('temporalkey', Integer)
+    gpstime_min = Column('gpstime_min', Integer)
+    gpstime_max = Column('gpstime_max', Integer)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.swisssurface3d.metadata', GridstandSwisssurface3d)
@@ -1216,62 +1217,6 @@ class Gk500LithologieHauptgruppen(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen', Gk500LithologieHauptgruppen)
-
-
-class GeologieGeotechnikSteinbrueche1915(Base, Vector):
-    __tablename__ = 'geotechnik_steinbrueche_1915'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/steinbrueche_1915.mako'
-    __bodId__ = 'ch.swisstopo.geologie-geotechnik-steinbrueche_1915'
-    __label__ = 'gesteinsgr'
-    id = Column('id', Integer, primary_key=True)
-    gesteinsgr = Column('gesteinsgr', Unicode)
-    gestein = Column('gestein', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.geologie-geotechnik-steinbrueche_1915', GeologieGeotechnikSteinbrueche1915)
-
-
-class GeologieGeotechnikSteinbrueche1965(Base, Vector):
-    __tablename__ = 'geotechnik_steinbrueche_1965'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/steinbrueche_1965.mako'
-    __bodId__ = 'ch.swisstopo.geologie-geotechnik-steinbrueche_1965'
-    __label__ = 'gesteinsgr'
-    id = Column('id', Integer, primary_key=True)
-    gesteinsgr = Column('gesteinsgr', Unicode)
-    gestein = Column('gestein', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.geologie-geotechnik-steinbrueche_1965', GeologieGeotechnikSteinbrueche1965)
-
-
-class GeologieGeotechnikSteinbrueche1980(Base, Vector):
-    __tablename__ = 'geotechnik_steinbrueche_1980'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/steinbrueche_1980.mako'
-    __bodId__ = 'ch.swisstopo.geologie-geotechnik-steinbrueche_1980'
-    __label__ = 'gesteinsgr'
-    id = Column('id', Integer, primary_key=True)
-    gesteinsgr = Column('gesteinsgr', Unicode)
-    gestein = Column('gestein', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.geologie-geotechnik-steinbrueche_1980', GeologieGeotechnikSteinbrueche1980)
-
-
-class GeologieGeotechnikSteinbrueche1995(Base, Vector):
-    __tablename__ = 'geotechnik_steinbrueche_1995'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/steinbrueche_1995.mako'
-    __bodId__ = 'ch.swisstopo.geologie-geotechnik-steinbrueche_1995'
-    __label__ = 'gesteinsgr'
-    id = Column('id', Integer, primary_key=True)
-    gesteinsgr = Column('gesteinsgr', Unicode)
-    gestein = Column('gestein', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.geologie-geotechnik-steinbrueche_1995', GeologieGeotechnikSteinbrueche1995)
 
 
 class GeologieHydroKarteGrundwasservorkommen(Base, Vector):
