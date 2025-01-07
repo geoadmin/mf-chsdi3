@@ -11,7 +11,7 @@ import re
 def format_time(str_date_time):
     # Though the documentation of the OJP 2.0 API is not too verbose on this point (see:
     # https://opentransportdata.swiss/de/cookbook/ojpstopeventrequest/), it seems, the
-    # timestamps are always handeled in some form of ISO 8601 datetime format.
+    # timestamps are always returned in some form of ISO 8601 datetime format.
     # Using isoparse() should be able to handle all the needed cases, e.g.
     # - "Z" as timezone designator
     # - timezone offsets, e.g. "+01:00"
