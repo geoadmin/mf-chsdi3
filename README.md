@@ -2,7 +2,7 @@
 
 | Branch | Status |
 |---|---|
-| master | ![Build Status](https://codebuild.eu-central-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiUytMYkh3RStzRFBjQ0JVaDRubUFRU2UvUEEyeWVaZTNtaDNncWNKbmt3RFhTaTV1UmM0WGUza204dGszRnpFTFhWK1VNY1Vtd0hSb3l4N0g5azZYcHJZPSIsIml2UGFyYW1ldGVyU3BlYyI6IktVWkNjdUZRUWl5SVg3OWMiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master) |
+| master | ![Build Status](https://codebuild.eu-central-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiNVluN1lOc05FUUZVa093RXJ6aERCVnpCZTIvM09mZlhMWkR0ekF6WkVDTDBVSWxBOGg0TE43b2ZwWSs1MldBOExqaUl4RlBpZWtXWlhxOURValRlUXdjPSIsIml2UGFyYW1ldGVyU3BlYyI6IjMxQ0dRZlNXVTVIeTA2TE4iLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master) |
 
 ## Table of contents
 
