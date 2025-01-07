@@ -4,29 +4,23 @@ import requests
 import xml.etree.ElementTree as et
 from pytz import timezone
 from datetime import datetime
-from dateutil import tz
+from dateutil.parser import isoparse
 import re
 
 
-def format_time(str_date_time, fmt="%Y-%m-%dT%H:%M:%SZ"):
-    from_zone = tz.tzutc()
-    to_zone = tz.gettz('Europe/Zurich')
+def format_time(str_date_time):
+    # Though the documentation of the OJP 2.0 API is not too verbose on this point (see:
+    # https://opentransportdata.swiss/de/cookbook/ojpstopeventrequest/), it seems, the
+    # timestamps are always handeled in some form of ISO 8601 datetime format.
+    # Using isoparse() should be able to handle all the needed cases, e.g.
+    # - "Z" as timezone designator
+    # - timezone offsets, e.g. "+01:00"
+    # - sometimes the returned timestamps have an unexpected number of
+    #   fractional seconds, e.g. 7 instead of 6, should be handled, too
+    date_time = isoparse(str_date_time)
 
-    try:
-        date_time = datetime.strptime(str_date_time, fmt)
-    except ValueError:
-        # sometimes the timestamp of the OJP 2.0 API's response has 7 digits for the
-        # milliseconds. 6 are expected and only 6 can be handled by Python.
-        # Hence we need to safely truncate everything between the last . and
-        # the +01:00 part of the timestamp, e.g.:
-        # 2024-11-01T15:39:45.5348804+01:00
-        # Use regex to capture and truncate everything between the last '.' and
-        # the first '+' to 6 digits
-        truncated_date_time = re.sub(r'(\.\d{6})\d*(?=\+)', r'\1', str_date_time)
-        date_time = datetime.strptime(truncated_date_time, '%Y-%m-%dT%H:%M:%S.%f%z')
-    date_time_utc = date_time.replace(tzinfo=from_zone)
-    date_time_zurich = date_time_utc.astimezone(to_zone)
-    return date_time_zurich.strftime('%d/%m/%Y %H:%M')
+    # Return time in local time, as needed.
+    return date_time.strftime('%d/%m/%Y %H:%M')
 
 
 class OpenTrans:
@@ -80,7 +74,7 @@ class OpenTrans:
             results.append({
                 'id': el_id,
                 'label': el_service_name,
-                'currentDate': format_time(el_current_date, fmt="%Y-%m-%dT%H:%M:%S.%f%z"),
+                'currentDate': format_time(el_current_date),
                 'departureDate': format_time(el_departure_date),
                 'estimatedDate': self._convert_estimated_date(el.find('.//ojp:ServiceDeparture/ojp:EstimatedTime', ns)),
                 'destinationName': el_destination_name,
