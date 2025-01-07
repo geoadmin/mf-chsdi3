@@ -3,6 +3,7 @@
 import requests
 import xml.etree.ElementTree as et
 from pytz import timezone
+from pytz import UTC
 from datetime import datetime
 from dateutil.parser import isoparse
 import re
@@ -19,8 +20,12 @@ def format_time(str_date_time):
     #   fractional seconds, e.g. 7 instead of 6, should be handled, too
     date_time = isoparse(str_date_time)
 
+    # Convert to local timezone explicitly
+    local_tz = timezone('Europe/Zurich')  # Replace with your local timezone
+    local_date_time = date_time.astimezone(local_tz)
+
     # Return time in local time, as needed.
-    return date_time.strftime('%d/%m/%Y %H:%M')
+    return local_date_time.strftime('%d/%m/%Y %H:%M')
 
 
 class OpenTrans:
@@ -32,9 +37,13 @@ class OpenTrans:
 
     def get_departures(self, station_id, number_results=5, request_dt_time=False):
         if not request_dt_time:
-            request_dt_time = datetime.now(timezone('Europe/Zurich')).strftime('%Y-%m-%dT%H:%M:%S')
+            # Note: according to https://opentransportdata.swiss/de/cookbook/ojpstopeventrequest/
+            # the timestamps used in the OJPStopEventRequest should preferably be in Zulu time
+            # and MUST include the seconds, in order to prevent their code from trying to interpret
+            # the given times as a form of local time!
+            request_dt_time = datetime.now(UTC).strftime('%Y-%m-%dT%H:%M:%SZ')
         self.station_id = station_id
-        api_response_xml = self.send_post(station_id, request_dt_time, number_results)  # request_dt_time in format 2017-12-11T14:26:18Z
+        api_response_xml = self.send_post(station_id, request_dt_time, number_results)  # zulu times!
         results = self.xml_to_array(api_response_xml)
         return results
 
@@ -86,6 +95,10 @@ class OpenTrans:
         # ATTENTION: The value "swisstopo_Abfahrtsmonitor" for the RequestorRef
         # in the payload below is suggested by the OJP product owner.
         # Hence it MUST NOT be changed!
+
+        # Further ATTENTION:
+        # Timestamps used for RequestTimestamp and DepArrTime MUST be in Zulu time, see:
+        # https://opentransportdata.swiss/de/cookbook/ojpstopeventrequest/
         payload = f"""<?xml version="1.0" encoding="UTF-8"?>
         <OJP xmlns='http://www.vdv.de/ojp' xmlns:siri='http://www.siri.org.uk/siri' version='2.0' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://www.vdv.de/ojp ../../../../OJP4/OJP.xsd'>
             <OJPRequest>
