@@ -39,13 +39,12 @@ class OpenTrans:
         self.url = open_trans_url  # URL of API
         self.station_id = None
 
-    def get_departures(self, station_id, number_results=5, request_dt_time=False):
-        if not request_dt_time:
-            # Note: according to https://opentransportdata.swiss/de/cookbook/ojpstopeventrequest/
-            # the timestamps used in the OJPStopEventRequest should preferably be in UTC
-            # and MUST include the seconds, in order to prevent their code from trying to interpret
-            # the given times as a form of local time!
-            request_dt_time = datetime.now(UTC).strftime('%Y-%m-%dT%H:%M:%SZ')
+    def get_departures(self, station_id, number_results=5):
+        # Note: according to https://opentransportdata.swiss/de/cookbook/ojpstopeventrequest/
+        # the timestamps used in the OJPStopEventRequest should preferably be in UTC
+        # and MUST include the seconds, in order to prevent their code from trying to interpret
+        # the given times as a form of local time!
+        request_dt_time = datetime.now(UTC).strftime('%Y-%m-%dT%H:%M:%SZ')
         self.station_id = station_id
         api_response_xml = self.send_post(station_id, request_dt_time, number_results)  # UTC!
         results = self.xml_to_array(api_response_xml)
