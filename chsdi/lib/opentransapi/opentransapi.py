@@ -18,12 +18,16 @@ def format_time(str_date_time):
     # - timezone offsets, e.g. "+01:00"
     # - sometimes the returned timestamps have an unexpected number of
     #   fractional seconds, e.g. 7 instead of 6, should be handled, too
+    local_tz = timezone('Europe/Zurich')
     date_time = isoparse(str_date_time)
 
-    # Convert to local timezone explicitly
-    local_tz = timezone('Europe/Zurich')  # Replace with your local timezone
-    local_date_time = date_time.astimezone(local_tz)
+    # If for some reason we receive a timezone-naive timestamp, we assume it is a
+    # local time
+    if date_time.tzinfo is None:
+        date_time = date_time.replace(tzinfo=local_tz)
 
+    # Convert to local timezone explicitly
+    local_date_time = date_time.astimezone(local_tz)
     # Return time in local time, as needed.
     return local_date_time.strftime('%d/%m/%Y %H:%M')
 
