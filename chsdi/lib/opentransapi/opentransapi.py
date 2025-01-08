@@ -38,12 +38,12 @@ class OpenTrans:
     def get_departures(self, station_id, number_results=5, request_dt_time=False):
         if not request_dt_time:
             # Note: according to https://opentransportdata.swiss/de/cookbook/ojpstopeventrequest/
-            # the timestamps used in the OJPStopEventRequest should preferably be in Zulu time
+            # the timestamps used in the OJPStopEventRequest should preferably be in UTC
             # and MUST include the seconds, in order to prevent their code from trying to interpret
             # the given times as a form of local time!
             request_dt_time = datetime.now(UTC).strftime('%Y-%m-%dT%H:%M:%SZ')
         self.station_id = station_id
-        api_response_xml = self.send_post(station_id, request_dt_time, number_results)  # zulu times!
+        api_response_xml = self.send_post(station_id, request_dt_time, number_results)  # UTC!
         results = self.xml_to_array(api_response_xml)
         return results
 
@@ -97,7 +97,7 @@ class OpenTrans:
         # Hence it MUST NOT be changed!
 
         # Further ATTENTION:
-        # Timestamps used for RequestTimestamp and DepArrTime MUST be in Zulu time, see:
+        # Timestamps used for RequestTimestamp and DepArrTime MUST be in UTC, see:
         # https://opentransportdata.swiss/de/cookbook/ojpstopeventrequest/
         payload = f"""<?xml version="1.0" encoding="UTF-8"?>
         <OJP xmlns='http://www.vdv.de/ojp' xmlns:siri='http://www.siri.org.uk/siri' version='2.0' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://www.vdv.de/ojp ../../../../OJP4/OJP.xsd'>
