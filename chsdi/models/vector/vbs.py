@@ -350,19 +350,8 @@ register('ch.vbs.sachplan-infrastruktur-militaer_kraft', SimPlanningK)
 class SimPlanningA(Base, SimPlanning, Vector):
     __tablename__ = 'sim_pl_anhoerung'
     __bodId__ = 'ch.vbs.sachplan-infrastruktur-militaer_anhoerung'
-    __minscale__ = 20005
-    __maxscale__ = 500005
 
 register('ch.vbs.sachplan-infrastruktur-militaer_anhoerung', SimPlanningA)
-
-
-class SimPlanningRasterA(Base, SimPlanning, Vector):
-    __tablename__ = 'sim_pl_r_anhoerung'
-    __bodId__ = 'ch.vbs.sachplan-infrastruktur-militaer_anhoerung'
-    __maxscale__ = 20005
-    __minscale__ = 1
-
-register('ch.vbs.sachplan-infrastruktur-militaer_anhoerung', SimPlanningRasterA)
 
 
 class SimPlanningRasterK(Base, SimPlanning, Vector):
