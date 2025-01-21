@@ -2157,49 +2157,11 @@ class SilPlanningA(Base, Vector):
     document_web = Column('document_web', Unicode)
     document_title = Column('document_title', Unicode)
     bgdi_created = Column('bgdi_created', Unicode)
-    __minscale__ = 20005
-    __maxscale__ = 500005
     the_geom = Column(Geometry2D)
 
-
-class SilPlanningRasterA(Base, Vector):
-    __tablename__ = 'sachplan_inf_luft_plmeasures_r_anhorung'
-    __table_args__ = ({'schema': 'bazl', 'autoload': False})
-    __template__ = 'templates/htmlpopup/sil_planning.mako'
-    __bodId__ = 'ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung'
-    # Translatable labels in fr, it
-    __label__ = 'facname_de'
-    id = Column('stabil_id', Unicode, primary_key=True)
-    facname_de = Column('facname_de', Unicode)
-    facname_fr = Column('facname_fr', Unicode)
-    facname_it = Column('facname_it', Unicode)
-    plname_de = Column('plname_de', Unicode)
-    plname_fr = Column('plname_fr', Unicode)
-    plname_it = Column('plname_it', Unicode)
-    measuretype_text_de = Column('measuretype_text_de', Unicode)
-    measuretype_text_fr = Column('measuretype_text_fr', Unicode)
-    measuretype_text_it = Column('measuretype_text_it', Unicode)
-    coordinationlevel_text_de = Column('coordinationlevel_text_de', Unicode)
-    coordinationlevel_text_fr = Column('coordinationlevel_text_fr', Unicode)
-    coordinationlevel_text_it = Column('coordinationlevel_text_it', Unicode)
-    planningstatus_text_de = Column('planningstatus_text_de', Unicode)
-    planningstatus_text_fr = Column('planningstatus_text_fr', Unicode)
-    planningstatus_text_it = Column('planningstatus_text_it', Unicode)
-    validfrom = Column('validfrom', Unicode)
-    validuntil = Column('validuntil', Unicode)
-    description_text_de = Column('description_text_de', Unicode)
-    description_text_fr = Column('description_text_fr', Unicode)
-    description_text_it = Column('description_text_it', Unicode)
-    document_web = Column('document_web', Unicode)
-    document_title = Column('document_title', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
-    __maxscale__ = 20005
-    __minscale__ = 1
-    the_geom = Column(Geometry2D)
 
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung', SilFacilitiesA)
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung', SilPlanningA)
-register('ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung', SilPlanningRasterA)
 
 
 class SilFacilitiesK(Base, Vector):
@@ -2263,50 +2225,12 @@ class SilPlanningK(Base, Vector):
     document_web = Column('document_web', Unicode)
     document_title = Column('document_title', Unicode)
     bgdi_created = Column('bgdi_created', Unicode)
-    __minscale__ = 20005
-    __maxscale__ = 500005
     the_geom = Column(Geometry2D)
 
-
-class SilPlanningRasterK(Base, Vector):
-    __tablename__ = 'sachplan_inf_luft_plmeasures_r_kraft'
-    __table_args__ = ({'schema': 'bazl', 'autoload': False})
-    __template__ = 'templates/htmlpopup/sil_planning.mako'
-    __bodId__ = 'ch.bazl.sachplan-infrastruktur-luftfahrt_kraft'
-    # Translatable labels in fr, it
-    __label__ = 'facname_de'
-    id = Column('stabil_id', Unicode, primary_key=True)
-    facname_de = Column('facname_de', Unicode)
-    facname_fr = Column('facname_fr', Unicode)
-    facname_it = Column('facname_it', Unicode)
-    plname_de = Column('plname_de', Unicode)
-    plname_fr = Column('plname_fr', Unicode)
-    plname_it = Column('plname_it', Unicode)
-    measuretype_text_de = Column('measuretype_text_de', Unicode)
-    measuretype_text_fr = Column('measuretype_text_fr', Unicode)
-    measuretype_text_it = Column('measuretype_text_it', Unicode)
-    coordinationlevel_text_de = Column('coordinationlevel_text_de', Unicode)
-    coordinationlevel_text_fr = Column('coordinationlevel_text_fr', Unicode)
-    coordinationlevel_text_it = Column('coordinationlevel_text_it', Unicode)
-    planningstatus_text_de = Column('planningstatus_text_de', Unicode)
-    planningstatus_text_fr = Column('planningstatus_text_fr', Unicode)
-    planningstatus_text_it = Column('planningstatus_text_it', Unicode)
-    validfrom = Column('validfrom', Unicode)
-    validuntil = Column('validuntil', Unicode)
-    description_text_de = Column('description_text_de', Unicode)
-    description_text_fr = Column('description_text_fr', Unicode)
-    description_text_it = Column('description_text_it', Unicode)
-    document_web = Column('document_web', Unicode)
-    document_title = Column('document_title', Unicode)
-    bgdi_created = Column('bgdi_created', Unicode)
-    __maxscale__ = 20005
-    __minscale__ = 1
-    the_geom = Column(Geometry2D)
 
 
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', SilFacilitiesK)
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', SilPlanningK)
-register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', SilPlanningRasterK)
 
 
 class NgaAnbieter(Base, Vector):
