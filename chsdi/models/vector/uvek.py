@@ -2228,7 +2228,6 @@ class SilPlanningK(Base, Vector):
     the_geom = Column(Geometry2D)
 
 
-
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', SilFacilitiesK)
 register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', SilPlanningK)
 
