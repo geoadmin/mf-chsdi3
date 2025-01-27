@@ -15,6 +15,31 @@ Release Notes
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20250205:
+
+Release 20250205 - Wednesday, February 5th 2025
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+- Bug fixes
+- Announcements:
+    - TODO
+
+
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2024-12-18-rc1...2025-02-05-rc1>`__
+
+Geodata
+*******
+
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SWISSIMAGE Journey through time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product>`__ (ch.swisstopo.swissimage-product)                                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20241218:
 
 Release 20241218 - Wednesday, December 18th 2024
