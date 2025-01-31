@@ -36,17 +36,42 @@ API & applications
 Geodata
 *******
 
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `SWISSIMAGE Journey through time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product>`__ (ch.swisstopo.swissimage-product)                                                                                |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `SPM consultation <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_anhoerung>`__ (ch.vbs.sachplan-infrastruktur-militaer_anhoerung)                                                             |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Public transport connection quality ARE <//map.geo.admin.ch/?layers=ch.are.gueteklassen_oev>`__ (ch.are.gueteklassen_oev)                                                                                        |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Settlement <//map.geo.admin.ch/?layers=ch.are.siedlung>`__ (ch.are.siedlung)                                                                                                                                     |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Tracer tests <//map.geo.admin.ch/?layers=ch.bafu.hydrogeologie-markierversuche>`__ (ch.bafu.hydrogeologie-markierversuche)                                                                                       |
-+--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SWISSIMAGE Journey through time <//map.geo.admin.ch/?layers=ch.swisstopo.swissimage-product>`__ (ch.swisstopo.swissimage-product)                                                                                      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SPM consultation <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_anhoerung>`__ (ch.vbs.sachplan-infrastruktur-militaer_anhoerung)                                                                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP Military <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_kraft>`__ (ch.vbs.sachplan-infrastruktur-militaer_kraft)                                                                                |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Public transport connection quality ARE <//map.geo.admin.ch/?layers=ch.are.gueteklassen_oev>`__ (ch.are.gueteklassen_oev)                                                                                              |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Settlement <//map.geo.admin.ch/?layers=ch.are.siedlung>`__ (ch.are.siedlung)                                                                                                                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Tracer tests <//map.geo.admin.ch/?layers=ch.bafu.hydrogeologie-markierversuche>`__ (ch.bafu.hydrogeologie-markierversuche)                                                                                             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Assessment of the Biological Water Status: Diatomeen <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-biologischer_zustand_diatomeen>`__ (ch.bafu.gewaesserschutz-biologischer_zustand_diatomeen)                   |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Assessment of the Biological Water Status: Fische <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-biologischer_zustand_fische>`__ (ch.bafu.gewaesserschutz-biologischer_zustand_fische)                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Assessment of the Biological Water Status: Macrophyten <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-biologischer_zustand_makrophyten>`__ (ch.bafu.gewaesserschutz-biologischer_zustand_makrophyten)             |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Assessment of the Biological Water Status: Macrozoobenthos <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-biologischer_zustand_makrozoobenthos>`__ (ch.bafu.gewaesserschutz-biologischer_zustand_makrozoobenthos) |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Assessment of the Chemical Water Status: Nitrate <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-chemischer_zustand_nitrat>`__ (ch.bafu.gewaesserschutz-chemischer_zustand_nitrat)                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Assessment of the Chemical Water Status: Nitrite <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-chemischer_zustand_nitrit>`__ (ch.bafu.gewaesserschutz-chemischer_zustand_nitrit)                                 |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Assessment of the Chemical Water Status: DOC <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-chemischer_zustand_doc>`__ (ch.bafu.gewaesserschutz-chemischer_zustand_doc)                                           |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Assessment of the Chemical Water Status: Total phosphorus <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-chemischer_zustand_phosphor_gesamt>`__ (ch.bafu.gewaesserschutz-chemischer_zustand_phosphor_gesamt)      |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Assessment of the Chemical Water Status: Phosphat <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-chemischer_zustand_phosphat>`__ (ch.bafu.gewaesserschutz-chemischer_zustand_phosphat)                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Assessment of the Chemical Water Status: Ammonium <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-chemischer_zustand_ammonium>`__ (ch.bafu.gewaesserschutz-chemischer_zustand_ammonium)                            |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+
 
 .. _releasenotes_20241218:
 
