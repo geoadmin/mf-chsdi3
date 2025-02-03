@@ -29,6 +29,7 @@ API & applications
 - Bug fixes
 - Announcements:
     - the object ID values of the layer *ch.vbs.schiessanzeigen* will change for all objects due to geometrical changes in the source data with one of the next releases. Existing permalinks to objects may not work anymore and will have to be replaced by the new object id’s (chsdi fields featureId and id). In addition there will be a new attribute bezeichnung_ort on the dataset. The other existing attributes will stay.
+    - the layer *ch.are.siedlung* has been corrected. In the production of the data published on November 15th 2024, the ARE had made a mistake in the process, which attributed areas to the settlement that were not correct. The geocommunity noticed this anomaly and helped to ensure that the process and the data could be corrected.
     - the layer *ch.bakom.notruf-112_satellit* has been decommissioned as previously announced.
  
 
@@ -71,6 +72,8 @@ Geodata
 | Update | `Assessment of the Chemical Water Status: Ammonium <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-chemischer_zustand_ammonium>`__ (ch.bafu.gewaesserschutz-chemischer_zustand_ammonium)                            |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Emergency meeting points <//map.geo.admin.ch/?layers=ch.babs.notfalltreffpunkte>`__ (ch.babs.notfalltreffpunkte)                                                                                                       |
++--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `UNESCO World cultural heritage <//map.geo.admin.ch/?layers=ch.bak.schutzgebiete-unesco_weltkulturerbe>`__ (ch.bak.schutzgebiete-unesco_weltkulturerbe)                                                                 |
 +--------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20241218:
