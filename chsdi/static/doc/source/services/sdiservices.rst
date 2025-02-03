@@ -1343,6 +1343,7 @@ example of current maplibre styles of light base map and imagery base map:
 - https://vectortiles.geo.admin.ch/styles/ch.swisstopo.basemap.vt/style.json
 - https://vectortiles.geo.admin.ch/styles/ch.swisstopo.lightbasemap.vt/style.json
 - https://vectortiles.geo.admin.ch/styles/ch.swisstopo.imagerybasemap.vt/style.json
+- https://vectortiles.geo.admin.ch/styles/ch.swisstopo.basemap-winter.vt/style.json
 
 .. _vectortiles GetTile:
 
