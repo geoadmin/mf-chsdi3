@@ -4,7 +4,7 @@
     % elif c['attributes']['ak'] and c['attributes']['geoportal_url']:
         <tr>
             <td class="cell-left">${_('link to canton geoportal')}</td>
-            <td><a href="http://${c['attributes']['geoportal_url']}" target="_blank">${c['attributes']['ak']}</a></td>
+            <td><a href="${c['attributes']['geoportal_url']}" target="_blank">${c['attributes']['ak']}</a></td>
         </tr>
     % else:
         <tr>
