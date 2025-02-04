@@ -54,6 +54,14 @@ class TestOpenTransApi(TestsBase):
         self.assertEqual(results[0]["destinationName"], "Hogwarts")
         self.assertEqual(results[0]["destinationId"], "ch:1:sloid:91178::3")
 
+    def test_format_time(self):
+        # assert, that several timestamp formats are correctly handled and transformed into the
+        # correct local time
+        self.assertEqual(format_time("2024-11-19T08:52:00Z"), "19/11/2024 09:52")
+        self.assertEqual(format_time("2024-11-19T09:52:00.123456789"), "19/11/2024 09:52")
+        self.assertEqual(format_time("2024-11-19T08:52:00.123456789Z"), "19/11/2024 09:52")
+        self.assertEqual(format_time("2024-11-19T08:52:00+01:00"), "19/11/2024 08:52")
+
     @requests_mock.Mocker()
     def test_stationboard_nonexisting_station(self, mock_requests):
         now = datetime.now(timezone('Europe/Zurich')).isoformat(timespec="microseconds")
