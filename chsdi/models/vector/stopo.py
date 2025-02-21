@@ -1917,6 +1917,21 @@ class GeometaPNF(Base, Vector):
 register('ch.swisstopo-vd.geometa-periodische_nachfuehrung', GeometaPNF)
 
 
+class GeometaStandav(Base, Vector):
+    __tablename__ = 'amogr_standav'
+    __table_args__ = ({'schema': 'vd', 'autoload': False})
+    __template__ = 'templates/htmlpopup/metadata_standav.mako'
+    __bodId__ = 'ch.swisstopo-vd.geometa-standav'
+    __label__ = 'idn'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    canton = Column('canton', Unicode)
+    idn = Column('id', Unicode)
+    quality = Column('quality', Integer)
+    the_geom = Column('the_geom', Geometry2D)
+
+register('ch.swisstopo-vd.geometa-standav', GeometaStandav)
+
+
 class GeometaGemeinde(Base, Vector):
     __tablename__ = 'amogr_gemeinde'
     __table_args__ = ({'schema': 'vd', 'autoload': False})
