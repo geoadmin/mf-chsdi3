@@ -42,4 +42,8 @@
         <td class="cell-left">${_(c['layerBodId'] + '.modified')}</td>
         <td>${_(c['attributes']['str_modified'] or '-')}</td>
     </tr>
+    <tr>
+        <td class="cell-left">${_(c['layerBodId'] + '.children')}</td>
+        <td>${_(c['attributes']['str_children'] or c['attributes']['str_parent'] or '-')}</td>
+    </tr>
 </%def>

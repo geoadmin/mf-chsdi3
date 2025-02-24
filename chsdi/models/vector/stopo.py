@@ -2732,6 +2732,8 @@ class AmtlichesStrassenverzeichnis(Base, Vector):
     str_official = Column('str_official', Integer)
     str_modified = Column('str_modified', Unicode)
     str_type = Column('str_type', Unicode)
+    str_children = Column('str_children', Unicode)
+    str_parent = Column('str_parent', Unicode)
     str_status = Column('str_status', Unicode)
     the_geom = Column(Geometry2D)
 
