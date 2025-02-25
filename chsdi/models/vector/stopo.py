@@ -2722,6 +2722,7 @@ class AmtlichesStrassenverzeichnis(Base, Vector):
     __template__ = 'templates/htmlpopup/strassenverzeichnis.mako'
     __bodId__ = 'ch.swisstopo.amtliches-strassenverzeichnis'
     __label__ = 'stn_label'
+    __returnedGeometry__ = 'the_geom_hilight'
     __queryable_attributes__ = ['stn_label', 'zip_label', 'com_name', 'com_fosnr', 'str_type']
     id = Column('id', Integer, primary_key=True)
     str_esid = Column('str_esid', Integer)
@@ -2736,6 +2737,7 @@ class AmtlichesStrassenverzeichnis(Base, Vector):
     str_parent = Column('str_parent', Unicode)
     str_status = Column('str_status', Unicode)
     the_geom = Column(Geometry2D)
+    the_geom_hilight = Column(Geometry2D)
 
 register('ch.swisstopo.amtliches-strassenverzeichnis', AmtlichesStrassenverzeichnis)
 
