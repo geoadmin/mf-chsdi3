@@ -1927,6 +1927,10 @@ class GeometaStandav(Base, Vector):
     canton = Column('canton', Unicode)
     idn = Column('id', Unicode)
     quality = Column('quality', Integer)
+    quality_de = Column('quality_de', Unicode)
+    quality_fr = Column('quality_fr', Unicode)
+    quality_it = Column('quality_it', Unicode)
+    quality_en = Column('quality_en', Unicode)
     the_geom = Column('the_geom', Geometry2D)
 
 register(GeometaStandav.__bodId__, GeometaStandav)
