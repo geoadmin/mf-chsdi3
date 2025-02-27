@@ -1929,7 +1929,7 @@ class GeometaStandav(Base, Vector):
     quality = Column('quality', Integer)
     the_geom = Column('the_geom', Geometry2D)
 
-register('ch.swisstopo-vd.geometa-standav', GeometaStandav)
+register(GeometaStandav.__bodId__, GeometaStandav)
 
 
 class GeometaGemeinde(Base, Vector):
