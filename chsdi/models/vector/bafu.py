@@ -2478,3 +2478,24 @@ class Trockenheitswarnkarte(Base, Vector):
     the_geom = Column('the_geom', Geometry2D)
 
 register(Trockenheitswarnkarte.__bodId__, Trockenheitswarnkarte)
+
+
+class Trockenheitsindex(Base, Vector):
+    __tablename__ = 'trockenheitsindex_1'
+    __table_args__ = ({'schema': 'wasser', 'autoload': False})
+    __bodId__ = 'ch.bafu.trockenheitsindex'
+    __template__ = 'templates/htmlpopup/bafu_trockenheitsindex.mako'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name_de = Column('name_de', Unicode)
+    name_fr = Column('name_fr', Unicode)
+    name_it = Column('name_it', Unicode)
+    name_en = Column('name_en', Unicode)
+    info_de = Column('info_de', Unicode)
+    info_fr = Column('info_fr', Unicode)
+    info_it = Column('info_it', Unicode)
+    info_en = Column('info_en', Unicode)
+    valid_from = Column('valid_from', DateTimeChsdi)
+    valid_to = Column('valid_to', DateTimeChsdi)
+    the_geom = Column('the_geom', Geometry2D)
+
+register(Trockenheitsindex.__bodId__, Trockenheitsindex)
