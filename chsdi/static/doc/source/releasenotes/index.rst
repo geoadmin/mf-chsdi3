@@ -15,6 +15,47 @@ Release Notes
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20250312:
+
+Release 20250205 - Wednesday, March 12th 2025
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+- Bug fixes
+- Announcements:
+    - ...
+
+
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2025-02-05-rc1...2025-03-12-rc1>`__
+
+Geodata
+*******
+
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents involving a bicycle <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_fahrraeder>`__ (ch.astra.unfaelle-personenschaeden_fahrraeder)                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents with fatalities <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_getoetete>`__ (ch.astra.unfaelle-personenschaeden_getoetete)                                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents with personal injury <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_alle>`__ (ch.astra.unfaelle-personenschaeden_alle)                                                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents involving a pedestrian <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_fussgaenger>`__ (ch.astra.unfaelle-personenschaeden_fussgaenger)                                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents involving a motorcycle <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_motorraeder>`__ (ch.astra.unfaelle-personenschaeden_motorraeder)                                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents per inhabitant <//map.geo.admin.ch/?layers=ch.astra.schwerverunfallte-kanton_pro_einwohner>`__ (ch.astra.schwerverunfallte-kanton_pro_einwohner)                                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents per inhabitant - Speeding <//map.geo.admin.ch/?layers=ch.astra.schwerverunfallte-kanton_geschwindigkeit>`__ (ch.astra.schwerverunfallte-kanton_geschwindigkeit)                                   |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents per inhabitant - Alcohol <//map.geo.admin.ch/?layers=ch.astra.schwerverunfallte-kanton_alkohol>`__ (ch.astra.schwerverunfallte-kanton_alkohol)                                                    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Accidents in the annual comparison <//map.geo.admin.ch/?layers=ch.astra.schwerverunfallte-kanton_jahresvergleich>`__ (ch.astra.schwerverunfallte-kanton_jahresvergleich)                                    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20250205:
 
 Release 20250205 - Wednesday, February 5th 2025
@@ -31,7 +72,7 @@ API & applications
     - the object ID values of the layer *ch.vbs.schiessanzeigen* will change for all objects due to geometrical changes in the source data with one of the next releases. Existing permalinks to objects may not work anymore and will have to be replaced by the new object id’s (chsdi fields featureId and id). In addition there will be a new attribute bezeichnung_ort on the dataset. The other existing attributes will stay.
     - the layer *ch.are.siedlung* has been corrected. In the production of the data published on November 15th 2024, the ARE had made a mistake in the process, which attributed areas to the settlement that were not correct. The geocommunity noticed this anomaly and helped to ensure that the process and the data could be corrected.
     - the layer *ch.bakom.notruf-112_satellit* has been decommissioned as previously announced.
- 
+
 
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2024-12-18-rc1...2025-02-05-rc1>`__
 
