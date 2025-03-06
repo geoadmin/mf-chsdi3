@@ -51,6 +51,8 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Status of cadastral surveying <//map.geo.admin.ch/?layers=ch.swisstopo-vd.geometa-standav>`__ (ch.swisstopo-vd.geometa-standav)                                                                             |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Gypsum <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung>`__ (ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung)                                                    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Accidents involving a bicycle <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_fahrraeder>`__ (ch.astra.unfaelle-personenschaeden_fahrraeder)                                                 |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Accidents with fatalities <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_getoetete>`__ (ch.astra.unfaelle-personenschaeden_getoetete)                                                       |
@@ -102,6 +104,10 @@ Geodata
 | Update | `Map of restricted and danger areas <//map.geo.admin.ch/?layers=ch.vbs.sperr-gefahrenzonenkarte>`__ (ch.vbs.sperr-gefahrenzonenkarte)                                                                        |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Mil Airspace Chart <//map.geo.admin.ch/?layers=ch.vbs.milairspacechart>`__ (ch.vbs.milairspacechart)                                                                                                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Status of cadastral surveying <//map.geo.admin.ch/?layers=ch.swisstopo-vd.geometa-standav>`__ (ch.swisstopo-vd.geometa-standav)                                                                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Periodic updating (Cadastral Surveying Switzerland) <//map.geo.admin.ch/?layers=ch.swisstopo-vd.geometa-periodische_nachfuehrung>`__ (ch.swisstopo-vd.geometa-periodische_nachfuehrung)                     |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
