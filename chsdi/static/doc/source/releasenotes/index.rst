@@ -37,6 +37,16 @@ Geodata
 *******
 
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Air pollution by Ozone <//map.geo.admin.ch/?layers=ch.bafu.luftreinhaltung-ozon>`__ (ch.bafu.luftreinhaltung-ozon)                                                                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Air pollution by particulate matter PM2.5 <//map.geo.admin.ch/?layers=ch.bafu.luftreinhaltung-feinstaub_pm2_5>`__ (ch.bafu.luftreinhaltung-feinstaub_pm2_5)                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Air pollution by particulate matter PM10 <//map.geo.admin.ch/?layers=ch.bafu.luftreinhaltung-feinstaub_pm10>`__ (ch.bafu.luftreinhaltung-feinstaub_pm10)                                                    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Air pollution by sulfur dioxide <//map.geo.admin.ch/?layers=ch.bafu.luftreinhaltung-schwefeldioxid>`__ (ch.bafu.luftreinhaltung-schwefeldioxid)                                                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Air pollution by nitrogen dioxide <//map.geo.admin.ch/?layers=ch.bafu.luftreinhaltung-stickstoffdioxid>`__ (ch.bafu.luftreinhaltung-stickstoffdioxid)                                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Accidents involving a bicycle <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_fahrraeder>`__ (ch.astra.unfaelle-personenschaeden_fahrraeder)                                                 |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Accidents with fatalities <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_getoetete>`__ (ch.astra.unfaelle-personenschaeden_getoetete)                                                       |
