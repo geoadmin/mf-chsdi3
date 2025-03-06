@@ -77,6 +77,20 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `SPM consultation <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_anhoerung>`__ (ch.vbs.sachplan-infrastruktur-militaer_anhoerung)                                                        |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `swissSURFACE3D Hillshade Monodirectional <//map.geo.admin.ch/?layers=ch.swisstopo.swisssurface3d-reliefschattierung_monodirektional>`__ (ch.swisstopo.swisssurface3d-reliefschattierung_monodirektional)    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `swissSURFACE3D Hillshade Multidirectional <//map.geo.admin.ch/?layers=ch.swisstopo.swisssurface3d-reliefschattierung-multidirektional>`__ (ch.swisstopo.swisssurface3d-reliefschattierung-multidirektional) |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Tank relocation routes <//map.geo.admin.ch/?layers=ch.vbs.panzerverschiebungsrouten>`__ (ch.vbs.panzerverschiebungsrouten)                                                                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aeronautical Chart ICAO <//map.geo.admin.ch/?layers=ch.bazl.luftfahrtkarten-icao>`__ (ch.bazl.luftfahrtkarten-icao)                                                                                         |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Glider Chart <//map.geo.admin.ch/?layers=ch.bazl.segelflugkarte>`__ (ch.bazl.segelflugkarte)                                                                                                                |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Map of restricted and danger areas <//map.geo.admin.ch/?layers=ch.vbs.sperr-gefahrenzonenkarte>`__ (ch.vbs.sperr-gefahrenzonenkarte)                                                                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mil Airspace Chart <//map.geo.admin.ch/?layers=ch.vbs.milairspacechart>`__ (ch.vbs.milairspacechart)                                                                                                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 .. _releasenotes_20250205:
