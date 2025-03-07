@@ -49,8 +49,6 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Area of consultation of national routes <//map.geo.admin.ch/?layers=ch.astra.konsultationsbereiche-nationalstrassen>`__ (ch.astra.konsultationsbereiche-nationalstrassen)                                   |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Status of cadastral surveying <//map.geo.admin.ch/?layers=ch.swisstopo-vd.geometa-standav>`__ (ch.swisstopo-vd.geometa-standav)                                                                             |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Gypsum <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung>`__ (ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung)                                                    |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Accidents involving a bicycle <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_fahrraeder>`__ (ch.astra.unfaelle-personenschaeden_fahrraeder)                                                 |
@@ -108,6 +106,8 @@ Geodata
 | Update | `Status of cadastral surveying <//map.geo.admin.ch/?layers=ch.swisstopo-vd.geometa-standav>`__ (ch.swisstopo-vd.geometa-standav)                                                                             |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Periodic updating (Cadastral Surveying Switzerland) <//map.geo.admin.ch/?layers=ch.swisstopo-vd.geometa-periodische_nachfuehrung>`__ (ch.swisstopo-vd.geometa-periodische_nachfuehrung)                     |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Status of cadastral surveying <//map.geo.admin.ch/?layers=ch.swisstopo-vd.geometa-standav>`__ (ch.swisstopo-vd.geometa-standav)                                                                             |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
