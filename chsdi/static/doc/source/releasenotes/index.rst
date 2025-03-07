@@ -28,7 +28,7 @@ API & applications
 
 - Bug fixes
 - Announcements:
-    - ...
+    - the object ID values of the layer *ch.vbs.schiessanzeigen* will change for all objects due to geometrical changes in the source data with one of the next releases. Existing permalinks to objects may not work anymore and will have to be replaced by the new object id’s (chsdi fields featureId and id). In addition there will be a new attribute bezeichnung_ort on the dataset. The other existing attributes will stay.
 
 
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2025-02-05-rc1...2025-03-12-rc1>`__
@@ -50,6 +50,8 @@ Geodata
 | New    | `Area of consultation of national routes <//map.geo.admin.ch/?layers=ch.astra.konsultationsbereiche-nationalstrassen>`__ (ch.astra.konsultationsbereiche-nationalstrassen)                                   |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Gypsum <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung>`__ (ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung)                                                    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Current drought situation in Switzerland <//map.geo.admin.ch/?layers=ch.bafu.trockenheitsindex>`__ (ch.bafu.trockenheitsindex)                                                                              |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Accidents involving a bicycle <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_fahrraeder>`__ (ch.astra.unfaelle-personenschaeden_fahrraeder)                                                 |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
