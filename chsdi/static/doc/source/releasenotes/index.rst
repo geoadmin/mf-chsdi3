@@ -103,6 +103,10 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Periodic updating (Cadastral Surveying Switzerland) <//map.geo.admin.ch/?layers=ch.swisstopo-vd.geometa-periodische_nachfuehrung>`__ (ch.swisstopo-vd.geometa-periodische_nachfuehrung)                     |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Official street index <//map.geo.admin.ch/?layers=ch.swisstopo.amtliches-strassenverzeichnis>`__ (ch.swisstopo.amtliches-strassenverzeichnis)                                                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Official directory of building addresses <//map.geo.admin.ch/?layers=ch.swisstopo.amtliches-gebaeudeadressverzeichnis>`__ (ch.swisstopo.amtliches-gebaeudeadressverzeichnis)                                |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 .. _releasenotes_20250205:
