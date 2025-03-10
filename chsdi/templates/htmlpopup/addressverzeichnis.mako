@@ -1,5 +1,15 @@
 <%inherit file="base.mako"/>
 
+<%def name="translate_attribute(attribute, value)">
+<%
+    if value is None:
+      return '-'
+    else:
+      result =  _(u'ch.swisstopo.amtliches-gebaeudeadressverzeichnis.{}.{}'.format(attribute, value))
+      return value if c['layerBodId'] in result else result
+%>
+</%def>
+
 <%def name="table_body(c, lang)">
 <% c['stable_id'] = True %>
     <%
@@ -15,8 +25,8 @@
     <tr><td class="cell-left">${_('ch.swisstopo.amtliches-gebaeudeadressverzeichnis.zip_label')}</td>      <td>${_(c['attributes']['zip_label'] or '-')}</td></tr>
     <tr><td class="cell-left">${_('ch.swisstopo.amtliches-gebaeudeadressverzeichnis.com_fosnr')}</td>      <td>${_(c['attributes']['com_fosnr'] or '-')}</td></tr>
     <tr><td class="cell-left">${_('ch.swisstopo.amtliches-gebaeudeadressverzeichnis.com_name')}</td>       <td>${_(c['attributes']['com_name'] or '-')}</td></tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.amtliches-gebaeudeadressverzeichnis.bdg_category')}</td>   <td>${_(c['attributes']['bdg_category'] or '-')}</td></tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_status')}</td>     <td>${_(c['attributes']['adr_status'] or '-')}</td></tr>
+    <tr><td class="cell-left">${_('ch.swisstopo.amtliches-gebaeudeadressverzeichnis.bdg_category')}</td>   <td>${_(translate_attribute('bdg_category', c['attributes']['bdg_category']))}</td></tr>
+    <tr><td class="cell-left">${_('ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_status')}</td>     <td>${_(translate_attribute('adr_status', c['attributes']['adr_status']))}</td></tr>
     <tr><td class="cell-left">${_('ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_official')}</td>   <td>${_(official)}</td></tr>
     <tr><td class="cell-left">${_('ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_modified')}</td>   <td>${h.parse_date_string(c['attributes']['adr_modified'],'%Y%m%d','%Y-%m-%d')}</td></tr>
 </%def>

@@ -1,5 +1,15 @@
 <%inherit file="base.mako"/>
 
+<%def name="translate_attribute(attribute, value)">
+<%
+    if value is None:
+      return '-'
+    else:
+      result =  _(u'{}.{}.{}'.format(c['layerBodId'], attribute, value))
+      return value if c['layerBodId'] in result else result
+%>
+</%def>
+
 <%def name="table_body(c, lang)">
     <%
     c['stable_id'] = True
@@ -30,9 +40,9 @@
         <td class="cell-left">${_(c['layerBodId'] + '.type')}</td>
         <td>${_(c['attributes']['str_type'] or '-')}</td>
     </tr>
-    <tr>
-        <td class="cell-left">${_(c['layerBodId'] + '.status')}</td>
-        <td>${_(c['attributes']['str_status'] or '-')}</td>
+	  <tr>
+        <td class="cell-left">${_(c['layerBodId']+'.status')}</td>
+        <td>${_(translate_attribute('status', c['attributes']['str_status']))}</td>
     </tr>
     <tr>
         <td class="cell-left">${_(c['layerBodId'] + '.official')}</td>
@@ -41,5 +51,9 @@
     <tr>
         <td class="cell-left">${_(c['layerBodId'] + '.modified')}</td>
         <td>${_(c['attributes']['str_modified'] or '-')}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_(c['layerBodId'] + '.children')}</td>
+        <td>${_(c['attributes']['str_children'] or c['attributes']['str_parent'] or '-')}</td>
     </tr>
 </%def>

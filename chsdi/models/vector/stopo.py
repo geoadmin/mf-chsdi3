@@ -1364,7 +1364,6 @@ class GeologieRohstoffe:
     type = Column('type', Unicode)
     obname = Column('obname', Unicode)
     cpkind = Column('cpkind', Unicode)
-    edkinds = Column('edkinds', Unicode)
     purl = Column('purl', Unicode)
     swissgeol_link = Column('swissgeol_link', Unicode)
     stkind_de = Column('stkind_de', Unicode)
@@ -1382,11 +1381,21 @@ class GeologieRohstoffe:
     the_geom = Column(Geometry2D)
 
 
+class GeologieRohstoffeZiegelAbbau(Base, GeologieRohstoffe, Vector):
+    __bodId__ = 'ch.swisstopo.geologie-rohstoffe-ziegel_abbau'
+    __tablename__ = 'rohstoffe_ziegel_abbau'
+    __template__ = 'templates/htmlpopup/rohstoffe_ziegel_abbau.mako'
+    __label__ = 'obname'
+
+register(GeologieRohstoffeZiegelAbbau.__bodId__, GeologieRohstoffeZiegelAbbau)
+
+
 class GeologieRohstoffeZementAbbauVerarbeitung(Base, GeologieRohstoffe, Vector):
     __tablename__ = 'rohstoffe_zementabbauverarbeitung'
     __template__ = 'templates/htmlpopup/rohstoffe_zement_abbau_verarbeitung.mako'
     __bodId__ = 'ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung'
     __label__ = 'obname'
+    edkinds = Column('edkinds', Unicode)
     info_url_de = Column('info_url_de', Unicode)
     info_url_fr = Column('info_url_fr', Unicode)
     info_url_it = Column('info_url_it', Unicode)
@@ -1395,13 +1404,17 @@ class GeologieRohstoffeZementAbbauVerarbeitung(Base, GeologieRohstoffe, Vector):
 register('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung', GeologieRohstoffeZementAbbauVerarbeitung)
 
 
-class GeologieRohstoffeZiegelAbbau(Base, GeologieRohstoffe, Vector):
-    __tablename__ = 'rohstoffe_ziegel_abbau'
-    __bodId__ = 'ch.swisstopo.geologie-rohstoffe-ziegel_abbau'
-    __template__ = 'templates/htmlpopup/rohstoffe_ziegel_abbau.mako'
+class GeologieRohstoffeGipsAbbauVerarbeitung(Base, GeologieRohstoffe, Vector):
+    __bodId__ = 'ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung'
+    __tablename__ = 'rohstoffe_gipsabbauverarbeitung'
+    __template__ = 'templates/htmlpopup/rohstoffe_gips_abbau_verarbeitung.mako'
     __label__ = 'obname'
+    emkinds_de = Column('emkinds_de', Unicode)
+    emkinds_fr = Column('emkinds_fr', Unicode)
+    emkinds_it = Column('emkinds_it', Unicode)
+    emkinds_en = Column('emkinds_en', Unicode)
 
-register(GeologieRohstoffeZiegelAbbau.__bodId__, GeologieRohstoffeZiegelAbbau)
+register('ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung', GeologieRohstoffeGipsAbbauVerarbeitung)
 
 
 class GeologieRohstoffeIndustrieminerale(Base, Vector):
@@ -1519,28 +1532,6 @@ class GeologieRohstoffeSalzAbbauVerarbeitung(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung', GeologieRohstoffeSalzAbbauVerarbeitung)
-
-
-class GeologieRohstoffeGipsAbbauVerarbeitung(Base, Vector):
-    __tablename__ = 'rohstoffe_gipsabbauverarbeitung'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/rohstoffe_gips_abbau_verarbeitung.mako'
-    __bodId__ = 'ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung'
-    __label__ = 'obname'
-    id = Column('obid', Integer, primary_key=True)
-    obname = Column('obname', Unicode)
-    ockind = Column('ockind', Unicode)
-    ltkinds = Column('ltkinds', Unicode)
-    edltkinds = Column('edltkinds', Unicode)
-    emkinds = Column('emkinds', Unicode)
-    pckind = Column('pckind', Unicode)
-    cpkind = Column('cpkind', Unicode)
-    stkind = Column('stkind', Unicode)
-    clkind = Column('clkind', Unicode)
-    purl = Column('purl', Unicode)
-    the_geom = Column(Geometry2D)
-
-register('ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung', GeologieRohstoffeGipsAbbauVerarbeitung)
 
 
 class GeologieTektonischeKarteLine(Base, Vector):
@@ -1924,6 +1915,25 @@ class GeometaPNF(Base, Vector):
     the_geom = Column('the_geom', Geometry2D)
 
 register('ch.swisstopo-vd.geometa-periodische_nachfuehrung', GeometaPNF)
+
+
+class GeometaStandav(Base, Vector):
+    __tablename__ = 'amogr_standav'
+    __table_args__ = ({'schema': 'vd', 'autoload': False})
+    __template__ = 'templates/htmlpopup/metadata_standav.mako'
+    __bodId__ = 'ch.swisstopo-vd.geometa-standav'
+    __label__ = 'idn'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    canton = Column('canton', Unicode)
+    idn = Column('id', Unicode)
+    quality = Column('quality', Integer)
+    quality_de = Column('quality_de', Unicode)
+    quality_fr = Column('quality_fr', Unicode)
+    quality_it = Column('quality_it', Unicode)
+    quality_en = Column('quality_en', Unicode)
+    the_geom = Column('the_geom', Geometry2D)
+
+register(GeometaStandav.__bodId__, GeometaStandav)
 
 
 class GeometaGemeinde(Base, Vector):
@@ -2731,6 +2741,7 @@ class AmtlichesStrassenverzeichnis(Base, Vector):
     __template__ = 'templates/htmlpopup/strassenverzeichnis.mako'
     __bodId__ = 'ch.swisstopo.amtliches-strassenverzeichnis'
     __label__ = 'stn_label'
+    __returnedGeometry__ = 'the_geom_hilight'
     __queryable_attributes__ = ['stn_label', 'zip_label', 'com_name', 'com_fosnr', 'str_type']
     id = Column('id', Integer, primary_key=True)
     str_esid = Column('str_esid', Integer)
@@ -2741,8 +2752,11 @@ class AmtlichesStrassenverzeichnis(Base, Vector):
     str_official = Column('str_official', Integer)
     str_modified = Column('str_modified', Unicode)
     str_type = Column('str_type', Unicode)
+    str_children = Column('str_children', Unicode)
+    str_parent = Column('str_parent', Unicode)
     str_status = Column('str_status', Unicode)
     the_geom = Column(Geometry2D)
+    the_geom_hilight = Column(Geometry2D)
 
 register('ch.swisstopo.amtliches-strassenverzeichnis', AmtlichesStrassenverzeichnis)
 
