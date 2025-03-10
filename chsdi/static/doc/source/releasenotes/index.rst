@@ -49,8 +49,6 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Area of consultation of national routes <//map.geo.admin.ch/?layers=ch.astra.konsultationsbereiche-nationalstrassen>`__ (ch.astra.konsultationsbereiche-nationalstrassen)                                   |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `Gypsum <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung>`__ (ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung)                                                    |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Current drought situation in Switzerland <//map.geo.admin.ch/?layers=ch.bafu.trockenheitsindex>`__ (ch.bafu.trockenheitsindex)                                                                              |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Accidents involving a bicycle <//map.geo.admin.ch/?layers=ch.astra.unfaelle-personenschaeden_fahrraeder>`__ (ch.astra.unfaelle-personenschaeden_fahrraeder)                                                 |
@@ -80,6 +78,8 @@ Geodata
 | Update | `Reflection seismic <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-reflexionsseismik>`__ (ch.swisstopo.geologie-reflexionsseismik)                                                                        |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Wells > 500m <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-bohrungen_tiefer_500>`__ (ch.swisstopo.geologie-bohrungen_tiefer_500)                                                                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Gypsum <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung>`__ (ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung)                                                    |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Hydrography swissTLM3D <//map.geo.admin.ch/?layers=ch.swisstopo.swisstlm3d-gewaessernetz>`__ (ch.swisstopo.swisstlm3d-gewaessernetz)                                                                        |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
