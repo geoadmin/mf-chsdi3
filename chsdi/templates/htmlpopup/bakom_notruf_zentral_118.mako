@@ -29,6 +29,14 @@
         <td>${c['attributes']['ort'] or '-'}</td>
     </tr>
     <tr>
+        <td class="cell-left">${_('ch.bakom.notruf-118_zentral.ktn')}</td>
+        <td>${c['attributes']['kt'] or '-'}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_('ch.bakom.notruf-118_zentral.chg_date')}</td>
+        <td>${c['attributes']['chg_date'] or '-'}</td>
+    </tr>
+    <tr>
         <td class="cell-left">${_('ch.bakom.notruf-118_zentral.rn_118')}</td>
         <td>${_(str_output)|n}</td>
     </tr>
