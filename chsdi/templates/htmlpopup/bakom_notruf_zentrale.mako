@@ -2,11 +2,11 @@
 
 <%def name="table_body(c, lang)">
     <%
-        arr_rn_112 = c['attributes']['rn_112'].split(',')
-        arr_len = len(arr_rn_112)
+        arr_routing_nr = c['attributes']['routing_nr'].split(',')
+        arr_len = len(arr_routing_nr)
         str_output = ''
         for i in range(arr_len):
-            str_output = str_output + arr_rn_112[i] + '<br />' if  i < (arr_len-1) else str_output + arr_rn_112[i]
+            str_output = str_output + arr_routing_nr[i] + '<br />' if  i < (arr_len-1) else str_output + arr_routing_nr[i]
         endfor
     %>
     <tr>
@@ -33,12 +33,12 @@
         <td>${c['attributes']['kt'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bakom.notruf-112_zentral.chg_date')}</td>
-        <td>${c['attributes']['chg_date'] or '-'}</td>
+        <td class="cell-left">${_('ch.bakom.notruf-112_zentral.routing_nr')}</td>
+        <td>${_(str_output)|n}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bakom.notruf-112_zentral.rn_112')}</td>
-        <td>${_(str_output)|n}</td>
+        <td class="cell-left">${_('ch.bakom.notruf-112_zentral.chg_date')}</td>
+        <td>${c['attributes']['chg_date'] or '-'}</td>
     </tr>
 </%def>
 
