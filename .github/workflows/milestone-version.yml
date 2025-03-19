@@ -6,6 +6,7 @@ on:
       - closed
     branches:
       - master
+      - develop-*
 
 jobs:
   release:
