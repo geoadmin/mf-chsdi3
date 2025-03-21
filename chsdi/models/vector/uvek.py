@@ -1131,7 +1131,6 @@ register('ch.bakom.notruf', BakomNotruf)
 
 
 class BakomNotrufLayer:
-    __tablename__ = 'notruf_layers'
     __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/bakom_notruf_layers.mako'
     __label__ = 'name'
@@ -1144,96 +1143,112 @@ class BakomNotrufLayer:
 
 class BakomNotruf112Fest(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-112_festnetz'
+    __tablename__ = 'fn_112_tooltip'
 
 register('ch.bakom.notruf-112_festnetz', BakomNotruf112Fest)
 
 
 class BakomNotruf117Fest(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-117_festnetz'
+    __tablename__ = 'fn_117_tooltip'
 
 register('ch.bakom.notruf-117_festnetz', BakomNotruf117Fest)
 
 
 class BakomNotruf118Fest(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-118_festnetz'
+    __tablename__ = 'fn_118_tooltip'
 
 register('ch.bakom.notruf-118_festnetz', BakomNotruf118Fest)
 
 
 class BakomNotruf142Fest(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-142_festnetz'
+    __tablename__ = 'fn_142_tooltip'
 
 register('ch.bakom.notruf-142_festnetz', BakomNotruf142Fest)
 
 
 class BakomNotruf143Fest(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-143_festnetz'
+    __tablename__ = 'fn_143_tooltip'
 
 register('ch.bakom.notruf-143_festnetz', BakomNotruf143Fest)
 
 
 class BakomNotruf144Fest(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-144_festnetz'
+    __tablename__ = 'fn_144_tooltip'
 
 register('ch.bakom.notruf-144_festnetz', BakomNotruf144Fest)
 
 
 class BakomNotruf145Fest(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-145_festnetz'
+    __tablename__ = 'fn_145_tooltip'
 
 register('ch.bakom.notruf-145_festnetz', BakomNotruf145Fest)
 
 
 class BakomNotruf147Fest(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-147_festnetz'
+    __tablename__ = 'fn_147_tooltip'
 
 register('ch.bakom.notruf-147_festnetz', BakomNotruf147Fest)
 
 
 class BakomNotruf112Mobil(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-112_mobilnetz'
+    __tablename__ = 'mo_112_tooltip'
 
 register('ch.bakom.notruf-112_mobilnetz', BakomNotruf112Mobil)
 
 
 class BakomNotruf117Mobil(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-117_mobilnetz'
+    __tablename__ = 'mo_117_tooltip'
 
 register('ch.bakom.notruf-117_mobilnetz', BakomNotruf117Mobil)
 
 
 class BakomNotruf118Mobil(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-118_mobilnetz'
+    __tablename__ = 'mo_118_tooltip'
 
 register('ch.bakom.notruf-118_mobilnetz', BakomNotruf118Mobil)
 
 
 class BakomNotruf142Mobil(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-142_mobilnetz'
+    __tablename__ = 'mo_142_tooltip'
 
 register('ch.bakom.notruf-142_mobilnetz', BakomNotruf142Mobil)
 
 
 class BakomNotruf143Mobil(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-143_mobilnetz'
+    __tablename__ = 'mo_143_tooltip'
 
 register('ch.bakom.notruf-143_mobilnetz', BakomNotruf143Mobil)
 
 
 class BakomNotruf144Mobil(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-144_mobilnetz'
+    __tablename__ = 'mo_144_tooltip'
 
 register('ch.bakom.notruf-144_mobilnetz', BakomNotruf144Mobil)
 
 
 class BakomNotruf145Mobil(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-145_mobilnetz'
+    __tablename__ = 'mo_145_tooltip'
 
 register('ch.bakom.notruf-145_mobilnetz', BakomNotruf145Mobil)
 
 
 class BakomNotruf147Mobil(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-147_mobilnetz'
+    __tablename__ = 'mo_147_tooltip'
 
 register('ch.bakom.notruf-147_mobilnetz', BakomNotruf147Mobil)
 
@@ -1254,7 +1269,6 @@ register('ch.bakom.notruf-112_satellit', BakomNotruf112Sat)
 
 
 class BakomNotrufZentral:
-    __tablename__ = 'notruf_zentrale'
     __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/bakom_notruf_zentrale.mako'
     __label__ = 'alarmzentrale'
@@ -1272,48 +1286,56 @@ class BakomNotrufZentral:
 
 class BakomNotruf112Zentral(Base, BakomNotrufZentral, Vector):
     __bodId__ = 'ch.bakom.notruf-112_zentral'
+    __tablename__ = 'ze_112_tooltip'
 
 register('ch.bakom.notruf-112_zentral', BakomNotruf112Zentral)
 
 
 class BakomNotruf117Zentral(Base, BakomNotrufZentral, Vector):
     __bodId__ = 'ch.bakom.notruf-117_zentral'
+    __tablename__ = 'ze_117_tooltip'
 
 register('ch.bakom.notruf-117_zentral', BakomNotruf117Zentral)
 
 
 class BakomNotruf118Zentral(Base, BakomNotrufZentral, Vector):
     __bodId__ = 'ch.bakom.notruf-118_zentral'
+    __tablename__ = 'ze_118_tooltip'
 
 register('ch.bakom.notruf-118_zentral', BakomNotruf118Zentral)
 
 
 class BakomNotruf142Zentral(Base, BakomNotrufZentral, Vector):
     __bodId__ = 'ch.bakom.notruf-142_zentral'
+    __tablename__ = 'ze_142_tooltip'
 
 register('ch.bakom.notruf-142_zentral', BakomNotruf142Zentral)
 
 
 class BakomNotruf143Zentral(Base, BakomNotrufZentral, Vector):
     __bodId__ = 'ch.bakom.notruf-143_zentral'
+    __tablename__ = 'ze_143_tooltip'
 
 register('ch.bakom.notruf-143_zentral', BakomNotruf143Zentral)
 
 
 class BakomNotruf144Zentral(Base, BakomNotrufZentral, Vector):
     __bodId__ = 'ch.bakom.notruf-144_zentral'
+    __tablename__ = 'ze_144_tooltip'
 
 register('ch.bakom.notruf-144_zentral', BakomNotruf144Zentral)
 
 
 class BakomNotruf145Zentral(Base, BakomNotrufZentral, Vector):
     __bodId__ = 'ch.bakom.notruf-145_zentral'
+    __tablename__ = 'ze_145_tooltip'
 
 register('ch.bakom.notruf-145_zentral', BakomNotruf145Zentral)
 
 
 class BakomNotruf147Zentral(Base, BakomNotrufZentral, Vector):
     __bodId__ = 'ch.bakom.notruf-147_zentral'
+    __tablename__ = 'ze_147_tooltip'
 
 register('ch.bakom.notruf-147_zentral', BakomNotruf147Zentral)
 
