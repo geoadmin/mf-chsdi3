@@ -1714,21 +1714,23 @@ class Swissprtr(Base, Vector):
 register('ch.bafu.swissprtr', Swissprtr)
 
 
-class Nabel(Base, Vector):
-    __tablename__ = 'nabel'
+class Nabelstationen(Base, Vector):
+    __tablename__ = 'nabelstationen'
     __table_args__ = ({'schema': 'luft', 'autoload': False})
     __bodId__ = 'ch.bafu.nabelstationen'
-    __template__ = 'templates/htmlpopup/nabel.mako'
+    __template__ = 'templates/htmlpopup/bafu_nabelstationen.mako'
     __label__ = 'name'
-    id = Column('id_stat', Unicode, primary_key=True)
+    id = Column('kuerzel', Unicode, primary_key=True)
     name = Column('name', Unicode)
-    typ_de = Column('typ_de', Unicode)
-    typ_fr = Column('typ_fr', Unicode)
-    desc_de = Column('desc_de', Unicode)
-    desc_fr = Column('desc_fr', Unicode)
+    typ = Column('typ', Unicode)
+    desc = Column('desc_txt', Unicode)
+    url_de = Column('url_de', Unicode)
+    url_fr = Column('url_fr', Unicode)
+    url_it = Column('url_it', Unicode)
+    url_en = Column('url_en', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.nabelstationen', Nabel)
+register('ch.bafu.nabelstationen', Nabelstationen)
 
 
 class Krebspest(Base, Vector):
