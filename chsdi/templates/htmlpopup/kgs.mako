@@ -4,25 +4,26 @@
 
 <%def name="table_body(c, lang)">
     <% c['stable_id'] = True %>
-    <tr><td class="cell-left">${_('ch.babs.kulturgueter.zkob')}</td>   <td>${c['attributes']['zkob']}</td></tr>
     <tr>
-        <td class="cell-left">${_('x')}</td>
-        % if c['attributes']['x']:
-            <td>${int(round(c['attributes']['x']))}</td>
-        % else:
-            <td>-</td>
-        % endif
+        <td class="cell-left">${_('ch.babs.kulturgueter.beschreibung')}</td>
+        <td>${c['attributes']['beschreibung'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('y')}</td>
-        % if c['attributes']['y']:
-            <td>${int(round(c['attributes']['y']))}</td>
-        % else:
-            <td>-</td>
-        % endif
+        <td class="cell-left">${_('ch.babs.kulturgueter.x')}</td>
+        <td>${c['attributes']['x'] or '-'}</td>
     </tr>
-    <tr><td class="cell-left">${_('gemeinde')}</td>       <td>${c['attributes']['gemeinde'] or '-'}</td></tr>
-    <tr><td class="cell-left">${_('kanton')}</td>         <td>${c['attributes']['kt_kz'] or '-'}</td></tr>
+    <tr>
+        <td class="cell-left">${_('ch.babs.kulturgueter.y')}</td>
+        <td>${c['attributes']['y'] or '-'}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_('ch.babs.kulturgueter.gemeinde')}</td>
+        <td>${c['attributes']['gemeinde'] or '-'}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_('ch.babs.kulturgueter.kanton')}</td>
+        <td>${c['attributes']['kanton'] or '-'}</td>
+    </tr>
 </%def>
 
 <%def name="extended_info(c, lang)">
