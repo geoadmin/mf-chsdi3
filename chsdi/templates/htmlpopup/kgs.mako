@@ -30,6 +30,8 @@
     <%
         c['stable_id'] = True
 
+        lang = lang if lang in ('fr','it') else 'de'
+
         import os
 
         NO_DATA_VALUES = ['', None]
@@ -37,10 +39,12 @@
         def text_separation(csv_value, sep='/'):
             return sep.join(sorted(csv_value.split(',')))
 
-        if c['attributes']['objektart_de_list'] in NO_DATA_VALUES:
-            objektart_de_text = '-'
+        objektart_list = 'objektart_%s_list' % lang
+
+        if c['attributes'][objektart_list] in NO_DATA_VALUES:
+            objektart_text = '-'
         else:
-            text_separation(c['attributes']['objektart_de_list'], ' / ')
+            objektart_text = text_separation(c['attributes'][objektart_list], ' / ')
 
         bild_urls = c['attributes']['bild_url_list'].split(',')
         bild_nrs = c['attributes']['bild_nr_list'].split(',')
@@ -66,24 +70,6 @@
                 '<br />'
             )
     %>
-
-    <script>
-        $(document).ready(function(){
-            $('.thumbnail-container').on('click', function (event) {
-              event = event || window.event;
-                event.preventDefault();
-              var target = event.target || event.srcElement,
-                link = target.src ? target.parentNode : target,
-                options = {index: link, event: event, onslide: function(index, slide){
-                    /** a "beautiful" line of code which sets the title of the gallery to the current copyright + photographer of the current photo**/
-                    $('#blueimp-gallery-title').html(($($('.thumbnail-container').children('.thumbnail')[index]).children('div').html()));
-                }},
-                links = this.getElementsByTagName('a');
-              blueimp.Gallery(links, options);
-            });
-        });
-    </script>
-
     <table class="table-with-border kernkraftwerke-extended">
         <tr>
             <th class="cell-left">${_('ch.babs.kulturgueter.beschreibung')}</th>
@@ -95,7 +81,7 @@
         </tr>
         <tr>
             <th class="cell-left">${_('ch.babs.kulturgueter.objektart')}</th>
-            <td>${_(objektart_de_text)}</td>
+            <td>${_(objektart_text)}</td>
         </tr>
         <tr>
             <th class="cell-left">${_('ch.babs.kulturgueter.objekt_nr')}</th>
@@ -138,6 +124,23 @@
             <td>${_(weblinks_text)|n}</td>
         </tr>
     </table>
+
+    <script>
+        $(document).ready(function(){
+            $('.thumbnail-container').on('click', function (event) {
+            event = event || window.event;
+                event.preventDefault();
+            var target = event.target || event.srcElement,
+                link = target.src ? target.parentNode : target,
+                options = {index: link, event: event, onslide: function(index, slide){
+                    /** a "beautiful" line of code which sets the title of the gallery to the current copyright + photographer of the current photo**/
+                    $('#blueimp-gallery-title').html(($($('.thumbnail-container').children('.thumbnail')[index]).children('div').html()));
+                }},
+                links = this.getElementsByTagName('a');
+            blueimp.Gallery(links, options);
+            });
+        });
+    </script>
     <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
         <div class="slides"></div>
         <div class="title" id="blueimp-gallery-title"></div>
@@ -150,13 +153,16 @@
     <div class="kgs-thumbnails">
         <div class="thumbnail-container">
             %for bild_url, bild_nr in zip(bild_urls, bild_nrs):
-                <div class="thumbnail">
-                    <a href="${bild_url}"><img class="image" src="${bild_url}" /></a>
-                    <div>${copyright_text or ''} - ${fotograf_text}</div>
-                </div>
+                %if bild_url:
+                    <div class="thumbnail">
+                        <a href="${bild_url}"><img class="image" src="${bild_url}" /></a>
+                        <div>${copyright_text or ''} - ${fotograf_text}</div>
+                    </div>
+                %endif
             %endfor
         </div>
     </div>
+
 </%def>
 
 <%def name="extended_resources(c, lang)">

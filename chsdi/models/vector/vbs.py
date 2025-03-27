@@ -29,6 +29,8 @@ class Kulturgueter(Base, Vector):
     ehemaligegemeinde = Column('ehemaligegemeinde', Unicode)
     adresse_list = Column('adresse_list', Unicode)
     objektart_de_list = Column('objektart_de_list', Unicode)
+    objektart_fr_list = Column('objektart_fr_list', Unicode)
+    objektart_it_list = Column('objektart_it_list', Unicode)
     pdf_files_list = Column('pdf_files_list', Unicode)
     weblinks_list = Column('weblinks_list', Unicode)
     bemerkung_list = Column('bemerkung_list', Unicode)
