@@ -10,11 +10,19 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.babs.kulturgueter.x')}</td>
-        <td>${c['attributes']['x'] or '-'}</td>
+        % if c['attributes']['x']:
+            <td>${int(round(c['attributes']['x']))}</td>
+        % else:
+            <td>-</td>
+        % endif
     </tr>
     <tr>
         <td class="cell-left">${_('ch.babs.kulturgueter.y')}</td>
-        <td>${c['attributes']['y'] or '-'}</td>
+        % if c['attributes']['y']:
+            <td>${int(round(c['attributes']['y']))}</td>
+        % else:
+            <td>-</td>
+        % endif
     </tr>
     <tr>
         <td class="cell-left">${_('ch.babs.kulturgueter.gemeinde')}</td>
