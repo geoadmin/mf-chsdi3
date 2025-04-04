@@ -12,14 +12,6 @@
         <td>${c['attributes']['name'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bafu.nabelstationen.nabeltyp')}</td>
-        <td>${c['attributes']['typ'] or '-'}</td>
-    </tr>
-    <tr>
-        <td class="cell-left">${_('ch.bafu.nabelstationen.werte')}</td>
-        <td>${c['attributes']['desc'] or '-'}</td>
-    </tr>
-    <tr>
         <td class="cell-left">${_('ch.bafu.nabelstationen.url')}</td>
         % if c['attributes'][url_text] and c['attributes'][url_text].startswith('http'):
             <td><a href="${c['attributes'][url_text]}" target="_blank">${_('link')}</a></td>
