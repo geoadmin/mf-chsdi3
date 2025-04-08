@@ -1722,8 +1722,6 @@ class Nabelstationen(Base, Vector):
     __label__ = 'name'
     id = Column('kuerzel', Unicode, primary_key=True)
     name = Column('name', Unicode)
-    typ = Column('typ', Unicode)
-    desc = Column('desc_txt', Unicode)
     url_de = Column('url_de', Unicode)
     url_fr = Column('url_fr', Unicode)
     url_it = Column('url_it', Unicode)
