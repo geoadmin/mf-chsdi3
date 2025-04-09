@@ -1,6 +1,7 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
+    <% c['stable_id'] = True %>
     <tr>
       <td class="cell-left">${_('ch.swisstopo.hoheitsgrenzpunkte-landesvermessung.nummer')}</td>
       <td>${c['attributes']['nummer'] or '-'}</td>

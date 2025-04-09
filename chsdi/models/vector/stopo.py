@@ -3312,7 +3312,7 @@ class HoheitsgrenzpunkteLandesvermessung(Base, Vector):
     __tablename__ = 'hoheitsgrenzpunkte_landesvermessung'
     __bodId__ = 'ch.swisstopo.hoheitsgrenzpunkte-landesvermessung'
     __template__ = 'templates/htmlpopup/stopo_hoheitsgrenzpunkte_landesvermessung.mako'
-    __label__ = 'xtf_id'
+    __label__ = 'nummer'
     id = Column('bgdi_id', Integer, primary_key=True)
     isthoheitsgrenzsteinalt = Column('isthoheitsgrenzsteinalt', Unicode)
     nummer = Column('nummer', Unicode)
