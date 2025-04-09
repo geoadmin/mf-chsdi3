@@ -3319,12 +3319,7 @@ class HoheitsgrenzpunkteLandesvermessung(Base, Vector):
     istexaktdefiniert = Column('istexaktdefiniert', Unicode)
     istlagezuverlaessig = Column('istlagezuverlaessig', Unicode)
     punktzeichen = Column('punktzeichen', Unicode)
-    symbolori = Column('symbolori', Unicode)
     lagegenauigkeit = Column('lagegenauigkeit', Unicode)
-    xtf_id = Column('xtf_id', Unicode)
-    bfsnr = Column('bfsnr', Integer)
-    art = Column('art', Unicode)
-    isthoheitsgrenzpunkt = Column('isthoheitsgrenzpunkt', Unicode)
     the_geom = Column(Geometry2D)
 
 register(HoheitsgrenzpunkteLandesvermessung.__bodId__, HoheitsgrenzpunkteLandesvermessung)
