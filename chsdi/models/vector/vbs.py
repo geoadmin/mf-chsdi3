@@ -38,6 +38,7 @@ class Kulturgueter(Base, Vector):
     bild_url_list = Column('bild_url_list', Unicode)
     copyright = Column('copyright', Unicode)
     fotograf = Column('fotograf', Unicode)
+    kurztext = Column('kurztext', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.babs.kulturgueter', Kulturgueter)
