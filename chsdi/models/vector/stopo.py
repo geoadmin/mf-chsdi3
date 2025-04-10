@@ -3327,7 +3327,7 @@ register(HoheitsgrenzpunkteLandesvermessung.__bodId__, HoheitsgrenzpunkteLandesv
 
 class HoheitsgrenzeLandesvermessung(Base, Vector):
     __table_args__ = ({'schema': 'hoheitsgrenze', 'autoload': False})
-    __tablename__ = 'hoheitsgrenze_landesvermessung'
+    __tablename__ = 'hoheitsgrenze_landesvermessung_clustered'
     __bodId__ = 'ch.swisstopo.hoheitsgrenze-landesvermessung'
     __template__ = 'templates/htmlpopup/stopo_hoheitsgrenze_landesvermessung.mako'
     __label__ = 'gueltigkeit'
