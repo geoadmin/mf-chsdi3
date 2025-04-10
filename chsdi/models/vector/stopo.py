@@ -3327,10 +3327,10 @@ register(HoheitsgrenzpunkteLandesvermessung.__bodId__, HoheitsgrenzpunkteLandesv
 
 class HoheitsgrenzeLandesvermessung(Base, Vector):
     __table_args__ = ({'schema': 'hoheitsgrenze', 'autoload': False})
-    __tablename__ = 'hoheitsgrenze_landesvermessung_clustered'
+    __tablename__ = 'hoheitsgrenze_landesvermessung'
     __bodId__ = 'ch.swisstopo.hoheitsgrenze-landesvermessung'
     __template__ = 'templates/htmlpopup/stopo_hoheitsgrenze_landesvermessung.mako'
-    __label__ = 'bgdi_id'
+    __label__ = 'gueltigkeit'
     id = Column('bgdi_id', Integer, primary_key=True)
     gueltigkeit = Column('gueltigkeit', Unicode)
     the_geom = Column(Geometry2D)
