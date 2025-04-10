@@ -45,7 +45,7 @@
         NO_DATA_VALUES = ['', None]
 
         def text_separation(csv_value, sep='/'):
-            return sep.join(sorted(csv_value.split(',')))
+            return sep.join(csv_value.split(','))
 
         objektart_list = 'objektart_%s_list' % lang
 
