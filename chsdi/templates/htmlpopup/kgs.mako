@@ -84,10 +84,6 @@
             <td>${c['attributes']['beschreibung'] or '-'}</td>
         </tr>
         <tr>
-            <th class="cell-left">${_('ch.babs.kulturgueter.kgs_kategorie')}</th>
-            <td>${c['attributes']['kgs_kategorie'] or '-'}</td>
-        </tr>
-        <tr>
             <th class="cell-left">${_('ch.babs.kulturgueter.objektart')}</th>
             <td>${_(objektart_text)}</td>
         </tr>
