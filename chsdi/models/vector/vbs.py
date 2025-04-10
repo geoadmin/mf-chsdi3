@@ -17,7 +17,7 @@ class Kulturgueter(Base, Vector):
     __template__ = 'templates/htmlpopup/kgs.mako'
     __bodId__ = 'ch.babs.kulturgueter'
     __extended_info__ = True
-    __label__ = 'kgs_nr'
+    __label__ = 'beschreibung'
     id = Column('objekt_nr', Integer, primary_key=True)
     kgs_nr = Column('kgs_nr', Unicode)
     beschreibung = Column('beschreibung', Unicode)
@@ -38,6 +38,7 @@ class Kulturgueter(Base, Vector):
     bild_url_list = Column('bild_url_list', Unicode)
     copyright = Column('copyright', Unicode)
     fotograf = Column('fotograf', Unicode)
+    kurztext = Column('kurztext', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.babs.kulturgueter', Kulturgueter)

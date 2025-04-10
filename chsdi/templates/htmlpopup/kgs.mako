@@ -45,7 +45,7 @@
         NO_DATA_VALUES = ['', None]
 
         def text_separation(csv_value, sep='/'):
-            return sep.join(sorted(csv_value.split(',')))
+            return sep.join(csv_value.split(','))
 
         objektart_list = 'objektart_%s_list' % lang
 
@@ -82,10 +82,6 @@
         <tr>
             <th class="cell-left">${_('ch.babs.kulturgueter.beschreibung')}</th>
             <td>${c['attributes']['beschreibung'] or '-'}</td>
-        </tr>
-        <tr>
-            <th class="cell-left">${_('ch.babs.kulturgueter.kgs_kategorie')}</th>
-            <td>${c['attributes']['kgs_kategorie'] or '-'}</td>
         </tr>
         <tr>
             <th class="cell-left">${_('ch.babs.kulturgueter.objektart')}</th>
@@ -164,12 +160,20 @@
                 %if bild_url:
                     <div class="thumbnail">
                         <a href="${bild_url}"><img class="image" src="${bild_url}" /></a>
-                        <div>${copyright_text or ''} - ${fotograf_text}</div>
+                        <div style="padding-top:10px">${copyright_text or ''} - ${fotograf_text}</div>
                     </div>
                 %endif
             %endfor
         </div>
     </div>
+
+    % if c['attributes']['kurztext']:
+        <table class="table-with-border kernkraftwerke-extended">
+            <tr>
+                <td>${c['attributes']['kurztext'] or '-'}</td>
+            </tr>
+        </table>
+    % endif
 
 </%def>
 
