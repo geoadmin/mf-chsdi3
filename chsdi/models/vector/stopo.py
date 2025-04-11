@@ -3330,7 +3330,6 @@ class HoheitsgrenzeLandesvermessung(Base, Vector):
     __tablename__ = 'hoheitsgrenze_landesvermessung_clustered'
     __bodId__ = 'ch.swisstopo.hoheitsgrenze-landesvermessung'
     __template__ = 'templates/htmlpopup/stopo_hoheitsgrenze_landesvermessung.mako'
-    __label__ = 'gueltigkeit'
     id = Column('bgdi_id', Integer, primary_key=True)
     gueltigkeit = Column('gueltigkeit', Unicode)
     the_geom = Column(Geometry2D)
