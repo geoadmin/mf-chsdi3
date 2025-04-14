@@ -6,6 +6,7 @@ import datetime
 
 <%def name="table_body(c, lang)">
 <%
+from chsdi.lib.helpers import resource_exists
 
 tt_lubis_ebkey = f"{c['layerBodId']}.id"
 lang = lang if lang in ('fr','it','en') else 'de'
@@ -23,6 +24,8 @@ preview_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['featureI
 
 viewer_url=aerialimages_url
 tt_lubis_Quickview='tt_lubis_Quickview_stac'
+
+preview_exists = resource_exists(preview_url)
 %>
 
 <tr>
@@ -71,7 +74,11 @@ tt_lubis_Quickview='tt_lubis_Quickview_stac'
 <tr>
   <td class="cell-left">${_(tt_lubis_Quickview)}</td>
   <td>
-    <a href="${viewer_url}" target="_blank"><img src="${preview_url}" alt="quickview"></a>
+% if preview_exists:
+    <a href="${viewer_url}" target="_blank"><img src="${preview_url}" alt="quickview"></a>${preview_exists}
+% else:
+    ${_("ch.swisstopo.lubis.notiff")}
+% endif
   </td>
 </tr>
 
