@@ -27,8 +27,11 @@ API & applications
 '''''''''''''''''''''''''''''
 
 - Bug fixes
+    - Removed duplicate `cache-control` header `max-age` from WMS responses.
 - Announcements:
     - the object ID values of the layer *ch.vbs.schiessanzeigen* will change for all objects due to geometrical changes in the source data with one of the next releases. Existing permalinks to objects may not work anymore and will have to be replaced by the new object id’s (chsdi fields featureId and id). In addition there will be a new attribute bezeichnung_ort on the dataset. The other existing attributes will stay.
+    - the GetCapabilities document of wms.geo.admin.ch now includes direct links to GeoCat metadata documents.
+    - the layer ch.swisstopo.swissimage-product now supports transparency and is available as PNG in the WMTS service
 
 
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2025-03-12-rc1...2025-05-14-rc1>`__
@@ -36,6 +39,8 @@ API & applications
 Geodata
 *******
 
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `swissEO VHI vegetation <//map.geo.admin.ch/?layers=ch.swisstopo.swisseo_vhi_v100_vegetation>`__ (ch.swisstopo.swisseo_vhi_v100_vegetation)                                                                  |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Railway lines MAO <//map.geo.admin.ch/?layers=ch.bav.lage-stoerfallverordnung_eisenbahnanlagen>`__ (ch.bav.lage-stoerfallverordnung_eisenbahnanlagen)                                                       |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -50,6 +55,14 @@ Geodata
 | Update | `Cantonal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-kanton-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-kanton-flaeche.fill)                                                 |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `National boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-land-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-land-flaeche.fill)                                                     |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cycling in Switzerland <//map.geo.admin.ch/?layers=ch.astra.veloland>`__ (ch.astra.veloland)                                                                                                                |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hiking in Switzerland <//map.geo.admin.ch/?layers=ch.astra.wanderland>`__ (ch.astra.wanderland)                                                                                                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mountainbiking in Switzerland <//map.geo.admin.ch/?layers=ch.astra.mountainbikeland>`__ (ch.astra.mountainbikeland)                                                                                         |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Skating in Switzerland <//map.geo.admin.ch/?layers=ch.astra.skatingland>`__ (ch.astra.skatingland)                                                                                                          |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20250312:
