@@ -118,6 +118,20 @@ Geodata
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `SWISS MIL PILOTS CHART <//map.geo.admin.ch/?layers=ch.vbs.swissmilpilotschart>`__ (ch.vbs.swissmilpilotschart)                                                                                              |
 +--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ISOS - Site records <//map.geo.admin.ch/?layers=ch.bak.bundesinventar-schuetzenswerte-ortsbilder>`__ (ch.bak.bundesinventar-schuetzenswerte-ortsbilder)                                                     |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ISOS - Photos <//map.geo.admin.ch/?layers=ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos>`__ (ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos)                                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Pro Natura: Nature Preserves <//map.geo.admin.ch/?layers=ch.pronatura.naturschutzgebiete>`__ (ch.pronatura.naturschutzgebiete)                                                                              |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `PCP Inventory <//map.geo.admin.ch/?layers=ch.babs.kulturgueter>`__ (ch.babs.kulturgueter)                                                                                                                   |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Vegetation height model NFI <//map.geo.admin.ch/?layers=ch.bafu.landesforstinventar-vegetationshoehenmodell>`__ (ch.bafu.landesforstinventar-vegetationshoehenmodell)                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Surface model NFI <//map.geo.admin.ch/?layers=ch.bafu.landesforstinventar-vegetationshoehenmodell_relief>`__ (ch.bafu.landesforstinventar-vegetationshoehenmodell_relief)                                   |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Forest mix rate NFI <//map.geo.admin.ch/?layers=ch.bafu.landesforstinventar-waldmischungsgrad>`__ (ch.bafu.landesforstinventar-waldmischungsgrad)                                                           |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20250312:
 
