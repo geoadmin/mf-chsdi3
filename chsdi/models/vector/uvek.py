@@ -1071,9 +1071,11 @@ class BakomNotruf(Base, Vector):
     __template__ = 'templates/htmlpopup/bakom_notruf.mako'
     __bodId__ = 'ch.bakom.notruf'
     __extended_info__ = True
-    __label__ = 'id'
+    __label__ = 'name'
     id = Column('bfs_nummer', Integer, primary_key=True)
     name = Column('name', Unicode)
+    sprache = Column('sprache', Unicode)
+    objektart = Column('objektart', Unicode)
     mobile_112 = Column('mobile_112', Unicode)
     mo_gemeinde_112 = Column('mo_gemeinde_112', Unicode)
     mo_addresse_112 = Column('mo_addresse_112', Unicode)
