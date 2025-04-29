@@ -58,6 +58,29 @@
 
     <table class="table-with-border">
         <colgroup>
+        <col width=20%>
+        <col width=80%>
+        </colgroup>
+        <tr>
+            <th class="cell-left">${_('ch.bakom.notruf.name')}</th>
+            <td>${c['attributes']['name'] or '-'}</td>
+        </tr>
+        <tr>
+            <th class="cell-left">${_('ch.bakom.notruf.bfs_nr')}</th>
+            <td>${c['featureId'] or '-'}</td>
+        </tr>
+        <tr>
+            <th class="cell-left">${_('ch.bakom.notruf.sprache')}</th>
+            <td>${c['attributes']['sprache'] or '-'}</td>
+        </tr>
+        <tr>
+            <th class="cell-left">${_('ch.bakom.notruf.obj_art')}</th>
+            <td>${c['attributes']['objektart'] or '-'}</td>
+        </tr>
+    </table>
+    <tr><td class="cell-meta-one" colspan="2">&nbsp;</td></tr>
+    <table class="table-with-border">
+        <colgroup>
         <col width=65%>
         <col width=40%>
         <col width=60%>
