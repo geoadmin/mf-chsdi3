@@ -29,9 +29,11 @@ API & applications
 - Bug fixes
     - Removed duplicate `cache-control` header `max-age` from WMS responses.
 - Announcements:
-    - the object ID values of the layer *ch.vbs.schiessanzeigen* will change for all objects due to geometrical changes in the source data with one of the next releases. Existing permalinks to objects may not work anymore and will have to be replaced by the new object id’s (chsdi fields featureId and id). In addition there will be a new attribute bezeichnung_ort on the dataset. The other existing attributes will stay.
+    - the layers *ch.are.gemeindetypen*, *ch.are.belastung-gueterverkehr-bahn* and *ch.are.belastung-gueterverkehr-strasse* will be removed from chsdi services with the release of July 2nd 2025.
+    - the layers *ch.bafu.hydrologie-hintergrundkarte* and *ch.bafu.hydrologie-hochwassergrenzwertpegel* will be removed from chsdi services with the release of July 2nd 2025.
     - the GetCapabilities document of wms.geo.admin.ch now includes direct links to GeoCat metadata documents.
     - the layer ch.swisstopo.swissimage-product now supports transparency and is available as PNG in the WMTS service
+    - the object ID values of the layer *ch.vbs.schiessanzeigen* will change for all objects due to geometrical changes in the source data with one of the next releases. Existing permalinks to objects may not work anymore and will have to be replaced by the new object id’s (chsdi fields featureId and id). In addition there will be a new attribute bezeichnung_ort on the dataset. The other existing attributes will stay.
 
 
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2025-03-12-rc1...2025-05-14-rc1>`__
