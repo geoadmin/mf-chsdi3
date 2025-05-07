@@ -5,6 +5,10 @@
 <%def name="table_body(c, lang)">
     <% c['stable_id'] = True %>
     <tr>
+        <td class="cell-left">${_('ch.babs.kulturgueter.objekt_nr')}</td>
+        <td>${c['id'] or '-'}</td>
+    </tr>
+    <tr>
         <td class="cell-left">${_('ch.babs.kulturgueter.beschreibung')}</td>
         <td>${c['attributes']['beschreibung'] or '-'}</td>
     </tr>
