@@ -8,7 +8,7 @@
     <tr><td class="cell-left">${_('ch.baspo.nationales-sportanlagenkonzept.ort')}</td>                       <td>${c['attributes']['ort'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.baspo.nationales-sportanlagenkonzept.website')}</td>
       % if c['attributes']['website']:
-        <td><a target="_blank" href="http://${c['attributes']['website'].replace("http://","")}">${c['attributes']['website']}</a></td</tr>
+        <td><a target="_blank" href="${c['attributes']['website']}">${c['attributes']['website']}</a></td</tr>
       % else:
         <td>-</td></tr>
       % endif
