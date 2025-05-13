@@ -15,6 +15,185 @@ Release Notes
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
 
+.. _releasenotes_20250514:
+
+Release 20250514 - Wednesday, Mai 14th 2025
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+- Bug fixes
+    - Removed duplicate `cache-control` header `max-age` from WMS responses.
+- Announcements:
+    - the layers *ch.are.gemeindetypen*, *ch.are.belastung-gueterverkehr-bahn* and *ch.are.belastung-gueterverkehr-strasse* will be removed from chsdi services with the release of July 2nd 2025.
+    - the layers *ch.bafu.hydrologie-hintergrundkarte* and *ch.bafu.hydrologie-hochwassergrenzwertpegel* will be removed from chsdi services with the release of July 2nd 2025.
+    - the layer *ch.bfs.arealstatistik-waldmischungsgrad* will be removed from chsdi services with the release of July 2nd 2025.
+    - the GetCapabilities document of wms.geo.admin.ch now includes direct links to geocat.ch metadata for each available geodata layer.
+    - the layer ch.swisstopo.swissimage-product now supports transparency and is available as PNG tiles in the WMTS service.
+    - the object ID values of the layer *ch.vbs.schiessanzeigen* will change for all objects due to geometrical changes in the source data with one of the next releases. Existing permalinks to objects may not work anymore and will have to be replaced by the new object id’s (chsdi fields featureId and id). In addition there will be a new attribute bezeichnung_ort on the dataset. The other existing attributes will stay.
+
+
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2025-03-12-rc1...2025-05-14-rc1>`__
+
+Geodata
+*******
+
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `swissEO VHI vegetation <//map.geo.admin.ch/?layers=ch.swisstopo.swisseo_vhi_v100_vegetation>`__ (ch.swisstopo.swisseo_vhi_v100_vegetation)                                                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Territorial Limit AV <//map.geo.admin.ch/?layers=ch.swisstopo.hoheitsgrenze-landesvermessung>`__ (ch.swisstopo.hoheitsgrenze-landesvermessung)                                                              |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Points Territorial Limit AV <//map.geo.admin.ch/?layers=ch.swisstopo.hoheitsgrenzpunkte-landesvermessung>`__ (ch.swisstopo.hoheitsgrenzpunkte-landesvermessung)                                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Vegetation height model Lidar NFI <//map.geo.admin.ch/?layers=ch.bafu.landesforstinventar-vegetationshoehenmodell_lidar>`__ (ch.bafu.landesforstinventar-vegetationshoehenmodell_lidar)                     |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Vegetation height model Sentinel NFI <//map.geo.admin.ch/?layers=ch.bafu.landesforstinventar-vegetationshoehenmodell_sentinel>`__ (ch.bafu.landesforstinventar-vegetationshoehenmodell_sentinel)            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Relief shading Sentinel NFI <//map.geo.admin.ch/?layers=ch.bafu.landesforstinventar-vegetationshoehenmodell_relief_sentinel>`__ (ch.bafu.landesforstinventar-vegetationshoehenmodell_relief_sentinel)       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Drought warning map <//map.geo.admin.ch/?layers=ch.bafu.trockenheitswarnkarte>`__ (ch.bafu.trockenheitswarnkarte)                                                                                           |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `142 Alarm centers <//map.geo.admin.ch/?layers=ch.bakom.notruf-142_zentral>`__ (ch.bakom.notruf-142_zentral)                                                                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `142 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-142_festnetz>`__ (ch.bakom.notruf-142_festnetz)                                                                                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `142 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-142_mobilnetz>`__ (ch.bakom.notruf-142_mobilnetz)                                                                                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Railway lines MAO <//map.geo.admin.ch/?layers=ch.bav.lage-stoerfallverordnung_eisenbahnanlagen>`__ (ch.bav.lage-stoerfallverordnung_eisenbahnanlagen)                                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Interregional wildlife corridor <//map.geo.admin.ch/?layers=ch.bafu.fauna-wildtierkorridor_national>`__ (ch.bafu.fauna-wildtierkorridor_national)                                                           |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Radon map <//map.geo.admin.ch/?layers=ch.bag.radonkarte>`__ (ch.bag.radonkarte)                                                                                                                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Municipal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill)                                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `District boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill)                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cantonal boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-kanton-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-kanton-flaeche.fill)                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `National boundaries <//map.geo.admin.ch/?layers=ch.swisstopo.swissboundaries3d-land-flaeche.fill>`__ (ch.swisstopo.swissboundaries3d-land-flaeche.fill)                                                     |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cycling in Switzerland <//map.geo.admin.ch/?layers=ch.astra.veloland>`__ (ch.astra.veloland)                                                                                                                |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hiking in Switzerland <//map.geo.admin.ch/?layers=ch.astra.wanderland>`__ (ch.astra.wanderland)                                                                                                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mountainbiking in Switzerland <//map.geo.admin.ch/?layers=ch.astra.mountainbikeland>`__ (ch.astra.mountainbikeland)                                                                                         |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Skating in Switzerland <//map.geo.admin.ch/?layers=ch.astra.skatingland>`__ (ch.astra.skatingland)                                                                                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Future mean runoff (m³/s) and regime <//map.geo.admin.ch/?layers=ch.bafu.mittlere-abfluesse_zukunft>`__ (ch.bafu.mittlere-abfluesse_zukunft)                                                                |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Status of cadastral surveying <//map.geo.admin.ch/?layers=ch.swisstopo-vd.geometa-standav>`__ (ch.swisstopo-vd.geometa-standav)                                                                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Periodic updating (Cadastral Surveying Switzerland) <//map.geo.admin.ch/?layers=ch.swisstopo-vd.geometa-periodische_nachfuehrung>`__ (ch.swisstopo-vd.geometa-periodische_nachfuehrung)                     |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Gypsum <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung>`__ (ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung)                                                    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Residential areas according to AuLaV <//map.geo.admin.ch/?layers=ch.bazl.wohngebiete-aulav>`__ (ch.bazl.wohngebiete-aulav)                                                                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Landwirtschaftliche Nutzungsflächen Schweiz <//map.geo.admin.ch/?layers=ch.blw.landwirtschaftliche-nutzungsflaechen>`__ (ch.blw.landwirtschaftliche-nutzungsflaechen)                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Basic statistical units level 1 <//map.geo.admin.ch/?layers=ch.bfs.statistische-grundeinheiten_stufe1>`__ (ch.bfs.statistische-grundeinheiten_stufe1)                                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Basic statistical units level 2 <//map.geo.admin.ch/?layers=ch.bfs.statistische-grundeinheiten_stufe2>`__ (ch.bfs.statistische-grundeinheiten_stufe2)                                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Surveyed sections <//map.geo.admin.ch/?layers=ch.bafu.wasserbau-vermessungsstrecken>`__ (ch.bafu.wasserbau-vermessungsstrecken)                                                                             |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Cross section securing point <//map.geo.admin.ch/?layers=ch.bafu.wasserbau-querprofilmarken>`__ (ch.bafu.wasserbau-querprofilmarken)                                                                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Wind energy plants <//map.geo.admin.ch/?layers=ch.bfe.windenergieanlagen>`__ (ch.bfe.windenergieanlagen)                                                                                                    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Deep geothermal projects <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-tiefengeothermie_projekte>`__ (ch.swisstopo.geologie-tiefengeothermie_projekte)                                                  |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Spitallandeplätze <//map.geo.admin.ch?layers=ch.bazl.spitallandeplaetze>`__ (ch.bazl.spitallandeplaetze)                                                                                                    |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Built-up areas VIL <//map.geo.admin.ch/?layers=ch.bazl.bebaute-gebiete_luftfahrtrecht>`__ (ch.bazl.bebaute-gebiete_luftfahrtrecht)                                                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Airspaces: Control zones - CTR <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-kontrollzonen>`__ (ch.bazl.luftraeume-kontrollzonen)                                                                          |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aeronautical Chart ICAO <//map.geo.admin.ch/?layers=ch.bazl.luftfahrtkarten-icao>`__ (ch.bazl.luftfahrtkarten-icao)                                                                                         |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Glider Chart <//map.geo.admin.ch/?layers=ch.bazl.segelflugkarte>`__ (ch.bazl.segelflugkarte)                                                                                                                |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerodromes + Heliports <//map.geo.admin.ch/?layers=ch.bazl.flugplaetze-heliports>`__ (ch.bazl.flugplaetze-heliports)                                                                                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Airspaces: Control areas - CTA <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-kontrollbezirke>`__ (ch.bazl.luftraeume-kontrollbezirke)                                                                      |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Airspaces: Flight information region - FIR <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-fluginformationsgebiet>`__ (ch.bazl.luftraeume-fluginformationsgebiet)                                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Airspaces: Flight information zones - FIZ <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-fluginformationszonen>`__ (ch.bazl.luftraeume-fluginformationszonen)                                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Airspaces: Terminal control areas - TMA <//map.geo.admin.ch/?layers=ch.bazl.luftraeume-nahkontrollbezirke>`__ (ch.bazl.luftraeume-nahkontrollbezirke)                                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mil Airspace Chart <//map.geo.admin.ch/?layers=ch.vbs.milairspacechart>`__ (ch.vbs.milairspacechart)                                                                                                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Map of restricted and danger areas <//map.geo.admin.ch/?layers=ch.vbs.sperr-gefahrenzonenkarte>`__ (ch.vbs.sperr-gefahrenzonenkarte)                                                                        |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SWISS MIL PILOTS CHART <//map.geo.admin.ch/?layers=ch.vbs.swissmilpilotschart>`__ (ch.vbs.swissmilpilotschart)                                                                                              |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ISOS - Site records <//map.geo.admin.ch/?layers=ch.bak.bundesinventar-schuetzenswerte-ortsbilder>`__ (ch.bak.bundesinventar-schuetzenswerte-ortsbilder)                                                     |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `ISOS - Photos <//map.geo.admin.ch/?layers=ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos>`__ (ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos)                                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `PCP Inventory <//map.geo.admin.ch/?layers=ch.babs.kulturgueter>`__ (ch.babs.kulturgueter)                                                                                                                   |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Vegetation height model NFI <//map.geo.admin.ch/?layers=ch.bafu.landesforstinventar-vegetationshoehenmodell>`__ (ch.bafu.landesforstinventar-vegetationshoehenmodell)                                       |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Surface model NFI <//map.geo.admin.ch/?layers=ch.bafu.landesforstinventar-vegetationshoehenmodell_relief>`__ (ch.bafu.landesforstinventar-vegetationshoehenmodell_relief)                                   |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Forest mix rate NFI <//map.geo.admin.ch/?layers=ch.bafu.landesforstinventar-waldmischungsgrad>`__ (ch.bafu.landesforstinventar-waldmischungsgrad)                                                           |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Emergency calls by comune <//map.geo.admin.ch/?layers=ch.bakom.notruf>`__ (ch.bakom.notruf)                                                                                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `112 Alarm centers <//map.geo.admin.ch/?layers=ch.bakom.notruf-112_zentral>`__ (ch.bakom.notruf-112_zentral)                                                                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `117 Alarm centers <//map.geo.admin.ch/?layers=ch.bakom.notruf-117_zentral>`__ (ch.bakom.notruf-117_zentral)                                                                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `118 Alarm centers <//map.geo.admin.ch/?layers=ch.bakom.notruf-118_zentral>`__ (ch.bakom.notruf-118_zentral)                                                                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `143 Alarm centers <//map.geo.admin.ch/?layers=ch.bakom.notruf-143_zentral>`__ (ch.bakom.notruf-143_zentral)                                                                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `144 Alarm centers <//map.geo.admin.ch/?layers=ch.bakom.notruf-144_zentral>`__ (ch.bakom.notruf-144_zentral)                                                                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `145 Alarm centers <//map.geo.admin.ch/?layers=ch.bakom.notruf-145_zentral>`__ (ch.bakom.notruf-145_zentral)                                                                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `147 Alarm centers <//map.geo.admin.ch/?layers=ch.bakom.notruf-147_zentral>`__ (ch.bakom.notruf-147_zentral)                                                                                                 |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `112 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-112_festnetz>`__ (ch.bakom.notruf-112_festnetz)                                                                                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `117 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-117_festnetz>`__ (ch.bakom.notruf-117_festnetz)                                                                                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `118 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-118_festnetz>`__ (ch.bakom.notruf-118_festnetz)                                                                                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `143 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-143_festnetz>`__ (ch.bakom.notruf-143_festnetz)                                                                                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `144 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-144_festnetz>`__ (ch.bakom.notruf-144_festnetz)                                                                                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `145 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-145_festnetz>`__ (ch.bakom.notruf-145_festnetz)                                                                                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `147 Fixed network <//map.geo.admin.ch/?layers=ch.bakom.notruf-147_festnetz>`__ (ch.bakom.notruf-147_festnetz)                                                                                               |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `112 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-112_mobilnetz>`__ (ch.bakom.notruf-112_mobilnetz)                                                                                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `117 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-117_mobilnetz>`__ (ch.bakom.notruf-117_mobilnetz)                                                                                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `118 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-118_mobilnetz>`__ (ch.bakom.notruf-118_mobilnetz)                                                                                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `143 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-143_mobilnetz>`__ (ch.bakom.notruf-143_mobilnetz)                                                                                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `144 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-144_mobilnetz>`__ (ch.bakom.notruf-144_mobilnetz)                                                                                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `145 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-145_mobilnetz>`__ (ch.bakom.notruf-145_mobilnetz)                                                                                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `147 Mobile network <//map.geo.admin.ch/?layers=ch.bakom.notruf-147_mobilnetz>`__ (ch.bakom.notruf-147_mobilnetz)                                                                                            |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Sports facilities CSFNI <//map.geo.admin.ch/?layers=ch.baspo.nationales-sportanlagenkonzept>`__ (ch.baspo.nationales-sportanlagenkonzept)                                                                   |
++--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20250312:
 
 Release 20250312 - Wednesday, March 12th 2025
