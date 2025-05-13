@@ -3305,3 +3305,33 @@ class UnterkuenfteWinter(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(UnterkuenfteWinter.__bodId__, UnterkuenfteWinter)
+
+
+class HoheitsgrenzpunkteLandesvermessung(Base, Vector):
+    __table_args__ = ({'schema': 'hoheitsgrenze', 'autoload': False})
+    __tablename__ = 'hoheitsgrenzpunkte_landesvermessung'
+    __bodId__ = 'ch.swisstopo.hoheitsgrenzpunkte-landesvermessung'
+    __template__ = 'templates/htmlpopup/stopo_hoheitsgrenzpunkte_landesvermessung.mako'
+    __label__ = 'nummer'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    isthoheitsgrenzsteinalt = Column('isthoheitsgrenzsteinalt', Unicode)
+    nummer = Column('nummer', Unicode)
+    istexaktdefiniert = Column('istexaktdefiniert', Unicode)
+    istlagezuverlaessig = Column('istlagezuverlaessig', Unicode)
+    punktzeichen = Column('punktzeichen', Unicode)
+    lagegenauigkeit = Column('lagegenauigkeit', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(HoheitsgrenzpunkteLandesvermessung.__bodId__, HoheitsgrenzpunkteLandesvermessung)
+
+
+class HoheitsgrenzeLandesvermessung(Base, Vector):
+    __table_args__ = ({'schema': 'hoheitsgrenze', 'autoload': False})
+    __tablename__ = 'hoheitsgrenze_landesvermessung'
+    __bodId__ = 'ch.swisstopo.hoheitsgrenze-landesvermessung'
+    __template__ = 'templates/htmlpopup/stopo_hoheitsgrenze_landesvermessung.mako'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    gueltigkeit = Column('gueltigkeit', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(HoheitsgrenzeLandesvermessung.__bodId__, HoheitsgrenzeLandesvermessung)
