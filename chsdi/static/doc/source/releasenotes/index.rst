@@ -33,11 +33,25 @@ API & applications
 Geodata
 *******
 
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `swissEO VHI vegetation <//map.geo.admin.ch/?layers=ch.swisstopo.swisseo_vhi_v100_vegetation>`__ (ch.swisstopo.swisseo_vhi_v100_vegetation)                                                                  |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Sports facilities CSFNI <//map.geo.admin.ch/?layers=ch.baspo.nationales-sportanlagenkonzept>`__ (ch.baspo.nationales-sportanlagenkonzept)                                                                   |
-+--------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `LAYER TITLE <//map.geo.admin.ch/?layers=tech_layer_name>`__(tech_layer_name)                                                                                                                      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. helicopters Lr <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde>`__(ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde)            |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. 1st night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt>`__(ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt)                  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. helicopters Lmax <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_letzte-nachtstunde>`_(ch.bazl.laermbelastungskataster-zivilflugplaetze_letzte-nachtstunde)           |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. light / large aircrafts <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_kleinluftfahrzeuge>`__(ch.bazl.laermbelastungskataster-zivilflugplaetze_kleinluftfahrzeuge)   |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. milit. aerodr. (tot.) <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_klein-grossflugzeuge>`__(ch.bazl.laermbelastungskataster-zivilflugplaetze_klein-grossflugzeuge) |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. light aircrafts <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter>`__(ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter)                           |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. 2nd night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde>`__(ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde)              |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. last night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter-maximalpegel>`__(ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter-maximalpegel) |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 .. _releasenotes_20250514:
