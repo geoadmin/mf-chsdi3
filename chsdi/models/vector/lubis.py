@@ -171,6 +171,7 @@ class LuftbilderTerrA(Base, Vector):
     filename = Column('filename', Unicode)
     bgdi_imagemode = Column('bgdi_imagemode', Unicode)
     smapshot_id = Column('smapshot_id', Integer)
+    expert_sheet_url = Column('expert_sheet_url', Unicode)
     the_geom_footprint = Column('the_geom_footprint', Geometry2D)
     the_geom = Column(Geometry2D)
 

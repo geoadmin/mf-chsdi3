@@ -35,8 +35,7 @@ preview_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['featureI
 meta_csv_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['featureId']}.csv"
 viewer_url=asset_url
 tt_lubis_Quickview='tt_lubis_Quickview_stac'
-url_pdf = dataGeoAdminHost + "/" + c['layerBodId'] + "/pdf/" + c['attributes']['base_uuid'] + '.pdf'
-pdf = h.resource_exists(url_pdf) or None
+pdf = h.resource_exists(c['attributes']['expert_sheet_url']) if c['attributes']['expert_sheet_url'] else None
 url_smapshot= "https://smapshot.heig-vd.ch/map/?imageId={}".format(c['attributes']['smapshot_id'])
 # legacy: old ebkeys with fullresviewer in aerialimages bucket
 # this part can be removed when the migration of the aerialimages bucket to stac/data.geo.admin.ch is finished
@@ -49,7 +48,7 @@ url_smapshot= "https://smapshot.heig-vd.ch/map/?imageId={}".format(c['attributes
 <tr><td class="cell-left">${_('tt_lubis_schraegaufnahmen_y')}</td>        <td>${c['attributes']['y'] or '-'}</td></tr>
 <tr><td class="cell-left">${_('tt_lubis_Filmart')}</td>                   <td>${c['attributes']['filmart'] or '-'}</td></tr>
 % if pdf:
-<tr><td class="cell-left">${_('link')}</td><td><a href="${url_pdf}" target="_blank">${_('ch.swisstopo.lubis-terrestrische_aufnahmen.expertenlink')} - pdf</a></td></tr>
+<tr><td class="cell-left">${_('link')}</td><td><a href="${c['attributes']['expert_sheet_url']}" target="_blank">${_('ch.swisstopo.lubis-terrestrische_aufnahmen.expertenlink')} - pdf</a></td></tr>
 % endif
 <tr><td class="cell-left">${_('link')} smapshot</td>                    <td><a href="${url_smapshot}" target="_blank">${_('link')} smapshot</a></td></tr>
 <tr><td class="cell-left">${_("zusatzinfo")}</td>
