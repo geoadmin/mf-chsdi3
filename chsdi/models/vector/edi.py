@@ -478,3 +478,20 @@ class StatistischeGrundeinheitenStufe2(Base, Vector):
     the_geom = Column('the_geom', Geometry2D)
 
 register('ch.bfs.statistische-grundeinheiten_stufe2', StatistischeGrundeinheitenStufe2)
+
+
+class Arbeitsmarktregionen(Base, Vector):
+    __tablename__ = 'arbeitsmarktregionen'
+    __table_args__ = ({'schema': 'bfs', 'autoload': False})
+    __bodId__ = 'ch.bfs.arbeitsmarktregionen'
+    __template__ = 'templates/htmlpopup/bfs_arbeitsmarktregionen.mako'
+    __label__ = 'bae_name'
+    id = Column('bae', Integer, primary_key=True)
+    bae_name = Column('bae_de', Unicode)
+    gbae_code = Column('gbae', Integer)
+    gbae_de = Column('gbae_de', Unicode)
+    gbae_fr = Column('gbae_fr', Unicode)
+    gbae_it = Column('gbae_it', Unicode)
+    the_geom = Column('the_geom', Geometry2D)
+
+register(Arbeitsmarktregionen.__bodId__, Arbeitsmarktregionen)
