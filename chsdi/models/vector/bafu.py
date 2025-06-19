@@ -1298,17 +1298,19 @@ register('ch.bafu.bundesinventare-hochmoore', HM)
 
 
 class JB(Base, Vector):
-    __tablename__ = 'jb'
+    __tablename__ = 'jagdbanngebiete'
     __table_args__ = ({'schema': 'bundinv', 'autoload': False})
     __bodId__ = 'ch.bafu.bundesinventare-jagdbanngebiete'
     __template__ = 'templates/htmlpopup/jb.mako'
-    __label__ = 'jb_name'  # Composite labels
-    id = Column('gid', Integer, primary_key=True)
-    jb_name = Column('jb_name', Unicode)
-    jb_obj = Column('jb_obj', Integer)
-    jb_kat = Column('jb_kat', Unicode)
-    jb_fl = Column('jb_fl', Numeric)
-    jb_gf = Column('jb_gf', Numeric)
+    __label__ = 'gebietsname'  # Composite labels
+    id = Column('bgdi_id', Integer, primary_key=True)
+    objektnummer = Column('objektnummer', Unicode)
+    gebietsname = Column('gebietsname', Unicode)
+    refobjblatt = Column('refobjblatt', Unicode)
+    typ_de = Column('typ_de', Unicode)
+    typ_fr = Column('typ_fr', Unicode)
+    typ_it = Column('typ_it', Unicode)
+    typ_en = Column('typ_en', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.bafu.bundesinventare-jagdbanngebiete', JB)
