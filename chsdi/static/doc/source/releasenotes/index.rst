@@ -34,7 +34,7 @@ Geodata
 *******
 
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `LAYER TITLE <//map.geo.admin.ch/?layers=tech_layer_name>`__ (tech_layer_name)                                                                                                                                 |
+| New    | `Organische Böden CH 2024 <//map.geo.admin.ch/?layers=ch.agroscope.abschaetzung-organische_boeden>`__ (ch.agroscope.abschaetzung-organische_boeden)                                                            |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Noise exp. helicopters Lr <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde)           |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -59,6 +59,8 @@ Geodata
 | Update | `Geographical Names swissNAMES3D <//map.geo.admin.ch/?layers=ch.swisstopo.swissnames3d>`__ (ch.swisstopo.swissnames3d)                                                                                         |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `SPA consultation <//map.geo.admin.ch/?layers=ch.sem.sachplan-asyl_anhoerung>`__ (ch.sem.sachplan-asyl_anhoerung)                                                                                              |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP Unterirdischer Gütertransport <//map.geo.admin.ch/?layers=ch.bav.sachplan-unterirdischer-guetertransport_kraft>`__ (ch.bav.sachplan-unterirdischer-guetertransport_kraft)                                  |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
