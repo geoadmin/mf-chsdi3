@@ -204,11 +204,5 @@
         <td>-</td>
       % endif
     </tr>
-    % if c['attributes']['category_de'] == 'Bohrung':
-      <tr>
-        <td class="cell-meta">${_(f'ch.swisstopo.geologie-thermale_waesser.borehole_name')}</td>
-        <td>${c['attributes']['borehole_name'] or '-'}</td>
-      </tr>
-    % endif
   </table>
 </%def>

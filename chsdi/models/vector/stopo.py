@@ -3274,7 +3274,6 @@ class GeologieThermaleWaesser(Base, Vector):
     rock_overlay = Column('rock_overlay', Unicode)
     distance = Column('distance', Unicode)
     ref_portal = Column('ref_portal', Unicode)
-    borehole_name = Column('borehole_name', Unicode)
     sample_interval = Column('sample_interval', Unicode)
     form_temp_depth = Column('form_temp_depth', Unicode)
     hydrogeologic_unit_de = Column('hydrogeologic_unit_de', Unicode)
