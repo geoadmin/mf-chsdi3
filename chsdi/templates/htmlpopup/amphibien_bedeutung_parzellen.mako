@@ -2,8 +2,6 @@
 
 <%def name="table_body(c, lang)">
     <%
-        lang = lang if lang in ('fr','it','en') else 'de'
-        typ_text = 'typ_%s' %lang
         layer = c['layerBodId']
     %>
 
