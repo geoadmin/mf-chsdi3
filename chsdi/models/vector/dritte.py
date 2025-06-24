@@ -187,3 +187,20 @@ class ArmasuisseNaturLandschaftArmee(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register('ch.armasuisse.natur-landschaft_armee', ArmasuisseNaturLandschaftArmee)
+
+
+class AgroscopeAmphibienParzelle(Base, Vector):
+    __bodId__ = 'ch.agroscope.amphibien-bedeutung_parzellen'
+    __table_args__ = ({'schema': 'agroscope', 'autoload': False})
+    __tablename__ = 'bedeutung_parzellen_amphibien'
+    __template__ = 'templates/htmlpopup/amphibien_bedeutung_parzellen.mako'
+    __label__ = 'bedeutung_parzelle'
+    id = Column('id', Integer, primary_key=True)
+    species_corridors = Column('species_corridors', Unicode)
+    species_suit200 = Column('species_suit200', Unicode)
+    species_suit500 = Column('species_suit500', Unicode)
+    species_suit1000 = Column('species_suit1000', Unicode)
+    bedeutung_parzelle = Column('bedeutung_parzelle', Unicode)
+    the_geom = Column(Geometry2D)
+
+register('ch.agroscope.amphibien-bedeutung_parzellen', AgroscopeAmphibienParzelle)
