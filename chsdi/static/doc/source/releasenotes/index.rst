@@ -36,6 +36,10 @@ Geodata
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Organische Böden CH 2024 <//map.geo.admin.ch/?layers=ch.agroscope.abschaetzung-organische_boeden>`__ (ch.agroscope.abschaetzung-organische_boeden)                                                            |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Labour market areas and large labour market areas <//map.geo.admin.ch/?layers=ch.bfs.arbeitsmarktregionen>`__ (ch.bfs.arbeitsmarktregionen)                                                                   |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Focus map agri-environmental objective birds <//map.geo.admin.ch/?layers=ch.agroscope.fokuskarte-voegel>`__ (ch.agroscope.fokuskarte-voegel)                                                                  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Noise exp. helicopters Lr <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde)           |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Noise exp. 1st night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt)                 |
@@ -71,6 +75,20 @@ Geodata
 | Update | `SUG Anhörung <//map.geo.admin.ch/?layers=ch.bav.sachplan-unterirdischer-guetertransport_anhoerung>`__ (ch.bav.sachplan-unterirdischer-guetertransport_anhoerung)                                              |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Jagdbanngebiete <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-jagdbanngebiete>`__ (ch.bafu.bundesinventare-jagdbanngebiete)                                                                             |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `swissALTIRegio monodirectional hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.swissaltiregio-reliefschattierung_monodirektional>`__ (ch.swisstopo.swissaltiregio-reliefschattierung_monodirektional)      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `swissALTIRegio multidirectional hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.swissaltiregio-reliefschattierung_multidirektional>`__ (ch.swisstopo.swissaltiregio-reliefschattierung_multidirektional)   |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Thermal waters <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-thermale_waesser>`__ (ch.swisstopo.geologie-thermale_waesser)                                                                                |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hydropower statistics <//map.geo.admin.ch/?layers=ch.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                                                                               |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Bathing water quality <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-badewasserqualitaet>`__ (ch.bafu.gewaesserschutz-badewasserqualitaet)                                                               |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Slope over 30 degrees <//map.geo.admin.ch/?layers=ch.swisstopo-karto.hangneigung>`__ (ch.swisstopo-karto.hangneigung)                                                                                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Slope classes over 30 degrees <//map.geo.admin.ch/?layers=ch.swisstopo.hangneigung-ueber_30>`__ (ch.swisstopo.hangneigung-ueber_30)                                                                           |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20250514:
