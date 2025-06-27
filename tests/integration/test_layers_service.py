@@ -177,7 +177,7 @@ class TestMapServiceView(TestsBase):
 
     def test_layer_attributes_lang_specific(self):
         lang = 'de'
-        path = '/rest/services/all/MapServer/ch.bav.sachplan-infrastruktur-schiene_ausgangslage'
+        path = '/rest/services/all/MapServer/ch.bafu.gefahren-waldbrand_praeventionsmassnahmen_kantone'
         params = {'lang': lang}
         resp = self.testapp.get(path, params=params, status=200)
         self.assertEqual(resp.content_type, 'application/json')
