@@ -45,6 +45,8 @@ Geodata
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Focus map agri-environmental objective birds <//map.geo.admin.ch/?layers=ch.agroscope.fokuskarte-voegel>`__ (ch.agroscope.fokuskarte-voegel)                                                                  |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Suitability of terrestrial habitat for amphibians <//map.geo.admin.ch/?layers=ch.agroscope.amphibien-bedeutung_parzellen>`__ (ch.agroscope.amphibien-bedeutung_parzellen)                                     |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Noise exp. helicopters Lr <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde)           |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Noise exp. 1st night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt)                 |
