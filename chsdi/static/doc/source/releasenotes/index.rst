@@ -14,6 +14,99 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20250702:
+
+Release 20250702 - Wednesday, July 2nd 2025
+-------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+- Bug fixes:
+- Announcements:
+    - the layers *ch.are.gemeindetypen*, *ch.are.belastung-gueterverkehr-bahn* and *ch.are.belastung-gueterverkehr-strasse* have been decommissioned as previously announced.
+    - the layers *ch.bafu.hydrologie-hintergrundkarte* and *ch.bafu.hydrologie-hochwassergrenzwertpegel* have been decommissioned as previously announced.
+    - the layer *ch.bfs.arealstatistik-waldmischungsgrad* has been decommissioned as previously announced.
+    - the object ID values of the layer *ch.vbs.schiessanzeigen* will change for all objects due to geometrical changes in the source data with one of the next releases. Existing permalinks to objects may not work anymore and will have to be replaced by the new object id’s (chsdi fields featureId and id). In addition there will be a new attribute bezeichnung_ort on the dataset. The other existing attributes will stay.
+
+
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2025-05-15-rc1...2025-07-02-rc1>`__
+
+Geodata
+*******
+
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Organische Böden CH 2024 <//map.geo.admin.ch/?layers=ch.agroscope.abschaetzung-organische_boeden>`__ (ch.agroscope.abschaetzung-organische_boeden)                                                            |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Labour market areas and large labour market areas <//map.geo.admin.ch/?layers=ch.bfs.arbeitsmarktregionen>`__ (ch.bfs.arbeitsmarktregionen)                                                                   |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Focus map agri-environmental objective birds <//map.geo.admin.ch/?layers=ch.agroscope.fokuskarte-voegel>`__ (ch.agroscope.fokuskarte-voegel)                                                                  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Suitability of terrestrial habitat for amphibians <//map.geo.admin.ch/?layers=ch.agroscope.amphibien-bedeutung_parzellen>`__ (ch.agroscope.amphibien-bedeutung_parzellen)                                     |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Dispersal map Alytes obstericans <//map.geo.admin.ch/?layers=ch.agroscope.amphibien-ausbreitungskarten_alytes_obstetricans>`__ (ch.agroscope.amphibien-ausbreitungskarten_alytes_obstetricans)                |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Dispersal map Bombia variegata <//map.geo.admin.ch/?layers=ch.agroscope.amphibien-ausbreitungskarten_bombia_variegata>`__ (ch.agroscope.amphibien-ausbreitungskarten_bombia_variegata)                        |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Dispersal map Epidalea calamita <//map.geo.admin.ch/?layers=ch.agroscope.amphibien-ausbreitungskarten_epidalea_calamita>`__ (ch.agroscope.amphibien-ausbreitungskarten_epidalea_calamita)                     |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Dispersal map Hyla arborea <//map.geo.admin.ch/?layers=ch.agroscope.amphibien-ausbreitungskarten_hyla_arborea>`__ (ch.agroscope.amphibien-ausbreitungskarten_hyla_arborea)                                    |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Dispersal map Triturus cristatus <//map.geo.admin.ch/?layers=ch.agroscope.amphibien-ausbreitungskarten_triturus_cristatus>`__ (ch.agroscope.amphibien-ausbreitungskarten_triturus_cristatus)                  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. helicopters Lr <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde)           |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. 1st night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt)                 |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. helicopters Lmax <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_letzte-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_letzte-nachtstunde)         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. light / large aircrafts <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_kleinluftfahrzeuge>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_kleinluftfahrzeuge)  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. milit. aerodr. (tot.) <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_klein-grossflugzeuge>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_klein-grossflugzeuge)|
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. light aircrafts <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter)                          |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. 2nd night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde)             |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Noise exp. last night hour <//map.geo.admin.ch/?layers=ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter-maximalpegel>`__ (ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter-maximalpegel)|
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Daytime railway noise <//map.geo.admin.ch/?layers=ch.bafu.laerm-bahnlaerm_tag>`__ (ch.bafu.laerm-bahnlaerm_tag)                                                                                               |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Nighttime railway noise <//map.geo.admin.ch/?layers=ch.bafu.laerm-bahnlaerm_nacht>`__ (ch.bafu.laerm-bahnlaerm_nacht)                                                                                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Daytime road noise <//map.geo.admin.ch/?layers=ch.bafu.laerm-strassenlaerm_tag>`__ (ch.bafu.laerm-strassenlaerm_tag)                                                                                          |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Nighttime road noise <//map.geo.admin.ch/?layers=ch.bafu.laerm-strassenlaerm_nacht>`__ (ch.bafu.laerm-strassenlaerm_nacht)                                                                                    |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Deep wells <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-bohrungen_tiefer_500>`__ (ch.swisstopo.geologie-bohrungen_tiefer_500)                                                                            |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Geographical Names swissNAMES3D <//map.geo.admin.ch/?layers=ch.swisstopo.swissnames3d>`__ (ch.swisstopo.swissnames3d)                                                                                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SPA consultation <//map.geo.admin.ch/?layers=ch.sem.sachplan-asyl_anhoerung>`__ (ch.sem.sachplan-asyl_anhoerung)                                                                                              |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP Unterirdischer Gütertransport <//map.geo.admin.ch/?layers=ch.bav.sachplan-unterirdischer-guetertransport_kraft>`__ (ch.bav.sachplan-unterirdischer-guetertransport_kraft)                                  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SUG Anhörung <//map.geo.admin.ch/?layers=ch.bav.sachplan-unterirdischer-guetertransport_anhoerung>`__ (ch.bav.sachplan-unterirdischer-guetertransport_anhoerung)                                              |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Jagdbanngebiete <//map.geo.admin.ch/?layers=ch.bafu.bundesinventare-jagdbanngebiete>`__ (ch.bafu.bundesinventare-jagdbanngebiete)                                                                             |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `swissALTIRegio monodirectional hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.swissaltiregio-reliefschattierung_monodirektional>`__ (ch.swisstopo.swissaltiregio-reliefschattierung_monodirektional)      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `swissALTIRegio multidirectional hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.swissaltiregio-reliefschattierung_multidirektional>`__ (ch.swisstopo.swissaltiregio-reliefschattierung_multidirektional)   |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Thermal waters <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-thermale_waesser>`__ (ch.swisstopo.geologie-thermale_waesser)                                                                                |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hydropower statistics <//map.geo.admin.ch/?layers=ch.bfe.statistik-wasserkraftanlagen>`__ (ch.bfe.statistik-wasserkraftanlagen)                                                                               |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Bathing water quality <//map.geo.admin.ch/?layers=ch.bafu.gewaesserschutz-badewasserqualitaet>`__ (ch.bafu.gewaesserschutz-badewasserqualitaet)                                                               |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Slope over 30 degrees <//map.geo.admin.ch/?layers=ch.swisstopo-karto.hangneigung>`__ (ch.swisstopo-karto.hangneigung)                                                                                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Slope classes over 30 degrees <//map.geo.admin.ch/?layers=ch.swisstopo.hangneigung-ueber_30>`__ (ch.swisstopo.hangneigung-ueber_30)                                                                           |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20250514:
 
