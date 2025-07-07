@@ -27,7 +27,7 @@ class Landschaftstypen(Base, Vector):
     stand = Column('stand', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.are.landschaftstypen', Landschaftstypen)
+register(Landschaftstypen.__bodId__, Landschaftstypen)
 
 
 class Alpenkonvention(Base, Vector):
@@ -41,7 +41,7 @@ class Alpenkonvention(Base, Vector):
     stand = Column('stand', Float)
     the_geom = Column(Geometry3D)
 
-register('ch.are.alpenkonvention', Alpenkonvention)
+register(Alpenkonvention.__bodId__, Alpenkonvention)
 
 
 class Agglomerationsverkehr(Base, Vector):
@@ -58,7 +58,7 @@ class Agglomerationsverkehr(Base, Vector):
     land = Column('land', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.are.agglomerationsverkehr', Agglomerationsverkehr)
+register(Agglomerationsverkehr.__bodId__, Agglomerationsverkehr)
 
 
 class GueteklasseOev(Base, Vector):
@@ -72,7 +72,7 @@ class GueteklasseOev(Base, Vector):
     klasse_fr = Column('klasse_fr', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.are.gueteklassen_oev', GueteklasseOev)
+register(GueteklasseOev.__bodId__, GueteklasseOev)
 
 
 class Bauzonen(Base, Vector):
@@ -92,7 +92,7 @@ class Bauzonen(Base, Vector):
     ch_bez_d = Column('ch_bez_d', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.are.bauzonen', Bauzonen)
+register(Bauzonen.__bodId__, Bauzonen)
 
 
 class Gemeindetyp(Base, Vector):
@@ -106,7 +106,7 @@ class Gemeindetyp(Base, Vector):
     nom = Column('nom', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.are.gemeindetyp-1990-9klassen', Gemeindetyp)
+register(Gemeindetyp.__bodId__, Gemeindetyp)
 
 
 class Gemeindetypen_2012(Base, Vector):
@@ -126,7 +126,7 @@ class Gemeindetypen_2012(Base, Vector):
     flaeche_ha = Column('flaeche_ha', Float)
     the_geom = Column(Geometry2D)
 
-register('ch.are.gemeindetypen', Gemeindetypen_2012)
+register(Gemeindetypen_2012.__bodId__, Gemeindetypen_2012)
 
 
 class WindenergieBundesinteressen(Base, Vector):
@@ -176,7 +176,7 @@ class ZweitwohnungsAnteil(Base, Vector):
     zwg_3120 = Column('zwg_3120', Float)
     the_geom = Column(Geometry2D)
 
-register('ch.are.wohnungsinventar-zweitwohnungsanteil', ZweitwohnungsAnteil)
+register(ZweitwohnungsAnteil.__bodId__, ZweitwohnungsAnteil)
 
 
 class ReisezeitAgglomerationen:
@@ -206,7 +206,7 @@ class ReisezeitAgglomerationenOev(Base, ReisezeitAgglomerationen, Vector):
     oev_reisezeit_agglo = Column('oev_reisezeit_agglo', Integer)
     oev_no_agglo = Column('oev_no_agglo', Integer)
 
-register('ch.are.reisezeit-agglomerationen-oev', ReisezeitAgglomerationenOev)
+register(ReisezeitAgglomerationenOev.__bodId__, ReisezeitAgglomerationenOev)
 
 
 class ReisezeitAgglomerationenMiv(Base, ReisezeitAgglomerationen, Vector):
@@ -216,7 +216,7 @@ class ReisezeitAgglomerationenMiv(Base, ReisezeitAgglomerationen, Vector):
     strasse_reisezeit_agglo = Column('strasse_reisezeit_agglo', Integer)
     strasse_no_agglo = Column('strasse_no_agglo', Integer)
 
-register('ch.are.reisezeit-agglomerationen-miv', ReisezeitAgglomerationenMiv)
+register(ReisezeitAgglomerationenMiv.__bodId__, ReisezeitAgglomerationenMiv)
 
 
 class ReisezeitOev(Base, Reisezeit, Vector):
@@ -226,7 +226,7 @@ class ReisezeitOev(Base, Reisezeit, Vector):
     oev_reisezeit_z = Column('oev_reisezeit_z', Integer)
     oev_no_z = Column('oev_no_z', Integer)
 
-register('ch.are.reisezeit-oev', ReisezeitOev)
+register(ReisezeitOev.__bodId__, ReisezeitOev)
 
 
 class ReisezeitMiv(Base, Reisezeit, Vector):
@@ -236,7 +236,7 @@ class ReisezeitMiv(Base, Reisezeit, Vector):
     strasse_reisezeit_z = Column('strasse_reisezeit_z', Integer)
     strasse_no_z = Column('strasse_no_z', Integer)
 
-register('ch.are.reisezeit-miv', ReisezeitMiv)
+register(ReisezeitMiv.__bodId__, ReisezeitMiv)
 
 
 class ErreichbarkeitOev(Base, Erreichbarkeit, Vector):
@@ -244,7 +244,7 @@ class ErreichbarkeitOev(Base, Erreichbarkeit, Vector):
     __template__ = 'templates/htmlpopup/erreichbarkeit_oev.mako'
     oev_erreichb_ewap = Column('oev_erreichb_ewap', Integer)
 
-register('ch.are.erreichbarkeit-oev', ErreichbarkeitOev)
+register(ErreichbarkeitOev.__bodId__, ErreichbarkeitOev)
 
 
 class ErreichbarkeitMiv(Base, Erreichbarkeit, Vector):
@@ -252,7 +252,7 @@ class ErreichbarkeitMiv(Base, Erreichbarkeit, Vector):
     __template__ = 'templates/htmlpopup/erreichbarkeit_miv.mako'
     strasse_erreichb_ewap = Column('strasse_erreichb_ewap', Integer)
 
-register('ch.are.erreichbarkeit-miv', ErreichbarkeitMiv)
+register(ErreichbarkeitMiv.__bodId__, ErreichbarkeitMiv)
 
 
 class GeneralPersonenverkehrStrasse:
@@ -288,12 +288,14 @@ class GeneralPersonenverkehrStrasse:
 class BelastungPersonenverkehrStrasse(Base, GeneralPersonenverkehrStrasse, Vector):
     __tablename__ = 'belastung_personenverkehr'
     __bodId__ = 'ch.are.belastung-personenverkehr-strasse'
+
 register(BelastungPersonenverkehrStrasse.__bodId__, BelastungPersonenverkehrStrasse)
 
 
 class BelastungPersonenverkehrStrasseZukunft(Base, GeneralPersonenverkehrStrasse, Vector):
     __tablename__ = 'belastung_personenverkehr_zukunft'
     __bodId__ = 'ch.are.belastung-personenverkehr-strasse_zukunft'
+
 register(BelastungPersonenverkehrStrasseZukunft.__bodId__, BelastungPersonenverkehrStrasseZukunft)
 
 
@@ -313,10 +315,67 @@ class GeneralBelastungPersonenverkehrBahn:
 class BelastungPersonenverkehrBahn(Base, GeneralBelastungPersonenverkehrBahn, Vector):
     __tablename__ = 'belastung_personenverkehr'
     __bodId__ = 'ch.are.belastung-personenverkehr-bahn'
+
 register(BelastungPersonenverkehrBahn.__bodId__, BelastungPersonenverkehrBahn)
 
 
 class BelastungPersonenverkehrBahnZukunft(Base, GeneralBelastungPersonenverkehrBahn, Vector):
     __tablename__ = 'belastung_personenverkehr_zukunft'
     __bodId__ = 'ch.are.belastung-personenverkehr-bahn_zukunft'
+
 register(BelastungPersonenverkehrBahnZukunft.__bodId__, BelastungPersonenverkehrBahnZukunft)
+
+
+class SolaranlagenPruefenswerteGebieteVektor(Base, Vector):
+    __tablename__ = 'pruefenswerte_gebiete'
+    __table_args__ = ({'schema': 'solaranlagen', 'autoload': False})
+    __template__ = 'templates/htmlpopup/are_solaranlagen_pruefenswerte_gebiete.mako'
+    __bodId__ = 'ch.are.solaranlagen-pruefenswerte_gebiete_vektor'
+    __label__ = 'id'
+    __extended_info__ = True
+    id = Column('bgdi_id', Integer, primary_key=True)
+    ptid = Column('ptid', Unicode)
+    pruefwert = Column('pruefwert', Integer)
+    sn_01 = Column('sn_01', Integer)
+    sn_01_de = Column('sn_01_de', Unicode)
+    sn_01_fr = Column('sn_01_fr', Unicode)
+    schutz_01 = Column('schutz_01', Integer)
+    schutz_01_de = Column('schutz_01_de', Unicode)
+    schutz_01_fr = Column('schutz_01_fr', Unicode)
+    nutz_01 = Column('nutz_01', Integer)
+    nutz_01_de = Column('nutz_01_de', Unicode)
+    nutz_01_fr = Column('nutz_01_fr', Unicode)
+    nutz_02 = Column('nutz_02', Float)
+    nutz_03 = Column('nutz_03', Float)
+    nutz_04 = Column('nutz_04', Float)
+    nutz_05 = Column('nutz_05', Integer)
+    nutz_05_de = Column('nutz_05_de', Unicode)
+    nutz_05_fr = Column('nutz_05_fr', Unicode)
+    nutz_06 = Column('nutz_06', Integer)
+    nutz_07 = Column('nutz_07', Integer)
+    nutz_08 = Column('nutz_08', Integer)
+    nutz_08_de = Column('nutz_08_de', Unicode)
+    nutz_08_fr = Column('nutz_08_fr', Unicode)
+    nutz_09 = Column('nutz_09', Integer)
+    nutz_10 = Column('nutz_10', Integer)
+    prot_10 = Column('prot_10', Unicode)
+    prot_10_de = Column('prot_10_de', Unicode)
+    prot_10_fr = Column('prot_10_fr', Unicode)
+    prot_20 = Column('prot_20', Unicode)
+    prot_20_de = Column('prot_20_de', Unicode)
+    prot_20_fr = Column('prot_20_fr', Unicode)
+    prot_30 = Column('prot_30', Unicode)
+    prot_30_de = Column('prot_30_de', Unicode)
+    prot_30_fr = Column('prot_30_fr', Unicode)
+    prot_40 = Column('prot_40', Unicode)
+    prot_40_de = Column('prot_40_de', Unicode)
+    prot_40_fr = Column('prot_40_fr', Unicode)
+    prot_60 = Column('prot_60', Unicode)
+    prot_60_de = Column('prot_60_de', Unicode)
+    prot_60_fr = Column('prot_60_fr', Unicode)
+    prot_70 = Column('prot_70', Unicode)
+    prot_70_de = Column('prot_70_de', Unicode)
+    prot_70_fr = Column('prot_70_fr', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(SolaranlagenPruefenswerteGebieteVektor.__bodId__, SolaranlagenPruefenswerteGebieteVektor)
