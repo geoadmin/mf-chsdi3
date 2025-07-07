@@ -2408,16 +2408,16 @@ class GeolGeocoverMetadata(Base, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/geocover_metadata.mako'
     __bodId__ = 'ch.swisstopo.geologie-geocover.metadata'
-    __label__ = 'msh_map_ti'
+    __label__ = 'map_title'
     id = Column('bgdi_id', Integer, primary_key=True)
-    msh_map_nb = Column('msh_map_nb', Integer)
-    msh_map_ti = Column('msh_map_ti', Unicode)
-    msh_scale = Column('msh_scale', Unicode)
-    msh_edit = Column('msh_edit', Integer)
-    msh_versio = Column('msh_versio', Unicode)
-    msh_basis = Column('msh_basis', Unicode)
-    msh_author = Column('msh_author', Unicode)
-    msh_rev = Column('msh_rev', Unicode)
+    map_nbr = Column('map_nbr', Integer)
+    map_title = Column('map_title', Unicode)
+    scale = Column('scale', Unicode)
+    version_de = Column('version_de', Unicode)
+    version_fr = Column('version_fr', Unicode)
+    version_it = Column('version_it', Unicode)
+    version_en = Column('version_en', Unicode)
+    basis = Column('basis', Unicode)
     the_geom = Column(Geometry2D)
 
 register('ch.swisstopo.geologie-geocover.metadata', GeolGeocoverMetadata)
