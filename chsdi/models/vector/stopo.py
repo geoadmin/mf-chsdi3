@@ -2391,16 +2391,15 @@ class GeocoverPolygonMain(Base, Geocover, Vector):
     orig_description_de = Column('orig_description_de', Unicode)
     orig_description_fr = Column('orig_description_fr', Unicode)
 
-
-register('ch.swisstopo.geologie-geocover', GeocoverLineAux)
-register('ch.swisstopo.geologie-geocover', GeocoverPointHydro)
-register('ch.swisstopo.geologie-geocover', GeocoverPointGeol)
-register('ch.swisstopo.geologie-geocover', GeocoverPointDrill)
-register('ch.swisstopo.geologie-geocover', GeocoverPointInfo)
-register('ch.swisstopo.geologie-geocover', GeocoverPointStruct)
-register('ch.swisstopo.geologie-geocover', GeocoverPolygonAux1)
-register('ch.swisstopo.geologie-geocover', GeocoverPolygonAux2)
-register('ch.swisstopo.geologie-geocover', GeocoverPolygonMain)
+register(Geocover.__bodId__, GeocoverLineAux)
+register(Geocover.__bodId__, GeocoverPointHydro)
+register(Geocover.__bodId__, GeocoverPointGeol)
+register(Geocover.__bodId__, GeocoverPointDrill)
+register(Geocover.__bodId__, GeocoverPointInfo)
+register(Geocover.__bodId__, GeocoverPointStruct)
+register(Geocover.__bodId__, GeocoverPolygonAux1)
+register(Geocover.__bodId__, GeocoverPolygonAux2)
+register(Geocover.__bodId__, GeocoverPolygonMain)
 
 
 class GeolGeocoverMetadata(Base, Vector):
@@ -2420,7 +2419,7 @@ class GeolGeocoverMetadata(Base, Vector):
     basis = Column('basis', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geocover.metadata', GeolGeocoverMetadata)
+register(GeolGeocoverMetadata.__bodId__, GeolGeocoverMetadata)
 
 
 class GeologischerAtlas:
