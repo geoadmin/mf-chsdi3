@@ -2,7 +2,7 @@
 
 <%def name="table_body(c,lang)">
     <%
-        lang = land if lang in ('de', 'fr', 'it', 'en') else 'de'
+        lang = lang if lang in ('de', 'fr', 'it', 'en') else 'de'
         version_text = 'version_%s' % lang
     %>
     <tr>
