@@ -57,7 +57,7 @@
         prot_70_text = text_separation(prot_70_text)
     %>
 
-    <table>
+    <table class="table-with-border">
         <tr>
             <th class="cell-meta">${_(layer + '.sn_01')}</th>
             <td>${c['attributes'][sn_01_text] or '-'}</td>
