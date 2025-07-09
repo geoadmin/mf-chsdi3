@@ -59,75 +59,75 @@
 
     <table>
         <tr>
-            <td class="cell-left">${_(layer + '.sn_01')}</td>
+            <th class="cell-meta">${_(layer + '.sn_01')}</th>
             <td>${c['attributes'][sn_01_text] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.nutz_01')}</td>
+            <th class="cell-meta">${_(layer + '.nutz_01')}</th>
             <td>${c['attributes'][nutz_01_text] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.schutz_01')}</td>
+            <th class="cell-meta">${_(layer + '.schutz_01')}</th>
             <td>${c['attributes'][schutz_01_text] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.pruefwert')}</td>
+            <th class="cell-meta">${_(layer + '.pruefwert')}</th>
             <td>${c['attributes']['pruefwert'] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.nutz_02')}</td>
+            <th class="cell-meta">${_(layer + '.nutz_02')}</th>
             <td>${c['attributes']['nutz_02'] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.nutz_03')}</td>
+            <th class="cell-meta">${_(layer + '.nutz_03')}</th>
             <td>${c['attributes']['nutz_03'] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.nutz_04')}</td>
+            <th class="cell-meta">${_(layer + '.nutz_04')}</th>
             <td>${c['attributes']['nutz_04'] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.nutz_05')}</td>
+            <th class="cell-meta">${_(layer + '.nutz_05')}</th>
             <td>${c['attributes'][nutz_05_text] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.nutz_06')}</td>
+            <th class="cell-meta">${_(layer + '.nutz_06')}</th>
             <td>${c['attributes']['nutz_06'] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.nutz_07')}</td>
+            <th class="cell-meta">${_(layer + '.nutz_07')}</th>
             <td>${c['attributes']['nutz_07'] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.nutz_08')}</td>
+            <th class="cell-meta">${_(layer + '.nutz_08')}</th>
             <td>${c['attributes'][nutz_08_text] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.nutz_09')}</td>
+            <th class="cell-meta">${_(layer + '.nutz_09')}</th>
             <td>${c['attributes']['nutz_09'] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.nutz_10')}</td>
+            <th class="cell-meta">${_(layer + '.nutz_10')}</th>
             <td>${c['attributes']['nutz_10'] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.prot_70')}</td>
+            <th class="cell-meta">${_(layer + '.prot_70')}</th>
             <td>${c['attributes'][prot_70_text] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.prot_60')}</td>
+            <th class="cell-meta">${_(layer + '.prot_60')}</th>
             <td>${c['attributes'][prot_60_text] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.prot_40')}</td>
+            <th class="cell-meta">${_(layer + '.prot_40')}</th>
             <td>${c['attributes'][prot_40_text] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.prot_30')}</td>
+            <th class="cell-meta">${_(layer + '.prot_30')}</th>
             <td>${c['attributes'][prot_30_text] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.prot_20')}</td>
+            <th class="cell-meta">${_(layer + '.prot_20')}</th>
             <td>${c['attributes'][prot_20_text] or '-'}</td>
         </tr>
     </table>
