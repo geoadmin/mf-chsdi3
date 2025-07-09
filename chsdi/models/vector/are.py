@@ -288,12 +288,14 @@ class GeneralPersonenverkehrStrasse:
 class BelastungPersonenverkehrStrasse(Base, GeneralPersonenverkehrStrasse, Vector):
     __tablename__ = 'belastung_personenverkehr'
     __bodId__ = 'ch.are.belastung-personenverkehr-strasse'
+
 register(BelastungPersonenverkehrStrasse.__bodId__, BelastungPersonenverkehrStrasse)
 
 
 class BelastungPersonenverkehrStrasseZukunft(Base, GeneralPersonenverkehrStrasse, Vector):
     __tablename__ = 'belastung_personenverkehr_zukunft'
     __bodId__ = 'ch.are.belastung-personenverkehr-strasse_zukunft'
+
 register(BelastungPersonenverkehrStrasseZukunft.__bodId__, BelastungPersonenverkehrStrasseZukunft)
 
 
@@ -313,10 +315,64 @@ class GeneralBelastungPersonenverkehrBahn:
 class BelastungPersonenverkehrBahn(Base, GeneralBelastungPersonenverkehrBahn, Vector):
     __tablename__ = 'belastung_personenverkehr'
     __bodId__ = 'ch.are.belastung-personenverkehr-bahn'
+
 register(BelastungPersonenverkehrBahn.__bodId__, BelastungPersonenverkehrBahn)
 
 
 class BelastungPersonenverkehrBahnZukunft(Base, GeneralBelastungPersonenverkehrBahn, Vector):
     __tablename__ = 'belastung_personenverkehr_zukunft'
     __bodId__ = 'ch.are.belastung-personenverkehr-bahn_zukunft'
+
 register(BelastungPersonenverkehrBahnZukunft.__bodId__, BelastungPersonenverkehrBahnZukunft)
+
+
+class SolaranlagenPruefenswerteGebieteVektor(Base, Vector):
+    __tablename__ = 'pruefenswerte_gebiete'
+    __table_args__ = ({'schema': 'solaranlagen', 'autoload': False})
+    __template__ = 'templates/htmlpopup/are_solaranlagen_pruefenswerte_gebiete.mako'
+    __bodId__ = 'ch.are.solaranlagen-pruefenswerte_gebiete_vektor'
+    __label__ = 'id'
+    __extended_info__ = True
+    id = Column('bgdi_id', Integer, primary_key=True)
+    ptid = Column('ptid', Unicode)
+    pruefwert = Column('pruefwert', Integer)
+    sn_01 = Column('sn_01', Integer)
+    sn_01_de = Column('sn_01_de', Unicode)
+    sn_01_fr = Column('sn_01_fr', Unicode)
+    schutz_01 = Column('schutz_01', Integer)
+    schutz_01_de = Column('schutz_01_de', Unicode)
+    schutz_01_fr = Column('schutz_01_fr', Unicode)
+    nutz_01 = Column('nutz_01', Integer)
+    nutz_01_de = Column('nutz_01_de', Unicode)
+    nutz_01_fr = Column('nutz_01_fr', Unicode)
+    nutz_02 = Column('nutz_02', Float)
+    nutz_03 = Column('nutz_03', Float)
+    nutz_04 = Column('nutz_04', Float)
+    nutz_05 = Column('nutz_05', Integer)
+    nutz_05_de = Column('nutz_05_de', Unicode)
+    nutz_05_fr = Column('nutz_05_fr', Unicode)
+    nutz_06 = Column('nutz_06', Integer)
+    nutz_07 = Column('nutz_07', Integer)
+    nutz_08 = Column('nutz_08', Integer)
+    nutz_08_de = Column('nutz_08_de', Unicode)
+    nutz_08_fr = Column('nutz_08_fr', Unicode)
+    nutz_09 = Column('nutz_09', Integer)
+    nutz_10 = Column('nutz_10', Integer)
+    prot_20 = Column('prot_20', Unicode)
+    prot_20_de = Column('prot_20_de', Unicode)
+    prot_20_fr = Column('prot_20_fr', Unicode)
+    prot_30 = Column('prot_30', Unicode)
+    prot_30_de = Column('prot_30_de', Unicode)
+    prot_30_fr = Column('prot_30_fr', Unicode)
+    prot_40 = Column('prot_40', Unicode)
+    prot_40_de = Column('prot_40_de', Unicode)
+    prot_40_fr = Column('prot_40_fr', Unicode)
+    prot_60 = Column('prot_60', Unicode)
+    prot_60_de = Column('prot_60_de', Unicode)
+    prot_60_fr = Column('prot_60_fr', Unicode)
+    prot_70 = Column('prot_70', Unicode)
+    prot_70_de = Column('prot_70_de', Unicode)
+    prot_70_fr = Column('prot_70_fr', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(SolaranlagenPruefenswerteGebieteVektor.__bodId__, SolaranlagenPruefenswerteGebieteVektor)
