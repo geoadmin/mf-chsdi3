@@ -57,77 +57,77 @@
         prot_70_text = text_separation(prot_70_text)
     %>
 
-    <table>
+    <table class="table-with-border">
         <tr>
-            <td class="cell-left">${_(layer + '.sn_01')}</td>
+            <td class="cell-meta">${_(layer + '.sn_01')}</td>
             <td>${c['attributes'][sn_01_text] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.nutz_01')}</td>
+            <td class="cell-meta">${_(layer + '.nutz_01')}</td>
             <td>${c['attributes'][nutz_01_text] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.schutz_01')}</td>
+            <td class="cell-meta">${_(layer + '.schutz_01')}</td>
             <td>${c['attributes'][schutz_01_text] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.pruefwert')}</td>
+            <td class="cell-meta">${_(layer + '.pruefwert')}</td>
             <td>${c['attributes']['pruefwert'] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.nutz_02')}</td>
+            <td class="cell-meta">${_(layer + '.nutz_02')}</td>
             <td>${c['attributes']['nutz_02'] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.nutz_03')}</td>
+            <td class="cell-meta">${_(layer + '.nutz_03')}</td>
             <td>${c['attributes']['nutz_03'] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.nutz_04')}</td>
+            <td class="cell-meta">${_(layer + '.nutz_04')}</td>
             <td>${c['attributes']['nutz_04'] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.nutz_05')}</td>
+            <td class="cell-meta">${_(layer + '.nutz_05')}</td>
             <td>${c['attributes'][nutz_05_text] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.nutz_06')}</td>
+            <td class="cell-meta">${_(layer + '.nutz_06')}</td>
             <td>${c['attributes']['nutz_06'] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.nutz_07')}</td>
+            <td class="cell-meta">${_(layer + '.nutz_07')}</td>
             <td>${c['attributes']['nutz_07'] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.nutz_08')}</td>
+            <td class="cell-meta">${_(layer + '.nutz_08')}</td>
             <td>${c['attributes'][nutz_08_text] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.nutz_09')}</td>
+            <td class="cell-meta">${_(layer + '.nutz_09')}</td>
             <td>${c['attributes']['nutz_09'] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.nutz_10')}</td>
+            <td class="cell-meta">${_(layer + '.nutz_10')}</td>
             <td>${c['attributes']['nutz_10'] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.prot_70')}</td>
+            <td class="cell-meta">${_(layer + '.prot_70')}</td>
             <td>${c['attributes'][prot_70_text] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.prot_60')}</td>
+            <td class="cell-meta">${_(layer + '.prot_60')}</td>
             <td>${c['attributes'][prot_60_text] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.prot_40')}</td>
+            <td class="cell-meta">${_(layer + '.prot_40')}</td>
             <td>${c['attributes'][prot_40_text] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.prot_30')}</td>
+            <td class="cell-meta">${_(layer + '.prot_30')}</td>
             <td>${c['attributes'][prot_30_text] or '-'}</td>
         </tr>
         <tr>
-            <td class="cell-left">${_(layer + '.prot_20')}</td>
+            <td class="cell-meta">${_(layer + '.prot_20')}</td>
             <td>${c['attributes'][prot_20_text] or '-'}</td>
         </tr>
     </table>
