@@ -40,7 +40,7 @@
               % if c['attributes']['purl'] is None or c['attributes']['purl'] == '-':
                      <td>-</td>
               % else:
-                     <td><a target="_blank" href=${c['attributes']['purl']}>${_('link')}</a></td>
+                     <td><a target="_blank" href="${c['attributes']['purl']}">${_('link')}</a></td>
               % endif
        </tr>
        <tr>
@@ -48,7 +48,7 @@
               % if c['attributes']['swissgeol_link'] is None or c['attributes']['swissgeol_link'] == '-':
                      <td>-</td>
               % else:
-                     <td><a target="_blank" href=${c['attributes']['swissgeol_link']}>${_('link')}</a></td>
+                     <td><a target="_blank" href="${c['attributes']['swissgeol_link']}">${_('link')}</a></td>
               % endif
        </tr>
 </%def>
