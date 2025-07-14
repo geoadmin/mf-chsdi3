@@ -11,6 +11,8 @@
 <%def name="extended_info(c, lang)">
     <%
         def text_separation(arr_titles):
+            if arr_titles is None:
+                return '-'
             arr_test = arr_titles.split('\n')
             arr_len = len(arr_test)
             str_output = ''
