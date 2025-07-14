@@ -1418,22 +1418,35 @@ register('ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung', GeologieRohs
 
 
 class GeologieRohstoffeIndustrieminerale(Base, Vector):
-    __tablename__ = 'rohstoffe_industriemin'
+    __tablename__ = 'rohstoffe_industrieminerale'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/rohstoffe_industrieminerale.mako'
     __bodId__ = 'ch.swisstopo.geologie-rohstoffe-industrieminerale'
     __label__ = 'obname'
     id = Column('obid', Integer, primary_key=True)
     obname = Column('obname', Unicode)
-    obnamealt = Column('obnamealt', Unicode)
-    imkinds = Column('imkinds', Unicode)
-    edrskinds = Column('edrskinds', Unicode)
-    emkinds = Column('emkinds', Unicode)
-    stkind = Column('stkind', Unicode)
+    rskind_de = Column('rskind_de', Unicode)
+    rskind_fr = Column('rskind_fr', Unicode)
+    rskind_it = Column('rskind_it', Unicode)
+    rskind_en = Column('rskind_en', Unicode)
+    is_crm_eu_de = Column('is_crm_eu_de', Unicode)
+    is_crm_eu_fr = Column('is_crm_eu_fr', Unicode)
+    is_crm_eu_it = Column('is_crm_eu_it', Unicode)
+    is_crm_eu_en = Column('is_crm_eu_en', Unicode)
+    crm_etransition_de = Column('crm_etransition_de', Unicode)
+    crm_etransition_fr = Column('crm_etransition_fr', Unicode)
+    crm_etransition_it = Column('crm_etransition_it', Unicode)
+    crm_etransition_en = Column('crm_etransition_en', Unicode)
+    crm_factsheet_link = Column('crm_factsheet_link', Unicode)
+    mat_min_link_de = Column('mat_min_link_de', Unicode)
+    mat_min_link_fr = Column('mat_min_link_fr', Unicode)
+    mat_min_link_it = Column('mat_min_link_it', Unicode)
+    mat_min_link_en = Column('mat_min_link_en', Unicode)
     purl = Column('purl', Unicode)
+    swissgeol_link = Column('swissgeol_link', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-rohstoffe-industrieminerale', GeologieRohstoffeIndustrieminerale)
+register(GeologieRohstoffeIndustrieminerale.__bodId__, GeologieRohstoffeIndustrieminerale)
 
 
 class GeologieRohstoffeKohlenBitumenErdgas(Base, Vector):
