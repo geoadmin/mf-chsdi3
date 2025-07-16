@@ -60,6 +60,9 @@
     %>
 
     <table class="table-with-border">
+         <tr>
+            <th colspan="2">${_(layer + '.solaranlagen_subtitle_1')}</th>
+        </tr>
         <tr>
             <td class="cell-meta">${_(layer + '.sn_01')}</td>
             <td>${c['attributes'][sn_01_text] or '-'}</td>
@@ -116,8 +119,8 @@
             <td class="cell-meta">${_(layer + '.nutz_10')}</td>
             <td>${c['attributes']['nutz_10'] or '-'}</td>
         </tr>
-        <tr>
-            <td colspan="2" style="height: 10px;"></td>
+         <tr>
+            <th colspan="2">${_(layer + '.solaranlagen_subtitle_2')}</th>
         </tr>
         <tr>
             <td class="cell-meta">${_(layer + '.prot_70')}</td>
