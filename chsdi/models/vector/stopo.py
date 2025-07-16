@@ -3338,6 +3338,7 @@ register(HoheitsgrenzeLandesvermessung.__bodId__, HoheitsgrenzeLandesvermessung)
 class GeologieGeomolHoeheTopOmmData:
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __bodId__ = 'ch.swisstopo.geologie-geomol_hoehe_top_omm_data'
+    id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
 
@@ -3353,21 +3354,21 @@ class GeologieGeomolHoeheTopOmmDataWells(Base, GeologieGeomolHoeheTopOmmData, Ve
 register(GeologieGeomolHoeheTopOmmData.__bodId__, GeologieGeomolHoeheTopOmmDataWells)
 
 
-class GeologieGeomolHoeheTopOmmDataSeismic(Base, GeologieGeomolHoeheTopOmmData, Vector):
-    __tablename__ = 'view_geomol_hoehe_top_omm_data_seismic'
-    __template__ = 'templates/htmlpopup/geomol_hoehe_top_omm_data_seismic.mako'
+class GeologieGeomolHoeheTopOmmDataSeismicAll(Base, GeologieGeomolHoeheTopOmmData, Vector):
+    __tablename__ = 'geomol_hoehe_top_omm_data_seismic_all'
+    __template__ = 'templates/htmlpopup/geomol_hoehe_top_omm_data_seismic_all.mako'
     __label__ = 'line_name'
     line_name = Column('line_name', Unicode)
     link_viewer = Column('link_viewer', Unicode)
 
-register(GeologieGeomolHoeheTopOmmData.__bodId__, GeologieGeomolHoeheTopOmmDataSeismic)
+register(GeologieGeomolHoeheTopOmmData.__bodId__, GeologieGeomolHoeheTopOmmDataSeismicAll)
 
 
-class GeologieGeomolHoeheTopOmmDataProfile(Base, GeologieGeomolHoeheTopOmmData, Vector):
-    __tablename__ = 'view_geomol_hoehe_top_omm_data_profile'
-    __template__ = 'templates/htmlpopup/geomol_hoehe_top_omm_data_profile.mako'
+class GeologieGeomolHoeheTopOmmDataProfileAll(Base, GeologieGeomolHoeheTopOmmData, Vector):
+    __tablename__ = 'geomol_hoehe_top_omm_data_profile_all'
+    __template__ = 'templates/htmlpopup/geomol_hoehe_top_omm_data_profile_all.mako'
     __label__ = 'profil_name'
     profil_name = Column('profil_name', Unicode)
     link_viewer = Column('link_viewer', Unicode)
 
-register(GeologieGeomolHoeheTopOmmData.__bodId__, GeologieGeomolHoeheTopOmmDataProfile)
+register(GeologieGeomolHoeheTopOmmData.__bodId__, GeologieGeomolHoeheTopOmmDataProfileAll)
