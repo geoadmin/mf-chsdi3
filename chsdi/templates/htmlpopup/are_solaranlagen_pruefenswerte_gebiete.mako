@@ -44,12 +44,14 @@
         schutz_01_text = 'schutz_01_%s' % lang
         nutz_05_text = 'nutz_05_%s' % lang
         nutz_08_text = 'nutz_08_%s' % lang
+        prot_10_text = 'prot_10_%s' % lang
         prot_20_text = 'prot_20_%s' % lang
         prot_30_text = 'prot_30_%s' % lang
         prot_40_text = 'prot_40_%s' % lang
         prot_60_text = 'prot_60_%s' % lang
         prot_70_text = 'prot_70_%s' % lang
 
+        prot_10_text = text_separation(prot_10_text)
         prot_20_text = text_separation(prot_20_text)
         prot_30_text = text_separation(prot_30_text)
         prot_40_text = text_separation(prot_40_text)
@@ -58,6 +60,9 @@
     %>
 
     <table class="table-with-border">
+         <tr>
+            <th colspan="2">${_(layer + '.solaranlagen_subtitle_1')}</th>
+        </tr>
         <tr>
             <td class="cell-meta">${_(layer + '.sn_01')}</td>
             <td>${c['attributes'][sn_01_text] or '-'}</td>
@@ -104,11 +109,18 @@
         </tr>
         <tr>
             <td class="cell-meta">${_(layer + '.nutz_09')}</td>
-            <td>${c['attributes']['nutz_09'] or '-'}</td>
+            % if c['attributes']['nutz_09'] is None:
+                <td>-</td>
+            % else:
+                <td>${int(c['attributes']['nutz_09'])}</td>
+            % endif
         </tr>
         <tr>
             <td class="cell-meta">${_(layer + '.nutz_10')}</td>
             <td>${c['attributes']['nutz_10'] or '-'}</td>
+        </tr>
+         <tr>
+            <th colspan="2">${_(layer + '.solaranlagen_subtitle_2')}</th>
         </tr>
         <tr>
             <td class="cell-meta">${_(layer + '.prot_70')}</td>
@@ -129,6 +141,10 @@
         <tr>
             <td class="cell-meta">${_(layer + '.prot_20')}</td>
             <td>${c['attributes'][prot_20_text] or '-'}</td>
+        </tr>
+        <tr>
+            <td class="cell-meta">${_(layer + '.prot_10')}</td>
+            <td>${c['attributes'][prot_10_text] or '-'}</td>
         </tr>
     </table>
 </%def>
