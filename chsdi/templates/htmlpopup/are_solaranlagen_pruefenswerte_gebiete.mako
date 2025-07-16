@@ -117,6 +117,9 @@
             <td>${c['attributes']['nutz_10'] or '-'}</td>
         </tr>
         <tr>
+            <td colspan="2" style="height: 10px;"></td>
+        </tr>
+        <tr>
             <td class="cell-meta">${_(layer + '.prot_70')}</td>
             <td>${c['attributes'][prot_70_text] or '-'}</td>
         </tr>
