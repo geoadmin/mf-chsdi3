@@ -42,6 +42,7 @@
         sn_01_text = 'sn_01_%s' % lang
         nutz_01_text = 'nutz_01_%s' % lang
         schutz_01_text = 'schutz_01_%s' % lang
+        pruefwert_text = 'pruefwert_%s' % lang
         nutz_05_text = 'nutz_05_%s' % lang
         nutz_08_text = 'nutz_08_%s' % lang
         prot_10_text = 'prot_10_%s' % lang
@@ -77,7 +78,7 @@
         </tr>
         <tr>
             <td class="cell-meta">${_(layer + '.pruefwert')}</td>
-            <td>${c['attributes']['pruefwert'] or '-'}</td>
+            <td>${c['attributes'][pruefwert_text] or '-'}</td>
         </tr>
         <tr>
             <td class="cell-meta">${_(layer + '.nutz_02')}</td>
