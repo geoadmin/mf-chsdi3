@@ -336,6 +336,8 @@ class SolaranlagenPruefenswerteGebieteVektor(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     ptid = Column('ptid', Unicode)
     pruefwert = Column('pruefwert', Integer)
+    pruefwert_de = Column('pruefwert_de', Unicode)
+    pruefwert_fr = Column('pruefwert_fr', Unicode)
     sn_01 = Column('sn_01', Integer)
     sn_01_de = Column('sn_01_de', Unicode)
     sn_01_fr = Column('sn_01_fr', Unicode)
