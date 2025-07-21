@@ -3346,3 +3346,42 @@ class HoheitsgrenzeLandesvermessung(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(HoheitsgrenzeLandesvermessung.__bodId__, HoheitsgrenzeLandesvermessung)
+
+
+class GeologieGeomolHoeheTopOmmData:
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.geologie-geomol_hoehe_top_omm_data'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    the_geom = Column(Geometry2D)
+
+
+class GeologieGeomolHoeheTopOmmDataWells(Base, GeologieGeomolHoeheTopOmmData, Vector):
+    __tablename__ = 'geomol_hoehe_top_omm_data_wells'
+    __template__ = 'templates/htmlpopup/geomol_hoehe_top_omm_data_wells.mako'
+    __label__ = 'well_name'
+    well_name = Column('well_name', Unicode)
+    link_viewer = Column('link_viewer', Unicode)
+    link_assets = Column('link_assets', Unicode)
+    link_boreholes = Column('link_boreholes', Unicode)
+
+register(GeologieGeomolHoeheTopOmmData.__bodId__, GeologieGeomolHoeheTopOmmDataWells)
+
+
+class GeologieGeomolHoeheTopOmmDataSeismicAll(Base, GeologieGeomolHoeheTopOmmData, Vector):
+    __tablename__ = 'geomol_hoehe_top_omm_data_seismic_all'
+    __template__ = 'templates/htmlpopup/geomol_hoehe_top_omm_data_seismic_all.mako'
+    __label__ = 'line_name'
+    line_name = Column('line_name', Unicode)
+    link_viewer = Column('link_viewer', Unicode)
+
+register(GeologieGeomolHoeheTopOmmData.__bodId__, GeologieGeomolHoeheTopOmmDataSeismicAll)
+
+
+class GeologieGeomolHoeheTopOmmDataProfileAll(Base, GeologieGeomolHoeheTopOmmData, Vector):
+    __tablename__ = 'geomol_hoehe_top_omm_data_profile_all'
+    __template__ = 'templates/htmlpopup/geomol_hoehe_top_omm_data_profile_all.mako'
+    __label__ = 'profil_name'
+    profil_name = Column('profil_name', Unicode)
+    link_viewer = Column('link_viewer', Unicode)
+
+register(GeologieGeomolHoeheTopOmmData.__bodId__, GeologieGeomolHoeheTopOmmDataProfileAll)
