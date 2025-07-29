@@ -21,7 +21,7 @@ class Notfallschutz(Base, Vector):
     sektor = Column('sektor', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.ensi.zonenplan-notfallschutz-kernanlagen', Notfallschutz)
+register(Notfallschutz.__bodId__, Notfallschutz)
 
 
 class PronaturaNaturschutzgebiete(Base, Vector):
@@ -35,7 +35,7 @@ class PronaturaNaturschutzgebiete(Base, Vector):
     name = Column('name', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.pronatura.naturschutzgebiete', PronaturaNaturschutzgebiete)
+register(PronaturaNaturschutzgebiete.__bodId__, PronaturaNaturschutzgebiete)
 
 
 class AeromagnetischeKarte1500(Base, Vector):
@@ -48,7 +48,7 @@ class AeromagnetischeKarte1500(Base, Vector):
     et_fromatt_1500 = Column('et_fromatt_1500', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.nagra.aeromagnetische-karte_1500', AeromagnetischeKarte1500)
+register(AeromagnetischeKarte1500.__bodId__, AeromagnetischeKarte1500)
 
 
 class AeromagnetischeKarte1100(Base, Vector):
@@ -61,7 +61,7 @@ class AeromagnetischeKarte1100(Base, Vector):
     et_fromatt_1100 = Column('et_fromatt_1100', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.nagra.aeromagnetische-karte_1100', AeromagnetischeKarte1100)
+register(AeromagnetischeKarte1100.__bodId__, AeromagnetischeKarte1100)
 
 
 class AsylFacilities:
@@ -98,14 +98,14 @@ class AsylFacilitiesAnhoerung(Base, AsylFacilities, Vector):
     __tablename__ = 'sachplan_asyl_facilities_anhorung'
     __bodId__ = 'ch.sem.sachplan-asyl_anhoerung'
 
+register(AsylFacilitiesAnhoerung.__bodId__, AsylFacilitiesAnhoerung)
+
 
 class AsylFacilitiesKraft(Base, AsylFacilities, Vector):
     __tablename__ = 'sachplan_asyl_facilities_kraft'
     __bodId__ = 'ch.sem.sachplan-asyl_kraft'
 
-
-register('ch.sem.sachplan-asyl_anhoerung', AsylFacilitiesAnhoerung)
-register('ch.sem.sachplan-asyl_kraft', AsylFacilitiesKraft)
+register(AsylFacilitiesKraft.__bodId__, AsylFacilitiesKraft)
 
 
 class AsylPlanning:
@@ -146,14 +146,14 @@ class AsylPlanningAnhoerung(Base, AsylPlanning, Vector):
     __tablename__ = 'sachplan_asyl_plmeasures_anhorung'
     __bodId__ = 'ch.sem.sachplan-asyl_anhoerung'
 
+register(AsylPlanningAnhoerung.__bodId__, AsylPlanningAnhoerung)
+
 
 class AsylPlanningKraft(Base, AsylPlanning, Vector):
     __tablename__ = 'sachplan_asyl_plmeasures_kraft'
     __bodId__ = 'ch.sem.sachplan-asyl_kraft'
 
-
-register('ch.sem.sachplan-asyl_anhoerung', AsylPlanningAnhoerung)
-register('ch.sem.sachplan-asyl_kraft', AsylPlanningKraft)
+register(AsylPlanningKraft.__bodId__, AsylPlanningKraft)
 
 
 class ArmasuisseNaturLandschaftArmee(Base, Vector):
@@ -186,7 +186,7 @@ class ArmasuisseNaturLandschaftArmee(Base, Vector):
     geom_type = Column('geom_type', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.armasuisse.natur-landschaft_armee', ArmasuisseNaturLandschaftArmee)
+register(ArmasuisseNaturLandschaftArmee.__bodId__, ArmasuisseNaturLandschaftArmee)
 
 
 class AgroscopeAmphibienParzelle(Base, Vector):
@@ -203,4 +203,4 @@ class AgroscopeAmphibienParzelle(Base, Vector):
     bedeutung_parzelle = Column('bedeutung_parzelle', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.agroscope.amphibien-bedeutung_parzellen', AgroscopeAmphibienParzelle)
+register(AgroscopeAmphibienParzelle.__bodId__, AgroscopeAmphibienParzelle)
