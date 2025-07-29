@@ -104,7 +104,7 @@ class Gebaeuderegister(Base, Vector):
     wazim = Column('wazim', SmallInteger)
     wkche = Column('wkche', SmallInteger)
 
-register('ch.bfs.gebaeude_wohnungs_register', Gebaeuderegister)
+register(Gebaeuderegister.__bodId__, Gebaeuderegister)
 
 
 class Arealstatistik(Base, Vector):
@@ -129,7 +129,7 @@ class Arealstatistik(Base, Vector):
     desc_as_72_en = Column('desc_as_72_en', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bfs.arealstatistik', Arealstatistik)
+register(Arealstatistik.__bodId__, Arealstatistik)
 
 
 class ArealstatistikBodenbedeckung(Base, Vector):
@@ -154,7 +154,7 @@ class ArealstatistikBodenbedeckung(Base, Vector):
     desc_lc09r_27_en = Column('desc_lc09r_27_en', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bfs.arealstatistik-bodenbedeckung', ArealstatistikBodenbedeckung)
+register(ArealstatistikBodenbedeckung.__bodId__, ArealstatistikBodenbedeckung)
 
 
 class ArealstatistikBodennutzung(Base, Vector):
@@ -175,7 +175,7 @@ class ArealstatistikBodennutzung(Base, Vector):
     id_arealstatistik_nolu_09 = Column('id_arealstatistik_nolu_09', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bfs.arealstatistik-bodennutzung', ArealstatistikBodennutzung)
+register(ArealstatistikBodennutzung.__bodId__, ArealstatistikBodennutzung)
 
 
 class ArealstatistikBodennutzung1997(Base, Vector):
@@ -196,7 +196,7 @@ class ArealstatistikBodennutzung1997(Base, Vector):
     id_arealstatistik_nolu_09 = Column('id_arealstatistik_nolu_09', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bfs.arealstatistik-bodennutzung-1997', ArealstatistikBodennutzung1997)
+register(ArealstatistikBodennutzung1997.__bodId__, ArealstatistikBodennutzung1997)
 
 
 class ArealstatistikBodennutzung1985(Base, Vector):
@@ -217,7 +217,7 @@ class ArealstatistikBodennutzung1985(Base, Vector):
     id_arealstatistik_nolu_09 = Column('id_arealstatistik_nolu_09', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bfs.arealstatistik-bodennutzung-1985', ArealstatistikBodennutzung1985)
+register(ArealstatistikBodennutzung1985.__bodId__, ArealstatistikBodennutzung1985)
 
 
 class RadonKarte(Base, Vector):
@@ -231,7 +231,7 @@ class RadonKarte(Base, Vector):
     probability_prozent = Column('probability_prozent', Integer)
     confidence = Column('confidence', Float)
 
-register('ch.bag.radonkarte', RadonKarte)
+register(RadonKarte.__bodId__, RadonKarte)
 
 
 class FsmeFaelle(Base, Vector):
@@ -245,7 +245,7 @@ class FsmeFaelle(Base, Vector):
     gemname = Column('gemname', Integer)
     bfsnr = Column('bfsnr', Integer)
 
-register('ch.bag.zecken-fsme-faelle', FsmeFaelle)
+register(FsmeFaelle.__bodId__, FsmeFaelle)
 
 
 class FsmeImpfung(Base, Vector):
@@ -259,7 +259,7 @@ class FsmeImpfung(Base, Vector):
     bfsnr = Column('bfsnr', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bag.zecken-fsme-impfung', FsmeImpfung)
+register(FsmeImpfung.__bodId__, FsmeImpfung)
 
 
 class RadioaktivitaetAtmosphaere(Base, Vector):
@@ -279,7 +279,7 @@ class RadioaktivitaetAtmosphaere(Base, Vector):
     stationlink = Column('stationlink', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bag.radioaktivitaet-atmosphaere', RadioaktivitaetAtmosphaere)
+register(RadioaktivitaetAtmosphaere.__bodId__, RadioaktivitaetAtmosphaere)
 
 
 class VolkBetriebZaehlung:
@@ -386,7 +386,7 @@ class Landschaftswandel(Base, Vector):
     linkbild = Column('linkbild', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bfs.landschaftswandel', Landschaftswandel)
+register(Landschaftswandel.__bodId__, Landschaftswandel)
 
 
 class MeteoschweizKlimaszenarienRaumklima(Base, Vector):
@@ -418,7 +418,7 @@ class MeteoschweizKlimaszenarienRaumklima(Base, Vector):
     link = Column('link', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.meteoschweiz.klimaszenarien-raumklima', MeteoschweizKlimaszenarienRaumklima)
+register(MeteoschweizKlimaszenarienRaumklima.__bodId__, MeteoschweizKlimaszenarienRaumklima)
 
 
 class GebaeudeWohnungsRegisterWaermequelle(Base, Vector):
@@ -444,7 +444,7 @@ class GebaeudeWohnungsRegisterWaermequelle(Base, Vector):
     genh1_gwaerperh1 = Column('genh1_gwaerperh1', Integer)
     the_geom = Column('the_geom', Geometry2D)
 
-register('ch.bfs.gebaeude_wohnungs_register_waermequelle_heizung', GebaeudeWohnungsRegisterWaermequelle)
+register(GebaeudeWohnungsRegisterWaermequelle.__bodId__, GebaeudeWohnungsRegisterWaermequelle)
 
 
 class StatistischeGrundeinheitenStufe1(Base, Vector):
@@ -463,7 +463,7 @@ class StatistischeGrundeinheitenStufe1(Base, Vector):
     typ_fr = Column('typ_fr', Unicode)
     the_geom = Column('the_geom', Geometry2D)
 
-register('ch.bfs.statistische-grundeinheiten_stufe1', StatistischeGrundeinheitenStufe1)
+register(StatistischeGrundeinheitenStufe1.__bodId__, StatistischeGrundeinheitenStufe1)
 
 
 class StatistischeGrundeinheitenStufe2(Base, Vector):
@@ -477,7 +477,7 @@ class StatistischeGrundeinheitenStufe2(Base, Vector):
     kt_id = Column('kt_id', Integer)
     the_geom = Column('the_geom', Geometry2D)
 
-register('ch.bfs.statistische-grundeinheiten_stufe2', StatistischeGrundeinheitenStufe2)
+register(StatistischeGrundeinheitenStufe2.__bodId__, StatistischeGrundeinheitenStufe2)
 
 
 class Arbeitsmarktregionen(Base, Vector):
