@@ -56,21 +56,21 @@ class LuftbilderSwisstopoFarbe(Base, LuftbilderBaseSwisstopo, Vector):
     __tablename__ = 'luftbilder_swisstopo_color'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder_farbe'
 
-register('ch.swisstopo.lubis-luftbilder_farbe', LuftbilderSwisstopoFarbe)
+register(LuftbilderSwisstopoFarbe.__bodId__, LuftbilderSwisstopoFarbe)
 
 
 class LuftbilderSwisstopoIr(Base, LuftbilderBaseSwisstopo, Vector):
     __tablename__ = 'luftbilder_swisstopo_ir'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder_infrarot'
 
-register('ch.swisstopo.lubis-luftbilder_infrarot', LuftbilderSwisstopoIr)
+register(LuftbilderSwisstopoIr.__bodId__, LuftbilderSwisstopoIr)
 
 
 class LuftbilderSwisstopoSw(Base, LuftbilderBaseSwisstopo, Vector):
     __tablename__ = 'luftbilder_swisstopo_bw'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder_schwarzweiss'
 
-register('ch.swisstopo.lubis-luftbilder_schwarzweiss', LuftbilderSwisstopoSw)
+register(LuftbilderSwisstopoSw.__bodId__, LuftbilderSwisstopoSw)
 
 
 class LuftbilderDritteFirmen(Base, LuftbilderBaseDritte, Vector):
@@ -81,7 +81,7 @@ class LuftbilderDritteFirmen(Base, LuftbilderBaseDritte, Vector):
     contact_web = Column('contact_web', Unicode)
     doi_link = Column('doi_link', Unicode)
 
-register('ch.swisstopo.lubis-luftbilder-dritte-firmen', LuftbilderDritteFirmen)
+register(LuftbilderDritteFirmen.__bodId__, LuftbilderDritteFirmen)
 
 
 class LuftbilderDritteKantone(Base, LuftbilderBaseDritte, Vector):
@@ -92,7 +92,7 @@ class LuftbilderDritteKantone(Base, LuftbilderBaseDritte, Vector):
     contact_web = Column('contact_web', Unicode)
     contact_image_url = Column('url', Unicode)
 
-register('ch.swisstopo.lubis-luftbilder-dritte-kantone', LuftbilderDritteKantone)
+register(LuftbilderDritteKantone.__bodId__, LuftbilderDritteKantone)
 
 
 class Bildstreifen(Base, Vector):
@@ -125,7 +125,7 @@ class Bildstreifen(Base, Vector):
     the_geom_footprint = Column('the_geom_footprint', Geometry2D)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.lubis-bildstreifen', Bildstreifen)
+register(Bildstreifen.__bodId__, Bildstreifen)
 
 
 class LuftbilderSchraegaufnahmen(Base, Vector):
@@ -146,7 +146,7 @@ class LuftbilderSchraegaufnahmen(Base, Vector):
     y = Column('y', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.lubis-luftbilder_schraegaufnahmen', LuftbilderSchraegaufnahmen)
+register(LuftbilderSchraegaufnahmen.__bodId__, LuftbilderSchraegaufnahmen)
 
 
 class LuftbilderTerrA(Base, Vector):
@@ -175,4 +175,4 @@ class LuftbilderTerrA(Base, Vector):
     the_geom_footprint = Column('the_geom_footprint', Geometry2D)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.lubis-terrestrische_aufnahmen', LuftbilderTerrA)
+register(LuftbilderTerrA.__bodId__, LuftbilderTerrA)

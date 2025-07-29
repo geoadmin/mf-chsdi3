@@ -58,10 +58,10 @@ class IsosOrtsbildHinweis(Base, IsosBase, Vector):
     teil_nummer = Column('teil_id', Integer)
     teil_name = Column('teil_name', Unicode)
 
-register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder', IsosOrtsbild)
-register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder', IsosOrtsbildPerimeter)
-register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder', IsosOrtsbildTeil)
-register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder', IsosOrtsbildHinweis)
+register(IsosOrtsbild.__bodId__, IsosOrtsbild)
+register(IsosOrtsbildPerimeter.__bodId__, IsosOrtsbildPerimeter)
+register(IsosOrtsbildTeil.__bodId__, IsosOrtsbildTeil)
+register(IsosOrtsbildHinweis.__bodId__, IsosOrtsbildHinweis)
 
 
 class IsosFotoBase(IsosBase):
@@ -90,10 +90,10 @@ class IsosFotoOBTH(Base, IsosFotoBase, Vector):
     __tablename__ = 'view_isos_foto_obth'
     __maxscale__ = 5000
 
-register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos', IsosFotoOrtsbild)
-register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos', IsosFotoOB)
-register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos', IsosFotoOBT)
-register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos', IsosFotoOBTH)
+register(IsosFotoOrtsbild.__bodId__, IsosFotoOrtsbild)
+register(IsosFotoOB.__bodId__, IsosFotoOB)
+register(IsosFotoOBT.__bodId__, IsosFotoOBT)
+register(IsosFotoOBTH.__bodId__, IsosFotoOBTH)
 
 
 class Unesco(Base, Vector):
@@ -118,7 +118,7 @@ class Unesco(Base, Vector):
     the_geom = Column(Geometry2D)
     the_geom_simplified_tolerance_3 = Column('the_geom_simplified_tolerance_3', Geometry2D)
 
-register('ch.bak.schutzgebiete-unesco_weltkulturerbe', Unesco)
+register(Unesco.__bodId__, Unesco)
 
 
 class HalteplaetzeJenischeSintiRoma(Base, Vector):
@@ -150,4 +150,4 @@ class HalteplaetzeJenischeSintiRoma(Base, Vector):
     y_koordinate = Column('y_koordinate', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.bak.halteplaetze-jenische_sinti_roma', HalteplaetzeJenischeSintiRoma)
+register(HalteplaetzeJenischeSintiRoma.__bodId__, HalteplaetzeJenischeSintiRoma)

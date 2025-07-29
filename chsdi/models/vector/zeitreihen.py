@@ -131,10 +131,9 @@ class SiegfriedErst(Base, Vector):
     bv_nummer = Column('bv_nummer', Unicode)
     the_geom = Column(Geometry2D)
 
-
-register('ch.swisstopo.hiks-siegfried', SiegfriedErst)
-register('ch.swisstopo.hiks-dufour', DufourErst)
-register('ch.swisstopo.zeitreihen', Zeitreihen15)
-register('ch.swisstopo.zeitreihen', Zeitreihen20)
-register('ch.swisstopo.zeitreihen', Zeitreihen21)
-register('ch.swisstopo.zeitreihen', Zeitreihen22)
+register(SiegfriedErst.__bodId__, SiegfriedErst)
+register(DufourErst.__bodId__, DufourErst)
+register(Zeitreihen15.__bodId__, Zeitreihen15)
+register(Zeitreihen20.__bodId__, Zeitreihen20)
+register(Zeitreihen21.__bodId__, Zeitreihen21)
+register(Zeitreihen22.__bodId__, Zeitreihen22)
