@@ -20,4 +20,4 @@ class Agnes(Base, Vector):
     bgdi_id = Column('bgdi_id', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.fixpunkte-agnes', Agnes)
+register(Agnes.__bodId__, Agnes)
