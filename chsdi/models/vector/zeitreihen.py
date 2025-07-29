@@ -33,6 +33,8 @@ class Zeitreihen15(Base, Vector):
     box2d = Column('box2d', Unicode)
     the_geom = Column(Geometry2D)
 
+register(Zeitreihen15.__bodId__, Zeitreihen15)
+
 
 class Zeitreihen20(Base, Vector):
     __tablename__ = 'tooltip_20'
@@ -56,6 +58,8 @@ class Zeitreihen20(Base, Vector):
     array_release_years = Column('array_release_years', postgresql.ARRAY(Integer))
     box2d = Column('box2d', Unicode)
     the_geom = Column(Geometry2D)
+
+register(Zeitreihen20.__bodId__, Zeitreihen20)
 
 
 class Zeitreihen21(Base, Vector):
@@ -81,6 +85,8 @@ class Zeitreihen21(Base, Vector):
     box2d = Column('box2d', Unicode)
     the_geom = Column(Geometry2D)
 
+register(Zeitreihen21.__bodId__, Zeitreihen21)
+
 
 class Zeitreihen22(Base, Vector):
     __tablename__ = 'tooltip_22'
@@ -105,6 +111,8 @@ class Zeitreihen22(Base, Vector):
     box2d = Column('box2d', Unicode)
     the_geom = Column(Geometry2D)
 
+register(Zeitreihen22.__bodId__, Zeitreihen22)
+
 
 class DufourErst(Base, Vector):
     __tablename__ = 'view_dufour_erstausgabe'
@@ -117,6 +125,8 @@ class DufourErst(Base, Vector):
     datenstand = Column('datenstand', Integer)
     bv_nummer = Column('bv_nummer', Unicode)
     the_geom = Column(Geometry2D)
+
+register(DufourErst.__bodId__, DufourErst)
 
 
 class SiegfriedErst(Base, Vector):
@@ -131,10 +141,4 @@ class SiegfriedErst(Base, Vector):
     bv_nummer = Column('bv_nummer', Unicode)
     the_geom = Column(Geometry2D)
 
-
-register('ch.swisstopo.hiks-siegfried', SiegfriedErst)
-register('ch.swisstopo.hiks-dufour', DufourErst)
-register('ch.swisstopo.zeitreihen', Zeitreihen15)
-register('ch.swisstopo.zeitreihen', Zeitreihen20)
-register('ch.swisstopo.zeitreihen', Zeitreihen21)
-register('ch.swisstopo.zeitreihen', Zeitreihen22)
+register(SiegfriedErst.__bodId__, SiegfriedErst)
