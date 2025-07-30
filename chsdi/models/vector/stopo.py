@@ -3411,3 +3411,17 @@ class GeologieGeomolHoeheTopOmmDataProfileAll(Base, GeologieGeomolHoeheTopOmmDat
     link_viewer = Column('link_viewer', Unicode)
 
 register(GeologieGeomolHoeheTopOmmData.__bodId__, GeologieGeomolHoeheTopOmmDataProfileAll)
+
+
+class FixpunkteAgnes(Base, Vector):
+    __tablename__ = 'fixpunkte_agnes'
+    __table_args__ = ({'schema': 'fpds', 'autoload': False})
+    __template__ = 'templates/htmlpopup/stopo_fixpunkte_agnes.mako'
+    __bodId__ = 'ch.swisstopo.fixpunkte-agnes'
+    __label__ = 'id'
+    id = Column('no', Unicode, primary_key=True)
+    url = Column('url', Unicode)
+    bgdi_id = Column('bgdi_id', Integer)
+    the_geom = Column(Geometry2D)
+
+register(FixpunkteAgnes.__bodId__, FixpunkteAgnes)
