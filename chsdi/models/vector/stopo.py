@@ -19,7 +19,7 @@ class GeologieGeologische3dmodelle(Base, Vector):
     __bodId__ = 'ch.swisstopo.geologie-geologische_3dmodelle'
     __returnedGeometry__ = 'the_geom_simplified'
     __extended_info__ = True
-    __label_ = 'name'
+    __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
     purpose = Column('purpose', Unicode)
@@ -54,7 +54,7 @@ class GeologieGeologische3dmodelle(Base, Vector):
     the_geom_simplified = Column('the_geom_simplified', Geometry2D)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geologische_3dmodelle', GeologieGeologische3dmodelle)
+register(GeologieGeologische3dmodelle.__bodId__, GeologieGeologische3dmodelle)
 
 
 class GeologieGeomorphologie(Base, Vector):
@@ -67,7 +67,7 @@ class GeologieGeomorphologie(Base, Vector):
     ads_name = Column('ads_name', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geomorphologie', GeologieGeomorphologie)
+register(GeologieGeomorphologie.__bodId__, GeologieGeomorphologie)
 
 
 class GeomolIsotherme:
@@ -84,7 +84,7 @@ class GeomolIsotherme60(Base, GeomolIsotherme, Vector):
     __template__ = 'templates/htmlpopup/geomol_isotherme60.mako'
     __bodId__ = 'ch.swisstopo.geologie-geomol-isotherme_60'
 
-register('ch.swisstopo.geologie-geomol-isotherme_60', GeomolIsotherme60)
+register(GeomolIsotherme60.__bodId__, GeomolIsotherme60)
 
 
 class GeomolIsotherme100(Base, GeomolIsotherme, Vector):
@@ -92,7 +92,7 @@ class GeomolIsotherme100(Base, GeomolIsotherme, Vector):
     __template__ = 'templates/htmlpopup/geomol_isotherme100.mako'
     __bodId__ = 'ch.swisstopo.geologie-geomol-isotherme_100'
 
-register('ch.swisstopo.geologie-geomol-isotherme_100', GeomolIsotherme100)
+register(GeomolIsotherme100.__bodId__, GeomolIsotherme100)
 
 
 class GeomolIsotherme150(Base, GeomolIsotherme, Vector):
@@ -100,7 +100,7 @@ class GeomolIsotherme150(Base, GeomolIsotherme, Vector):
     __template__ = 'templates/htmlpopup/geomol_isotherme150.mako'
     __bodId__ = 'ch.swisstopo.geologie-geomol-isotherme_150'
 
-register('ch.swisstopo.geologie-geomol-isotherme_150', GeomolIsotherme150)
+register(GeomolIsotherme150.__bodId__, GeomolIsotherme150)
 
 
 class GeomolTempEingangdaten(Base, Vector):
@@ -119,7 +119,7 @@ class GeomolTempEingangdaten(Base, Vector):
     y = Column('y', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geomol-temperaturmodell_eingangsdaten', GeomolTempEingangdaten)
+register(GeomolTempEingangdaten.__bodId__, GeomolTempEingangdaten)
 
 
 class GeomolTempTopRaster:
@@ -141,7 +141,7 @@ class GeomolTempTopOmmRaster(Base, GeomolTempTopRaster, Vector):
     __tablename__ = 'geomol_temperatur_omm_raster'
     __bodId__ = 'ch.swisstopo.geologie-geomol-temperatur_top_omm'
 
-register('ch.swisstopo.geologie-geomol-temperatur_top_omm', GeomolTempTopOmmRaster)
+register(GeomolTempTopOmmRaster.__bodId__, GeomolTempTopOmmRaster)
 
 
 class GeomolTempTopOmmElev(Base, GeomolTempTopElev, Vector):
@@ -149,14 +149,14 @@ class GeomolTempTopOmmElev(Base, GeomolTempTopElev, Vector):
     __template__ = 'templates/htmlpopup/geomol_temperatur_omm_elev.mako'
     __bodId__ = 'ch.swisstopo.geologie-geomol-temperatur_top_omm'
 
-register('ch.swisstopo.geologie-geomol-temperatur_top_omm', GeomolTempTopOmmElev)
+register(GeomolTempTopOmmElev.__bodId__, GeomolTempTopOmmElev)
 
 
 class GeomolTempTopOmalmRaster(Base, GeomolTempTopRaster, Vector):
     __tablename__ = 'geomol_temperatur_omalm_raster'
     __bodId__ = 'ch.swisstopo.geologie-geomol-temperatur_top_omalm'
 
-register('ch.swisstopo.geologie-geomol-temperatur_top_omalm', GeomolTempTopOmalmRaster)
+register(GeomolTempTopOmalmRaster.__bodId__, GeomolTempTopOmalmRaster)
 
 
 class GeomolTempTopOmalmElev(Base, GeomolTempTopElev, Vector):
@@ -164,14 +164,14 @@ class GeomolTempTopOmalmElev(Base, GeomolTempTopElev, Vector):
     __template__ = 'templates/htmlpopup/geomol_temperatur_omalm_elev.mako'
     __bodId__ = 'ch.swisstopo.geologie-geomol-temperatur_top_omalm'
 
-register('ch.swisstopo.geologie-geomol-temperatur_top_omalm', GeomolTempTopOmalmElev)
+register(GeomolTempTopOmalmElev.__bodId__, GeomolTempTopOmalmElev)
 
 
 class GeomolTempTopMuschelkalkRaster(Base, GeomolTempTopRaster, Vector):
     __tablename__ = 'geomol_temperatur_muschelkalk_raster'
     __bodId__ = 'ch.swisstopo.geologie-geomol-temperatur_top_muschelkalk'
 
-register('ch.swisstopo.geologie-geomol-temperatur_top_muschelkalk', GeomolTempTopMuschelkalkRaster)
+register(GeomolTempTopMuschelkalkRaster.__bodId__, GeomolTempTopMuschelkalkRaster)
 
 
 class GeomolTempTopMuschelkalkElev(Base, GeomolTempTopElev, Vector):
@@ -179,7 +179,7 @@ class GeomolTempTopMuschelkalkElev(Base, GeomolTempTopElev, Vector):
     __template__ = 'templates/htmlpopup/geomol_temperatur_muschelkalk_elev.mako'
     __bodId__ = 'ch.swisstopo.geologie-geomol-temperatur_top_muschelkalk'
 
-register('ch.swisstopo.geologie-geomol-temperatur_top_muschelkalk', GeomolTempTopMuschelkalkElev)
+register(GeomolTempTopMuschelkalkElev.__bodId__, GeomolTempTopMuschelkalkElev)
 
 
 class GeomolTempverteilung:
@@ -194,42 +194,42 @@ class GeomolTempverteilung500(Base, GeomolTempverteilung, Vector):
     __tablename__ = 'geomol_temperaturverteilung_500_raster'
     __bodId__ = 'ch.swisstopo.geologie-geomol-temperaturverteilung_500'
 
-register('ch.swisstopo.geologie-geomol-temperaturverteilung_500', GeomolTempverteilung500)
+register(GeomolTempverteilung500.__bodId__, GeomolTempverteilung500)
 
 
 class GeomolTempverteilung1000(Base, GeomolTempverteilung, Vector):
     __tablename__ = 'geomol_temperaturverteilung_1000_raster'
     __bodId__ = 'ch.swisstopo.geologie-geomol-temperaturverteilung_1000'
 
-register('ch.swisstopo.geologie-geomol-temperaturverteilung_1000', GeomolTempverteilung1000)
+register(GeomolTempverteilung1000.__bodId__, GeomolTempverteilung1000)
 
 
 class GeomolTempverteilung1500(Base, GeomolTempverteilung, Vector):
     __tablename__ = 'geomol_temperaturverteilung_1500_raster'
     __bodId__ = 'ch.swisstopo.geologie-geomol-temperaturverteilung_1500'
 
-register('ch.swisstopo.geologie-geomol-temperaturverteilung_1500', GeomolTempverteilung1500)
+register(GeomolTempverteilung1500.__bodId__, GeomolTempverteilung1500)
 
 
 class GeomolTempverteilung2000(Base, GeomolTempverteilung, Vector):
     __tablename__ = 'geomol_temperaturverteilung_2000_raster'
     __bodId__ = 'ch.swisstopo.geologie-geomol-temperaturverteilung_2000'
 
-register('ch.swisstopo.geologie-geomol-temperaturverteilung_2000', GeomolTempverteilung2000)
+register(GeomolTempverteilung2000.__bodId__, GeomolTempverteilung2000)
 
 
 class GeomolTempverteilung3000(Base, GeomolTempverteilung, Vector):
     __tablename__ = 'geomol_temperaturverteilung_3000_raster'
     __bodId__ = 'ch.swisstopo.geologie-geomol-temperaturverteilung_3000'
 
-register('ch.swisstopo.geologie-geomol-temperaturverteilung_3000', GeomolTempverteilung3000)
+register(GeomolTempverteilung3000.__bodId__, GeomolTempverteilung3000)
 
 
 class GeomolTempverteilung4000(Base, GeomolTempverteilung, Vector):
     __tablename__ = 'geomol_temperaturverteilung_4000_raster'
     __bodId__ = 'ch.swisstopo.geologie-geomol-temperaturverteilung_4000'
 
-register('ch.swisstopo.geologie-geomol-temperaturverteilung_4000', GeomolTempverteilung4000)
+register(GeomolTempverteilung4000.__bodId__, GeomolTempverteilung4000)
 
 
 class DosisleistungTerrestrisch(Base, Vector):
@@ -242,7 +242,7 @@ class DosisleistungTerrestrisch(Base, Vector):
     contour = Column('contour', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-dosisleistung-terrestrisch', DosisleistungTerrestrisch)
+register(DosisleistungTerrestrisch.__bodId__, DosisleistungTerrestrisch)
 
 
 class SchneeRouten:
@@ -318,12 +318,13 @@ class LandesschwerenetzZoom1(Base, Landesschwerenetz, Vector):
     __minscale__ = 1
     __maxscale__ = 3000
 
+register(Landesschwerenetz.__bodId__, LandesschwerenetzZoom1)
+
 
 class LandesschwerenetzZoom2(Base, Landesschwerenetz, Vector):
     __tablename__ = 'landesschwerenetz_overview'
     __minscale__ = 3000
 
-register(Landesschwerenetz.__bodId__, LandesschwerenetzZoom1)
 register(Landesschwerenetz.__bodId__, LandesschwerenetzZoom2)
 
 
@@ -341,7 +342,7 @@ class GravimetrischerAtlasMesspunkte(Base, Vector):
     bouguerano = Column('bouguerano', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte', GravimetrischerAtlasMesspunkte)
+register(GravimetrischerAtlasMesspunkte.__bodId__, GravimetrischerAtlasMesspunkte)
 
 
 class GeologieGeoevents:
@@ -410,7 +411,7 @@ class GeolGeneralkarteGGK200Meta(Base, Vector):
     autor = Column('autor', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-generalkarte-ggk200.metadata', GeolGeneralkarteGGK200Meta)
+register(GeolGeneralkarteGGK200Meta.__bodId__, GeolGeneralkarteGGK200Meta)
 
 
 class GeologischerAtlasMeta:
@@ -430,7 +431,7 @@ class GeologischerAtlasRasterMeta(Base, GeologischerAtlasMeta, Vector):
     __tablename__ = 'geologischer_atlas_raster_meta'
     __bodId__ = 'ch.swisstopo.geologie-geologischer_atlas.metadata'
 
-register('ch.swisstopo.geologie-geologischer_atlas.metadata', GeologischerAtlasRasterMeta)
+register(GeologischerAtlasRasterMeta.__bodId__, GeologischerAtlasRasterMeta)
 
 
 class GeolSpezialkartenMetadata:
@@ -450,14 +451,14 @@ class GeolSpezialkartenRasterMetadata(Base, GeolSpezialkartenMetadata, Vector):
     __tablename__ = 'spezialkarten_raster_meta'
     __bodId__ = 'ch.swisstopo.geologie-spezialkarten_schweiz.metadata'
 
-register('ch.swisstopo.geologie-spezialkarten_schweiz.metadata', GeolSpezialkartenRasterMetadata)
+register(GeolSpezialkartenRasterMetadata.__bodId__, GeolSpezialkartenRasterMetadata)
 
 
 class GeolSpezialKartenVectorMeta(Base, GeolSpezialkartenMetadata, Vector):
     __tablename__ = 'spezialkarten_vector_meta'
     __bodId__ = 'ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata'
 
-register('ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata', GeolSpezialKartenVectorMeta)
+register(GeolSpezialKartenVectorMeta.__bodId__, GeolSpezialKartenVectorMeta)
 
 
 class SwissboundariesBezirk(Base, Vector):
@@ -471,7 +472,7 @@ class SwissboundariesBezirk(Base, Vector):
     flaeche = Column('flaeche', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill', SwissboundariesBezirk)
+register(SwissboundariesBezirk.__bodId__, SwissboundariesBezirk)
 
 
 class SwissboundariesGemeinde(Base, Vector):
@@ -497,7 +498,7 @@ class SwissboundariesGemeinde(Base, Vector):
     link_it = Column('link_it', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill', SwissboundariesGemeinde)
+register(SwissboundariesGemeinde.__bodId__, SwissboundariesGemeinde)
 
 
 class SwissboundariesKanton(Base, Vector):
@@ -512,7 +513,7 @@ class SwissboundariesKanton(Base, Vector):
     flaeche = Column('flaeche', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.swissboundaries3d-kanton-flaeche.fill', SwissboundariesKanton)
+register(SwissboundariesKanton.__bodId__, SwissboundariesKanton)
 
 
 class SwissBoundariesLand(Base, Vector):
@@ -527,7 +528,7 @@ class SwissBoundariesLand(Base, Vector):
     bez = Column('bez', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.swissboundaries3d-land-flaeche.fill', SwissBoundariesLand)
+register(SwissBoundariesLand.__bodId__, SwissBoundariesLand)
 
 
 class Vec200Terminal(Base, Vector):
@@ -539,6 +540,8 @@ class Vec200Terminal(Base, Vector):
     id = Column('gtdboid', Unicode, primary_key=True)
     objval = Column('objval', Unicode)
     the_geom = Column(Geometry2D)
+
+register(Vec200Terminal.__bodId__, Vec200Terminal)
 
 
 class Vec200ShipKursschiff(Base, Vector):
@@ -554,6 +557,8 @@ class Vec200ShipKursschiff(Base, Vector):
     use = Column('use', Unicode)
     the_geom = Column(Geometry2D)
 
+register(Vec200ShipKursschiff.__bodId__, Vec200ShipKursschiff)
+
 
 class Vec200Railway(Base, Vector):
     __tablename__ = 'vec200_railway'
@@ -566,9 +571,7 @@ class Vec200Railway(Base, Vector):
     construct = Column('construct', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.vec200-transportation-oeffentliche-verkehr', Vec200Terminal)
-register('ch.swisstopo.vec200-transportation-oeffentliche-verkehr', Vec200ShipKursschiff)
-register('ch.swisstopo.vec200-transportation-oeffentliche-verkehr', Vec200Railway)
+register(Vec200Railway.__bodId__, Vec200Railway)
 
 
 class Vec200Trafficinfo(Base, Vector):
@@ -581,6 +584,8 @@ class Vec200Trafficinfo(Base, Vector):
     objname = Column('objname', Unicode)
     objval = Column('objval', Unicode)
     the_geom = Column(Geometry2D)
+
+register(Vec200Trafficinfo.__bodId__, Vec200Trafficinfo)
 
 
 class Vec200ShipAutofaehre(Base, Vector):
@@ -595,6 +600,8 @@ class Vec200ShipAutofaehre(Base, Vector):
     detn = Column('detn', Unicode)
     the_geom = Column(Geometry2D)
 
+register(Vec200ShipAutofaehre.__bodId__, Vec200ShipAutofaehre)
+
 
 class Vec200Road(Base, Vector):
     __tablename__ = 'vec200_road'
@@ -607,6 +614,8 @@ class Vec200Road(Base, Vector):
     objval = Column('objval', Unicode)
     toll = Column('toll', Unicode)
     the_geom = Column(Geometry2D)
+
+register(Vec200Road.__bodId__, Vec200Road)
 
 
 class Vec200Ramp(Base, Vector):
@@ -621,6 +630,8 @@ class Vec200Ramp(Base, Vector):
     toll = Column('toll', Unicode)
     the_geom = Column(Geometry2D)
 
+register(Vec200Ramp.__bodId__, Vec200Ramp)
+
 
 class Vec200Customsoffice(Base, Vector):
     __tablename__ = 'vec200_customsoffice'
@@ -632,11 +643,7 @@ class Vec200Customsoffice(Base, Vector):
     objname = Column('objname', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.vec200-transportation-strassennetz', Vec200Trafficinfo)
-register('ch.swisstopo.vec200-transportation-strassennetz', Vec200ShipAutofaehre)
-register('ch.swisstopo.vec200-transportation-strassennetz', Vec200Road)
-register('ch.swisstopo.vec200-transportation-strassennetz', Vec200Ramp)
-register('ch.swisstopo.vec200-transportation-strassennetz', Vec200Customsoffice)
+register(Vec200Customsoffice.__bodId__, Vec200Customsoffice)
 
 
 class Vec200Protectedarea(Base, Vector):
@@ -649,7 +656,7 @@ class Vec200Protectedarea(Base, Vector):
     name = Column('name', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.vec200-adminboundaries-protectedarea', Vec200Protectedarea)
+register(Vec200Protectedarea.__bodId__, Vec200Protectedarea)
 
 
 class Vec200Flowingwater(Base, Vector):
@@ -664,6 +671,8 @@ class Vec200Flowingwater(Base, Vector):
     hoc = Column('hoc', Unicode)
     the_geom = Column(Geometry2D)
 
+register(Vec200Flowingwater.__bodId__, Vec200Flowingwater)
+
 
 class Vec200Stagnantwater(Base, Vector):
     __tablename__ = 'vec200_stagnantwater'
@@ -676,8 +685,7 @@ class Vec200Stagnantwater(Base, Vector):
     seesph = Column('seesph', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.vec200-hydrography', Vec200Flowingwater)
-register('ch.swisstopo.vec200-hydrography', Vec200Stagnantwater)
+register(Vec200Stagnantwater.__bodId__, Vec200Stagnantwater)
 
 
 class Vec200Landcover(Base, Vector):
@@ -691,7 +699,7 @@ class Vec200Landcover(Base, Vector):
     objval = Column('objval', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.vec200-landcover', Vec200Landcover)
+register(Vec200Landcover.__bodId__, Vec200Landcover)
 
 
 class Vec200Builtupp(Base, Vector):
@@ -704,6 +712,8 @@ class Vec200Builtupp(Base, Vector):
     objname = Column('objname', Unicode)
     ppi = Column('ppi', Unicode)
     the_geom = Column(Geometry2D)
+
+register(Vec200Builtupp.__bodId__, Vec200Builtupp)
 
 
 class Vec200Poi(Base, Vector):
@@ -719,6 +729,8 @@ class Vec200Poi(Base, Vector):
     pro = Column('pro', Unicode)
     the_geom = Column(Geometry2D)
 
+register(Vec200Poi.__bodId__, Vec200Poi)
+
 
 class Vec200Supply(Base, Vector):
     __tablename__ = 'vec200_supply'
@@ -732,9 +744,7 @@ class Vec200Supply(Base, Vector):
     pro = Column('pro', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.vec200-miscellaneous', Vec200Builtupp)
-register('ch.swisstopo.vec200-miscellaneous', Vec200Poi)
-register('ch.swisstopo.vec200-miscellaneous', Vec200Supply)
+register(Vec200Supply.__bodId__, Vec200Supply)
 
 
 class Vec200Namedlocation(Base, Vector):
@@ -750,7 +760,7 @@ class Vec200Namedlocation(Base, Vector):
     altitude = Column('altitude', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.vec200-names-namedlocation', Vec200Namedlocation)
+register(Vec200Namedlocation.__bodId__, Vec200Namedlocation)
 
 
 class Vec25Anlagen(Base, Vector):
@@ -764,7 +774,7 @@ class Vec25Anlagen(Base, Vector):
     perimeter = Column('perimeter', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.vec25-anlagen', Vec25Anlagen)
+register(Vec25Anlagen.__bodId__, Vec25Anlagen)
 
 
 class Vec25Gebaeude(Base, Vector):
@@ -778,7 +788,7 @@ class Vec25Gebaeude(Base, Vector):
     perimeter = Column('perimeter', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.vec25-gebaeude', Vec25Gebaeude)
+register(Vec25Gebaeude.__bodId__, Vec25Gebaeude)
 
 
 class Vec25Primaerflaechen(Base, Vector):
@@ -792,7 +802,7 @@ class Vec25Primaerflaechen(Base, Vector):
     perimeter = Column('perimeter', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.vec25-primaerflaechen', Vec25Primaerflaechen)
+register(Vec25Primaerflaechen.__bodId__, Vec25Primaerflaechen)
 
 
 class Vec25Einzelobjekte(Base, Vector):
@@ -805,7 +815,7 @@ class Vec25Einzelobjekte(Base, Vector):
     length = Column('length', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.vec25-einzelobjekte', Vec25Einzelobjekte)
+register(Vec25Einzelobjekte.__bodId__, Vec25Einzelobjekte)
 
 
 class Vec25Heckenbaeume(Base, Vector):
@@ -818,7 +828,7 @@ class Vec25Heckenbaeume(Base, Vector):
     length = Column('length', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.vec25-heckenbaeume', Vec25Heckenbaeume)
+register(Vec25Heckenbaeume.__bodId__, Vec25Heckenbaeume)
 
 
 class Dreiecksvermaschung(Base, Vector):
@@ -833,7 +843,7 @@ class Dreiecksvermaschung(Base, Vector):
     type = Column('type', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.dreiecksvermaschung', Dreiecksvermaschung)
+register(Dreiecksvermaschung.__bodId__, Dreiecksvermaschung)
 
 # Gridstands PK layers noscale and metadata
 
@@ -866,7 +876,7 @@ class GridstandPk25Meta(Base, GridstandTemplate, Vector):
     year = Column('year', Unicode)
 
 
-register('ch.swisstopo.pixelkarte-pk25.metadata', GridstandPk25Meta)
+register(GridstandPk25Meta.__bodId__, GridstandPk25Meta)
 
 # PK 50
 
@@ -876,7 +886,7 @@ class GridstandPk50Meta(Base, GridstandTemplate, Vector):
     __tablename__ = 'view_gridstand_datenhaltung_pk50_tilecache'
 
 
-register('ch.swisstopo.pixelkarte-pk50.metadata', GridstandPk50Meta)
+register(GridstandPk50Meta.__bodId__, GridstandPk50Meta)
 
 # PK 100
 
@@ -885,7 +895,7 @@ class GridstandPk100Meta(Base, GridstandTemplate, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-pk100.metadata'
     __tablename__ = 'view_gridstand_datenhaltung_pk100_tilecache'
 
-register('ch.swisstopo.pixelkarte-pk100.metadata', GridstandPk100Meta)
+register(GridstandPk100Meta.__bodId__, GridstandPk100Meta)
 
 # PK 200
 
@@ -895,7 +905,7 @@ class GridstandPk200Meta(Base, GridstandTemplate, Vector):
     __tablename__ = 'view_gridstand_datenhaltung_pk200_tilecache'
     id = Column('kbnum', Unicode, primary_key=True)
 
-register('ch.swisstopo.pixelkarte-pk200.metadata', GridstandPk200Meta)
+register(GridstandPk200Meta.__bodId__, GridstandPk200Meta)
 
 
 class GridstandSwissimageDop10(Base, Vector):
@@ -909,7 +919,7 @@ class GridstandSwissimageDop10(Base, Vector):
     resolution = Column('resolution', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.images-swissimage-dop10.metadata', GridstandSwissimageDop10)
+register(GridstandSwissimageDop10.__bodId__, GridstandSwissimageDop10)
 
 
 class GridstandSwisssurface3d(Base, Vector):
@@ -923,7 +933,7 @@ class GridstandSwisssurface3d(Base, Vector):
     gpstime_max = Column('gpstime_max', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.swisssurface3d.metadata', GridstandSwisssurface3d)
+register(GridstandSwisssurface3d.__bodId__, GridstandSwisssurface3d)
 
 
 class GridstandSwisssurface3dRaster(Base, Vector):
@@ -953,6 +963,8 @@ class GeologischeKarteLine(Base, Vector):
     type_fr = Column('type_fr', Unicode)
     the_geom = Column(Geometry2D)
 
+register(GeologischeKarteLine.__bodId__, GeologischeKarteLine)
+
 
 class GeologischeKartePlg(Base, Vector):
     __tablename__ = 'geologische_karte_plg'
@@ -965,8 +977,7 @@ class GeologischeKartePlg(Base, Vector):
     leg_geol_f = Column('leg_geol_f', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geologische_karte', GeologischeKarteLine)
-register('ch.swisstopo.geologie-geologische_karte', GeologischeKartePlg)
+register(GeologischeKartePlg.__bodId__, GeologischeKartePlg)
 
 
 class GeologieMineralischeRohstoffe200(Base, Vector):
@@ -980,7 +991,7 @@ class GeologieMineralischeRohstoffe200(Base, Vector):
     area_name = Column('area_name', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200', GeologieMineralischeRohstoffe200)
+register(GeologieMineralischeRohstoffe200.__bodId__, GeologieMineralischeRohstoffe200)
 
 
 class GeologieFelsoberflaecheHoehenModell(Base, Vector):
@@ -1052,7 +1063,7 @@ class GeologieBohrungenTiefer500(Base, Vector):
     canton = Column('canton', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-bohrungen_tiefer_500', GeologieBohrungenTiefer500)
+register(GeologieBohrungenTiefer500.__bodId__, GeologieBohrungenTiefer500)
 
 
 class GeologieGeothermischePotenzialstudien(Base, Vector):
@@ -1082,7 +1093,7 @@ class GeologieGeothermischePotenzialstudien(Base, Vector):
     legend = Column('legend', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geothermische_potenzialstudien_regional', GeologieGeothermischePotenzialstudien)
+register(GeologieGeothermischePotenzialstudien.__bodId__, GeologieGeothermischePotenzialstudien)
 
 
 class GeologieGeotechnikGk200(Base, Vector):
@@ -1095,7 +1106,7 @@ class GeologieGeotechnikGk200(Base, Vector):
     file_name = Column('file_name', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geotechnik-gk200', GeologieGeotechnikGk200)
+register(GeologieGeotechnikGk200.__bodId__, GeologieGeotechnikGk200)
 
 
 class TiefenGeothermieProjekte:
@@ -1143,7 +1154,7 @@ class TiefenGeothermieProjektePoint(Base, TiefenGeothermieProjekte, Vector):
     __label__ = 'name'
     __extended_info__ = True
 
-register('ch.swisstopo.geologie-tiefengeothermie_projekte', TiefenGeothermieProjektePoint)
+register(TiefenGeothermieProjektePoint.__bodId__, TiefenGeothermieProjektePoint)
 
 
 class TiefenGeothermieProjektePoly(Base, TiefenGeothermieProjekte, Vector):
@@ -1158,10 +1169,10 @@ class TiefenGeothermieProjektePoly(Base, TiefenGeothermieProjekte, Vector):
     permis_en = Column('permis_en', Unicode)
     date = Column('date', Unicode)
 
-register('ch.swisstopo.geologie-tiefengeothermie_projekte', TiefenGeothermieProjektePoly)
+register(TiefenGeothermieProjektePoly.__bodId__, TiefenGeothermieProjektePoly)
 
 
-class Gk500Gensese (Base, Vector):
+class Gk500Gensese(Base, Vector):
     __tablename__ = 'gk500_genese'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/gk500-genese.mako'
@@ -1177,10 +1188,10 @@ class Gk500Gensese (Base, Vector):
     bgdi_tooltip_color = Column('bgdi_tooltip_color', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geotechnik-gk500-genese', Gk500Gensese)
+register(Gk500Gensese.__bodId__, Gk500Gensese)
 
 
-class Gk500Gesteinsklassierung (Base, Vector):
+class Gk500Gesteinsklassierung(Base, Vector):
     __tablename__ = 'gk500_gesteinsklassierung'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/gk500-gesteinsklassierung.mako'
@@ -1197,7 +1208,7 @@ class Gk500Gesteinsklassierung (Base, Vector):
     bgdi_tooltip_color = Column('bgdi_tooltip_color', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung', Gk500Gesteinsklassierung)
+register(Gk500Gesteinsklassierung.__bodId__, Gk500Gesteinsklassierung)
 
 
 class Gk500LithologieHauptgruppen(Base, Vector):
@@ -1216,7 +1227,7 @@ class Gk500LithologieHauptgruppen(Base, Vector):
     bgdi_tooltip_color = Column('bgdi_tooltip_color', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen', Gk500LithologieHauptgruppen)
+register(Gk500LithologieHauptgruppen.__bodId__, Gk500LithologieHauptgruppen)
 
 
 class GeologieHydroKarteGrundwasservorkommen(Base, Vector):
@@ -1231,7 +1242,7 @@ class GeologieHydroKarteGrundwasservorkommen(Base, Vector):
     type_fr = Column('type_fr', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen', GeologieHydroKarteGrundwasservorkommen)
+register(GeologieHydroKarteGrundwasservorkommen.__bodId__, GeologieHydroKarteGrundwasservorkommen)
 
 
 class GeologieHydroKarteGrundwasservulneabilitaet(Base, Vector):
@@ -1246,7 +1257,7 @@ class GeologieHydroKarteGrundwasservulneabilitaet(Base, Vector):
     type_fr = Column('type_fr', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet', GeologieHydroKarteGrundwasservulneabilitaet)
+register(GeologieHydroKarteGrundwasservulneabilitaet.__bodId__, GeologieHydroKarteGrundwasservulneabilitaet)
 
 
 class GeologieGeothermie(Base, Vector):
@@ -1260,7 +1271,7 @@ class GeologieGeothermie(Base, Vector):
     contour = Column('contour', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geophysik-geothermie', GeologieGeothermie)
+register(GeologieGeothermie.__bodId__, GeologieGeothermie)
 
 
 class Geologischer_Deklination(Base, Vector):
@@ -1273,10 +1284,10 @@ class Geologischer_Deklination(Base, Vector):
     magne = Column('magne', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geophysik-deklination', Geologischer_Deklination)
+register(Geologischer_Deklination.__bodId__, Geologischer_Deklination)
 
 
-class Geologischer_Inklination(Base, Vector):
+class GeologischerInklination(Base, Vector):
     __tablename__ = 'geophysik_inklination'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/inklination.mako'
@@ -1286,7 +1297,7 @@ class Geologischer_Inklination(Base, Vector):
     contour = Column('contour', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geophysik-inklination', Geologischer_Inklination)
+register(GeologischerInklination.__bodId__, GeologischerInklination)
 
 
 class GeologischerAeromagnetikJura(Base, Vector):
@@ -1300,7 +1311,7 @@ class GeologischerAeromagnetikJura(Base, Vector):
     et_fromatt = Column('et_fromatt', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura', GeologischerAeromagnetikJura)
+register(GeologischerAeromagnetikJura.__bodId__, GeologischerAeromagnetikJura)
 
 
 class GeologischerAeromagnetikCh(Base, Vector):
@@ -1314,7 +1325,7 @@ class GeologischerAeromagnetikCh(Base, Vector):
     et_fromatt = Column('et_fromatt', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz', GeologischerAeromagnetikCh)
+register(GeologischerAeromagnetikCh.__bodId__, GeologischerAeromagnetikCh)
 
 
 class GeologieIsostatischeAnomalien(Base, Vector):
@@ -1328,7 +1339,7 @@ class GeologieIsostatischeAnomalien(Base, Vector):
     et_fromatt = Column('et_fromatt', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geodaesie-isostatische_anomalien', GeologieIsostatischeAnomalien)
+register(GeologieIsostatischeAnomalien.__bodId__, GeologieIsostatischeAnomalien)
 
 
 class GeologieBouguerAnomalien(Base, Vector):
@@ -1341,7 +1352,7 @@ class GeologieBouguerAnomalien(Base, Vector):
     et_fromatt = Column('et_fromatt', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geodaesie-bouguer_anomalien', GeologieBouguerAnomalien)
+register(GeologieBouguerAnomalien.__bodId__, GeologieBouguerAnomalien)
 
 
 class GeologieGeophysikTotalintensitaet(Base, Vector):
@@ -1355,7 +1366,7 @@ class GeologieGeophysikTotalintensitaet(Base, Vector):
     contour = Column('contour', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geophysik-totalintensitaet', GeologieGeophysikTotalintensitaet)
+register(GeologieGeophysikTotalintensitaet.__bodId__, GeologieGeophysikTotalintensitaet)
 
 
 class GeologieRohstoffe:
@@ -1401,7 +1412,7 @@ class GeologieRohstoffeZementAbbauVerarbeitung(Base, GeologieRohstoffe, Vector):
     info_url_it = Column('info_url_it', Unicode)
     info_url_en = Column('info_url_en', Unicode)
 
-register('ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung', GeologieRohstoffeZementAbbauVerarbeitung)
+register(GeologieRohstoffeZementAbbauVerarbeitung.__bodId__, GeologieRohstoffeZementAbbauVerarbeitung)
 
 
 class GeologieRohstoffeGipsAbbauVerarbeitung(Base, GeologieRohstoffe, Vector):
@@ -1414,7 +1425,7 @@ class GeologieRohstoffeGipsAbbauVerarbeitung(Base, GeologieRohstoffe, Vector):
     emkinds_it = Column('emkinds_it', Unicode)
     emkinds_en = Column('emkinds_en', Unicode)
 
-register('ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung', GeologieRohstoffeGipsAbbauVerarbeitung)
+register(GeologieRohstoffeGipsAbbauVerarbeitung.__bodId__, GeologieRohstoffeGipsAbbauVerarbeitung)
 
 
 class GeologieRohstoffeIndustrieminerale(Base, Vector):
@@ -1465,7 +1476,7 @@ class GeologieRohstoffeKohlenBitumenErdgas(Base, Vector):
     purl = Column('purl', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas', GeologieRohstoffeKohlenBitumenErdgas)
+register(GeologieRohstoffeKohlenBitumenErdgas.__bodId__, GeologieRohstoffeKohlenBitumenErdgas)
 
 
 class GeologieRohstoffeVererzungen(Base, Vector):
@@ -1484,7 +1495,7 @@ class GeologieRohstoffeVererzungen(Base, Vector):
     purl = Column('purl', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-rohstoffe-vererzungen', GeologieRohstoffeVererzungen)
+register(GeologieRohstoffeVererzungen.__bodId__, GeologieRohstoffeVererzungen)
 
 
 class GeologieRohstoffeNaturwerksteineAbbau(Base, Vector):
@@ -1503,7 +1514,7 @@ class GeologieRohstoffeNaturwerksteineAbbau(Base, Vector):
     purl = Column('purl', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau', GeologieRohstoffeNaturwerksteineAbbau)
+register(GeologieRohstoffeNaturwerksteineAbbau.__bodId__, GeologieRohstoffeNaturwerksteineAbbau)
 
 
 class GeologieRohstoffeGebrocheneGesteine(Base, Vector):
@@ -1522,7 +1533,7 @@ class GeologieRohstoffeGebrocheneGesteine(Base, Vector):
     purl = Column('purl', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau', GeologieRohstoffeGebrocheneGesteine)
+register(GeologieRohstoffeGebrocheneGesteine.__bodId__, GeologieRohstoffeGebrocheneGesteine)
 
 
 class GeologieRohstoffeSalzAbbauVerarbeitung(Base, Vector):
@@ -1544,7 +1555,7 @@ class GeologieRohstoffeSalzAbbauVerarbeitung(Base, Vector):
     purl = Column('purl', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung', GeologieRohstoffeSalzAbbauVerarbeitung)
+register(GeologieRohstoffeSalzAbbauVerarbeitung.__bodId__, GeologieRohstoffeSalzAbbauVerarbeitung)
 
 
 class GeologieTektonischeKarteLine(Base, Vector):
@@ -1568,6 +1579,8 @@ class GeologieTektonischeKarteLine(Base, Vector):
     status_en = Column('status_en', Unicode)
     the_geom = Column(Geometry2D)
 
+register(GeologieTektonischeKarteLine.__bodId__, GeologieTektonischeKarteLine)
+
 
 class GeologieTektonischeKartePoly(Base, Vector):
     __tablename__ = 'tektonische_karte_flaechen'
@@ -1581,6 +1594,8 @@ class GeologieTektonischeKartePoly(Base, Vector):
     litho_it = Column('litho_it', Unicode)
     litho_en = Column('litho_en', Unicode)
     the_geom = Column(Geometry2D)
+
+register(GeologieTektonischeKartePoly.__bodId__, GeologieTektonischeKartePoly)
 
 
 class GeologieTektonischeKarteUnit(Base, Vector):
@@ -1621,9 +1636,7 @@ class GeologieTektonischeKarteUnit(Base, Vector):
     legende_en = Column('legende_en', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-tektonische_karte', GeologieTektonischeKarteLine)
-register('ch.swisstopo.geologie-tektonische_karte', GeologieTektonischeKartePoly)
-register('ch.swisstopo.geologie-tektonische_karte', GeologieTektonischeKarteUnit)
+register(GeologieTektonischeKarteUnit.__bodId__, GeologieTektonischeKarteUnit)
 
 
 class GeologieEiszeitLgm(Base, Vector):
@@ -1636,7 +1649,7 @@ class GeologieEiszeitLgm(Base, Vector):
     ads_name = Column('ads_name', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-eiszeit-lgm', GeologieEiszeitLgm)
+register(GeologieEiszeitLgm.__bodId__, GeologieEiszeitLgm)
 
 
 class GeologieGesteinsdichte(Base, Vector):
@@ -1658,7 +1671,7 @@ class GeologieGesteinsdichte(Base, Vector):
     saphyr_pdf = Column('saphyr_pdf', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-gesteinsdichte', GeologieGesteinsdichte)
+register(GeologieGesteinsdichte.__bodId__, GeologieGesteinsdichte)
 
 
 class Swisstlm3dEisenbahn50000(Base, Vector):
@@ -1677,6 +1690,8 @@ class Swisstlm3dEisenbahn50000(Base, Vector):
     ausser_betrieb = Column('ausser_betrieb', Integer)
     the_geom = Column(Geometry2D)
 
+register(Swisstlm3dEisenbahn50000.__bodId__, Swisstlm3dEisenbahn50000)
+
 
 class Swisstlm3dEisenbahn(Base, Vector):
     __tablename__ = 'eisenbahn'
@@ -1694,8 +1709,7 @@ class Swisstlm3dEisenbahn(Base, Vector):
     ausser_betrieb = Column('ausser_betrieb', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.swisstlm3d-eisenbahnnetz', Swisstlm3dEisenbahn50000)
-register('ch.swisstopo.swisstlm3d-eisenbahnnetz', Swisstlm3dEisenbahn)
+register(Swisstlm3dEisenbahn.__bodId__, Swisstlm3dEisenbahn)
 
 
 class Swisstlm3dUebrigerverkehr25000(Base, Vector):
@@ -1711,6 +1725,8 @@ class Swisstlm3dUebrigerverkehr25000(Base, Vector):
     ausser_betrieb = Column('ausser_betrieb', Integer)
     the_geom = Column(Geometry2D)
 
+register(Swisstlm3dUebrigerverkehr25000.__bodId__, Swisstlm3dUebrigerverkehr25000)
+
 
 class Swisstlm3dUebrigerverkehr(Base, Vector):
     __tablename__ = 'uebrige_bahn'
@@ -1725,8 +1741,7 @@ class Swisstlm3dUebrigerverkehr(Base, Vector):
     ausser_betrieb = Column('ausser_betrieb', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.swisstlm3d-uebrigerverkehr', Swisstlm3dUebrigerverkehr25000)
-register('ch.swisstopo.swisstlm3d-uebrigerverkehr', Swisstlm3dUebrigerverkehr)
+register(Swisstlm3dUebrigerverkehr.__bodId__, Swisstlm3dUebrigerverkehr)
 
 
 class Swisstlm3dGewaessernetz(Base, Vector):
@@ -1741,7 +1756,7 @@ class Swisstlm3dGewaessernetz(Base, Vector):
     gwl_nr = Column('gwl_nr', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.swisstlm3d-gewaessernetz', Swisstlm3dGewaessernetz)
+register(Swisstlm3dGewaessernetz.__bodId__, Swisstlm3dGewaessernetz)
 
 
 class Swisstlm3dStrassen500000(Base, Vector):
@@ -1760,6 +1775,8 @@ class Swisstlm3dStrassen500000(Base, Vector):
     eigentuemer = Column('eigentuemer', Unicode)
     verkehrsbeschraenkung = Column('verkehrsbeschraenkung', Unicode)
     the_geom = Column(Geometry2D)
+
+register(Swisstlm3dStrassen500000.__bodId__, Swisstlm3dStrassen500000)
 
 
 class Swisstlm3dStrassen100000(Base, Vector):
@@ -1780,6 +1797,8 @@ class Swisstlm3dStrassen100000(Base, Vector):
     verkehrsbeschraenkung = Column('verkehrsbeschraenkung', Unicode)
     the_geom = Column(Geometry2D)
 
+register(Swisstlm3dStrassen100000.__bodId__, Swisstlm3dStrassen100000)
+
 
 class Swisstlm3dStrassen10000(Base, Vector):
     __tablename__ = 'strasse_10000_tooltip'
@@ -1799,6 +1818,8 @@ class Swisstlm3dStrassen10000(Base, Vector):
     verkehrsbeschraenkung = Column('verkehrsbeschraenkung', Unicode)
     the_geom = Column(Geometry2D)
 
+register(Swisstlm3dStrassen10000.__bodId__, Swisstlm3dStrassen10000)
+
 
 class Swisstlm3dStrassen(Base, Vector):
     __tablename__ = 'strasse'
@@ -1817,10 +1838,7 @@ class Swisstlm3dStrassen(Base, Vector):
     verkehrsbeschraenkung = Column('verkehrsbeschraenkung', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.swisstlm3d-strassen', Swisstlm3dStrassen500000)
-register('ch.swisstopo.swisstlm3d-strassen', Swisstlm3dStrassen100000)
-register('ch.swisstopo.swisstlm3d-strassen', Swisstlm3dStrassen10000)
-register('ch.swisstopo.swisstlm3d-strassen', Swisstlm3dStrassen)
+register(Swisstlm3dStrassen.__bodId__, Swisstlm3dStrassen)
 
 
 class Swisstlm3dWanderwege(Base, Vector):
@@ -1835,7 +1853,7 @@ class Swisstlm3dWanderwege(Base, Vector):
     tunneltype = Column('tunneltype', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.swisstlm3d-wanderwege', Swisstlm3dWanderwege)
+register(Swisstlm3dWanderwege.__bodId__, Swisstlm3dWanderwege)
 
 
 class VerschiebungsvektorenTsp1(Base, Vector):
@@ -1857,7 +1875,7 @@ class VerschiebungsvektorenTsp1(Base, Vector):
     fs = Column('fs', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.verschiebungsvektoren-tsp1', VerschiebungsvektorenTsp1)
+register(VerschiebungsvektorenTsp1.__bodId__, VerschiebungsvektorenTsp1)
 
 
 class VerschiebungsvektorenTsp2(Base, Vector):
@@ -1879,7 +1897,7 @@ class VerschiebungsvektorenTsp2(Base, Vector):
     fs = Column('fs', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.verschiebungsvektoren-tsp2', VerschiebungsvektorenTsp2)
+register(VerschiebungsvektorenTsp2.__bodId__, VerschiebungsvektorenTsp2)
 
 
 class SwissmapOnlineWanderwege(Base, Vector):
@@ -1894,7 +1912,7 @@ class SwissmapOnlineWanderwege(Base, Vector):
     tunneltype = Column('tunneltype', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo-karto.wanderwege', SwissmapOnlineWanderwege)
+register(SwissmapOnlineWanderwege.__bodId__, SwissmapOnlineWanderwege)
 
 
 class PLZOrtschaften(Base, Vector):
@@ -1912,7 +1930,7 @@ class PLZOrtschaften(Base, Vector):
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo-vd.ortschaftenverzeichnis_plz', PLZOrtschaften)
+register(PLZOrtschaften.__bodId__, PLZOrtschaften)
 
 
 class GeometaPNF(Base, Vector):
@@ -1927,7 +1945,7 @@ class GeometaPNF(Base, Vector):
     year = Column('year', Integer)
     the_geom = Column('the_geom', Geometry2D)
 
-register('ch.swisstopo-vd.geometa-periodische_nachfuehrung', GeometaPNF)
+register(GeometaPNF.__bodId__, GeometaPNF)
 
 
 class GeometaStandav(Base, Vector):
@@ -1968,7 +1986,7 @@ class GeometaGemeinde(Base, Vector):
     the_geom_gen50 = Column('the_geom_gen50', Geometry2D)
     the_geom = Column('the_geom', Geometry2D)
 
-register('ch.swisstopo-vd.geometa-gemeinde', GeometaGemeinde)
+register(GeometaGemeinde.__bodId__, GeometaGemeinde)
 
 
 class GeometaGrundbuch(Base, Vector):
@@ -1992,7 +2010,7 @@ class GeometaGrundbuch(Base, Vector):
     the_geom_gen50 = Column('the_geom_gen50', Geometry2D)
     the_geom = Column('the_geom', Geometry2D)
 
-register('ch.swisstopo-vd.geometa-grundbuch', GeometaGrundbuch)
+register(GeometaGrundbuch.__bodId__, GeometaGrundbuch)
 
 
 class GeometaNfGeom(Base, Vector):
@@ -2013,7 +2031,7 @@ class GeometaNfGeom(Base, Vector):
     the_geom_gen50 = Column('the_geom_gen50', Geometry2D)
     the_geom = Column('the_geom', Geometry2D)
 
-register('ch.swisstopo-vd.geometa-nfgeom', GeometaNfGeom)
+register(GeometaNfGeom.__bodId__, GeometaNfGeom)
 
 
 class Oerebkataster:
@@ -2053,14 +2071,14 @@ class OerebkatasterZoom1(Base, Oerebkataster, Vector):
     __minscale__ = 1
     __maxscale__ = 50000
 
-register('ch.swisstopo-vd.stand-oerebkataster', OerebkatasterZoom1)
+register(OerebkatasterZoom1.__bodId__, OerebkatasterZoom1)
 
 
 class OerebkatasterZoom2(Base, Oerebkataster, Vector):
     __tablename__ = 'view_oereb_nfgeom'
     __minscale__ = 50000
 
-register('ch.swisstopo-vd.stand-oerebkataster', OerebkatasterZoom2)
+register(OerebkatasterZoom2.__bodId__, OerebkatasterZoom2)
 
 
 class TransformationBezugsrahmenHoehePunkte(Base, Vector):
@@ -2076,6 +2094,8 @@ class TransformationBezugsrahmenHoehePunkte(Base, Vector):
     or_ln02_cm = Column('or_ln02_cm', Numeric)
     the_geom = Column(Geometry2D)
 
+register(TransformationBezugsrahmenHoehePunkte.__bodId__, TransformationBezugsrahmenHoehePunkte)
+
 
 class TransformationBezugsrahmenHoeheLine5cm(Base, Vector):
     __tablename__ = 'bezugsrahmen_hoehe_line_5cm'
@@ -2088,6 +2108,8 @@ class TransformationBezugsrahmenHoeheLine5cm(Base, Vector):
     contour = Column('contour', Numeric)
     layer = Column('layer', Unicode)
     the_geom = Column(Geometry2D)
+
+register(TransformationBezugsrahmenHoeheLine5cm.__bodId__, TransformationBezugsrahmenHoeheLine5cm)
 
 
 class TransformationBezugsrahmenHoeheLine10cm(Base, Vector):
@@ -2102,9 +2124,7 @@ class TransformationBezugsrahmenHoeheLine10cm(Base, Vector):
     layer = Column('layer', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.transformation-bezugsrahmen_hoehe', TransformationBezugsrahmenHoehePunkte)
-register('ch.swisstopo.transformation-bezugsrahmen_hoehe', TransformationBezugsrahmenHoeheLine5cm)
-register('ch.swisstopo.transformation-bezugsrahmen_hoehe', TransformationBezugsrahmenHoeheLine10cm)
+register(TransformationBezugsrahmenHoeheLine10cm.__bodId__, TransformationBezugsrahmenHoeheLine10cm)
 
 
 class HebungsratenLine(Base, Vector):
@@ -2116,6 +2136,8 @@ class HebungsratenLine(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     contour = Column('contour', Numeric)
     the_geom = Column(Geometry2D)
+
+register(HebungsratenLine.__bodId__, HebungsratenLine)
 
 
 class HebungsratenPunkt(Base, Vector):
@@ -2132,8 +2154,7 @@ class HebungsratenPunkt(Base, Vector):
     klasse = Column('klasse', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.hebungsraten', HebungsratenLine)
-register('ch.swisstopo.hebungsraten', HebungsratenPunkt)
+register(HebungsratenPunkt.__bodId__, HebungsratenPunkt)
 
 
 class SpannungsarmeGebiete(Base, Vector):
@@ -2147,13 +2168,13 @@ class SpannungsarmeGebiete(Base, Vector):
     vali_date = Column('vali_date', DateTimeChsdi)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.transformationsgenauigkeit', SpannungsarmeGebiete)
+register(SpannungsarmeGebiete.__bodId__, SpannungsarmeGebiete)
 
 
 class SpannungsarmeGebieteVD(SpannungsarmeGebiete):
     __bodId__ = 'ch.swisstopo-vd.spannungsarme-gebiete'
 
-register('ch.swisstopo-vd.spannungsarme-gebiete', SpannungsarmeGebieteVD)
+register(SpannungsarmeGebieteVD.__bodId__, SpannungsarmeGebieteVD)
 
 
 class GeologieGeotopePunkte(Base, Vector):
@@ -2168,6 +2189,8 @@ class GeologieGeotopePunkte(Base, Vector):
     nummer = Column('nummer', Integer)
     the_geom = Column(Geometry2D)
 
+register(GeologieGeotopePunkte.__bodId__, GeologieGeotopePunkte)
+
 
 class GeologieGeotopeFlaechen(Base, Vector):
     __tablename__ = 'geotope_plg'
@@ -2181,8 +2204,7 @@ class GeologieGeotopeFlaechen(Base, Vector):
     nummer = Column('nummer', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geotope', GeologieGeotopePunkte)
-register('ch.swisstopo.geologie-geotope', GeologieGeotopeFlaechen)
+register(GeologieGeotopeFlaechen.__bodId__, GeologieGeotopeFlaechen)
 
 
 class GeologieGeotopeKantoneStand(Base, Vector):
@@ -2202,7 +2224,7 @@ class GeologieGeotopeKantoneStand(Base, Vector):
     bemerkung = Column('bemerkung', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geotope_kantone_stand', GeologieGeotopeKantoneStand)
+register(GeologieGeotopeKantoneStand.__bodId__, GeologieGeotopeKantoneStand)
 
 
 class SteineHistBauwerke(Base, Vector):
@@ -2225,7 +2247,7 @@ class SteineHistBauwerke(Base, Vector):
     bemerkung = Column('bemerkung', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-geotechnik-steine_historische_bauwerke', SteineHistBauwerke)
+register(SteineHistBauwerke.__bodId__, SteineHistBauwerke)
 
 
 class GisGeolBase:
@@ -2258,63 +2280,63 @@ class GisgeolPunkte(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_points_aggregated'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-punkte'
 
-register('ch.swisstopo.geologie-gisgeol-punkte', GisgeolPunkte)
+register(GisgeolPunkte.__bodId__, GisgeolPunkte)
 
 
 class GisgeolLinien(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_lines_aggregated'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-linien'
 
-register('ch.swisstopo.geologie-gisgeol-linien', GisgeolLinien)
+register(GisgeolLinien.__bodId__, GisgeolLinien)
 
 
 class GisgeolFlaechen1x1km(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_surfaces_1x1km_aggregated'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-1x1km'
 
-register('ch.swisstopo.geologie-gisgeol-flaechen-1x1km', GisgeolFlaechen1x1km)
+register(GisgeolFlaechen1x1km.__bodId__, GisgeolFlaechen1x1km)
 
 
 class GisgeolFlaechen10x10km(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_surfaces_10x10km_aggregated'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-10x10km'
 
-register('ch.swisstopo.geologie-gisgeol-flaechen-10x10km', GisgeolFlaechen10x10km)
+register(GisgeolFlaechen10x10km.__bodId__, GisgeolFlaechen10x10km)
 
 
 class GisgeolFlaechen10to100km2(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_surfaces_10to100km2_aggregated'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-10to100km2'
 
-register('ch.swisstopo.geologie-gisgeol-flaechen-10to100km2', GisgeolFlaechen10to100km2)
+register(GisgeolFlaechen10to100km2.__bodId__, GisgeolFlaechen10to100km2)
 
 
 class GisgeolFlaechen100to1000km2(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_surfaces_100to1000km2_aggregated'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2'
 
-register('ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2', GisgeolFlaechen100to1000km2)
+register(GisgeolFlaechen100to1000km2.__bodId__, GisgeolFlaechen100to1000km2)
 
 
 class GisgeolFlaechen1000to21000km2(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_surfaces_1000to21000km2_aggregated'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2'
 
-register('ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2', GisgeolFlaechen1000to21000km2)
+register(GisgeolFlaechen1000to21000km2.__bodId__, GisgeolFlaechen1000to21000km2)
 
 
 class GisgeolFlaechenGt21000km2(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_surfaces_gt21000km2_aggregated'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2'
 
-register('ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2', GisgeolFlaechenGt21000km2)
+register(GisgeolFlaechenGt21000km2.__bodId__, GisgeolFlaechenGt21000km2)
 
 
 class GisgeolFlaechenLt10km2(Base, GisGeolBase, Vector):
     __tablename__ = 'view_gisgeol_surfaces_lt10km2_aggregated'
     __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-lt10km2'
 
-register('ch.swisstopo.geologie-gisgeol-flaechen-lt10km2', GisgeolFlaechenLt10km2)
+register(GisgeolFlaechenLt10km2.__bodId__, GisgeolFlaechenLt10km2)
 
 
 class Geocover:
@@ -2510,15 +2532,15 @@ class GeologischerAtlasPolygonMain(Base, GeologischerAtlas, Vector):
     tecto = Column('tecto', Unicode)
 
 
-register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasLineAux)
-register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPointHydro)
-register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPointGeol)
-register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPointDrill)
-register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPointInfo)
-register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPointStruct)
-register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPolygonAux1)
-register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPolygonAux2)
-register('ch.swisstopo.geologie-geologischer_atlas', GeologischerAtlasPolygonMain)
+register(GeologischerAtlas.__bodId__, GeologischerAtlasLineAux)
+register(GeologischerAtlas.__bodId__, GeologischerAtlasPointHydro)
+register(GeologischerAtlas.__bodId__, GeologischerAtlasPointGeol)
+register(GeologischerAtlas.__bodId__, GeologischerAtlasPointDrill)
+register(GeologischerAtlas.__bodId__, GeologischerAtlasPointInfo)
+register(GeologischerAtlas.__bodId__, GeologischerAtlasPointStruct)
+register(GeologischerAtlas.__bodId__, GeologischerAtlasPolygonAux1)
+register(GeologischerAtlas.__bodId__, GeologischerAtlasPolygonAux2)
+register(GeologischerAtlas.__bodId__, GeologischerAtlasPolygonMain)
 
 
 class GeologischerAtlasProfil(Base, Vector):
@@ -2654,20 +2676,20 @@ class Swissnames3dRaster13(Base, Swissnames3d, Vector):
     __minscale__ = 1
 
 
-register('ch.swisstopo.swissnames3d', Swissnames3dRaster00)
-register('ch.swisstopo.swissnames3d', Swissnames3dRaster01)
-register('ch.swisstopo.swissnames3d', Swissnames3dRaster02)
-register('ch.swisstopo.swissnames3d', Swissnames3dRaster03)
-register('ch.swisstopo.swissnames3d', Swissnames3dRaster04)
-register('ch.swisstopo.swissnames3d', Swissnames3dRaster05)
-register('ch.swisstopo.swissnames3d', Swissnames3dRaster06)
-register('ch.swisstopo.swissnames3d', Swissnames3dRaster07)
-register('ch.swisstopo.swissnames3d', Swissnames3dRaster08)
-register('ch.swisstopo.swissnames3d', Swissnames3dRaster09)
-register('ch.swisstopo.swissnames3d', Swissnames3dRaster10)
-register('ch.swisstopo.swissnames3d', Swissnames3dRaster11)
-register('ch.swisstopo.swissnames3d', Swissnames3dRaster12)
-register('ch.swisstopo.swissnames3d', Swissnames3dRaster13)
+register(Swissnames3d.__bodId__, Swissnames3dRaster00)
+register(Swissnames3d.__bodId__, Swissnames3dRaster01)
+register(Swissnames3d.__bodId__, Swissnames3dRaster02)
+register(Swissnames3d.__bodId__, Swissnames3dRaster03)
+register(Swissnames3d.__bodId__, Swissnames3dRaster04)
+register(Swissnames3d.__bodId__, Swissnames3dRaster05)
+register(Swissnames3d.__bodId__, Swissnames3dRaster06)
+register(Swissnames3d.__bodId__, Swissnames3dRaster07)
+register(Swissnames3d.__bodId__, Swissnames3dRaster08)
+register(Swissnames3d.__bodId__, Swissnames3dRaster09)
+register(Swissnames3d.__bodId__, Swissnames3dRaster10)
+register(Swissnames3d.__bodId__, Swissnames3dRaster11)
+register(Swissnames3d.__bodId__, Swissnames3dRaster12)
+register(Swissnames3d.__bodId__, Swissnames3dRaster13)
 
 
 # Perimeter only layers
@@ -2691,7 +2713,7 @@ class Lotabweichungen(Base, Vector):
     symbol = Column('symbol', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.lotabweichungen', Lotabweichungen)
+register(Lotabweichungen.__bodId__, Lotabweichungen)
 
 
 class HiksDufourMetadata(Base, Vector):
@@ -2703,7 +2725,7 @@ class HiksDufourMetadata(Base, Vector):
     name = Column('kbbez', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.hiks-dufour.metadata', HiksDufourMetadata)
+register(HiksDufourMetadata.__bodId__, HiksDufourMetadata)
 
 
 class HiksSiegfriedTa25Metadata(Base, Vector):
@@ -2715,7 +2737,7 @@ class HiksSiegfriedTa25Metadata(Base, Vector):
     name = Column('kbbez', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.hiks-siegfried-ta25.metadata', HiksSiegfriedTa25Metadata)
+register(HiksSiegfriedTa25Metadata.__bodId__, HiksSiegfriedTa25Metadata)
 
 
 class HiksSiegfriedTa50Metadata(Base, Vector):
@@ -2727,7 +2749,7 @@ class HiksSiegfriedTa50Metadata(Base, Vector):
     name = Column('kbbez', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.hiks-siegfried-ta50.metadata', HiksSiegfriedTa50Metadata)
+register(HiksSiegfriedTa50Metadata.__bodId__, HiksSiegfriedTa50Metadata)
 
 
 class SwissimageHistMetadata(Base, Vector):
@@ -2744,7 +2766,7 @@ class SwissimageHistMetadata(Base, Vector):
     bgdi_flugjahr = Column('bgdi_flugjahr', Integer)
     the_geom = Column('the_geom_tooltip', Geometry2D)
 
-register('ch.swisstopo.swissimage-product.metadata', SwissimageHistMetadata)
+register(SwissimageHistMetadata.__bodId__, SwissimageHistMetadata)
 
 
 class AmtlichesStrassenverzeichnis(Base, Vector):
@@ -2770,7 +2792,7 @@ class AmtlichesStrassenverzeichnis(Base, Vector):
     the_geom = Column(Geometry2D)
     the_geom_hilight = Column(Geometry2D)
 
-register('ch.swisstopo.amtliches-strassenverzeichnis', AmtlichesStrassenverzeichnis)
+register(AmtlichesStrassenverzeichnis.__bodId__, AmtlichesStrassenverzeichnis)
 
 
 class CadastralWebMap(Base, Vector):
@@ -2788,7 +2810,7 @@ class CadastralWebMap(Base, Vector):
     geoportal_url = Column('geoportal_url', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.kantone.cadastralwebmap-farbe', CadastralWebMap)
+register(CadastralWebMap.__bodId__, CadastralWebMap)
 
 
 class CadastralWebMapOpenData(Base, Vector):
@@ -2809,7 +2831,7 @@ class CadastralWebMapOpenData(Base, Vector):
     geoportal_url = Column('geoportal_url', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo-vd.amtliche-vermessung', CadastralWebMapOpenData)
+register(CadastralWebMapOpenData.__bodId__, CadastralWebMapOpenData)
 
 
 class Vec25GewaessernetzReferenz(Base, Vector):
@@ -2827,7 +2849,7 @@ class Vec25GewaessernetzReferenz(Base, Vector):
     objectid = Column('objectid', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.vec25-gewaessernetz_referenz', Vec25GewaessernetzReferenz)
+register(Vec25GewaessernetzReferenz.__bodId__, Vec25GewaessernetzReferenz)
 
 
 class AktuelleErdbeben(Base, Vector):
@@ -2838,7 +2860,7 @@ class AktuelleErdbeben(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
-register('ch.bafu.gefahren-aktuelle_erdbeben', AktuelleErdbeben)
+register(AktuelleErdbeben.__bodId__, AktuelleErdbeben)
 
 
 class AmtlichesAdressVerzeichnis(Base, Vector):
@@ -2903,7 +2925,7 @@ class GeologieFelslabore(Base, Vector):
     research_data = Column('research_data', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-felslabore', GeologieFelslabore)
+register(GeologieFelslabore.__bodId__, GeologieFelslabore)
 
 
 class Gletscherausdehnung(Base, Vector):
@@ -2918,7 +2940,7 @@ class Gletscherausdehnung(Base, Vector):
     area_km2 = Column('area_km2', Float)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.geologie-gletscherausdehnung', Gletscherausdehnung)
+register(Gletscherausdehnung.__bodId__, Gletscherausdehnung)
 
 
 class Gletschermaechtigkeit:
@@ -2935,6 +2957,8 @@ class GletschermaechtigkeitGPRProfiles(Base, Gletschermaechtigkeit, Vector):
     gpr_prf_name = Column('prf_name', Unicode)
     gpr_max_thik = Column('max_thik', Integer)
 
+register(GletschermaechtigkeitGPRProfiles.__bodId__, GletschermaechtigkeitGPRProfiles)
+
 
 class GletschermaechtigkeitIceThikness(Base, Gletschermaechtigkeit, Vector):
     __tablename__ = 'gletschermaechtigkeit_ice_thinkness'
@@ -2947,8 +2971,7 @@ class GletschermaechtigkeitIceThikness(Base, Gletschermaechtigkeit, Vector):
     volume = Column('volume', Float)
     year_mode = Column('year_mode', Integer)
 
-register('ch.swisstopo.geologie-gletschermaechtigkeit', GletschermaechtigkeitGPRProfiles)
-register('ch.swisstopo.geologie-gletschermaechtigkeit', GletschermaechtigkeitIceThikness)
+register(GletschermaechtigkeitIceThikness.__bodId__, GletschermaechtigkeitIceThikness)
 
 
 class FixpunkteLfp1(Base, Vector):
@@ -2977,7 +3000,7 @@ class FixpunkteLfp1(Base, Vector):
     begehbar = Column('begehbar', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.fixpunkte-lfp1', FixpunkteLfp1)
+register(FixpunkteLfp1.__bodId__, FixpunkteLfp1)
 
 
 class FixpunkteHfp1(Base, Vector):
@@ -3006,7 +3029,7 @@ class FixpunkteHfp1(Base, Vector):
     begehbar = Column('begehbar', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.fixpunkte-hfp1', FixpunkteHfp1)
+register(FixpunkteHfp1.__bodId__, FixpunkteHfp1)
 
 
 class FixpunkteLfp2(Base, Vector):
@@ -3059,6 +3082,8 @@ class SwisstneBasePoint(Base, SwisstneBase, Vector):
     __tablename__ = 'swisstne_base_point'
     __template__ = 'templates/htmlpopup/swisstne_base_point.mako'
 
+register(SwisstneBase.__bodId__, SwisstneBasePoint)
+
 
 class SwisstneBaseLine(Base, SwisstneBase, Vector):
     __tablename__ = 'swisstne_base_line'
@@ -3070,6 +3095,8 @@ class SwisstneBaseLine(Base, SwisstneBase, Vector):
     basetype_it = Column('basetype_it', Unicode)
     basetype_en = Column('basetype_en', Unicode)
 
+register(SwisstneBase.__bodId__, SwisstneBaseLine)
+
 
 class SwisstneBasePoly(Base, SwisstneBase, Vector):
     __tablename__ = 'swisstne_base_poly'
@@ -3080,8 +3107,6 @@ class SwisstneBasePoly(Base, SwisstneBase, Vector):
     type_it = Column('type_it', Unicode)
     type_en = Column('type_en', Unicode)
 
-register(SwisstneBase.__bodId__, SwisstneBasePoint)
-register(SwisstneBase.__bodId__, SwisstneBaseLine)
 register(SwisstneBase.__bodId__, SwisstneBasePoly)
 
 
@@ -3161,6 +3186,8 @@ class HartsteinabbauMining(Base, Hartsteinabbau, Vector):
     purl = Column('purl', Unicode)
     swissgeol_link = Column('swissgeol_link', Unicode)
 
+register(Hartsteinabbau.__bodId__, HartsteinabbauMining)
+
 
 class HartsteinabbauProduction(Base, Hartsteinabbau, Vector):
     __tablename__ = 'hartstein_production'
@@ -3178,7 +3205,6 @@ class HartsteinabbauProduction(Base, Hartsteinabbau, Vector):
     swissgeol_link = Column('swissgeol_link', Unicode)
 
 
-register(Hartsteinabbau.__bodId__, HartsteinabbauMining)
 register(Hartsteinabbau.__bodId__, HartsteinabbauProduction)
 
 

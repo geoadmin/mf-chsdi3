@@ -30,7 +30,7 @@ class Nsa(Base, Vector):
     type_geom = Column('type_geom', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.astra.nationalstrassenachsen', Nsa)
+register(Nsa.__bodId__, Nsa)
 
 
 class SchienennetzPoint(Base, Vector):
@@ -180,6 +180,8 @@ class OevHaltestellenZoom1(Base, OevHaltestellen, Vector):
     the_geom_point = Column('the_geom', Geometry2D)
     the_geom = Column('bgdi_geom_poly', Geometry2D)
 
+register(OevHaltestellen.__bodId__, OevHaltestellenZoom1)
+
 
 class OevHaltestellenZoom2(Base, OevHaltestellen, Vector):
     __tablename__ = 'oev_haltestellen_tooltip'
@@ -201,6 +203,8 @@ class OevHaltestellenZoom2(Base, OevHaltestellen, Vector):
     the_geom_point = Column('the_geom', Geometry2D)
     the_geom = Column('bgdi_geom_poly_overview', Geometry2D)
 
+register(OevHaltestellen.__bodId__, OevHaltestellenZoom2)
+
 
 class OevHaltekante(Base, OevHaltestellen, Vector):
     __tablename__ = 'oev_haltekante_tooltip'
@@ -218,13 +222,11 @@ class OevHaltekante(Base, OevHaltestellen, Vector):
     haltestelle = Column('name', Unicode)
     the_geom = Column(Geometry2D)
 
-register(OevHaltestellen.__bodId__, OevHaltestellenZoom1)
-register(OevHaltestellen.__bodId__, OevHaltestellenZoom2)
 register(OevHaltestellen.__bodId__, OevHaltekante)
 
 
 # IVS NAT and REG use the same template
-class SicherheitsZonenPlan (Base, Vector):
+class SicherheitsZonenPlan(Base, Vector):
     __tablename__ = 'sichereitszonen'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/sicherheitszoneneplan.mako'
@@ -259,7 +261,7 @@ class SicherheitsZonenPlan (Base, Vector):
     doc_id = Column('doc_id', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.sicherheitszonenplan', SicherheitsZonenPlan)
+register(SicherheitsZonenPlan.__bodId__, SicherheitsZonenPlan)
 
 
 class IVSNat(Base, Vector):
@@ -282,7 +284,7 @@ class IVSNat(Base, Vector):
     ivs_sortsla = Column('ivs_sortsla', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.astra.ivs-nat', IVSNat)
+register(IVSNat.__bodId__, IVSNat)
 
 
 class IVSNatVerlaeufe(Base, Vector):
@@ -305,7 +307,7 @@ class IVSNatVerlaeufe(Base, Vector):
     ivs_sortsla = Column('ivs_sortsla', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.astra.ivs-nat-verlaeufe', IVSNatVerlaeufe)
+register(IVSNatVerlaeufe.__bodId__, IVSNatVerlaeufe)
 
 
 class IVSRegLoc(Base, Vector):
@@ -329,7 +331,7 @@ class IVSRegLoc(Base, Vector):
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.astra.ivs-reg_loc', IVSRegLoc)
+register(IVSRegLoc.__bodId__, IVSRegLoc)
 
 
 class BaulinienNationalstrassen():
@@ -455,7 +457,7 @@ class Hauptstrassennetz(Base, Vector):
     canton = Column('canton', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.astra.hauptstrassennetz', Hauptstrassennetz)
+register(Hauptstrassennetz.__bodId__, Hauptstrassennetz)
 
 
 class Schwerverunf:
@@ -477,7 +479,7 @@ class SchwerverunfKantonAlkohol(Base, Schwerverunf, Vector):
     accalcohol_ugt_usv = Column('accalcohol_ugt_usv', Integer)
     accalcohol_ugt_usv_perpopulation = Column('accalcohol_ugt_usv_perpopulation', Numeric)
 
-register('ch.astra.schwerverunfallte-kanton_alkohol', SchwerverunfKantonAlkohol)
+register(SchwerverunfKantonAlkohol.__bodId__, SchwerverunfKantonAlkohol)
 
 
 class SchwerverunfKantonGeschwindig(Base, Schwerverunf, Vector):
@@ -489,7 +491,7 @@ class SchwerverunfKantonGeschwindig(Base, Schwerverunf, Vector):
     accspeed_ugt_usv = Column('accspeed_ugt_usv', Integer)
     accspeed_ugt_usv_perpopulation = Column('accspeed_ugt_usv_perpopulation', Numeric)
 
-register('ch.astra.schwerverunfallte-kanton_geschwindigkeit', SchwerverunfKantonGeschwindig)
+register(SchwerverunfKantonGeschwindig.__bodId__, SchwerverunfKantonGeschwindig)
 
 
 class SchwerverunfKantonJahresvergleich(Base, Schwerverunf, Vector):
@@ -503,7 +505,7 @@ class SchwerverunfKantonJahresvergleich(Base, Schwerverunf, Vector):
     acc_ugt_usv_lastyear = Column('acc_ugt_usv_lastyear', Integer)
     acc_ugt_usv_yearchangepercent = Column('acc_ugt_usv_yearchangepercent', Numeric)
 
-register('ch.astra.schwerverunfallte-kanton_jahresvergleich', SchwerverunfKantonJahresvergleich)
+register(SchwerverunfKantonJahresvergleich.__bodId__, SchwerverunfKantonJahresvergleich)
 
 
 class SchwerverunfKantonProEinwohner(Base, Schwerverunf, Vector):
@@ -515,7 +517,7 @@ class SchwerverunfKantonProEinwohner(Base, Schwerverunf, Vector):
     acc_ugt_usv = Column('acc_ugt_usv', Integer)
     acc_ugt_usv_perpopulation = Column('acc_ugt_usv_perpopulation', Numeric)
 
-register('ch.astra.schwerverunfallte-kanton_pro_einwohner', SchwerverunfKantonProEinwohner)
+register(SchwerverunfKantonProEinwohner.__bodId__, SchwerverunfKantonProEinwohner)
 
 
 class KatasterBelasteterStandorte(Base, Vector):
@@ -541,7 +543,7 @@ class KatasterBelasteterStandorte(Base, Vector):
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.kataster-belasteter-standorte-oev', KatasterBelasteterStandorte)
+register(KatasterBelasteterStandorte.__bodId__, KatasterBelasteterStandorte)
 
 
 class AbgeltungWasserkraftnutzung(Base, Vector):
@@ -558,10 +560,10 @@ class AbgeltungWasserkraftnutzung(Base, Vector):
     endprotectioncommitment = Column('endprotectioncommitment', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.abgeltung-wasserkraftnutzung', AbgeltungWasserkraftnutzung)
+register(AbgeltungWasserkraftnutzung.__bodId__, AbgeltungWasserkraftnutzung)
 
 
-class FernwaermeWohn (Base, Vector):
+class FernwaermeWohn(Base, Vector):
     __tablename__ = 'fernwaerme_wohn'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/fernwaerme_wohn.mako'
@@ -581,10 +583,10 @@ class FernwaermeWohn (Base, Vector):
     objectid = Column('objectid', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude', FernwaermeWohn)
+register(FernwaermeWohn.__bodId__, FernwaermeWohn)
 
 
-class FernwaermeIndustrie (Base, Vector):
+class FernwaermeIndustrie(Base, Vector):
     __tablename__ = 'fernwaerme_industrie'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/fernwaerme_industrie.mako'
@@ -596,10 +598,10 @@ class FernwaermeIndustrie (Base, Vector):
     noga = Column('noga', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.fernwaerme-nachfrage_industrie', FernwaermeIndustrie)
+register(FernwaermeIndustrie.__bodId__, FernwaermeIndustrie)
 
 
-class Energieberatungsstellen (Base, Vector):
+class Energieberatungsstellen(Base, Vector):
     __tablename__ = 'energieberatungsstellen'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __template__ = 'templates/htmlpopup/energieberatungsstellen.mako'
@@ -633,7 +635,7 @@ class Energieberatungsstellen (Base, Vector):
     topicmobility = Column('topicmobility', Boolean)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.energieberatungsstellen', Energieberatungsstellen)
+register(Energieberatungsstellen.__bodId__, Energieberatungsstellen)
 
 
 class Energiestaedte(Base, Vector):
@@ -655,7 +657,7 @@ class Energiestaedte(Base, Vector):
     bfsnr = Column('bfsnr', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.energiestaedte', Energiestaedte)
+register(Energiestaedte.__bodId__, Energiestaedte)
 
 
 class Energiestaedte2000wattAreale(Base, Vector):
@@ -681,7 +683,7 @@ class Energiestaedte2000wattAreale(Base, Vector):
     linkfaktenblatt_en = Column('linkfaktenblatt_en', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.energiestaedte-2000watt-areale', Energiestaedte2000wattAreale)
+register(Energiestaedte2000wattAreale.__bodId__, Energiestaedte2000wattAreale)
 
 
 class Energieforschung(Base, Vector):
@@ -714,7 +716,7 @@ class Energieforschung(Base, Vector):
     link_en = Column('link_en', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.energieforschung', Energieforschung)
+register(Energieforschung.__bodId__, Energieforschung)
 
 
 class FernWaermeAngebot(Base, Vector):
@@ -728,7 +730,7 @@ class FernWaermeAngebot(Base, Vector):
     heatpotential = Column('heatpotential', Float)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.fernwaerme-angebot', FernWaermeAngebot)
+register(FernWaermeAngebot.__bodId__, FernWaermeAngebot)
 
 
 class KomoProjekte(Base, Vector):
@@ -784,7 +786,7 @@ class KomoProjekte(Base, Vector):
     status_en = Column('status_en', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.komo-projekte', KomoProjekte)
+register(KomoProjekte.__bodId__, KomoProjekte)
 
 
 class MinergieGebaeude(Base, Vector):
@@ -839,7 +841,7 @@ class StatistikwasserkraftanlagenNew(Base, Vector):
     fallheight = Column('fallheight', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.statistik-wasserkraftanlagen', StatistikwasserkraftanlagenNew)
+register(StatistikwasserkraftanlagenNew.__bodId__, StatistikwasserkraftanlagenNew)
 
 
 class Erneuerbarheizen(Base, Vector):
@@ -870,7 +872,7 @@ class Erneuerbarheizen(Base, Vector):
     website = Column('website', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.erneuerbarheizen', Erneuerbarheizen)
+register(Erneuerbarheizen.__bodId__, Erneuerbarheizen)
 
 
 class ErneuerbarheizenMFH(Base, Vector):
@@ -901,7 +903,7 @@ class ErneuerbarheizenMFH(Base, Vector):
     website = Column('website', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.erneuerbarheizen-mehrfamilienhaeuser', ErneuerbarheizenMFH)
+register(ErneuerbarheizenMFH.__bodId__, ErneuerbarheizenMFH)
 
 
 class Zaehlstellenuebergeordnet(Base, Vector):
@@ -940,7 +942,7 @@ class Zaehlstellenuebergeordnet(Base, Vector):
     prctheavytrafficnight = Column('prctheavytrafficnight', Float)
     the_geom = Column(Geometry2D)
 
-register('ch.astra.strassenverkehrszaehlung-uebergeordnet', Zaehlstellenuebergeordnet)
+register(Zaehlstellenuebergeordnet.__bodId__, Zaehlstellenuebergeordnet)
 
 
 class StauanlagenBundesaufsicht(Base, Vector):
@@ -973,7 +975,7 @@ class StauanlagenBundesaufsicht(Base, Vector):
     facility_stabil_id = Column('facility_stabil_id', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.stauanlagen-bundesaufsicht', StauanlagenBundesaufsicht)
+register(StauanlagenBundesaufsicht.__bodId__, StauanlagenBundesaufsicht)
 
 
 class Kleinwasserkraftpotentiale(Base, Vector):
@@ -988,7 +990,7 @@ class Kleinwasserkraftpotentiale(Base, Vector):
     gwlnr = Column('gwlnr', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.kleinwasserkraftpotentiale', Kleinwasserkraftpotentiale)
+register(Kleinwasserkraftpotentiale.__bodId__, Kleinwasserkraftpotentiale)
 
 
 class WindenergieanlagenFacility(Base, Vector):
@@ -1015,7 +1017,7 @@ class WindenergieanlagenFacility(Base, Vector):
     __minscale__ = 100005
     __maxscale__ = 100000005
 
-register('ch.bfe.windenergieanlagen', WindenergieanlagenFacility)
+register(WindenergieanlagenFacility.__bodId__, WindenergieanlagenFacility)
 
 
 class WindenergieanlagenTurbine(Base, Vector):
@@ -1049,7 +1051,7 @@ class WindenergieanlagenTurbine(Base, Vector):
     __minscale__ = 1
     __maxscale__ = 100005
 
-register('ch.bfe.windenergieanlagen', WindenergieanlagenTurbine)
+register(WindenergieanlagenTurbine.__bodId__, WindenergieanlagenTurbine)
 
 
 class MeteoVereisung(Base, Vector):
@@ -1062,7 +1064,7 @@ class MeteoVereisung(Base, Vector):
     hoehe = Column('hoehe', Unicode, nullable=False)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.meteorologische-vereisung', MeteoVereisung)
+register(MeteoVereisung.__bodId__, MeteoVereisung)
 
 
 class BakomNotruf(Base, Vector):
@@ -1129,7 +1131,7 @@ class BakomNotruf(Base, Vector):
     sa_addresse_112 = Column('sa_addresse_112', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bakom.notruf', BakomNotruf)
+register(BakomNotruf.__bodId__, BakomNotruf)
 
 
 class BakomNotrufLayer:
@@ -1147,112 +1149,112 @@ class BakomNotruf112Fest(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-112_festnetz'
     __tablename__ = 'fn_112_tooltip'
 
-register('ch.bakom.notruf-112_festnetz', BakomNotruf112Fest)
+register(BakomNotruf112Fest.__bodId__, BakomNotruf112Fest)
 
 
 class BakomNotruf117Fest(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-117_festnetz'
     __tablename__ = 'fn_117_tooltip'
 
-register('ch.bakom.notruf-117_festnetz', BakomNotruf117Fest)
+register(BakomNotruf117Fest.__bodId__, BakomNotruf117Fest)
 
 
 class BakomNotruf118Fest(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-118_festnetz'
     __tablename__ = 'fn_118_tooltip'
 
-register('ch.bakom.notruf-118_festnetz', BakomNotruf118Fest)
+register(BakomNotruf118Fest.__bodId__, BakomNotruf118Fest)
 
 
 class BakomNotruf142Fest(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-142_festnetz'
     __tablename__ = 'fn_142_tooltip'
 
-register('ch.bakom.notruf-142_festnetz', BakomNotruf142Fest)
+register(BakomNotruf142Fest.__bodId__, BakomNotruf142Fest)
 
 
 class BakomNotruf143Fest(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-143_festnetz'
     __tablename__ = 'fn_143_tooltip'
 
-register('ch.bakom.notruf-143_festnetz', BakomNotruf143Fest)
+register(BakomNotruf143Fest.__bodId__, BakomNotruf143Fest)
 
 
 class BakomNotruf144Fest(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-144_festnetz'
     __tablename__ = 'fn_144_tooltip'
 
-register('ch.bakom.notruf-144_festnetz', BakomNotruf144Fest)
+register(BakomNotruf144Fest.__bodId__, BakomNotruf144Fest)
 
 
 class BakomNotruf145Fest(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-145_festnetz'
     __tablename__ = 'fn_145_tooltip'
 
-register('ch.bakom.notruf-145_festnetz', BakomNotruf145Fest)
+register(BakomNotruf145Fest.__bodId__, BakomNotruf145Fest)
 
 
 class BakomNotruf147Fest(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-147_festnetz'
     __tablename__ = 'fn_147_tooltip'
 
-register('ch.bakom.notruf-147_festnetz', BakomNotruf147Fest)
+register(BakomNotruf147Fest.__bodId__, BakomNotruf147Fest)
 
 
 class BakomNotruf112Mobil(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-112_mobilnetz'
     __tablename__ = 'mo_112_tooltip'
 
-register('ch.bakom.notruf-112_mobilnetz', BakomNotruf112Mobil)
+register(BakomNotruf112Mobil.__bodId__, BakomNotruf112Mobil)
 
 
 class BakomNotruf117Mobil(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-117_mobilnetz'
     __tablename__ = 'mo_117_tooltip'
 
-register('ch.bakom.notruf-117_mobilnetz', BakomNotruf117Mobil)
+register(BakomNotruf117Mobil.__bodId__, BakomNotruf117Mobil)
 
 
 class BakomNotruf118Mobil(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-118_mobilnetz'
     __tablename__ = 'mo_118_tooltip'
 
-register('ch.bakom.notruf-118_mobilnetz', BakomNotruf118Mobil)
+register(BakomNotruf118Mobil.__bodId__, BakomNotruf118Mobil)
 
 
 class BakomNotruf142Mobil(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-142_mobilnetz'
     __tablename__ = 'mo_142_tooltip'
 
-register('ch.bakom.notruf-142_mobilnetz', BakomNotruf142Mobil)
+register(BakomNotruf142Mobil.__bodId__, BakomNotruf142Mobil)
 
 
 class BakomNotruf143Mobil(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-143_mobilnetz'
     __tablename__ = 'mo_143_tooltip'
 
-register('ch.bakom.notruf-143_mobilnetz', BakomNotruf143Mobil)
+register(BakomNotruf143Mobil.__bodId__, BakomNotruf143Mobil)
 
 
 class BakomNotruf144Mobil(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-144_mobilnetz'
     __tablename__ = 'mo_144_tooltip'
 
-register('ch.bakom.notruf-144_mobilnetz', BakomNotruf144Mobil)
+register(BakomNotruf144Mobil.__bodId__, BakomNotruf144Mobil)
 
 
 class BakomNotruf145Mobil(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-145_mobilnetz'
     __tablename__ = 'mo_145_tooltip'
 
-register('ch.bakom.notruf-145_mobilnetz', BakomNotruf145Mobil)
+register(BakomNotruf145Mobil.__bodId__, BakomNotruf145Mobil)
 
 
 class BakomNotruf147Mobil(Base, BakomNotrufLayer, Vector):
     __bodId__ = 'ch.bakom.notruf-147_mobilnetz'
     __tablename__ = 'mo_147_tooltip'
 
-register('ch.bakom.notruf-147_mobilnetz', BakomNotruf147Mobil)
+register(BakomNotruf147Mobil.__bodId__, BakomNotruf147Mobil)
 
 
 class BakomNotruf112Sat(Base, Vector):
@@ -1267,7 +1269,7 @@ class BakomNotruf112Sat(Base, Vector):
     sa_addresse_112 = Column('address', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bakom.notruf-112_satellit', BakomNotruf112Sat)
+register(BakomNotruf112Sat.__bodId__, BakomNotruf112Sat)
 
 
 class BakomNotrufZentral:
@@ -1290,56 +1292,56 @@ class BakomNotruf112Zentral(Base, BakomNotrufZentral, Vector):
     __bodId__ = 'ch.bakom.notruf-112_zentral'
     __tablename__ = 'ze_112_tooltip'
 
-register('ch.bakom.notruf-112_zentral', BakomNotruf112Zentral)
+register(BakomNotruf112Zentral.__bodId__, BakomNotruf112Zentral)
 
 
 class BakomNotruf117Zentral(Base, BakomNotrufZentral, Vector):
     __bodId__ = 'ch.bakom.notruf-117_zentral'
     __tablename__ = 'ze_117_tooltip'
 
-register('ch.bakom.notruf-117_zentral', BakomNotruf117Zentral)
+register(BakomNotruf117Zentral.__bodId__, BakomNotruf117Zentral)
 
 
 class BakomNotruf118Zentral(Base, BakomNotrufZentral, Vector):
     __bodId__ = 'ch.bakom.notruf-118_zentral'
     __tablename__ = 'ze_118_tooltip'
 
-register('ch.bakom.notruf-118_zentral', BakomNotruf118Zentral)
+register(BakomNotruf118Zentral.__bodId__, BakomNotruf118Zentral)
 
 
 class BakomNotruf142Zentral(Base, BakomNotrufZentral, Vector):
     __bodId__ = 'ch.bakom.notruf-142_zentral'
     __tablename__ = 'ze_142_tooltip'
 
-register('ch.bakom.notruf-142_zentral', BakomNotruf142Zentral)
+register(BakomNotruf142Zentral.__bodId__, BakomNotruf142Zentral)
 
 
 class BakomNotruf143Zentral(Base, BakomNotrufZentral, Vector):
     __bodId__ = 'ch.bakom.notruf-143_zentral'
     __tablename__ = 'ze_143_tooltip'
 
-register('ch.bakom.notruf-143_zentral', BakomNotruf143Zentral)
+register(BakomNotruf143Zentral.__bodId__, BakomNotruf143Zentral)
 
 
 class BakomNotruf144Zentral(Base, BakomNotrufZentral, Vector):
     __bodId__ = 'ch.bakom.notruf-144_zentral'
     __tablename__ = 'ze_144_tooltip'
 
-register('ch.bakom.notruf-144_zentral', BakomNotruf144Zentral)
+register(BakomNotruf144Zentral.__bodId__, BakomNotruf144Zentral)
 
 
 class BakomNotruf145Zentral(Base, BakomNotrufZentral, Vector):
     __bodId__ = 'ch.bakom.notruf-145_zentral'
     __tablename__ = 'ze_145_tooltip'
 
-register('ch.bakom.notruf-145_zentral', BakomNotruf145Zentral)
+register(BakomNotruf145Zentral.__bodId__, BakomNotruf145Zentral)
 
 
 class BakomNotruf147Zentral(Base, BakomNotrufZentral, Vector):
     __bodId__ = 'ch.bakom.notruf-147_zentral'
     __tablename__ = 'ze_147_tooltip'
 
-register('ch.bakom.notruf-147_zentral', BakomNotruf147Zentral)
+register(BakomNotruf147Zentral.__bodId__, BakomNotruf147Zentral)
 
 
 class Bakomfernsehsender(Base, Vector):
@@ -1359,7 +1361,7 @@ class Bakomfernsehsender(Base, Vector):
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bakom.radio-fernsehsender', Bakomfernsehsender)
+register(Bakomfernsehsender.__bodId__, Bakomfernsehsender)
 
 
 class RichtfunkVerbindungen(Base, Vector):
@@ -1385,7 +1387,7 @@ class Bakomtv(Base, Vector):
     prog = Column('prog', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bakom.versorgungsgebiet-tv', Bakomtv)
+register(Bakomtv.__bodId__, Bakomtv)
 
 
 class Bakomukw(Base, Vector):
@@ -1398,7 +1400,7 @@ class Bakomukw(Base, Vector):
     prog = Column('prog', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bakom.versorgungsgebiet-ukw', Bakomukw)
+register(Bakomukw.__bodId__, Bakomukw)
 
 
 class EinschraenkungenDrohnen(Base, Vector):
@@ -1450,7 +1452,7 @@ class EinschraenkungenDrohnen(Base, Vector):
     period_end = Column('period_end', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.einschraenkungen-drohnen', EinschraenkungenDrohnen)
+register(EinschraenkungenDrohnen.__bodId__, EinschraenkungenDrohnen)
 
 
 class ProjFlughafenanlagen(Base, Vector):
@@ -1476,7 +1478,7 @@ class ProjFlughafenanlagen(Base, Vector):
     bgdi_id = Column('bgdi_id', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.projektierungszonen-flughafenanlagen', ProjFlughafenanlagen)
+register(ProjFlughafenanlagen.__bodId__, ProjFlughafenanlagen)
 
 
 class LuftfahrthindernisBase:
@@ -1552,14 +1554,14 @@ class LuftraeumeFluginformationsGebiet(Base, LuftraeumeBase, Vector):
     __bodId__ = 'ch.bazl.luftraeume-fluginformationsgebiet'
     the_geom_highlight = Column('the_geom_highlight', Geometry2D)
 
-register('ch.bazl.luftraeume-fluginformationsgebiet', LuftraeumeFluginformationsGebiet)
+register(LuftraeumeFluginformationsGebiet.__bodId__, LuftraeumeFluginformationsGebiet)
 
 
 class LuftraeumeFluginformationsZonen(Base, LuftraeumeBase, Vector):
     __tablename__ = 'luftraeume_fluginformationszonen'
     __bodId__ = 'ch.bazl.luftraeume-fluginformationszonen'
 
-register('ch.bazl.luftraeume-fluginformationszonen', LuftraeumeFluginformationsZonen)
+register(LuftraeumeFluginformationsZonen.__bodId__, LuftraeumeFluginformationsZonen)
 
 
 class LuftraeumeKontrollBezirke(Base, LuftraeumeBase, Vector):
@@ -1568,21 +1570,21 @@ class LuftraeumeKontrollBezirke(Base, LuftraeumeBase, Vector):
     __bodId__ = 'ch.bazl.luftraeume-kontrollbezirke'
     the_geom_highlight = Column('the_geom_highlight', Geometry2D)
 
-register('ch.bazl.luftraeume-kontrollbezirke', LuftraeumeKontrollBezirke)
+register(LuftraeumeKontrollBezirke.__bodId__, LuftraeumeKontrollBezirke)
 
 
 class LuftraeumeKontrollZonen(Base, LuftraeumeBase, Vector):
     __tablename__ = 'luftraeume_kontrollzonen'
     __bodId__ = 'ch.bazl.luftraeume-kontrollzonen'
 
-register('ch.bazl.luftraeume-kontrollzonen', LuftraeumeKontrollZonen)
+register(LuftraeumeKontrollZonen.__bodId__, LuftraeumeKontrollZonen)
 
 
 class LuftraeumeNahKontrollBezirke(Base, LuftraeumeBase, Vector):
     __tablename__ = 'luftraeume_nahkontrollbezirke'
     __bodId__ = 'ch.bazl.luftraeume-nahkontrollbezirke'
 
-register('ch.bazl.luftraeume-nahkontrollbezirke', LuftraeumeNahKontrollBezirke)
+register(LuftraeumeNahKontrollBezirke.__bodId__, LuftraeumeNahKontrollBezirke)
 
 
 class HindernisbegrenzungsflaechenPerimeter(Base, Vector):
@@ -1596,7 +1598,7 @@ class HindernisbegrenzungsflaechenPerimeter(Base, Vector):
     status = Column('status', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.hindernisbegrenzungsflaechen-perimeter', HindernisbegrenzungsflaechenPerimeter)
+register(HindernisbegrenzungsflaechenPerimeter.__bodId__, HindernisbegrenzungsflaechenPerimeter)
 
 
 class HindernisbegrenzungsflaechenKataster:
@@ -1614,13 +1616,13 @@ class HindernisbegrenzungsflaechenKataster:
 class HindernisbegrenzungsflaechenKatasterArea(Base, HindernisbegrenzungsflaechenKataster, Vector):
     __tablename__ = 'hindernisbegrenzungsflaechen_kataster_area'
 
-register('ch.bazl.hindernisbegrenzungsflaechen-kataster', HindernisbegrenzungsflaechenKatasterArea)
+register(HindernisbegrenzungsflaechenKatasterArea.__bodId__, HindernisbegrenzungsflaechenKatasterArea)
 
 
 class HindernisbegrenzungsflaechenKatasterOlsLine(Base, HindernisbegrenzungsflaechenKataster, Vector):
     __tablename__ = 'hindernisbegrenzungsflaechen_kataster_olsline'
 
-register('ch.bazl.hindernisbegrenzungsflaechen-kataster', HindernisbegrenzungsflaechenKatasterOlsLine)
+register(HindernisbegrenzungsflaechenKatasterOlsLine.__bodId__, HindernisbegrenzungsflaechenKatasterOlsLine)
 
 
 class IntrinsischesBodenrisikoSora(Base, Vector):
@@ -1665,6 +1667,8 @@ class AstraStrasseFacilitiesA(Base, Vector):
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
+register(AstraStrasseFacilitiesA.__bodId__, AstraStrasseFacilitiesA)
+
 
 class AstraStrassePlanningA(Base, Vector):
     __tablename__ = 'sachplan_strasse_pl_anhoerung'
@@ -1701,6 +1705,8 @@ class AstraStrassePlanningA(Base, Vector):
     __minscale__ = 20005
     __maxscale__ = 500005
     the_geom = Column(Geometry2D)
+
+register(AstraStrassePlanningA.__bodId__, AstraStrassePlanningA)
 
 
 class AstraStrassePlanningRasterA(Base, Vector):
@@ -1739,9 +1745,7 @@ class AstraStrassePlanningRasterA(Base, Vector):
     __maxscale__ = 20005
     the_geom = Column(Geometry2D)
 
-register('ch.astra.sachplan-infrastruktur-strasse_anhoerung', AstraStrasseFacilitiesA)
-register('ch.astra.sachplan-infrastruktur-strasse_anhoerung', AstraStrassePlanningA)
-register('ch.astra.sachplan-infrastruktur-strasse_anhoerung', AstraStrassePlanningRasterA)
+register(AstraStrassePlanningRasterA.__bodId__, AstraStrassePlanningRasterA)
 
 
 class AstraStrasseFacilitiesK(Base, Vector):
@@ -1773,6 +1777,8 @@ class AstraStrasseFacilitiesK(Base, Vector):
     objname_it = Column('objname_it', Unicode)
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
+
+register(AstraStrasseFacilitiesK.__bodId__, AstraStrasseFacilitiesK)
 
 
 class AstraStrassePlanningK(Base, Vector):
@@ -1811,6 +1817,8 @@ class AstraStrassePlanningK(Base, Vector):
     __maxscale__ = 500005
     the_geom = Column(Geometry2D)
 
+register(AstraStrassePlanningK.__bodId__, AstraStrassePlanningK)
+
 
 class AstraStrassePlanningRasterK(Base, Vector):
     __tablename__ = 'sachplan_strasse_pl_r_kraft'
@@ -1848,9 +1856,7 @@ class AstraStrassePlanningRasterK(Base, Vector):
     __maxscale__ = 20005
     the_geom = Column(Geometry2D)
 
-register('ch.astra.sachplan-infrastruktur-strasse_kraft', AstraStrasseFacilitiesK)
-register('ch.astra.sachplan-infrastruktur-strasse_kraft', AstraStrassePlanningK)
-register('ch.astra.sachplan-infrastruktur-strasse_kraft', AstraStrassePlanningRasterK)
+register(AstraStrassePlanningRasterK.__bodId__, AstraStrassePlanningRasterK)
 
 
 class BiogasFacilities(Base, Vector):
@@ -1886,7 +1892,7 @@ class BiogasFacilities(Base, Vector):
     yearly_production = Column('yearly_production', JsonChsdi)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.biogasanlagen', BiogasFacilities)
+register(BiogasFacilities.__bodId__, BiogasFacilities)
 
 
 class SachPGFacilities(Base, Vector):
@@ -1913,6 +1919,8 @@ class SachPGFacilities(Base, Vector):
     web_it = Column('web_it', Unicode)
     __minscale__ = 99999
     the_geom = Column(Geometry2D)
+
+register(SachPGFacilities.__bodId__, SachPGFacilities)
 
 
 class SachPGPlanning(Base, Vector):
@@ -1945,6 +1953,8 @@ class SachPGPlanning(Base, Vector):
     __minscale__ = 24999
     __maxscale__ = 499999
 
+register(SachPGPlanning.__bodId__, SachPGPlanning)
+
 
 class SachPGAreaPlanningNotMT6(Base, Vector):
     __tablename__ = 'sachplan_geologie_tiefenlager_pm_area_not_mt6'
@@ -1974,6 +1984,8 @@ class SachPGAreaPlanningNotMT6(Base, Vector):
     web_fr = Column('web_fr', Unicode)
     web_it = Column('web_it', Unicode)
     __maxscale__ = 499999
+
+register(SachPGAreaPlanningNotMT6.__bodId__, SachPGAreaPlanningNotMT6)
 
 
 class SachPGAreaPlanningMT6(Base, Vector):
@@ -2005,10 +2017,7 @@ class SachPGAreaPlanningMT6(Base, Vector):
     web_it = Column('web_it', Unicode)
     __maxscale__ = 24999
 
-register('ch.bfe.sachplan-geologie-tiefenlager', SachPGFacilities)
-register('ch.bfe.sachplan-geologie-tiefenlager', SachPGPlanning)
-register('ch.bfe.sachplan-geologie-tiefenlager', SachPGAreaPlanningNotMT6)
-register('ch.bfe.sachplan-geologie-tiefenlager', SachPGAreaPlanningMT6)
+register(SachPGAreaPlanningMT6.__bodId__, SachPGAreaPlanningMT6)
 
 
 class SilFacilitiesA(Base, Vector):
@@ -2039,6 +2048,8 @@ class SilFacilitiesA(Base, Vector):
     objectname_it = Column('objectname_it', Unicode)
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
+
+register(SilFacilitiesA.__bodId__, SilFacilitiesA)
 
 
 class SilPlanningA(Base, Vector):
@@ -2074,9 +2085,7 @@ class SilPlanningA(Base, Vector):
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
-
-register('ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung', SilFacilitiesA)
-register('ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung', SilPlanningA)
+register(SilPlanningA.__bodId__, SilPlanningA)
 
 
 class SilFacilitiesK(Base, Vector):
@@ -2107,6 +2116,8 @@ class SilFacilitiesK(Base, Vector):
     objectname_it = Column('objectname_it', Unicode)
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
+
+register(SilFacilitiesK.__bodId__, SilFacilitiesK)
 
 
 class SilPlanningK(Base, Vector):
@@ -2142,9 +2153,7 @@ class SilPlanningK(Base, Vector):
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
-
-register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', SilFacilitiesK)
-register('ch.bazl.sachplan-infrastruktur-luftfahrt_kraft', SilPlanningK)
+register(SilPlanningK.__bodId__, SilPlanningK)
 
 
 class NgaAnbieter(Base, Vector):
@@ -2159,7 +2168,7 @@ class NgaAnbieter(Base, Vector):
     nbofprovider = Column('nbofprovider', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bakom.anbieter-eigenes_festnetz', NgaAnbieter)
+register(NgaAnbieter.__bodId__, NgaAnbieter)
 
 
 class Kernkraftwerke(Base, Vector):
@@ -2207,7 +2216,7 @@ class Kernkraftwerke(Base, Vector):
     dismantling_phase = Column('dismantling_phase', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.kernkraftwerke', Kernkraftwerke)
+register(Kernkraftwerke.__bodId__, Kernkraftwerke)
 
 
 class Kehrichtverbrennungsanlagen(Base, Vector):
@@ -2230,7 +2239,7 @@ class Kehrichtverbrennungsanlagen(Base, Vector):
     heat = Column('heat', Float)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.kehrichtverbrennungsanlagen', Kehrichtverbrennungsanlagen)
+register(Kehrichtverbrennungsanlagen.__bodId__, Kehrichtverbrennungsanlagen)
 
 
 class ThermischeNetzeGeometry(Base, Vector):
@@ -2271,7 +2280,7 @@ class ThermischeNetzeGeometry(Base, Vector):
     y = Column('y', Float)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.thermische-netze', ThermischeNetzeGeometry)
+register(ThermischeNetzeGeometry.__bodId__, ThermischeNetzeGeometry)
 
 
 class SisFacilitiesA(Base, Vector):
@@ -2303,7 +2312,7 @@ class SisFacilitiesA(Base, Vector):
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schiene_anhorung', SisFacilitiesA)
+register(SisFacilitiesA.__bodId__, SisFacilitiesA)
 
 
 class SisPlanningA(Base, Vector):
@@ -2339,7 +2348,7 @@ class SisPlanningA(Base, Vector):
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schiene_anhorung', SisPlanningA)
+register(SisPlanningA.__bodId__, SisPlanningA)
 
 
 class SisAngaben(Base, Vector):
@@ -2364,7 +2373,7 @@ class SisAngaben(Base, Vector):
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schiene_ausgangslage', SisAngaben)
+register(SisAngaben.__bodId__, SisAngaben)
 
 
 class SisFacilitiesK(Base, Vector):
@@ -2396,7 +2405,7 @@ class SisFacilitiesK(Base, Vector):
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schiene_kraft', SisFacilitiesK)
+register(SisFacilitiesK.__bodId__, SisFacilitiesK)
 
 
 class SisPlanningK(Base, Vector):
@@ -2431,7 +2440,7 @@ class SisPlanningK(Base, Vector):
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schiene_kraft', SisPlanningK)
+register(SisPlanningK.__bodId__, SisPlanningK)
 
 
 class SugBaseClass:
@@ -2467,8 +2476,7 @@ class SugPlanignAnhoerung(Base, SugBaseClass, Vector):
     plstatus_text_it = Column('plstatus_text_it', Unicode)
     validuntil = Column('validuntil', Unicode)
 
-
-register('ch.bav.sachplan-unterirdischer-guetertransport_anhoerung', SugPlanignAnhoerung)
+register(SugPlanignAnhoerung.__bodId__, SugPlanignAnhoerung)
 
 
 class SugFacilityAnhoerung(Base, SugBaseClass, Vector):
@@ -2482,7 +2490,7 @@ class SugFacilityAnhoerung(Base, SugBaseClass, Vector):
     fackind_text_fr = Column('fackind_text_fr', Unicode)
     fackind_text_it = Column('fackind_text_it', Unicode)
 
-register('ch.bav.sachplan-unterirdischer-guetertransport_anhoerung', SugFacilityAnhoerung)
+register(SugFacilityAnhoerung.__bodId__, SugFacilityAnhoerung)
 
 
 class SugPlanignKraft(Base, SugBaseClass, Vector):
@@ -2500,8 +2508,7 @@ class SugPlanignKraft(Base, SugBaseClass, Vector):
     plstatus_text_it = Column('plstatus_text_it', Unicode)
     validuntil = Column('validuntil', Unicode)
 
-
-register('ch.bav.sachplan-unterirdischer-guetertransport_kraft', SugPlanignKraft)
+register(SugPlanignKraft.__bodId__, SugPlanignKraft)
 
 
 class SugFacilityKraft(Base, SugBaseClass, Vector):
@@ -2515,7 +2522,7 @@ class SugFacilityKraft(Base, SugBaseClass, Vector):
     fackind_text_fr = Column('fackind_text_fr', Unicode)
     fackind_text_it = Column('fackind_text_it', Unicode)
 
-register('ch.bav.sachplan-unterirdischer-guetertransport_kraft', SugFacilityKraft)
+register(SugFacilityKraft.__bodId__, SugFacilityKraft)
 
 
 class KbsZivilflugpl(Base, Vector):
@@ -2540,7 +2547,7 @@ class KbsZivilflugpl(Base, Vector):
     url_it = Column('url_it', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.kataster-belasteter-standorte-zivilflugplaetze', KbsZivilflugpl)
+register(KbsZivilflugpl.__bodId__, KbsZivilflugpl)
 
 
 class SchutzgebieteAulavLiechtenstein(Base, Vector):
@@ -2551,7 +2558,7 @@ class SchutzgebieteAulavLiechtenstein(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.schutzgebiete-aulav_liechtenstein', SchutzgebieteAulavLiechtenstein)
+register(SchutzgebieteAulavLiechtenstein.__bodId__, SchutzgebieteAulavLiechtenstein)
 
 
 class AnlageSchienengueterverkehr:
@@ -2611,7 +2618,7 @@ class LaermBelastungEinsenbahnTatsaechlicheEmissionTag(Base, Vector):
     year_evaluation = Column('year_evaluation', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag', LaermBelastungEinsenbahnTatsaechlicheEmissionTag)
+register(LaermBelastungEinsenbahnTatsaechlicheEmissionTag.__bodId__, LaermBelastungEinsenbahnTatsaechlicheEmissionTag)
 
 
 class LaermBelastungEinsenbahnTatsaechlicheEmissionNacht(Base, Vector):
@@ -2637,7 +2644,7 @@ class LaermBelastungEinsenbahnTatsaechlicheEmissionNacht(Base, Vector):
     year_evaluation = Column('year_evaluation', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht', LaermBelastungEinsenbahnTatsaechlicheEmissionNacht)
+register(LaermBelastungEinsenbahnTatsaechlicheEmissionNacht.__bodId__, LaermBelastungEinsenbahnTatsaechlicheEmissionNacht)
 
 
 class LaermBelastungEinsenbahnFestgelegteEmissionTag(Base, Vector):
@@ -2657,7 +2664,7 @@ class LaermBelastungEinsenbahnFestgelegteEmissionTag(Base, Vector):
     lre_remark = Column('lre_remark', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag', LaermBelastungEinsenbahnFestgelegteEmissionTag)
+register(LaermBelastungEinsenbahnFestgelegteEmissionTag.__bodId__, LaermBelastungEinsenbahnFestgelegteEmissionTag)
 
 
 class LaermBelastungEinsenbahnFestgelegteEmissionNacht(Base, Vector):
@@ -2677,7 +2684,7 @@ class LaermBelastungEinsenbahnFestgelegteEmissionNacht(Base, Vector):
     lre_remark = Column('lre_remark', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht', LaermBelastungEinsenbahnFestgelegteEmissionNacht)
+register(LaermBelastungEinsenbahnFestgelegteEmissionNacht.__bodId__, LaermBelastungEinsenbahnFestgelegteEmissionNacht)
 
 
 class LaermBelastungEisenbahnEffektiveImmissionen:
@@ -2710,7 +2717,7 @@ class LaermBelastungEisenbahnEffektiveImmissionenNacht(Base, LaermBelastungEisen
     __template__ = 'templates/htmlpopup/laerm_eisenbahn_effektive_immissionen_nacht.mako'
     lr_night = Column('lr_night', Float)
 
-register('ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht', LaermBelastungEisenbahnEffektiveImmissionenNacht)
+register(LaermBelastungEisenbahnEffektiveImmissionenNacht.__bodId__, LaermBelastungEisenbahnEffektiveImmissionenNacht)
 
 
 class LaermBelastungEisenbahnEffektiveImmissionenTag(Base, LaermBelastungEisenbahnEffektiveImmissionen, Vector):
@@ -2718,7 +2725,7 @@ class LaermBelastungEisenbahnEffektiveImmissionenTag(Base, LaermBelastungEisenba
     __template__ = 'templates/htmlpopup/laerm_eisenbahn_effektive_immissionen_tag.mako'
     lr_day = Column('lr_day', Float)
 
-register('ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag', LaermBelastungEisenbahnEffektiveImmissionenTag)
+register(LaermBelastungEisenbahnEffektiveImmissionenTag.__bodId__, LaermBelastungEisenbahnEffektiveImmissionenTag)
 
 
 class LaermBelastungEisenbahnZulaessigeImmissionen:
@@ -2746,7 +2753,7 @@ class LaermBelastungEisenbahnZulaessigeImmissionenNacht(Base, LaermBelastungEise
     __template__ = 'templates/htmlpopup/laerm_eisenbahn_zulaessige_immissionen_nacht.mako'
     lr_max_night = Column('lr_max_night', Float)
 
-register('ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht', LaermBelastungEisenbahnZulaessigeImmissionenNacht)
+register(LaermBelastungEisenbahnZulaessigeImmissionenNacht.__bodId__, LaermBelastungEisenbahnZulaessigeImmissionenNacht)
 
 
 class LaermBelastungEisenbahnZulaessigeImmissionenTag(Base, LaermBelastungEisenbahnZulaessigeImmissionen, Vector):
@@ -2754,7 +2761,7 @@ class LaermBelastungEisenbahnZulaessigeImmissionenTag(Base, LaermBelastungEisenb
     __template__ = 'templates/htmlpopup/laerm_eisenbahn_zulaessige_immissionen_tag.mako'
     lr_max_day = Column('lr_max_day', Float)
 
-register('ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag', LaermBelastungEisenbahnZulaessigeImmissionenTag)
+register(LaermBelastungEisenbahnZulaessigeImmissionenTag.__bodId__, LaermBelastungEisenbahnZulaessigeImmissionenTag)
 
 
 class LaermbelastungEinsenbahnLaermschutzwaende(Base, Vector):
@@ -2779,7 +2786,7 @@ class LaermbelastungEinsenbahnLaermschutzwaende(Base, Vector):
     year_legal = Column('year_legal', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.laermbelastung-eisenbahn_laermschutzwaende', LaermbelastungEinsenbahnLaermschutzwaende)
+register(LaermbelastungEinsenbahnLaermschutzwaende.__bodId__, LaermbelastungEinsenbahnLaermschutzwaende)
 
 
 class SifFacilitiesA(Base, Vector):
@@ -2811,7 +2818,7 @@ class SifFacilitiesA(Base, Vector):
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung', SifFacilitiesA)
+register(SifFacilitiesA.__bodId__, SifFacilitiesA)
 
 
 class SifFacilitiesK(Base, Vector):
@@ -2843,7 +2850,7 @@ class SifFacilitiesK(Base, Vector):
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schifffahrt_kraft', SifFacilitiesK)
+register(SifFacilitiesK.__bodId__, SifFacilitiesK)
 
 
 class SifPlanningA(Base, Vector):
@@ -2879,7 +2886,7 @@ class SifPlanningA(Base, Vector):
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schifffahrt_anhoerung', SifPlanningA)
+register(SifPlanningA.__bodId__, SifPlanningA)
 
 
 class SifPlanningK(Base, Vector):
@@ -2915,7 +2922,7 @@ class SifPlanningK(Base, Vector):
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schifffahrt_kraft', SifPlanningK)
+register(SifPlanningK.__bodId__, SifPlanningK)
 
 
 class SifAusgangslage(Base, Vector):
@@ -2935,7 +2942,7 @@ class SifAusgangslage(Base, Vector):
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.sachplan-infrastruktur-schifffahrt_ausgangslage', SifAusgangslage)
+register(SifAusgangslage.__bodId__, SifAusgangslage)
 
 
 class BazlLaermErsteNachtstunde(Base, Vector):
@@ -2953,7 +2960,7 @@ class BazlLaermErsteNachtstunde(Base, Vector):
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde', BazlLaermErsteNachtstunde)
+register(BazlLaermErsteNachtstunde.__bodId__, BazlLaermErsteNachtstunde)
 
 
 class BazlLaermHelikopterMaximalpegel(Base, Vector):
@@ -2971,7 +2978,7 @@ class BazlLaermHelikopterMaximalpegel(Base, Vector):
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter-maximalpegel', BazlLaermHelikopterMaximalpegel)
+register(BazlLaermHelikopterMaximalpegel.__bodId__, BazlLaermHelikopterMaximalpegel)
 
 
 class BazlLaermHelikopter(Base, Vector):
@@ -2989,7 +2996,7 @@ class BazlLaermHelikopter(Base, Vector):
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter', BazlLaermHelikopter)
+register(BazlLaermHelikopter.__bodId__, BazlLaermHelikopter)
 
 
 class BazlLaermKleinGrossflugzeuge(Base, Vector):
@@ -3007,7 +3014,7 @@ class BazlLaermKleinGrossflugzeuge(Base, Vector):
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.laermbelastungskataster-zivilflugplaetze_klein-grossflugzeuge', BazlLaermKleinGrossflugzeuge)
+register(BazlLaermKleinGrossflugzeuge.__bodId__, BazlLaermKleinGrossflugzeuge)
 
 
 class BazlLaermKleinluftfahrzeuge(Base, Vector):
@@ -3025,7 +3032,7 @@ class BazlLaermKleinluftfahrzeuge(Base, Vector):
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.laermbelastungskataster-zivilflugplaetze_kleinluftfahrzeuge', BazlLaermKleinluftfahrzeuge)
+register(BazlLaermKleinluftfahrzeuge.__bodId__, BazlLaermKleinluftfahrzeuge)
 
 
 class BazlLaermLetzteNachtstunde(Base, Vector):
@@ -3043,7 +3050,7 @@ class BazlLaermLetzteNachtstunde(Base, Vector):
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.laermbelastungskataster-zivilflugplaetze_letzte-nachtstunde', BazlLaermLetzteNachtstunde)
+register(BazlLaermLetzteNachtstunde.__bodId__, BazlLaermLetzteNachtstunde)
 
 
 class BazlLaermMilitaerGesamt(Base, Vector):
@@ -3061,7 +3068,7 @@ class BazlLaermMilitaerGesamt(Base, Vector):
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt', BazlLaermMilitaerGesamt)
+register(BazlLaermMilitaerGesamt.__bodId__, BazlLaermMilitaerGesamt)
 
 
 class BazlLaermZweiteNachtstunde(Base, Vector):
@@ -3079,7 +3086,7 @@ class BazlLaermZweiteNachtstunde(Base, Vector):
     noisepollutionregister_documentlink = Column('noisepollutionregister_documentlink', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde', BazlLaermZweiteNachtstunde)
+register(BazlLaermZweiteNachtstunde.__bodId__, BazlLaermZweiteNachtstunde)
 
 
 class SuelFacAnhorung(Base, Vector):
@@ -3111,7 +3118,7 @@ class SuelFacAnhorung(Base, Vector):
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.sachplan-uebertragungsleitungen_anhoerung', SuelFacAnhorung)
+register(SuelFacAnhorung.__bodId__, SuelFacAnhorung)
 
 
 class SuelPlAnhorung(Base, Vector):
@@ -3149,7 +3156,7 @@ class SuelPlAnhorung(Base, Vector):
     __maxscale__ = 500005
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.sachplan-uebertragungsleitungen_anhoerung', SuelPlAnhorung)
+register(SuelPlAnhorung.__bodId__, SuelPlAnhorung)
 
 
 class SuelFacRAnhorung(Base, Vector):
@@ -3183,7 +3190,7 @@ class SuelFacRAnhorung(Base, Vector):
     __minscale__ = 1
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.sachplan-uebertragungsleitungen_anhoerung', SuelFacRAnhorung)
+register(SuelFacRAnhorung.__bodId__, SuelFacRAnhorung)
 
 
 class SuelPlRAnhorung(Base, Vector):
@@ -3221,7 +3228,7 @@ class SuelPlRAnhorung(Base, Vector):
     __minscale__ = 1
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.sachplan-uebertragungsleitungen_anhoerung', SuelPlRAnhorung)
+register(SuelPlRAnhorung.__bodId__, SuelPlRAnhorung)
 
 
 class SuelFacKraft(Base, Vector):
@@ -3253,7 +3260,7 @@ class SuelFacKraft(Base, Vector):
     bgdi_created = Column('bgdi_created', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.sachplan-uebertragungsleitungen_kraft', SuelFacKraft)
+register(SuelFacKraft.__bodId__, SuelFacKraft)
 
 
 class SuelPlKraft(Base, Vector):
@@ -3290,7 +3297,7 @@ class SuelPlKraft(Base, Vector):
     __maxscale__ = 500005
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.sachplan-uebertragungsleitungen_kraft', SuelPlKraft)
+register(SuelPlKraft.__bodId__, SuelPlKraft)
 
 
 class SuelFacRKraft(Base, Vector):
@@ -3324,7 +3331,7 @@ class SuelFacRKraft(Base, Vector):
     __minscale__ = 1
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.sachplan-uebertragungsleitungen_kraft', SuelFacRKraft)
+register(SuelFacRKraft.__bodId__, SuelFacRKraft)
 
 
 class SuelPlRKraft(Base, Vector):
@@ -3362,10 +3369,10 @@ class SuelPlRKraft(Base, Vector):
     __minscale__ = 1
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.sachplan-uebertragungsleitungen_kraft', SuelPlRKraft)
+register(SuelPlRKraft.__bodId__, SuelPlRKraft)
 
 
-class ChmobilVeloland (Base, Vector):
+class ChmobilVeloland(Base, Vector):
     __tablename__ = 'chmobil_veloland'
     __table_args__ = ({'schema': 'astra', 'autoload': False})
     __template__ = 'templates/htmlpopup/chmobil.mako'
@@ -3377,10 +3384,10 @@ class ChmobilVeloland (Base, Vector):
     chmobil_has_segment = Column('has_segment', Boolean)
     the_geom = Column(Geometry2D)
 
-register('ch.astra.veloland', ChmobilVeloland)
+register(ChmobilVeloland.__bodId__, ChmobilVeloland)
 
 
-class ChmobilWanderland (Base, Vector):
+class ChmobilWanderland(Base, Vector):
     __tablename__ = 'chmobil_wanderland'
     __table_args__ = ({'schema': 'astra', 'autoload': False})
     __template__ = 'templates/htmlpopup/chmobil.mako'
@@ -3392,10 +3399,10 @@ class ChmobilWanderland (Base, Vector):
     chmobil_has_segment = Column('has_segment', Boolean)
     the_geom = Column(Geometry2D)
 
-register('ch.astra.wanderland', ChmobilWanderland)
+register(ChmobilWanderland.__bodId__, ChmobilWanderland)
 
 
-class ChmobilSkatingland (Base, Vector):
+class ChmobilSkatingland(Base, Vector):
     __tablename__ = 'chmobil_skatingland'
     __table_args__ = ({'schema': 'astra', 'autoload': False})
     __template__ = 'templates/htmlpopup/chmobil.mako'
@@ -3407,10 +3414,10 @@ class ChmobilSkatingland (Base, Vector):
     chmobil_has_segment = Column('has_segment', Boolean)
     the_geom = Column(Geometry2D)
 
-register('ch.astra.skatingland', ChmobilSkatingland)
+register(ChmobilSkatingland.__bodId__, ChmobilSkatingland)
 
 
-class ChmobilMountainbikeland (Base, Vector):
+class ChmobilMountainbikeland(Base, Vector):
     __tablename__ = 'chmobil_mountainbikeland'
     __table_args__ = ({'schema': 'astra', 'autoload': False})
     __template__ = 'templates/htmlpopup/chmobil.mako'
@@ -3422,10 +3429,10 @@ class ChmobilMountainbikeland (Base, Vector):
     chmobil_has_segment = Column('has_segment', Boolean)
     the_geom = Column(Geometry2D)
 
-register('ch.astra.mountainbikeland', ChmobilMountainbikeland)
+register(ChmobilMountainbikeland.__bodId__, ChmobilMountainbikeland)
 
 
-class ChmobilSchneeschuhWanderland (Base, Vector):
+class ChmobilSchneeschuhWanderland(Base, Vector):
     __tablename__ = 'chmobil_schneeschuhwanderland'
     __table_args__ = ({'schema': 'astra', 'autoload': False})
     __template__ = 'templates/htmlpopup/chmobil.mako'
@@ -3437,7 +3444,7 @@ class ChmobilSchneeschuhWanderland (Base, Vector):
     chmobil_has_segment = Column('has_segment', Boolean)
     the_geom = Column(Geometry2D)
 
-register('ch.swisstopo.schneeschuhwandern', ChmobilSchneeschuhWanderland)
+register(ChmobilSchneeschuhWanderland.__bodId__, ChmobilSchneeschuhWanderland)
 
 
 class FlugplaetzeHeliports(Base, Vector):
@@ -3455,7 +3462,7 @@ class FlugplaetzeHeliports(Base, Vector):
     elevation = Column('elevation', Float)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.flugplaetze-heliports', FlugplaetzeHeliports)
+register(FlugplaetzeHeliports.__bodId__, FlugplaetzeHeliports)
 
 
 class Gebirgslandeplaetze(Base, Vector):
@@ -3475,7 +3482,7 @@ class Gebirgslandeplaetze(Base, Vector):
     elevation = Column('elevation', Integer)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.gebirgslandeplaetze', Gebirgslandeplaetze)
+register(Gebirgslandeplaetze.__bodId__, Gebirgslandeplaetze)
 
 
 class Spitallandeplaetze(Base, Vector):
@@ -3492,7 +3499,7 @@ class Spitallandeplaetze(Base, Vector):
     arp_north = Column('arp_north', Integer, nullable=False)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.spitallandeplaetze', Spitallandeplaetze)
+register(Spitallandeplaetze.__bodId__, Spitallandeplaetze)
 
 
 class Biomasse:
@@ -3504,7 +3511,7 @@ class Biomasse:
     the_geom = Column(Geometry2D)
 
 
-class BiomasseVerholzt (Base, Biomasse, Vector):
+class BiomasseVerholzt(Base, Biomasse, Vector):
     __template__ = 'templates/htmlpopup/biomasseverholzt.mako'
     __bodId__ = 'ch.bfe.biomasse-verholzt'
     woody = Column('woody', Float)
@@ -3512,7 +3519,7 @@ class BiomasseVerholzt (Base, Biomasse, Vector):
 register(BiomasseVerholzt.__bodId__, BiomasseVerholzt)
 
 
-class BiomasseNichtVerholzt (Base, Biomasse, Vector):
+class BiomasseNichtVerholzt(Base, Biomasse, Vector):
     __template__ = 'templates/htmlpopup/biomassenichtverholzt.mako'
     __bodId__ = 'ch.bfe.biomasse-nicht-verholzt'
     non_woody = Column('non_woody', Float)
@@ -3531,13 +3538,15 @@ class SeilbahnenBundeskonzession:
     betreiber_tuabkuerzung = Column('betreiber_tuabkuerzung', Unicode)
 
 
-class SeilbahnenBundeskonzessionBauwerk (Base, SeilbahnenBundeskonzession, Vector):
+class SeilbahnenBundeskonzessionBauwerk(Base, SeilbahnenBundeskonzession, Vector):
     __tablename__ = 'seilbahnen_bundeskonzession_bauwerk'
     __template__ = 'templates/htmlpopup/seilbahnenbundeskonzession_bauwerk.mako'
     bauwerkstyp = Column('bauwerkstyp', Unicode)
 
+register(SeilbahnenBundeskonzessionBauwerk.__bodId__, SeilbahnenBundeskonzessionBauwerk)
 
-class SeilbahnenBundeskonzessioSeilbahnstreke (Base, SeilbahnenBundeskonzession, Vector):
+
+class SeilbahnenBundeskonzessioSeilbahnstreke(Base, SeilbahnenBundeskonzession, Vector):
     __tablename__ = 'seilbahnen_bundeskonzession_seilbahnstrecke'
     __template__ = 'templates/htmlpopup/seilbahnenbundeskonzession_seilbahnstrecke.mako'
     bahntyp = Column('bahntyp', Unicode)
@@ -3545,20 +3554,20 @@ class SeilbahnenBundeskonzessioSeilbahnstreke (Base, SeilbahnenBundeskonzession,
     hoehendifferenz = Column('hoehendifferenz', Unicode)
     laengeschief = Column('laengeschief', Unicode)
 
+register(SeilbahnenBundeskonzessioSeilbahnstreke.__bodId__, SeilbahnenBundeskonzessioSeilbahnstreke)
 
-class SeilbahnenBundeskonzessioStation (Base, SeilbahnenBundeskonzession, Vector):
+
+class SeilbahnenBundeskonzessioStation(Base, SeilbahnenBundeskonzession, Vector):
     __tablename__ = 'seilbahnen_bundeskonzession_station'
     __template__ = 'templates/htmlpopup/seilbahnenbundeskonzession_station.mako'
     bp_nummer = Column('bp_nummer', Unicode)
     bp_name = Column('bp_name', Unicode)
     stationstyp = Column('stationstyp', Unicode)
 
-register('ch.bav.seilbahnen-bundeskonzession', SeilbahnenBundeskonzessioSeilbahnstreke)
-register('ch.bav.seilbahnen-bundeskonzession', SeilbahnenBundeskonzessioStation)
-register('ch.bav.seilbahnen-bundeskonzession', SeilbahnenBundeskonzessionBauwerk)
+register(SeilbahnenBundeskonzessioStation.__bodId__, SeilbahnenBundeskonzessioStation)
 
 
-class Elektrizitaetsproduktionsanlagen (Base, Vector):
+class Elektrizitaetsproduktionsanlagen(Base, Vector):
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __tablename__ = 'elektrizitaetsproduktionsanlagen'
     __template__ = 'templates/htmlpopup/elektrizitaetsproduktionsanlagen.mako'
@@ -3596,10 +3605,10 @@ class Elektrizitaetsproduktionsanlagen (Base, Vector):
     detail_orientation_en = Column('detail_orientation_en', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.elektrizitaetsproduktionsanlagen', Elektrizitaetsproduktionsanlagen)
+register(Elektrizitaetsproduktionsanlagen.__bodId__, Elektrizitaetsproduktionsanlagen)
 
 
-class WaermepotentialGewaesser (Base, Vector):
+class WaermepotentialGewaesser(Base, Vector):
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __tablename__ = 'waermepotential_gewaesser'
     __template__ = 'templates/htmlpopup/waermepotential_gewaesser.mako'
@@ -3612,10 +3621,10 @@ class WaermepotentialGewaesser (Base, Vector):
     further_information = Column('further_information', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.waermepotential-gewaesser', WaermepotentialGewaesser)
+register(WaermepotentialGewaesser.__bodId__, WaermepotentialGewaesser)
 
 
-class ElektrischeAnlagenUeber36Line (Base, Vector):
+class ElektrischeAnlagenUeber36Line(Base, Vector):
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __tablename__ = 'elektrische_anlagen_ueber_36_line'
     __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_line.mako'
@@ -3635,7 +3644,7 @@ class ElektrischeAnlagenUeber36Line (Base, Vector):
 register(ElektrischeAnlagenUeber36Line.__bodId__, ElektrischeAnlagenUeber36Line)
 
 
-class ElektrischeAnlagenUeber36Point (Base, Vector):
+class ElektrischeAnlagenUeber36Point(Base, Vector):
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __tablename__ = 'elektrische_anlagen_ueber_36_point'
     __template__ = 'templates/htmlpopup/bfe_elektrische_anlagen_ueber_36_point.mako'
@@ -3667,7 +3676,7 @@ class ElektrischeAnlagenUeber36Station:
     the_geom = Column(Geometry2D)
 
 
-class ElektrischeAnlagenUeber36StationPoly (Base, ElektrischeAnlagenUeber36Station, Vector):
+class ElektrischeAnlagenUeber36StationPoly(Base, ElektrischeAnlagenUeber36Station, Vector):
     __tablename__ = 'elektrische_anlagen_ueber_36_station_poly'
     __minscale__ = 1
     __maxscale__ = 25000
@@ -3675,7 +3684,7 @@ class ElektrischeAnlagenUeber36StationPoly (Base, ElektrischeAnlagenUeber36Stati
 register(ElektrischeAnlagenUeber36StationPoly.__bodId__, ElektrischeAnlagenUeber36StationPoly)
 
 
-class ElektrischeAnlagenUeber36StationPointWithPoly (Base, ElektrischeAnlagenUeber36Station, Vector):
+class ElektrischeAnlagenUeber36StationPointWithPoly(Base, ElektrischeAnlagenUeber36Station, Vector):
     __tablename__ = 'elektrische_anlagen_ueber_36_station_point_with_poly'
     __minscale__ = 25000
 
@@ -3683,14 +3692,14 @@ class ElektrischeAnlagenUeber36StationPointWithPoly (Base, ElektrischeAnlagenUeb
 register(ElektrischeAnlagenUeber36StationPointWithPoly.__bodId__, ElektrischeAnlagenUeber36StationPointWithPoly)
 
 
-class ElektrischeAnlagenUeber36StationPointNoPoly (Base, ElektrischeAnlagenUeber36Station, Vector):
+class ElektrischeAnlagenUeber36StationPointNoPoly(Base, ElektrischeAnlagenUeber36Station, Vector):
     __tablename__ = 'elektrische_anlagen_ueber_36_station_point_no_poly'
 
 
 register(ElektrischeAnlagenUeber36StationPointNoPoly.__bodId__, ElektrischeAnlagenUeber36StationPointNoPoly)
 
 
-class BetriebeStoerfallverordnungEisenbahnanlagen (Base, Vector):
+class BetriebeStoerfallverordnungEisenbahnanlagen(Base, Vector):
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __tablename__ = 'stoerfallverordnung_eisenbahnanlagen_betriebe'
     __template__ = 'templates/htmlpopup/bav_betriebe_stoerfallverordnung_eisenbahnanlagen.mako'
@@ -3700,10 +3709,10 @@ class BetriebeStoerfallverordnungEisenbahnanlagen (Base, Vector):
     name = Column('name', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.betriebe-stoerfallverordnung_eisenbahnanlagen', BetriebeStoerfallverordnungEisenbahnanlagen)
+register(BetriebeStoerfallverordnungEisenbahnanlagen.__bodId__, BetriebeStoerfallverordnungEisenbahnanlagen)
 
 
-class LageStoerfallverordnungEisenbahnanlagen (Base, Vector):
+class LageStoerfallverordnungEisenbahnanlagen(Base, Vector):
     __table_args__ = ({'schema': 'bav', 'autoload': False})
     __tablename__ = 'stoerfallverordnung_eisenbahnanlagen_lage'
     __template__ = 'templates/htmlpopup/bav_lage_stoerfallverordnung_eisenbahnanlagen.mako'
@@ -3714,10 +3723,10 @@ class LageStoerfallverordnungEisenbahnanlagen (Base, Vector):
     geom_type = Column('geom_type', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bav.lage-stoerfallverordnung_eisenbahnanlagen', LageStoerfallverordnungEisenbahnanlagen)
+register(LageStoerfallverordnungEisenbahnanlagen.__bodId__, LageStoerfallverordnungEisenbahnanlagen)
 
 
-class BakomchStandorteMobilfunkanlagen (Base, Vector):
+class BakomchStandorteMobilfunkanlagen(Base, Vector):
     __table_args__ = ({'schema': 'bakom', 'autoload': False})
     __tablename__ = 'standorte_mobilfunkanlagen'
     __template__ = 'templates/htmlpopup/bakom_standorte_mobilfunkanlagen.mako'
@@ -3752,10 +3761,10 @@ class BakomchStandorteMobilfunkanlagen (Base, Vector):
     agw_en = Column('agw_en', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bakom.standorte-mobilfunkanlagen', BakomchStandorteMobilfunkanlagen)
+register(BakomchStandorteMobilfunkanlagen.__bodId__, BakomchStandorteMobilfunkanlagen)
 
 
-class PhotovoltaikGrossanlagen (Base, Vector):
+class PhotovoltaikGrossanlagen(Base, Vector):
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __tablename__ = 'photovoltaik_grossanlagen'
     __template__ = 'templates/htmlpopup/bfe_photovoltaik_grossanlagen.mako'
@@ -3778,7 +3787,7 @@ class PhotovoltaikGrossanlagen (Base, Vector):
     statuscategory_en = Column('statuscategory_en', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.photovoltaik-grossanlagen', PhotovoltaikGrossanlagen)
+register(PhotovoltaikGrossanlagen.__bodId__, PhotovoltaikGrossanlagen)
 
 
 class SolarenergieEinstrahlung:
@@ -3819,39 +3828,39 @@ class SolarenergieEinstrahlung:
     the_geom = Column(Geometry2D)
 
 
-class SolarenergieEinstrahlung0Grad (Base, SolarenergieEinstrahlung, Vector):
+class SolarenergieEinstrahlung0Grad(Base, SolarenergieEinstrahlung, Vector):
     __tablename__ = 'solarenergie_einstrahlung_0_grad'
     __bodId__ = 'ch.bfe.solarenergie-einstrahlung_0_grad'
     __template__ = 'templates/htmlpopup/bfe_solarenergie_einstrahlung_0_grad.mako'
 
-register('ch.bfe.solarenergie-einstrahlung_0_grad', SolarenergieEinstrahlung0Grad)
+register(SolarenergieEinstrahlung0Grad.__bodId__, SolarenergieEinstrahlung0Grad)
 
 
-class SolarenergieEinstrahlung30Grad (Base, SolarenergieEinstrahlung, Vector):
+class SolarenergieEinstrahlung30Grad(Base, SolarenergieEinstrahlung, Vector):
     __tablename__ = 'solarenergie_einstrahlung_30_grad'
     __bodId__ = 'ch.bfe.solarenergie-einstrahlung_30_grad'
     __template__ = 'templates/htmlpopup/bfe_solarenergie_einstrahlung_30_grad.mako'
 
-register('ch.bfe.solarenergie-einstrahlung_30_grad', SolarenergieEinstrahlung30Grad)
+register(SolarenergieEinstrahlung30Grad.__bodId__, SolarenergieEinstrahlung30Grad)
 
 
-class SolarenergieEinstrahlung75Grad (Base, SolarenergieEinstrahlung, Vector):
+class SolarenergieEinstrahlung75Grad(Base, SolarenergieEinstrahlung, Vector):
     __tablename__ = 'solarenergie_einstrahlung_75_grad'
     __bodId__ = 'ch.bfe.solarenergie-einstrahlung_75_grad'
     __template__ = 'templates/htmlpopup/bfe_solarenergie_einstrahlung_75_grad.mako'
 
-register('ch.bfe.solarenergie-einstrahlung_75_grad', SolarenergieEinstrahlung75Grad)
+register(SolarenergieEinstrahlung75Grad.__bodId__, SolarenergieEinstrahlung75Grad)
 
 
-class SolarenergieEinstrahlung90Grad (Base, SolarenergieEinstrahlung, Vector):
+class SolarenergieEinstrahlung90Grad(Base, SolarenergieEinstrahlung, Vector):
     __tablename__ = 'solarenergie_einstrahlung_90_grad'
     __bodId__ = 'ch.bfe.solarenergie-einstrahlung_90_grad'
     __template__ = 'templates/htmlpopup/bfe_solarenergie_einstrahlung_90_grad.mako'
 
-register('ch.bfe.solarenergie-einstrahlung_90_grad', SolarenergieEinstrahlung90Grad)
+register(SolarenergieEinstrahlung90Grad.__bodId__, SolarenergieEinstrahlung90Grad)
 
 
-class Grundwasserwaermenutzungspotential (Base, Vector):
+class Grundwasserwaermenutzungspotential(Base, Vector):
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __tablename__ = 'grundwasserwaermenutzungspotential'
     __template__ = 'templates/htmlpopup/bfe_grundwasserwaermenutzungspotential.mako'
@@ -3884,10 +3893,10 @@ class Grundwasserwaermenutzungspotential (Base, Vector):
     comment = Column('comment', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.grundwasserwaermenutzungspotential', Grundwasserwaermenutzungspotential)
+register(Grundwasserwaermenutzungspotential.__bodId__, Grundwasserwaermenutzungspotential)
 
 
-class LadebedarfsweltFahrzeuge (Base, Vector):
+class LadebedarfsweltFahrzeuge(Base, Vector):
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __tablename__ = 'ladebedarfswelt_fahrzeuge'
     __template__ = 'templates/htmlpopup/bfe_ladebedarfswelt_fahrzeuge.mako'
@@ -3901,7 +3910,7 @@ class LadebedarfsweltFahrzeuge (Base, Vector):
     anteil_fahrzeugbestand_personenwagen_steckerfahrzeuge = Column('anteil_fahrzeugbestand_personenwagen_steckerfahrzeuge', Float)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.ladebedarfswelt-fahrzeuge', LadebedarfsweltFahrzeuge)
+register(LadebedarfsweltFahrzeuge.__bodId__, LadebedarfsweltFahrzeuge)
 
 
 class LadebedarfsweltHeimladeverfuegbarkeit:
@@ -3917,25 +3926,25 @@ class LadebedarfsweltHeimladeverfuegbarkeit:
     the_geom = Column(Geometry2D)
 
 
-class LadebedarfsweltHeimladeverfuegbarkeitBequem (Base, LadebedarfsweltHeimladeverfuegbarkeit, Vector):
+class LadebedarfsweltHeimladeverfuegbarkeitBequem(Base, LadebedarfsweltHeimladeverfuegbarkeit, Vector):
     __bodId__ = 'ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_bequem'
     __tablename__ = 'ladebedarfswelt_heimladeverfuegbarkeit_bequem'
 
-register('ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_bequem', LadebedarfsweltHeimladeverfuegbarkeitBequem)
+register(LadebedarfsweltHeimladeverfuegbarkeitBequem.__bodId__, LadebedarfsweltHeimladeverfuegbarkeitBequem)
 
 
-class LadebedarfsweltHeimladeverfuegbarkeitFlexibel (Base, LadebedarfsweltHeimladeverfuegbarkeit, Vector):
+class LadebedarfsweltHeimladeverfuegbarkeitFlexibel(Base, LadebedarfsweltHeimladeverfuegbarkeit, Vector):
     __bodId__ = 'ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_flexibel'
     __tablename__ = 'ladebedarfswelt_heimladeverfuegbarkeit_flexibel'
 
-register('ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_flexibel', LadebedarfsweltHeimladeverfuegbarkeitFlexibel)
+register(LadebedarfsweltHeimladeverfuegbarkeitFlexibel.__bodId__, LadebedarfsweltHeimladeverfuegbarkeitFlexibel)
 
 
-class LadebedarfsweltHeimladeverfuegbarkeitGeplant (Base, LadebedarfsweltHeimladeverfuegbarkeit, Vector):
+class LadebedarfsweltHeimladeverfuegbarkeitGeplant(Base, LadebedarfsweltHeimladeverfuegbarkeit, Vector):
     __bodId__ = 'ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_geplant'
     __tablename__ = 'ladebedarfswelt_heimladeverfuegbarkeit_geplant'
 
-register('ch.bfe.ladebedarfswelt-heimladeverfuegbarkeit_geplant', LadebedarfsweltHeimladeverfuegbarkeitGeplant)
+register(LadebedarfsweltHeimladeverfuegbarkeitGeplant.__bodId__, LadebedarfsweltHeimladeverfuegbarkeitGeplant)
 
 
 class LadebedarfsweltLadepunkte:
@@ -3957,28 +3966,28 @@ class LadebedarfsweltLadepunkte:
     the_geom = Column(Geometry2D)
 
 
-class LadebedarfsweltLadepunkteBequem (Base, LadebedarfsweltLadepunkte, Vector):
+class LadebedarfsweltLadepunkteBequem(Base, LadebedarfsweltLadepunkte, Vector):
     __tablename__ = 'ladebedarfswelt_ladepunkte_bequem'
     __bodId__ = 'ch.bfe.ladebedarfswelt-ladepunkte_bequem'
 
-register('ch.bfe.ladebedarfswelt-ladepunkte_bequem', LadebedarfsweltLadepunkteBequem)
+register(LadebedarfsweltLadepunkteBequem.__bodId__, LadebedarfsweltLadepunkteBequem)
 
 
-class LadebedarfsweltLadepunkteFlexibel (Base, LadebedarfsweltLadepunkte, Vector):
+class LadebedarfsweltLadepunkteFlexibel(Base, LadebedarfsweltLadepunkte, Vector):
     __tablename__ = 'ladebedarfswelt_ladepunkte_flexibel'
     __bodId__ = 'ch.bfe.ladebedarfswelt-ladepunkte_flexibel'
 
-register('ch.bfe.ladebedarfswelt-ladepunkte_flexibel', LadebedarfsweltLadepunkteFlexibel)
+register(LadebedarfsweltLadepunkteFlexibel.__bodId__, LadebedarfsweltLadepunkteFlexibel)
 
 
-class LadebedarfsweltLadepunkteGeplant (Base, LadebedarfsweltLadepunkte, Vector):
+class LadebedarfsweltLadepunkteGeplant(Base, LadebedarfsweltLadepunkte, Vector):
     __tablename__ = 'ladebedarfswelt_ladepunkte_geplant'
     __bodId__ = 'ch.bfe.ladebedarfswelt-ladepunkte_geplant'
 
-register('ch.bfe.ladebedarfswelt-ladepunkte_geplant', LadebedarfsweltLadepunkteGeplant)
+register(LadebedarfsweltLadepunkteGeplant.__bodId__, LadebedarfsweltLadepunkteGeplant)
 
 
-class LadebedarfsweltStrombedarf (Base, Vector):
+class LadebedarfsweltStrombedarf(Base, Vector):
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __tablename__ = 'ladebedarfswelt_strombedarf'
     __template__ = 'templates/htmlpopup/bfe_ladebedarfswelt_strombedarf.mako'
@@ -3995,10 +4004,10 @@ class LadebedarfsweltStrombedarf (Base, Vector):
     schnell_energie_anteil = Column('schnell_energie_anteil', Float)
     the_geom = Column(Geometry2D)
 
-register('ch.bfe.ladebedarfswelt-strombedarf', LadebedarfsweltStrombedarf)
+register(LadebedarfsweltStrombedarf.__bodId__, LadebedarfsweltStrombedarf)
 
 
-class Landschaftsruhezonen (Base, Vector):
+class Landschaftsruhezonen(Base, Vector):
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __tablename__ = 'landschaftsruhezonen'
     __template__ = 'templates/htmlpopup/bazl_landschaftsruhezonen.mako'
@@ -4015,10 +4024,10 @@ class Landschaftsruhezonen (Base, Vector):
     description_en = Column('description_en', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.bazl.landschaftsruhezonen', Landschaftsruhezonen)
+register(Landschaftsruhezonen.__bodId__, Landschaftsruhezonen)
 
 
-class ReflektierendeFlaechenFlugplaetze (Base, Vector):
+class ReflektierendeFlaechenFlugplaetze(Base, Vector):
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __tablename__ = 'reflektierende_flaechen_flugplaetze'
     __template__ = 'templates/htmlpopup/bazl_reflektierende_flaechen_flugplaetze.mako'
@@ -4032,4 +4041,5 @@ class ReflektierendeFlaechenFlugplaetze (Base, Vector):
     status_it = Column('status_it', Unicode)
     status_en = Column('status_en', Unicode)
     the_geom = Column(Geometry2D)
-register('ch.bazl.reflektierende-flaechen_flugplaetze', ReflektierendeFlaechenFlugplaetze)
+
+register(ReflektierendeFlaechenFlugplaetze.__bodId__, ReflektierendeFlaechenFlugplaetze)

@@ -25,49 +25,49 @@ class Kulturtyp(Base, Bodeneignung, Vector):
     __label__ = 'symb_color'
     symb_color = Column('symb_color', Unicode)
 
-register('ch.blw.bodeneignung-kulturtyp', Kulturtyp)
+register(Kulturtyp.__bodId__, Kulturtyp)
 
 
 class Gruendigkeit(Base, Bodeneignung, Vector):
     __bodId__ = 'ch.blw.bodeneignung-gruendigkeit'
 
-register('ch.blw.bodeneignung-gruendigkeit', Gruendigkeit)
+register(Gruendigkeit.__bodId__, Gruendigkeit)
 
 
 class Skelettgehalt(Base, Bodeneignung, Vector):
     __bodId__ = 'ch.blw.bodeneignung-skelettgehalt'
 
-register('ch.blw.bodeneignung-skelettgehalt', Skelettgehalt)
+register(Skelettgehalt.__bodId__, Skelettgehalt)
 
 
 class Wasserspeichervermoegen(Base, Bodeneignung, Vector):
     __bodId__ = 'ch.blw.bodeneignung-wasserspeichervermoegen'
 
-register('ch.blw.bodeneignung-wasserspeichervermoegen', Wasserspeichervermoegen)
+register(Wasserspeichervermoegen.__bodId__, Wasserspeichervermoegen)
 
 
 class Naehrstoffspeichervermoegen(Base, Bodeneignung, Vector):
     __bodId__ = 'ch.blw.bodeneignung-naehrstoffspeichervermoegen'
 
-register('ch.blw.bodeneignung-naehrstoffspeichervermoegen', Naehrstoffspeichervermoegen)
+register(Naehrstoffspeichervermoegen.__bodId__, Naehrstoffspeichervermoegen)
 
 
 class Wasserdurchlaessigkeit(Base, Bodeneignung, Vector):
     __bodId__ = 'ch.blw.bodeneignung-wasserdurchlaessigkeit'
 
-register('ch.blw.bodeneignung-wasserdurchlaessigkeit', Wasserdurchlaessigkeit)
+register(Wasserdurchlaessigkeit.__bodId__, Wasserdurchlaessigkeit)
 
 
 class Vernaessung(Base, Bodeneignung, Vector):
     __bodId__ = 'ch.blw.bodeneignung-vernaessung'
 
-register('ch.blw.bodeneignung-vernaessung', Vernaessung)
+register(Vernaessung.__bodId__, Vernaessung)
 
 
 class Kulturland(Base, Bodeneignung, Vector):
     __bodId__ = 'ch.blw.bodeneignung-kulturland'
 
-register('ch.blw.bodeneignung-kulturland', Kulturland)
+register(Kulturland.__bodId__, Kulturland)
 
 
 class Klimaeignung:
@@ -84,55 +84,55 @@ class Klimaeignung:
 class KlimaeignungTyp(Base, Klimaeignung, Vector):
     __bodId__ = 'ch.blw.klimaeignung-typ'
 
-register('ch.blw.klimaeignung-typ', KlimaeignungTyp)
+register(KlimaeignungTyp.__bodId__, KlimaeignungTyp)
 
 
 class KlimaeignungKoernermais(Base, Klimaeignung, Vector):
     __bodId__ = 'ch.blw.klimaeignung-koernermais'
 
-register('ch.blw.klimaeignung-koernermais', KlimaeignungKoernermais)
+register(KlimaeignungKoernermais.__bodId__, KlimaeignungKoernermais)
 
 
 class KlimaeignungSpezialkulturen(Base, Klimaeignung, Vector):
     __bodId__ = 'ch.blw.klimaeignung-spezialkulturen'
 
-register('ch.blw.klimaeignung-spezialkulturen', KlimaeignungSpezialkulturen)
+register(KlimaeignungSpezialkulturen.__bodId__, KlimaeignungSpezialkulturen)
 
 
 class KlimaeignungZwischenfruchtbau(Base, Klimaeignung, Vector):
     __bodId__ = 'ch.blw.klimaeignung-zwischenfruchtbau'
 
-register('ch.blw.klimaeignung-zwischenfruchtbau', KlimaeignungZwischenfruchtbau)
+register(KlimaeignungZwischenfruchtbau.__bodId__, KlimaeignungZwischenfruchtbau)
 
 
 class KlimaeignungKartoffeln(Base, Klimaeignung, Vector):
     __bodId__ = 'ch.blw.klimaeignung-kartoffeln'
 
-register('ch.blw.klimaeignung-kartoffeln', KlimaeignungKartoffeln)
+register(KlimaeignungKartoffeln.__bodId__, KlimaeignungKartoffeln)
 
 
 class KlimaeignungGetreidebau(Base, Klimaeignung, Vector):
     __bodId__ = 'ch.blw.klimaeignung-getreidebau'
 
-register('ch.blw.klimaeignung-getreidebau', KlimaeignungGetreidebau)
+register(KlimaeignungGetreidebau.__bodId__, KlimaeignungGetreidebau)
 
 
 class KlimaeignungFutterbau(Base, Klimaeignung, Vector):
     __bodId__ = 'ch.blw.klimaeignung-futterbau'
 
-register('ch.blw.klimaeignung-futterbau', KlimaeignungFutterbau)
+register(KlimaeignungFutterbau.__bodId__, KlimaeignungFutterbau)
 
 
 class KlimaeignungKulturland(Base, Klimaeignung, Vector):
     __bodId__ = 'ch.blw.klimaeignung-kulturland'
 
-register('ch.blw.klimaeignung-kulturland', KlimaeignungKulturland)
+register(KlimaeignungKulturland.__bodId__, KlimaeignungKulturland)
 
 
 class Niederschlagshaushalt(Base, Klimaeignung, Vector):
     __bodId__ = 'ch.blw.niederschlagshaushalt'
 
-register('ch.blw.niederschlagshaushalt', Niederschlagshaushalt)
+register(Niederschlagshaushalt.__bodId__, Niederschlagshaushalt)
 
 
 class UrsprungsbezeichnungenFleisch(Base, Vector):
@@ -148,7 +148,7 @@ class UrsprungsbezeichnungenFleisch(Base, Vector):
     objekt_i = Column('objekt_i', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.blw.ursprungsbezeichnungen-fleisch', UrsprungsbezeichnungenFleisch)
+register(UrsprungsbezeichnungenFleisch.__bodId__, UrsprungsbezeichnungenFleisch)
 
 
 class UrsprungsbezeichnungenKaese(Base, Vector):
@@ -164,7 +164,7 @@ class UrsprungsbezeichnungenKaese(Base, Vector):
     objekt_i = Column('objekt_i', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.blw.ursprungsbezeichnungen-kaese', UrsprungsbezeichnungenKaese)
+register(UrsprungsbezeichnungenKaese.__bodId__, UrsprungsbezeichnungenKaese)
 
 
 class UrsprungsbezeichnungenKonditoreiwaren(Base, Vector):
@@ -180,7 +180,7 @@ class UrsprungsbezeichnungenKonditoreiwaren(Base, Vector):
     objekt_i = Column('objekt_i', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.blw.ursprungsbezeichnungen-konditoreiwaren', UrsprungsbezeichnungenKonditoreiwaren)
+register(UrsprungsbezeichnungenKonditoreiwaren.__bodId__, UrsprungsbezeichnungenKonditoreiwaren)
 
 
 class UrsprungsbezeichnungenPflanzen(Base, Vector):
@@ -196,7 +196,7 @@ class UrsprungsbezeichnungenPflanzen(Base, Vector):
     objekt_i = Column('objekt_i', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.blw.ursprungsbezeichnungen-pflanzen', UrsprungsbezeichnungenPflanzen)
+register(UrsprungsbezeichnungenPflanzen.__bodId__, UrsprungsbezeichnungenPflanzen)
 
 
 class UrsprungsbezeichnungenSpirituosen(Base, Vector):
@@ -212,7 +212,7 @@ class UrsprungsbezeichnungenSpirituosen(Base, Vector):
     objekt_i = Column('objekt_i', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.blw.ursprungsbezeichnungen-spirituosen', UrsprungsbezeichnungenSpirituosen)
+register(UrsprungsbezeichnungenSpirituosen.__bodId__, UrsprungsbezeichnungenSpirituosen)
 
 
 class Milchmarktregionen(Base, Vector):
@@ -230,7 +230,7 @@ class Milchmarktregionen(Base, Vector):
     bez_rm = Column('bez_rm', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.blw.milchmarktregionen', Milchmarktregionen)
+register(Milchmarktregionen.__bodId__, Milchmarktregionen)
 
 
 class SachplanCernAnhoerungFac:
@@ -264,14 +264,14 @@ class SachplanCernAnhoerungFacPnt(Base, SachplanCernAnhoerungFac, Vector):
     __tablename__ = 'sachplan_cern_anhoerung_fac_pnt'
     __template__ = 'templates/htmlpopup/sbfi_sachplan_cern_anhoerung_fac_pnt.mako'
 
-register('ch.sbfi.sachplan-cern_anhoerung', SachplanCernAnhoerungFacPnt)
+register(SachplanCernAnhoerungFacPnt.__bodId__, SachplanCernAnhoerungFacPnt)
 
 
 class SachplanCernAnhoerungFacLine(Base, SachplanCernAnhoerungFac, Vector):
     __tablename__ = 'sachplan_cern_anhoerung_fac_line'
     __template__ = 'templates/htmlpopup/sbfi_sachplan_cern_anhoerung_fac_line.mako'
 
-register('ch.sbfi.sachplan-cern_anhoerung', SachplanCernAnhoerungFacLine)
+register(SachplanCernAnhoerungFacLine.__bodId__, SachplanCernAnhoerungFacLine)
 
 
 class SachplanCernAnhoerungPlm:
@@ -309,7 +309,7 @@ class SachplanCernAnhoerungPlmPoly(Base, SachplanCernAnhoerungPlm, Vector):
     __tablename__ = 'sachplan_cern_anhoerung_plm_poly'
     __template__ = 'templates/htmlpopup/sbfi_sachplan_cern_anhoerung_plm_poly.mako'
 
-register('ch.sbfi.sachplan-cern_anhoerung', SachplanCernAnhoerungPlmPoly)
+register(SachplanCernAnhoerungPlmPoly.__bodId__, SachplanCernAnhoerungPlmPoly)
 
 
 class LandwirtschaftlicheNutzungsflaechen(Base, Vector):
@@ -335,4 +335,4 @@ class LandwirtschaftlicheNutzungsflaechen(Base, Vector):
     bur_nr = Column('bur_nr', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.blw.landwirtschaftliche-nutzungsflaechen', LandwirtschaftlicheNutzungsflaechen)
+register(LandwirtschaftlicheNutzungsflaechen.__bodId__, LandwirtschaftlicheNutzungsflaechen)

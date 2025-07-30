@@ -28,6 +28,8 @@ class IsosOrtsbild(Base, IsosBase, Vector):
     __label__ = 'name'
     __minscale__ = 50001
 
+register(IsosOrtsbild.__bodId__, IsosOrtsbild)
+
 
 class IsosOrtsbildPerimeter(Base, IsosBase, Vector):
     __tablename__ = 'view_isos_perimeter'
@@ -35,6 +37,8 @@ class IsosOrtsbildPerimeter(Base, IsosBase, Vector):
     __label__ = 'name'
     __maxscale__ = 50000
     __minscale__ = 25001
+
+register(IsosOrtsbildPerimeter.__bodId__, IsosOrtsbildPerimeter)
 
 
 class IsosOrtsbildTeil(Base, IsosBase, Vector):
@@ -45,6 +49,8 @@ class IsosOrtsbildTeil(Base, IsosBase, Vector):
     # __minscale__ = 5000
     teil_nummer = Column('teil_id', Integer)
     teil_name = Column('teil_name', Unicode)
+
+register(IsosOrtsbildTeil.__bodId__, IsosOrtsbildTeil)
 
 
 class IsosOrtsbildHinweis(Base, IsosBase, Vector):
@@ -58,10 +64,7 @@ class IsosOrtsbildHinweis(Base, IsosBase, Vector):
     teil_nummer = Column('teil_id', Integer)
     teil_name = Column('teil_name', Unicode)
 
-register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder', IsosOrtsbild)
-register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder', IsosOrtsbildPerimeter)
-register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder', IsosOrtsbildTeil)
-register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder', IsosOrtsbildHinweis)
+register(IsosOrtsbildHinweis.__bodId__, IsosOrtsbildHinweis)
 
 
 class IsosFotoBase(IsosBase):
@@ -73,11 +76,15 @@ class IsosFotoOrtsbild(Base, IsosFotoBase, Vector):
     __tablename__ = 'view_isos_foto'
     __minscale__ = 50001
 
+register(IsosFotoOrtsbild.__bodId__, IsosFotoOrtsbild)
+
 
 class IsosFotoOB(Base, IsosFotoBase, Vector):
     __tablename__ = 'view_isos_foto_ob'
     __maxscale__ = 50000
     __minscale__ = 25001
+
+register(IsosFotoOB.__bodId__, IsosFotoOB)
 
 
 class IsosFotoOBT(Base, IsosFotoBase, Vector):
@@ -85,15 +92,14 @@ class IsosFotoOBT(Base, IsosFotoBase, Vector):
     __maxscale__ = 25000
     __minscale__ = 5001
 
+register(IsosFotoOBT.__bodId__, IsosFotoOBT)
+
 
 class IsosFotoOBTH(Base, IsosFotoBase, Vector):
     __tablename__ = 'view_isos_foto_obth'
     __maxscale__ = 5000
 
-register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos', IsosFotoOrtsbild)
-register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos', IsosFotoOB)
-register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos', IsosFotoOBT)
-register('ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos', IsosFotoOBTH)
+register(IsosFotoOBTH.__bodId__, IsosFotoOBTH)
 
 
 class Unesco(Base, Vector):
@@ -118,7 +124,7 @@ class Unesco(Base, Vector):
     the_geom = Column(Geometry2D)
     the_geom_simplified_tolerance_3 = Column('the_geom_simplified_tolerance_3', Geometry2D)
 
-register('ch.bak.schutzgebiete-unesco_weltkulturerbe', Unesco)
+register(Unesco.__bodId__, Unesco)
 
 
 class HalteplaetzeJenischeSintiRoma(Base, Vector):
@@ -150,4 +156,4 @@ class HalteplaetzeJenischeSintiRoma(Base, Vector):
     y_koordinate = Column('y_koordinate', Numeric)
     the_geom = Column(Geometry2D)
 
-register('ch.bak.halteplaetze-jenische_sinti_roma', HalteplaetzeJenischeSintiRoma)
+register(HalteplaetzeJenischeSintiRoma.__bodId__, HalteplaetzeJenischeSintiRoma)
