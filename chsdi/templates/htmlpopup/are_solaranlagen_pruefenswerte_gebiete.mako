@@ -45,6 +45,7 @@
         pruefwert_text = 'pruefwert_%s' % lang
         nutz_05_text = 'nutz_05_%s' % lang
         nutz_08_text = 'nutz_08_%s' % lang
+        nutz_09_text = 'nutz_09_%s' % lang
         prot_10_text = 'prot_10_%s' % lang
         prot_20_text = 'prot_20_%s' % lang
         prot_30_text = 'prot_30_%s' % lang
@@ -110,11 +111,7 @@
         </tr>
         <tr>
             <td class="cell-meta">${_(layer + '.nutz_09')}</td>
-            % if c['attributes']['nutz_09'] is None:
-                <td>-</td>
-            % else:
-                <td>${int(c['attributes']['nutz_09'])}</td>
-            % endif
+            <td>${c['attributes'][nutz_09_text] or '-'}</td>
         </tr>
         <tr>
             <td class="cell-meta">${_(layer + '.nutz_10')}</td>
