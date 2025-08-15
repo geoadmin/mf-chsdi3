@@ -5,7 +5,7 @@
     <tr><td class="cell-left">${_('ch.babs.notfalltreffpunkte.ntp_id')}</td>   <td>${c['featureId']}</td></tr>
     <tr><td class="cell-left">${_('ch.babs.notfalltreffpunkte.gebbezeichnung')}</td>   <td>${c['attributes']['gebbezeichnung']}</td></tr>
     <tr><td class="cell-left">${_('ch.babs.notfalltreffpunkte.strasse')}</td>   <td>${c['attributes']['strasse']}</td></tr>
-    <tr><td class="cell-left">${_('ch.babs.notfalltreffpunkte.haus_nummer')}</td>   <td>${c['attributes']['haus_nummer']}</td></tr>
+    <tr><td class="cell-left">${_('ch.babs.notfalltreffpunkte.haus_nummer')}</td>   <td>${c['attributes']['haus_nummer'] or "-"}</td></tr>
     <tr><td class="cell-left">${_('ch.babs.notfalltreffpunkte.plz_ort')}</td><td>${c['attributes']['plz']}&nbsp;${c['attributes']['ort']}</td></tr>
     <tr><td class="cell-left">${_('ch.babs.notfalltreffpunkte.gemeinde')}</td><td>${c['attributes']['gemeinde']}</td></tr>
     <tr><td class="cell-left">${_('ch.babs.notfalltreffpunkte.kanton')}</td><td>${c['attributes']['kanton']}</td></tr>
