@@ -204,3 +204,19 @@ class AgroscopeAmphibienParzelle(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(AgroscopeAmphibienParzelle.__bodId__, AgroscopeAmphibienParzelle)
+
+class AgroscopeKorridorQualitaet(Base, Vector):
+    __bodId__ = 'ch.agroscope.korridore-feuchtgebietsarten_qualitaet'
+    __table_args__ = ({'schema': 'agroscope', 'autoload': False})
+    __tablename__ = 'korridore_qualitaet'
+    __template__ = 'templates/htmlpopup/korridore_qualitaet.mako'
+    __label__ = 'korridore_qualitaet'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    euc_dist = Column('euc_dist', Float)
+    cw_dist = Column('cw_dist', Float)
+    path_length = Column('path_length', Float)
+    cost_to_euc_dist_ratio = Column('cost_to_euc_dist_ratio', Float)
+    current_flow_centrality = Column('current_flow_centrality', Float)
+    the_geom = Column(Geometry2D)
+
+register(AgroscopeKorridorQualitaet.__bodId__, AgroscopeKorridorQualitaet)
