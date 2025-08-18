@@ -10,8 +10,6 @@
         mat_min_link_text = 'mat_min_link_%s' %lang
     %>
 
-    <% c['stable_id'] = True %>
-
     <tr>
         <td class="cell-left">${_(layer + '.obname')}</td>
         <td>${c['attributes']['obname'] or '-'}</td>
