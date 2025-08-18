@@ -205,6 +205,7 @@ class AgroscopeAmphibienParzelle(Base, Vector):
 
 register(AgroscopeAmphibienParzelle.__bodId__, AgroscopeAmphibienParzelle)
 
+
 class AgroscopeKorridorQualitaet(Base, Vector):
     __bodId__ = 'ch.agroscope.korridore-feuchtgebietsarten_qualitaet'
     __table_args__ = ({'schema': 'agroscope', 'autoload': False})
