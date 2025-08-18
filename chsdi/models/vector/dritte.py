@@ -210,7 +210,7 @@ class AgroscopeKorridorQualitaet(Base, Vector):
     __table_args__ = ({'schema': 'agroscope', 'autoload': False})
     __tablename__ = 'korridore_qualitaet'
     __template__ = 'templates/htmlpopup/korridore_qualitaet.mako'
-    __label__ = 'korridore_qualitaet'
+    __label__ = 'cost_to_euc_dist_ratio'
     id = Column('bgdi_id', Integer, primary_key=True)
     euc_dist = Column('euc_dist', Float)
     cw_dist = Column('cw_dist', Float)
