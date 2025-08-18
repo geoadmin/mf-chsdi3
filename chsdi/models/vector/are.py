@@ -359,6 +359,8 @@ class SolaranlagenPruefenswerteGebieteVektor(Base, Vector):
     nutz_08_de = Column('nutz_08_de', Unicode)
     nutz_08_fr = Column('nutz_08_fr', Unicode)
     nutz_09 = Column('nutz_09', Integer)
+    nutz_09_de = Column('nutz_09_de', Unicode)
+    nutz_09_fr = Column('nutz_09_fr', Unicode)
     nutz_10 = Column('nutz_10', Integer)
     prot_10 = Column('prot_10', Unicode)
     prot_10_de = Column('prot_10_de', Unicode)
