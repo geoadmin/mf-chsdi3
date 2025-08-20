@@ -1317,6 +1317,7 @@ class JB(Base, Vector):
     objektnummer = Column('objektnummer', Unicode)
     gebietsname = Column('gebietsname', Unicode)
     refobjblatt = Column('refobjblatt', Unicode)
+    flaeche_ha = Column('flaeche_ha', Float)
     typ_de = Column('typ_de', Unicode)
     typ_fr = Column('typ_fr', Unicode)
     typ_it = Column('typ_it', Unicode)
