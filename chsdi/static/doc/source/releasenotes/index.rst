@@ -28,11 +28,19 @@ API & applications
 - Bug fixes:
 - Announcements:
 
-- `Full changelog <>`__
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2025-07-02-rc1...2025-08-27-rc1>`__
 
 Geodata
 *******
 
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Solar: ratio worth examining <//map.geo.admin.ch/?layers=ch.are.solaranlagen-pruefenswerte_gebiete>`__ (ch.are.solaranlagen-pruefenswerte_gebiete)                                                            |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Solar: areas worth examining <//map.geo.admin.ch/?layers=ch.are.solaranlagen-pruefenswerte_gebiete_vektor>`__ (ch.are.solaranlagen-pruefenswerte_gebiete_vektor)                                              |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Solar: aspects of use <//map.geo.admin.ch/?layers=ch.are.solaranlagen-nutzungsaspekte>`__ (ch.are.solaranlagen-nutzungsaspekte)                                                                               |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Solar: protection interests <//map.geo.admin.ch/?layers=ch.are.solaranlagen-schutzinteressen>`__ (ch.are.solaranlagen-schutzinteressen)                                                                       |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `GeoCover - Vector Datasets <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover>`__ (ch.swisstopo.geologie-geocover)                                                                                    |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
