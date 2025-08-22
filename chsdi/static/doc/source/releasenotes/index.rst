@@ -27,6 +27,7 @@ API & applications
 
 - Bug fixes:
 - Announcements:
+    - the layer *ch.bafu.flora-verbreitungskarten* will be removed from chsdi services with the release of November 12th 2025
     - the layer *ch.bafu.gefahren-basiskarte* will be removed from chsdi services with the release of November 12th 2025
     - the layers *ch.bafu.karst-ausdehnung_grundwasservorkommen*, *ch.bafu.karst-einzugsgebiete*, *ch.bafu.karst-einzugsgebietseinheiten*, *ch.bafu.karst-quellen_schwinden* and *ch.bafu.karst-unterirdische_fliesswege* will be removed from chsdi services with the release of November 12th 2025
     - the layer *ch.swisstopo.schneeschuhwandern* will be removed from chsdi services with the release of November 12th 2025 and replaced by a new layer
