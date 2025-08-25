@@ -48,6 +48,10 @@ Geodata
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Solar: protection interests <//map.geo.admin.ch/?layers=ch.are.solaranlagen-schutzinteressen>`__ (ch.are.solaranlagen-schutzinteressen)                                                                       |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wetland Corridors - Zones <//map.geo.admin.ch/?layers=ch.agroscope.korridore-feuchtgebietsarten_bereiche>`__ (ch.agroscope.korridore-feuchtgebietsarten_bereiche)                                             |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Wetland Corridors - Quality <//map.geo.admin.ch/?layers=ch.agroscope.korridore-feuchtgebietsarten_qualitaet>`__ (ch.agroscope.korridore-feuchtgebietsarten_qualitaet)                                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `GeoCover - Vector Datasets <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover>`__ (ch.swisstopo.geologie-geocover)                                                                                    |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Division GeoCover <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geocover.metadata>`__ (ch.swisstopo.geologie-geocover.metadata)                                                                           |
@@ -89,10 +93,6 @@ Geodata
 | Update | `Geological Atlas GA25 <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geologischer_atlas>`__ (ch.swisstopo.geologie-geologischer_atlas)                                                                     |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `swissBATHY3D Hillshade <//map.geo.admin.ch/?layers=ch.swisstopo.swissbathy3d-reliefschattierung>`__ (ch.swisstopo.swissbathy3d-reliefschattierung)                                                            |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Wetland Corridors - Zones <//map.geo.admin.ch/?layers=ch.agroscope.korridore-feuchtgebietsarten_bereiche>`__ (ch.agroscope.korridore-feuchtgebietsarten_bereiche)                                             |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Update | `Wetland Corridors - Quality <//map.geo.admin.ch/?layers=ch.agroscope.korridore-feuchtgebietsarten_qualitaet>`__ (ch.agroscope.korridore-feuchtgebietsarten_qualitaet)                                         |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20250702:
