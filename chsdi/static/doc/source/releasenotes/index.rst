@@ -99,6 +99,13 @@ Geodata
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Tank relocation routes <//map.geo.admin.ch/?layers=ch.vbs.panzerverschiebungsrouten>`__ (ch.vbs.panzerverschiebungsrouten)                                                                                    |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Other industrial minerals <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-industrieminerale>`__ (ch.swisstopo.geologie-rohstoffe-industrieminerale)                                               |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Bedrock elevation model <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-felsoberflaeche_hoehenmodell>`__ (ch.swisstopo.geologie-felsoberflaeche_hoehenmodell)                                               |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Thickness of unconsolidated deposits <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell>`__ (ch.swisstopo.geologie-lockergestein_maechtigkeitsmodell)                        |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 
 .. _releasenotes_20250702:
 
