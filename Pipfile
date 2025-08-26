@@ -5,16 +5,16 @@ name = "pypi"
 
 [packages]
 boto3 = "~=1.24"
-cachetools = "~=5.2"
+cachetools = "~=5.2"  # 6
 decorator = "~=5.1"
 esrijson = "~=0.4"
 gatilegrid = "~=0.2"
 geojson = "~=3.0"
 lark_parser = "~=0.12.0"
-networkx = "~=2.8"
+networkx = "~=2.8"  # 3
 papyrus = "==2.5"
-SQLAlchemy = "~=1.4.48"
-Pillow = "~=9.2"
+SQLAlchemy = "~=1.4.48"  # 2
+Pillow = "~=9.2"  # 11
 polib = "~=1.1"
 psycopg2-binary = "~=2.9"
 pyproj = "==3.6.1"
@@ -23,15 +23,15 @@ pyramid-mako = "~=1.1"
 pyramid-tm = "~=2.5"
 pyramid-debugtoolbar = "~=4.9"
 python-dateutil = "~=2.8"
-pytz = "~=2022.4"
+pytz = "~=2022.4"  # 2025, maybe unpin
 PyYAML = "~=6.0"
-regex = "~=2022.9.13"
+regex = "~=2022.9.13"  # 2025, maybe unpin
 requests = "~=2.28"
 Shapely = "~=2.0"
 numpy = "==2.0.2"
 simplejson = "~=3.17"
 unidecode = "~=1.3"
-logging-utilities = "~=3.1.1"
+logging-utilities = "~=3.1.1"  # 5
 pyramid-exclog = "~=1.1"
 GeoAlchemy2 = "==0.13.3"
 
@@ -47,8 +47,8 @@ Babel = "*"
 beautifulsoup4 = "*"
 WebTest = "*"
 unittest-xml-reporting = "*"
-Sphinx = "~=5.2"
-sphinx-rtd-theme = "~=1.0"
+Sphinx = "*"
+sphinx-rtd-theme = "*"
 nose2 = "*"
 coverage = "*"
 requests-mock = "*"
