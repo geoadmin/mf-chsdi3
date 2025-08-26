@@ -33,7 +33,7 @@ simplejson = "~=3.20"
 unidecode = "~=1.4"
 logging-utilities = "~=5.1"
 pyramid-exclog = "~=1.1"
-GeoAlchemy2 = "==0.13.3"  # 0.18
+GeoAlchemy2 = "~=0.17"  # 0.18: 3.10
 
 [dev-packages]
 waitress = "*"
