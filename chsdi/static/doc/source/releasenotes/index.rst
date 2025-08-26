@@ -34,7 +34,7 @@ API & applications
     - the topic `"for schools" <//map.geo.admin.ch/?topic=schule>`__ has undergone some changes
     - the object ID values of the layer *ch.vbs.schiessanzeigen* will change for all objects due to geometrical changes in the source data with one of the next releases. Existing permalinks to objects may not work anymore and will have to be replaced by the new object id’s (chsdi fields featureId and id). In addition there will be a new attribute bezeichnung_ort on the dataset. The other existing attributes will stay.
     - The default map extent for all layers in wms.geo.admin.ch has been updated. When opening new layers in QGIS or ArcMap, the view will now be centered on Switzerland.
-    - As already announced last year ('news 25.09.2024 <https://www.geo.admin.ch/en/old-styles-no-longer-available-from-january-2025>`__), the Vector Tiles service *ch.swisstopo.leichte-basiskarte.vt* has been removed from the chsdi services. As a replacement, the Vector Tiles service *ch.swisstopo.base.vt* is available.
+    - As already announced last year (`news 25.09.2024 <https://www.geo.admin.ch/en/old-styles-no-longer-available-from-january-2025>`__), the Vector Tiles service *ch.swisstopo.leichte-basiskarte.vt* has been removed from the chsdi services. As a replacement, the Vector Tiles service *ch.swisstopo.base.vt* is available.
 
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2025-07-02-rc1...2025-08-27-rc1>`__
 
