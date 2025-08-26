@@ -113,7 +113,6 @@ mathjax_path = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 html_theme = 'sphinx_rtd_theme'
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 #html_style = 'swisstopo.css'
 
