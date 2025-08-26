@@ -21,6 +21,7 @@
   - [Starting the tests](#starting-the-tests)
 - [Download WMS image legends](#download-wms-image-legends)
 - [Python Code Styling](#python-code-styling)
+- [Updating Python Packages](#updating-python-packages)
 - [Varia](#varia)
   - [Lint a JSON file](#lint-a-json-file)
 
@@ -183,6 +184,31 @@ To autocorrect most linting mistakes
 
 ```bash
 make autolint
+```
+
+## Updating Python Packages
+
+All packages used in production are pinned to a major version. Automatically updating these packages
+will use the latest minor (or patch) version available. Packages used for development, on the other
+hand, are not pinned unless they need to be used with a specific version of a production package
+(for example, boto3-stubs for boto3).
+
+To update the packages to the latest minor/compatible versions, run:
+
+```bash
+pipenv update --dev
+```
+
+To see what major/incompatible releases would be available, run:
+
+```bash
+pipenv update --dev --outdated
+```
+
+To update packages to a new major release, run:
+
+```bash
+pipenv install logging-utilities~=5.0
 ```
 
 ## Varia
