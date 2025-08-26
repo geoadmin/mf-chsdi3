@@ -5,18 +5,18 @@
     <tr><td class="cell-left">${_('geocover_spec_description')}</td><td>${c['attributes']['spec_description'] or '-'}</td></tr>
     <tr>
         <td class="cell-left">${_('geocover_erl_num')}</td>
-        % if c['attributes']['erl_num']:
-        <td><a target ="_blank" href="${c['attributes']['erl_num']}">${_('link')}</a></td>
+        % if c['attributes']['erl_num'].startswith("http"):
+            <td><a target ="_blank" href="${c['attributes']['erl_num']}">${_('link')}</a></td>
         % else:
-        <td>-</td>
+            <td>${c['attributes']['erl_num']}</td>
         % endif
     </tr>
     <tr>
         <td class="cell-left">${_('linkzurlegende')}</td>
         % if c['attributes']['leg_num']:
-        <td><a target ="_blank" href="${c['attributes']['leg_num']}">${_('link')}</a></td>
+            <td><a target ="_blank" href="${c['attributes']['leg_num']}">${_('link')}</a></td>
         % else:
-        <td>-</td>
+            <td>-</td>
         % endif
     </tr>
 </%def>

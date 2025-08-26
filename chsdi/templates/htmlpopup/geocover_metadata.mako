@@ -1,28 +1,28 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c,lang)">
-    <tr><td class="cell-left">${_('ch.swisstopo.geologie-geocover.metadata.msh_map_nb')}</td>
-        <td>${c['attributes']['msh_map_nb'] or '-'}</td>
+    <%
+        lang = lang if lang in ('de', 'fr', 'it', 'en') else 'de'
+        version_text = 'version_%s' % lang
+    %>
+    <tr>
+        <td class="cell-left">${_('ch.swisstopo.geologie-geocover.metadata.map_nbr')}</td>
+        <td>${c['attributes']['map_nbr'] or '-'}</td>
     </tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.geologie-geocover.metadata.msh_map_ti')}</td>
-        <td>${c['attributes']['msh_map_ti'] or '-'}</td>
+    <tr>
+        <td class="cell-left">${_('ch.swisstopo.geologie-geocover.metadata.map_title')}</td>
+        <td>${c['attributes']['map_title'] or '-'}</td>
     </tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.geologie-geocover.metadata.msh_scale')}</td>
-        <td>${c['attributes']['msh_scale'] or '-'}</td>
+    <tr>
+        <td class="cell-left">${_('ch.swisstopo.geologie-geocover.metadata.scale')}</td>
+        <td>${c['attributes']['scale'] or '-'}</td>
     </tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.geologie-geocover.metadata.msh_edit')}</td>
-        <td>${c['attributes']['msh_edit'] or '-'}</td>
+    <tr>
+        <td class="cell-left">${_('ch.swisstopo.geologie-geocover.metadata.version')}</td>
+        <td>${c['attributes'][version_text] or '-'}</td>
     </tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.geologie-geocover.metadata.msh_versio')}</td>
-        <td>${c['attributes']['msh_versio'] or '-'}</td>
-    </tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.geologie-geocover.metadata.msh_basis')}</td>
-        <td>${c['attributes']['msh_basis'] or '-'}</td>
-    </tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.geologie-geocover.metadata.msh_author')}</td>
-        <td>${c['attributes']['msh_author'] or '-'}</td>
-    </tr>
-    <tr><td class="cell-left">${_('ch.swisstopo.geologie-geocover.metadata.msh_rev')}</td>
-        <td>${c['attributes']['msh_rev'] or '-'}</td>
+    <tr>
+        <td class="cell-left">${_('ch.swisstopo.geologie-geocover.metadata.basis')}</td>
+        <td>${c['attributes']['basis'] or '-'}</td>
     </tr>
 </%def>

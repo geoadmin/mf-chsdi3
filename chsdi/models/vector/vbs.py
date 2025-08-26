@@ -41,7 +41,7 @@ class Kulturgueter(Base, Vector):
     kurztext = Column('kurztext', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.babs.kulturgueter', Kulturgueter)
+register(Kulturgueter.__bodId__, Kulturgueter)
 
 
 class NationalesSportanlagenkonzept(Base, Vector):
@@ -59,7 +59,7 @@ class NationalesSportanlagenkonzept(Base, Vector):
     website = Column('website', Unicode, nullable=False, default=u'')
     the_geom = Column(Geometry2D)
 
-register('ch.baspo.nationales-sportanlagenkonzept', NationalesSportanlagenkonzept)
+register(NationalesSportanlagenkonzept.__bodId__, NationalesSportanlagenkonzept)
 
 
 class Territorialregionen(Base, Vector):
@@ -72,7 +72,7 @@ class Territorialregionen(Base, Vector):
     name = Column('name', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.vbs.territorialregionen', Territorialregionen)
+register(Territorialregionen.__bodId__, Territorialregionen)
 
 
 class SchiessAnzeigen(Base, Vector):
@@ -115,7 +115,7 @@ class PatrouilledesglaciersZ(Base, Vector):
     name = Column('name', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.vbs.patrouilledesglaciers-z_rennen', PatrouilledesglaciersZ)
+register(PatrouilledesglaciersZ.__bodId__, PatrouilledesglaciersZ)
 
 
 class PatrouilledesglaciersA(Base, Vector):
@@ -128,7 +128,7 @@ class PatrouilledesglaciersA(Base, Vector):
     name = Column('name', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.vbs.patrouilledesglaciers-a_rennen', PatrouilledesglaciersA)
+register(PatrouilledesglaciersA.__bodId__, PatrouilledesglaciersA)
 
 
 class Retablierungsstellen(Base, Vector):
@@ -142,7 +142,7 @@ class Retablierungsstellen(Base, Vector):
     url = Column('url', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.vbs.retablierungsstellen', Retablierungsstellen)
+register(Retablierungsstellen.__bodId__, Retablierungsstellen)
 
 
 class Armeelogistikcenter(Base, Vector):
@@ -157,7 +157,7 @@ class Armeelogistikcenter(Base, Vector):
     mail = Column('email', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.vbs.armeelogistikcenter', Armeelogistikcenter)
+register(Armeelogistikcenter.__bodId__, Armeelogistikcenter)
 
 
 class BundestankstellenBebeco:
@@ -249,7 +249,7 @@ class LogistikraeumeArmeelogistikcenter(Base, Vector):
     region = Column('region', Unicode)
     the_geom = Column(Geometry3D)
 
-register('ch.vbs.logistikraeume-armeelogistikcenter', LogistikraeumeArmeelogistikcenter)
+register(LogistikraeumeArmeelogistikcenter.__bodId__, LogistikraeumeArmeelogistikcenter)
 
 
 class Waldschaden(Base, Vector):
@@ -267,7 +267,7 @@ class Waldschaden(Base, Vector):
     x_koord = Column('x_koord', Integer)
     y_koord = Column('y_koord', Integer)
 
-register('ch.vbs.waldschadenkarte', Waldschaden)
+register(Waldschaden.__bodId__, Waldschaden)
 
 
 class SimFacilities:
@@ -300,14 +300,14 @@ class SimFacilitiesA(Base, SimFacilities, Vector):
     __tablename__ = 'sim_fac_anhoerung'
     __bodId__ = 'ch.vbs.sachplan-infrastruktur-militaer_anhoerung'
 
-register('ch.vbs.sachplan-infrastruktur-militaer_anhoerung', SimFacilitiesA)
+register(SimFacilitiesA.__bodId__, SimFacilitiesA)
 
 
 class SimFacilitiesK(Base, SimFacilities, Vector):
     __tablename__ = 'sim_fac_kraft'
     __bodId__ = 'ch.vbs.sachplan-infrastruktur-militaer_kraft'
 
-register('ch.vbs.sachplan-infrastruktur-militaer_kraft', SimFacilitiesK)
+register(SimFacilitiesK.__bodId__, SimFacilitiesK)
 
 
 class SimPlanning:
@@ -344,14 +344,14 @@ class SimPlanningK(Base, SimPlanning, Vector):
     __tablename__ = 'sim_pl_kraft'
     __bodId__ = 'ch.vbs.sachplan-infrastruktur-militaer_kraft'
 
-register('ch.vbs.sachplan-infrastruktur-militaer_kraft', SimPlanningK)
+register(SimPlanningK.__bodId__, SimPlanningK)
 
 
 class SimPlanningA(Base, SimPlanning, Vector):
     __tablename__ = 'sim_pl_anhoerung'
     __bodId__ = 'ch.vbs.sachplan-infrastruktur-militaer_anhoerung'
 
-register('ch.vbs.sachplan-infrastruktur-militaer_anhoerung', SimPlanningA)
+register(SimPlanningA.__bodId__, SimPlanningA)
 
 
 class KatasterBelasteterStandorteMilitaer(Base, Vector):
@@ -376,7 +376,7 @@ class KatasterBelasteterStandorteMilitaer(Base, Vector):
     url_it = Column('url_kbs_auszug_it', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.vbs.kataster-belasteter-standorte-militaer', KatasterBelasteterStandorteMilitaer)
+register(KatasterBelasteterStandorteMilitaer.__bodId__, KatasterBelasteterStandorteMilitaer)
 
 
 class Panzerverschiebungsrouten(Base, Vector):
@@ -389,7 +389,7 @@ class Panzerverschiebungsrouten(Base, Vector):
     tonnage = Column('tonnage', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.vbs.panzerverschiebungsrouten', Panzerverschiebungsrouten)
+register(Panzerverschiebungsrouten.__bodId__, Panzerverschiebungsrouten)
 
 
 class ArmeeKriegsdenkmaeler(Base, Vector):
@@ -412,7 +412,7 @@ class ArmeeKriegsdenkmaeler(Base, Vector):
     link_zum_gesamtinventar = Column('link_zum_gesamtinventar', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.vbs.armee-kriegsdenkmaeler', ArmeeKriegsdenkmaeler)
+register(ArmeeKriegsdenkmaeler.__bodId__, ArmeeKriegsdenkmaeler)
 
 
 class Ladestationen(Base, Vector):
@@ -437,4 +437,4 @@ class Ladestationen(Base, Vector):
     bemerkungen = Column('bemerkungen', Unicode)
     the_geom = Column(Geometry2D)
 
-register('ch.vbs.ladestationen', Ladestationen)
+register(Ladestationen.__bodId__, Ladestationen)

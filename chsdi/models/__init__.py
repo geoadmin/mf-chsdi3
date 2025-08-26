@@ -2,7 +2,7 @@ from distutils.util import strtobool
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import engine_from_config, Column
 
-dbs = ['are', 'bafu', 'bak', 'bod', 'dritte', 'edi', 'evd', 'kogis', 'stopo', 'uvek', 'uvek_solarkataster', 'vbs', 'zeitreihen', 'lubis']
+dbs = ['are', 'bafu', 'bak', 'bod', 'dritte', 'edi', 'evd', 'stopo', 'uvek', 'uvek_solarkataster', 'vbs', 'zeitreihen', 'lubis']
 
 engines = {}
 bases = {}
