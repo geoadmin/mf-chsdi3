@@ -11,7 +11,7 @@ esrijson = "~=0.4"
 gatilegrid = "~=0.2"
 geojson = "~=3.2"
 lark_parser = "~=0.12"
-networkx = "~=3.2"  # 3.5: 3.11; 3.4: 3.10;
+networkx = "~=3.4"  # 3.5: 3.11
 papyrus = "==2.5"  # >2.5 requires sqlalchemy>=2
 SQLAlchemy = "~=1.4"  # 2
 Pillow = "~=11.3"
@@ -27,13 +27,13 @@ pytz = "*"  # uses CalVer, not SemVer
 PyYAML = "~=6.0"
 regex = "*"  # uses CalVer, not SemVer
 requests = "~=2.32"
-Shapely = "~=2.0"  # 2.1: 3.10
-numpy = "~=2.0"  # 2.3: 3.11; 2.2: 3.10
+Shapely = "~=2.1"
+numpy = "~=2.2"  # 2.3: 3.11
 simplejson = "~=3.20"
 unidecode = "~=1.4"
 logging-utilities = "~=5.1"
 pyramid-exclog = "~=1.1"
-GeoAlchemy2 = "~=0.17"  # 0.18: 3.10
+GeoAlchemy2 = "<0.18"  # tests are failing, not sure why
 
 [dev-packages]
 waitress = "*"
@@ -54,4 +54,4 @@ coverage = "*"
 requests-mock = "*"
 
 [requires]
-python_version = "3.9"
+python_version = "3.10"
