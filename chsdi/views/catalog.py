@@ -76,6 +76,7 @@ def tree_data(G, root, attrs, meta):
 def initialize_graph(G, rows, lang):
     root_id = None
     meta = {}
+    r = None
     for r in rows:
         node_parent_id = getattr(r, 'parentId')
         node_id = getattr(r, 'id')

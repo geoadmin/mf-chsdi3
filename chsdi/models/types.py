@@ -21,7 +21,7 @@ class JsonChsdi(types.TypeDecorator):
             return json.loads(value)
         return {}
 
-    def copy(self):
+    def copy(self, **kw):
         return JsonChsdi()
 
 
@@ -39,7 +39,7 @@ class DateTimeChsdi(types.TypeDecorator):
             return '%s.%s.%s' % (d, m, value.year)
         return '-'
 
-    def copy(self):
+    def copy(self, **kw):
         return DateTimeChsdi()
 
 

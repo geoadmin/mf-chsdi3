@@ -158,13 +158,13 @@ class Vector(object):
     def geometry_column(cls):
         return cls.__mapper__.columns['the_geom']
 
-    def geometry_column_to_return(cls):
-        geom_column_name = cls.__returnedGeometry__ if hasattr(cls, '__returnedGeometry__') else 'the_geom'
-        return cls.__mapper__.columns[geom_column_name]
+    def geometry_column_to_return(self):
+        geom_column_name = self.__returnedGeometry__ if hasattr(self, '__returnedGeometry__') else 'the_geom'
+        return self.__mapper__.columns[geom_column_name]
 
     @property
-    def ignore_max_feature_geometry_size_column(cls):
-        return cls.__ignore_max_feature_geometry_size__ if hasattr(cls, '__ignore_max_feature_geometry_size__') else False
+    def ignore_max_feature_geometry_size_column(self):
+        return self.__ignore_max_feature_geometry_size__ if hasattr(self, '__ignore_max_feature_geometry_size__') else False
 
     @classmethod
     def primary_key_column(cls):
@@ -172,7 +172,7 @@ class Vector(object):
 
     @classmethod
     def time_instant_column(cls):
-        return getattr(cls, cls.__timeInstant__)
+        return getattr(cls, cls.__timeInstant__)  # pylint: disable=no-member
 
     @classmethod
     def label_column(cls):

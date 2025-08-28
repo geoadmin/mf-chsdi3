@@ -74,7 +74,9 @@ def make_geoadmin_url(request, agnostic=False):
     return base_url
 
 
-def resource_exists(path, headers={'User-Agent': 'mf-geoadmin/python'}, verify=False):
+def resource_exists(path, headers=None, verify=False):
+    if headers is None:
+        headers = {'User-Agent': 'mf-geoadmin/python'}
     try:
         r = requests.head(path, headers=headers, verify=verify, timeout=REQUESTS_DEFAULT_TIMEOUT)
     except Timeout as e:
@@ -85,6 +87,7 @@ def resource_exists(path, headers={'User-Agent': 'mf-geoadmin/python'}, verify=F
         return False
     except RequestException as e:
         log.error('Unknown exception while requesting "%s"\n%s' % (path, e))
+        return False
     return r.status_code == requests.codes.ok
 
 

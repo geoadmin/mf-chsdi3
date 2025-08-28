@@ -24,5 +24,5 @@ while retries > 0:
         time.sleep(2)
         retries -= 1
 if retries == 0:
-     raise Exception("Cannot connect to PostgreSQL on {} and port {}".format(host, port))
+    raise Exception("Cannot connect to PostgreSQL on {} and port {}".format(host, port))
 

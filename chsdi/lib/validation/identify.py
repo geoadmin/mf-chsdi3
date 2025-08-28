@@ -264,7 +264,7 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
                 layers = value.split(':')[1]
                 self._layers = layers.split(',')
             except Exception:
-                HTTPBadRequest('There is an error in the parameter layers')
+                raise HTTPBadRequest('There is an error in the parameter layers')
 
     @offset.setter
     def offset(self, value):
