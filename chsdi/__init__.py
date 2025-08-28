@@ -1,5 +1,4 @@
 import os
-from distutils.util import strtobool
 import datetime
 from pyramid.config import Configurator
 from pyramid.response import Response
@@ -9,6 +8,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 from papyrus.renderers import GeoJSON
 
 from chsdi.logging_setup import setup_logging
+from chsdi.lib.helpers import strtobool
 from chsdi.renderers import EsriJSON, CSVRenderer
 from chsdi.models import initialize_sql
 

@@ -1,4 +1,3 @@
-from distutils.util import strtobool
 import cachetools.func
 import time
 
@@ -63,7 +62,7 @@ def add_localizer(event):
     request.translate = auto_translate
 
     settings = request.registry.settings
-    use_dynamic_translation = strtobool(settings.get('dynamic_translation', '1'))
+    use_dynamic_translation = helpers.strtobool(settings.get('dynamic_translation', '1'))
 
     if use_dynamic_translation:
         request.localizer = update_localizer(request.lang, request.localizer, request.db)

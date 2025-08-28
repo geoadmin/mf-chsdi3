@@ -1,5 +1,4 @@
 import os
-from distutils.util import strtobool
 from unittest import TestCase
 from pyramid import testing
 from webtest import TestApp
@@ -10,6 +9,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.sql.expression import func
 
 from chsdi.lib.helpers import transform_round_geometry as transform_shape
+from chsdi.lib.helpers import strtobool
 from chsdi.lib.validation import SUPPORTED_OUTPUT_SRS
 from shapely.geometry import box, Point
 
