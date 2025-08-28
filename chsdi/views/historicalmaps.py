@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from chsdi.lib.helpers import parse_box2d, center_from_box2d
 from chsdi.lib.validation.features import ExtendedHtmlPopupServiceValidation
 from chsdi.views.features import _get_features

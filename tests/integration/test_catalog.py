@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from tests.integration import TestsBase
 from chsdi.models.bod import Catalog
 from sqlalchemy.orm import scoped_session, sessionmaker

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import unittest
 from chsdi.views.catalog import tree_data
 import networkx as nx

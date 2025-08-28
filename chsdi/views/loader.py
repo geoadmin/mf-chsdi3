@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import json
 from pyramid.exceptions import HTTPNotFound
 from pyramid.view import view_config

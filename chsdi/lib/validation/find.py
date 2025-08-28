@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import json
 from pyramid.httpexceptions import HTTPBadRequest
 from chsdi.lib.validation import MapNameValidation, SUPPORTED_OUTPUT_SRS

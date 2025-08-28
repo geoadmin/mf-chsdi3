@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from unittest import skip, skipUnless
 from webtest.app import AppError
 from pyramid_mako import MakoRenderingException

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import json
 import sqlalchemy.types as types
 from geoalchemy2.types import Geometry

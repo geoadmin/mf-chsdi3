@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import logging
 
 from pyramid.view import view_config

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from unittest import skip, skipUnless
 from tests.integration import TestsBase, shift_to_lv95, reproject_to_srid, s3_tests
 import math

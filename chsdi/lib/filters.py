@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from chsdi.models.bod import LayersConfig
 from sqlalchemy.sql.expression import cast
 from sqlalchemy import Text, or_

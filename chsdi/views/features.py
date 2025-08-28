@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import re
 import geojson
 from gatilegrid.grid import Grid

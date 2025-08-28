@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import unittest
 from chsdi.lib.parser import WhereParser
 from chsdi.lib.helpers import ilen

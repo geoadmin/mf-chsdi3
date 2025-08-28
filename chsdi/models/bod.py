@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 import cachetools.func
 
 from gatilegrid import getTileGrid

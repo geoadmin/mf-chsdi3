@@ -1,10 +1,8 @@
-# -*- coding: utf-8 -*-
-
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
 
-<% 
+<%
 
     lang = 'fr' if lang in ('fr', 'it') else 'de'
     typ = 'typ_%s' % lang
@@ -25,7 +23,7 @@
 
     lang = 'fr' if lang in ('fr', 'it') else 'de'
     typ = 'typ_%s' % lang
-  
+
 %>
 
 <table>

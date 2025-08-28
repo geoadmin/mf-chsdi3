@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import requests
 import xml.etree.ElementTree as et
 from pytz import timezone

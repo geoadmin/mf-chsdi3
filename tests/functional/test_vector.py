@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import unittest
 from chsdi.models.vector import get_fallback_lang_match
 

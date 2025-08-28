@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # GeoAdmin API documentation build configuration file, created by
 # sphinx-quickstart on Wed Jul 21 07:44:14 2010.

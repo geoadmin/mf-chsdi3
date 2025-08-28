@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 This script can be used to scan the models in chsdi and return a list of dependent tables.
 

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import os
 from distutils.util import strtobool
 from unittest import TestCase
