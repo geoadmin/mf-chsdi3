@@ -11,13 +11,13 @@ esrijson = "~=0.4"
 gatilegrid = "~=0.2"
 geojson = "~=3.2"
 lark_parser = "~=0.12"
-networkx = "~=3.4"  # 3.5: 3.11
-papyrus = "==2.5"  # >2.5 requires sqlalchemy>=2
-SQLAlchemy = "~=1.4"  # 2
+networkx = "~=3.5"
+papyrus = "<2.6"  # requires sqlalchemy>=2
+SQLAlchemy = "<2"  # we don't want to put in the effort to upgrade to 2
 Pillow = "~=11.3"
 polib = "~=1.2"
 psycopg2-binary = "~=2.9"
-pyproj = "~=3.6"  # 3.7: 3.10
+pyproj = "~=3.7"
 pyramid = "~=2.0"
 pyramid-mako = "~=1.1"
 pyramid-tm = "~=2.6"
@@ -28,7 +28,7 @@ PyYAML = "~=6.0"
 regex = "*"  # uses CalVer, not SemVer
 requests = "~=2.32"
 Shapely = "~=2.1"
-numpy = "~=2.2"  # 2.3: 3.11
+numpy = "~=2.3"
 simplejson = "~=3.20"
 unidecode = "~=1.4"
 logging-utilities = "~=5.1"
@@ -54,4 +54,4 @@ coverage = "*"
 requests-mock = "*"
 
 [requires]
-python_version = "3.10"
+python_version = "3.13"
