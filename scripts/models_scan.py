@@ -40,7 +40,7 @@ def getTableReferences(dbmap, engines):
         tmpColumns = []
         for model in models:
             matches = re.match(
-                '^.*\/{1}([a-z]*_solarkataster)|^.*\/{1}([a-z]*)',
+                r'^.*\/{1}([a-z]*_solarkataster)|^.*\/{1}([a-z]*)',
                 model.metadata.__str__())
             dbname = matches.group(1) if matches.group(1) else matches.group(2)
             engine = engines.get(dbname)
