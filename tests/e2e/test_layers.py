@@ -9,7 +9,6 @@ from pyramid.paster import get_app
 from sqlalchemy import distinct
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.orm.exc import NoResultFound
-from sqlalchemy.sql.expression import func
 from sqlalchemy.types import BigInteger
 from tests.integration import s3_tests
 from webtest import TestApp

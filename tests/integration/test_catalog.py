@@ -82,8 +82,6 @@ class TestCatalogService(TestsBase):
                         return False
             return True
 
-        from chsdi.models.bod import Catalog
-        from sqlalchemy.orm import scoped_session, sessionmaker
         DBSession = scoped_session(sessionmaker())
         old_staging = self.testapp.app.registry.settings['geodata_staging']
         # We fix staging for next calls to prod
@@ -127,7 +125,6 @@ class TestCatalogService(TestsBase):
                         return False
             return True
 
-        from sqlalchemy.orm import scoped_session, sessionmaker
         DBSession = scoped_session(sessionmaker())
         old_staging = self.testapp.app.registry.settings['geodata_staging']
         # We fix staging for next calls to prod
