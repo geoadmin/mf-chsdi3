@@ -1058,7 +1058,7 @@ class TestIdentifyService(TestsBase):
                   }
         resp = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=400)
         self.assertEqual(resp.content_type, 'application/json')
-        self.assertTrue(u"Query attribute 'dummy_attribute' is not queryable" in resp.json['detail'])
+        self.assertTrue("Query attribute 'dummy_attribute' is not queryable" in resp.json['detail'])
 
     def test_identify_layerDefs(self):
         params = {'geometryFormat': 'geojson',

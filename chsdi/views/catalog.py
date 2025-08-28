@@ -33,7 +33,7 @@ def tree_data(G, root, attrs, meta):
     def add_children(n, G):
         distinct_order_keys = set()
         order_key = lambda x: x['orderKey']
-        label_key = lambda x: x['label'].replace(u'Ü', u'U').replace(u'Ä', u'A')
+        label_key = lambda x: x['label'].replace('Ü', '').replace('Ä', 'A')
         nbrs = G[n]
         if len(nbrs) == 0:
             return []

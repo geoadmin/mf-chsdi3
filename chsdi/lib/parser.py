@@ -56,7 +56,7 @@ class ParseError(Exception):
 class WhereParser(object):
 
     def __init__(self, text):
-        log.debug(u'WhereParser string to parse: {}'.format(str(text)))
+        log.debug('WhereParser string to parse: {}'.format(str(text)))
 
         self.text = text
         self.parser = Lark(where_gram, debug=True)
@@ -67,7 +67,7 @@ class WhereParser(object):
         tokens = self._tokens()
         if len(tokens) < 1:
             return None
-        return u" ".join(tokens)
+        return " ".join(tokens)
 
     @property
     def tokens(self):
@@ -104,7 +104,7 @@ class WhereParser(object):
 class WhereTransformer(Transformer):
 
     def expression(self, args):
-        return u" ".join(map(str, args))
+        return " ".join(map(str, args))
 
     def and_or(self, s):
         # log.debug(u'and_or: {}'.format(str(s[0]).lower()))

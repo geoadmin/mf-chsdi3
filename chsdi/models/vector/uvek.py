@@ -1535,7 +1535,7 @@ register(LuftfahrtRecht.__bodId__, LuftfahrtRecht)
 class LuftraeumeBase:
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
     __template__ = 'templates/htmlpopup/luftraeume_fluginformationsgebiet.mako'
-    __label__ = u'name'
+    __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
     designator = Column('designator', Unicode)

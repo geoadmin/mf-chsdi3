@@ -11,7 +11,7 @@ class MapNameValidation(object):
 
     def hasMap(self, db, mapName):
         availableMaps = [q[0] for q in db.query(Topics.id)]
-        availableMaps.append(u'all')
+        availableMaps.append('all')
 
         if mapName not in availableMaps:
             raise HTTPBadRequest('The map you provided does not exist')
@@ -50,9 +50,9 @@ class BaseLayersValidation(BaseValidation):
     @chargeable.setter
     def chargeable(self, value):
         if value is not None:
-            if value.lower() == u'true':
+            if value.lower() == 'true':
                 self._chargeable = True
-            elif value.lower() == u'false':
+            elif value.lower() == 'false':
                 self._chargeable = False
 
     @property
@@ -82,7 +82,7 @@ class BaseFeaturesValidation(BaseLayersValidation):
     @geometryFormat.setter
     def geometryFormat(self, value):
         if value is not None:
-            if value == u'geojson':
+            if value == 'geojson':
                 self._geometryFormat = value
             else:
-                self._geometryFormat = u'esrijson'
+                self._geometryFormat = 'esrijson'

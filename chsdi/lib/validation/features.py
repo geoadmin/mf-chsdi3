@@ -26,7 +26,7 @@ class HtmlPopupServiceValidation(BaseFeaturesValidation):
         self.time = request.params.get('time')
 
         self.returnGeometry = False
-        self.geometryFormat = u'geojson'
+        self.geometryFormat = 'geojson'
 
     @property
     def layerId(self):
@@ -114,7 +114,7 @@ class GetFeatureServiceValidation(HtmlPopupServiceValidation):
         self._returnGeometry = None
 
         self.returnGeometry = request.params.get('returnGeometry')
-        self.geometryFormat = request.params.get('geometryFormat', u'esrijson')
+        self.geometryFormat = request.params.get('geometryFormat', 'esrijson')
 
     @property
     def returnGeometry(self):
@@ -125,9 +125,9 @@ class GetFeatureServiceValidation(HtmlPopupServiceValidation):
         if value is None:
             self._returnGeometry = True
         else:
-            if isinstance(value, str) and value.lower() == u'true':
+            if isinstance(value, str) and value.lower() == 'true':
                 self._returnGeometry = True
-            elif isinstance(value, str) and value.lower() == u'false':
+            elif isinstance(value, str) and value.lower() == 'false':
                 self._returnGeometry = False
             else:
                 self._returnGeometry = True

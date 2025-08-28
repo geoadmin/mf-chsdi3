@@ -116,7 +116,7 @@ class TestHelpers(unittest.TestCase):
         result = format_search_text(testinput_str)
         self.assertEqual(result, 'Hallo\\!')
 
-        testinput_str2 = u'über'
+        testinput_str2 = 'über'
         result2 = format_search_text(testinput_str2)
         self.assertEqual(result2, 'ueber')
 
