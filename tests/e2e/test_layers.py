@@ -44,6 +44,8 @@ class LayersChecker(object):
         session.close()
 
     def ilayers(self, tooltip=None, hasLegend=None, searchable=None, geojson=None):
+        # TODO: we should not yield from within a with
+        # pylint: disable=contextmanager-generator-missing-cleanup
         with self.getSession() as session:
             valNone = None
             query = session.query(distinct(LayersConfig.layerBodId)) \

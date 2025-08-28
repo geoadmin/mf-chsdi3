@@ -143,7 +143,7 @@ class OpenTrans:
         if (resp.status_code == 429):
             raise OpenTransRateLimitException("The rate limit of OpenTransportdata has exceeded")
 
-        if (resp.status_code != requests.codes.ok):
+        if (resp.status_code != requests.codes.ok):  # pylint: disable=no-member
             resp.raise_for_status()
 
         resp.encoding = 'utf-8'  # TODO better encoding solution

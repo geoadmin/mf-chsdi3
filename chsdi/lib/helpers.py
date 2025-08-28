@@ -31,7 +31,7 @@ from chsdi.lib.parser import WhereParser
 from chsdi.lib.exceptions import QueryParseException, CoordinatesTransformationException
 import logging
 
-requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)  # pylint: disable=no-member
 
 log = logging.getLogger(__name__)
 
@@ -88,7 +88,7 @@ def resource_exists(path, headers=None, verify=False):
     except RequestException as e:
         log.error('Unknown exception while requesting "%s"\n%s' % (path, e))
         return False
-    return r.status_code == requests.codes.ok
+    return r.status_code == requests.codes.ok  # pylint: disable=no-member
 
 
 def sanitize_url(url):
@@ -302,7 +302,7 @@ def imagesize_from_metafile(tileUrlBasePath, bvnummer):
     metaurl = tileUrlBasePath + '/' + bvnummer + '/tilemapresource.xml'
     s = requests.Session()
     response = s.get(metaurl, headers=headers)
-    if response.status_code == requests.codes.ok:
+    if response.status_code == requests.codes.ok:  # pylint: disable=no-member
         xml = etree.fromstring(response.content)
         bb = xml.find('BoundingBox')
         if bb is not None:

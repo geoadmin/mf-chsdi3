@@ -65,6 +65,7 @@ PSERVE = $(VENV)/bin/pserve
 PSHELL = $(VENV)/bin/pshell
 PYTHON = $(VENV)/bin/python3
 SPHINX = $(VENV)/bin/sphinx-build
+PYLINT = $(VENV)/bin/pylint
 
 PYTHON_VERSION := $(shell $$(pipenv --py 2> /dev/null) --version 2>&1 | awk '{print $$2}')
 
@@ -393,7 +394,8 @@ teste2e: guard-VENV clean_logs local-templates build
 .PHONY: lint
 lint: guard-VENV
 	@echo "${GREEN}Linting python files...${RESET}";
-	${FLAKE8} --ignore=${PEP8_IGNORE} $(PYTHON_FILES) && echo ${RED}
+	${FLAKE8} --ignore=${PEP8_IGNORE} $(PYTHON_FILES)
+	${PYLINT} .
 
 
 # TODO: Replace through yapf, once the old vhost infra is replaced
