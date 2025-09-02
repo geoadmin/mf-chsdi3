@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 <%!
   from pyramid.url import route_url
   import chsdi.lib.helpers as h

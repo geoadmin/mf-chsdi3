@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import os
 import decimal
 import datetime
@@ -71,7 +69,7 @@ def legend(request):
     if 'attributes' in layerMetadata:
         if 'dataStatus' in layerMetadata['attributes']:
             status = layerMetadata['attributes']['dataStatus']
-            if status == u'bgdi_created':
+            if status == 'bgdi_created':
                 layerMetadata['attributes']['dataStatus'] = params.translate('None') + params.translate('Datenstand')
     legend = {
         'layer': layerMetadata,

@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 from pyramid.httpexceptions import HTTPInternalServerError, HTTPBadRequest, HTTPServiceUnavailable, HTTPTooManyRequests, HTTPNotFound
 from requests.exceptions import RequestException
 from pyramid.view import view_config, view_defaults

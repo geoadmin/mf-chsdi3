@@ -1,14 +1,12 @@
-# -*- coding: utf-8 -*-
-
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
 
-<% 
+<%
     lang = 'fr' if lang in ('fr', 'it') else 'de'
     typ = 'typ_%s' % lang
     bauwtyp = 'bauwtyp_%s' % lang
-    
+
 %>
 
     <tr><td class="cell-left">${_('tt_ch.bafu.oekomorphologie-f_bauwerke_bauwnr')}</td>             <td>${c['attributes']['bauwnr']}</td></tr>

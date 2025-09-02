@@ -6,7 +6,7 @@ import re
 import sys
 import pytz
 from lxml import etree
-from lxml.etree import Element, SubElement, QName, tostring
+from lxml.etree import Element, QName
 
 
 RSS_FILE = 'chsdi/static/doc/build/releasenotes/rss2.xml'

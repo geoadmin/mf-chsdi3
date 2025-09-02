@@ -1,7 +1,4 @@
-# -*- coding: utf-8 -*-
-
 <%inherit file="base.mako"/>
-
 <%def name="table_body(c, lang)">
 <%
 c['stable_id'] = True
@@ -26,7 +23,7 @@ pdf = 'pdf_%s' % lang
     % endfor
     </td></tr>
     ## url
-    <tr><td class="cell-left">${_('ch.vbs.schiessanzeigen.url')}</td> 
+    <tr><td class="cell-left">${_('ch.vbs.schiessanzeigen.url')}</td>
     % if c['attributes'][info_url]:
       <td><a href="${c['attributes'][info_url]}" target="_blank">${_('ch.vbs.schiessanzeigen.url')}</a></td></tr>
     % else:

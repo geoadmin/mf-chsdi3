@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 <%
   c = legend['layer']
   hasLegend = legend['hasLegend']

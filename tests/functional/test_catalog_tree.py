@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import unittest
 from chsdi.views.catalog import tree_data
 import networkx as nx
@@ -28,33 +26,33 @@ class TestCatalogTree(unittest.TestCase):
         edge_list = [(15006, 457), (457, 458), (457, 491)]
         G = nx.DiGraph(edge_list)
         meta = {457: {
-            u'category': u'cat72',
-            u'staging': u'prod',
-                        u'selectedOpen': False,
-                        u'label': u'Grundlagen und Planung',
-                        u'topic': u'ech',
-                        u'orderKey': 1,
-                        u'parentId': 15006,
-                        u'id': 457
+            'category': 'cat72',
+            'staging': 'prod',
+                        'selectedOpen': False,
+                        'label': 'Grundlagen und Planung',
+                        'topic': 'ech',
+                        'orderKey': 1,
+                        'parentId': 15006,
+                        'id': 457
         },
             458: {
-            u'category': u'cat73',
-            u'staging': u'prod',
-                        u'selectedOpen': False,
-                        u'label': u'Basiskarten',
-                        u'topic': u'ech',
-                        u'orderKey': 1,
-                        u'parentId': 457,
-                        u'id': 458},
+            'category': 'cat73',
+            'staging': 'prod',
+                        'selectedOpen': False,
+                        'label': 'Basiskarten',
+                        'topic': 'ech',
+                        'orderKey': 1,
+                        'parentId': 457,
+                        'id': 458},
             491: {
-            u'category': u'cat76',
-            u'staging': u'prod',
-                        u'selectedOpen': False,
-                        u'label': u'Ortsangaben, Referenzsysteme',
-                        u'topic': u'ech',
-                        u'orderKey': 4,
-                        u'parentId': 457,
-                        u'id': 491
+            'category': 'cat76',
+            'staging': 'prod',
+                        'selectedOpen': False,
+                        'label': 'Ortsangaben, Referenzsysteme',
+                        'topic': 'ech',
+                        'orderKey': 4,
+                        'parentId': 457,
+                        'id': 491
         }
         }
         with self.assertRaises(nx.NetworkXError):

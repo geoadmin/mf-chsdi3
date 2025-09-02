@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from sqlalchemy import Column, Unicode, Integer, Float, Boolean
 
 from sqlalchemy.dialects import postgresql
@@ -56,7 +54,7 @@ class NationalesSportanlagenkonzept(Base, Vector):
     sportaktivitaet = Column('art_der_anlage', Unicode, nullable=False)
     name_der_anlage = Column('name_der_anlage', Unicode, nullable=False)
     ort = Column('ort', Unicode, nullable=False)
-    website = Column('website', Unicode, nullable=False, default=u'')
+    website = Column('website', Unicode, nullable=False, default='')
     the_geom = Column(Geometry2D)
 
 register(NationalesSportanlagenkonzept.__bodId__, NationalesSportanlagenkonzept)

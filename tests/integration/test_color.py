@@ -1,12 +1,7 @@
-# -*- coding: utf-8 -*-
-
 from tests.integration import TestsBase
 
 
 class TestColorView(TestsBase):
-
-    def setUp(self):
-        super(TestColorView, self).setUp()
 
     def test_color_valid(self):
         resp = self.testapp.get('/color/23,24,25/marker-24@2x.png', None, status=200)

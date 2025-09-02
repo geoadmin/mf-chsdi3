@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 import cachetools.func
 
 from gatilegrid import getTileGrid
@@ -118,7 +115,7 @@ class LayersConfig(Base):
                     config[k] = translate(val)
                 elif k == 'tilematrix_resolution_max':
                     if val != defaultResolution and \
-                            self.__dict__['srid'] != u'4326':
+                            self.__dict__['srid'] != '4326':
                         config['resolutions'] = self._getResolutionsFromMatrixSet(
                             val, params.srid)
                 elif k == 'extent':  # Used for the shop, are still in lv03

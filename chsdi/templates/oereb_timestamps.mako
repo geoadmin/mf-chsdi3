@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 <!-- Feature Service für ÖREB-Daten
      Stand der Daten: ${data_created}, Stand des Feature Service: ${data_imported}
 

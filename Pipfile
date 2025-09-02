@@ -53,6 +53,7 @@ nose2 = "*"
 coverage = "~=4.5"
 numpy = "==2.0.2"
 requests-mock = "~=1.12.1"
+pylint = "*"
 
 [requires]
 python_version = "3.9"

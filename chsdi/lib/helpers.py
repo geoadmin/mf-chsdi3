@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import threading
 import re
 import math
@@ -33,7 +31,7 @@ from chsdi.lib.parser import WhereParser
 from chsdi.lib.exceptions import QueryParseException, CoordinatesTransformationException
 import logging
 
-requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)  # pylint: disable=no-member
 
 log = logging.getLogger(__name__)
 
@@ -76,7 +74,9 @@ def make_geoadmin_url(request, agnostic=False):
     return base_url
 
 
-def resource_exists(path, headers={'User-Agent': 'mf-geoadmin/python'}, verify=False):
+def resource_exists(path, headers=None, verify=False):
+    if headers is None:
+        headers = {'User-Agent': 'mf-geoadmin/python'}
     try:
         r = requests.head(path, headers=headers, verify=verify, timeout=REQUESTS_DEFAULT_TIMEOUT)
     except Timeout as e:
@@ -87,7 +87,8 @@ def resource_exists(path, headers={'User-Agent': 'mf-geoadmin/python'}, verify=F
         return False
     except RequestException as e:
         log.error('Unknown exception while requesting "%s"\n%s' % (path, e))
-    return r.status_code == requests.codes.ok
+        return False
+    return r.status_code == requests.codes.ok  # pylint: disable=no-member
 
 
 def sanitize_url(url):
@@ -135,12 +136,12 @@ def format_search_text(input_str):
 def remove_accents(input_str):
     if input_str is None:
         return input_str
-    input_str = input_str.replace(u'ü', u'ue')
-    input_str = input_str.replace(u'Ü', u'ue')
-    input_str = input_str.replace(u'ä', u'ae')
-    input_str = input_str.replace(u'Ä', u'ae')
-    input_str = input_str.replace(u'ö', u'oe')
-    input_str = input_str.replace(u'Ö', u'oe')
+    input_str = input_str.replace('ü', 'ue')
+    input_str = input_str.replace('Ü', 'ue')
+    input_str = input_str.replace('ä', 'ae')
+    input_str = input_str.replace('Ä', 'ae')
+    input_str = input_str.replace('ö', 'oe')
+    input_str = input_str.replace('Ö', 'oe')
     return ''.join(c for c in unicodedata.normalize('NFD', input_str) if unicodedata.category(c) != 'Mn')
 
 
@@ -174,15 +175,15 @@ def format_query(model, value, lang):
     where = None
 
     def escapeSQL(value):
-        if u'ilike' in value:
+        if 'ilike' in value:
             match = re.search(r'([\w]+\s)(ilike|not ilike)(\s\'%)([\s\S]*)(%\')', value)
-            where = u''.join((
-                match.group(1).replace(u'\'', u'E\''),
+            where = ''.join((
+                match.group(1).replace('\'', 'E\''),
                 match.group(2),
                 match.group(3),
-                match.group(4).replace(u'\\', u'\\\\')
-                              .replace(u'\'', u"\''")
-                              .replace(u'_', u'\\_'),
+                match.group(4).replace('\\', '\\\\')
+                              .replace('\'', "\''")
+                              .replace('_', '\\_'),
                 match.group(5)
             ))
             return where
@@ -301,7 +302,7 @@ def imagesize_from_metafile(tileUrlBasePath, bvnummer):
     metaurl = tileUrlBasePath + '/' + bvnummer + '/tilemapresource.xml'
     s = requests.Session()
     response = s.get(metaurl, headers=headers)
-    if response.status_code == requests.codes.ok:
+    if response.status_code == requests.codes.ok:  # pylint: disable=no-member
         xml = etree.fromstring(response.content)
         bb = xml.find('BoundingBox')
         if bb is not None:
