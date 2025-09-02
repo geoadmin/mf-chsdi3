@@ -33,7 +33,7 @@ class EsriJSON(GeoJSON):
     def __call__(self, info):
         def _render(value, system):
             if isinstance(value, (list, tuple)):
-                value = self.get_collection_type(value)
+                value = self.collection_type(value)
             ret = dumps(value)
             request = system.get('request')
             if request is not None:
@@ -49,9 +49,6 @@ class EsriJSON(GeoJSON):
                                                            'json': ret}
             return ret
         return _render
-
-    def get_collection_type(self, value):
-        return {'features': value}
 
 
 class CSVRenderer(object):
