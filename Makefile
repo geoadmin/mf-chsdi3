@@ -150,10 +150,10 @@ help:
 	@echo
 	@echo -e "\033[1mDocker TARGETS\033[0m "
 	@echo "- dockerlogin        Login to the AWS ECR registery for pulling/pushing docker images"
-	@echo "- dockerbuild        Build the project localy (with tag := $(DOCKER_IMAGE_TAG))"
-	@echo "- dockerrun          Run the project within docker localy (with tag := $(DOCKER_IMAGE_TAG)) on port $(HTTP_PORT)"
-	@echo "- dockerrun-shell    Run the project within docker localy (with tag := $(DOCKER_IMAGE_TAG)) on port $(HTTP_PORT)"
-	@echo "- dockerpush         Build and push the project localy (with tag := $(DOCKER_IMAGE_TAG))"
+	@echo "- dockerbuild        Build the project locally (with tag := $(DOCKER_IMAGE_TAG))"
+	@echo "- dockerrun          Run the project within docker locally (with tag := $(DOCKER_IMAGE_TAG)) on port $(HTTP_PORT)"
+	@echo "- dockerrun-shell    Open a shell locally in docker"
+	@echo "- dockerpush         Build and push the project locally (with tag := $(DOCKER_IMAGE_TAG))"
 	@echo "- dockerpull         Pull the docker image with tag $(DOCKER_IMAGE_TAG))"
 	@echo
 	@echo -e "\033[1mCLEANING TARGETS\033[0m "

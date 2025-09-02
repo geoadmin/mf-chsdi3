@@ -32,8 +32,8 @@ ENV APACHE_ENTRY_PATH=
 ENV APACHE_BASE_PATH=main
 ENV MODWSGI_USER=www-data
 
-ENV USER geodata
-ENV GROUP geodata
+ENV USER=geodata
+ENV GROUP=geodata
 
 # Setup default logging levels
 ENV APACHE_LOG_LEVEL=info
