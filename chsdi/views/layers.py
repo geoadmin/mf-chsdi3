@@ -52,6 +52,26 @@ def layers_config(request):
     return layers
 
 
+@view_config(route_name='layersTable', renderer='jsonp')
+def layers_table(request):
+    params = BaseLayersValidation(request)
+    query = params.request.db.query(LayersConfig)
+    layers = {}
+    for layer in get_layers_config_for_params(params, query, LayersConfig):
+        layers = dict(chain(layers.items(), layer.items()))
+    
+    response = render_to_response(
+        'chsdi:templates/layers_table.mako',
+        {'layers': layers},
+        request=request
+    )
+    
+    if params.cbName is None:
+        return response
+        
+    return response.body.decode('utf8')
+
+
 @view_config(route_name='legend', renderer='jsonp')
 def legend(request):
     params = BaseLayersValidation(request)
