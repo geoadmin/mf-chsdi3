@@ -1478,19 +1478,29 @@ register(GeologieRohstoffeKohlenBitumenErdgas.__bodId__, GeologieRohstoffeKohlen
 
 
 class GeologieRohstoffeVererzungen(Base, Vector):
-    __tablename__ = 'rohstoffe_vererz'
+    __tablename__ = 'rohstoffe_vererzungen'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/rohstoffe_vererzungen.mako'
     __bodId__ = 'ch.swisstopo.geologie-rohstoffe-vererzungen'
     __label__ = 'obname'
     id = Column('obid', Integer, primary_key=True)
     obname = Column('obname', Unicode)
-    obnamealt = Column('obnamealt', Unicode)
-    grkinds = Column('grkinds', Unicode)
-    edmikinds = Column('edmikinds', Unicode)
-    emkinds = Column('emkinds', Unicode)
-    stkind = Column('stkind', Unicode)
+    grkind_de = Column('grkind_de', Unicode)
+    grkind_fr = Column('grkind_fr', Unicode)
+    grkind_it = Column('grkind_it', Unicode)
+    grkind_en = Column('grkind_en', Unicode)
+    rselids = Column('rselids', Unicode)
+    crm_relevance_de = Column('crm_relevance_de', Unicode)
+    crm_relevance_fr = Column('crm_relevance_fr', Unicode)
+    crm_relevance_it = Column('crm_relevance_it', Unicode)
+    crm_relevance_en = Column('crm_relevance_en', Unicode)
+    crm_factsheets_link = Column('crm_factsheets_link', Unicode)
+    mat_min_link_de = Column('mat_min_link_de', Unicode)
+    mat_min_link_fr = Column('mat_min_link_fr', Unicode)
+    mat_min_link_it = Column('mat_min_link_it', Unicode)
+    mat_min_link_en = Column('mat_min_link_en', Unicode)
     purl = Column('purl', Unicode)
+    swissgeol_link = Column('swissgeol_link', Unicode)
     the_geom = Column(Geometry2D)
 
 register(GeologieRohstoffeVererzungen.__bodId__, GeologieRohstoffeVererzungen)
