@@ -2740,6 +2740,23 @@ class HiksSiegfriedTa50Metadata(Base, Vector):
 register(HiksSiegfriedTa50Metadata.__bodId__, HiksSiegfriedTa50Metadata)
 
 
+class HiksSiegfriedMetadata(Base, Vector):
+    __tablename__ = 'view_siegfried_metadata'
+    __template__ = 'templates/htmlpopup/siegfried_meta.mako'
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.hiks-siegfried.metadata'
+    __label__ = 'name'
+    __timeInstant__ = 'year'
+    id = Column('gid', Unicode, primary_key=True)
+    name = Column('gdwh_mapsheetname', Unicode)
+    number = Column('gdwh_mapsheetnumber', Unicode)
+    releasekey = Column('gdwh_releasekey', Integer)
+    year = Column('year', Integer)
+    the_geom = Column(Geometry2D)
+
+register(HiksSiegfriedMetadata.__bodId__, HiksSiegfriedMetadata)
+
+
 class SwissimageHistMetadata(Base, Vector):
     __tablename__ = 'view_swissimage_metadata'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
