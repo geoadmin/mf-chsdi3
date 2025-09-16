@@ -1372,7 +1372,6 @@ class GeologieRohstoffe:
     id = Column('bgdi_id', Integer, primary_key=True)
     type = Column('type', Unicode)
     obname = Column('obname', Unicode)
-    cpkind = Column('cpkind', Unicode)
     purl = Column('purl', Unicode)
     swissgeol_link = Column('swissgeol_link', Unicode)
     stkind_de = Column('stkind_de', Unicode)
@@ -1383,10 +1382,6 @@ class GeologieRohstoffe:
     ltkinds_fr = Column('ltkinds_fr', Unicode)
     ltkinds_it = Column('ltkinds_it', Unicode)
     ltkinds_en = Column('ltkinds_en', Unicode)
-    infos_url_de = Column('infos_url_de', Unicode)
-    infos_url_fr = Column('infos_url_fr', Unicode)
-    infos_url_it = Column('infos_url_it', Unicode)
-    infos_url_en = Column('infos_url_en', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -1395,6 +1390,11 @@ class GeologieRohstoffeZiegelAbbau(Base, GeologieRohstoffe, Vector):
     __tablename__ = 'rohstoffe_ziegel_abbau'
     __template__ = 'templates/htmlpopup/rohstoffe_ziegel_abbau.mako'
     __label__ = 'obname'
+    infos_url_de = Column('infos_url_de', Unicode)
+    infos_url_fr = Column('infos_url_fr', Unicode)
+    infos_url_it = Column('infos_url_it', Unicode)
+    infos_url_en = Column('infos_url_en', Unicode)
+    cpkind = Column('cpkind', Unicode)
 
 register(GeologieRohstoffeZiegelAbbau.__bodId__, GeologieRohstoffeZiegelAbbau)
 
@@ -1404,7 +1404,12 @@ class GeologieRohstoffeZementAbbauVerarbeitung(Base, GeologieRohstoffe, Vector):
     __template__ = 'templates/htmlpopup/rohstoffe_zement_abbau_verarbeitung.mako'
     __bodId__ = 'ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung'
     __label__ = 'obname'
+    cpkind = Column('cpkind', Unicode)
     edkinds = Column('edkinds', Unicode)
+    infos_url_de = Column('infos_url_de', Unicode)
+    infos_url_fr = Column('infos_url_fr', Unicode)
+    infos_url_it = Column('infos_url_it', Unicode)
+    infos_url_en = Column('infos_url_en', Unicode)
     info_url_de = Column('info_url_de', Unicode)
     info_url_fr = Column('info_url_fr', Unicode)
     info_url_it = Column('info_url_it', Unicode)
@@ -1418,12 +1423,30 @@ class GeologieRohstoffeGipsAbbauVerarbeitung(Base, GeologieRohstoffe, Vector):
     __tablename__ = 'rohstoffe_gipsabbauverarbeitung'
     __template__ = 'templates/htmlpopup/rohstoffe_gips_abbau_verarbeitung.mako'
     __label__ = 'obname'
+    cpkind = Column('cpkind', Unicode)
+    infos_url_de = Column('infos_url_de', Unicode)
+    infos_url_fr = Column('infos_url_fr', Unicode)
+    infos_url_it = Column('infos_url_it', Unicode)
+    infos_url_en = Column('infos_url_en', Unicode)
     emkinds_de = Column('emkinds_de', Unicode)
     emkinds_fr = Column('emkinds_fr', Unicode)
     emkinds_it = Column('emkinds_it', Unicode)
     emkinds_en = Column('emkinds_en', Unicode)
 
 register(GeologieRohstoffeGipsAbbauVerarbeitung.__bodId__, GeologieRohstoffeGipsAbbauVerarbeitung)
+
+
+class GeologieRohstoffeKiesAbbauVerarbeitung(Base, GeologieRohstoffe, Vector):
+    __bodId__ = 'ch.swisstopo.geologie-rohstoffe-kies_abbau_verarbeitung'
+    __tablename__ = 'rohstoffe_kiesabbauverarbeitung'
+    __template__ = 'templates/htmlpopup/rohstoffe_kies_abbau_verarbeitung.mako'
+    __label__ = 'obname'
+    emkinds_de = Column('emkinds_de', Unicode)
+    emkinds_fr = Column('emkinds_fr', Unicode)
+    emkinds_it = Column('emkinds_it', Unicode)
+    emkinds_en = Column('emkinds_en', Unicode)
+
+register(GeologieRohstoffeKiesAbbauVerarbeitung.__bodId__, GeologieRohstoffeKiesAbbauVerarbeitung)
 
 
 class GeologieRohstoffeIndustrieminerale(Base, Vector):
