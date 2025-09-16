@@ -42,7 +42,7 @@ class LinksChecker(TestsBase):
         for i in ids:
             response = self.testapp.get('/rest/services/ech/MapServer/%s/%d/htmlPopup' % (bod_id, i), status=200)
             soup = response.html
-            for a in soup.findAll('a'):
+            for a in soup.find_all('a'):
                 link = a.get('href')
                 yield link
 

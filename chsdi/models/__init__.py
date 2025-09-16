@@ -1,6 +1,7 @@
-from distutils.util import strtobool
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import engine_from_config, Column
+
+from chsdi.lib.helpers import strtobool
 
 dbs = ['are', 'bafu', 'bak', 'bod', 'dritte', 'edi', 'evd', 'stopo', 'uvek', 'uvek_solarkataster', 'vbs', 'zeitreihen', 'lubis']
 

@@ -44,12 +44,12 @@ def extract_releases(html):
         soup = BeautifulSoup(f.read(), 'lxml')
         divRelease = soup.find('section', {'id': 'release-notes'})
         if divRelease:
-            releases = divRelease.findAll('section', {'id': re.compile('release-')})
+            releases = divRelease.find_all('section', {'id': re.compile('release-')})
     return releases
 
 
 def id_to_rss_date(r):
-    id_str = r.findNext('span').get('id')
+    id_str = r.find_next('span').get('id')
     date_str = id_str.split('-')[1]
     date_str = date_str + ' 00:00:00'
     date_obj = datetime.strptime(date_str, '%Y%m%d %H:%M:%S')
@@ -89,16 +89,16 @@ if __name__ == '__main__':
     i = 0
     for r in releases:
         # parse information from html
-        title = r.findNext('h2').text[:-1]
+        title = r.find_next('h2').text[:-1]
         date_rss = id_to_rss_date(r)
         data = str(extract_data(r))
         description = data_to_description(data)
         # create feeds
         items.append(MyRSS2(
             title=title,
-            link= api_url + r.findNext('a').get('href'),
+            link= api_url + r.find_next('a').get('href'),
             description=description,
-            guid=api_url + r.findNext('a').get('href'),
+            guid=api_url + r.find_next('a').get('href'),
             pubDate=date_rss))
         i += 1
         if i == 10:
