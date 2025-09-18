@@ -1,9 +1,5 @@
 <%inherit file="base.mako"/>
 
-<%!
-import datetime
-%>
-
 <%def name="table_body(c, lang)">
 <%
 from chsdi.lib.helpers import resource_exists
@@ -15,7 +11,6 @@ request = context.get('request')
 
 tt_lubis_Quickview='tt_lubis_Quickview'
 
-datum = datetime.datetime.strptime(c['attributes']['acquired'], '%Y-%m-%d').strftime("%d-%m-%Y")
 dataGeoAdminHost = request.registry.settings['datageoadminhost']
 aerialimages_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['attributes']['filename']}"
 meta_csv_url=f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['featureId']}.csv"
@@ -41,7 +36,7 @@ aerialimages_exists = resource_exists(aerialimages_url)
 </tr>
 <tr>
   <td class="cell-left">${_(f"{c['layerBodId']}.acquired")}</td>
-  <td>${datum or '-'}</td>
+  <td>${c['attributes']['acquired'] or '-'}</td>
 </tr>
 <tr>
   <td class="cell-left">${_(f"{c['layerBodId']}.film_type")}</td>
