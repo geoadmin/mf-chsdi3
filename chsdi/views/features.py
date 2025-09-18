@@ -599,7 +599,7 @@ def _attributes(request):
     for attr in query:
         if len(attr):
             attributes_values.append(attr[0])
-    return {'values': sorted(attributes_values)}
+    return {'values': sorted([v for v in attributes_values if v is not None])}
 
 
 def _find(request):
