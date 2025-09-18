@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, Boolean, Numeric, Date
+from sqlalchemy import Column, Integer, Boolean, Numeric
 from sqlalchemy.types import Unicode
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector, Geometry2D
@@ -142,7 +142,7 @@ class LuftbilderSchraegaufnahmen(Base, Vector):
     bgdi_flugjahr = Column('bgdi_flugjahr', Integer)
     x = Column('x', Integer)
     y = Column('y', Integer)
-    z = Column('y', Integer)
+    z = Column('z', Integer)
     the_geom = Column(Geometry2D)
 
 register(LuftbilderSchraegaufnahmen.__bodId__, LuftbilderSchraegaufnahmen)
