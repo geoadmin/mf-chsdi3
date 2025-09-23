@@ -697,18 +697,6 @@ class HugStationen(Base, Vector):
 register(HugStationen.__bodId__, HugStationen)
 
 
-class Hintergrundkarte(Base, Vector):
-    __tablename__ = 'hydrologie_hintergrundkarte'
-    __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
-    __bodId__ = 'ch.bafu.hydrologie-hintergrundkarte'
-    __label__ = 'name'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    name = Column('name', Unicode)
-    the_geom = Column(Geometry2D)
-
-register(Hintergrundkarte.__bodId__, Hintergrundkarte)
-
-
 class StrukturgueteHochrheinLinkesufer(Base, Vector):
     __tablename__ = 'strukturguete_hochrhein'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
