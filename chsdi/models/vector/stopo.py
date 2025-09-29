@@ -280,6 +280,7 @@ register(SkiTouren.__bodId__, SkiTouren)
 
 class SchneeSchuhRouten(Base, SchneeRouten, Vector):
     __tablename__ = 'snowshoe_routes'
+    descent_time_label = Column('descent_time_label', Unicode)
     __template__ = 'templates/htmlpopup/karto_schneeschuhrouten.mako'
     __bodId__ = 'ch.swisstopo-karto.schneeschuhrouten'
 
