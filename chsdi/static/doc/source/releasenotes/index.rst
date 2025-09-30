@@ -28,7 +28,12 @@ API & applications
 
 - Bug fixes:
 - Announcements:
-    - ///
+    - the `INSPIRE ATOM/OS-Download service <//https://api3.geo.admin.ch/services/sdiservices.html#atom-feed-open-search-download-service>`__ running under this URL *https://atom.geo.admin.ch/inspire/service.xml* will be removed from chsdi services with the release of November 12th 2025. The INSPIRE datasets (`ch.swisstopo.swissboundaries3d.inspire <//https://data.geo.admin.ch/browser/index.html#/collections/ch.swisstopo.swissboundaries3d.inspire>`__ and `ch.swisstopo.swissnames3d.inspire <//https://data.geo.admin.ch/browser/index.html#/collections/ch.swisstopo.swissnames3d.inspire>`__) are now available for download via the STAC API.
+    - the layer *ch.bafu.flora-verbreitungskarten* will be removed from chsdi services with the release of November 12th 2025.
+    - the layer *ch.bafu.gefahren-basiskarte* will be removed from chsdi services with the release of November 12th 2025.
+    - the layers *ch.bafu.karst-ausdehnung_grundwasservorkommen*, *ch.bafu.karst-einzugsgebiete*, *ch.bafu.karst-einzugsgebietseinheiten*, *ch.bafu.karst-quellen_schwinden* and *ch.bafu.karst-unterirdische_fliesswege* will be removed from chsdi services with the release of November 12th 2025.
+    - the layer *ch.swisstopo.schneeschuhwandern* will be removed from chsdi services with the release of November 12th 2025 and replaced by a new layer.
+    - the object ID values of the layer ch.vbs.schiessanzeigen will change for all objects due to geometrical changes in the source data with one of the next releases. Existing permalinks to objects may not work anymore and will have to be replaced by the new object id’s (chsdi fields featureId and id). In addition there will be a new attribute bezeichnung_ort on the dataset. The other existing attributes will stay.
 
 - `Full changelog <///>`__
 
