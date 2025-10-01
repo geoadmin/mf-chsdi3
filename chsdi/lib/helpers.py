@@ -6,7 +6,6 @@ import datetime
 import gzip
 import unidecode
 from decimal import Decimal
-from past.utils import old_div
 
 from itertools import chain
 from itertools import zip_longest
@@ -487,7 +486,7 @@ def format_scale(scale):
     scale_str = str(scale)
     n = ''
     while len(scale_str) > 3:
-        scale_prov = old_div(int(float(scale_str)), 1000)
+        scale_prov = int(float(scale_str)) // 1000
         n = n + "'000"
         scale_str = str(scale_prov)
     scale = "1:" + scale_str + n
