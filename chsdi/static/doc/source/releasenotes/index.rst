@@ -34,12 +34,15 @@ API & applications
     - the layers *ch.bafu.karst-ausdehnung_grundwasservorkommen*, *ch.bafu.karst-einzugsgebiete*, *ch.bafu.karst-einzugsgebietseinheiten*, *ch.bafu.karst-quellen_schwinden* and *ch.bafu.karst-unterirdische_fliesswege* will be removed from chsdi services with the release of November 12th 2025.
     - the layer *ch.swisstopo.schneeschuhwandern* will be removed from chsdi services with the release of November 12th 2025 and replaced by a new layer.
     - the object ID values of the layer ch.vbs.schiessanzeigen will change for all objects due to geometrical changes in the source data with one of the next releases. Existing permalinks to objects may not work anymore and will have to be replaced by the new object id’s (chsdi fields featureId and id). In addition there will be a new attribute bezeichnung_ort on the dataset. The other existing attributes will stay.
+    - the layers *ch.swisstopo.hiks-siegfried* and *ch.swisstopo.hiks-siegfried.metdata* have now been switched to time-enabled, with data between 1870 and 1949 available
 
 - `Full changelog <///>`__
 
 Geodata
 *******
 
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Sand and Gravel <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-kies_abbau_verarbeitung>`__ (ch.swisstopo.geologie-rohstoffe-kies_abbau_verarbeitung)                                             |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `HUG hydrological study areas <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-untersuchungsgebiete>`__ (ch.bafu.hydrologie-untersuchungsgebiete)                                                                |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -67,7 +70,12 @@ Geodata
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Railway noise (act.) D emissions <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag)                  |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
+| Update | `Siegfried Map <//map.geo.admin.ch/?layers=ch.swisstopo.hiks-siegfried>`__ (ch.swisstopo.hiks-siegfried)                                                                                                       |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Division Siegfried Map 25/50 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.hiks-siegfried.metadata>`__ (ch.swisstopo.hiks-siegfried.metadata)                                                               |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Metallic raw materials <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-vererzungen>`__ (ch.swisstopo.geologie-rohstoffe-vererzungen)                                                              |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20250827:
 
