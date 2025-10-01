@@ -22,11 +22,15 @@ calibration_exists = resource_exists(c['attributes'].get('calibration')) if c['a
 
 viewer_url = None
 orthopotho_label = None
+calibration_label = None
 if orthophoto_exists and c['attributes'].get('orthofilename'):
     viewer_url = f"{c['baseUrl']}/#/map?layers=COG|{c['attributes'].get('orthofilename')}&lang={request.params.get('lang', 'de')}"
     orthophoto_label = os.path.basename(c['attributes'].get('orthofilename'))
 elif aerialimages_exists:
     viewer_url = f"{c['baseUrl']}/#/map?layers=COG|{c['attributes'].get('filename')}&lang={request.params.get('lang', 'de')}"
+
+if calibration_exists:
+    calibration_label = os.path.basename(c['attributes'].get('calibration'))
 
 fields = [
     ('id', 'featureId'),
@@ -68,7 +72,7 @@ fields = [
   <td class="cell-left">${_(f"{c['layerBodId']}.calibration")}</td>
   <td>
   % if calibration_exists:
-    <a href="${calibration_url}" target="_blank">${c['attributes'].get('calibration')}</a>
+    <a href="c['attributes'].get('calibration')" target="_blank">${calibration_label}</a>
   % else:
     -
   % endif
