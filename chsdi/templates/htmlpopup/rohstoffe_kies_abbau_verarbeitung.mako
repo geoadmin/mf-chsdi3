@@ -9,11 +9,11 @@
        %>
 
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-kies_abbau_verarbeitung.production_obname')}</td>
+              <td class="cell-left">${_(f'ch.swisstopo.geologie-rohstoffe-kies_abbau_verarbeitung.%s_obname' % c['attributes']['type'])}</td>
               <td>${c['attributes']['obname'] or '-'}</td>
        </tr>
        <tr>
-              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-kies_abbau_verarbeitung.production_stkind')}</td>
+              <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-kies_abbau_verarbeitung.%s_stkind' % c['attributes']['type'])}</td>
               <td>${c['attributes'][stkind_text] or '-'}</td>
        </tr>
        %if c['attributes']['type'] == 'mining':
@@ -25,7 +25,6 @@
               <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-kies_abbau_verarbeitung.mining_emkinds')}</td>
               <td>${c['attributes'][emkinds_text] or '-'}</td>
        </tr>
-       %endif
        <tr>
               <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-kies_abbau_verarbeitung.purl')}</td>
               % if 'http' not in c['attributes']['purl']:
@@ -34,6 +33,7 @@
               <td><a target="_blank" href=${c['attributes']['purl']}>${_('link')}</a></td>
               % endif
        </tr>
+       %endif
        <tr>
               <td class="cell-left">${_('ch.swisstopo.geologie-rohstoffe-kies_abbau_verarbeitung.swissgeol_link')}</td>
               % if not c['attributes']['swissgeol_link'] or 'http' not in c['attributes']['swissgeol_link']:

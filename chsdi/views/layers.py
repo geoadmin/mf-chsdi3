@@ -124,6 +124,8 @@ def feature_attributes(request):
         query = query.limit(SAMPLE_SIZE)
 
         for rowIndex, row in enumerate(query):
+            if row is None:
+                continue  # Skip None rows to avoid AttributeError
             # attrName as defined in the model
             for attrIndex, attrName in enumerate(attributes):
                 featureAttrs = row.get_attributes(exclude_pkey=False)

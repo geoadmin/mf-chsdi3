@@ -58,6 +58,48 @@
           "width": 1
         }
       }
+    }, {
+      "geomType": "point",
+      "value": "5",
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 9,
+        "fill": {
+          "color": "rgb(197, 90, 17)"
+        },
+        "stroke": {
+          "color": "rgb(255, 255, 255)",
+          "width": 1
+        }
+      }
+    }, {
+      "geomType": "point",
+      "value": "6",
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 9,
+        "fill": {
+          "color": "rgb(112, 48, 160)"
+        },
+        "stroke": {
+          "color": "rgb(255, 255, 255)",
+          "width": 1
+        }
+      }
+    }, {
+      "geomType": "point",
+      "value": "7",
+      "vectorOptions": {
+        "type": "circle",
+        "radius": 9,
+        "fill": {
+          "color": "rgb(84, 130, 53)"
+        },
+        "stroke": {
+          "color": "rgb(255, 255, 255)",
+          "width": 1
+        }
+      }
     }
   ]
 }

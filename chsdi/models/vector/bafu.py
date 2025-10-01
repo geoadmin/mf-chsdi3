@@ -226,29 +226,6 @@ class Untersuchungsgebiete(Base, Vector):
 register(Untersuchungsgebiete.__bodId__, Untersuchungsgebiete)
 
 
-class Hochwassergrenzwertpegel(Base, Vector):
-    __tablename__ = 'hochwassergrenzwertpegel'
-    __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
-    __bodId__ = 'ch.bafu.hydrologie-hochwassergrenzwertpegel'
-    __template__ = 'templates/htmlpopup/hochwassergrenzwertpegel.mako'
-    __extended_info__ = True
-    __label__ = 'name'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    name = Column('name', Unicode)
-    nummer = Column('nummer', Unicode)
-    datenherkunft = Column('datenherkunft', Unicode)
-    rechtswert = Column('rechtswert', Numeric)
-    hochwert = Column('hochwert', Numeric)
-    hoehe = Column('hoehe', Numeric)
-    einzugsgebietsflaeche = Column('einzugsgebietsflaeche', Numeric)
-    fluss = Column('fluss', Unicode)
-    m_beginn = Column('m_beginn', Unicode)
-    m_ende = Column('m_ende', Unicode)
-    the_geom = Column(Geometry2D)
-
-register(Hochwassergrenzwertpegel.__bodId__, Hochwassergrenzwertpegel)
-
-
 class AtlasKantonaleMessstationen(Base, Vector):
     __tablename__ = 'hydro_atlas_kant_messstationen'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
@@ -718,18 +695,6 @@ class HugStationen(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(HugStationen.__bodId__, HugStationen)
-
-
-class Hintergrundkarte(Base, Vector):
-    __tablename__ = 'hydrologie_hintergrundkarte'
-    __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
-    __bodId__ = 'ch.bafu.hydrologie-hintergrundkarte'
-    __label__ = 'name'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    name = Column('name', Unicode)
-    the_geom = Column(Geometry2D)
-
-register(Hintergrundkarte.__bodId__, Hintergrundkarte)
 
 
 class StrukturgueteHochrheinLinkesufer(Base, Vector):

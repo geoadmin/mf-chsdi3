@@ -280,6 +280,7 @@ register(SkiTouren.__bodId__, SkiTouren)
 
 class SchneeSchuhRouten(Base, SchneeRouten, Vector):
     __tablename__ = 'snowshoe_routes'
+    descent_time_label = Column('descent_time_label', Unicode)
     __template__ = 'templates/htmlpopup/karto_schneeschuhrouten.mako'
     __bodId__ = 'ch.swisstopo-karto.schneeschuhrouten'
 
@@ -636,7 +637,7 @@ class Vec200Customsoffice(Base, Vector):
     __table_args__ = ({'autoload': False})
     __template__ = 'templates/htmlpopup/vec200_customsoffice.mako'
     __bodId__ = 'ch.swisstopo.vec200-transportation-strassennetz'
-    __label__ = 'ojbname'
+    __label__ = 'objname'
     id = Column('gtdboid', Unicode, primary_key=True)
     objname = Column('objname', Unicode)
     the_geom = Column(Geometry2D)

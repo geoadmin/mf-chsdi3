@@ -107,26 +107,6 @@ class Gemeindetyp(Base, Vector):
 register(Gemeindetyp.__bodId__, Gemeindetyp)
 
 
-class Gemeindetypen_2012(Base, Vector):
-    __tablename__ = 'gemeindetypologie_2012'
-    __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False})
-    __template__ = 'templates/htmlpopup/gemeindetypen_2012.mako'
-    __bodId__ = 'ch.are.gemeindetypen'
-    __label__ = 'name_'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    name_ = Column('name_', Unicode)
-    typ_code = Column('typ_code', Unicode)
-    typ_bez_d = Column('typ_bez_d', Unicode)
-    typ_bez_f = Column('typ_bez_f', Unicode)
-    bfs_no = Column('bfs_no', Unicode)
-    kt_no = Column('kt_no', Unicode)
-    kt_kz = Column('kt_kz', Unicode)
-    flaeche_ha = Column('flaeche_ha', Float)
-    the_geom = Column(Geometry2D)
-
-register(Gemeindetypen_2012.__bodId__, Gemeindetypen_2012)
-
-
 class WindenergieBundesinteressen(Base, Vector):
     __tablename__ = 'windenergie_bundesint'
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False})

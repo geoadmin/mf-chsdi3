@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, Boolean, Numeric, Date
+from sqlalchemy import Column, Integer, Boolean, Numeric
 from sqlalchemy.types import Unicode
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector, Geometry2D
@@ -42,9 +42,10 @@ class LuftbilderBaseSwisstopo(LuftbilderBase):
     __template__ = 'templates/htmlpopup/lubis_stac.mako'
     ebkey_old = Column('ebkey_old', Unicode)
     feature_id = Column('feature_id', Unicode)
-    acquired = Column('acquired', Date)
+    acquired = Column('acquired', Unicode)
     film_type = Column('film_type', Unicode)
     orthofilename = Column('orthofilename', Unicode)
+    calibration = Column('calibration', Unicode)
     e = Column('e', Numeric)
     n = Column('n', Numeric)
     z = Column('z', Numeric)
@@ -136,12 +137,12 @@ class LuftbilderSchraegaufnahmen(Base, Vector):
     id = Column('ebkey', Unicode, primary_key=True)
     ebkey_old = Column('ebkey_old', Unicode)
     flightdate = Column('flightdate', Unicode)
-    filename = Column('filename', Unicode)
     filmart = Column('filmart', Unicode)
     stereo_couple = Column('stereo_couple', Unicode)
     bgdi_flugjahr = Column('bgdi_flugjahr', Integer)
     x = Column('x', Integer)
     y = Column('y', Integer)
+    z = Column('z', Integer)
     the_geom = Column(Geometry2D)
 
 register(LuftbilderSchraegaufnahmen.__bodId__, LuftbilderSchraegaufnahmen)
