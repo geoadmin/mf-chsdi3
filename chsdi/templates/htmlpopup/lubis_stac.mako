@@ -80,7 +80,7 @@ fields = [
 </tr>
 
 <tr>
-  <td class="cell-left">${_(tt_lubis_Quickview)}</td>
+  <td class="cell-left">${_(tt_lubis_Permalink)}</td>
   <td>
   % if viewer_url:
     <a href="${viewer_url}" target="_blank">
