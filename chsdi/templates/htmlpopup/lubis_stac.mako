@@ -8,7 +8,6 @@ import os
 lang = lang if lang in ('fr','it','en') else 'de'
 c['stable_id'] = True
 request = context.get('request')
-tt_lubis_Quickview = 'tt_lubis_Quickview_stac'
 
 dataGeoAdminHost = request.registry.settings['datageoadminhost']
 meta_csv_url = f"{dataGeoAdminHost}/{c['layerBodId']}/{c['featureId']}/{c['featureId']}.csv"
@@ -23,11 +22,16 @@ calibration_exists = resource_exists(c['attributes'].get('calibration')) if c['a
 viewer_url = None
 orthopotho_label = None
 calibration_label = None
+permalink_cog = None
 if orthophoto_exists and c['attributes'].get('orthofilename'):
-    viewer_url = f"{c['baseUrl']}/#/map?layers=COG|{c['attributes'].get('orthofilename')}&lang={request.params.get('lang', 'de')}"
+    permalink_cog = c['attributes'].get('orthofilename')
     orthophoto_label = os.path.basename(c['attributes'].get('orthofilename'))
 elif aerialimages_exists:
+    permalink_cog = c['attributes'].get('filename')
     viewer_url = f"{c['baseUrl']}/#/map?layers=COG|{c['attributes'].get('filename')}&lang={request.params.get('lang', 'de')}"
+
+if permalink_cog:
+    viewer_url = f"{c['baseUrl']}/#/map?layers=COG|{permalink_cog};{c['layerBodId']}@year=all@features={c['featureId']}&lang={request.params.get('lang', 'de')}"
 
 if calibration_exists:
     calibration_label = os.path.basename(c['attributes'].get('calibration'))
@@ -80,7 +84,7 @@ fields = [
 </tr>
 
 <tr>
-  <td class="cell-left">${_(tt_lubis_Permalink)}</td>
+  <td class="cell-left">${_("tt_lubis_Permalink")}</td>
   <td>
   % if viewer_url:
     <a href="${viewer_url}" target="_blank">
