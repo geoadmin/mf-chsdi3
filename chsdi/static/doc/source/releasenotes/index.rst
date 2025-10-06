@@ -47,8 +47,6 @@ Geodata
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `Division Siegfried Map 25/50 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.hiks-siegfried.metadata>`__ (ch.swisstopo.hiks-siegfried.metadata)                                                               |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| New    | `swissEO NDVIz <//map.geo.admin.ch/?layers=ch.swisstopo.swisseo_ndvi_z_v100>`__ (ch.swisstopo.swisseo_ndvi_z_v100)                                                                                             |
-+--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `HUG hydrological study areas <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-untersuchungsgebiete>`__ (ch.bafu.hydrologie-untersuchungsgebiete)                                                                |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `HUG gauging stations <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-untersuchungsgebiete_stationen>`__ (ch.bafu.hydrologie-untersuchungsgebiete_stationen)                                                    |
