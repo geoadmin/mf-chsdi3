@@ -8,5 +8,9 @@
 
     RewriteRule ^/$ /static/index.html [R=301]
 
+    KeepAlive On
+
+    KeepAliveTimeout 120
+
 </VirtualHost>
 
