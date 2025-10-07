@@ -1,9 +1,10 @@
 import json
-import esrijson
 from shapely.geometry.linestring import LineString
 from shapely.geometry.polygon import Polygon
 from pyramid.httpexceptions import HTTPBadRequest
 
+from chsdi.lib.esrijson.codec import loads as esrijson_loads
+from chsdi.lib.esrijson.geometry import to_shape
 from chsdi.lib.helpers import float_raise_nan
 from chsdi.lib.validation import BaseFeaturesValidation
 
@@ -151,14 +152,14 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
         else:
             try:
                 if self._geometryType == 'esriGeometryEnvelope':
-                    self._geometry = esrijson.to_shape([float_raise_nan(c) for c in value.split(',')])
+                    self._geometry = to_shape([float_raise_nan(c) for c in value.split(',')])
                 elif self._geometryType == 'esriGeometryPoint' \
                         and 'x' not in value and 'y' not in value:
                     # Simple simplified point geometry
                     value = [float_raise_nan(c) for c in value.split(',')]
-                    self._geometry = esrijson.to_shape({'x': value[0], 'y': value[1]})
+                    self._geometry = to_shape({'x': value[0], 'y': value[1]})
                 else:
-                    self._geometry = esrijson.to_shape(esrijson.loads(value))
+                    self._geometry = to_shape(esrijson_loads(value))
 
             except Exception:
                 raise HTTPBadRequest('Please provide a valid geometry')
@@ -193,7 +194,7 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
             raise HTTPBadRequest('Please provide the parameter mapExtent  (Required)')
         else:
             try:
-                self._mapExtent = esrijson.to_shape([float_raise_nan(c) for c in value.split(',')])
+                self._mapExtent = to_shape([float_raise_nan(c) for c in value.split(',')])
             except Exception:
                 raise HTTPBadRequest('Please provide numerical values for the parameter mapExtent')
 
