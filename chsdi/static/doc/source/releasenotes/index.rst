@@ -37,7 +37,7 @@ API & applications
     - the layer *ch.swisstopo.schneeschuhwandern* will be removed from chsdi services and replaced by a new layer *ch.astra.schneeschuhwanderwege* with the release of November 12th 2025.
     - the object ID values of the layer ch.vbs.schiessanzeigen will change for all objects due to geometrical changes in the source data with one of the next releases. Existing permalinks to objects may not work anymore and will have to be replaced by the new object id’s (chsdi fields featureId and id). In addition there will be a new attribute bezeichnung_ort on the dataset. The other existing attributes will stay.
 
-- `Full changelog <///>`__
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2025-08-27-rc1...2025-10-08-rc1>`__
 
 Geodata
 *******
