@@ -14,6 +14,86 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+
+.. _releasenotes_20251008:
+
+Release 20251008 - Wednesday, October 8th 2025
+----------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+- Bug fixes:
+- Announcements:
+    - the `INSPIRE ATOM/OS-Download service <https://api3.geo.admin.ch/services/sdiservices.html#atom-feed-open-search-download-service>`__ running under this URL *https://atom.geo.admin.ch/inspire/service.xml* will be removed from chsdi services with the release of November 12th 2025. The INSPIRE datasets (`ch.swisstopo.swissboundaries3d.inspire <https://data.geo.admin.ch/browser/index.html#/collections/ch.swisstopo.swissboundaries3d.inspire>`__ and `ch.swisstopo.swissnames3d.inspire <https://data.geo.admin.ch/browser/index.html#/collections/ch.swisstopo.swissnames3d.inspire>`__) are now available for download via the STAC API.
+    - the layer *ch.bafu.flora-verbreitungskarten* will be removed from chsdi services with the release of November 12th 2025.
+    - the layer *ch.bafu.gefahren-basiskarte* will be removed from chsdi services with the release of November 12th 2025.
+    - the layers *ch.bafu.karst-ausdehnung_grundwasservorkommen*, *ch.bafu.karst-einzugsgebiete*, *ch.bafu.karst-einzugsgebietseinheiten*, *ch.bafu.karst-quellen_schwinden* and *ch.bafu.karst-unterirdische_fliesswege* will be removed from chsdi services with the release of November 12th 2025.
+    - the layers *ch.swisstopo.hiks-siegfried-ta25.metadata* and *ch.swisstopo.hiks-siegfried-ta50.metadata* will be removed from chsdi services with the release of November 12th 2025 and replaced by the new time-enabled layer *ch.swisstopo.hiks-siegfried.metdata*, which is available with the release of today.
+    - the layer *ch.swisstopo.hiks-siegfried* has now been switched to time-enabled, with historical map data between 1870 and 1949 available, in combination with the above mentioned new layer *ch.swisstopo.hiks-siegfried.metdata*.
+    - the layer *ch.swisstopo.schneeschuhwandern* will be removed from chsdi services and replaced by a new layer *ch.astra.schneeschuhwanderwege* with the release of November 12th 2025.
+    - the object ID values of the layer ch.vbs.schiessanzeigen will change for all objects due to geometrical changes in the source data with one of the next releases. Existing permalinks to objects may not work anymore and will have to be replaced by the new object id’s (chsdi fields featureId and id). In addition there will be a new attribute bezeichnung_ort on the dataset. The other existing attributes will stay.
+
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2025-08-27-rc1...2025-10-08-rc1>`__
+
+Geodata
+*******
+
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Sand and Gravel <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-kies_abbau_verarbeitung>`__ (ch.swisstopo.geologie-rohstoffe-kies_abbau_verarbeitung)                                             |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Division Siegfried Map 25/50 Raster <//map.geo.admin.ch/?layers=ch.swisstopo.hiks-siegfried.metadata>`__ (ch.swisstopo.hiks-siegfried.metadata)                                                               |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `HUG hydrological study areas <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-untersuchungsgebiete>`__ (ch.bafu.hydrologie-untersuchungsgebiete)                                                                |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `HUG gauging stations <//map.geo.admin.ch/?layers=ch.bafu.hydrologie-untersuchungsgebiete_stationen>`__ (ch.bafu.hydrologie-untersuchungsgebiete_stationen)                                                    |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Reflection seismic <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-reflexionsseismik>`__ (ch.swisstopo.geologie-reflexionsseismik)                                                                          |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Status of cantonal geotopes <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-geotope_kantone_stand>`__ (ch.swisstopo.geologie-geotope_kantone_stand)                                                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Sulfur dioxide SO2 <//map.geo.admin.ch/?layers=ch.bafu.luftreinhaltung-schwefeldioxid>`__ (ch.bafu.luftreinhaltung-schwefeldioxid)                                                                            |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Particulate matter PM10 <//map.geo.admin.ch/?layers=ch.bafu.luftreinhaltung-feinstaub_pm10>`__ (ch.bafu.luftreinhaltung-feinstaub_pm10)                                                                       |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Particulate matter PM2.5 <//map.geo.admin.ch/?layers=ch.bafu.luftreinhaltung-feinstaub_pm2_5>`__ (ch.bafu.luftreinhaltung-feinstaub_pm2_5)                                                                    |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Ozone mp98 O3 <//map.geo.admin.ch/?layers=ch.bafu.luftreinhaltung-ozon>`__ (ch.bafu.luftreinhaltung-ozon)                                                                                                     |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Nitrogen dioxide NO2 <//map.geo.admin.ch/?layers=ch.bafu.luftreinhaltung-stickstoffdioxid>`__ (ch.bafu.luftreinhaltung-stickstoffdioxid)                                                                      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Railway noise (fixed) N emissions <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht>`__ (ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht)                 |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Railway noise (fixed) D emissions <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag)                     |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Railway noise (act.) N emissions <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht>`__ (ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht)              |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Railway noise (act.) D emissions <//map.geo.admin.ch/?layers=ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag>`__ (ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag)                  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Siegfried Map <//map.geo.admin.ch/?layers=ch.swisstopo.hiks-siegfried>`__ (ch.swisstopo.hiks-siegfried)                                                                                                       |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Metallic raw materials <//map.geo.admin.ch/?layers=ch.swisstopo.geologie-rohstoffe-vererzungen>`__ (ch.swisstopo.geologie-rohstoffe-vererzungen)                                                              |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Settlement <//map.geo.admin.ch/?layers=ch.are.siedlung>`__ (ch.are.siedlung)                                                                                                                                  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP Military <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_kraft>`__ (ch.vbs.sachplan-infrastruktur-militaer_kraft)                                                                       |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SPM consultation <//map.geo.admin.ch/?layers=ch.vbs.sachplan-infrastruktur-militaer_anhoerung>`__ (ch.vbs.sachplan-infrastruktur-militaer_anhoerung)                                                          |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP Rail infrastructure <//map.geo.admin.ch/?layers=ch.bav.sachplan-infrastruktur-schiene_kraft>`__ (ch.bav.sachplan-infrastruktur-schiene_kraft)                                                              |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SIS Consultation <//map.geo.admin.ch/?layers=ch.bav.sachplan-infrastruktur-schiene_anhorung>`__ (ch.bav.sachplan-infrastruktur-schiene_anhorung)                                                              |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SIS starting point <//map.geo.admin.ch/?layers=ch.bav.sachplan-infrastruktur-schiene_ausgangslage>`__ (ch.bav.sachplan-infrastruktur-schiene_ausgangslage)                                                    |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP Aviation infrastructure <//map.geo.admin.ch/?layers=ch.bazl.sachplan-infrastruktur-luftfahrt_kraft>`__ (ch.bazl.sachplan-infrastruktur-luftfahrt_kraft)                                                    |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SIL consultation <//map.geo.admin.ch/?layers=ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung>`__ (ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung)                                                        |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. _releasenotes_20250827:
 
 Release 20250827 - Wednesday, August 27th 2025
