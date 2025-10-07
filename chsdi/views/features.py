@@ -294,9 +294,14 @@ def _identify_db(params, layerBodIds):
     features = []
     if len(layerBodIds) == 0:
         return features
+
+    # Use the smaller of maxFeatures or params.limit as the total limit
+    total_limit = min(maxFeatures, params.limit) if params.limit is not None else maxFeatures
+
     feature_gen = _get_features_for_filters(
-        params, layerBodIds, maxFeatures=maxFeatures, where=params.where)
-    while len(features) <= maxFeatures:
+        params, layerBodIds, maxFeatures=total_limit, where=params.where)
+
+    while len(features) < total_limit:
         try:
             feature = next(feature_gen)
         except InternalError as e:
@@ -310,6 +315,7 @@ def _identify_db(params, layerBodIds):
             break
         else:
             features.append(_process_feature(feature, params))
+
     return features
 
 
@@ -477,11 +483,19 @@ def _render_feature_template(options, request):
 def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None):
     ''' Returns a generator function that yields
     a feature. '''
+    features_yielded = 0
+
     for layer in layerBodIds:
         layerBodId, models = next(iter(layer.items()))
 
-        # Determine the limit
-        limits = [x for x in [maxFeatures, params.limit] if x is not None]
+        # Determine the limit - adjust remaining limit based on already yielded features
+        remaining_limit = None
+        if maxFeatures is not None:
+            remaining_limit = maxFeatures - features_yielded
+            if remaining_limit <= 0:
+                break
+
+        limits = [x for x in [remaining_limit, params.limit] if x is not None]
         flimit = min(limits) if len(limits) > 0 else None
 
         if where is not None:
@@ -498,6 +512,9 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
             vectorLayer = [(model, None) for model in models]
 
         for model, where_txt in vectorLayer:
+            if flimit is not None and features_yielded >= flimit:
+                break
+
             query = params.request.db.query(model)
             # Filter by sql query
             # Only one filter = one layer
@@ -541,8 +558,9 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
                 )
                 query = query.order_by(ordering)
 
-            # Add limit
-            query = query.limit(flimit) if flimit is not None else query
+            # Add limit - use remaining limit
+            current_limit = flimit - features_yielded if flimit is not None else None
+            query = query.limit(current_limit) if current_limit is not None and current_limit > 0 else query
 
             # Add offset
             if params.offset is not None:
@@ -555,14 +573,20 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
                     # standard identify show first bgdi_order only
                     bgdi_order = None
                     for feature in query:
+                        if flimit is not None and features_yielded >= flimit:
+                            break
                         if bgdi_order is None:
                             bgdi_order = feature.bgdi_order
                         if bgdi_order < feature.bgdi_order:
                             continue
                         yield feature
+                        features_yielded += 1
                 else:
                     for feature in query:
+                        if flimit is not None and features_yielded >= flimit:
+                            break
                         yield feature
+                        features_yielded += 1
 
 
 def _attributes(request):
