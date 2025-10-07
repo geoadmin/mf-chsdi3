@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import logging
 
 from pyramid.view import view_config
@@ -33,7 +32,7 @@ def tree_data(G, root, attrs, meta):
     def add_children(n, G):
         distinct_order_keys = set()
         order_key = lambda x: x['orderKey']
-        label_key = lambda x: x['label'].replace(u'Ü', u'U').replace(u'Ä', u'A')
+        label_key = lambda x: x['label'].replace('Ü', '').replace('Ä', 'A')
         nbrs = G[n]
         if len(nbrs) == 0:
             return []
@@ -77,6 +76,7 @@ def tree_data(G, root, attrs, meta):
 def initialize_graph(G, rows, lang):
     root_id = None
     meta = {}
+    r = None
     for r in rows:
         node_parent_id = getattr(r, 'parentId')
         node_id = getattr(r, 'id')

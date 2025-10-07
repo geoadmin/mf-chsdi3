@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import os
 import decimal
 import datetime
@@ -71,7 +69,7 @@ def legend(request):
     if 'attributes' in layerMetadata:
         if 'dataStatus' in layerMetadata['attributes']:
             status = layerMetadata['attributes']['dataStatus']
-            if status == u'bgdi_created':
+            if status == 'bgdi_created':
                 layerMetadata['attributes']['dataStatus'] = params.translate('None') + params.translate('Datenstand')
     legend = {
         'layer': layerMetadata,
@@ -126,6 +124,8 @@ def feature_attributes(request):
         query = query.limit(SAMPLE_SIZE)
 
         for rowIndex, row in enumerate(query):
+            if row is None:
+                continue  # Skip None rows to avoid AttributeError
             # attrName as defined in the model
             for attrIndex, attrName in enumerate(attributes):
                 featureAttrs = row.get_attributes(exclude_pkey=False)

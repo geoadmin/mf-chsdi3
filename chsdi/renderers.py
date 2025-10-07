@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import json
 import decimal
 import functools
@@ -51,9 +49,6 @@ class EsriJSON(GeoJSON):
                                                            'json': ret}
             return ret
         return _render
-
-    def collection_type(self, value):
-        return {'features': value}
 
 
 class CSVRenderer(object):

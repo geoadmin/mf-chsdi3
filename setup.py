@@ -1,5 +1,4 @@
 import os
-import sys
 from setuptools import setup, find_packages
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -12,13 +11,7 @@ setup(name='chsdi',
       long_description=README + '\n\n' + CHANGES,
       classifiers=[
         "Programming Language :: Python",
-        "Programming Language :: Python :: 2.7",
-        "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.5",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.13",
         "Framework :: Pyramid",
         "Topic :: Internet :: WWW/HTTP",
         "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
@@ -32,7 +25,6 @@ setup(name='chsdi',
       include_package_data=True,
       zip_safe=False,
       python_requires='>2.6, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4',
-      test_suite="chsdi",
       entry_points="""\
       [paste.app_factory]
       main = chsdi:main

@@ -9,7 +9,6 @@ from pyramid.paster import get_app
 from sqlalchemy import distinct
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.orm.exc import NoResultFound
-from sqlalchemy.sql.expression import func
 from sqlalchemy.types import BigInteger
 from tests.integration import s3_tests
 from webtest import TestApp
@@ -27,7 +26,7 @@ class LayersChecker(object):
         self.testapp = TestApp(get_app('development.ini'))
 
         # configuration via environment. Default is None for all
-        self.staging = os.environ.get('CHSDI_STAGING') if os.environ.get('CHSDI_STAGING') is not None else u'prod'
+        self.staging = os.environ.get('CHSDI_STAGING') if os.environ.get('CHSDI_STAGING') is not None else 'prod'
         self.onlylayer = os.environ.get('CHSDI_ONLY_LAYER')
         self.randomFeatures = os.environ.get('CHSDI_RANDOM_FEATURES') == 'True'
         self.nrOfFeatures = num(os.environ.get('CHSDI_NUM_FEATURES')) if os.environ.get('CHSDI_NUM_FEATURES') is not None else 1
@@ -45,12 +44,14 @@ class LayersChecker(object):
         session.close()
 
     def ilayers(self, tooltip=None, hasLegend=None, searchable=None, geojson=None):
+        # TODO: we should not yield from within a with
+        # pylint: disable=contextmanager-generator-missing-cleanup
         with self.getSession() as session:
             valNone = None
             query = session.query(distinct(LayersConfig.layerBodId)) \
                 .filter(LayersConfig.staging == self.staging) \
                 .filter(LayersConfig.parentLayerId == valNone) \
-                .filter(LayersConfig.srid != u'4326')
+                .filter(LayersConfig.srid != '4326')
             if tooltip is not None:
                 query = query.filter(LayersConfig.tooltip == tooltip)
             if hasLegend is not None:
@@ -59,9 +60,9 @@ class LayersChecker(object):
                 query = query.filter(LayersConfig.searchable == searchable)
             if geojson is not None:
                 if geojson:
-                    query = query.filter(LayersConfig.type == u'geojson')
+                    query = query.filter(LayersConfig.type == 'geojson')
                 else:
-                    query = query.filter(LayersConfig.type != u'geojson')
+                    query = query.filter(LayersConfig.type != 'geojson')
             for q in query:
                 if self.onlylayer is None or q[0] == self.onlylayer:
                     yield q[0]

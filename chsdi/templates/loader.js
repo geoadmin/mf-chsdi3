@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 <%
 lang = pageargs['lang']
 data = pageargs['data']

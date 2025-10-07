@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 #
 # GeoAdmin API documentation build configuration file, created by
 # sphinx-quickstart on Wed Jul 21 07:44:14 2010.
@@ -13,7 +12,6 @@
 
 import sys, os
 import datetime
-import sphinx_rtd_theme
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -52,10 +50,10 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'GeoAdmin API'
-copyright = u'2013-{}, COGIS'.format(datetime.datetime.now().year)
+project = 'GeoAdmin API'
+copyright = '2013-{}, COGIS'.format(datetime.datetime.now().year)
 
-# The version info for the project you're documenting, acts as replacement for
+# The version info for the project yo're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
@@ -114,7 +112,6 @@ mathjax_path = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 html_theme = 'sphinx_rtd_theme'
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 #html_style = 'swisstopo.css'
 
@@ -205,8 +202,8 @@ htmlhelp_basename = 'CHSDIdoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'CHSDI.tex', u'GeoAdmin API Documentation',
-   u'COGIS', 'manual'),
+  ('index', 'CHSDI.tex', 'GeoAdmin API Documentation',
+   'COGIS', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -238,6 +235,6 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'chsdi', u'GeoAdmin API Documentation',
-     [u'COGIS'], 1)
+    ('index', 'chsdi', 'GeoAdmin API Documentation',
+     ['COGIS'], 1)
 ]

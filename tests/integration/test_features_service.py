@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from unittest import skip, skipUnless
 from webtest.app import AppError
 from pyramid_mako import MakoRenderingException
@@ -485,7 +483,7 @@ class TestFeaturesView(TestsBase):
         featureId = self.getRandomFeatureId(bodId)
         resp = self.testapp.get('/rest/services/ech/MapServer/%s/%s/htmlPopup' % (bodId, featureId), params={'lang': 'fr'}, status=200)
         self.assertEqual(resp.content_type, 'text/html')
-        msgids = [u'No.', u'Nom', u'Partie-No', u'Partie', u'Surface [ha]']
+        msgids = ['No.', 'Nom', 'Partie-No', 'Partie', 'Surface [ha]']
         for msgid in msgids:
             self.assertIn(msgid, resp.text)
 
@@ -766,4 +764,4 @@ class TestReleasesService(TestsBase):
         self.assertEqual(resp.content_type, 'application/json')
         for feat in resp.json['results']:
             self.assertIn(feat['attributes']['com_fosnr'], [371])
-            self.assertIn(u'Contrôle', feat['attributes']['stn_label'])
+            self.assertIn('Contrôle', feat['attributes']['stn_label'])

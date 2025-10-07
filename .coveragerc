@@ -2,6 +2,8 @@
 source = chsdi
 omit =
     tests/*
+    .venv/*
+    chsdi_templates_*
 
 [report]
 ignore_errors = True

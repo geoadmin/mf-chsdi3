@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from sqlalchemy import Column, Unicode, Integer, Date
 from sqlalchemy.dialects import postgresql
 from sqlalchemy.types import Numeric, BigInteger

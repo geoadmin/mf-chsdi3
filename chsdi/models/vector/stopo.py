@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from sqlalchemy import Column
 
 from sqlalchemy.types import Numeric, Boolean, Integer, Float, Unicode, BigInteger, SmallInteger
@@ -282,6 +280,7 @@ register(SkiTouren.__bodId__, SkiTouren)
 
 class SchneeSchuhRouten(Base, SchneeRouten, Vector):
     __tablename__ = 'snowshoe_routes'
+    descent_time_label = Column('descent_time_label', Unicode)
     __template__ = 'templates/htmlpopup/karto_schneeschuhrouten.mako'
     __bodId__ = 'ch.swisstopo-karto.schneeschuhrouten'
 
@@ -638,7 +637,7 @@ class Vec200Customsoffice(Base, Vector):
     __table_args__ = ({'autoload': False})
     __template__ = 'templates/htmlpopup/vec200_customsoffice.mako'
     __bodId__ = 'ch.swisstopo.vec200-transportation-strassennetz'
-    __label__ = 'ojbname'
+    __label__ = 'objname'
     id = Column('gtdboid', Unicode, primary_key=True)
     objname = Column('objname', Unicode)
     the_geom = Column(Geometry2D)
@@ -1374,7 +1373,6 @@ class GeologieRohstoffe:
     id = Column('bgdi_id', Integer, primary_key=True)
     type = Column('type', Unicode)
     obname = Column('obname', Unicode)
-    cpkind = Column('cpkind', Unicode)
     purl = Column('purl', Unicode)
     swissgeol_link = Column('swissgeol_link', Unicode)
     stkind_de = Column('stkind_de', Unicode)
@@ -1385,10 +1383,6 @@ class GeologieRohstoffe:
     ltkinds_fr = Column('ltkinds_fr', Unicode)
     ltkinds_it = Column('ltkinds_it', Unicode)
     ltkinds_en = Column('ltkinds_en', Unicode)
-    infos_url_de = Column('infos_url_de', Unicode)
-    infos_url_fr = Column('infos_url_fr', Unicode)
-    infos_url_it = Column('infos_url_it', Unicode)
-    infos_url_en = Column('infos_url_en', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -1397,6 +1391,11 @@ class GeologieRohstoffeZiegelAbbau(Base, GeologieRohstoffe, Vector):
     __tablename__ = 'rohstoffe_ziegel_abbau'
     __template__ = 'templates/htmlpopup/rohstoffe_ziegel_abbau.mako'
     __label__ = 'obname'
+    infos_url_de = Column('infos_url_de', Unicode)
+    infos_url_fr = Column('infos_url_fr', Unicode)
+    infos_url_it = Column('infos_url_it', Unicode)
+    infos_url_en = Column('infos_url_en', Unicode)
+    cpkind = Column('cpkind', Unicode)
 
 register(GeologieRohstoffeZiegelAbbau.__bodId__, GeologieRohstoffeZiegelAbbau)
 
@@ -1406,7 +1405,12 @@ class GeologieRohstoffeZementAbbauVerarbeitung(Base, GeologieRohstoffe, Vector):
     __template__ = 'templates/htmlpopup/rohstoffe_zement_abbau_verarbeitung.mako'
     __bodId__ = 'ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung'
     __label__ = 'obname'
+    cpkind = Column('cpkind', Unicode)
     edkinds = Column('edkinds', Unicode)
+    infos_url_de = Column('infos_url_de', Unicode)
+    infos_url_fr = Column('infos_url_fr', Unicode)
+    infos_url_it = Column('infos_url_it', Unicode)
+    infos_url_en = Column('infos_url_en', Unicode)
     info_url_de = Column('info_url_de', Unicode)
     info_url_fr = Column('info_url_fr', Unicode)
     info_url_it = Column('info_url_it', Unicode)
@@ -1420,12 +1424,30 @@ class GeologieRohstoffeGipsAbbauVerarbeitung(Base, GeologieRohstoffe, Vector):
     __tablename__ = 'rohstoffe_gipsabbauverarbeitung'
     __template__ = 'templates/htmlpopup/rohstoffe_gips_abbau_verarbeitung.mako'
     __label__ = 'obname'
+    cpkind = Column('cpkind', Unicode)
+    infos_url_de = Column('infos_url_de', Unicode)
+    infos_url_fr = Column('infos_url_fr', Unicode)
+    infos_url_it = Column('infos_url_it', Unicode)
+    infos_url_en = Column('infos_url_en', Unicode)
     emkinds_de = Column('emkinds_de', Unicode)
     emkinds_fr = Column('emkinds_fr', Unicode)
     emkinds_it = Column('emkinds_it', Unicode)
     emkinds_en = Column('emkinds_en', Unicode)
 
 register(GeologieRohstoffeGipsAbbauVerarbeitung.__bodId__, GeologieRohstoffeGipsAbbauVerarbeitung)
+
+
+class GeologieRohstoffeKiesAbbauVerarbeitung(Base, GeologieRohstoffe, Vector):
+    __bodId__ = 'ch.swisstopo.geologie-rohstoffe-kies_abbau_verarbeitung'
+    __tablename__ = 'rohstoffe_kiesabbauverarbeitung'
+    __template__ = 'templates/htmlpopup/rohstoffe_kies_abbau_verarbeitung.mako'
+    __label__ = 'obname'
+    emkinds_de = Column('emkinds_de', Unicode)
+    emkinds_fr = Column('emkinds_fr', Unicode)
+    emkinds_it = Column('emkinds_it', Unicode)
+    emkinds_en = Column('emkinds_en', Unicode)
+
+register(GeologieRohstoffeKiesAbbauVerarbeitung.__bodId__, GeologieRohstoffeKiesAbbauVerarbeitung)
 
 
 class GeologieRohstoffeIndustrieminerale(Base, Vector):
@@ -1480,19 +1502,29 @@ register(GeologieRohstoffeKohlenBitumenErdgas.__bodId__, GeologieRohstoffeKohlen
 
 
 class GeologieRohstoffeVererzungen(Base, Vector):
-    __tablename__ = 'rohstoffe_vererz'
+    __tablename__ = 'rohstoffe_vererzungen'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/rohstoffe_vererzungen.mako'
     __bodId__ = 'ch.swisstopo.geologie-rohstoffe-vererzungen'
     __label__ = 'obname'
     id = Column('obid', Integer, primary_key=True)
     obname = Column('obname', Unicode)
-    obnamealt = Column('obnamealt', Unicode)
-    grkinds = Column('grkinds', Unicode)
-    edmikinds = Column('edmikinds', Unicode)
-    emkinds = Column('emkinds', Unicode)
-    stkind = Column('stkind', Unicode)
+    grkind_de = Column('grkind_de', Unicode)
+    grkind_fr = Column('grkind_fr', Unicode)
+    grkind_it = Column('grkind_it', Unicode)
+    grkind_en = Column('grkind_en', Unicode)
+    rselids = Column('rselids', Unicode)
+    crm_relevance_de = Column('crm_relevance_de', Unicode)
+    crm_relevance_fr = Column('crm_relevance_fr', Unicode)
+    crm_relevance_it = Column('crm_relevance_it', Unicode)
+    crm_relevance_en = Column('crm_relevance_en', Unicode)
+    crm_factsheets_link = Column('crm_factsheets_link', Unicode)
+    mat_min_link_de = Column('mat_min_link_de', Unicode)
+    mat_min_link_fr = Column('mat_min_link_fr', Unicode)
+    mat_min_link_it = Column('mat_min_link_it', Unicode)
+    mat_min_link_en = Column('mat_min_link_en', Unicode)
     purl = Column('purl', Unicode)
+    swissgeol_link = Column('swissgeol_link', Unicode)
     the_geom = Column(Geometry2D)
 
 register(GeologieRohstoffeVererzungen.__bodId__, GeologieRohstoffeVererzungen)
@@ -2250,95 +2282,6 @@ class SteineHistBauwerke(Base, Vector):
 register(SteineHistBauwerke.__bodId__, SteineHistBauwerke)
 
 
-class GisGeolBase:
-    __template__ = 'templates/htmlpopup/gisgeol.mako'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __label__ = 'title'
-    __extended_info__ = True
-    __timeInstant__ = 'year'
-    id = Column('gid', Integer, primary_key=True)
-    sgd_nr = Column('sgd_nr', Unicode)
-    title = Column('title', Unicode)
-    orig_id = Column('original_document_id', Unicode)
-    author = Column('author', Unicode)
-    report_structure = Column('report_structure', Unicode)
-    aux_info = Column('auxiliary_information', Unicode)
-    doccreation = Column('doccreation_date', Unicode)
-    copy_avail = Column('copy_avail', Unicode)
-    view_avail = Column('view_avail', Unicode)
-    pdf_url = Column('pdf_url', Unicode)
-    pdf_size = Column('pdf_size', Unicode)
-    bgdi_data_status = Column('bgdi_data_status', Unicode)
-    year = Column('year', Unicode)
-    count_pdf = Column('count_pdf', Integer)
-    count_without_pdf = Column('count_without_pdf', Integer)
-    count_total = Column('count_total', Integer)
-    the_geom = Column(Geometry2D)
-
-
-class GisgeolPunkte(Base, GisGeolBase, Vector):
-    __tablename__ = 'view_gisgeol_points_aggregated'
-    __bodId__ = 'ch.swisstopo.geologie-gisgeol-punkte'
-
-register(GisgeolPunkte.__bodId__, GisgeolPunkte)
-
-
-class GisgeolLinien(Base, GisGeolBase, Vector):
-    __tablename__ = 'view_gisgeol_lines_aggregated'
-    __bodId__ = 'ch.swisstopo.geologie-gisgeol-linien'
-
-register(GisgeolLinien.__bodId__, GisgeolLinien)
-
-
-class GisgeolFlaechen1x1km(Base, GisGeolBase, Vector):
-    __tablename__ = 'view_gisgeol_surfaces_1x1km_aggregated'
-    __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-1x1km'
-
-register(GisgeolFlaechen1x1km.__bodId__, GisgeolFlaechen1x1km)
-
-
-class GisgeolFlaechen10x10km(Base, GisGeolBase, Vector):
-    __tablename__ = 'view_gisgeol_surfaces_10x10km_aggregated'
-    __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-10x10km'
-
-register(GisgeolFlaechen10x10km.__bodId__, GisgeolFlaechen10x10km)
-
-
-class GisgeolFlaechen10to100km2(Base, GisGeolBase, Vector):
-    __tablename__ = 'view_gisgeol_surfaces_10to100km2_aggregated'
-    __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-10to100km2'
-
-register(GisgeolFlaechen10to100km2.__bodId__, GisgeolFlaechen10to100km2)
-
-
-class GisgeolFlaechen100to1000km2(Base, GisGeolBase, Vector):
-    __tablename__ = 'view_gisgeol_surfaces_100to1000km2_aggregated'
-    __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-100to1000km2'
-
-register(GisgeolFlaechen100to1000km2.__bodId__, GisgeolFlaechen100to1000km2)
-
-
-class GisgeolFlaechen1000to21000km2(Base, GisGeolBase, Vector):
-    __tablename__ = 'view_gisgeol_surfaces_1000to21000km2_aggregated'
-    __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-1000to21000km2'
-
-register(GisgeolFlaechen1000to21000km2.__bodId__, GisgeolFlaechen1000to21000km2)
-
-
-class GisgeolFlaechenGt21000km2(Base, GisGeolBase, Vector):
-    __tablename__ = 'view_gisgeol_surfaces_gt21000km2_aggregated'
-    __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-gt21000km2'
-
-register(GisgeolFlaechenGt21000km2.__bodId__, GisgeolFlaechenGt21000km2)
-
-
-class GisgeolFlaechenLt10km2(Base, GisGeolBase, Vector):
-    __tablename__ = 'view_gisgeol_surfaces_lt10km2_aggregated'
-    __bodId__ = 'ch.swisstopo.geologie-gisgeol-flaechen-lt10km2'
-
-register(GisgeolFlaechenLt10km2.__bodId__, GisgeolFlaechenLt10km2)
-
-
 class Geocover:
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __bodId__ = 'ch.swisstopo.geologie-geocover'
@@ -2750,6 +2693,23 @@ class HiksSiegfriedTa50Metadata(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(HiksSiegfriedTa50Metadata.__bodId__, HiksSiegfriedTa50Metadata)
+
+
+class HiksSiegfriedMetadata(Base, Vector):
+    __tablename__ = 'view_siegfried_metadata'
+    __template__ = 'templates/htmlpopup/siegfried_meta.mako'
+    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.hiks-siegfried.metadata'
+    __label__ = 'name'
+    __timeInstant__ = 'year'
+    id = Column('gid', Unicode, primary_key=True)
+    name = Column('gdwh_mapsheetname', Unicode)
+    number = Column('gdwh_mapsheetnumber', Unicode)
+    releasekey = Column('gdwh_releasekey', Integer)
+    year = Column('year', Integer)
+    the_geom = Column(Geometry2D)
+
+register(HiksSiegfriedMetadata.__bodId__, HiksSiegfriedMetadata)
 
 
 class SwissimageHistMetadata(Base, Vector):

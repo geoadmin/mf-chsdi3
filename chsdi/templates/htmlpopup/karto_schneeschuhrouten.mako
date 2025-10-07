@@ -7,6 +7,7 @@
     difficulty = 'difficulty_%s' % lang
     url_sac = 'url_sac_%s' % lang
     ascent_time_label = '%s, ' % c['attributes']['ascent_time_label'] if c['attributes']['ascent_time_label'] else ''
+    descent_time_label = '%s, ' % c['attributes']['descent_time_label'] if c['attributes']['descent_time_label'] else ''
     target_altitude = ' (%s m)' % c['attributes']['target_altitude'] if c['attributes']['target_altitude'] else ''
 %>
     % if c['attributes']['target_name']:
@@ -15,7 +16,7 @@
         <tr><td class="cell-left">${_('ch.swisstopo-karto.skitouren.name')}</td>             <td>${c['attributes'][name] or c['attributes']['name'] or '-'}</td></tr>
         <tr><td class="cell-left">${_('ch.swisstopo-karto.skitouren.difficulty')}</td>       <td>${c['attributes'][difficulty] or '-'}</td></tr>
         <tr><td class="cell-left">${_('ch.swisstopo-karto.skitouren.ascent')}</td>           <td>${ascent_time_label}${c['attributes']['ascent_altitude'] or '-'} ${_('ch.swisstopo-karto.skitouren.height')}</td></tr>
-        <tr><td class="cell-left">${_('ch.swisstopo-karto.schneeschuhrouten.descent')}</td>          <td>${c['attributes']['descent_altitude'] or '-'} ${_('ch.swisstopo-karto.skitouren.height')}</td></tr>
+        <tr><td class="cell-left">${_('ch.swisstopo-karto.schneeschuhrouten.descent')}</td>          <td>${descent_time_label} ${c['attributes']['descent_altitude'] or '-'} ${_('ch.swisstopo-karto.skitouren.height')}</td></tr>
         % if c['attributes'][url_sac]:
             <tr><td class="cell-left">${_('ch.swisstopo-karto.skitouren.info')}</td>         <td><a target="_blank" href="${c['attributes'][url_sac]}">${_('ch.swisstopo-karto.skitouren.sac')}</a> (${_('ch.swisstopo-karto.skitouren.costs')})</td></tr>
         % else:

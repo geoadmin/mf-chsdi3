@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import json
 import esrijson
 from shapely.geometry.linestring import LineString
@@ -29,10 +27,10 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
         self._layerDefs = None
 
         self.esriGeometryTypes = (
-            u'esriGeometryPoint',
-            u'esriGeometryPolyline',
-            u'esriGeometryPolygon',
-            u'esriGeometryEnvelope'
+            'esriGeometryPoint',
+            'esriGeometryPolyline',
+            'esriGeometryPolygon',
+            'esriGeometryEnvelope'
         )
         if request.params.get('where') is not None and request.params.get('layerDefs'):
             raise HTTPBadRequest("Parameters 'layerDefs' and 'where' are mutually exclusive")
@@ -164,9 +162,9 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
 
             except Exception:
                 raise HTTPBadRequest('Please provide a valid geometry')
-        if (self._geometryType == u'esriGeometryPolyline' and not isinstance(self._geometry, LineString)) \
-                or (self._geometryType == u'esriGeometryPolygon' and not isinstance(self._geometry, Polygon)):
-            raise HTTPBadRequest(u"Missmatch between 'geometryType': {} and provided 'geometry' parsed as '{}'".format(self._geometryType, self._geometry.__class__.__name__))
+        if (self._geometryType == 'esriGeometryPolyline' and not isinstance(self._geometry, LineString)) \
+                or (self._geometryType == 'esriGeometryPolygon' and not isinstance(self._geometry, Polygon)):
+            raise HTTPBadRequest("Missmatch between 'geometryType': {} and provided 'geometry' parsed as '{}'".format(self._geometryType, self._geometry.__class__.__name__))
 
     @imageDisplay.setter
     def imageDisplay(self, value):
@@ -204,9 +202,9 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
         if value is None:
             self._returnGeometry = True
         else:
-            if isinstance(value, str) and value.lower() == u'true':
+            if isinstance(value, str) and value.lower() == 'true':
                 self._returnGeometry = True
-            elif isinstance(value, str) and value.lower() == u'false':
+            elif isinstance(value, str) and value.lower() == 'false':
                 self._returnGeometry = False
             else:
                 self._returnGeometry = True
@@ -259,14 +257,14 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
     def layers(self, value):
         if value is None:
             raise HTTPBadRequest('Please provide a parameter layers')
-        if value == u'all':
+        if value == 'all':
             self._layers = value
         else:
             try:
                 layers = value.split(':')[1]
                 self._layers = layers.split(',')
             except Exception:
-                HTTPBadRequest('There is an error in the parameter layers')
+                raise HTTPBadRequest('There is an error in the parameter layers')
 
     @offset.setter
     def offset(self, value):
@@ -287,7 +285,7 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
     @order.setter
     def order(self, value):
         if value is not None:
-            if value != u'distance':
+            if value != 'distance':
                 raise HTTPBadRequest('Please provide a valid order parameter')
             if self.geometry is None:
                 raise HTTPBadRequest('The order value can only be used together with a geometry.')

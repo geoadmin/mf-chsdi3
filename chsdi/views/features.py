@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import re
 import geojson
 from gatilegrid.grid import Grid
@@ -409,8 +407,8 @@ def _get_feature_grid(col, row, timestamp, gridSpec, bucket_name, params, proces
     # representing the tile surface)
     # for some reason, we can't use the grid here to extract the extent of the tile when coming from the feature
     # metadata endpoint (it raises an exception)
-    bbox_bottom_left = None
-    bbox_top_right = None
+    bbox_bottom_left = []
+    bbox_top_right = []
     if hasattr(feature, 'geometry') and hasattr(feature.geometry, 'coordinates'):
         for coord in feature.geometry.coordinates[0]:
             if not bbox_bottom_left or bbox_bottom_left[0] > coord[0] or bbox_bottom_left[1] > coord[1]:
@@ -601,7 +599,7 @@ def _attributes(request):
     for attr in query:
         if len(attr):
             attributes_values.append(attr[0])
-    return {'values': sorted(attributes_values)}
+    return {'values': sorted([v for v in attributes_values if v is not None])}
 
 
 def _find(request):

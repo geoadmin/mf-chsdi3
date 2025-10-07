@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from pyramid.view import exception_view_config
 from pyramid.httpexceptions import HTTPException
 

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import json
 from pyramid.httpexceptions import HTTPBadRequest
 from chsdi.lib.validation import MapNameValidation, SUPPORTED_OUTPUT_SRS
@@ -25,7 +23,7 @@ class FindServiceValidation(MapNameValidation):
         self.returnGeometry = request.params.get('returnGeometry')
         self.srid = request.params.get('sr')
 
-        self.geometryFormat = request.params.get('geometryFormat', u'esrijson')
+        self.geometryFormat = request.params.get('geometryFormat', 'esrijson')
         self.mapName = request.matchdict.get('map')
         self.request = request
         self.lang = request.lang
@@ -82,7 +80,7 @@ class FindServiceValidation(MapNameValidation):
 
     @contains.setter
     def contains(self, value):
-        if value is None or value.lower() == u'true':
+        if value is None or value.lower() == 'true':
             self._contains = True
         else:
             self._contains = False
@@ -92,9 +90,9 @@ class FindServiceValidation(MapNameValidation):
         if value is None:
             self._returnGeometry = True
         else:
-            if value.lower() == u'true':
+            if value.lower() == 'true':
                 self._returnGeometry = True
-            elif value.lower() == u'false':
+            elif value.lower() == 'false':
                 self._returnGeometry = False
             else:
                 self._returnGeometry = True

@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from sqlalchemy import Column, Unicode, Integer
 from sqlalchemy.types import Numeric, Float
 

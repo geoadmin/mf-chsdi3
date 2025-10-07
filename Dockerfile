@@ -1,4 +1,4 @@
-FROM python:3.9-slim-bookworm AS builder
+FROM python:3.13-slim-bookworm AS builder
 
 RUN apt-get update -qq \
     && DEBIAN_FRONTEND=noninteractive apt-get install -qq -y  \
@@ -24,7 +24,7 @@ WORKDIR /usr/src
 RUN /root/.local/bin/pipenv sync \
     && /root/.local/bin/pipenv run pip install mod_wsgi
 
-FROM python:3.9-slim-bookworm AS runtime
+FROM python:3.13-slim-bookworm AS runtime
 
 ENV VHOST_DIR=/var/www/vhosts/mf-chsdi3
 ENV INSTALL_DIR=/var/www/vhosts/mf-chsdi3/private/chsdi
@@ -32,8 +32,8 @@ ENV APACHE_ENTRY_PATH=
 ENV APACHE_BASE_PATH=main
 ENV MODWSGI_USER=www-data
 
-ENV USER geodata
-ENV GROUP geodata
+ENV USER=geodata
+ENV GROUP=geodata
 
 # Setup default logging levels
 ENV APACHE_LOG_LEVEL=info

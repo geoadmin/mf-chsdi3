@@ -1,0 +1,45 @@
+[MAIN]
+ignore=.venv
+
+[MESSAGES CONTROL]
+disable=
+    # no convention and refactor rules
+    C,
+    R,
+    # allow broad/bare exceptions etc.
+    broad-exception-caught,
+    broad-exception-raised,
+    raise-missing-from,
+    bare-except,
+    # allow logging with interpolation etc.
+    logging-not-lazy,
+    logging-format-interpolation,
+    # allow some unconventional stuff (assuming the service already works as intended)
+    fixme,
+    unused-variable,
+    pointless-string-statement,
+    protected-access,
+    unused-argument,
+    attribute-defined-outside-init,
+    abstract-method,
+    unspecified-encoding,
+    redefined-outer-name,
+    redefined-builtin
+
+extension-pkg-allow-list=
+    lxml,
+    requests
+
+generated-members=
+    # added at runtime by sqlalchemy
+    sqlalchemy.orm.scoping.scoped_session.query,
+    sqlalchemy.orm.scoping.scoped_session.close,
+    __mapper__,
+    # added at runtime by us
+    chsdi.models.vector.Vector._shape,
+    chsdi.models.vector.Vector.__bodId__,
+    chsdi.models.vector.Vector.__timeInstant__,
+    chsdi.models.vector.Vector.id
+
+[REPORTS]
+score = no

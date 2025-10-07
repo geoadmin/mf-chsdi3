@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import json
 import sqlalchemy.types as types
 from geoalchemy2.types import Geometry
@@ -23,7 +21,7 @@ class JsonChsdi(types.TypeDecorator):
             return json.loads(value)
         return {}
 
-    def copy(self):
+    def copy(self, **kw):
         return JsonChsdi()
 
 
@@ -41,7 +39,7 @@ class DateTimeChsdi(types.TypeDecorator):
             return '%s.%s.%s' % (d, m, value.year)
         return '-'
 
-    def copy(self):
+    def copy(self, **kw):
         return DateTimeChsdi()
 
 
@@ -56,10 +54,9 @@ class GeometryChsdi(Geometry):
     cache_ok = True
 
     def __init__(self, geometry_type='GEOMETRY', srid=-1, dimension=2,
-                 spatial_index=True, management=False, srid_out=21781):
+                 spatial_index=True, srid_out=21781):
         super(GeometryChsdi, self).__init__(geometry_type=geometry_type,
-              srid=srid, dimension=dimension, spatial_index=spatial_index,
-              management=management)
+              srid=srid, dimension=dimension, spatial_index=spatial_index)
         self._srid_out = int(srid)
 
     @property

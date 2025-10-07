@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 This script can be used to scan the models in chsdi and return a list of dependent tables.
 
@@ -42,7 +40,7 @@ def getTableReferences(dbmap, engines):
         tmpColumns = []
         for model in models:
             matches = re.match(
-                '^.*\/{1}([a-z]*_solarkataster)|^.*\/{1}([a-z]*)',
+                r'^.*\/{1}([a-z]*_solarkataster)|^.*\/{1}([a-z]*)',
                 model.metadata.__str__())
             dbname = matches.group(1) if matches.group(1) else matches.group(2)
             engine = engines.get(dbname)
@@ -52,7 +50,7 @@ def getTableReferences(dbmap, engines):
             tmp.append(getPGTables(layerId, engine, dbname, schema, tablename))
             tmpColumns += columnNames
         if len(models) > 1:
-            print layerId
+            print(layerId)
         result = [item for sublist in tmp for item in sublist]
         result = sorted(list(set(result)))
         resultColumns = sorted(list(set(tmpColumns)))
@@ -66,11 +64,11 @@ def main():
     app = get_app('production.ini')
     from sqlalchemy.orm import scoped_session, sessionmaker
     from chsdi.models import bodmap, oerebmap, perimetermap, engines
-    print 'layerId|data|columns'
+    print('layerId|data|columns')
     dbsmap = [bodmap, oerebmap, perimetermap]
     for dbmap in dbsmap:
         for layerId, ref, refColumns, nbTables, dbname in getTableReferences(dbmap, engines):
-            print '%s|%s|%s' %(layerId, ','.join(ref), ','.join(refColumns))
+            print('%s|%s|%s' %(layerId, ','.join(ref), ','.join(refColumns)))
             if nbTables > 1:
                 bodIdsWithMultipleModels.append(layerId)
                 dbsWithMultipleModels.append(dbname)
@@ -103,7 +101,7 @@ def main():
                             fixme.append(
                                 [dbname, bodId, models[i], models[j], models[i].__tablename__, models[j].__tablename__])
     for m in fixme:
-        print m
+        print(m)
 
 if __name__ == '__main__':
     main()

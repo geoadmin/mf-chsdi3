@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from sqlalchemy import Column, Unicode
 
 from chsdi.models import register_oereb, bases

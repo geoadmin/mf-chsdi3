@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-
-<%inherit file="base.mako"/> 
+<%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
  <tr>
@@ -18,7 +16,7 @@
       % else:
          % if str(c['attributes']['tur_power'])[-1:] == "0":
             <td>${str(c['attributes']['tur_power'])[:len(str(c['attributes']['tur_power']))-2] or '-'} kW</td>
-         % else:   
+         % else:
             <td>${c['attributes']['tur_power'] or '-'} kW</td>
          % endif
       % endif
@@ -48,7 +46,7 @@
    for tur in treeturb:
      turid=tur[0].text
      name=tur[1].text
-     alti=tur[2].text 
+     alti=tur[2].text
      leis = tur[3].text
      bauj = tur[4].text
      manu = tur[5].text
@@ -115,7 +113,7 @@ src="http://www.uvek-gis.admin.ch/BFE/bilder/ch.bfe.windenergieanlagen/chart_${c
 % else:
 <h3> - </h3>
 % endif
-<h3> ${_('windturbinenangaben')}</h3>       
+<h3> ${_('windturbinenangaben')}</h3>
 <table class="table-with-border kernkraftwerke-extended" cellpadding="1">
    <colgroup>
       <col width=13%>

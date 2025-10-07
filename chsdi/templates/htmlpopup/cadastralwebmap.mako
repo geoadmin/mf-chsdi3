@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 <%inherit file="base.mako"/>
 <%namespace name="partials" file="cadastralwebmap.include.mako"/>
 

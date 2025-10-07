@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 from collections import OrderedDict
 from pyramid.view import view_config
 
