@@ -488,7 +488,7 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
     for layer in layerBodIds:
         layerBodId, models = next(iter(layer.items()))
 
-        # Determine the limit - adjust remaining limit based on already yielded features
+        # Calculate limit per model to ensure fair distribution across all tables
         remaining_limit = None
         if maxFeatures is not None:
             remaining_limit = maxFeatures - features_yielded
@@ -496,8 +496,9 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
                 break
 
         limits = [x for x in [remaining_limit, params.limit] if x is not None]
-        flimit = min(limits) if len(limits) > 0 else None
+        total_limit = min(limits) if len(limits) > 0 else None
 
+        # Distribute the limit evenly across all models/tables
         if where is not None:
             vectorLayer = []
             filter_attributes = []
@@ -511,9 +512,23 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
         else:
             vectorLayer = [(model, None) for model in models]
 
+        # Calculate limit per model/table
+        per_model_limit = None
+        remainder = 0  # Initialize remainder to 0
+        if total_limit is not None and len(vectorLayer) > 0:
+            per_model_limit = max(1, total_limit // len(vectorLayer))
+            # Add remainder to ensure we don't lose features due to integer division
+            remainder = total_limit % len(vectorLayer)
+
+        model_index = 0
         for model, where_txt in vectorLayer:
-            if flimit is not None and features_yielded >= flimit:
+            if total_limit is not None and features_yielded >= total_limit:
                 break
+
+            # Calculate current model's limit (distribute remainder to first few models)
+            current_model_limit = per_model_limit
+            if per_model_limit is not None and model_index < remainder:
+                current_model_limit += 1
 
             query = params.request.db.query(model)
             # Filter by sql query
@@ -553,14 +568,18 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
                     params.imageDisplay,
                     params.mapExtent,
                     params.tolerance,
-                    flimit,
+                    current_model_limit,
                     params.srid
                 )
                 query = query.order_by(ordering)
 
-            # Add limit - use remaining limit
-            current_limit = flimit - features_yielded if flimit is not None else None
-            query = query.limit(current_limit) if current_limit is not None and current_limit > 0 else query
+            # Add limit per model
+            if current_model_limit is not None and current_model_limit > 0:
+                # Ensure we don't exceed the total remaining limit
+                remaining_total_limit = total_limit - features_yielded if total_limit is not None else None
+                if remaining_total_limit is not None:
+                    current_model_limit = min(current_model_limit, remaining_total_limit)
+                query = query.limit(current_model_limit)
 
             # Add offset
             if params.offset is not None:
@@ -573,7 +592,7 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
                     # standard identify show first bgdi_order only
                     bgdi_order = None
                     for feature in query:
-                        if flimit is not None and features_yielded >= flimit:
+                        if total_limit is not None and features_yielded >= total_limit:
                             break
                         if bgdi_order is None:
                             bgdi_order = feature.bgdi_order
@@ -583,10 +602,12 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
                         features_yielded += 1
                 else:
                     for feature in query:
-                        if flimit is not None and features_yielded >= flimit:
+                        if total_limit is not None and features_yielded >= total_limit:
                             break
                         yield feature
                         features_yielded += 1
+
+            model_index += 1
 
 
 def _attributes(request):
