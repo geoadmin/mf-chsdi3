@@ -1,7 +1,7 @@
 import re
-import esrijson
 from pyramid.httpexceptions import HTTPBadRequest
 
+from chsdi.lib.esrijson.geometry import to_shape
 from chsdi.lib.helpers import float_raise_nan
 from chsdi.lib.validation import BaseFeaturesValidation
 
@@ -82,7 +82,7 @@ class HtmlPopupServiceValidation(BaseFeaturesValidation):
     def mapExtent(self, value):
         if value is not None:
             try:
-                self._mapExtent = esrijson.to_shape([float_raise_nan(c) for c in value.split(',')])
+                self._mapExtent = to_shape([float_raise_nan(c) for c in value.split(',')])
             except ValueError:
                 raise HTTPBadRequest('Please provide numerical values for the parameter mapExtent')
 

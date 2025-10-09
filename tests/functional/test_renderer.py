@@ -1,8 +1,8 @@
 import unittest
-import esrijson
 import json
 from geojson import Point
 from pyramid import testing
+from chsdi.lib.esrijson.feature import Feature
 
 
 class TestEsriGeoJSON(unittest.TestCase):
@@ -18,7 +18,7 @@ class TestEsriGeoJSON(unittest.TestCase):
         self.assertEqual(result, '{"a": 1}')
 
     def test_esrijson(self):
-        f = esrijson.Feature(geometry=Point([600000, 200000]), attributes={'name': 'toto'})
+        f = Feature(geometry=Point([600000, 200000]), attributes={'name': 'toto'})
         renderer = self._callFUT()
         request = testing.DummyRequest()
         result = renderer(f, {'request': request})
@@ -30,7 +30,7 @@ class TestEsriGeoJSON(unittest.TestCase):
 
     def test_jsonp(self):
         renderer = self._callFUT(jsonp_param_name="callback")
-        f = esrijson.Feature(geometry=Point([600000, 200000]), attributes={'name': 'toto'})
+        f = Feature(geometry=Point([600000, 200000]), attributes={'name': 'toto'})
         request = testing.DummyRequest()
         request.params['callback'] = 'jsonp_cb'
         result = renderer(f, {'request': request})

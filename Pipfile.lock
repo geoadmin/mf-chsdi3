@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "f6d647b0ead3d4fe2d0f1b62a0db4e3188fb04c0d326f605163b66c25ff13c02"
+            "sha256": "5902a6ee0f631ee5d93a262c00f86d0e05fa94d04bcbc3f752f2d164cc2a9be9"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -143,14 +143,6 @@
             "index": "pypi",
             "markers": "python_version >= '3.8'",
             "version": "==5.2.1"
-        },
-        "esrijson": {
-            "hashes": [
-                "sha256:19b0443e8849184c7359dadfa8be8cb9d5b7d7ec6e6d73ec8ad4503acc2cb542",
-                "sha256:26ef946527f64b50d44386e843ad41b4cc3d5a5cff684a1cb91731a17295371b"
-            ],
-            "index": "pypi",
-            "version": "==0.4.4"
         },
         "gatilegrid": {
             "hashes": [
