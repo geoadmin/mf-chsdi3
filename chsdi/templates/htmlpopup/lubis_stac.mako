@@ -31,7 +31,7 @@ elif aerialimages_exists:
     viewer_url = f"{c['baseUrl']}/#/map?layers=COG|{c['attributes'].get('filename')}&lang={request.params.get('lang', 'de')}"
 
 if permalink_cog:
-    viewer_url = f"{c['baseUrl']}/#/map?layers=COG|{permalink_cog};{c['layerBodId']}@year=all@features={c['featureId']}&lang={request.params.get('lang', 'de')}"
+    viewer_url = f"{c['baseUrl']}/#/map?layers={c['layerBodId']}@year=all@features={c['featureId']},f;COG|{permalink_cog}&lang={request.params.get('lang', 'de')}"
 
 if calibration_exists:
     calibration_label = os.path.basename(c['attributes'].get('calibration'))
@@ -76,7 +76,7 @@ fields = [
   <td class="cell-left">${_(f"{c['layerBodId']}.calibration")}</td>
   <td>
   % if calibration_exists:
-    <a href="c['attributes'].get('calibration')" target="_blank">${calibration_label}</a>
+    <a href="${c['attributes'].get('calibration')}" target="_blank">${calibration_label}</a>
   % else:
     -
   % endif
