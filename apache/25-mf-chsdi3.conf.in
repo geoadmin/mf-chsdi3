@@ -1,8 +1,3 @@
-# ************************************
-# Vhost template in module puppetlabs-apache
-# Managed by Puppet
-# ************************************
-
 # Print the server starting logs to /dev/stdout
 ErrorLog /dev/stdout
 
@@ -54,6 +49,13 @@ ErrorLog /dev/stdout
   # ServerAlias mf-chsdi3.prod.bgdi.ch
   # ServerAlias s.geo.admin.ch
   SetEnvIf X-Forwarded-For "^.*\..*\..*\..*" forwarded
+
+  # keepalive config
+  # default value is 5ms
+  # see https://httpd.apache.org/docs/2.4/mod/core.html#keepalivetimeout for more
+  KeepAlive On
+  KeepAliveTimeout ${KEEPALIVE_TIMEOUT}
+
 
   # WSGI response on OPTIONS is an empty body
   # no need to zip an empty body
