@@ -76,7 +76,7 @@ fields = [
   <td class="cell-left">${_(f"{c['layerBodId']}.calibration")}</td>
   <td>
   % if calibration_exists:
-    <a href="c['attributes'].get('calibration')" target="_blank">${calibration_label}</a>
+    <a href="${c['attributes'].get('calibration')}" target="_blank">${calibration_label}</a>
   % else:
     -
   % endif
