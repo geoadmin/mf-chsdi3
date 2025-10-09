@@ -4,6 +4,9 @@
 : "${DBPORT:?Variable DBPORT not set or empty}"
 : "${PGUSER:?Variable PGUSER not set or empty}"
 
+# Default KEEPALIVE_TIMEOUT to 5 if not set
+export KEEPALIVE_TIMEOUT="${KEEPALIVE_TIMEOUT:-5}"
+
 # Get the LoadModule directive
 LOAD_WSGI_MODULE_DIRECTIVE=$("${INSTALL_DIR}/.venv/bin/python" "${INSTALL_DIR}/.venv/bin/mod_wsgi-express" module-config | head -1)
 export LOAD_WSGI_MODULE_DIRECTIVE
