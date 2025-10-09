@@ -51,7 +51,7 @@ ErrorLog /dev/stdout
   SetEnvIf X-Forwarded-For "^.*\..*\..*\..*" forwarded
 
   # keepalive config
-  # default value is 5ms
+  # default value is 5s
   # see https://httpd.apache.org/docs/2.4/mod/core.html#keepalivetimeout for more
   KeepAlive On
   KeepAliveTimeout ${KEEPALIVE_TIMEOUT}
