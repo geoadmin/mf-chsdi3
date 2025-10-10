@@ -11,7 +11,7 @@ Base = bases['are']
 class Landschaftstypen(Base, Vector):
     __tablename__ = 'landschaftstypen'
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False})
-    __template__ = 'templates/htmlpopup/landschaftstypen.mako'
+    __template__ = 'templates/htmlpopup/are_landschaftstypen.mako'
     __bodId__ = 'ch.are.landschaftstypen'
     __label__ = 'typ_nr'
     id = Column('object', Unicode, primary_key=True)
@@ -31,7 +31,7 @@ register(Landschaftstypen.__bodId__, Landschaftstypen)
 class Alpenkonvention(Base, Vector):
     __tablename__ = 'alpenkonvention'
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False})
-    __template__ = 'templates/htmlpopup/alpenkonvention.mako'
+    __template__ = 'templates/htmlpopup/are_alpenkonvention.mako'
     __bodId__ = 'ch.are.alpenkonvention'
     __label__ = 'stand'
     id = Column('row_id', Integer, primary_key=True)
@@ -45,7 +45,7 @@ register(Alpenkonvention.__bodId__, Alpenkonvention)
 class Agglomerationsverkehr(Base, Vector):
     __tablename__ = 'agglomerationsverkehr'
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False})
-    __template__ = 'templates/htmlpopup/agglomerationsverkehr.mako'
+    __template__ = 'templates/htmlpopup/are_agglomerationsverkehr.mako'
     __bodId__ = 'ch.are.agglomerationsverkehr'
     __label__ = 'name'
     id = Column('id', Integer, primary_key=True)
@@ -62,7 +62,7 @@ register(Agglomerationsverkehr.__bodId__, Agglomerationsverkehr)
 class GueteklasseOev(Base, Vector):
     __tablename__ = 'gueteklassen'
     __table_args__ = ({'schema': 'oeffentlicher_verkehr', 'autoload': False})
-    __template__ = 'templates/htmlpopup/gueteklasseoev.mako'
+    __template__ = 'templates/htmlpopup/are_gueteklassen_oev.mako'
     __bodId__ = 'ch.are.gueteklassen_oev'
     __label__ = 'klasse_fr'
     id = Column('id', Integer, primary_key=True)
@@ -76,7 +76,7 @@ register(GueteklasseOev.__bodId__, GueteklasseOev)
 class Bauzonen(Base, Vector):
     __tablename__ = 'bauzonen'
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False})
-    __template__ = 'templates/htmlpopup/bauzonen.mako'
+    __template__ = 'templates/htmlpopup/are_bauzonen.mako'
     __bodId__ = 'ch.are.bauzonen'
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -96,7 +96,7 @@ register(Bauzonen.__bodId__, Bauzonen)
 class Gemeindetyp(Base, Vector):
     __tablename__ = 'gemeindetyp_1990_9klassen'
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False})
-    __template__ = 'templates/htmlpopup/gemeindetyp.mako'
+    __template__ = 'templates/htmlpopup/are_gemeindetyp_1990_9klassen.mako'
     __bodId__ = 'ch.are.gemeindetyp-1990-9klassen'
     __label__ = 'name'
     id = Column('gde_no', Integer, primary_key=True)
@@ -110,7 +110,7 @@ register(Gemeindetyp.__bodId__, Gemeindetyp)
 class WindenergieBundesinteressen(Base, Vector):
     __tablename__ = 'windenergie_bundesint'
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False})
-    __template__ = 'templates/htmlpopup/windenergie_bundesinteressen.mako'
+    __template__ = 'templates/htmlpopup/are_windenergie_bundesinteressen.mako'
     __bodId__ = 'ch.are.windenergie-bundesinteressen'
     __label__ = 'kbik'
     __extended_info__ = True
@@ -139,7 +139,7 @@ register(WindenergieBundesinteressen.__bodId__, WindenergieBundesinteressen)
 class ZweitwohnungsAnteil(Base, Vector):
     __tablename__ = 'zweitwohnungsanteil'
     __table_args__ = ({'schema': 'raumplanung', 'autoload': False})
-    __template__ = 'templates/htmlpopup/zweitwohnungsanteil.mako'
+    __template__ = 'templates/htmlpopup/are_wohnungsinventar_zweitwohnungsanteil.mako'
     __bodId__ = 'ch.are.wohnungsinventar-zweitwohnungsanteil'
     __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -179,7 +179,7 @@ class Erreichbarkeit:
 
 class ReisezeitAgglomerationenOev(Base, ReisezeitAgglomerationen, Vector):
     __bodId__ = 'ch.are.reisezeit-agglomerationen-oev'
-    __template__ = 'templates/htmlpopup/reisezeit_agglomerationen_oev.mako'
+    __template__ = 'templates/htmlpopup/are_reisezeit_agglomerationen_oev.mako'
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False, 'extend_existing': True})
     oev_reisezeit_agglo = Column('oev_reisezeit_agglo', Integer)
     oev_no_agglo = Column('oev_no_agglo', Integer)
@@ -189,7 +189,7 @@ register(ReisezeitAgglomerationenOev.__bodId__, ReisezeitAgglomerationenOev)
 
 class ReisezeitAgglomerationenMiv(Base, ReisezeitAgglomerationen, Vector):
     __bodId__ = 'ch.are.reisezeit-agglomerationen-miv'
-    __template__ = 'templates/htmlpopup/reisezeit_agglomerationen_miv.mako'
+    __template__ = 'templates/htmlpopup/are_reisezeit_agglomerationen_miv.mako'
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False, 'extend_existing': True})
     strasse_reisezeit_agglo = Column('strasse_reisezeit_agglo', Integer)
     strasse_no_agglo = Column('strasse_no_agglo', Integer)
@@ -199,7 +199,7 @@ register(ReisezeitAgglomerationenMiv.__bodId__, ReisezeitAgglomerationenMiv)
 
 class ReisezeitOev(Base, Reisezeit, Vector):
     __bodId__ = 'ch.are.reisezeit-oev'
-    __template__ = 'templates/htmlpopup/reisezeit_oev.mako'
+    __template__ = 'templates/htmlpopup/are_reisezeit_oev.mako'
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False, 'extend_existing': True})
     oev_reisezeit_z = Column('oev_reisezeit_z', Integer)
     oev_no_z = Column('oev_no_z', Integer)
@@ -209,7 +209,7 @@ register(ReisezeitOev.__bodId__, ReisezeitOev)
 
 class ReisezeitMiv(Base, Reisezeit, Vector):
     __bodId__ = 'ch.are.reisezeit-miv'
-    __template__ = 'templates/htmlpopup/reisezeit_miv.mako'
+    __template__ = 'templates/htmlpopup/are_reisezeit_miv.mako'
     __table_args__ = ({'schema': 'siedlung_landschaft', 'autoload': False, 'extend_existing': True})
     strasse_reisezeit_z = Column('strasse_reisezeit_z', Integer)
     strasse_no_z = Column('strasse_no_z', Integer)
@@ -219,7 +219,7 @@ register(ReisezeitMiv.__bodId__, ReisezeitMiv)
 
 class ErreichbarkeitOev(Base, Erreichbarkeit, Vector):
     __bodId__ = 'ch.are.erreichbarkeit-oev'
-    __template__ = 'templates/htmlpopup/erreichbarkeit_oev.mako'
+    __template__ = 'templates/htmlpopup/are_erreichbarkeit_oev.mako'
     oev_erreichb_ewap = Column('oev_erreichb_ewap', Integer)
 
 register(ErreichbarkeitOev.__bodId__, ErreichbarkeitOev)
@@ -227,7 +227,7 @@ register(ErreichbarkeitOev.__bodId__, ErreichbarkeitOev)
 
 class ErreichbarkeitMiv(Base, Erreichbarkeit, Vector):
     __bodId__ = 'ch.are.erreichbarkeit-miv'
-    __template__ = 'templates/htmlpopup/erreichbarkeit_miv.mako'
+    __template__ = 'templates/htmlpopup/are_erreichbarkeit_miv.mako'
     strasse_erreichb_ewap = Column('strasse_erreichb_ewap', Integer)
 
 register(ErreichbarkeitMiv.__bodId__, ErreichbarkeitMiv)
@@ -307,7 +307,7 @@ register(BelastungPersonenverkehrBahnZukunft.__bodId__, BelastungPersonenverkehr
 class SolaranlagenPruefenswerteGebieteVektor(Base, Vector):
     __tablename__ = 'pruefenswerte_gebiete'
     __table_args__ = ({'schema': 'solaranlagen', 'autoload': False})
-    __template__ = 'templates/htmlpopup/are_solaranlagen_pruefenswerte_gebiete.mako'
+    __template__ = 'templates/htmlpopup/are_solaranlagen_pruefenswerte_gebiete_vektor.mako'
     __bodId__ = 'ch.are.solaranlagen-pruefenswerte_gebiete_vektor'
     __label__ = 'id'
     __extended_info__ = True
