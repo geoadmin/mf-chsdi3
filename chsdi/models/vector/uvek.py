@@ -4041,3 +4041,48 @@ class ReflektierendeFlaechenFlugplaetze(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(ReflektierendeFlaechenFlugplaetze.__bodId__, ReflektierendeFlaechenFlugplaetze)
+
+
+class Winterwandern:
+    __table_args__ = ({'schema': 'astra', 'autoload': False})
+    __label__ = 'namer'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    namer = Column('namer', Unicode)
+    nrr = Column('nrr', Unicode)
+    laenger = Column('laenger', Float)
+    beschreibr = Column('beschreibr', Unicode)
+    hoeheaufr = Column('hoeheaufr', Unicode)
+    hoeheabr = Column('hoeheabr', Unicode)
+    zeitstzir = Column('zeitstzir', Unicode)
+    chmurl_de = Column('chmurl_de', Unicode)
+    chmurl_fr = Column('chmurl_fr', Unicode)
+    chmurl_en = Column('chmurl_en', Unicode)
+    chmurl_it = Column('chmurl_it', Unicode)
+    icao = Column('icao', Unicode)
+    name = Column('name', Unicode)
+    status_de = Column('status_de', Unicode)
+    status_fr = Column('status_fr', Unicode)
+    status_it = Column('status_it', Unicode)
+    status_en = Column('status_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class SchneeschuhWanderwege(Base, Winterwandern, Vector):
+    __tablename__ = 'schneeschuh_wanderwege_line'
+    __template__ = 'templates/htmlpopup/astra_schneeschuhwanderwege.mako'
+    __bodId__ = 'ch.astra.schneeschuhwanderwege'
+    technikr_de = Column('technikr_de', Unicode)
+    technikr_fr = Column('technikr_fr', Unicode)
+    technikr_en = Column('technikr_en', Unicode)
+    technikr_it = Column('technikr_it', Unicode)
+    technikr_rm = Column('technikr_rm', Unicode)
+
+register(SchneeschuhWanderwege.__bodId__, SchneeschuhWanderwege)
+
+
+class WinterWanderwege(Base, Winterwandern, Vector):
+    __tablename__ = 'winter_wanderwege_line'
+    __template__ = 'templates/htmlpopup/astra_winterwanderwege.mako'
+    __bodId__ = 'ch.astra.winterwanderwege'
+
+register(WinterWanderwege.__bodId__, WinterWanderwege)
