@@ -220,7 +220,7 @@ class TestMapServiceView(TestsBase):
         self.assertEqual(resp.content_type, 'application/json')
         resp = self.testapp.get('/rest/services/api/MapServer/ch.bfs.gebaeude_wohnungs_register', params={'callback': 'cb_'}, status=200)
         self.assertEqual(resp.content_type, 'application/javascript')
-        
+
     def test_layerstable_valid(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/layersTable', status=200)
         self.assertEqual(resp.content_type, 'text/html')
@@ -229,25 +229,25 @@ class TestMapServiceView(TestsBase):
         resp.mustcontain('<th>Layer Type</th>')
         resp.mustcontain('<th>Has Tooltip</th>')
         resp.mustcontain('<th>Is Searchable</th>')
-        
+
     def test_layerstable_valid_with_callback(self):
         resp = self.testapp.get('/rest/services/ech/MapServer/layersTable', params={'callback': 'cb_'}, status=200)
         self.assertEqual(resp.content_type, 'application/javascript')
         resp.mustcontain('cb_(')
-        
+
     def test_layerstable_content_check(self):
         import re
         resp = self.testapp.get('/rest/services/ech/MapServer/layersTable', status=200)
         self.assertEqual(resp.content_type, 'text/html')
         html_content = resp.text
-        
+
         # Search for the row containing ch.swisstopo.pixelkarte-farbe
         layer_row_pattern = r'<tr>.*?<td>ch\.swisstopo\.pixelkarte-farbe</td>(.*?)</tr>'
         row_match = re.search(layer_row_pattern, html_content, re.DOTALL)
-        
+
         self.assertIsNotNone(row_match, "Could not find row for ch.swisstopo.pixelkarte-farbe")
         row_content = row_match.group(0)
-        
+
         # Check that all required values are present in the row
         self.assertIn('<td>ch.swisstopo.pixelkarte-farbe</td>', row_content)
         self.assertIn('<td>National Maps (color)</td>', row_content)

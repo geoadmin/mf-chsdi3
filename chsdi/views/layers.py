@@ -65,7 +65,7 @@ def layers_table(request):
         request=request
     )
     if params.cbName is None:
-        return response   
+        return response
     return response.body.decode('utf8')
 
 
