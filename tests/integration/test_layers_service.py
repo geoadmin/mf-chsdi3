@@ -252,5 +252,5 @@ class TestMapServiceView(TestsBase):
         self.assertIn('<td>ch.swisstopo.pixelkarte-farbe</td>', row_content)
         self.assertIn('<td>National Maps (color)</td>', row_content)
         self.assertIn('<td>wmts</td>', row_content)
-        self.assertTrue(row_content.count('<td>No</td>') >= 2, 
+        self.assertTrue(row_content.count('<td>No</td>') >= 2,
                         "Expected at least 2 'No' values for tooltip and searchable attributes")

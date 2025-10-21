@@ -59,16 +59,13 @@ def layers_table(request):
     layers = {}
     for layer in get_layers_config_for_params(params, query, LayersConfig):
         layers = dict(chain(layers.items(), layer.items()))
-    
     response = render_to_response(
         'chsdi:templates/layers_table.mako',
         {'layers': layers},
         request=request
     )
-    
     if params.cbName is None:
-        return response
-        
+        return response   
     return response.body.decode('utf8')
 
 
