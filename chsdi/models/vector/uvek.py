@@ -4058,12 +4058,6 @@ class Winterwandern:
     chmurl_fr = Column('chmurl_fr', Unicode)
     chmurl_en = Column('chmurl_en', Unicode)
     chmurl_it = Column('chmurl_it', Unicode)
-    icao = Column('icao', Unicode)
-    name = Column('name', Unicode)
-    status_de = Column('status_de', Unicode)
-    status_fr = Column('status_fr', Unicode)
-    status_it = Column('status_it', Unicode)
-    status_en = Column('status_en', Unicode)
     the_geom = Column(Geometry2D)
 
 
