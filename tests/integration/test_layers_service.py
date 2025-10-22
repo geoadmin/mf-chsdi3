@@ -242,7 +242,7 @@ class TestMapServiceView(TestsBase):
         html_content = resp.text
 
         # Search for the row containing ch.swisstopo.pixelkarte-farbe
-        layer_row_pattern = r'<tr>.*?<td>ch\.swisstopo\.pixelkarte-farbe</td>(.*?)</tr>'
+        layer_row_pattern = r'<tr>\s*<td>ch\.swisstopo\.pixelkarte-farbe</td>.*?</tr>'
         row_match = re.search(layer_row_pattern, html_content, re.DOTALL)
 
         self.assertIsNotNone(row_match, "Could not find row for ch.swisstopo.pixelkarte-farbe")
