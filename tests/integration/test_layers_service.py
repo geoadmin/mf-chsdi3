@@ -222,7 +222,7 @@ class TestMapServiceView(TestsBase):
         self.assertEqual(resp.content_type, 'application/javascript')
 
     def test_layerstable_valid(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/layersTable', status=200)
+        resp = self.testapp.get('/rest/services/all/MapServer/layersTable', status=200)
         self.assertEqual(resp.content_type, 'text/html')
         resp.mustcontain('<th>Technical Name</th>')
         resp.mustcontain('<th>Official Name</th>')
@@ -231,13 +231,13 @@ class TestMapServiceView(TestsBase):
         resp.mustcontain('<th>Is Searchable</th>')
 
     def test_layerstable_valid_with_callback(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/layersTable', params={'callback': 'cb_'}, status=200)
+        resp = self.testapp.get('/rest/services/all/MapServer/layersTable', params={'callback': 'cb_'}, status=200)
         self.assertEqual(resp.content_type, 'application/javascript')
         resp.mustcontain('cb_(')
 
     def test_layerstable_content_check(self):
         import re
-        resp = self.testapp.get('/rest/services/ech/MapServer/layersTable', status=200)
+        resp = self.testapp.get('/rest/services/all/MapServer/layersTable', status=200)
         self.assertEqual(resp.content_type, 'text/html')
         html_content = resp.text
 
