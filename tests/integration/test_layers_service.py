@@ -251,8 +251,8 @@ class TestMapServiceView(TestsBase):
         print('row content', row_content)
 
         # Check that all required values are present in the row
-        # self.assertIn('<td>ch.swisstopo.pixelkarte-farbe</td>', row_content)
-        # self.assertIn('<td>National Maps (color)</td>', row_content)
-        # self.assertIn('<td>wmts</td>', row_content)
-        # self.assertTrue(row_content.count('<td>No</td>') >= 2,
-        #                 "Expected at least 2 'No' values for tooltip and searchable attributes")
+        self.assertIn('ch.swisstopo.pixelkarte-farbe', row_content)
+        self.assertIn('National Maps (color)', row_content)
+        self.assertIn('wmts', row_content)
+        self.assertTrue(row_content.count('No') >= 2,
+                        "Expected at least 2 'No' values for tooltip and searchable attributes")
