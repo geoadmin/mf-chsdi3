@@ -237,18 +237,16 @@ class TestMapServiceView(TestsBase):
 
     def test_layerstable_content_check(self):
         import re
-        resp = self.testapp.get('/rest/services/all/MapServer/layersTable', status=200)
+        resp = self.testapp.get('/rest/services/all/MapServer/layersTable?lang=en', status=200)
         self.assertEqual(resp.content_type, 'text/html')
         html_content = resp.text
 
         # Search for the row containing ch.swisstopo.pixelkarte-farbe
         layer_row_pattern = r'<tr>\s*<td>ch\.swisstopo\.pixelkarte-farbe</td>.*?</tr>'
         row_match = re.search(layer_row_pattern, html_content, re.DOTALL)
-        print('row match', row_match)
 
         self.assertIsNotNone(row_match, "Could not find row for ch.swisstopo.pixelkarte-farbe")
         row_content = row_match.group(0)
-        print('row content', row_content)
 
         # Check that all required values are present in the row
         self.assertIn('ch.swisstopo.pixelkarte-farbe', row_content)
