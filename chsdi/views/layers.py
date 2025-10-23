@@ -54,17 +54,33 @@ def layers_config(request):
 
 @view_config(route_name='layersTable', renderer='jsonp')
 def layers_table(request):
+    '''
+    Get an HTML with a table listing the key characteristics of each layerConfig.
+    If a callback is defined, return the serialized version directly.
+
+    This provides a simple webpage for non-technical users interested in how layers are configured for the map viewer.
+    The table used to be part of the FAQ of the old "api3" documentation.
+    With the decommissioning of the api3 docs in favor of the Tech Docs, support asked for this table to still be reachable in some form.
+
+    An example table:
+
+    +-------------------+---------------+------------+-------------+---------------+
+    | technical name    | official name | layer type | has tooltip | is searchable |
+    +-------------------+---------------+------------+-------------+---------------+
+    | ch.bfe.layer1     | Layer 1       | WMS        | Yes         | Yes           |
+    | ch.astra.layer2   | Layer 2       | WMTS       | No          | Yes           |
+    +-------------------+---------------+------------+-------------+---------------+
+    '''
     params = BaseLayersValidation(request)
-    query = params.request.db.query(LayersConfig)
-    layers = {}
-    for layer in get_layers_config_for_params(params, query, LayersConfig):
-        layers = dict(chain(layers.items(), layer.items()))
+    layers = layers_config(request)
+
     response = render_to_response(
         'chsdi:templates/layers_table.mako',
         {'layers': layers},
         request=request
     )
-    if params.cbName is None:
+    is_callback_request = params.cbName is None
+    if is_callback_request:
         return response
     return response.body.decode('utf8')
 
