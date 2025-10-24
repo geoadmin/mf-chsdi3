@@ -1634,6 +1634,7 @@ class IntrinsischesBodenrisikoSora(Base, Vector):
 
 register(IntrinsischesBodenrisikoSora.__bodId__, IntrinsischesBodenrisikoSora)
 
+
 class IntrinsischesBodenrisikoSora100(Base, Vector):
     __tablename__ = 'intrinsisches_bodenrisiko_sora_100'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
