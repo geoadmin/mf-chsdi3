@@ -119,6 +119,8 @@ ENV APP_VERSION=${VERSION}
 RUN sed -i 's/${APP_VERSION}/'${APP_VERSION}'/g' chsdi/config/base.ini.in \
     && .venv/bin/python -m pip install -e .
 
+USER ${USER}
+
 # NOTE: Here below we cannot use environment variable with ENTRYPOINT using the `exec` form.
 # The ENTRYPOINT `exec` form is required in order to use the docker-entrypoint.sh as first
 # command to run before the CMD.
