@@ -1635,6 +1635,18 @@ class IntrinsischesBodenrisikoSora(Base, Vector):
 register(IntrinsischesBodenrisikoSora.__bodId__, IntrinsischesBodenrisikoSora)
 
 
+class IntrinsischesBodenrisikoSora100(Base, Vector):
+    __tablename__ = 'intrinsisches_bodenrisiko_sora_100'
+    __table_args__ = ({'schema': 'bazl', 'autoload': False})
+    __template__ = 'templates/htmlpopup/bazl_intrinsisches_bodenrisiko_100.mako'
+    __bodId__ = 'ch.bazl.intrinsisches-bodenrisiko_sora_100'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    density_pop_km2 = Column('density_pop_km2', Integer)
+    the_geom = Column(Geometry2D)
+
+register(IntrinsischesBodenrisikoSora100.__bodId__, IntrinsischesBodenrisikoSora100)
+
+
 class AstraStrasseFacilitiesA(Base, Vector):
     __tablename__ = 'sachplan_strasse_fac_anhoerung'
     __table_args__ = ({'schema': 'astra', 'autoload': False})
