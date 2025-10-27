@@ -14,6 +14,31 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20251112:
+
+Release 20251112 - Wednesday, November 12th 2025
+----------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+- Bug fixes:
+- Announcements:
+    - 
+
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2025-08-27-rc1...2025-10-08-rc1>`__
+
+Geodata
+*******
+
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `SORA Ground Risk 100 <//map.geo.admin.ch/?layers=ch.bazl.intrinsisches-bodenrisiko_sora_100>`__ (ch.bazl.intrinsisches-bodenrisiko_sora_100)                                                                  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `SORA Ground Risk 200 <//map.geo.admin.ch/?layers=ch.bazl.intrinsisches-bodenrisiko_sora_200>`__ (ch.bazl.intrinsisches-bodenrisiko_sora_200)                                                                  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20251008:
 
