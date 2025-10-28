@@ -17,8 +17,8 @@
        % if c['attributes']['abgabestelle'] == None:
          <td>-</td>
       % else:
-         <td><a target="_blank" href="http://${c['attributes']['abgabestelle'].replace("http://","")}">${"Link" or '-'}</a></td>
-      % endif 
+         <td><a target="_blank" href="${c['attributes']['abgabestelle']}">Link</a></td>
+      % endif
     </tr>
     <tr><td class="cell-left">${_('geompdf_liste')}</td>
       % if lang in ('de', 'rm', 'en'):
