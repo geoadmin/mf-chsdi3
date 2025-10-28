@@ -91,6 +91,7 @@ def main(global_config, **settings):
     config.add_route('topics', '/rest/services', request_method=request_method)
     config.add_route('mapservice', '/rest/services/{map}/MapServer', request_method=request_method)
     config.add_route('layersConfig', '/rest/services/{map}/MapServer/layersConfig', request_method=request_method)
+    config.add_route('layersTable', '/rest/services/{map}/MapServer/layersTable', request_method=request_method)
     config.add_route('catalog', '/rest/services/{map}/CatalogServer', request_method=request_method)
     config.add_route('identify', '/rest/services/{map}/MapServer/identify', request_method=request_method)
     config.add_route('find', '/rest/services/{map}/MapServer/find', request_method=request_method)
