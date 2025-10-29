@@ -416,7 +416,7 @@ register(ArmeeKriegsdenkmaeler.__bodId__, ArmeeKriegsdenkmaeler)
 class Ladestationen(Base, Vector):
     __tablename__ = 'elektroladestationen'
     __table_args__ = ({'schema': 'militaer', 'autoload': False})
-    __template__ = 'templates/htmlpopup/vbs_elektroladestationen.mako'
+    __template__ = 'templates/htmlpopup/vbs_ladestationen.mako'
     __bodId__ = 'ch.vbs.ladestationen'
     __label__ = 'ladestation'
     id = Column('bgdi_id', Integer, primary_key=True)
