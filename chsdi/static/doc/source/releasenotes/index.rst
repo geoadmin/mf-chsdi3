@@ -27,7 +27,7 @@ API & applications
 
 - Bug fixes:
 - Announcements:
-    - 
+    - By switching the data source for the `address` origin in swisssearch to the official directory of building addresses, we have now included address data for the Principality of Liechtenstein in swisssearch.
 
 - `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2025-08-27-rc1...2025-10-08-rc1>`__
 
@@ -46,6 +46,12 @@ Geodata
 | Update | `Residential areas according AuLaV <//map.geo.admin.ch/?layers=ch.bazl.wohngebiete-aulav>`__ (ch.bazl.wohngebiete-aulav)                                                                                       |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Hydrogeological sketch <//map.geo.admin.ch/?layers=ch.bafu.hydrogeologie-uebersichtskarte>`__ (ch.bafu.hydrogeologie-uebersichtskarte)                                                                        |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Air navigation obstacles <//map.geo.admin.ch/?layers=ch.bazl.luftfahrthindernis>`__ (ch.bazl.luftfahrthindernis)                                                                                              |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerodrome obstacles < 25 / 60 m <//map.geo.admin.ch/?layers=ch.bazl.luftfahrthindernis-klein>`__ (ch.bazl.luftfahrthindernis-klein)                                                                           |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Latest changes of obstacles <//map.geo.admin.ch/?layers=ch.bazl.luftfahrthindernis-aenderungen>`__ (ch.bazl.luftfahrthindernis-aenderungen)                                                                   |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20251008:
