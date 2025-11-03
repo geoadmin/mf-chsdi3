@@ -589,3 +589,65 @@ def strtobool(value):
     if value in ('n', 'no', 'f', 'false', 'off', '0'):
         return False
     raise ValueError(f"invalid truth value {value!r}")
+
+
+def convert_minutes(total_minutes) -> str:
+    """
+    Converts a total number of minutes (which can be an integer, float, or
+    a string representing a number) into a string showing the equivalent
+    duration in hours and remaining minutes, using a condensed format.
+
+    The input is validated and rounded to the nearest whole minute before conversion.
+
+    The output format is highly condensed:
+    - If hours > 0 and minutes > 0: "X h Y min"
+    - If hours > 0 and minutes = 0: "X h" (Only hours)
+    - If hours = 0 and minutes > 0: "Y min" (Only minutes)
+    - If total_minutes = 0: "0 min"
+
+    Args:
+        total_minutes: The total duration in minutes (must be a non-negative number
+                       or a string convertible to one).
+
+    Returns:
+        A string representing the converted time or -.
+    """
+    # 1. Handle String Conversion and Error Checking
+    try:
+        if isinstance(total_minutes, str):
+            # Attempt to convert string to float
+            numeric_minutes = float(total_minutes)
+        elif isinstance(total_minutes, (int, float)):
+            numeric_minutes = total_minutes
+        else:
+            return "-"
+
+    except ValueError:
+        return "-"
+
+    # 2. Check for non-negative values
+    if numeric_minutes < 0:
+        return "-"
+
+    # 3. Round the input to the nearest whole minute and convert to integer for reliable time arithmetic
+    rounded_minutes = int(round(numeric_minutes))
+
+    if rounded_minutes == 0:
+        return "0 min"
+
+    # Calculate hours and remaining minutes based on the rounded total
+    hours = rounded_minutes // 60
+    remaining_minutes = rounded_minutes % 60
+
+    parts = []
+
+    # 1. Add hours component only if hours > 0
+    if hours > 0:
+        parts.append(f"{hours} h")
+
+    # 2. Add minutes component only if remaining_minutes > 0
+    if remaining_minutes > 0:
+        parts.append(f"{remaining_minutes} min")
+
+    # The list 'parts' is joined with a space.
+    return " ".join(parts)

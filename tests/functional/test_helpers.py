@@ -4,7 +4,7 @@ from chsdi.lib.helpers import (
     make_agnostic, sanitize_url, _transform_point,
     check_even, format_search_text, remove_accents, escape_sphinx_syntax,
     quoting, float_raise_nan, resource_exists, parseHydroXML, locale_negotiator,
-    parse_box2d, center_from_box2d, format_scale,
+    parse_box2d, convert_minutes, center_from_box2d, format_scale,
     parse_date_string, parse_date_datenstand, int_with_apostrophe, get_loaderjs_url,
     get_crs_from_srid, get_precision_for_proj, _round_bbox_coordinates, _round_shape_coordinates,
     round_geometry_coordinates, _transform_coordinates, _transform_shape, transform_round_geometry
@@ -304,3 +304,25 @@ class TestHelpers(unittest.TestCase):
 
         self.assertEqual(mapping(point_wgs84_rounded), {'type': 'Point', 'coordinates': (7.438767, 37.274227)})
         assert_almost_equal(point_wgs84.coords[0], (7.438767146513139, 37.27422679580366), decimal=10)
+
+    def test_convert_minutes(self):
+
+        # int
+        self.assertEqual(convert_minutes(90), '1 h 30 min')
+        self.assertEqual(convert_minutes(60), '1 h')
+        self.assertEqual(convert_minutes(59), '59 min')
+
+        # float
+        self.assertEqual(convert_minutes(90.4), '1 h 30 min')
+        self.assertEqual(convert_minutes(120.8), '2 h 1 min')
+        self.assertEqual(convert_minutes(60), '1 h')
+
+        # string
+        self.assertEqual(convert_minutes('135'), '2 h 15 min')
+        self.assertEqual(convert_minutes('1.5'), '2 min')
+        self.assertEqual(convert_minutes('60.0'), '1 h')
+
+        # non sense
+        self.assertEqual(convert_minutes('-5'), '-')
+        self.assertEqual(convert_minutes('hello'), '-')
+        self.assertEqual(convert_minutes(list[1, 2]), '-')

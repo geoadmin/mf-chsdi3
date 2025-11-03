@@ -2,6 +2,7 @@
 
 <%def name="table_body(c, lang)">
 <%
+ from chsdi.lib.helpers import convert_minutes
  lang = lang if lang != 'rm' else 'de'
  chmurl = 'chmurl_%s' % lang
  link = c['attributes'][chmurl]
@@ -14,7 +15,7 @@
    <tr><td class="cell-left">${_('ch.astra.winterwanderwege.laenger')}</td>                    <td>${c['attributes']['laenger']  or '-'} ${_('ch.astra.winterwanderwege.einheit_distanz')}</td></tr>
    <tr><td class="cell-left">${_('ch.astra.winterwanderwege.hoeheaufr')}</td>                  <td>${c['attributes']['hoeheaufr']  or '-'} ${_('ch.astra.winterwanderwege.einheit_aufstieg')}</td></tr>
    <tr><td class="cell-left">${_('ch.astra.winterwanderwege.hoeheabr')}</td>                   <td>${c['attributes']['hoeheabr']  or '-'} ${_('ch.astra.winterwanderwege.einheit_aufstieg')}</td></tr>
-   <tr><td class="cell-left">${_('ch.astra.winterwanderwege.zeitstzir')}</td>                  <td>${c['attributes']['zeitstzir']  or '-'} ${_('ch.astra.winterwanderwege.einheit_zeit')}</td></tr>
+   <tr><td class="cell-left">${_('ch.astra.winterwanderwege.zeitstzir')}</td>                  <td>${convert_minutes(c['attributes']['zeitstzir'])}</td></tr>
    % if c['attributes'][chmurl]:
       <tr><td class="cell-left">${_('ch.astra.winterwanderwege.chmurl')}</td>                  <td><a href="${c['attributes'][chmurl]}" target='_blank'>${_('ch.astra.winterwanderwege.chmurl')}</td></tr>
    % else:
