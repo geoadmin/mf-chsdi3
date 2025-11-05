@@ -15,7 +15,7 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bafu.unesco-weltnaturerbe.link')}</td>
-        <td>${c['attributes']['link'] or '-'}</td>
+        <td><a target="_blank" href="${c['attributes']['link']}">${_('link') or '-'}</a></td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bafu.unesco-weltnaturerbe.area')}</td>
