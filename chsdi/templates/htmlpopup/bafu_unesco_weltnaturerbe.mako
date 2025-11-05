@@ -15,7 +15,11 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bafu.unesco-weltnaturerbe.link')}</td>
-        <td><a target="_blank" href="${c['attributes']['link']}">${_('link') or '-'}</a></td>
+        % if c['attributes']['link'] and c['attributes']['link'].startswith('http'):
+            <td><a href="${c['attributes']['link']}" target="_blank">${_('link')}</a></td>
+        % else:
+            <td>-</td>
+        % endif
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bafu.unesco-weltnaturerbe.area')}</td>
