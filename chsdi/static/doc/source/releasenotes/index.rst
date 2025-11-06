@@ -29,7 +29,7 @@ API & applications
 - Announcements:
     - By switching the data source for the `address` origin in swisssearch to the official directory of building addresses, we have now included address data for the Principality of Liechtenstein in swisssearch.
 
-- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2025-08-27-rc1...2025-10-08-rc1>`__
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2025-10-08-rc1...2025-11-25-rc1>`__
 
 Geodata
 *******
@@ -38,6 +38,10 @@ Geodata
 | New    | `SORA Ground Risk 100 <//map.geo.admin.ch/?layers=ch.bazl.intrinsisches-bodenrisiko_sora_100>`__ (ch.bazl.intrinsisches-bodenrisiko_sora_100)                                                                  |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | New    | `SORA Ground Risk 200 <//map.geo.admin.ch/?layers=ch.bazl.intrinsisches-bodenrisiko_sora_200>`__ (ch.bazl.intrinsisches-bodenrisiko_sora_200)                                                                  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `swissEO NDVIdiff <//map.geo.admin.ch/?layers=ch.swisstopo.swisseo_ndvi_diff_v100>`__ (ch.swisstopo.swisseo_ndvi_diff_v100)                                                                                    |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `swissEO NDVIz <//map.geo.admin.ch/?layers=ch.swisstopo.swisseo_ndvi_z_v100>`__ (ch.swisstopo.swisseo_ndvi_z_v100)                                                                                             |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `UNESCO World natural heritage <//map.geo.admin.ch/?layers=ch.bafu.unesco-weltnaturerbe>`__ (ch.bafu.unesco-weltnaturerbe)                                                                                     |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -52,6 +56,8 @@ Geodata
 | Update | `Aerodrome obstacles < 25 / 60 m <//map.geo.admin.ch/?layers=ch.bazl.luftfahrthindernis-klein>`__ (ch.bazl.luftfahrthindernis-klein)                                                                           |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Latest changes of obstacles <//map.geo.admin.ch/?layers=ch.bazl.luftfahrthindernis-aenderungen>`__ (ch.bazl.luftfahrthindernis-aenderungen)                                                                   |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial images cantons <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder-dritte-kantone>`__ (ch.swisstopo.lubis-luftbilder-dritte-kantone)                                                             |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20251008:
