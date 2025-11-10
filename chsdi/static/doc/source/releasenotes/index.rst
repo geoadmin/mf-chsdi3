@@ -69,6 +69,20 @@ Geodata
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Update | `Aerial images cantons <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder-dritte-kantone>`__ (ch.swisstopo.lubis-luftbilder-dritte-kantone)                                                             |
 +--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Swiss Parks (Zones) <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-paerke_nationaler_bedeutung>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung)                                                     |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Swiss Parks (Perimeter) <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter)                             |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Land use statistics standard <//map.geo.admin.ch/?layers=ch.bfs.arealstatistik>`__ (ch.bfs.arealstatistik)                                                                                                    |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Land use statistics cover <//map.geo.admin.ch/?layers=ch.bfs.arealstatistik-bodenbedeckung>`__ (ch.bfs.arealstatistik-bodenbedeckung)                                                                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mapping of Floodplains of National Importance <//map.geo.admin.ch/?layers=ch.bafu.auen-vegetationskarten>`__ (ch.bafu.auen-vegetationskarten)                                                                 |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Electricity Transmission Lines sectoral plan <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_kraft>`__ (ch.bfe.sachplan-uebertragungsleitungen_kraft)                                      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Consultation <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_anhoerung>`__ (ch.bfe.sachplan-uebertragungsleitungen_anhoerung)                                                              |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20251008:
 
