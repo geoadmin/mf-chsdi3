@@ -5,55 +5,43 @@
         lang = lang if lang in ('fr','it','en') else 'de'
     %>
     <tr>
-        <td class="cell-left">${_('ch.vbs.ladestationen.Standort')}</td>
-        <td>${c['attributes']['standort'] or '-'}</td>
+        <td class="cell-left">${_('ch.vbs.ladestationen.ladestation')}</td>
+        <td>${c['attributes']['ladestation'] or '-'}</td>
+    </tr>
+     <tr>
+        <td class="cell-left">${_('ch.vbs.ladestationen.status')}</td>
+        <td>${c['attributes']['status'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.vbs.ladestationen.Strasse')}</td>
+        <td class="cell-left">${_('ch.vbs.ladestationen.strasse')}</td>
         <td>${c['attributes']['strasse'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.vbs.ladestationen.PLZ')}</td>
+        <td class="cell-left">${_('ch.vbs.ladestationen.nummer')}</td>
+        <td>${c['attributes']['nummer'] or '-'}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_('ch.vbs.ladestationen.plz')}</td>
         <td>${c['attributes']['plz'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.vbs.ladestationen.Ort')}</td>
+        <td class="cell-left">${_('ch.vbs.ladestationen.ort')}</td>
         <td>${c['attributes']['ort'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.vbs.ladestationen.Oeffnungszeiten')}</td>
-        <td>${c['attributes']['oeffnungszeiten'] or '-'}</td>
+        <td class="cell-left">${_('ch.vbs.ladestationen.breitengrad')}</td>
+        <td>${c['attributes']['breitengrad'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.vbs.ladestationen.Anzahl_Ladepunkte')}</td>
+        <td class="cell-left">${_('ch.vbs.ladestationen.laengengrad')}</td>
+        <td>${c['attributes']['laengengrad'] or '-'}</td>
+    </tr>
+    <tr>
+        <td class="cell-left">${_('ch.vbs.ladestationen.anzahl_ladepunkte')}</td>
         <td>${c['attributes']['anzahl_ladepunkte'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.vbs.ladestationen.Leistung')}</td>
-        <td>${c['attributes']['leistung'] or '-'}</td>
-    </tr>
-    <tr>
-        <td class="cell-left">${_('ch.vbs.ladestationen.Typ_Stecker')}</td>
-        <td>${c['attributes']['typ_stecker'] or '-'}</td>
-    </tr>
-    <tr>
-        <td class="cell-left">${_('ch.vbs.ladestationen.Hinweis')}</td>
-        <td>${c['attributes']['hinweis'] or '-'}</td>
-    </tr>
-    <tr>
-        <td class="cell-left">${_('ch.vbs.ladestationen.Kontakt')}</td>
-        <td>${c['attributes']['kontakt'] or '-'}</td>
-    </tr>
-    <tr>
-        <td class="cell-left">${_('ch.vbs.ladestationen.XKoordinate')}</td>
-        <td>${c['attributes']['x_koordinate'] or '-'}</td>
-    </tr>
-    <tr>
-        <td class="cell-left">${_('ch.vbs.ladestationen.YKoordinate')}</td>
-        <td>${c['attributes']['y_koordinate'] or '-'}</td>
-    </tr>
-    <tr>
-        <td class="cell-left">${_('ch.vbs.ladestationen.Bemerkungen')}</td>
+        <td class="cell-left">${_('ch.vbs.ladestationen.bemerkungen')}</td>
         <td>${c['attributes']['bemerkungen'] or '-'}</td>
     </tr>
 </%def>

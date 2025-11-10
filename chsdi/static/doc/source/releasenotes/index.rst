@@ -14,6 +14,82 @@ Release Notes
 
     <p id="rss-feed"><a class="reference external" href="rss2.xml"> <i class="fa fa-rss"> RSS Feeds </i></a></p>
 
+.. _releasenotes_20251112:
+
+Release 20251112 - Wednesday, November 12th 2025
+------------------------------------------------
+
+API & applications
+******************
+
+`API <//api3.geo.admin.ch>`__
+'''''''''''''''''''''''''''''
+
+- Bug fixes:
+- Announcements:
+    - This RSS feed will be discontinued immediately due to a change in technology. The news will still be available, but entirely as a regular webpage.
+    - By switching the data source for the `address` origin in swisssearch to the official directory of building addresses, we have now included address data for the Principality of Liechtenstein in swisssearch.
+    - The layer *ch.bazl.luftfahrthindernis* and also the corresponding download product asset *luftfahrthindernis_4326.kmz* will contain a significantly increased number of objects by the end of November 2025, because the high-voltage transmission lines will be represented as individual poles between the line segments as a refinement of this geodata product. In addition, by the same date the currently avaliable geodata assets *luftfahrthindernis_4326.csv.zip*, *luftfahrthindernis_simplified_4326.csv.zip* and *luftfahrthindernis_simplified_4326.kmz* will not be offered anymore on `service STAC <//data.geo.admin.ch/browser/index.html#/collections/ch.bazl.luftfahrthindernis/items/luftfahrthindernis>`__ and will be replaced by a new `Aeronautical Information Exchange Model (AIXM) formatted asset <//aixm.aero>`__ besides the existing luftfahrthindernis_4326.kmz
+    - the `INSPIRE ATOM/OS-Download service has been removed from chsdi services as previously announced. The INSPIRE datasets (`ch.swisstopo.swissboundaries3d.inspire <https://data.geo.admin.ch/browser/index.html#/collections/ch.swisstopo.swissboundaries3d.inspire>`__ and `ch.swisstopo.swissnames3d.inspire <https://data.geo.admin.ch/browser/index.html#/collections/ch.swisstopo.swissnames3d.inspire>`__) stay available for download via the STAC API.
+    - the layer *ch.bfe.komo-projekte* will be removed from chsdi services with the release of December 17th.
+    - the layers *ch.bafu.flora-verbreitungskarten*, *ch.bafu.gefahren-basiskarte*, *ch.bafu.karst-ausdehnung_grundwasservorkommen*, *ch.bafu.karst-einzugsgebiete*, *ch.bafu.karst-einzugsgebietseinheiten*, *ch.bafu.karst-quellen_schwinden*, *ch.bafu.karst-unterirdische_fliesswege*, *ch.swisstopo.hiks-siegfried-ta25.metadata*, *ch.swisstopo.hiks-siegfried-ta50.metadata* and *ch.swisstopo.schneeschuhwandern* have been removed from chsdi services as previously announced.
+    - the layer ch.bazl.intrinsisches-bodenrisiko_sora has been removed from chsdi services, since it is replaced by the 2 new layers ch.bazl.intrinsisches-bodenrisiko_sora_100 and ch.bazl.intrinsisches-bodenrisiko_sora_200 from now on.
+    - the object ID values of the layer ch.vbs.schiessanzeigen will change for all objects due to geometrical changes in the source data with one of the next releases. Existing permalinks to objects may not work anymore and will have to be replaced by the new object id’s (chsdi fields featureId and id). In addition there will be a new attribute bezeichnung_ort on the dataset. The other existing attributes will stay.
+
+- `Full changelog <https://github.com/geoadmin/mf-chsdi3/compare/2025-10-08-rc1...2025-11-12-rc1>`__
+
+Geodata
+*******
+
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `SORA Ground Risk 100 <//map.geo.admin.ch/?layers=ch.bazl.intrinsisches-bodenrisiko_sora_100>`__ (ch.bazl.intrinsisches-bodenrisiko_sora_100)                                                                  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `SORA Ground Risk 200 <//map.geo.admin.ch/?layers=ch.bazl.intrinsisches-bodenrisiko_sora_200>`__ (ch.bazl.intrinsisches-bodenrisiko_sora_200)                                                                  |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `swissEO NDVIdiff <//map.geo.admin.ch/?layers=ch.swisstopo.swisseo_ndvi_diff_v100>`__ (ch.swisstopo.swisseo_ndvi_diff_v100)                                                                                    |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `swissEO NDVIz <//map.geo.admin.ch/?layers=ch.swisstopo.swisseo_ndvi_z_v100>`__ (ch.swisstopo.swisseo_ndvi_z_v100)                                                                                             |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Snowshoe trails <//map.geo.admin.ch/?layers=ch.astra.schneeschuhwanderwege>`__ (ch.astra.schneeschuhwanderwege)                                                                                               |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| New    | `Winter hiking trails <//map.geo.admin.ch/?layers=ch.astra.winterwanderwege>`__ (ch.astra.winterwanderwege)                                                                                                    |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `UNESCO World natural heritage <//map.geo.admin.ch/?layers=ch.bafu.unesco-weltnaturerbe>`__ (ch.bafu.unesco-weltnaturerbe)                                                                                     |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Ladestationen der Gruppe Verteidigung <//map.geo.admin.ch/?layers=ch.vbs.ladestationen>`__ (ch.vbs.ladestationen)                                                                                             |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Residential areas according AuLaV <//map.geo.admin.ch/?layers=ch.bazl.wohngebiete-aulav>`__ (ch.bazl.wohngebiete-aulav)                                                                                       |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Hydrogeological sketch <//map.geo.admin.ch/?layers=ch.bafu.hydrogeologie-uebersichtskarte>`__ (ch.bafu.hydrogeologie-uebersichtskarte)                                                                        |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Air navigation obstacles <//map.geo.admin.ch/?layers=ch.bazl.luftfahrthindernis>`__ (ch.bazl.luftfahrthindernis)                                                                                              |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerodrome obstacles < 25 / 60 m <//map.geo.admin.ch/?layers=ch.bazl.luftfahrthindernis-klein>`__ (ch.bazl.luftfahrthindernis-klein)                                                                           |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Latest changes of obstacles <//map.geo.admin.ch/?layers=ch.bazl.luftfahrthindernis-aenderungen>`__ (ch.bazl.luftfahrthindernis-aenderungen)                                                                   |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Aerial images cantons <//map.geo.admin.ch/?layers=ch.swisstopo.lubis-luftbilder-dritte-kantone>`__ (ch.swisstopo.lubis-luftbilder-dritte-kantone)                                                             |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Swiss Parks (Zones) <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-paerke_nationaler_bedeutung>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung)                                                     |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Swiss Parks (Perimeter) <//map.geo.admin.ch/?layers=ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter>`__ (ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter)                             |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Land use statistics standard <//map.geo.admin.ch/?layers=ch.bfs.arealstatistik>`__ (ch.bfs.arealstatistik)                                                                                                    |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Land use statistics cover <//map.geo.admin.ch/?layers=ch.bfs.arealstatistik-bodenbedeckung>`__ (ch.bfs.arealstatistik-bodenbedeckung)                                                                         |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Mapping of Floodplains of National Importance <//map.geo.admin.ch/?layers=ch.bafu.auen-vegetationskarten>`__ (ch.bafu.auen-vegetationskarten)                                                                 |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Electricity Transmission Lines sectoral plan <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_kraft>`__ (ch.bfe.sachplan-uebertragungsleitungen_kraft)                                      |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Consultation <//map.geo.admin.ch/?layers=ch.bfe.sachplan-uebertragungsleitungen_anhoerung>`__ (ch.bfe.sachplan-uebertragungsleitungen_anhoerung)                                                              |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `Housing inventory <//map.geo.admin.ch/?layers=ch.are.wohnungsinventar-zweitwohnungsanteil>`__ (ch.are.wohnungsinventar-zweitwohnungsanteil)                                                                   |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SP Aviation infrastructure <//map.geo.admin.ch/?layers=ch.bazl.sachplan-infrastruktur-luftfahrt_kraft>`__ (ch.bazl.sachplan-infrastruktur-luftfahrt_kraft)                                                    |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Update | `SIL consultation <//map.geo.admin.ch/?layers=ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung>`__ (ch.bazl.sachplan-infrastruktur-luftfahrt_anhorung)                                                        |
++--------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _releasenotes_20251008:
 

@@ -2268,6 +2268,23 @@ class GewaesserUferbestockung(Base, Vector):
 register(GewaesserUferbestockung.__bodId__, GewaesserUferbestockung)
 
 
+class UnescoWeltnaturerbe(Base, Vector):
+    __tablename__ = 'unesco_weltnaturerbe'
+    __table_args__ = ({'schema': 'schutzge', 'autoload': False})
+    __bodId__ = 'ch.bafu.unesco-weltnaturerbe'
+    __template__ = 'templates/htmlpopup/bafu_unesco_weltnaturerbe.mako'
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    zone = Column('zone', Unicode)
+    date = Column('date', Unicode)
+    link = Column('link', Unicode)
+    area = Column('area', Float)
+    the_geom = Column('the_geom', Geometry2D)
+
+register(UnescoWeltnaturerbe.__bodId__, UnescoWeltnaturerbe)
+
+
 class LebensraumkarteSchweiz(Base, Vector):
     __tablename__ = 'lebensraumkarte_schweiz'
     __table_args__ = ({'schema': 'lebensraumkarte', 'autoload': False})

@@ -414,24 +414,21 @@ register(ArmeeKriegsdenkmaeler.__bodId__, ArmeeKriegsdenkmaeler)
 
 
 class Ladestationen(Base, Vector):
-    __tablename__ = 'elektrotankstellen'
+    __tablename__ = 'elektroladestationen'
     __table_args__ = ({'schema': 'militaer', 'autoload': False})
     __template__ = 'templates/htmlpopup/vbs_ladestationen.mako'
     __bodId__ = 'ch.vbs.ladestationen'
-    __label__ = 'standort'
+    __label__ = 'ladestation'
     id = Column('bgdi_id', Integer, primary_key=True)
-    standort = Column('standort', Unicode)
+    ladestation = Column('ladestation', Unicode)
+    status = Column('status', Unicode)
     strasse = Column('strasse', Unicode)
+    nummer = Column('nummer', Unicode)
     plz = Column('plz', Integer)
     ort = Column('ort', Unicode)
-    oeffnungszeiten = Column('oeffnungszeiten', Unicode)
-    anzahl_ladepunkte = Column('anzahl_ladepunkte', Unicode)
-    leistung = Column('leistung', Unicode)
-    typ_stecker = Column('typ_stecker', Unicode)
-    hinweis = Column('hinweis', Unicode)
-    kontakt = Column('kontakt', Unicode)
-    x_koordinate = Column('x_koordinate', Integer)
-    y_koordinate = Column('y_koordinate', Integer)
+    breitengrad = Column('breitengrad', Float)
+    laengengrad = Column('laengengrad', Float)
+    anzahl_ladepunkte = Column('anzahl_ladepunkte', Integer)
     bemerkungen = Column('bemerkungen', Unicode)
     the_geom = Column(Geometry2D)
 

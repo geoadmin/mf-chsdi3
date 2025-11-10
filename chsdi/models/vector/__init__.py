@@ -1,11 +1,11 @@
 import re
 import geojson
-import esrijson
 import datetime
 import decimal
 from pyramid.threadlocal import get_current_registry
 from chsdi.models.types import GeometryChsdi
 from chsdi.lib.helpers import transform_round_geometry
+from chsdi.lib.esrijson.feature import Feature
 from shapely.geometry import box
 from sqlalchemy.sql import func
 from sqlalchemy.orm.util import class_mapper
@@ -119,14 +119,14 @@ class Vector(object):
             geom = self.transform_shape(geom, srid, rounding=True)
             bbox = self.transform_shape(bbox, srid, rounding=True)
 
-            return esrijson.Feature(id=id,
-                                   featureId=id,  # Duplicate id for backward compat...
-                                   geometry=geom,
-                                   wkid=srid,  # self.geometry_column().type.srid_out,
-                                   attributes=properties,
-                                   bbox=bbox,
-                                   layerBodId=self.__bodId__,
-                                   layerName=trans(self.__bodId__))
+            return Feature(id=id,
+                           featureId=id,  # Duplicate id for backward compat...
+                           geometry=geom,
+                           wkid=srid,  # self.geometry_column().type.srid_out,
+                           attributes=properties,
+                           bbox=bbox,
+                           layerBodId=self.__bodId__,
+                           layerName=trans(self.__bodId__))
         return self._no_geom_template(trans)
 
     def to_geojson(self, trans, returnGeometry, srid=DEFAULT_OUTPUT_SRID):
