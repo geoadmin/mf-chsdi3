@@ -125,6 +125,7 @@ def check_even(number):
         return True
     return False
 
+
 def remove_accents(input_str):
     if input_str is None:
         return input_str

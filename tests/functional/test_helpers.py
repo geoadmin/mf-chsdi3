@@ -2,7 +2,7 @@ import unittest
 from pyramid import testing
 from chsdi.lib.helpers import (
     make_agnostic, sanitize_url, _transform_point,
-    check_even, format_search_text, remove_accents,
+    check_even, remove_accents,
     quoting, float_raise_nan, resource_exists, parseHydroXML, locale_negotiator,
     parse_box2d, center_from_box2d, format_scale,
     parse_date_string, parse_date_datenstand, int_with_apostrophe, get_loaderjs_url,
@@ -108,15 +108,6 @@ class TestHelpers(unittest.TestCase):
         testnumber = 5
         result = check_even(testnumber)
         self.assertFalse(result)
-
-    def test_format_search_text(self):
-        testinput_str = 'Hallo!'
-        result = format_search_text(testinput_str)
-        self.assertEqual(result, 'Hallo\\!')
-
-        testinput_str2 = 'über'
-        result2 = format_search_text(testinput_str2)
-        self.assertEqual(result2, 'ueber')
 
     def test_remove_accents(self):
         testinput_str = None
