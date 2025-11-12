@@ -123,10 +123,7 @@ def main(global_config, **settings):
     config.add_static_view('static', 'chsdi:static', cache_max_age=static_max_age)
     config.add_static_view('images', 'chsdi:static/images', cache_max_age=static_max_age)
     config.add_static_view('js', 'chsdi:static/js', cache_max_age=static_max_age)
-    config.add_static_view('examples', 'chsdi:static/doc/examples', cache_max_age=static_max_age)
     config.add_static_view('vectorStyles', 'chsdi:static/vectorStyles', cache_max_age=static_max_age)
-    # keep this the last one
-    config.add_static_view('/', 'chsdi:static/doc/build', cache_max_age=static_max_age)
 
     # required to find code decorated by view_config
     config.scan(ignore=['chsdi.tests', 'chsdi.models.bod'])
