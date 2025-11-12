@@ -108,6 +108,7 @@ def main(global_config, **settings):
     config.add_route('checker', '/checker', request_method=request_method)
     config.add_route('checker_dev', '/checker_dev', request_method=request_method)
     config.add_route('translations', '/rest/services/translations', request_method=request_method)
+    config.add_route('root', '/', request_method=request_method)
 
     config.add_route('stationboard', '/stationboard/stops/{id}', request_method=request_method)
     config.add_route('color', '/color/{r},{g},{b}/{image}', request_method=request_method)
@@ -123,10 +124,7 @@ def main(global_config, **settings):
     config.add_static_view('static', 'chsdi:static', cache_max_age=static_max_age)
     config.add_static_view('images', 'chsdi:static/images', cache_max_age=static_max_age)
     config.add_static_view('js', 'chsdi:static/js', cache_max_age=static_max_age)
-    config.add_static_view('examples', 'chsdi:static/doc/examples', cache_max_age=static_max_age)
     config.add_static_view('vectorStyles', 'chsdi:static/vectorStyles', cache_max_age=static_max_age)
-    # keep this the last one
-    config.add_static_view('/', 'chsdi:static/doc/build', cache_max_age=static_max_age)
 
     # required to find code decorated by view_config
     config.scan(ignore=['chsdi.tests', 'chsdi.models.bod'])

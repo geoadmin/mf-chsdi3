@@ -17,7 +17,6 @@ from pyramid.url import route_url
 from pyramid.httpexceptions import HTTPBadRequest, HTTPRequestTimeout
 import unicodedata
 
-from urllib.parse import urlparse, urljoin, quote
 from functools import reduce
 import xml.etree.ElementTree as etree
 from pyproj import CRS, Transformer
@@ -90,15 +89,6 @@ def resource_exists(path, headers=None, verify=False):
     return r.status_code == requests.codes.ok  # pylint: disable=no-member
 
 
-def sanitize_url(url):
-    sanitized = url
-    try:
-        sanitized = urljoin(url, urlparse(url).path.replace('//', '/'))
-    except Exception:
-        pass
-    return sanitized
-
-
 def locale_negotiator(request):
     try:
         lang = request.params.get('lang')
@@ -120,18 +110,6 @@ def locale_negotiator(request):
     return lang
 
 
-def check_even(number):
-    if number % 2 == 0:
-        return True
-    return False
-
-
-def format_search_text(input_str):
-    return remove_accents(
-        escape_sphinx_syntax(input_str)
-    )
-
-
 def remove_accents(input_str):
     if input_str is None:
         return input_str
@@ -142,28 +120,6 @@ def remove_accents(input_str):
     input_str = input_str.replace('ö', 'oe')
     input_str = input_str.replace('Ö', 'oe')
     return ''.join(c for c in unicodedata.normalize('NFD', input_str) if unicodedata.category(c) != 'Mn')
-
-
-def escape_sphinx_syntax(input_str):
-    if input_str is None:
-        return input_str
-    input_str = input_str.replace('|', '\\|')
-    input_str = input_str.replace('!', '\\!')
-    input_str = input_str.replace('@', '\\@')
-    input_str = input_str.replace('&', '\\&')
-    input_str = input_str.replace('~', '\\~')
-    input_str = input_str.replace('^', '\\^')
-    input_str = input_str.replace('=', '\\=')
-    input_str = input_str.replace('/', '\\/')
-    input_str = input_str.replace('(', '\\(')
-    input_str = input_str.replace(')', '\\)')
-    input_str = input_str.replace(']', '\\]')
-    input_str = input_str.replace('[', '\\[')
-    input_str = input_str.replace('*', '\\*')
-    input_str = input_str.replace('<', '\\<')
-    input_str = input_str.replace('$', '\\$')
-    input_str = input_str.replace('"', '\"')
-    return input_str
 
 
 def format_query(model, value, lang):
@@ -250,48 +206,6 @@ def format_query(model, value, lang):
         log.error("Unkown error while parsing where/layerDefs: {}".format(e))
         return None
     return where
-
-
-def quoting(text):
-    return quote(text.encode('utf-8'))
-
-
-def parseHydroXML(id, root):
-    html_attr = {'date_time': '-', 'abfluss': '-', 'wasserstand': '-', 'wassertemperatur': '-'}
-    for child in root:
-        fid = child.attrib['StrNr']
-        if fid == id:
-            if child.attrib['Typ'] == '10':
-                for attr in child:
-                    if attr.tag == 'Datum':
-                        html_attr['date_time'] = attr.text
-                    # Zeit is always parsed after Datum
-                    elif attr.tag == 'Zeit':
-                        html_attr['date_time'] = html_attr['date_time'] + ' ' + attr.text
-                    elif attr.tag == 'Wert':
-                        html_attr['abfluss'] = attr.text
-                        break
-            elif child.attrib['Typ'] == '02':
-                for attr in child:
-                    if attr.tag == 'Datum':
-                        html_attr['date_time'] = attr.text
-                    # Zeit is always parsed after Datum
-                    elif attr.tag == 'Zeit':
-                        html_attr['date_time'] = html_attr['date_time'] + ' ' + attr.text
-                    elif attr.tag == 'Wert':
-                        html_attr['wasserstand'] = attr.text
-                        break
-            elif child.attrib['Typ'] == '03':
-                for attr in child:
-                    if attr.tag == 'Datum':
-                        html_attr['date_time'] = attr.text
-                    # Zeit is always parsed after Datum
-                    elif attr.tag == 'Zeit':
-                        html_attr['date_time'] = html_attr['date_time'] + ' ' + attr.text
-                    elif attr.tag == 'Wert':
-                        html_attr['wassertemperatur'] = attr.text
-                        break
-    return html_attr
 
 
 def imagesize_from_metafile(tileUrlBasePath, bvnummer):
@@ -476,21 +390,6 @@ def parse_date_datenstand(dateDatenstand):
         else:
             return '-'
     return result
-
-
-def format_scale(scale):
-    """Format the scale denominator inserting the thousand separator (')
-
-       Example:  50000  gives 1:50'000
-    """
-    scale_str = str(scale)
-    n = ''
-    while len(scale_str) > 3:
-        scale_prov = int(float(scale_str)) // 1000
-        n = n + "'000"
-        scale_str = str(scale_prov)
-    scale = "1:" + scale_str + n
-    return scale
 
 
 def int_with_apostrophe(x):
