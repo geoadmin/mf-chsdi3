@@ -37,6 +37,4 @@ Portions of mf-chsdi3 are based on works by others. A non-extensive list:
 
 [Pyramid Source Code](https://github.com/Pylons/pyramid/blob/master/LICENSE.txt)
 
-[Sphinx Doc Source Code](https://github.com/sphinx-doc/sphinx/blob/master/LICENSE)
-
 [OpenLayers 3 Source Code](https://github.com/openlayers/ol3/blob/master/LICENSE.md)

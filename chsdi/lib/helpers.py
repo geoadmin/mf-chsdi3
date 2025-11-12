@@ -125,13 +125,6 @@ def check_even(number):
         return True
     return False
 
-
-def format_search_text(input_str):
-    return remove_accents(
-        escape_sphinx_syntax(input_str)
-    )
-
-
 def remove_accents(input_str):
     if input_str is None:
         return input_str
@@ -142,28 +135,6 @@ def remove_accents(input_str):
     input_str = input_str.replace('ö', 'oe')
     input_str = input_str.replace('Ö', 'oe')
     return ''.join(c for c in unicodedata.normalize('NFD', input_str) if unicodedata.category(c) != 'Mn')
-
-
-def escape_sphinx_syntax(input_str):
-    if input_str is None:
-        return input_str
-    input_str = input_str.replace('|', '\\|')
-    input_str = input_str.replace('!', '\\!')
-    input_str = input_str.replace('@', '\\@')
-    input_str = input_str.replace('&', '\\&')
-    input_str = input_str.replace('~', '\\~')
-    input_str = input_str.replace('^', '\\^')
-    input_str = input_str.replace('=', '\\=')
-    input_str = input_str.replace('/', '\\/')
-    input_str = input_str.replace('(', '\\(')
-    input_str = input_str.replace(')', '\\)')
-    input_str = input_str.replace(']', '\\]')
-    input_str = input_str.replace('[', '\\[')
-    input_str = input_str.replace('*', '\\*')
-    input_str = input_str.replace('<', '\\<')
-    input_str = input_str.replace('$', '\\$')
-    input_str = input_str.replace('"', '\"')
-    return input_str
 
 
 def format_query(model, value, lang):
