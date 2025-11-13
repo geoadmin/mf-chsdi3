@@ -37,7 +37,6 @@ setuptools = "<81"  # https://github.com/Pylons/pyramid/issues/3731
 
 [dev-packages]
 waitress = "*"
-PyRSS2Gen = "*"
 flake8 = "*"
 pep8 = "*"
 pyflakes = "*"
@@ -47,8 +46,6 @@ Babel = "*"
 beautifulsoup4 = "*"
 WebTest = "*"
 unittest-xml-reporting = "*"
-Sphinx = "*"
-sphinx-rtd-theme = "*"
 nose2 = "*"
 coverage = "*"
 requests-mock = "*"

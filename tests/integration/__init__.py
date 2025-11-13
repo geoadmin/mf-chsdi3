@@ -14,7 +14,6 @@ from chsdi.lib.validation import SUPPORTED_OUTPUT_SRS
 from shapely.geometry import box, Point
 
 s3_tests = strtobool(os.environ.get('S3_TESTS', '1'))
-sphinx_tests = strtobool(os.environ.get('SPHINX_TESTS', '1'))
 
 
 def reproject_to_srid(string_coords, srid_from, srid_to, round_to=2):
