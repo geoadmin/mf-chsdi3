@@ -2830,7 +2830,7 @@ class AmtlichesAdressVerzeichnis(Base, Vector):
     __bodId__ = 'ch.swisstopo.amtliches-gebaeudeadressverzeichnis'
     __label__ = 'adr_egaid'
     __queryable_attributes__ = ['adr_egaid', 'bdg_egid', 'adr_edid', 'str_esid', 'stn_label', 'adr_number']
-    id = Column('id', BigInteger, primary_key=True)
+    id = Column('legacy_id', Unicode, primary_key=True)
     adr_egaid = Column('adr_egaid', BigInteger)
     bdg_egid = Column('bdg_egid', BigInteger)
     adr_edid = Column('adr_edid', Integer)
