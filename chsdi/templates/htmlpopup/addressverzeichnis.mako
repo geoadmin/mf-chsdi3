@@ -16,7 +16,7 @@
     official = 'yesText' if c['attributes']['adr_official'] else 'noText'
     %>
 
-    <tr><td class="cell-left">${_('ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_egaid')}</td>      <td>${c['featureId']}</td></tr>
+    <tr><td class="cell-left">${_('ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_egaid')}</td>      <td>${c['attributes']['adr_egaid'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.swisstopo.amtliches-gebaeudeadressverzeichnis.bdg_egid')}</td>       <td>${c['attributes']['bdg_egid'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.swisstopo.amtliches-gebaeudeadressverzeichnis.adr_edid')}</td>       <td>${c['attributes']['adr_edid']}</td></tr>
     <tr><td class="cell-left">${_('ch.swisstopo.amtliches-gebaeudeadressverzeichnis.str_esid')}</td>       <td>${c['attributes']['str_esid'] or '-'}</td></tr>
