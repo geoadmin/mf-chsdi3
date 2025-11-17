@@ -333,7 +333,7 @@ class GenGrenzenAgglo:
     __label__ = 'gmd_nr'
     id = Column('bgdi_id', Integer, primary_key=True)
     gmd_name = Column('gmd_name', Unicode)
-    gmd_nr = Column('gmd_nr', Integer)
+    gmd_nr = Column('gmd_nr', Unicode)
     acode = Column('acode', Integer)
     aname = Column('aname', Unicode)
     area_ha = Column('area_ha', Float)
