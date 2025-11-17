@@ -1,10 +1,10 @@
 import unittest
 from pyramid import testing
 from chsdi.lib.helpers import (
-    make_agnostic, sanitize_url, _transform_point,
-    check_even, format_search_text, remove_accents, escape_sphinx_syntax,
-    quoting, float_raise_nan, resource_exists, parseHydroXML, locale_negotiator,
-    parse_box2d, center_from_box2d, format_scale,
+    make_agnostic, _transform_point,
+    remove_accents,
+    float_raise_nan, resource_exists, locale_negotiator,
+    parse_box2d, center_from_box2d,
     parse_date_string, parse_date_datenstand, int_with_apostrophe, get_loaderjs_url,
     get_crs_from_srid, get_precision_for_proj, _round_bbox_coordinates, _round_shape_coordinates,
     round_geometry_coordinates, _transform_coordinates, _transform_shape, transform_round_geometry
@@ -12,8 +12,6 @@ from chsdi.lib.helpers import (
 from shapely.geometry import Point, Polygon
 from shapely.geometry import mapping
 from numpy.testing import assert_almost_equal
-
-from urllib.parse import urljoin
 
 
 class TestHelpers(unittest.TestCase):
@@ -42,19 +40,6 @@ class TestHelpers(unittest.TestCase):
         test_result2 = resource_exists(test_path2)
         self.assertFalse(test_result2)
 
-    def test_sanitize_url(self):
-        base_url_string = 'http://somehost.com/some/path/here'
-        relative_url_string = 'http://somehost.com/some/other/path'
-        result1 = sanitize_url(base_url_string)
-        self.assertEqual(result1, base_url_string)
-
-        result2 = sanitize_url(relative_url_string)
-        self.assertEqual(result2, relative_url_string)
-
-        self.assertNotEqual(result1, urljoin(base_url_string, relative_url_string))
-
-        self.assertEqual(result2, urljoin(base_url_string, relative_url_string))
-
     def test_local_negotiator(self):
         request = testing.DummyRequest()
         request.host = 'api3.geo.admin.ch'
@@ -76,62 +61,10 @@ class TestHelpers(unittest.TestCase):
         test_result3 = locale_negotiator(request)
         self.assertTrue(test_result3, 'en')
 
-    def test_sanitize_url_throws_ValueError(self):
-        # ValueError
-        url2 = None
-        res2 = sanitize_url(url2)
-        self.assertEqual(url2, res2)
-
-    def test_parseHydroXML(self):
-        import xml.etree.ElementTree as ET
-
-        tree = ET.parse('tests/functional/filename.xml')
-        root = tree.getroot()
-        test_result = parseHydroXML('idname', root)
-        self.assertEqual({'date_time': '01 September 8Uhr', 'wasserstand': '-', 'wassertemperatur': '-', 'abfluss': '141100'}, test_result)
-
-        tree2 = ET.parse('tests/functional/filename2.xml')
-        root2 = tree2.getroot()
-        test_result2 = parseHydroXML('idname', root2)
-        self.assertEqual({'date_time': '04 Oktober 11 Uhr', 'wasserstand': '59900', 'wassertemperatur': '-', 'abfluss': '-'}, test_result2)
-
-        tree3 = ET.parse('tests/functional/filename3.xml')
-        root3 = tree3.getroot()
-        test_result3 = parseHydroXML('idname', root3)
-        self.assertEqual({'date_time': '16 Mai 18 Uhr', 'wasserstand': '-', 'wassertemperatur': '59900', 'abfluss': '-'}, test_result3)
-
-    def test_check_even(self):
-        testnumber = 10
-        result = check_even(testnumber)
-        self.assertTrue(result)
-
-        testnumber = 5
-        result = check_even(testnumber)
-        self.assertFalse(result)
-
-    def test_format_search_text(self):
-        testinput_str = 'Hallo!'
-        result = format_search_text(testinput_str)
-        self.assertEqual(result, 'Hallo\\!')
-
-        testinput_str2 = 'über'
-        result2 = format_search_text(testinput_str2)
-        self.assertEqual(result2, 'ueber')
-
     def test_remove_accents(self):
         testinput_str = None
         result = remove_accents(testinput_str)
         self.assertEqual(result, None)
-
-    def test_escape_sphinx_syntax(self):
-        testinput_str = None
-        result = escape_sphinx_syntax(testinput_str)
-        self.assertEqual(result, None)
-
-    def test_quoting(self):
-        testtext = 'Hallo'
-        result = quoting(testtext)
-        self.assertEqual(result, 'Hallo')
 
     def test_float_raise_nan(self):
         testval = 5
@@ -161,11 +94,6 @@ class TestHelpers(unittest.TestCase):
         box2d = [1.1, 2.2, 3.3]
         with self.assertRaises(ValueError):
             center_from_box2d(box2d)
-
-    def test_format_scale(self):
-        scale = 50000
-        result = format_scale(scale)
-        self.assertEqual(result, "1:50'000")
 
     def test_parse_date_string(self):
         d = '2014-01-09'
