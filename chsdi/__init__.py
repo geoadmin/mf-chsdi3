@@ -108,6 +108,7 @@ def main(global_config, **settings):
     config.add_route('checker', '/checker', request_method=request_method)
     config.add_route('checker_dev', '/checker_dev', request_method=request_method)
     config.add_route('translations', '/rest/services/translations', request_method=request_method)
+    config.add_route('root', '/', request_method=request_method)
 
     config.add_route('stationboard', '/stationboard/stops/{id}', request_method=request_method)
     config.add_route('color', '/color/{r},{g},{b}/{image}', request_method=request_method)
