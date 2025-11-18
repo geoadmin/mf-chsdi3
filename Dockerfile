@@ -1,4 +1,4 @@
-FROM python:3.13-slim-bookworm AS builder
+FROM python:3.13-slim-trixie AS builder
 
 RUN apt-get update -qq \
     && DEBIAN_FRONTEND=noninteractive apt-get install -qq -y  \
@@ -24,7 +24,7 @@ WORKDIR /usr/src
 RUN /root/.local/bin/pipenv sync \
     && /root/.local/bin/pipenv run pip install mod_wsgi
 
-FROM python:3.13-slim-bookworm AS runtime
+FROM python:3.13-slim-trixie AS runtime
 
 ENV VHOST_DIR=/var/www/vhosts/mf-chsdi3
 ENV INSTALL_DIR=/var/www/vhosts/mf-chsdi3/private/chsdi
