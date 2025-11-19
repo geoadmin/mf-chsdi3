@@ -52,11 +52,25 @@ RUN apt-get update -qq \
     && rm -rf /var/lib/apt/lists/* \
     && groupadd --gid 2500 ${GROUP} \
     && useradd --uid 2500 --gid ${GROUP} --shell /bin/sh --create-home ${USER} \
+    && usermod -aG ${GROUP} ${MODWSGI_USER} \
     && mkdir -p ${VHOST_DIR}/conf \
     && mkdir -p ${VHOST_DIR}/private \
     && mkdir -p ${VHOST_DIR}/cgi-bin \
     && mkdir -p ${VHOST_DIR}/htdocs \
     && mkdir -p ${VHOST_DIR}/logs \
+    && mkdir -p ${INSTALL_DIR}/apache-config \
+    && rm -rf /var/run/apache2 \
+    && mkdir -p /var/run/apache2 \
+    && rm -rf /var/log/apache2 \
+    && mkdir -p /var/log/apache2 \
+    && chown -R ${USER}:${GROUP} ${VHOST_DIR} \
+    && chown -R ${USER}:${GROUP} /var/run/apache2 \
+    && chown -R ${USER}:${GROUP} /var/log/apache2 \
+    && chown ${USER}:${GROUP} /etc/apache2/sites-available/000-default.conf \
+    && chown ${USER}:${GROUP} /etc/apache2/ports.conf \
+    && chown ${USER}:${GROUP} /etc/apache2/envvars \
+    && sed -i 's/export APACHE_RUN_USER=www-data/export APACHE_RUN_USER='${USER}'/' /etc/apache2/envvars \
+    && sed -i 's/export APACHE_RUN_GROUP=www-data/export APACHE_RUN_GROUP='${GROUP}'/' /etc/apache2/envvars \
     &&  echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf \
     && a2enconf fqdn \
     && a2enmod \
@@ -118,6 +132,8 @@ LABEL author=${AUTHOR}
 ENV APP_VERSION=${VERSION}
 RUN sed -i 's/${APP_VERSION}/'${APP_VERSION}'/g' chsdi/config/base.ini.in \
     && .venv/bin/python -m pip install -e .
+
+USER ${USER}
 
 # NOTE: Here below we cannot use environment variable with ENTRYPOINT using the `exec` form.
 # The ENTRYPOINT `exec` form is required in order to use the docker-entrypoint.sh as first
