@@ -30,10 +30,9 @@ ENV VHOST_DIR=/var/www/vhosts/mf-chsdi3
 ENV INSTALL_DIR=/var/www/vhosts/mf-chsdi3/private/chsdi
 ENV APACHE_ENTRY_PATH=
 ENV APACHE_BASE_PATH=main
-ENV MODWSGI_USER=www-data
 
-ENV USER=geodata
-ENV GROUP=geodata
+ENV USER=www-data
+ENV GROUP=www-data
 
 # Setup default logging levels
 ENV APACHE_LOG_LEVEL=info
@@ -50,9 +49,6 @@ RUN apt-get update -qq \
         libgeos-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
-    && groupadd --gid 2500 ${GROUP} \
-    && useradd --uid 2500 --gid ${GROUP} --shell /bin/sh --create-home ${USER} \
-    && usermod -aG ${GROUP} ${MODWSGI_USER} \
     && mkdir -p ${VHOST_DIR}/conf \
     && mkdir -p ${VHOST_DIR}/private \
     && mkdir -p ${VHOST_DIR}/cgi-bin \
@@ -69,8 +65,6 @@ RUN apt-get update -qq \
     && chown ${USER}:${GROUP} /etc/apache2/sites-available/000-default.conf \
     && chown ${USER}:${GROUP} /etc/apache2/ports.conf \
     && chown ${USER}:${GROUP} /etc/apache2/envvars \
-    && sed -i 's/export APACHE_RUN_USER=www-data/export APACHE_RUN_USER='${USER}'/' /etc/apache2/envvars \
-    && sed -i 's/export APACHE_RUN_GROUP=www-data/export APACHE_RUN_GROUP='${GROUP}'/' /etc/apache2/envvars \
     &&  echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf \
     && a2enconf fqdn \
     && a2enmod \
