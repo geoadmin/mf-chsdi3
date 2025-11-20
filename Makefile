@@ -430,6 +430,7 @@ $(LANGUAGES_MO_FILES): $(LANGUAGES_PO_FILES)
 
 $(LOGS_DIR):
 	mkdir -p ${LOGS_DIR}
+	chmod 777 ${LOGS_DIR}
 
 
 guard-%:

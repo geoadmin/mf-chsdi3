@@ -60,7 +60,7 @@ WSGIPassAuthorization On
 
 WSGIDaemonProcess mf-chsdi3:${APACHE_BASE_PATH} \
                   display-name=%{GROUP} \
-                  user=${MODWSGI_USER} \
+                  user=${USER} \
                   processes=${WSGI_PROCESSES} \
                   threads=${WSGI_THREADS} \
                   python-home=${INSTALL_DIR}/.venv
