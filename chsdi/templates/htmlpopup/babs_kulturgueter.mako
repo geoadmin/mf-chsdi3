@@ -61,15 +61,6 @@
         copyright_text = c['attributes']['copyright']
         fotograf_text = c['attributes']['fotograf']
 
-        if c['attributes']['pdf_files_list'] in NO_DATA_VALUES:
-            pdf_files_text = '-'
-        else:
-            pdf_files = c['attributes']['pdf_files_list'].split(',')
-            pdf_files_text = text_separation(
-                ','.join(f'<a href="{pdf_file}" target="_blank">{os.path.basename(pdf_file)}</a>' for pdf_file in pdf_files),
-                '<br />'
-            )
-
         if c['attributes']['weblinks_list'] in NO_DATA_VALUES:
             weblinks_text = '-'
         else:
@@ -120,10 +111,6 @@
             % else:
                 <td>-</td>
             % endif
-        </tr>
-        <tr>
-            <th class="cell-left">${_('ch.babs.kulturgueter.pdf_file')}</th>
-            <td>${_(pdf_files_text)|n}</td>
         </tr>
         <tr>
             <th class="cell-left">${_('ch.babs.kulturgueter.weblink')}</th>
