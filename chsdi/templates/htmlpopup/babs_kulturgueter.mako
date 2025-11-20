@@ -42,8 +42,6 @@
 
         lang = lang if lang in ('fr','it') else 'de'
 
-        import os
-
         NO_DATA_VALUES = ['', None]
 
         def text_separation(csv_value, sep='/'):
