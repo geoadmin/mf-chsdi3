@@ -10,7 +10,7 @@
         <td>${c['attributes']['name'] or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.bafu.unesco-weltnaturerbe.zone')}</td>
+        <td class="cell-left">${_('ch.bafu.unesco-weltnaturerbe.zone_text')}</td>
         <td>${c['attributes']['zone_text'] or '-'}</td>
     </tr>
     <tr>
