@@ -49,23 +49,20 @@ RUN apt-get update -qq \
         libgeos-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
-    && mkdir -p ${VHOST_DIR}/conf \
-    && mkdir -p ${VHOST_DIR}/private \
-    && mkdir -p ${VHOST_DIR}/cgi-bin \
-    && mkdir -p ${VHOST_DIR}/htdocs \
-    && mkdir -p ${VHOST_DIR}/logs \
-    && mkdir -p ${INSTALL_DIR}/apache-config \
-    && rm -rf /var/run/apache2 \
-    && mkdir -p /var/run/apache2 \
-    && rm -rf /var/log/apache2 \
-    && mkdir -p /var/log/apache2 \
-    && chown -R ${USER}:${GROUP} ${VHOST_DIR} \
-    && chown -R ${USER}:${GROUP} /var/run/apache2 \
-    && chown -R ${USER}:${GROUP} /var/log/apache2 \
-    && chown ${USER}:${GROUP} /etc/apache2/sites-available/000-default.conf \
-    && chown ${USER}:${GROUP} /etc/apache2/ports.conf \
-    && chown ${USER}:${GROUP} /etc/apache2/envvars \
-    &&  echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf \
+    && mkdir -p \
+        ${VHOST_DIR}/conf \
+        ${VHOST_DIR}/cgi-bin \
+        ${VHOST_DIR}/htdocs \
+        ${VHOST_DIR}/logs \
+        ${VHOST_DIR}/private \
+        ${INSTALL_DIR}/apache-config \
+        /var/run/apache2 \
+    && chown -R ${USER}:${GROUP} \
+        ${VHOST_DIR} \
+        /etc/apache2 \
+        /var/log/apache2 \
+        /var/run/apache2 \
+    && echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf \
     && a2enconf fqdn \
     && a2enmod \
         auth_basic \
