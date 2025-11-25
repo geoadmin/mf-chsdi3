@@ -30,10 +30,9 @@ ENV VHOST_DIR=/var/www/vhosts/mf-chsdi3
 ENV INSTALL_DIR=/var/www/vhosts/mf-chsdi3/private/chsdi
 ENV APACHE_ENTRY_PATH=
 ENV APACHE_BASE_PATH=main
-ENV MODWSGI_USER=www-data
 
-ENV USER=geodata
-ENV GROUP=geodata
+ENV USER=www-data
+ENV GROUP=www-data
 
 # Setup default logging levels
 ENV APACHE_LOG_LEVEL=info
@@ -50,14 +49,20 @@ RUN apt-get update -qq \
         libgeos-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
-    && groupadd --gid 2500 ${GROUP} \
-    && useradd --uid 2500 --gid ${GROUP} --shell /bin/sh --create-home ${USER} \
-    && mkdir -p ${VHOST_DIR}/conf \
-    && mkdir -p ${VHOST_DIR}/private \
-    && mkdir -p ${VHOST_DIR}/cgi-bin \
-    && mkdir -p ${VHOST_DIR}/htdocs \
-    && mkdir -p ${VHOST_DIR}/logs \
-    &&  echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf \
+    && mkdir -p \
+        ${VHOST_DIR}/conf \
+        ${VHOST_DIR}/cgi-bin \
+        ${VHOST_DIR}/htdocs \
+        ${VHOST_DIR}/logs \
+        ${VHOST_DIR}/private \
+        ${INSTALL_DIR}/apache-config \
+        /var/run/apache2 \
+    && chown -R ${USER}:${GROUP} \
+        ${VHOST_DIR} \
+        /etc/apache2 \
+        /var/log/apache2 \
+        /var/run/apache2 \
+    && echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf \
     && a2enconf fqdn \
     && a2enmod \
         auth_basic \
@@ -118,6 +123,8 @@ LABEL author=${AUTHOR}
 ENV APP_VERSION=${VERSION}
 RUN sed -i 's/${APP_VERSION}/'${APP_VERSION}'/g' chsdi/config/base.ini.in \
     && .venv/bin/python -m pip install -e .
+
+USER ${USER}
 
 # NOTE: Here below we cannot use environment variable with ENTRYPOINT using the `exec` form.
 # The ENTRYPOINT `exec` form is required in order to use the docker-entrypoint.sh as first
