@@ -31,8 +31,11 @@ ENV INSTALL_DIR=/var/www/vhosts/mf-chsdi3/private/chsdi
 ENV APACHE_ENTRY_PATH=
 ENV APACHE_BASE_PATH=main
 
+# USER and USER_ID must match the www-data
+# for kubernetes runAsNonRoot compatibility we have to set a numeric user id in the user directive
+# id -u www-data = 33
 ENV USER=www-data
-ENV GROUP=www-data
+ENV USER_ID=33
 
 # Setup default logging levels
 ENV APACHE_LOG_LEVEL=info
@@ -57,7 +60,7 @@ RUN apt-get update -qq \
         ${VHOST_DIR}/private \
         ${INSTALL_DIR}/apache-config \
         /var/run/apache2 \
-    && chown -R ${USER}:${GROUP} \
+    && chown -R ${USER} \
         ${VHOST_DIR} \
         /etc/apache2 \
         /var/log/apache2 \
@@ -83,10 +86,10 @@ RUN apt-get update -qq \
         alias
 
 # Copy the virtual environment from the builder stage
-COPY --from=builder --chown=${USER}:${GROUP} /usr/src/.venv/ ${INSTALL_DIR}/.venv/
+COPY --from=builder --chown=${USER} /usr/src/.venv/ ${INSTALL_DIR}/.venv/
 
 # Copy the python chsdi package setup files for package installation down below
-COPY --chown=${USER}:${GROUP} \
+COPY --chown=${USER} \
     setup.cfg \
     setup.py \
     MANIFEST.in \
@@ -96,11 +99,11 @@ COPY --chown=${USER}:${GROUP} \
     docker-entrypoint.sh   ${INSTALL_DIR}/
 
 # Add apache configurations and templates
-COPY --chown=${USER}:${GROUP} 90-chsdi3.conf    ${VHOST_DIR}/conf/
-COPY --chown=${USER}:${GROUP} apache            ${INSTALL_DIR}/apache/
+COPY --chown=${USER} 90-chsdi3.conf    ${VHOST_DIR}/conf/
+COPY --chown=${USER} apache            ${INSTALL_DIR}/apache/
 
 # Add the application
-COPY --chown=${USER}:${GROUP} chsdi             ${INSTALL_DIR}/chsdi/
+COPY --chown=${USER} chsdi             ${INSTALL_DIR}/chsdi/
 
 WORKDIR ${INSTALL_DIR}
 
@@ -124,7 +127,7 @@ ENV APP_VERSION=${VERSION}
 RUN sed -i 's/${APP_VERSION}/'${APP_VERSION}'/g' chsdi/config/base.ini.in \
     && .venv/bin/python -m pip install -e .
 
-USER ${USER}
+USER ${USER_ID}
 
 # NOTE: Here below we cannot use environment variable with ENTRYPOINT using the `exec` form.
 # The ENTRYPOINT `exec` form is required in order to use the docker-entrypoint.sh as first
