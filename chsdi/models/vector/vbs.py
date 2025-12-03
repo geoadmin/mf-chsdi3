@@ -12,7 +12,7 @@ Base = bases['vbs']
 class Kulturgueter(Base, Vector):
     __tablename__ = 'kgs'
     __table_args__ = ({'schema': 'babs', 'autoload': False})
-    __template__ = 'templates/htmlpopup/babs_kulturgueter.mako'
+    __template__ = 'templates/htmlpopup/kgs.mako'
     __bodId__ = 'ch.babs.kulturgueter'
     __extended_info__ = True
     __label__ = 'beschreibung'
