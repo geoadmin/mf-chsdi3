@@ -76,7 +76,7 @@ def resource_exists(path, headers=None, verify=False):
     if headers is None:
         headers = {'User-Agent': 'mf-geoadmin/python'}
     try:
-        r = requests.head(path, headers=headers, verify=verify, timeout=REQUESTS_DEFAULT_TIMEOUT)
+        r = requests.head(path, headers=headers, verify=verify, timeout=REQUESTS_DEFAULT_TIMEOUT, allow_redirects=True)
     except Timeout as e:
         log.error('Timeout while requesting HEAD on "%s"\n%s' % (path, e))
         return False
