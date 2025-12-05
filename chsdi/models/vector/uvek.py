@@ -3568,6 +3568,14 @@ class SeilbahnenBundeskonzessionBauwerk(Base, SeilbahnenBundeskonzession, Vector
 register(SeilbahnenBundeskonzessionBauwerk.__bodId__, SeilbahnenBundeskonzessionBauwerk)
 
 
+class SeilbahnenBundeskonzessionSeilstuetzen(Base, SeilbahnenBundeskonzession, Vector):
+    __tablename__ = 'seilbahnen_bundeskonzession_seilstuetzen'
+    __template__ = 'templates/htmlpopup/seilbahnenbundeskonzession_seilstuetzen.mako'
+    bezeichnung = Column('bezeichnung', Unicode)
+
+register(SeilbahnenBundeskonzessionSeilstuetzen.__bodId__, SeilbahnenBundeskonzessionSeilstuetzen)
+
+
 class SeilbahnenBundeskonzessioSeilbahnstreke(Base, SeilbahnenBundeskonzession, Vector):
     __tablename__ = 'seilbahnen_bundeskonzession_seilbahnstrecke'
     __template__ = 'templates/htmlpopup/seilbahnenbundeskonzession_seilbahnstrecke.mako'
