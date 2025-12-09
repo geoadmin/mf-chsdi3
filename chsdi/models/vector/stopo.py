@@ -882,7 +882,9 @@ register(GridstandPk25Meta.__bodId__, GridstandPk25Meta)
 
 class GridstandPk50Meta(Base, GridstandTemplate, Vector):
     __bodId__ = 'ch.swisstopo.pixelkarte-pk50.metadata'
-    __tablename__ = 'view_gridstand_datenhaltung_pk50_tilecache'
+    __tablename__ = 'view_pk50_metadata'
+    __timeInstant__ = 'year'
+    year = Column('year', Unicode)
 
 
 register(GridstandPk50Meta.__bodId__, GridstandPk50Meta)
