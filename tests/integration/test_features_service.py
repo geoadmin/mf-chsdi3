@@ -570,12 +570,12 @@ class TestFeaturesView(TestsBase):
         self.testapp.get('/rest/services/ech/MapServer/ch.bafu.bundesinventare-bln/1/extendedHtmlPopup', status=404)
 
     def test_iframehtmlpopup(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bav.haltestellen-oev/8573140/iframeHtmlPopup', status=200)
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bav.haltestellen-oev/8578523/iframeHtmlPopup', status=200)
         self.assertEqual(resp.content_type, 'text/html')
         self.assertIn('<script src=', resp.text)
 
     def test_htmlpopup_with_iframeservice(self):
-        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bav.haltestellen-oev/8573140/htmlPopup', status=200)
+        resp = self.testapp.get('/rest/services/ech/MapServer/ch.bav.haltestellen-oev/8578523/htmlPopup', status=200)
         self.assertEqual(resp.content_type, 'text/html')
         self.assertIn('<iframe src=', resp.text)
 
