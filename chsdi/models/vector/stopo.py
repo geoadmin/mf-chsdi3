@@ -3344,7 +3344,7 @@ class GeologieGeomolHoeheTopOmmData:
 
 
 class GeologieGeomolHoeheTopOmmDataWells(Base, GeologieGeomolHoeheTopOmmData, Vector):
-    __tablename__ = 'geomol_hoehe_top_omm_data_wells'
+    __tablename__ = 'view_geomol_hoehe_top_omm_data_wells'
     __template__ = 'templates/htmlpopup/geomol_hoehe_top_omm_data_wells.mako'
     __label__ = 'well_name'
     well_name = Column('well_name', Unicode)
@@ -3356,7 +3356,7 @@ register(GeologieGeomolHoeheTopOmmData.__bodId__, GeologieGeomolHoeheTopOmmDataW
 
 
 class GeologieGeomolHoeheTopOmmDataSeismicAll(Base, GeologieGeomolHoeheTopOmmData, Vector):
-    __tablename__ = 'geomol_hoehe_top_omm_data_seismic_all'
+    __tablename__ = 'view_geomol_hoehe_top_omm_data_seismic_all'
     __template__ = 'templates/htmlpopup/geomol_hoehe_top_omm_data_seismic_all.mako'
     __label__ = 'line_name'
     line_name = Column('line_name', Unicode)
@@ -3366,7 +3366,7 @@ register(GeologieGeomolHoeheTopOmmData.__bodId__, GeologieGeomolHoeheTopOmmDataS
 
 
 class GeologieGeomolHoeheTopOmmDataProfileAll(Base, GeologieGeomolHoeheTopOmmData, Vector):
-    __tablename__ = 'geomol_hoehe_top_omm_data_profile_all'
+    __tablename__ = 'view_geomol_hoehe_top_omm_data_profile_all'
     __template__ = 'templates/htmlpopup/geomol_hoehe_top_omm_data_profile_all.mako'
     __label__ = 'profil_name'
     profil_name = Column('profil_name', Unicode)
