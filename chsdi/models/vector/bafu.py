@@ -2276,7 +2276,10 @@ class UnescoWeltnaturerbe(Base, Vector):
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
-    zone = Column('zone', Unicode)
+    zone_de = Column('zone_de', Unicode)
+    zone_fr = Column('zone_fr', Unicode)
+    zone_it = Column('zone_it', Unicode)
+    zone_en = Column('zone_en', Unicode)
     date = Column('date', Unicode)
     link = Column('link', Unicode)
     area = Column('area', Float)

@@ -1,13 +1,17 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
+    <%
+        lang_select = lang if lang in ('fr','it','en') else 'de'
+        zone_text = 'zone_%s' % lang_select
+    %>
     <tr>
         <td class="cell-left">${_('ch.bafu.unesco-weltnaturerbe.name')}</td>
         <td>${c['attributes']['name'] or '-'}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bafu.unesco-weltnaturerbe.zone')}</td>
-        <td>${c['attributes']['zone'] or '-'}</td>
+        <td>${c['attributes'][zone_text] or '-'}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bafu.unesco-weltnaturerbe.date')}</td>

@@ -34,7 +34,6 @@ LANGUAGES_MO_FILES := $(patsubst %,chsdi/locale/%/LC_MESSAGES/chsdi.mo, $(AVAILA
 TRANSLATION_POT_FILE := chsdi/locale/chsdi.pot
 TRANSLATION_DIRS := $(patsubst %,chsdi/locale/%, $(AVAILABLE_LANGUAGES))
 TRANSLATION_FILES := $(TRANSLATION_POT_FILE) $(LANGUAGES_PO_FILES) $(LANGUAGES_MO_FILES)
-DOC_BUILD := chsdi/static/doc/build
 
 # Create legends
 WMSSCALELEGEND ?=
@@ -64,7 +63,6 @@ PIP = $(VENV)/bin/pip3 $(PIP_QUIET)
 PSERVE = $(VENV)/bin/pserve
 PSHELL = $(VENV)/bin/pshell
 PYTHON = $(VENV)/bin/python3
-SPHINX = $(VENV)/bin/sphinx-build
 PYLINT = $(VENV)/bin/pylint
 
 PYTHON_VERSION := $(shell $$(pipenv --py 2> /dev/null) --version 2>&1 | awk '{print $$2}')
@@ -141,10 +139,6 @@ help:
 	@echo "- local-templates    Create the pylons settings file from templates and environment variables for local development."
 	@echo "- serve              Run the wsgi app using the waitress debug server. Port can be set by Env variable HTTP_PORT (default: 6543)"
 	@echo
-	@echo -e "\033[1mWEBSITE AND DOCUMENTATION\033[0m "
-	@echo "- doc                Create the website and static files"
-	@echo "- rss                Create RSS feed from the releasenotes html file"
-	@echo
 	@echo -e "\033[1mDATA INTEGRATION\033[0m "
 	@echo "- legends           Download from the WMS server the legend images for a given layer BODID= WMSHOST=localhost:9X78 WMSSCALELEGEND=50000"
 	@echo
@@ -196,7 +190,7 @@ ci: $(NODE_MODULES)
 
 
 .PHONY: build
-build: guard-VENV node-module-files doc translate chsdi/static/css/extended.min.css rss set-app_version
+build: guard-VENV node-module-files translate chsdi/static/css/extended.min.css set-app_version
 
 
 .PHONY: set-app_version
@@ -230,17 +224,6 @@ local-templates: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD set-app_v
 # Translation are dynamic, the domain is updated at runtime directly from the BOD
 .PHONY: translate
 translate: guard-VENV $(TRANSLATION_FILES)
-
-
-# FIXME add the rss and css compilation
-.PHONY: doc
-doc: guard-VENV $(DOC_BUILD)
-
-
-.PHONY:
-rss: guard-VENV doc chsdi/static/doc/build/releasenotes/index.html
-	@echo "${GREEN}Creating the rss feed from releasenotes${RESET}";
-	${PYTHON} scripts/rssFeedGen.py "https://api3.geo.admin.ch"
 
 
 .PHONY: legends
@@ -445,14 +428,9 @@ $(LANGUAGES_MO_FILES): $(LANGUAGES_PO_FILES)
 	${PYTHON} setup.py compile_catalog -l $(patsubst chsdi/locale/%/LC_MESSAGES/chsdi.mo,%, $@)
 
 
-DOC_FILES_DEPENDENCIES := $(shell find chsdi/static/doc/source ! -name "*.pyc" ! -name __pycache__)
-$(DOC_BUILD): $(DOC_FILES_DEPENDENCIES)
-	@echo "${GREEN}Building the documentation...${RESET}";
-	cd chsdi/static/doc && $(SPHINX) -W -b html source build || exit 1 ;
-
-
 $(LOGS_DIR):
 	mkdir -p ${LOGS_DIR}
+	chmod 777 ${LOGS_DIR}
 
 
 guard-%:
@@ -483,7 +461,6 @@ clean:
 	rm -f chsdi/static/info.json
 	rm -f chsdi/static/robots.txt
 	rm -rf chsdi/static/js/*
-	rm -rf $(DOC_BUILD)
 	rm -f  chsdi/static/css/blueimp-gallery.min.css
 	rm -f  chsdi/static/css/extended.min.css
 	rm -rf $(TRANSLATION_DIRS)
