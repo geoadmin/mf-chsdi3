@@ -1,4 +1,4 @@
-﻿{
+{
   "type": "range",
   "property": "value",
   "ranges": [
@@ -166,7 +166,7 @@
       "geomType": "point",
       "range": [
         1,
-        50
+        120
       ],
       "minResolution": 250,
       "vectorOptions": {
@@ -185,7 +185,7 @@
       "geomType": "point",
       "range": [
         1,
-        50
+        120
       ],
       "minResolution": 100,
       "maxResolution": 250,
@@ -231,7 +231,7 @@
       "geomType": "point",
       "range": [
         1,
-        50
+        120
       ],
       "maxResolution": 100,
       "vectorOptions": {
@@ -275,8 +275,8 @@
     {
       "geomType": "point",
       "range": [
-        50,
-        130
+        120,
+        310
       ],
       "minResolution": 250,
       "vectorOptions": {
@@ -294,8 +294,8 @@
     {
       "geomType": "point",
       "range": [
-        50,
-        130
+        120,
+        310
       ],
       "minResolution": 100,
       "maxResolution": 250,
@@ -340,8 +340,8 @@
     {
       "geomType": "point",
       "range": [
-        50,
-        130
+        120,
+        310
       ],
       "maxResolution": 100,
       "vectorOptions": {
@@ -385,8 +385,8 @@
     {
       "geomType": "point",
       "range": [
-        130,
-        400
+        310,
+        900
       ],
       "minResolution": 250,
       "vectorOptions": {
@@ -404,8 +404,8 @@
     {
       "geomType": "point",
       "range": [
-        130,
-        400
+        310,
+        900
       ],
       "minResolution": 100,
       "maxResolution": 250,
@@ -450,8 +450,8 @@
     {
       "geomType": "point",
       "range": [
-        130,
-        400
+        310,
+        900
       ],
       "maxResolution": 100,
       "vectorOptions": {
@@ -495,7 +495,7 @@
     {
       "geomType": "point",
       "range": [
-        400,
+        900,
         50000
       ],
       "minResolution": 250,
@@ -514,7 +514,7 @@
     {
       "geomType": "point",
       "range": [
-        400,
+        900,
         50000
       ],
       "minResolution": 100,
@@ -560,7 +560,7 @@
     {
       "geomType": "point",
       "range": [
-        400,
+        900,
         50000
       ],
       "maxResolution": 100,
