@@ -1,0 +1,28 @@
+services:
+  service-chsdi3:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: service-chsdi3
+    # Use host networking to access host services directly (Postgres)
+    network_mode: "host"
+    extra_hosts:
+      - "jaeger:127.0.0.1"
+    env_file:
+      - ./.env.default
+    environment:
+      - LOGS_DIR=/tmp
+      # Use host.docker.internal to connect to host machine
+      # don't forget to port forward with `ssh jumphost-pg-geodata-replica`
+      - DBHOST=localhost
+      - PGUSER
+      - PGPASSWORD
+      - OPENTRANS_API_KEY
+    depends_on:
+      - jaeger
+  jaeger:
+    image: jaegertracing/jaeger:2.14.0
+    ports:
+      - "16686:16686"  # Jaeger UI
+      - "4317:4317"    # OTLP gRPC
+      - "4318:4318"    # OTLP HTTP
