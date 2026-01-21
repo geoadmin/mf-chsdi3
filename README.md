@@ -24,9 +24,8 @@
 - [Updating Python Packages](#updating-python-packages)
 - [Varia](#varia)
   - [Lint a JSON file](#lint-a-json-file)
-- [Finish your local setup](#finish-your-local-setup)
-- [Run jaeger and chsdi3 with summon](#run-jaeger-and-chsdi3-with-summon)
-- [Make a HTTP Query](#make-a-http-query)
+- [Local Smoke test for Open Telemetry](#local-smoke-test-for-open-telemetry)
+  - [Make a HTTP Query](#make-a-http-query)
 
 ## Description
 
@@ -229,19 +228,14 @@ export PATH=$(npm bin):$PATH
 jsonlint-cli --pretty temp.json > chsdi/static/vectorStyles/ch.meteoschweiz.messwerte-foehn-10min.json
 ```
 
-# Local Smoke test for Open Telemetry
-
-## Finish your local setup
-
-`make setup`
-
-## Run jaeger and chsdi3 with summon
+## Local Smoke test for Open Telemetry
 
 1. (optional) `aws --profile swisstopo-bgdi-dev sso login`
 2. `ssh jumphost-pg-geodata-replica` to setup SSH Tunnel to DB
-3. `summon -p ssm docker compose up`
+3. `docker compose up` to run a local Jaeger server
+4. `summon -p ssm make dockerrun`
 
-## Make a HTTP Query
+### Make a HTTP Query
 
 Open in a browser or curl:
 
