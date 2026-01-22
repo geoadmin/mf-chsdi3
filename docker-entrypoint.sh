@@ -21,6 +21,11 @@ envsubst < apache/application.wsgi.in > apache/application.wsgi
 envsubst < apache/ports.conf.in > /etc/apache2/ports.conf
 envsubst < apache/wsgi-py3.conf.in > apache/wsgi.conf
 
+# Only generate otel.conf if OpenTelemetry is enabled
+if [ "${OTEL_APACHE_MODULE_ENABLED}" = "ON" ]; then
+    envsubst < apache/otel.conf.in > apache/otel.conf
+fi
+
 # Set Apache to run as the current user to avoid permission issues
 export APACHE_RUN_USER=$(id -un)
 export APACHE_RUN_GROUP=$(id -gn)

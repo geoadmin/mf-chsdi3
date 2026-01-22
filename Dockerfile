@@ -50,6 +50,7 @@ RUN apt-get update -qq \
         gettext-base \
         apache2 \
         libgeos-dev \
+        curl \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir -p \
@@ -84,6 +85,17 @@ RUN apt-get update -qq \
         setenvif \
         status \
         alias
+
+ARG OTEL_WEBSERVER_SDK_VERSION=v1.1.0
+
+# Install OpenTelemetry Apache module from official releases
+RUN curl -fsSL "https://github.com/open-telemetry/opentelemetry-cpp-contrib/releases/download/webserver%2F${OTEL_WEBSERVER_SDK_VERSION}/opentelemetry-webserver-sdk-x64-linux.tgz" \
+      -o /tmp/otel-webserver.tgz \
+  && mkdir -p /opt \
+  && tar -xzf /tmp/otel-webserver.tgz -C /opt \
+  && rm /tmp/otel-webserver.tgz \
+  && cd /opt/opentelemetry-webserver-sdk \
+  && ./install.sh
 
 # Copy the virtual environment from the builder stage
 COPY --from=builder --chown=${USER} /usr/src/.venv/ ${INSTALL_DIR}/.venv/

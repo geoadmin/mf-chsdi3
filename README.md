@@ -24,6 +24,8 @@
 - [Updating Python Packages](#updating-python-packages)
 - [Varia](#varia)
   - [Lint a JSON file](#lint-a-json-file)
+- [Local Smoke test for Open Telemetry](#local-smoke-test-for-open-telemetry)
+  - [Make a HTTP Query](#make-a-http-query)
 
 ## Description
 
@@ -73,6 +75,12 @@ ssh ssh0a.prod.bgdi.ch -L 5432:pg-geodata-replica.bgdi.ch:5432
 ```
 
 Then set the `DBHOST` environment variable to `localhost` (you can do this in your own environment file e.g. `.env.mine` and run the make file as follow: `summon -p ssm make ENV_FILE=.env.mine serve`)
+
+or simpler, when you use the ssh_config provided by infra-ansible-bgdi-dev:
+
+```bash
+ssh jumphost-pg-geodata-replica
+```
 
 ### S3 Vector Bucket Access
 
@@ -219,3 +227,16 @@ pipenv install logging-utilities~=5.0
 export PATH=$(npm bin):$PATH
 jsonlint-cli --pretty temp.json > chsdi/static/vectorStyles/ch.meteoschweiz.messwerte-foehn-10min.json
 ```
+
+## Local Smoke test for Open Telemetry
+
+1. (optional) `aws --profile swisstopo-bgdi-dev sso login`
+2. `ssh jumphost-pg-geodata-replica` to setup SSH Tunnel to DB
+3. `docker compose up` to run a local Jaeger server
+4. `summon -p ssm make dockerrun`
+
+### Make a HTTP Query
+
+Open in a browser or curl:
+
+http://localhost:8009/rest/services/ech/MapServer/identify?layers=all:ch.astra.wanderland-sperrungen_umleitungen&sr=2056&geometry=2604719.0390127604,1196371.217208629&mapExtent=2596957.58,1193196.11,2607937.58,1204006.11&imageDisplay=1098,1081,96&geometryFormat=geojson&geometryType=esriGeometryPoint&limit=10&tolerance=10&returnGeometry=true&lang=en
