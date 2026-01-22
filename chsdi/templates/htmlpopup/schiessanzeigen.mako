@@ -7,8 +7,10 @@ lang = 'de' if lang == 'rm' else lang
 info_url = 'url_%s' % lang
 pdf = 'pdf_%s' % lang
 %>
-    <tr><td class="cell-left">${_('ch.vbs.schiessanzeigen.belplan_id')}</td>       <td>${c['featureId'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.vbs.schiessanzeigen.belplan_id')}</td>       <td>${c['attributes']['belplan_id'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.vbs.schiessanzeigen.bezeichnung')}</td>      <td>${c['attributes']['bezeichnung'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.vbs.schiessanzeigen.belplan_ort_id')}</td>       <td>${c['featureId'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.vbs.schiessanzeigen.bezeichnung_ort')}</td>      <td>${c['attributes']['bezeichnung_ort'] or '-'}</td></tr>
     ## auskunft
     <tr><td class="cell-left">${_('ch.vbs.schiessanzeigen.auskunft')}</td>
     <td>

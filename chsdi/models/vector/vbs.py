@@ -73,13 +73,15 @@ register(Territorialregionen.__bodId__, Territorialregionen)
 
 
 class SchiessAnzeigen(Base, Vector):
-    __tablename__ = 'schiessanzeigen'
+    __tablename__ = 'view_schiessanzeigen'
     __table_args__ = ({'autoload': False})
     __template__ = 'templates/htmlpopup/schiessanzeigen.mako'
     __bodId__ = 'ch.vbs.schiessanzeigen'
     __label__ = 'bezeichnung'
-    id = Column('belplan_id', Unicode, primary_key=True)
+    id = Column('belplan_ort_id', Unicode, primary_key=True)
+    belplan_id = Column('belplan_id', Unicode)
     bezeichnung = Column('bezeichnung', Unicode)
+    bezeichnung_ort = Column('bezeichnung_ort', Unicode)
     infobezeichnung = Column('infobezeichnung', Unicode)
     infotelefonnr = Column('infotelefonnr', Unicode)
     infoemail = Column('infoemail', Unicode)
