@@ -178,6 +178,8 @@ setup: $(NODE_MODULES)
 	# Here it is important NOT to use pipenv otherwise the editable package is added to Pipfile
 	pipenv run pip install -e .
 	if [ ! -e .env.mine ]; then cp .env.default .env.mine; fi
+	mkdir -p ${LOGS_DIR}
+	chmod 777 ${LOGS_DIR}
 
 
 .PHONY: ci
