@@ -5,6 +5,7 @@ from opentelemetry.exporter.otlp.proto.grpc.trace_exporter import OTLPSpanExport
 from opentelemetry.instrumentation.pyramid import PyramidInstrumentor
 from opentelemetry.instrumentation.sqlalchemy import SQLAlchemyInstrumentor
 from opentelemetry.instrumentation.requests import RequestsInstrumentor
+from opentelemetry.instrumentation.logging import LoggingInstrumentor
 from opentelemetry.sdk.resources import Resource
 from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
@@ -49,6 +50,8 @@ def _initialize_tracing() -> bool:
         SQLAlchemyInstrumentor().instrument()
     if strtobool(getenv("OTEL_ENABLE_REQUESTS", "false")):
         RequestsInstrumentor().instrument()
+    if strtobool(getenv("OTEL_ENABLE_LOGGING", "false")):
+        LoggingInstrumentor().instrument()
 
 
 def _setup_trace_provider() -> None:

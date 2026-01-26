@@ -37,10 +37,11 @@ setuptools = "<81"  # https://github.com/Pylons/pyramid/issues/3731
 # OpenTelemetry instrumentation
 opentelemetry-sdk = "~=1.39"
 opentelemetry-exporter-otlp = "~=1.39"
-opentelemetry-instrumentation = "0.60b1"
-opentelemetry-instrumentation-pyramid = "0.60b1"
-opentelemetry-instrumentation-sqlalchemy = "0.60b1"
-opentelemetry-instrumentation-requests = "0.60b1"
+opentelemetry-instrumentation = "*"
+opentelemetry-instrumentation-pyramid = "*"
+opentelemetry-instrumentation-sqlalchemy = "*"
+opentelemetry-instrumentation-requests = "*"
+opentelemetry-instrumentation-logging = "*"
 
 [dev-packages]
 waitress = "*"
