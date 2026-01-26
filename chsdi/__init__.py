@@ -1,6 +1,7 @@
 import os
 import datetime
 from pyramid.config import Configurator
+from pyramid.tweens import INGRESS
 from pyramid.response import Response
 from pyramid.renderers import JSONP
 from pyramid.request import Request
@@ -47,8 +48,18 @@ def main(global_config, **settings):
     request_method = tuple(settings.get('request_method').replace(' ', '').split(','))
     config = Configurator(settings=settings, request_factory=WsgiSchemeAdaptedRequest)
 
-    # Configure OpenTelemetry Pyramid instrumentation
+    # Configure OpenTelemetry Pyramid instrumentation (conditionally adds OTEL tween at INGRESS)
     instrument_pyramid(config)
+
+    # Include pyramid_exclog before adding tweens that depend on its ordering
+    config.include('pyramid_exclog')
+
+    # Add logging context tween - positioned under INGRESS (after OTEL if enabled), over exclog
+    config.add_tween(
+        'chsdi.logging_tweens.logging_context_tween',
+        under=INGRESS,
+        over='pyramid_exclog.exclog_tween_factory'
+    )
 
     config.include('pyramid_mako')
 
