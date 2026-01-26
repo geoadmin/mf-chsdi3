@@ -7,6 +7,7 @@ from pyramid.request import Request
 from sqlalchemy.orm import scoped_session, sessionmaker
 from papyrus.renderers import GeoJSON
 
+from chsdi.utils.otel import instrument_pyramid
 from chsdi.logging_setup import setup_logging
 from chsdi.lib.helpers import strtobool
 from chsdi.renderers import EsriJSON, CSVRenderer
@@ -45,6 +46,10 @@ def main(global_config, **settings):
     # request_method is the type tuple: string->string without space->array->tuple
     request_method = tuple(settings.get('request_method').replace(' ', '').split(','))
     config = Configurator(settings=settings, request_factory=WsgiSchemeAdaptedRequest)
+
+    # Configure OpenTelemetry Pyramid instrumentation
+    instrument_pyramid(config)
+
     config.include('pyramid_mako')
 
     # wrapper around all views

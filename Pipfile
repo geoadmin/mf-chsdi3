@@ -30,10 +30,18 @@ Shapely = "~=2.1"
 numpy = "~=2.3"
 simplejson = "~=3.20"
 unidecode = "~=1.4"
-logging-utilities = "~=5.1"
+logging-utilities = "~=5.3"
 pyramid-exclog = "~=1.1"
 GeoAlchemy2 = "~=0.18"
 setuptools = "<81"  # https://github.com/Pylons/pyramid/issues/3731
+# OpenTelemetry instrumentation
+opentelemetry-sdk = "~=1.39"
+opentelemetry-exporter-otlp = "~=1.39"
+opentelemetry-instrumentation = "*"
+opentelemetry-instrumentation-pyramid = "*"
+opentelemetry-instrumentation-sqlalchemy = "*"
+opentelemetry-instrumentation-requests = "*"
+opentelemetry-instrumentation-logging = "*"
 
 [dev-packages]
 waitress = "*"
