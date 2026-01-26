@@ -50,6 +50,9 @@ formatters:
         duration: "%(duration)s"
         payload: response.payload
       message: message
+      otelSpanID: otelSpanID
+      otelTraceID: otelTraceID
+      otelTraceSampled: otelTraceSampled
 
 handlers:
   console:
