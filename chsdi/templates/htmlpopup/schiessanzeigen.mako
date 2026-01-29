@@ -37,13 +37,13 @@ pdf = 'pdf_%s' % lang
       <table>
     ## # iterating weekdays
       % for i in range(len(c['attributes']['wochentag'])):
-        <tr><td style="padding-right: 5px;">${_('ch.vbs.schiessanzeigen.wochentag.%s' % str(c['attributes']['wochentag'][i]%7+1))}</td>
-        <td style="padding-right: 5px;">${c['attributes']['belegungsdatum'][i]}</td>
+        <tr><td style="padding-right: 1px;">${_('ch.vbs.schiessanzeigen.wochentag.%s' % str(c['attributes']['wochentag'][i]%7+1))}</td>
+        <td style="padding-right: 2px;">${c['attributes']['belegungsdatum'][i]}</td>
         ## # special case no shooting
         % if c['attributes']['kein_schiessen'][i]:
         <td colspan="2">${_('ch.vbs.schiessanzeigen.kein_schiessen')}</td></tr>
         % else:
-          <td style="padding-right: 5px;">${'%s - %s' % (c['attributes']['zeit_von'][i], c['attributes']['zeit_bis'][i])}</td>
+          <td style="padding-right: 1px;">${'%s - %s' % (c['attributes']['zeit_von'][i], c['attributes']['zeit_bis'][i])}</td>
           <td><a href="${c['attributes'][pdf][i]}" target="_blank">PDF</a></td></tr>
         % endif
       % endfor
