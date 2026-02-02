@@ -19,7 +19,7 @@
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bazl.uas-aktivitaetszonen.validityutc')}</td>
-        <td>${c['attributes']['validityutc'] or '-'}</td>
+        <td>${c['attributes']['validity'] or '-'}</td>
     </tr>
     <tr>
         <td class="cell-left">${_('ch.bazl.uas-aktivitaetszonen.lowerlimit')}</td>

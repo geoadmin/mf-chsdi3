@@ -4127,7 +4127,7 @@ class UasAktivitaetszonen(Base, Vector):
     routelocation_en = Column('routelocation_en', Unicode)
     startdatetime = Column('startdatetime', Unicode)
     enddatetime = Column('enddatetime', Unicode)
-    validityutc = Column('validityutc', Unicode)
+    validity = Column('validity', Unicode)
     lowerlimit = Column('lowerlimit', Unicode)
     upperlimit = Column('upperlimit', Unicode)
     heightaboveground = Column('heightaboveground', Unicode)
