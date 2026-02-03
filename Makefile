@@ -178,6 +178,8 @@ setup: $(NODE_MODULES)
 	# Here it is important NOT to use pipenv otherwise the editable package is added to Pipfile
 	pipenv run pip install -e .
 	if [ ! -e .env.mine ]; then cp .env.default .env.mine; fi
+	mkdir -p ${LOGS_DIR}
+	chmod 777 ${LOGS_DIR}
 
 
 .PHONY: ci
@@ -281,6 +283,7 @@ dockerrun: guard-OPENTRANS_API_KEY guard-PGUSER guard-PGPASSWORD clean_logs ${LO
 		--env AWS_SECURITY_TOKEN=${AWS_SECURITY_TOKEN} \
 		--env AWS_SESSION_EXPIRATION${AWS_SESSION_EXPIRATION} \
 		--env AWS_REGION=${AWS_REGION} \
+		--add-host=jaeger:127.0.0.1 \
 		$(DOCKER_IMG_LOCAL_TAG_PATH)
 
 

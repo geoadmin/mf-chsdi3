@@ -4112,3 +4112,28 @@ class WinterWanderwege(Base, Winterwandern, Vector):
     __bodId__ = 'ch.astra.winterwanderwege'
 
 register(WinterWanderwege.__bodId__, WinterWanderwege)
+
+
+class UasAktivitaetszonen(Base, Vector):
+    __table_args__ = ({'schema': 'bazl', 'autoload': False})
+    __tablename__ = 'uas_aktivitaetszonen'
+    __template__ = 'templates/htmlpopup/bazl_uas_aktivitaetszonen.mako'
+    __bodId__ = 'ch.bazl.uas-aktivitaetszonen'
+    __label__ = 'routelocation_de'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    routelocation_de = Column('routelocation_de', Unicode)
+    routelocation_fr = Column('routelocation_fr', Unicode)
+    routelocation_it = Column('routelocation_it', Unicode)
+    routelocation_en = Column('routelocation_en', Unicode)
+    startdatetime = Column('startdatetime', Unicode)
+    enddatetime = Column('enddatetime', Unicode)
+    validity = Column('validity', Unicode)
+    lowerlimit = Column('lowerlimit', Unicode)
+    upperlimit = Column('upperlimit', Unicode)
+    heightaboveground = Column('heightaboveground', Unicode)
+    description = Column('description', Unicode)
+    existingdetectionsystems = Column('existingdetectionsystems', Unicode)
+    coordination = Column('coordination', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(UasAktivitaetszonen.__bodId__, UasAktivitaetszonen)

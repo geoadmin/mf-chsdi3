@@ -7,8 +7,10 @@ lang = 'de' if lang == 'rm' else lang
 info_url = 'url_%s' % lang
 pdf = 'pdf_%s' % lang
 %>
-    <tr><td class="cell-left">${_('ch.vbs.schiessanzeigen.belplan_id')}</td>       <td>${c['featureId'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.vbs.schiessanzeigen.belplan_id')}</td>       <td>${c['attributes']['belplan_id'] or '-'}</td></tr>
     <tr><td class="cell-left">${_('ch.vbs.schiessanzeigen.bezeichnung')}</td>      <td>${c['attributes']['bezeichnung'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.vbs.schiessanzeigen.belplan_ort_id')}</td>       <td>${c['featureId'] or '-'}</td></tr>
+    <tr><td class="cell-left">${_('ch.vbs.schiessanzeigen.bezeichnung_ort')}</td>      <td>${c['attributes']['bezeichnung_ort'] or '-'}</td></tr>
     ## auskunft
     <tr><td class="cell-left">${_('ch.vbs.schiessanzeigen.auskunft')}</td>
     <td>
@@ -35,13 +37,13 @@ pdf = 'pdf_%s' % lang
       <table>
     ## # iterating weekdays
       % for i in range(len(c['attributes']['wochentag'])):
-        <tr><td>${_('ch.vbs.schiessanzeigen.wochentag.%s' % str(c['attributes']['wochentag'][i]%7+1))}</td>
-        <td>${c['attributes']['belegungsdatum'][i]}</td>
-    ## # special case no shooting
+        <tr><td style="padding-right: 1px;">${_('ch.vbs.schiessanzeigen.wochentag.%s' % str(c['attributes']['wochentag'][i]%7+1))}</td>
+        <td style="padding-right: 2px;">${c['attributes']['belegungsdatum'][i]}</td>
+        ## # special case no shooting
         % if c['attributes']['kein_schiessen'][i]:
         <td colspan="2">${_('ch.vbs.schiessanzeigen.kein_schiessen')}</td></tr>
         % else:
-          <td>${'%s - %s' % (c['attributes']['zeit_von'][i], c['attributes']['zeit_bis'][i])}</td>
+          <td style="padding-right: 1px;">${'%s - %s' % (c['attributes']['zeit_von'][i], c['attributes']['zeit_bis'][i])}</td>
           <td><a href="${c['attributes'][pdf][i]}" target="_blank">PDF</a></td></tr>
         % endif
       % endfor

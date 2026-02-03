@@ -64,7 +64,7 @@ class GueteklasseOev(Base, Vector):
     __table_args__ = ({'schema': 'oeffentlicher_verkehr', 'autoload': False})
     __template__ = 'templates/htmlpopup/gueteklasseoev.mako'
     __bodId__ = 'ch.are.gueteklassen_oev'
-    __label__ = 'klasse_fr'
+    __label__ = 'klasse_de'
     id = Column('id', Integer, primary_key=True)
     klasse_de = Column('klasse_de', Unicode)
     klasse_fr = Column('klasse_fr', Unicode)

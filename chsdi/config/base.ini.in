@@ -18,9 +18,6 @@ pyramid.debug_routematch = false
 pyramid.prevent_http_cache = false
 pyramid.default_locale_name = de
 pyramid.includes = pyramid_tm
-pyramid.tweens = chsdi.logging_tweens.logging_context_tween
-                 pyramid_exclog.exclog_tween_factory
-                 pyramid.tweens.excview_tween_factory
 
 # SQLAlchemy database URL
 sqlalchemy.are.url = postgresql://${DBHOST}:${DBPORT}/are_${DBSTAGING}

@@ -1,0 +1,26 @@
+# OpenTelemetry Configuration
+# See https://github.com/open-telemetry/opentelemetry-cpp-contrib/blob/main/instrumentation/otel-webserver-module/README.md
+
+# Load required OpenTelemetry SDK libraries
+LoadFile /opt/opentelemetry-webserver-sdk/sdk_lib/lib/libopentelemetry_common.so
+LoadFile /opt/opentelemetry-webserver-sdk/sdk_lib/lib/libopentelemetry_resources.so
+LoadFile /opt/opentelemetry-webserver-sdk/sdk_lib/lib/libopentelemetry_trace.so
+LoadFile /opt/opentelemetry-webserver-sdk/sdk_lib/lib/libopentelemetry_otlp_recordable.so
+LoadFile /opt/opentelemetry-webserver-sdk/sdk_lib/lib/libopentelemetry_exporter_ostream_span.so
+LoadFile /opt/opentelemetry-webserver-sdk/sdk_lib/lib/libopentelemetry_exporter_otlp_grpc.so
+# Load the Apache module SDK wrapper
+LoadFile /opt/opentelemetry-webserver-sdk/sdk_lib/lib/libopentelemetry_webserver_sdk.so
+
+# Load the OpenTelemetry Apache module (use libmod_apache_otel.so for Apache 2.4)
+LoadModule otel_apache_module /opt/opentelemetry-webserver-sdk/WebServerModule/Apache/libmod_apache_otel.so
+
+# OpenTelemetry module configuration
+ApacheModuleEnabled ${OTEL_APACHE_MODULE_ENABLED}
+ApacheModuleOtelSpanExporter ${OTEL_EXPORTER}
+ApacheModuleOtelExporterEndpoint ${OTEL_EXPORTER_OTLP_ENDPOINT}
+ApacheModuleServiceName ${OTEL_SERVICE_NAME}
+ApacheModuleServiceNamespace ${OTEL_SERVICE_NAMESPACE}
+ApacheModuleServiceInstanceId ${OTEL_SERVICE_INSTANCE_ID}
+ApacheModuleOtelSpanProcessor ${OTEL_SPAN_PROCESSOR}
+ApacheModuleResolveBackends ${OTEL_RESOLVE_BACKENDS}
+ApacheModuleOtelSampler ${OTEL_SAMPLER}
