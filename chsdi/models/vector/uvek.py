@@ -3454,21 +3454,6 @@ class ChmobilMountainbikeland(Base, Vector):
 register(ChmobilMountainbikeland.__bodId__, ChmobilMountainbikeland)
 
 
-class ChmobilSchneeschuhWanderland(Base, Vector):
-    __tablename__ = 'chmobil_schneeschuhwanderland'
-    __table_args__ = ({'schema': 'astra', 'autoload': False})
-    __template__ = 'templates/htmlpopup/chmobil.mako'
-    __bodId__ = 'ch.swisstopo.schneeschuhwandern'
-    __label__ = 'chmobil_title'
-    id = Column('full_number', Unicode, primary_key=True)
-    chmobil_title = Column('title', Unicode)
-    chmobil_route_number = Column('route_number', Unicode)
-    chmobil_has_segment = Column('has_segment', Boolean)
-    the_geom = Column(Geometry2D)
-
-register(ChmobilSchneeschuhWanderland.__bodId__, ChmobilSchneeschuhWanderland)
-
-
 class FlugplaetzeHeliports(Base, Vector):
     __tablename__ = 'flugplaetze_heliports'
     __table_args__ = ({'schema': 'bazl', 'autoload': False})
