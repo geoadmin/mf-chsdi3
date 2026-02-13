@@ -1255,21 +1255,6 @@ class BakomNotruf147Mobil(Base, BakomNotrufLayer, Vector):
 register(BakomNotruf147Mobil.__bodId__, BakomNotruf147Mobil)
 
 
-class BakomNotruf112Sat(Base, Vector):
-    __tablename__ = 'sa_112_tooltip'
-    __table_args__ = ({'schema': 'bakom', 'autoload': False})
-    __template__ = 'templates/htmlpopup/notruf_sa_112.mako'
-    __bodId__ = 'ch.bakom.notruf-112_satellit'
-    __label__ = 'id'
-    id = Column('bfs_nummer', Integer, primary_key=True)
-    satellit_112 = Column('phone_number', Unicode)
-    sa_gemeinde_112 = Column('name', Unicode)
-    sa_addresse_112 = Column('address', Unicode)
-    the_geom = Column(Geometry2D)
-
-register(BakomNotruf112Sat.__bodId__, BakomNotruf112Sat)
-
-
 class BakomNotrufZentral:
     __table_args__ = ({'schema': 'bakom', 'autoload': False, 'extend_existing': True})
     __template__ = 'templates/htmlpopup/bakom_notruf_zentrale.mako'
