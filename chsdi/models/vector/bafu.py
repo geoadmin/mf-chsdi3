@@ -580,35 +580,41 @@ class Nawa:
     the_geom = Column(Geometry2D)
 
 
-class NawaNitrat(Base, Nawa, Vector):
+class NawaChemie(Nawa):
+    __label__ = 'jahr'
+    station_nr = Column('station_nr', Integer)
+    id_nawa = Column('id_nawa', Integer)
+
+
+class NawaNitrat(Base, NawaChemie, Vector):
     __tablename__ = 'gewaesserschutz_nitrat'
     __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_nitrat'
 
 register(NawaNitrat.__bodId__, NawaNitrat)
 
 
-class NawaNitrit(Base, Nawa, Vector):
+class NawaNitrit(Base, NawaChemie, Vector):
     __tablename__ = 'gewaesserschutz_nitrit'
     __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_nitrit'
 
 register(NawaNitrit.__bodId__, NawaNitrit)
 
 
-class NawaAmmonium(Base, Nawa, Vector):
+class NawaAmmonium(Base, NawaChemie, Vector):
     __tablename__ = 'gewaesserschutz_ammonium'
     __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_ammonium'
 
 register(NawaAmmonium.__bodId__, NawaAmmonium)
 
 
-class NawaDoc(Base, Nawa, Vector):
+class NawaDoc(Base, NawaChemie, Vector):
     __tablename__ = 'gewaesserschutz_doc'
     __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_doc'
 
 register(NawaDoc.__bodId__, NawaDoc)
 
 
-class NawaPhosphorGesamt(Base, Nawa, Vector):
+class NawaPhosphorGesamt(Base, NawaChemie, Vector):
     __tablename__ = 'gewaesserschutz_phosphor_gesamt'
     __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_phosphor_gesamt'
 
@@ -643,7 +649,7 @@ class NawaDiatomeen(Base, Nawa, Vector):
 register(NawaDiatomeen.__bodId__, NawaDiatomeen)
 
 
-class NawaPhosphat(Base, Nawa, Vector):
+class NawaPhosphat(Base, NawaChemie, Vector):
     __tablename__ = 'gewaesserschutz_phosphat'
     __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_phosphat'
 
