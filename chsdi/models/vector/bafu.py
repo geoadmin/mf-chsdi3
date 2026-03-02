@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer
-from sqlalchemy.types import Numeric, Unicode, Float, SmallInteger
+from sqlalchemy.types import Numeric, Unicode, Float
 
 from chsdi.models import register, bases
 from chsdi.models.types import DateTimeChsdi
