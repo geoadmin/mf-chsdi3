@@ -2673,18 +2673,6 @@ class HiksDufourMetadata(Base, Vector):
 register(HiksDufourMetadata.__bodId__, HiksDufourMetadata)
 
 
-class HiksSiegfriedTa50Metadata(Base, Vector):
-    __tablename__ = 'view_gridstand_siegfried_ta50'
-    __template__ = 'templates/htmlpopup/dufour_meta.mako'
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.hiks-siegfried-ta50.metadata'
-    id = Column('kbnum', Unicode, primary_key=True)
-    name = Column('kbbez', Unicode)
-    the_geom = Column(Geometry2D)
-
-register(HiksSiegfriedTa50Metadata.__bodId__, HiksSiegfriedTa50Metadata)
-
-
 class HiksSiegfriedMetadata(Base, Vector):
     __tablename__ = 'view_siegfried_metadata'
     __template__ = 'templates/htmlpopup/siegfried_meta.mako'
