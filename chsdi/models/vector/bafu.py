@@ -2185,6 +2185,24 @@ class LebensraumkarteSchweiz(Base, Vector):
 register(LebensraumkarteSchweiz.__bodId__, LebensraumkarteSchweiz)
 
 
+class LebensraumkarteSchweizGehoelze(Base, Vector):
+    __tablename__ = 'lebensraumkarte_einzelbaum_gebuesche'
+    __table_args__ = ({'schema': 'lebensraumkarte', 'autoload': False})
+    __bodId__ = 'ch.bafu.lebensraumkarte-schweiz_gehoelze'
+    __template__ = 'templates/htmlpopup/bafu_lebensraumkarte_schweiz_gehoelze.mako'
+    __label__ = 'polyid'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    polyid = Column('polyid', Integer)
+    typoch_de = Column('typoch_de', Unicode)
+    typoch_fr = Column('typoch_fr', Unicode)
+    typoch_it = Column('typoch_it', Unicode)
+    crown_area = Column('crown_area', Integer)
+    mean_hght = Column('mean_hght', Float)
+    the_geom = Column('the_geom', Geometry2D)
+
+register(LebensraumkarteSchweizGehoelze.__bodId__, LebensraumkarteSchweizGehoelze)
+
+
 class TranquillityGebiete(Base, Vector):
     __tablename__ = 'tranquillity_gebiete'
     __table_args__ = ({'schema': 'schutzge', 'autoload': False})
