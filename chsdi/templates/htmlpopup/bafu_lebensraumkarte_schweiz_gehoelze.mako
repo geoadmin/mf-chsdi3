@@ -22,9 +22,17 @@
     % endif
   </tr>
   <tr>
-    <td class="cell-left">${_('ch.bafu.lebensraumkarte-schweiz_gehoelze.mean_hght')}</td>
-    % if c['attributes']['mean_hght']:
-      <td>${round(c['attributes']['mean_hght'], 2)}</td>
+    <td class="cell-left">${_('ch.bafu.lebensraumkarte-schweiz_gehoelze.max_hght')}</td>
+    % if c['attributes']['max_hght']:
+      <td>${round(c['attributes']['max_hght'], 2)}</td>
+    % else:
+      <td>-</td>
+    % endif
+  </tr>
+  <tr>
+    <td class="cell-left">${_('ch.bafu.lebensraumkarte-schweiz_gehoelze.vol_abv3m')}</td>
+    % if c['attributes']['vol_abv3m']:
+      <td>${round(c['attributes']['vol_abv3m'])}</td>
     % else:
       <td>-</td>
     % endif
