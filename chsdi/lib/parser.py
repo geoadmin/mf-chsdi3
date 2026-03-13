@@ -19,7 +19,7 @@ expressions: expression (and_or expression)* [and_or]
 expression: WORD is_not_null
           | WORD IS_NOT BOOLEAN
           | WORD operators SIGNED_NUMBER
-          | WORD operators_likes ESCAPED_QUOTED_STRING
+          | WORD operators_likes SAFE_QUOTED_STRING
 
 operators: OPERATORS   -> ops
 operators_likes: OPERATORS | LIKES
@@ -30,8 +30,12 @@ NUMBERS: /(\d+(\.\d+)?)/
 // - other character may be one of [_,a-z,A-Z,0-9]
 WORD: ("_"|LETTER)("_"|LETTER|NUMBER)*
 
-SINGLE_QUOTED_STRING: /'[^']*'/
-ESCAPED_QUOTED_STRING: /'(?:[^'\\\\]|\\\\.)*'/
+// SAFE_QUOTED_STRING: Single-quoted string that does NOT allow backslashes to prevent SQL injection
+// This prevents attacks using '..\\' to break out of string literals in PostgreSQL
+SAFE_QUOTED_STRING: /'[^'\\\\]*'/
+// For backwards compatibility, keep old names as aliases
+SINGLE_QUOTED_STRING: SAFE_QUOTED_STRING
+ESCAPED_QUOTED_STRING: SAFE_QUOTED_STRING
 OPERATORS: "<="|">="|"<"|">"|">="|"<="|"!="|"="
 LIKES: "ilike"|"not ilike"|"not like"|"like"
 OPERATORS_LIKES: OPERATORS | LIKES
