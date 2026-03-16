@@ -129,9 +129,23 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
 
     @where.setter
     def where(self, value):
-        # TODO regexp to test validity of sql clause
+        # Validate SQL clause using parser to prevent SQL injection
         if value is not None:
-            self._where = value
+            from chsdi.lib.parser import WhereParser, ParseError
+            try:
+                parser = WhereParser(value)
+                parsed_sql = parser.sql
+                if parsed_sql is None:
+                    raise HTTPBadRequest(
+                        "Invalid 'where' parameter: failed to parse SQL clause. "
+                        "Only simple expressions with valid operators are allowed."
+                    )
+                # Store the original value - it will be validated again with model context later
+                self._where = value
+            except ParseError as e:
+                raise HTTPBadRequest(
+                    "Invalid 'where' parameter: {}".format(str(e))
+                )
 
     @geometryType.setter
     def geometryType(self, value):

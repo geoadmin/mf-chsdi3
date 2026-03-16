@@ -137,7 +137,7 @@ def format_query(model, value, lang):
                 match.group(2),
                 match.group(3),
                 match.group(4).replace('\\', '\\\\')
-                              .replace('\'', "\''")
+                              .replace('\'', "\'\'")
                               .replace('_', '\\_'),
                 match.group(5)
             ))
