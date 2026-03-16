@@ -102,9 +102,7 @@ ${partials.table_body_cadastral(c, lang, fallbackLang)}
             if not download_url.startswith('https://geodata01.admin.ch/order/jPqrueQazrt'):
                 raise ValueError("Invalid URL")
 
-            # For some reason, the new SSL certificate can't be verified. So we do
-            # without verification
-            r = requests.get(download_url, verify=False, timeout=10)
+            r = requests.get(download_url, timeout=10)
             download_url = h.make_agnostic(r.text.strip())
             if r.status_code == 200:
                 pdf = True
