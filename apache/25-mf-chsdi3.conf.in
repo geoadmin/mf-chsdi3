@@ -38,6 +38,11 @@ ErrorLog /dev/stdout
   ## Script alias directives
   ScriptAlias /cgi-bin "${VHOST_DIR}/cgi-bin/"
 
+  ## Disable server-status endpoint
+  <Location /server-status>
+    Require all denied
+  </Location>
+
   ## Server aliases
   # ServerAlias api.geo.admin.ch
   # ServerAlias api3.geo.admin.ch
