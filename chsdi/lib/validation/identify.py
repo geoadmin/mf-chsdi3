@@ -6,6 +6,7 @@ from pyramid.httpexceptions import HTTPBadRequest
 from chsdi.lib.esrijson.codec import loads as esrijson_loads
 from chsdi.lib.esrijson.geometry import to_shape
 from chsdi.lib.helpers import float_raise_nan
+from chsdi.lib.parser import WhereParser, ParseError
 from chsdi.lib.validation import BaseFeaturesValidation
 
 
@@ -118,20 +119,36 @@ class IdentifyServiceValidation(BaseFeaturesValidation):
         if value is not None:
             try:
                 defs = json.loads(value)
-                if self.layers != 'all':
-                    if not (set(defs.keys()).issubset(set(self.layers))):
-                        raise HTTPBadRequest("You can only filter on layer '%s' in 'layerDefs'" % self.layers)
-                where = "+and+".join(defs.values())
-                self._layerDefs = defs
-                self.where = where
             except ValueError:
                 raise HTTPBadRequest("Cannot parse 'layerDefs' %s" % value)
+            if self.layers != 'all':
+                if not (set(defs.keys()).issubset(set(self.layers))):
+                    raise HTTPBadRequest("You can only filter on layer '%s' in 'layerDefs'" % self.layers)
+            normalized_exprs = []
+            for layer, expr in defs.items():
+                normalized = expr.replace('+', ' ').strip()
+                try:
+                    WhereParser(normalized)._tree()
+                except ParseError:
+                    raise HTTPBadRequest(
+                        "Invalid filter expression for layer '%s': '%s'" % (layer, expr)
+                    )
+                normalized_exprs.append(normalized)
+            self._layerDefs = defs
+            self._where = " and ".join(normalized_exprs)
 
     @where.setter
     def where(self, value):
-        # TODO regexp to test validity of sql clause
         if value is not None:
-            self._where = value
+            normalized = value.replace('+', ' ').strip()
+            try:
+                WhereParser(normalized)._tree()
+            except ParseError:
+                raise HTTPBadRequest(
+                    "Invalid 'where' or 'layerDefs' clause. Only simple filter expressions "
+                    "are allowed: <attribute> <operator> <value> [and ...]"
+                )
+            self._where = normalized
 
     @geometryType.setter
     def geometryType(self, value):

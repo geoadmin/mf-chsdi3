@@ -19,7 +19,7 @@ expressions: expression (and_or expression)* [and_or]
 expression: WORD is_not_null
           | WORD IS_NOT BOOLEAN
           | WORD operators SIGNED_NUMBER
-          | WORD operators_likes ESCAPED_QUOTED_STRING
+          | WORD operators_likes QUOTED_STRING
 
 operators: OPERATORS   -> ops
 operators_likes: OPERATORS | LIKES
@@ -30,13 +30,12 @@ NUMBERS: /(\d+(\.\d+)?)/
 // - other character may be one of [_,a-z,A-Z,0-9]
 WORD: ("_"|LETTER)("_"|LETTER|NUMBER)*
 
-SINGLE_QUOTED_STRING: /'[^']*'/
-ESCAPED_QUOTED_STRING: /'(?:[^'\\\\]|\\\\.)*'/
+QUOTED_STRING: /'[^'\\]*'/
 OPERATORS: "<="|">="|"<"|">"|">="|"<="|"!="|"="
 LIKES: "ilike"|"not ilike"|"not like"|"like"
 OPERATORS_LIKES: OPERATORS | LIKES
 BOOLEAN: "true" | "false"
-and_or: /and|or/i
+and_or: /and/i
 is_not_null: /is( not)? null/i
 IS_NOT: "is not"|"!="|"="|"is"
 
