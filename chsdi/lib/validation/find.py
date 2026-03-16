@@ -108,6 +108,26 @@ class FindServiceValidation(MapNameValidation):
     def where(self):
         return self._where
 
+    @where.setter
+    def where(self, value):
+        # Validate SQL clause using parser to prevent SQL injection
+        if value is not None:
+            from chsdi.lib.parser import WhereParser, ParseError
+            try:
+                parser = WhereParser(value)
+                parsed_sql = parser.sql
+                if parsed_sql is None:
+                    raise HTTPBadRequest(
+                        "Invalid 'where' parameter: failed to parse SQL clause. "
+                        "Only simple expressions with valid operators are allowed."
+                    )
+                # Store the original value - it will be validated again with model context later
+                self._where = value
+            except ParseError as e:
+                raise HTTPBadRequest(
+                    "Invalid 'where' parameter: {}".format(str(e))
+                )
+
     @property
     def layerDefs(self):
         return self._layerDefs
@@ -121,6 +141,6 @@ class FindServiceValidation(MapNameValidation):
                     raise HTTPBadRequest("You can only filter on layer '%s' in 'layerDefs'" % self.layer)
                 where = "+and+".join(defs.values())
                 self._layerDefs = defs
-                self._where = where
+                self.where = where  # Use setter for validation
             except ValueError:
                 raise HTTPBadRequest("Cannot parse 'layerDefs' %s" % value)
