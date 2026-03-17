@@ -29,7 +29,6 @@
                  'ch.vbs.grunddispositiv-zeus',
                  'ch.swisstopo-karto.skitouren',
                  'ch.swisstopo-karto.schneeschuhrouten',
-                 'ch.swisstopo.schneeschuhwandern',
                  'ch.swisstopo.bahnen-winter',
                  'ch.swisstopo.unterkuenfte-winter',
                  'ch.swisstopo.swisstlm3d-strassen',

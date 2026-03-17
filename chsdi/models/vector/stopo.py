@@ -2673,30 +2673,6 @@ class HiksDufourMetadata(Base, Vector):
 register(HiksDufourMetadata.__bodId__, HiksDufourMetadata)
 
 
-class HiksSiegfriedTa25Metadata(Base, Vector):
-    __tablename__ = 'view_gridstand_siegfried_ta25'
-    __template__ = 'templates/htmlpopup/dufour_meta.mako'
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.hiks-siegfried-ta25.metadata'
-    id = Column('kbnum', Unicode, primary_key=True)
-    name = Column('kbbez', Unicode)
-    the_geom = Column(Geometry2D)
-
-register(HiksSiegfriedTa25Metadata.__bodId__, HiksSiegfriedTa25Metadata)
-
-
-class HiksSiegfriedTa50Metadata(Base, Vector):
-    __tablename__ = 'view_gridstand_siegfried_ta50'
-    __template__ = 'templates/htmlpopup/dufour_meta.mako'
-    __table_args__ = ({'schema': 'datenstand', 'autoload': False})
-    __bodId__ = 'ch.swisstopo.hiks-siegfried-ta50.metadata'
-    id = Column('kbnum', Unicode, primary_key=True)
-    name = Column('kbbez', Unicode)
-    the_geom = Column(Geometry2D)
-
-register(HiksSiegfriedTa50Metadata.__bodId__, HiksSiegfriedTa50Metadata)
-
-
 class HiksSiegfriedMetadata(Base, Vector):
     __tablename__ = 'view_siegfried_metadata'
     __template__ = 'templates/htmlpopup/siegfried_meta.mako'
@@ -2832,7 +2808,7 @@ class AmtlichesAdressVerzeichnis(Base, Vector):
     __bodId__ = 'ch.swisstopo.amtliches-gebaeudeadressverzeichnis'
     __label__ = 'adr_egaid'
     __queryable_attributes__ = ['adr_egaid', 'bdg_egid', 'adr_edid', 'str_esid', 'stn_label', 'adr_number']
-    id = Column('legacy_id', Unicode, primary_key=True)
+    id = Column('id', BigInteger, primary_key=True)
     adr_egaid = Column('adr_egaid', BigInteger)
     bdg_egid = Column('bdg_egid', BigInteger)
     adr_edid = Column('adr_edid', Integer)
