@@ -4,7 +4,7 @@ from sqlalchemy.dialects import postgresql
 from chsdi.models.types import DateTimeChsdi
 
 from chsdi.models import register, bases
-from chsdi.models.vector import Vector, Geometry2D, Geometry3D
+from chsdi.models.vector import Vector, Geometry2D
 
 Base = bases['vbs']
 
@@ -246,7 +246,7 @@ class LogistikraeumeArmeelogistikcenter(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     kanton = Column('kantone', Unicode)
     region = Column('region', Unicode)
-    the_geom = Column(Geometry3D)
+    the_geom = Column(Geometry2D)
 
 register(LogistikraeumeArmeelogistikcenter.__bodId__, LogistikraeumeArmeelogistikcenter)
 
