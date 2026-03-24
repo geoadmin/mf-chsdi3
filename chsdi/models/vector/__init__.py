@@ -17,7 +17,6 @@ from geoalchemy2.shape import to_shape
 
 DEFAULT_DB_SRID = 2056
 Geometry2D = GeometryChsdi(geometry_type='GEOMETRY', dimension=2, srid=DEFAULT_DB_SRID)
-Geometry3D = GeometryChsdi(geometry_type='GEOMETRYZ', dimension=3, srid=DEFAULT_DB_SRID)
 
 
 MAX_FEATURE_GEOMETRY_SIZE = 1e6
