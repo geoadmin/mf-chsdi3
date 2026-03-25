@@ -113,16 +113,22 @@ class FindServiceValidation(MapNameValidation):
         # Validate SQL clause using parser to prevent SQL injection
         if value is not None:
             from chsdi.lib.parser import WhereParser, ParseError
+            from chsdi.lib.helpers import sanitize_user_input_accents
+
+            # SECURITY: Normalize Unicode characters BEFORE validation to prevent
+            # Unicode quote bypass (e.g., U+2019 ' → ASCII ')
+            normalized_value = sanitize_user_input_accents(value)
+
             try:
-                parser = WhereParser(value)
+                parser = WhereParser(normalized_value)
                 parsed_sql = parser.sql
                 if parsed_sql is None:
                     raise HTTPBadRequest(
                         "Invalid 'where' parameter: failed to parse SQL clause. "
                         "Only simple expressions with valid operators are allowed."
                     )
-                # Store the original value - it will be validated again with model context later
-                self._where = value
+                # Store the normalized value to ensure consistency
+                self._where = normalized_value
             except ParseError as e:
                 raise HTTPBadRequest(
                     "Invalid 'where' parameter: {}".format(str(e))
