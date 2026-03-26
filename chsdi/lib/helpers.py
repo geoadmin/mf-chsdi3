@@ -129,21 +129,6 @@ def format_query(model, value, lang):
     '''
     where = None
 
-    def escapeSQL(value):
-        if 'ilike' in value:
-            match = re.search(r'([\w]+\s)(ilike|not ilike)(\s\'%)([\s\S]*)(%\')', value)
-            where = ''.join((
-                match.group(1).replace('\'', 'E\''),
-                match.group(2),
-                match.group(3),
-                match.group(4).replace('\\', '\\\\')
-                              .replace('\'', "\'\'")
-                              .replace('_', '\\_'),
-                match.group(5)
-            ))
-            return where
-        return value
-
     def get_queryable_attributes(model, lang):
         attributes = []
         if hasattr(model, '__queryable_attributes__'):
