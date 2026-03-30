@@ -2374,7 +2374,7 @@ register(Trockenheitswarnkarte.__bodId__, Trockenheitswarnkarte)
 
 
 class Trockenheitsindex(Base, Vector):
-    __tablename__ = 'trockenheitsindex_1'
+    __tablename__ = 'trockenheitsindex_0'
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __bodId__ = 'ch.bafu.trockenheitsindex'
     __template__ = 'templates/htmlpopup/bafu_trockenheitsindex.mako'
