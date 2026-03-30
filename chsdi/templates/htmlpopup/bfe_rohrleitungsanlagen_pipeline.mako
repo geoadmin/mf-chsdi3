@@ -12,7 +12,7 @@
   </tr>
   <tr>
     <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.aname')}</td>
-    <td>${c['attributes']['namepipeline_name'] or '-'}</td>
+    <td>${c['attributes']['pipeline_name'] or '-'}</td>
   </tr>
   <tr>
     <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.mediumtype')}</td>
