@@ -6,7 +6,7 @@
     attendantplanttype_text = 'attendantplanttype_%s' % lang
   %>
   <tr>
-    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.attendantplant_type')}</td>
+    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.attendantplanttype')}</td>
     <td>${c['attributes'][attendantplanttype_text] or '-'}</td>
   </tr>
 </%def>

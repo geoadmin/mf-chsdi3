@@ -6,7 +6,7 @@
     container_type_text = 'container_type_%s' % lang
   %>
   <tr>
-    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.container_type')}</td>
+    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.containertype')}</td>
     <td>${c['attributes'][container_type_text] or '-'}</td>
   </tr>
 </%def>

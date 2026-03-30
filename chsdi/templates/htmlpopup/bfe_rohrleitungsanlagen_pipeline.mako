@@ -7,7 +7,7 @@
     medium_type_text = 'medium_type_%s' % lang
   %>
   <tr>
-    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.pipeline_status')}</td>
+    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.pipelinestatus')}</td>
     <td>${c['attributes'][pipeline_status_text] or '-'}</td>
   </tr>
   <tr>
@@ -15,27 +15,27 @@
     <td>${c['attributes']['namepipeline_name'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.medium_type')}</td>
+    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.mediumtype')}</td>
     <td>${c['attributes'][medium_type_text] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.maximum_operating_pressure')}</td>
+    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.maximumoperatingpressure')}</td>
     <td>${c['attributes']['maximum_operating_pressure'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.year_of_construction')}</td>
+    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.yearofconstruction')}</td>
     <td>${c['attributes']['year_of_construction'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.outside_diameter')}</td>
+    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.outsidediameter')}</td>
     <td>${c['attributes']['outside_diameter'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.operator_name')}</td>
+    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.operatorname')}</td>
     <td>${c['attributes']['operator_name'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.operator_uri')}</td>
+    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.operatoruri')}</td>
     <td>${c['attributes']['operator_uri'] or '-'}</td>
   </tr>
 </%def>
