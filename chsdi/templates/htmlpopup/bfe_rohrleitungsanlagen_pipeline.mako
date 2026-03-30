@@ -36,6 +36,10 @@
   </tr>
   <tr>
     <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.operatoruri')}</td>
-    <td>${c['attributes']['operator_uri'] or '-'}</td>
+    % if c['attributes']['operator_uri'].startswith('http'):
+      <td><a target ="_blank" href="${c['attributes']['operator_uri']}">${_('link')}</a></td>
+    % else:
+      <td>-</td>
+    % endif
   </tr>
 </%def>
