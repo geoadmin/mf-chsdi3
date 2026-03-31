@@ -2733,6 +2733,27 @@ class AmtlichesStrassenverzeichnis(Base, Vector):
 register(AmtlichesStrassenverzeichnis.__bodId__, AmtlichesStrassenverzeichnis)
 
 
+class AmtlichesStrassenverzeichnisIssues(Base, Vector):
+    __tablename__ = 'streetnames_issues'
+    __table_args__ = ({'schema': 'vd', 'autoload': False})
+    __template__ = 'templates/htmlpopup/strassenverzeichnis_issues.mako'
+    __bodId__ = 'ch.swisstopo.amtliches-strassenverzeichnis_issues'
+    __label__ = 'str_esid'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    str_esid = Column('str_esid', Integer)
+    stn_label = Column('stn_label', Unicode)
+    zip_label = Column('zip_label', Unicode)
+    com_fosnr = Column('com_fosnr', Integer)
+    com_canton = Column('com_canton', Unicode)
+    issue_status = Column('issue_status', Unicode)
+    issue_category = Column('issue_category', Unicode)
+    issue_description = Column('issue_description', Unicode)
+    issue_solution = Column('issue_solution', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(AmtlichesStrassenverzeichnisIssues.__bodId__, AmtlichesStrassenverzeichnisIssues)
+
+
 class CadastralWebMap(Base, Vector):
     __tablename__ = 'view_os_realestate_cwm'
     __table_args__ = ({'schema': 'vd', 'autoload': False})
