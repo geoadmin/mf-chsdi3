@@ -23,23 +23,23 @@
     </tr>
     <tr>
         <td class="cell-left">${_(c['layerBodId'] + '.link')}</td>
-        % if c['attributes']['link']:
-            <td><a href="${c['attributes']['link']}" target="_blank">${c['attributes']['link']}</a></td>
+        % if c['attributes']['link'] and c['attributes']['link'].startswith('http'):
+            <td><a href="${c['attributes']['link']}" target="_blank">${_('link') or '-'}</a></td>
         % else:
             <td>-</td>
         % endif
     </tr>
     <tr>
         <td class="cell-left">${_(c['layerBodId'] + '.kontakt')}</td>
-        % if c['attributes']['kontakt'] != '-':
+        % if c['attributes']['kontakt'] and c['attributes']['kontakt'].startswith('http'):
             <td><a href="${c['attributes']['kontakt']}" target="_blank">${c['attributes']['kontakt']}</a></td>
         % else:
-            <td>-</td>
+            <td>${c['attributes']['kontakt'] or '-'}</td>
         % endif
     </tr>
     <tr>
         <td class="cell-left">${_(c['layerBodId'] + '.publikation')}</td>
-        % if c['attributes'][publikatio_text].startswith('http'):
+        % if c['attributes'][publikatio_text] and c['attributes'][publikatio_text].startswith('http'):
             <td><a href="${c['attributes'][publikatio_text]}" target="_blank">${c['attributes'][publikatio_text]}</a></td>
         % else:
             <td>-</td>
