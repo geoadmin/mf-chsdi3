@@ -38,7 +38,8 @@
                  'ch.vbs.sperr-gefahrenzonenkarte',
                  'ch.swisstopo.strassenkarte-200',
                  'ch.swisstopo.vec200-miscellaneous',
-                 'ch.swisstopo.amtliches-strassenverzeichnis_issues')
+                 'ch.swisstopo.amtliches-strassenverzeichnis_issues',
+                 'ch.swisstopo.amtliches-gebaeudeadressverzeichnis_issues')
   if c['layerBodId'] in pdf_legends:
       legend_url_pdf = host + '/static/images/legends/' + c['layerBodId'] + '_' + lang + '_big.pdf'
   else:
