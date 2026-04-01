@@ -20,6 +20,7 @@ ApacheModuleOtelSpanExporter ${OTEL_EXPORTER}
 ApacheModuleOtelExporterEndpoint ${OTEL_EXPORTER_OTLP_ENDPOINT}
 ApacheModuleServiceName ${OTEL_SERVICE_NAME}
 ApacheModuleServiceNamespace ${OTEL_SERVICE_NAMESPACE}
+ApacheModuleServiceInstanceId ${OTEL_SERVICE_INSTANCE_ID}
 ApacheModuleOtelSpanProcessor ${OTEL_SPAN_PROCESSOR}
 ApacheModuleResolveBackends ${OTEL_RESOLVE_BACKENDS}
 ApacheModuleOtelSampler ${OTEL_SAMPLER}
