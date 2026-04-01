@@ -2242,7 +2242,7 @@ register(GeologieGeotopeFlaechen.__bodId__, GeologieGeotopeFlaechen)
 
 
 class GeologieGeotopeKantoneStand(Base, Vector):
-    __tablename__ = 'view_stand_kantonale_geotope'
+    __tablename__ = 'stand_kantonale_geotope'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/geotope_kantone_stand.mako'
     __bodId__ = 'ch.swisstopo.geologie-geotope_kantone_stand'
@@ -2250,12 +2250,21 @@ class GeologieGeotopeKantoneStand(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
     sigel = Column('sigel', Unicode)
-    inventar = Column('inventar', Unicode)
+    access_de = Column('access_de', Unicode)
+    access_fr = Column('access_fr', Unicode)
+    access_it = Column('access_it', Unicode)
+    access_en = Column('access_en', Unicode)
     link = Column('link', Unicode)
     kontakt = Column('kontakt', Unicode)
-    publikation = Column('publikation', Unicode)
+    publikatio_de = Column('publikatio_de', Unicode)
+    publikatio_fr = Column('publikatio_fr', Unicode)
+    publikatio_it = Column('publikatio_it', Unicode)
+    publikatio_en = Column('publikatio_en', Unicode)
     quelle = Column('quelle', Unicode)
-    bemerkung = Column('bemerkung', Unicode)
+    bemerkung_de = Column('bemerkung_de', Unicode)
+    bemerkung_fr = Column('bemerkung_fr', Unicode)
+    bemerkung_it = Column('bemerkung_it', Unicode)
+    bemerkung_en = Column('bemerkung_en', Unicode)
     the_geom = Column(Geometry2D)
 
 register(GeologieGeotopeKantoneStand.__bodId__, GeologieGeotopeKantoneStand)
