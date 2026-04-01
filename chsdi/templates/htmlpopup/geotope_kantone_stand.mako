@@ -24,7 +24,7 @@
     <tr>
         <td class="cell-left">${_(c['layerBodId'] + '.link')}</td>
         % if c['attributes']['link'] and c['attributes']['link'].startswith('http'):
-            <td><a href="${c['attributes']['link']}" target="_blank">${c['attributes']['link']}</a></td>
+            <td><a href="${c['attributes']['link']}" target="_blank">${_('link') or '-'}</a></td>
         % else:
             <td>-</td>
         % endif
