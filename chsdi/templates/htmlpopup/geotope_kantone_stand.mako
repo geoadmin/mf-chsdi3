@@ -31,10 +31,10 @@
     </tr>
     <tr>
         <td class="cell-left">${_(c['layerBodId'] + '.kontakt')}</td>
-        % if c['attributes']['kontakt'] != '-':
+        % if c['attributes']['kontakt'] and c['attributes']['kontakt'].startswith('http'):
             <td><a href="${c['attributes']['kontakt']}" target="_blank">${c['attributes']['kontakt']}</a></td>
         % else:
-            <td>-</td>
+            <td>${c['attributes']['kontakt'] or '-'}</td>
         % endif
     </tr>
     <tr>
