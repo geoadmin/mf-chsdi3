@@ -23,7 +23,7 @@
     </tr>
     <tr>
         <td class="cell-left">${_(c['layerBodId'] + '.link')}</td>
-        % if c['attributes']['link']:
+        % if c['attributes']['link'] and c['attributes']['link'].startswith('http'):
             <td><a href="${c['attributes']['link']}" target="_blank">${c['attributes']['link']}</a></td>
         % else:
             <td>-</td>
@@ -39,7 +39,7 @@
     </tr>
     <tr>
         <td class="cell-left">${_(c['layerBodId'] + '.publikation')}</td>
-        % if c['attributes'][publikatio_text].startswith('http'):
+        % if c['attributes'][publikatio_text] and c['attributes'][publikatio_text].startswith('http'):
             <td><a href="${c['attributes'][publikatio_text]}" target="_blank">${c['attributes'][publikatio_text]}</a></td>
         % else:
             <td>-</td>
