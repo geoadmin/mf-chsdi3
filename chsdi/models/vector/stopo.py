@@ -2848,6 +2848,43 @@ class AmtlichesAdressVerzeichnis(Base, Vector):
 register(AmtlichesAdressVerzeichnis.__bodId__, AmtlichesAdressVerzeichnis)
 
 
+class AmtlichesAdressVerzeichnisIssues:
+    __table_args__ = ({'schema': 'vd', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.amtliches-gebaeudeadressverzeichnis_issues'
+    id = Column('id', BigInteger, primary_key=True)
+    issue_category = Column('issue_category', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class AmtlichesAdressVerzeichnisIssuesAddress(Base, AmtlichesAdressVerzeichnisIssues, Vector):
+    __tablename__ = 'addressverzeichnis_adr_issues'
+    __template__ = 'templates/htmlpopup/addressverzeichnis_issues_addr.mako'
+    __label__ = 'adr_egaid'
+    adr_egaid = Column('adr_egaid', BigInteger)
+    stn_label = Column('stn_label', Unicode)
+    adr_number = Column('adr_number', Unicode)
+    zip_label = Column('zip_label', Unicode)
+    com_fosnr = Column('com_fosnr', SmallInteger)
+    com_canton = Column('com_canton', Unicode)
+    adr_status = Column('adr_status', Unicode)
+    issue_description = Column('issue_description', Unicode)
+
+
+register(AmtlichesAdressVerzeichnisIssuesAddress.__bodId__, AmtlichesAdressVerzeichnisIssuesAddress)
+
+
+class AmtlichesAdressVerzeichnisIssuesBuilding(Base, AmtlichesAdressVerzeichnisIssues, Vector):
+    __tablename__ = 'addressverzeichnis_bdg_issues'
+    __template__ = 'templates/htmlpopup/addressverzeichnis_issues_bdg.mako'
+    __bodId__ = 'ch.swisstopo.amtliches-gebaeudeadressverzeichnis_issues'
+    __label__ = 'bdg_egid'
+    bdg_egid = Column('bdg_egid', Numeric)
+    bdg_category = Column('bdg_category', Unicode)
+    bdg_gstat = Column('bdg_gstat', Unicode)
+
+register(AmtlichesAdressVerzeichnisIssuesBuilding.__bodId__, AmtlichesAdressVerzeichnisIssuesBuilding)
+
+
 class GeologieFelslabore(Base, Vector):
     __tablename__ = 'felslabore'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
