@@ -41,13 +41,15 @@
         <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.temp')}</th><td>${c['attributes']['temp'] or '-'}</td></tr>
         <tr>
             <th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.swissgeol')}</th>
-            % if swissgeol != '-':
+            % if swissgeol and swissgeol != '-':
                 <%
-                    swissgeols = swissgeol.split(' / ')
+                    swissgeols = [sg.strip() for sg in swissgeol.split(' / ') if sg.strip()]
                 %>
                 <td>
-                    % for i in range(len(swissgeols)):
-                        <a href="${swissgeols[i]}" target="_blank">${_('link')}_${i+1}</a>&nbsp;
+                    % for i, link in enumerate(swissgeols):
+                        <a href="${link}" target="_blank">
+                            ${_('link')}${'_' + str(i+1) if len(swissgeols) > 1 else ''}
+                        </a>&nbsp;
                     % endfor
                 </td>
             % else:
@@ -72,17 +74,20 @@
         <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.content')}</th><td>${c['attributes']['content'] or '-'}</td></tr>
         <tr>
             <th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.web_link')}</th>
-            % if web_link != '-':
+            % if web_link and web_link != '-':
                 <%
-                    web_links = web_link.split(' / ')
+                    web_links = [l.strip() for l in web_link.split(' / ') if l.strip()]
                 %>
                 <td>
-                    % for i in range(len(web_links)):
-                        <a href="${web_links[i]}" target="_blank">${_('link')}_${i+1}</a>&nbsp;
+                    % for i, link in enumerate(web_links):
+                        <a href="${link}" target="_blank">
+                            ${_('link')}${'_' + str(i+1) if len(web_links) > 1 else ''}
+                        </a>&nbsp;
                     % endfor
+
                 </td>
             % else:
-                <td> - </td>
+                <td>-</td>
             % endif
         </tr>
         <tr><th class="cell-left">${_('ch.swisstopo.geologie-bohrungen_tiefer_500.info')}</th><td>${c['attributes'][info] or '-'}</td></tr>
