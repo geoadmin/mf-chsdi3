@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer
 from sqlalchemy.types import Float, Unicode
 
 from chsdi.models import register, bases
-from chsdi.models.vector import Vector, Geometry2D, Geometry3D
+from chsdi.models.vector import Vector, Geometry2D
 
 
 Base = bases['are']
@@ -37,7 +37,7 @@ class Alpenkonvention(Base, Vector):
     id = Column('row_id', Integer, primary_key=True)
     flaeche_ha = Column('flaeche_ha', Float)
     stand = Column('stand', Float)
-    the_geom = Column(Geometry3D)
+    the_geom = Column(Geometry2D)
 
 register(Alpenkonvention.__bodId__, Alpenkonvention)
 

@@ -2242,7 +2242,7 @@ register(GeologieGeotopeFlaechen.__bodId__, GeologieGeotopeFlaechen)
 
 
 class GeologieGeotopeKantoneStand(Base, Vector):
-    __tablename__ = 'view_stand_kantonale_geotope'
+    __tablename__ = 'stand_kantonale_geotope'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/geotope_kantone_stand.mako'
     __bodId__ = 'ch.swisstopo.geologie-geotope_kantone_stand'
@@ -2250,12 +2250,21 @@ class GeologieGeotopeKantoneStand(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     name = Column('name', Unicode)
     sigel = Column('sigel', Unicode)
-    inventar = Column('inventar', Unicode)
+    access_de = Column('access_de', Unicode)
+    access_fr = Column('access_fr', Unicode)
+    access_it = Column('access_it', Unicode)
+    access_en = Column('access_en', Unicode)
     link = Column('link', Unicode)
     kontakt = Column('kontakt', Unicode)
-    publikation = Column('publikation', Unicode)
+    publikatio_de = Column('publikatio_de', Unicode)
+    publikatio_fr = Column('publikatio_fr', Unicode)
+    publikatio_it = Column('publikatio_it', Unicode)
+    publikatio_en = Column('publikatio_en', Unicode)
     quelle = Column('quelle', Unicode)
-    bemerkung = Column('bemerkung', Unicode)
+    bemerkung_de = Column('bemerkung_de', Unicode)
+    bemerkung_fr = Column('bemerkung_fr', Unicode)
+    bemerkung_it = Column('bemerkung_it', Unicode)
+    bemerkung_en = Column('bemerkung_en', Unicode)
     the_geom = Column(Geometry2D)
 
 register(GeologieGeotopeKantoneStand.__bodId__, GeologieGeotopeKantoneStand)
@@ -2733,6 +2742,27 @@ class AmtlichesStrassenverzeichnis(Base, Vector):
 register(AmtlichesStrassenverzeichnis.__bodId__, AmtlichesStrassenverzeichnis)
 
 
+class AmtlichesStrassenverzeichnisIssues(Base, Vector):
+    __tablename__ = 'streetnames_issues'
+    __table_args__ = ({'schema': 'vd', 'autoload': False})
+    __template__ = 'templates/htmlpopup/strassenverzeichnis_issues.mako'
+    __bodId__ = 'ch.swisstopo.amtliches-strassenverzeichnis_issues'
+    __label__ = 'str_esid'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    str_esid = Column('str_esid', Integer)
+    stn_label = Column('stn_label', Unicode)
+    zip_label = Column('zip_label', Unicode)
+    com_fosnr = Column('com_fosnr', Integer)
+    com_canton = Column('com_canton', Unicode)
+    issue_status = Column('issue_status', Unicode)
+    issue_category = Column('issue_category', Unicode)
+    issue_description = Column('issue_description', Unicode)
+    issue_solution = Column('issue_solution', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(AmtlichesStrassenverzeichnisIssues.__bodId__, AmtlichesStrassenverzeichnisIssues)
+
+
 class CadastralWebMap(Base, Vector):
     __tablename__ = 'view_os_realestate_cwm'
     __table_args__ = ({'schema': 'vd', 'autoload': False})
@@ -2825,6 +2855,43 @@ class AmtlichesAdressVerzeichnis(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(AmtlichesAdressVerzeichnis.__bodId__, AmtlichesAdressVerzeichnis)
+
+
+class AmtlichesAdressVerzeichnisIssues:
+    __table_args__ = ({'schema': 'vd', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.amtliches-gebaeudeadressverzeichnis_issues'
+    id = Column('id', BigInteger, primary_key=True)
+    issue_category = Column('issue_category', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class AmtlichesAdressVerzeichnisIssuesAddress(Base, AmtlichesAdressVerzeichnisIssues, Vector):
+    __tablename__ = 'addressverzeichnis_adr_issues'
+    __template__ = 'templates/htmlpopup/addressverzeichnis_issues_addr.mako'
+    __label__ = 'adr_egaid'
+    adr_egaid = Column('adr_egaid', BigInteger)
+    stn_label = Column('stn_label', Unicode)
+    adr_number = Column('adr_number', Unicode)
+    zip_label = Column('zip_label', Unicode)
+    com_fosnr = Column('com_fosnr', SmallInteger)
+    com_canton = Column('com_canton', Unicode)
+    adr_status = Column('adr_status', Unicode)
+    issue_description = Column('issue_description', Unicode)
+
+
+register(AmtlichesAdressVerzeichnisIssuesAddress.__bodId__, AmtlichesAdressVerzeichnisIssuesAddress)
+
+
+class AmtlichesAdressVerzeichnisIssuesBuilding(Base, AmtlichesAdressVerzeichnisIssues, Vector):
+    __tablename__ = 'addressverzeichnis_bdg_issues'
+    __template__ = 'templates/htmlpopup/addressverzeichnis_issues_bdg.mako'
+    __bodId__ = 'ch.swisstopo.amtliches-gebaeudeadressverzeichnis_issues'
+    __label__ = 'bdg_egid'
+    bdg_egid = Column('bdg_egid', Numeric)
+    bdg_category = Column('bdg_category', Unicode)
+    bdg_gstat = Column('bdg_gstat', Unicode)
+
+register(AmtlichesAdressVerzeichnisIssuesBuilding.__bodId__, AmtlichesAdressVerzeichnisIssuesBuilding)
 
 
 class GeologieFelslabore(Base, Vector):

@@ -3515,19 +3515,14 @@ class Elektrizitaetsproduktionsanlagen(Base, Vector):
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __tablename__ = 'elektrizitaetsproduktionsanlagen'
     __template__ = 'templates/htmlpopup/elektrizitaetsproduktionsanlagen.mako'
-    __extended_info__ = True
     __bodId__ = 'ch.bfe.elektrizitaetsproduktionsanlagen'
     __label__ = 'id'
     id = Column('xtf_id', Unicode, primary_key=True)
     address = Column('address', Unicode)
-    canton = Column('canton', Unicode)
+    egid = Column('egid', Integer)
     beginning_of_operation = Column('beginning_of_operation', Unicode)
     initial_power = Column('initial_power', Unicode)
     total_power = Column('total_power', Unicode)
-    main_category_de = Column('main_category_de', Unicode)
-    main_category_fr = Column('main_category_fr', Unicode)
-    main_category_it = Column('main_category_it', Unicode)
-    main_category_en = Column('main_category_en', Unicode)
     sub_category_de = Column('sub_category_de', Unicode)
     sub_category_fr = Column('sub_category_fr', Unicode)
     sub_category_it = Column('sub_category_it', Unicode)
@@ -3536,13 +3531,7 @@ class Elektrizitaetsproduktionsanlagen(Base, Vector):
     plant_type_fr = Column('plant_type_fr', Unicode)
     plant_type_it = Column('plant_type_it', Unicode)
     plant_type_en = Column('plant_type_en', Unicode)
-    detail_date = Column('detail_date', Unicode)
-    detail_power = Column('detail_power', Unicode)
     detail_inclination = Column('detail_inclination', Unicode)
-    detail_plant_type_de = Column('detail_plant_type_de', Unicode)
-    detail_plant_type_fr = Column('detail_plant_type_fr', Unicode)
-    detail_plant_type_it = Column('detail_plant_type_it', Unicode)
-    detail_plant_type_en = Column('detail_plant_type_en', Unicode)
     detail_orientation_de = Column('detail_orientation_de', Unicode)
     detail_orientation_fr = Column('detail_orientation_fr', Unicode)
     detail_orientation_it = Column('detail_orientation_it', Unicode)
@@ -4051,3 +4040,87 @@ class UasAktivitaetszonen(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(UasAktivitaetszonen.__bodId__, UasAktivitaetszonen)
+
+
+class RohrleitungsanlagenProtectedArea(Base, Vector):
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __tablename__ = 'rohrleitungsanlagen_protectedarea'
+    __template__ = 'templates/htmlpopup/bfe_rohrleitungsanlagen_protectedarea.mako'
+    __bodId__ = 'ch.bfe.rohrleitungsanlagen'
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    legalprovision = Column('legalprovision', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(RohrleitungsanlagenProtectedArea.__bodId__, RohrleitungsanlagenProtectedArea)
+
+
+class RohrleitungsanlagenPipeline(Base, Vector):
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __tablename__ = 'rohrleitungsanlagen_pipeline'
+    __template__ = 'templates/htmlpopup/bfe_rohrleitungsanlagen_pipeline.mako'
+    __bodId__ = 'ch.bfe.rohrleitungsanlagen'
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    pipeline_status_de = Column('pipeline_status_de', Unicode)
+    pipeline_status_fr = Column('pipeline_status_fr', Unicode)
+    pipeline_status_it = Column('pipeline_status_it', Unicode)
+    pipeline_status_en = Column('pipeline_status_en', Unicode)
+    pipeline_name = Column('pipeline_name', Unicode)
+    medium_type_de = Column('medium_type_de', Unicode)
+    medium_type_fr = Column('medium_type_fr', Unicode)
+    medium_type_it = Column('medium_type_it', Unicode)
+    medium_type_en = Column('medium_type_en', Unicode)
+    maximum_operating_pressure = Column('maximum_operating_pressure', Float)
+    year_of_construction = Column('year_of_construction', Unicode)
+    outside_diameter = Column('outside_diameter', Integer)
+    operator_name = Column('operator_name', Unicode)
+    operator_uri = Column('operator_uri', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(RohrleitungsanlagenPipeline.__bodId__, RohrleitungsanlagenPipeline)
+
+
+class RohrleitungsanlagenAttendantPlant(Base, Vector):
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __tablename__ = 'rohrleitungsanlagen_attendantplant'
+    __template__ = 'templates/htmlpopup/bfe_rohrleitungsanlagen_attendantplant.mako'
+    __bodId__ = 'ch.bfe.rohrleitungsanlagen'
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    attendantplanttype_de = Column('attendantplanttype_de', Unicode)
+    attendantplanttype_fr = Column('attendantplanttype_fr', Unicode)
+    attendantplanttype_it = Column('attendantplanttype_it', Unicode)
+    attendantplanttype_en = Column('attendantplanttype_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(RohrleitungsanlagenAttendantPlant.__bodId__, RohrleitungsanlagenAttendantPlant)
+
+
+class RohrleitungsanlagenContainer(Base, Vector):
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __tablename__ = 'rohrleitungsanlagen_container'
+    __template__ = 'templates/htmlpopup/bfe_rohrleitungsanlagen_container.mako'
+    __bodId__ = 'ch.bfe.rohrleitungsanlagen'
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    container_type_de = Column('container_type_de', Unicode)
+    container_type_fr = Column('container_type_fr', Unicode)
+    container_type_it = Column('container_type_it', Unicode)
+    container_type_en = Column('container_type_en', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(RohrleitungsanlagenContainer.__bodId__, RohrleitungsanlagenContainer)
+
+
+class RohrleitungsanlagenRoutemarking(Base, Vector):
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __tablename__ = 'rohrleitungsanlagen_routemarking'
+    __template__ = 'templates/htmlpopup/bfe_rohrleitungsanlagen_routemarking.mako'
+    __bodId__ = 'ch.bfe.rohrleitungsanlagen'
+    __label__ = 'id'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    operator_uid = Column('operator_uid', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(RohrleitungsanlagenRoutemarking.__bodId__, RohrleitungsanlagenRoutemarking)
