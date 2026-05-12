@@ -10,31 +10,9 @@ from chsdi.lib.opentransapi import opentransapi
 from chsdi.lib.opentransapi.opentransapi import format_time
 from chsdi.views.stationboard import TransportView
 from tests.integration import TestsBase
-from tests.integration.helpers import generate_mock_response
+from tests.integration.helpers import generate_mock_ser_response
 from tests.integration.helpers import generate_mock_empty_response
-
-
-def generate_mock_lir_response(sloid, now):
-    return f"""<?xml version=\"1.0\" ?>
-    <OJP xmlns:siri=\"http://www.siri.org.uk/siri\" xmlns=\"http://www.vdv.de/ojp\" version=\"2.0\">
-        <OJPResponse>
-            <siri:ServiceDelivery>
-                <siri:ResponseTimestamp>{now}</siri:ResponseTimestamp>
-                <OJPLocationInformationDelivery>
-                    <PlaceResult>
-                        <Place>
-                            <StopPlace>
-                                <siri:StopPointRef>{sloid}</siri:StopPointRef>
-                                <Name>
-                                    <Text>Hogwarts Station</Text>
-                                </Name>
-                            </StopPlace>
-                        </Place>
-                    </PlaceResult>
-                </OJPLocationInformationDelivery>
-            </siri:ServiceDelivery>
-        </OJPResponse>
-    </OJP>"""
+from tests.integration.helpers import generate_mock_lir_response
 
 
 class TestOpenTransApi(TestsBase):
@@ -56,7 +34,7 @@ class TestOpenTransApi(TestsBase):
                 "destinationId": "ch:1:sloid:91178::3",
             }
         ]
-        mock_response = generate_mock_response(mock_departures, now)
+        mock_response = generate_mock_ser_response(mock_departures, now)
 
         mock_requests.post(
             self.mock_url,
@@ -102,7 +80,7 @@ class TestOpenTransApi(TestsBase):
     @requests_mock.Mocker()
     def test_stationboard_invalid_id(self, mock_requests):
         now = datetime.now(timezone('Europe/Zurich')).isoformat(timespec="microseconds")
-        mock_response = generate_mock_response([], now)
+        mock_response = generate_mock_ser_response([], now)
         mock_requests.post(self.mock_url, text=mock_response, status_code=200)
 
         api = opentransapi.OpenTrans(self.mock_api_key, self.mock_url)
@@ -125,7 +103,7 @@ class TestOpenTransApi(TestsBase):
                 "destinationId": "ch:1:sloid:91178::3",
             }
         ]
-        mock_ser_response = generate_mock_response(mock_departures, now)
+        mock_ser_response = generate_mock_ser_response(mock_departures, now)
 
         mock_requests.post(self.mock_url, [
             {'text': mock_lir_response, 'status_code': 200},
@@ -156,7 +134,7 @@ class TestOpenTransApi(TestsBase):
                 "destinationId": "ch:1:sloid:91178::3",
             }
         ]
-        mock_ser_response = generate_mock_response(mock_departures, now)
+        mock_ser_response = generate_mock_ser_response(mock_departures, now)
 
         mock_requests.post(self.mock_url, text=mock_ser_response, status_code=200)
 

@@ -39,6 +39,7 @@ class OpenTrans:
         self.open_trans_api_key = open_trans_api_key  # Get API key from config .ini
         self.url = open_trans_url  # URL of API
         self.station_id = None
+        self.original_station_id = None
 
     def get_departures(self, station_id, number_results=5):
         # Note: according to https://opentransportdata.swiss/de/cookbook/ojpstopeventrequest/
@@ -46,6 +47,7 @@ class OpenTrans:
         # and MUST include the seconds, in order to prevent their code from trying to interpret
         # the given times as a form of local time!
         request_dt_time = datetime.now(UTC).strftime('%Y-%m-%dT%H:%M:%SZ')
+        self.original_station_id = station_id
         sloid = self.get_sloid(station_id)
         self.station_id = sloid
         api_response_xml = self.send_post(sloid, request_dt_time, number_results)  # UTC!
@@ -73,7 +75,7 @@ class OpenTrans:
         el_stop_points = root.findall('.//ojp:StopEventResult/ojp:StopEvent', ns)
 
         if not el_stop_points:
-            raise OpenTransNoStationException("No data available for the station %s." % str(self.station_id))
+            raise OpenTransNoStationException("No data available for the station %s." % str(self.original_station_id))
 
         results = []
 
@@ -218,20 +220,20 @@ class OpenTrans:
         el_stop_points = root.findall('.//ojp:PlaceResult/ojp:Place/ojp:StopPlace', ns)
 
         if not el_stop_points:
-            raise OpenTransException("No stop place found for station %s." % str(self.station_id))
+            raise OpenTransNoStationException("No stop place found for station %s." % str(self.original_station_id))
 
         if len(el_stop_points) > 1:
-            log.warning("Multiple stop places found for station %s, using the first one." % str(self.station_id))
+            log.warning("Multiple stop places found for station %s, using the first one." % str(self.original_station_id))
 
         # Use the first result
         el = el_stop_points[0]
         el_sloid = el.find('.//siri:StopPointRef', ns)
         if el_sloid is None or not el_sloid.text:
-            raise OpenTransException("No valid SLOID found for station %s." % str(self.station_id))
+            raise OpenTransException("No valid SLOID found for station %s." % str(self.original_station_id))
 
         sloid = el_sloid.text
         if ':' not in sloid:
-            raise OpenTransException("Returned identifier %s does not appear to be a valid SLOID for station %s." % (sloid, str(self.station_id)))
+            raise OpenTransException("Returned identifier %s does not appear to be a valid SLOID for station %s." % (sloid, str(self.original_station_id)))
 
         # Debug check if the place name or other fields correlate with input (for additional validation)
         place_name = el.find('.//ojp:Place/ojp:Name/ojp:Text', ns)
