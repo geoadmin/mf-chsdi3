@@ -158,6 +158,7 @@ class OpenTrans:
         # are generally plain numeric values without colons.
         # So if the station_id already is a SLOID, we can skip the LIR request and use it directly.
         # Otherwise, the LIR will be performed to resolve the DiDok to the corresponding SLOID.
+        station_id = str(station_id)  # Convert to string to handle both int and str inputs
         if ':' in station_id:
             return station_id  # already a SLOID-like value
         return self.do_lir(station_id)
