@@ -98,7 +98,7 @@ class OpenTrans:
             })
         return results
 
-    def create_ojp_payload(self, station_id, request_dt_time, number_results=5):
+    def create_ser_payload(self, station_id, request_dt_time, number_results=5):
         # ATTENTION: The value "swisstopo_Abfahrtsmonitor" for the RequestorRef
         # in the payload below is suggested by the OJP product owner.
         # Hence it MUST NOT be changed!
@@ -143,7 +143,7 @@ class OpenTrans:
             'content-type': 'application/xml; charset=utf-8',
             'accept-charset': 'utf-8'
         }
-        xml_data = self.create_ojp_payload(str(station_id), str(request_dt_time), str(number_results))
+        xml_data = self.create_ser_payload(str(station_id), str(request_dt_time), str(number_results))
         resp = requests.post(url=self.url, data=xml_data, headers=headers, timeout=5)
 
         if (resp.status_code == 429):
@@ -189,6 +189,9 @@ class OpenTrans:
         return self.parse_lir_response(resp.text.encode('utf-8'))
 
     def create_lir_payload(self, station_id, request_dt_time):
+        # PlaceRef/StopPointRef accepts DiDok numbers directly for a deterministic ID-based lookup.
+        # <Name> is required by the OJP schema but its value is ignored when StopPointRef is provided.
+        # See: https://opentransportdata.swiss/de/cookbook/open-journey-planner-ojp-landing-page/ojplocationinformationrequest-2-0/#PlaceRef
         payload = f"""<?xml version="1.0" encoding="UTF-8"?>
         <OJP xmlns='http://www.vdv.de/ojp' xmlns:siri='http://www.siri.org.uk/siri' version='2.0' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://www.vdv.de/ojp ../../../../OJP4/OJP.xsd'>
             <OJPRequest>
@@ -198,9 +201,10 @@ class OpenTrans:
                     <OJPLocationInformationRequest>
                         <siri:RequestTimestamp>{request_dt_time}</siri:RequestTimestamp>
                         <siri:MessageIdentifier>LIR</siri:MessageIdentifier>
-                        <InitialInput>
-                            <LocationName>{station_id}</LocationName>
-                        </InitialInput>
+                        <PlaceRef>
+                            <siri:StopPointRef>{station_id}</siri:StopPointRef>
+                            <Name><Text>{station_id}</Text></Name>
+                        </PlaceRef>
                         <Restrictions>
                             <Type>stop</Type>
                         </Restrictions>
