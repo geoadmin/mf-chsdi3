@@ -36,11 +36,10 @@ class TestOpenTransApi(TestsBase):
         ]
         mock_response = generate_mock_ser_response(mock_departures, now)
 
-        mock_requests.post(
-            self.mock_url,
-            text=mock_response,
-            status_code=200
-        )
+        mock_requests.post(self.mock_url, [
+            {'text': generate_mock_lir_response('ch:1:sloid:30813::1', now), 'status_code': 200},
+            {'text': mock_response, 'status_code': 200},
+        ])
 
         api = opentransapi.OpenTrans(self.mock_api_key, self.mock_url)
         results = api.get_departures(8501120, number_results=1)
@@ -116,8 +115,8 @@ class TestOpenTransApi(TestsBase):
         self.assertEqual(len(results), 1)
         self.assertEqual(results[0]["id"], expected_sloid)
         self.assertEqual(len(mock_requests.request_history), 2)
-        self.assertIn('<siri:MessageIdentifier>LIR</siri:MessageIdentifier>', mock_requests.request_history[0].body.decode('utf-8'))
-        self.assertIn('<siri:MessageIdentifier>SER</siri:MessageIdentifier>', mock_requests.request_history[1].body.decode('utf-8'))
+        self.assertIn('<siri:MessageIdentifier>LIR</siri:MessageIdentifier>', mock_requests.request_history[0].body)
+        self.assertIn('<siri:MessageIdentifier>SER</siri:MessageIdentifier>', mock_requests.request_history[1].body)
 
     @requests_mock.Mocker()
     def test_sloid_skips_lir_and_uses_ser_only(self, mock_requests):
@@ -144,8 +143,8 @@ class TestOpenTransApi(TestsBase):
         self.assertEqual(len(results), 1)
         self.assertEqual(results[0]["id"], expected_sloid)
         self.assertEqual(len(mock_requests.request_history), 1)
-        self.assertIn('<siri:MessageIdentifier>SER</siri:MessageIdentifier>', mock_requests.request_history[0].body.decode('utf-8'))
-        self.assertNotIn('MessageIdentifier>LIR<', mock_requests.request_history[0].body.decode('utf-8'))
+        self.assertIn('<siri:MessageIdentifier>SER</siri:MessageIdentifier>', mock_requests.request_history[0].body)
+        self.assertNotIn('MessageIdentifier>LIR<', mock_requests.request_history[0].body)
 
     @patch('chsdi.views.stationboard.get_current_registry')
     def test_invalid_limit_param(self, mock_get_current_registry):

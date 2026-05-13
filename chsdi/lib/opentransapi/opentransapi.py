@@ -238,9 +238,9 @@ class OpenTrans:
         # Debug check if the place name or other fields correlate with input (for additional validation)
         place_name = el.find('.//ojp:Place/ojp:Name/ojp:Text', ns)
         if place_name is not None:
-            log.debug("Resolved station %s to SLOID %s (place name: %s)" % (str(self.station_id), sloid, place_name.text))
+            log.debug("Resolved station %s to SLOID %s (place name: %s)" % (str(self.original_station_id), sloid, place_name.text))
         else:
-            log.debug("Resolved station %s to SLOID %s" % (str(self.station_id), sloid))
+            log.debug("Resolved station %s to SLOID %s" % (str(self.original_station_id), sloid))
 
         return sloid
 
