@@ -231,7 +231,7 @@ class OpenTrans:
 
         # Use the first result
         el = el_stop_points[0]
-        el_sloid = el.find('.//siri:StopPointRef', ns)
+        el_sloid = el.find('ojp:StopPlaceRef', ns)
         if el_sloid is None or not el_sloid.text:
             raise OpenTransException("No valid SLOID found for station %s." % str(self.original_station_id))
 
@@ -240,7 +240,7 @@ class OpenTrans:
             raise OpenTransException("Returned identifier %s does not appear to be a valid SLOID for station %s." % (sloid, str(self.original_station_id)))
 
         # Debug check if the place name or other fields correlate with input (for additional validation)
-        place_name = el.find('.//ojp:Place/ojp:Name/ojp:Text', ns)
+        place_name = el.find('ojp:StopPlaceName/ojp:Text', ns)
         if place_name is not None:
             log.debug("Resolved station %s to SLOID %s (place name: %s)" % (str(self.original_station_id), sloid, place_name.text))
         else:

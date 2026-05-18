@@ -9,7 +9,7 @@ def generate_mock_lir_response(sloid, now):
                     <PlaceResult>
                         <Place>
                             <StopPlace>
-                                <siri:StopPointRef>{sloid}</siri:StopPointRef>
+                                <StopPlaceRef>{sloid}</StopPlaceRef>
                             </StopPlace>
                         </Place>
                     </PlaceResult>
