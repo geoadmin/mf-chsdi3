@@ -237,7 +237,7 @@ class OpenTrans:
 
         sloid = el_sloid.text
         if ':' not in sloid:
-            raise OpenTransException("Returned identifier %s does not appear to be a valid SLOID for station %s." % (sloid, str(self.original_station_id)))
+            log.warning("LIR returned non-SLOID identifier %s for station %s, using it directly for SER" % (sloid, str(self.original_station_id)))
 
         # Debug check if the place name or other fields correlate with input (for additional validation)
         place_name = el.find('ojp:StopPlaceName/ojp:Text', ns)
