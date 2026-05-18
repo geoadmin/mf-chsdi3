@@ -117,7 +117,7 @@ class OpenTrans:
                         <siri:MessageIdentifier>SER</siri:MessageIdentifier>
                         <Location>
                             <PlaceRef>
-                                <siri:StopPointRef>{station_id}</siri:StopPointRef>
+                                <StopPlaceRef>{station_id}</StopPlaceRef>
                             </PlaceRef>
                                 <DepArrTime>{request_dt_time}</DepArrTime>
                         </Location>
@@ -189,8 +189,10 @@ class OpenTrans:
         return self.parse_lir_response(resp.text.encode('utf-8'))
 
     def create_lir_payload(self, station_id, request_dt_time):
-        # PlaceRef/StopPointRef accepts DiDok numbers directly for a deterministic ID-based lookup.
-        # <Name> is required by the OJP schema but its value is ignored when StopPointRef is provided.
+        # PlaceRef/StopPlaceRef accepts DiDok numbers directly for a deterministic ID-based lookup.
+        # StopPlaceRef is used (not siri:StopPointRef) because we are resolving a station (stop place),
+        # not a platform-level scheduled stop point.
+        # <Name> is required by the OJP schema but its value is ignored when StopPlaceRef is provided.
         # See: https://opentransportdata.swiss/de/cookbook/open-journey-planner-ojp-landing-page/ojplocationinformationrequest-2-0/#PlaceRef
         payload = f"""<?xml version="1.0" encoding="UTF-8"?>
         <OJP xmlns='http://www.vdv.de/ojp' xmlns:siri='http://www.siri.org.uk/siri' version='2.0' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://www.vdv.de/ojp ../../../../OJP4/OJP.xsd'>
@@ -202,7 +204,7 @@ class OpenTrans:
                         <siri:RequestTimestamp>{request_dt_time}</siri:RequestTimestamp>
                         <siri:MessageIdentifier>LIR</siri:MessageIdentifier>
                         <PlaceRef>
-                            <siri:StopPointRef>{station_id}</siri:StopPointRef>
+                            <StopPlaceRef>{station_id}</StopPlaceRef>
                             <Name><Text>{station_id}</Text></Name>
                         </PlaceRef>
                         <Restrictions>
