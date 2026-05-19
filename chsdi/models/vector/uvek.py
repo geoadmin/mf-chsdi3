@@ -4047,10 +4047,11 @@ class RohrleitungsanlagenProtectedArea(Base, Vector):
     __tablename__ = 'rohrleitungsanlagen_protectedarea'
     __template__ = 'templates/htmlpopup/bfe_rohrleitungsanlagen_protectedarea.mako'
     __bodId__ = 'ch.bfe.rohrleitungsanlagen'
-    __label__ = 'id'
+    __label__ = 'label'
     id = Column('bgdi_id', Integer, primary_key=True)
     legalprovision = Column('legalprovision', Unicode)
-    the_geom = Column(Geometry2D)
+    label = Column('label', Unicode)
+the_geom = Column(Geometry2D)
 
 register(RohrleitungsanlagenProtectedArea.__bodId__, RohrleitungsanlagenProtectedArea)
 
@@ -4060,7 +4061,7 @@ class RohrleitungsanlagenPipeline(Base, Vector):
     __tablename__ = 'rohrleitungsanlagen_pipeline'
     __template__ = 'templates/htmlpopup/bfe_rohrleitungsanlagen_pipeline.mako'
     __bodId__ = 'ch.bfe.rohrleitungsanlagen'
-    __label__ = 'id'
+    __label__ = 'label'
     id = Column('bgdi_id', Integer, primary_key=True)
     pipeline_status_de = Column('pipeline_status_de', Unicode)
     pipeline_status_fr = Column('pipeline_status_fr', Unicode)
@@ -4076,6 +4077,7 @@ class RohrleitungsanlagenPipeline(Base, Vector):
     outside_diameter = Column('outside_diameter', Integer)
     operator_name = Column('operator_name', Unicode)
     operator_uri = Column('operator_uri', Unicode)
+    label = Column('label', Unicode)
     the_geom = Column(Geometry2D)
 
 register(RohrleitungsanlagenPipeline.__bodId__, RohrleitungsanlagenPipeline)
@@ -4086,12 +4088,13 @@ class RohrleitungsanlagenAttendantPlant(Base, Vector):
     __tablename__ = 'rohrleitungsanlagen_attendantplant'
     __template__ = 'templates/htmlpopup/bfe_rohrleitungsanlagen_attendantplant.mako'
     __bodId__ = 'ch.bfe.rohrleitungsanlagen'
-    __label__ = 'id'
+    __label__ = 'label'
     id = Column('bgdi_id', Integer, primary_key=True)
     attendantplanttype_de = Column('attendantplanttype_de', Unicode)
     attendantplanttype_fr = Column('attendantplanttype_fr', Unicode)
     attendantplanttype_it = Column('attendantplanttype_it', Unicode)
     attendantplanttype_en = Column('attendantplanttype_en', Unicode)
+    label = Column('label', Unicode)
     the_geom = Column(Geometry2D)
 
 register(RohrleitungsanlagenAttendantPlant.__bodId__, RohrleitungsanlagenAttendantPlant)
@@ -4102,12 +4105,13 @@ class RohrleitungsanlagenContainer(Base, Vector):
     __tablename__ = 'rohrleitungsanlagen_container'
     __template__ = 'templates/htmlpopup/bfe_rohrleitungsanlagen_container.mako'
     __bodId__ = 'ch.bfe.rohrleitungsanlagen'
-    __label__ = 'id'
+    __label__ = 'label'
     id = Column('bgdi_id', Integer, primary_key=True)
     container_type_de = Column('container_type_de', Unicode)
     container_type_fr = Column('container_type_fr', Unicode)
     container_type_it = Column('container_type_it', Unicode)
     container_type_en = Column('container_type_en', Unicode)
+    label = Column('label', Unicode)
     the_geom = Column(Geometry2D)
 
 register(RohrleitungsanlagenContainer.__bodId__, RohrleitungsanlagenContainer)
@@ -4118,9 +4122,10 @@ class RohrleitungsanlagenRoutemarking(Base, Vector):
     __tablename__ = 'rohrleitungsanlagen_routemarking'
     __template__ = 'templates/htmlpopup/bfe_rohrleitungsanlagen_routemarking.mako'
     __bodId__ = 'ch.bfe.rohrleitungsanlagen'
-    __label__ = 'id'
+    __label__ = 'label'
     id = Column('bgdi_id', Integer, primary_key=True)
     operator_uid = Column('operator_uid', Unicode)
+    label = Column('label', Unicode)
     the_geom = Column(Geometry2D)
 
 register(RohrleitungsanlagenRoutemarking.__bodId__, RohrleitungsanlagenRoutemarking)
