@@ -1,10 +1,10 @@
 from sqlalchemy import Column, Unicode, Integer, Date
 from sqlalchemy.types import Numeric, Float, Boolean
-from sqlalchemy.sql.expression import literal
 
 from chsdi.models import register, bases
 from chsdi.models.types import JsonChsdi
 from chsdi.models.vector import Vector, Geometry2D
+
 
 Base = bases['uvek']
 
