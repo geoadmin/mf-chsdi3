@@ -10,8 +10,10 @@ from chsdi.lib.opentransapi import opentransapi
 from chsdi.lib.opentransapi.opentransapi import format_time
 from chsdi.views.stationboard import TransportView
 from tests.integration import TestsBase
-from tests.integration.helpers import generate_mock_response
+from tests.integration.helpers import generate_mock_ser_response
 from tests.integration.helpers import generate_mock_empty_response
+from tests.integration.helpers import generate_mock_lir_response
+from tests.integration.helpers import generate_mock_empty_lir_response
 
 
 class TestOpenTransApi(TestsBase):
@@ -33,13 +35,12 @@ class TestOpenTransApi(TestsBase):
                 "destinationId": "ch:1:sloid:91178::3",
             }
         ]
-        mock_response = generate_mock_response(mock_departures, now)
+        mock_response = generate_mock_ser_response(mock_departures, now)
 
-        mock_requests.post(
-            self.mock_url,
-            text=mock_response,
-            status_code=200
-        )
+        mock_requests.post(self.mock_url, [
+            {'text': generate_mock_lir_response('ch:1:sloid:30813::1', now), 'status_code': 200},
+            {'text': mock_response, 'status_code': 200},
+        ])
 
         api = opentransapi.OpenTrans(self.mock_api_key, self.mock_url)
         results = api.get_departures(8501120, number_results=1)
@@ -79,12 +80,100 @@ class TestOpenTransApi(TestsBase):
     @requests_mock.Mocker()
     def test_stationboard_invalid_id(self, mock_requests):
         now = datetime.now(timezone('Europe/Zurich')).isoformat(timespec="microseconds")
-        mock_response = generate_mock_response([], now)
-        mock_requests.post(self.mock_url, text=mock_response, status_code=200)
+        mock_requests.post(self.mock_url, text=generate_mock_empty_lir_response(now), status_code=200)
 
         api = opentransapi.OpenTrans(self.mock_api_key, self.mock_url)
         with self.assertRaises(opentransapi.OpenTransNoStationException):
             api.get_departures("invalid_id")
+
+    @requests_mock.Mocker()
+    def test_lir_didok_fallback_uses_didok_for_ser(self, mock_requests):
+        now = datetime.now(timezone('Europe/Zurich')).isoformat(timespec="microseconds")
+        didok = '8507000'
+        mock_departures = [
+            {
+                "id": "ch:1:sloid:30813::1",
+                "label": "Hogwarts Express",
+                "currentDate": now,
+                "departureDate": "2024-11-19T08:52:00Z",
+                "estimatedDate": "2024-11-19T08:52:00Z",
+                "destinationName": "Hogwarts",
+                "destinationId": "ch:1:sloid:91178::3",
+            }
+        ]
+        mock_requests.post(self.mock_url, [
+            {'text': generate_mock_lir_response(didok, now), 'status_code': 200},
+            {'text': generate_mock_ser_response(mock_departures, now), 'status_code': 200},
+        ])
+
+        api = opentransapi.OpenTrans(self.mock_api_key, self.mock_url)
+        with self.assertLogs('chsdi.lib.opentransapi.opentransapi', level='WARNING') as log:
+            results = api.get_departures(didok)
+
+        self.assertEqual(len(results), 1)
+        self.assertEqual(len(mock_requests.request_history), 2)
+        self.assertIn(f'<StopPlaceRef>{didok}</StopPlaceRef>', mock_requests.request_history[1].body)
+        self.assertTrue(any('non-SLOID' in msg for msg in log.output))
+
+    @requests_mock.Mocker()
+    def test_didok_triggers_lir_before_ser(self, mock_requests):
+        now = datetime.now(timezone('Europe/Zurich')).isoformat(timespec="microseconds")
+        expected_sloid = "ch:1:sloid:30813::1"
+        mock_lir_response = generate_mock_lir_response(expected_sloid, now)
+        mock_departures = [
+            {
+                "id": expected_sloid,
+                "label": "Hogwarts Express",
+                "currentDate": now,
+                "departureDate": "2024-11-19T08:52:00Z",
+                "estimatedDate": "2024-11-19T08:52:00Z",
+                "destinationName": "Hogwarts",
+                "destinationId": "ch:1:sloid:91178::3",
+            }
+        ]
+        mock_ser_response = generate_mock_ser_response(mock_departures, now)
+
+        mock_requests.post(self.mock_url, [
+            {'text': mock_lir_response, 'status_code': 200},
+            {'text': mock_ser_response, 'status_code': 200}
+        ])
+
+        api = opentransapi.OpenTrans(self.mock_api_key, self.mock_url)
+        results = api.get_departures(8501120, number_results=1)
+
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0]["id"], expected_sloid)
+        self.assertEqual(len(mock_requests.request_history), 2)
+        self.assertIn('<siri:MessageIdentifier>LIR</siri:MessageIdentifier>', mock_requests.request_history[0].body)
+        self.assertIn('<siri:MessageIdentifier>SER</siri:MessageIdentifier>', mock_requests.request_history[1].body)
+
+    @requests_mock.Mocker()
+    def test_sloid_skips_lir_and_uses_ser_only(self, mock_requests):
+        now = datetime.now(timezone('Europe/Zurich')).isoformat(timespec="microseconds")
+        expected_sloid = "ch:1:sloid:30813::1"
+        mock_departures = [
+            {
+                "id": expected_sloid,
+                "label": "Hogwarts Express",
+                "currentDate": now,
+                "departureDate": "2024-11-19T08:52:00Z",
+                "estimatedDate": "2024-11-19T08:52:00Z",
+                "destinationName": "Hogwarts",
+                "destinationId": "ch:1:sloid:91178::3",
+            }
+        ]
+        mock_ser_response = generate_mock_ser_response(mock_departures, now)
+
+        mock_requests.post(self.mock_url, text=mock_ser_response, status_code=200)
+
+        api = opentransapi.OpenTrans(self.mock_api_key, self.mock_url)
+        results = api.get_departures(expected_sloid, number_results=1)
+
+        self.assertEqual(len(results), 1)
+        self.assertEqual(results[0]["id"], expected_sloid)
+        self.assertEqual(len(mock_requests.request_history), 1)
+        self.assertIn('<siri:MessageIdentifier>SER</siri:MessageIdentifier>', mock_requests.request_history[0].body)
+        self.assertNotIn('MessageIdentifier>LIR<', mock_requests.request_history[0].body)
 
     @patch('chsdi.views.stationboard.get_current_registry')
     def test_invalid_limit_param(self, mock_get_current_registry):

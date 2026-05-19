@@ -3,8 +3,12 @@ from pytz import timezone
 
 from tests.integration import TestsBase
 import requests_mock
-from tests.integration.helpers import generate_mock_response
+from tests.integration.helpers import generate_mock_ser_response
 from tests.integration.helpers import generate_mock_empty_response
+from tests.integration.helpers import generate_mock_lir_response
+
+SLOID_8501120 = 'ch:1:sloid:8501120::1'
+SLOID_153153 = 'ch:1:sloid:153153::1'
 
 
 class TestStationboard(TestsBase):
@@ -27,13 +31,12 @@ class TestStationboard(TestsBase):
                 "destinationId": "ch:1:sloid:91178::3",
             }
         ]
-        mock_response = generate_mock_response(mock_departures, now)
+        mock_response = generate_mock_ser_response(mock_departures, now)
 
-        mock_requests.post(
-            self.mock_url,
-            text=mock_response,
-            status_code=200
-        )
+        mock_requests.post(self.mock_url, [
+            {'text': generate_mock_lir_response(SLOID_8501120, now), 'status_code': 200},
+            {'text': mock_response, 'status_code': 200},
+        ])
 
         resp = self.testapp.get('/stationboard/stops/8501120', status=200)
 
@@ -43,13 +46,12 @@ class TestStationboard(TestsBase):
     @requests_mock.Mocker()
     def test_stationboard_wrong_station(self, mock_requests):
         now = datetime.now(timezone('Europe/Zurich')).isoformat(timespec="microseconds")
-        # mock an empty response to simulate a "station not found" event.
-        mock_response = generate_mock_empty_response(now)
-        mock_requests.post(
-            self.mock_url,
-            text=mock_response,
-            status_code=200
-        )
+        # mock a valid LIR followed by an empty stop event response to simulate
+        # a station that exists but has no departures.
+        mock_requests.post(self.mock_url, [
+            {'text': generate_mock_lir_response(SLOID_153153, now), 'status_code': 200},
+            {'text': generate_mock_empty_response(now), 'status_code': 200},
+        ])
 
         resp = self.testapp.get('/stationboard/stops/153153', status=404)
         resp.mustcontain('No data available for the station 153153')
@@ -68,13 +70,12 @@ class TestStationboard(TestsBase):
                 "destinationId": "ch:1:sloid:91178::3",
             }
         ]
-        mock_response = generate_mock_response(mock_departures, now)
+        mock_response = generate_mock_ser_response(mock_departures, now)
 
-        mock_requests.post(
-            self.mock_url,
-            text=mock_response,
-            status_code=200
-        )
+        mock_requests.post(self.mock_url, [
+            {'text': generate_mock_lir_response(SLOID_8501120, now), 'status_code': 200},
+            {'text': mock_response, 'status_code': 200},
+        ])
 
         params = {'limit': '1'}
         resp = self.testapp.get('/stationboard/stops/8501120', params=params, status=200)
@@ -98,13 +99,12 @@ class TestStationboard(TestsBase):
                 "destinationId": "ch:1:sloid:91178::3",
             }
         ]
-        mock_response = generate_mock_response(mock_departures, now)
+        mock_response = generate_mock_ser_response(mock_departures, now)
 
-        mock_requests.post(
-            opentrans_url,
-            text=mock_response,
-            status_code=200
-        )
+        mock_requests.post(opentrans_url, [
+            {'text': generate_mock_lir_response(SLOID_8501120, now), 'status_code': 200},
+            {'text': mock_response, 'status_code': 200},
+        ])
 
         params = {'callback': 'cb_'}
         resp = self.testapp.get('/stationboard/stops/8501120', params=params, status=200)

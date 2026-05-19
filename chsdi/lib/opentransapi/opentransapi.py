@@ -5,6 +5,9 @@ from pytz import UTC
 from datetime import datetime
 from dateutil.parser import isoparse
 import re
+import logging
+
+log = logging.getLogger(__name__)
 
 
 def format_time(str_date_time):
@@ -36,6 +39,7 @@ class OpenTrans:
         self.open_trans_api_key = open_trans_api_key  # Get API key from config .ini
         self.url = open_trans_url  # URL of API
         self.station_id = None
+        self.original_station_id = None
 
     def get_departures(self, station_id, number_results=5):
         # Note: according to https://opentransportdata.swiss/de/cookbook/ojpstopeventrequest/
@@ -43,8 +47,10 @@ class OpenTrans:
         # and MUST include the seconds, in order to prevent their code from trying to interpret
         # the given times as a form of local time!
         request_dt_time = datetime.now(UTC).strftime('%Y-%m-%dT%H:%M:%SZ')
-        self.station_id = station_id
-        api_response_xml = self.send_post(station_id, request_dt_time, number_results)  # UTC!
+        self.original_station_id = station_id
+        sloid = self.get_sloid(station_id)
+        self.station_id = sloid
+        api_response_xml = self.do_ser(sloid, request_dt_time, number_results)  # UTC!
         results = self.xml_to_array(api_response_xml)
         return results
 
@@ -69,7 +75,7 @@ class OpenTrans:
         el_stop_points = root.findall('.//ojp:StopEventResult/ojp:StopEvent', ns)
 
         if not el_stop_points:
-            raise OpenTransNoStationException("No data available for the station %s." % str(self.station_id))
+            raise OpenTransNoStationException("No data available for the station %s." % str(self.original_station_id))
 
         results = []
 
@@ -92,7 +98,7 @@ class OpenTrans:
             })
         return results
 
-    def create_ojp_payload(self, station_id, request_dt_time, number_results=5):
+    def create_ser_payload(self, station_id, request_dt_time, number_results=5):
         # ATTENTION: The value "swisstopo_Abfahrtsmonitor" for the RequestorRef
         # in the payload below is suggested by the OJP product owner.
         # Hence it MUST NOT be changed!
@@ -111,7 +117,7 @@ class OpenTrans:
                         <siri:MessageIdentifier>SER</siri:MessageIdentifier>
                         <Location>
                             <PlaceRef>
-                                <siri:StopPointRef>{station_id}</siri:StopPointRef>
+                                <StopPlaceRef>{station_id}</StopPlaceRef>
                             </PlaceRef>
                                 <DepArrTime>{request_dt_time}</DepArrTime>
                         </Location>
@@ -131,23 +137,118 @@ class OpenTrans:
         # the minimum necessary
         return re.sub(r">\s+<", "><", payload.strip())
 
-    def send_post(self, station_id, request_dt_time, number_results=5):
+    def do_ser(self, station_id, request_dt_time, number_results=5):
         headers = {
             'authorization': self.open_trans_api_key,
             'content-type': 'application/xml; charset=utf-8',
             'accept-charset': 'utf-8'
         }
-        xml_data = self.create_ojp_payload(str(station_id), str(request_dt_time), str(number_results))
+        xml_data = self.create_ser_payload(str(station_id), str(request_dt_time), str(number_results))
         resp = requests.post(url=self.url, data=xml_data, headers=headers, timeout=5)
 
-        if (resp.status_code == 429):
-            raise OpenTransRateLimitException("The rate limit of OpenTransportdata has exceeded")
-
-        if (resp.status_code != requests.codes.ok):  # pylint: disable=no-member
+        if resp.status_code != requests.codes.ok:  # pylint: disable=no-member
+            log.error("OJP SER request failed with HTTP %s: %s", resp.status_code, resp.text)
+            if resp.status_code == 429:
+                raise OpenTransRateLimitException("The rate limit of OpenTransportdata has exceeded")
             resp.raise_for_status()
 
         resp.encoding = 'utf-8'  # TODO better encoding solution
         return resp.text.encode('utf-8')
+
+    def get_sloid(self, station_id):
+        # most SLOID identifiers contain at least one colon, while DiDok numbers
+        # are generally plain numeric values without colons.
+        # So if the station_id already is a SLOID, we can skip the LIR request and use it directly.
+        # Otherwise, the LIR will be performed to resolve the DiDok to the corresponding SLOID.
+        station_id = str(station_id)  # Convert to string to handle both int and str inputs
+        if ':' in station_id:
+            return station_id  # already a SLOID-like value
+        return self.do_lir(station_id)
+
+    def do_lir(self, station_id):
+        # Note: according to https://opentransportdata.swiss/de/cookbook/ojpstopeventrequest/
+        # the timestamps used in the OJPStopEventRequest should preferably be in UTC
+        # and MUST include the seconds, in order to prevent their code from trying to interpret
+        # the given times as a form of local time!
+        request_dt_time = datetime.now(UTC).strftime('%Y-%m-%dT%H:%M:%SZ')
+        payload = self.create_lir_payload(station_id, request_dt_time)
+        headers = {
+            'authorization': self.open_trans_api_key,
+            'content-type': 'application/xml; charset=utf-8',
+            'accept-charset': 'utf-8'
+        }
+        resp = requests.post(url=self.url, data=payload, headers=headers, timeout=5)
+
+        if resp.status_code != requests.codes.ok:  # pylint: disable=no-member
+            log.error("OJP LIR request failed with HTTP %s: %s", resp.status_code, resp.text)
+            if resp.status_code == 429:
+                raise OpenTransRateLimitException("The rate limit of OpenTransportdata has exceeded")
+            resp.raise_for_status()
+
+        resp.encoding = 'utf-8'
+        return self.parse_lir_response(resp.text.encode('utf-8'))
+
+    def create_lir_payload(self, station_id, request_dt_time):
+        # PlaceRef/StopPlaceRef accepts DiDok numbers directly for a deterministic ID-based lookup.
+        # StopPlaceRef is used (not siri:StopPointRef) because we are resolving a station (stop place),
+        # not a platform-level scheduled stop point.
+        # <Name> is required by the OJP schema but its value is ignored when StopPlaceRef is provided.
+        # See: https://opentransportdata.swiss/de/cookbook/open-journey-planner-ojp-landing-page/ojplocationinformationrequest-2-0/#PlaceRef
+        payload = f"""<?xml version="1.0" encoding="UTF-8"?>
+        <OJP xmlns='http://www.vdv.de/ojp' xmlns:siri='http://www.siri.org.uk/siri' version='2.0' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='http://www.vdv.de/ojp ../../../../OJP4/OJP.xsd'>
+            <OJPRequest>
+                <siri:ServiceRequest>
+                    <siri:RequestTimestamp>{request_dt_time}</siri:RequestTimestamp>
+                    <siri:RequestorRef>swisstopo_Abfahrtsmonitor</siri:RequestorRef>
+                    <OJPLocationInformationRequest>
+                        <siri:RequestTimestamp>{request_dt_time}</siri:RequestTimestamp>
+                        <siri:MessageIdentifier>LIR</siri:MessageIdentifier>
+                        <PlaceRef>
+                            <StopPlaceRef>{station_id}</StopPlaceRef>
+                            <Name><Text>{station_id}</Text></Name>
+                        </PlaceRef>
+                        <Restrictions>
+                            <Type>stop</Type>
+                        </Restrictions>
+                    </OJPLocationInformationRequest>
+                </siri:ServiceRequest>
+            </OJPRequest>
+        </OJP>
+    """
+        return re.sub(r">\s+<", "><", payload.strip())
+
+    def parse_lir_response(self, xml_data):
+        ns = {
+            'ojp': 'http://www.vdv.de/ojp',
+            'siri': 'http://www.siri.org.uk/siri'
+        }
+        root = et.fromstring(xml_data.decode('utf-8'))
+        el_stop_points = root.findall('.//ojp:PlaceResult/ojp:Place/ojp:StopPlace', ns)
+
+        if not el_stop_points:
+            raise OpenTransNoStationException("No stop place found for station %s." % str(self.original_station_id))
+
+        if len(el_stop_points) > 1:
+            log.warning("Multiple stop places found for station %s, using the first one." % str(self.original_station_id))
+
+        # Use the first result
+        el = el_stop_points[0]
+        el_sloid = el.find('ojp:StopPlaceRef', ns)
+        if el_sloid is None or not el_sloid.text:
+            raise OpenTransException("No valid SLOID found for station %s." % str(self.original_station_id))
+
+        sloid = el_sloid.text
+        if ':' not in sloid:
+            log.warning("LIR returned non-SLOID identifier %s for station %s, using it directly for SER" % (sloid, str(self.original_station_id)))
+
+        # Debug check if the place name or other fields correlate with input (for additional validation)
+        place_name = el.find('ojp:StopPlaceName/ojp:Text', ns)
+        if place_name is not None:
+            log.debug("Resolved station %s to SLOID %s (place name: %s)" % (str(self.original_station_id), sloid, place_name.text))
+        else:
+            log.debug("Resolved station %s to SLOID %s" % (str(self.original_station_id), sloid))
+
+        return sloid
 
 
 class OpenTransException(Exception):
