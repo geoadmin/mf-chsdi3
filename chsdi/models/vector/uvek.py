@@ -4047,7 +4047,7 @@ class RohrleitungsanlagenProtectedArea(Base, Vector):
     __tablename__ = 'rohrleitungsanlagen_protectedarea'
     __template__ = 'templates/htmlpopup/bfe_rohrleitungsanlagen_protectedarea.mako'
     __bodId__ = 'ch.bfe.rohrleitungsanlagen'
-    __label__ = literal('Test: ') + 'id'
+    __label__ = 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
     legalprovision = Column('legalprovision', Unicode)
     the_geom = Column(Geometry2D)
