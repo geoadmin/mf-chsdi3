@@ -50,7 +50,7 @@ class OpenTrans:
         self.original_station_id = station_id
         sloid = self.get_sloid(station_id)
         self.station_id = sloid
-        api_response_xml = self.send_post(sloid, request_dt_time, number_results)  # UTC!
+        api_response_xml = self.do_ser(sloid, request_dt_time, number_results)  # UTC!
         results = self.xml_to_array(api_response_xml)
         return results
 
@@ -137,7 +137,7 @@ class OpenTrans:
         # the minimum necessary
         return re.sub(r">\s+<", "><", payload.strip())
 
-    def send_post(self, station_id, request_dt_time, number_results=5):
+    def do_ser(self, station_id, request_dt_time, number_results=5):
         headers = {
             'authorization': self.open_trans_api_key,
             'content-type': 'application/xml; charset=utf-8',
@@ -146,10 +146,10 @@ class OpenTrans:
         xml_data = self.create_ser_payload(str(station_id), str(request_dt_time), str(number_results))
         resp = requests.post(url=self.url, data=xml_data, headers=headers, timeout=5)
 
-        if (resp.status_code == 429):
-            raise OpenTransRateLimitException("The rate limit of OpenTransportdata has exceeded")
-
-        if (resp.status_code != requests.codes.ok):  # pylint: disable=no-member
+        if resp.status_code != requests.codes.ok:  # pylint: disable=no-member
+            log.error("OJP SER request failed with HTTP %s: %s", resp.status_code, resp.text)
+            if resp.status_code == 429:
+                raise OpenTransRateLimitException("The rate limit of OpenTransportdata has exceeded")
             resp.raise_for_status()
 
         resp.encoding = 'utf-8'  # TODO better encoding solution
@@ -179,10 +179,10 @@ class OpenTrans:
         }
         resp = requests.post(url=self.url, data=payload, headers=headers, timeout=5)
 
-        if resp.status_code == 429:
-            raise OpenTransRateLimitException("The rate limit of OpenTransportdata has exceeded")
-
         if resp.status_code != requests.codes.ok:  # pylint: disable=no-member
+            log.error("OJP LIR request failed with HTTP %s: %s", resp.status_code, resp.text)
+            if resp.status_code == 429:
+                raise OpenTransRateLimitException("The rate limit of OpenTransportdata has exceeded")
             resp.raise_for_status()
 
         resp.encoding = 'utf-8'
