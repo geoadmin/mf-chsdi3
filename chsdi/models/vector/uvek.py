@@ -1,10 +1,10 @@
 from sqlalchemy import Column, Unicode, Integer, Date
 from sqlalchemy.types import Numeric, Float, Boolean
+from sqlalchemy.sql.expression import literal
 
 from chsdi.models import register, bases
 from chsdi.models.types import JsonChsdi
 from chsdi.models.vector import Vector, Geometry2D
-
 
 Base = bases['uvek']
 
@@ -4047,7 +4047,7 @@ class RohrleitungsanlagenProtectedArea(Base, Vector):
     __tablename__ = 'rohrleitungsanlagen_protectedarea'
     __template__ = 'templates/htmlpopup/bfe_rohrleitungsanlagen_protectedarea.mako'
     __bodId__ = 'ch.bfe.rohrleitungsanlagen'
-    __label__ = 'id'
+    __label__ = literal('Test: ') + 'id'
     id = Column('bgdi_id', Integer, primary_key=True)
     legalprovision = Column('legalprovision', Unicode)
     the_geom = Column(Geometry2D)
