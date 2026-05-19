@@ -4051,7 +4051,7 @@ class RohrleitungsanlagenProtectedArea(Base, Vector):
     id = Column('bgdi_id', Integer, primary_key=True)
     legalprovision = Column('legalprovision', Unicode)
     label = Column('label', Unicode)
-the_geom = Column(Geometry2D)
+    the_geom = Column(Geometry2D)
 
 register(RohrleitungsanlagenProtectedArea.__bodId__, RohrleitungsanlagenProtectedArea)
 
