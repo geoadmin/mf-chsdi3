@@ -4107,7 +4107,7 @@ class RohrleitungsanlagenRoutemarking(Base, Vector):
     __bodId__ = 'ch.bfe.rohrleitungsanlagen'
     __label__ = 'label'
     id = Column('bgdi_id', Integer, primary_key=True)
-    operator_uid = Column('operator_uid', Unicode)
+    operator_name = Column('operator_name', Unicode)
     label = Column('label', Unicode)
     the_geom = Column(Geometry2D)
 
