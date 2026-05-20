@@ -4100,23 +4100,6 @@ class RohrleitungsanlagenAttendantPlant(Base, Vector):
 register(RohrleitungsanlagenAttendantPlant.__bodId__, RohrleitungsanlagenAttendantPlant)
 
 
-class RohrleitungsanlagenContainer(Base, Vector):
-    __table_args__ = ({'schema': 'bfe', 'autoload': False})
-    __tablename__ = 'rohrleitungsanlagen_container'
-    __template__ = 'templates/htmlpopup/bfe_rohrleitungsanlagen_container.mako'
-    __bodId__ = 'ch.bfe.rohrleitungsanlagen'
-    __label__ = 'label'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    container_type_de = Column('container_type_de', Unicode)
-    container_type_fr = Column('container_type_fr', Unicode)
-    container_type_it = Column('container_type_it', Unicode)
-    container_type_en = Column('container_type_en', Unicode)
-    label = Column('label', Unicode)
-    the_geom = Column(Geometry2D)
-
-register(RohrleitungsanlagenContainer.__bodId__, RohrleitungsanlagenContainer)
-
-
 class RohrleitungsanlagenRoutemarking(Base, Vector):
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
     __tablename__ = 'rohrleitungsanlagen_routemarking'
