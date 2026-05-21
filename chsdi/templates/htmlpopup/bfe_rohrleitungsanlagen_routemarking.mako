@@ -2,7 +2,7 @@
 
 <%def name="table_body(c, lang)">
   <tr>
-    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.operatoruid')}</td>
-    <td>${c['attributes']['operator_uid'] or '-'}</td>
+    <td class="cell-left">${_('ch.bfe.rohrleitungsanlagen.operatorname')}</td>
+    <td>${c['attributes']['operator_name'] or '-'}</td>
   </tr>
 </%def>

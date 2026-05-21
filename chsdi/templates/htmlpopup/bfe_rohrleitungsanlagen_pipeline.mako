@@ -7,35 +7,35 @@
     medium_type_text = 'medium_type_%s' % lang
   %>
   <tr>
-    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.pipelinestatus')}</td>
+    <td class="cell-left">${_('ch.bfe.rohrleitungsanlagen.pipelinestatus')}</td>
     <td>${c['attributes'][pipeline_status_text] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.aname')}</td>
+    <td class="cell-left">${_('ch.bfe.rohrleitungsanlagen.aname')}</td>
     <td>${c['attributes']['pipeline_name'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.mediumtype')}</td>
+    <td class="cell-left">${_('ch.bfe.rohrleitungsanlagen.mediumtype')}</td>
     <td>${c['attributes'][medium_type_text] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.maximumoperatingpressure')}</td>
+    <td class="cell-left">${_('ch.bfe.rohrleitungsanlagen.maximumoperatingpressure')}</td>
     <td>${c['attributes']['maximum_operating_pressure'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.yearofconstruction')}</td>
+    <td class="cell-left">${_('ch.bfe.rohrleitungsanlagen.yearofconstruction')}</td>
     <td>${c['attributes']['year_of_construction'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.outsidediameter')}</td>
+    <td class="cell-left">${_('ch.bfe.rohrleitungsanlagen.outsidediameter')}</td>
     <td>${c['attributes']['outside_diameter'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.operatorname')}</td>
+    <td class="cell-left">${_('ch.bfe.rohrleitungsanlagen.operatorname')}</td>
     <td>${c['attributes']['operator_name'] or '-'}</td>
   </tr>
   <tr>
-    <td class="cell-left-large">${_('ch.bfe.rohrleitungsanlagen.operatoruri')}</td>
+    <td class="cell-left">${_('ch.bfe.rohrleitungsanlagen.operatoruri')}</td>
     % if c['attributes']['operator_uri'].startswith('http'):
       <td><a target ="_blank" href="${c['attributes']['operator_uri']}">${_('link')}</a></td>
     % else:
