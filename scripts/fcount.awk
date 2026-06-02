@@ -5,10 +5,11 @@
 # never modified or removed.
 #
 # Input must have at least three fields on each line:
-#	size	x	mtime
+#	size	xxx	mtime
 # Lines that do not start with a number are ignored.
 # The "size" field is the size of the file in bytes.
 # The "mtime" field is the time of last modification of the file in epoch.
+# The second field is ignored, as are any fields after the third one.
 #
 # That can be generated with something like this:
 #	find /the/file/system/ -type f -printf '%s %C@ %T@ %p\n'
