@@ -33,7 +33,7 @@ BEGIN {
 
 END {
 	printf("files count: %d\n", files);
-	printf("total size: %d\n", total_size);
+	printf("total size: %d TiB\n", total_size/(1024*1024*1024*1024));
 	printf("average size: %d\n", total_size / files);
 
 	months = (now - earliest)/(60*60*24*30)
