@@ -465,3 +465,21 @@ def get_payload(obj, trim=128):
 def strtobool(value: str) -> bool:
     from chsdi.utils.strtobool import strtobool as s
     return s(value)
+
+
+def pipe_links(value):
+    """Render a pipe-separated list of URLs as HTML anchor tags.
+
+    Each URL is displayed using its filename (last path component) as the
+    link text. A single URL renders as a single link. Returns '-' for empty
+    or placeholder values.
+    """
+    if not value or value in ('-', ''):
+        return '-'
+    parts = [u.strip() for u in value.split('|') if u.strip()]
+    return ' '.join(
+        '<a href="{url}" target="_blank">{name}</a>'.format(
+            url=url, name=url.split('/')[-1]
+        )
+        for url in parts
+    )
