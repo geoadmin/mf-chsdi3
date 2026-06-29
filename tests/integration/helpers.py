@@ -1,5 +1,40 @@
-def generate_mock_response(departures, now):
-    """Generate a dynamic mock OJP response with correct structure."""
+def generate_mock_lir_response(sloid, now):
+    """Generate a mock OJP LIR (Location Information Request) response."""
+    return f"""<?xml version="1.0" ?>
+    <OJP xmlns:siri="http://www.siri.org.uk/siri" xmlns="http://www.vdv.de/ojp" version="2.0">
+        <OJPResponse>
+            <siri:ServiceDelivery>
+                <siri:ResponseTimestamp>{now}</siri:ResponseTimestamp>
+                <OJPLocationInformationDelivery>
+                    <PlaceResult>
+                        <Place>
+                            <StopPlace>
+                                <StopPlaceRef>{sloid}</StopPlaceRef>
+                            </StopPlace>
+                        </Place>
+                    </PlaceResult>
+                </OJPLocationInformationDelivery>
+            </siri:ServiceDelivery>
+        </OJPResponse>
+    </OJP>"""
+
+
+def generate_mock_empty_lir_response(now):
+    """Generate a mock OJP LIR response with no PlaceResult (station not found)."""
+    return f"""<?xml version="1.0" ?>
+    <OJP xmlns:siri="http://www.siri.org.uk/siri" xmlns="http://www.vdv.de/ojp" version="2.0">
+        <OJPResponse>
+            <siri:ServiceDelivery>
+                <siri:ResponseTimestamp>{now}</siri:ResponseTimestamp>
+                <OJPLocationInformationDelivery>
+                </OJPLocationInformationDelivery>
+            </siri:ServiceDelivery>
+        </OJPResponse>
+    </OJP>"""
+
+
+def generate_mock_ser_response(departures, now):
+    """Generate a dynamic mock OJP SER (Stop Event Request) response with correct structure."""
     departure_events = "".join(
         f"""
         <StopEventResult>
