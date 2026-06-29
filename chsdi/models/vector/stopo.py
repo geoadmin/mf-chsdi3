@@ -2409,7 +2409,7 @@ class SwissGeocover2dExtended(SwissGeocover2d):
 
 
 class SwissGeocover2dBedrock(Base, Vector, SwissGeocover2d):
-    __tablename__ = 'geocover_ltmom_bedrock'  # TODO: rename to geocover_bedrock
+    __tablename__ = 'swissgeocover2d_bedrock'
     __bodId__ = 'ch.swisstopo.geologie-swissgeocover2d_bedrock'
     __template__ = 'templates/htmlpopup/swissgeocover2d_bedrock.mako'
 
@@ -2433,7 +2433,7 @@ register(SwissGeocover2dBedrock.__bodId__, SwissGeocover2dBedrock)
 
 
 class SwissGeocover2dUnconsolidated(Base, Vector, SwissGeocover2d):
-    __tablename__ = 'geocover_ltmom_unco_deposits'  # TODO: rename to geocover_unco_deposits
+    __tablename__ = 'swissgeocover2d_unconsolidated'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __bodId__ = 'ch.swisstopo.geologie-swissgeocover2d_unconsolidated'
     __template__ = 'templates/htmlpopup/swissgeocover2d_unconsolidated.mako'
@@ -2461,7 +2461,7 @@ register(SwissGeocover2dUnconsolidated.__bodId__, SwissGeocover2dUnconsolidated)
 
 
 class SwissGeocover2dSurfaces(Base, Vector, SwissGeocover2dExtended):
-    __tablename__ = 'geocover_ltmom_surfaces'  # TODO: rename to geocover_surfaces
+    __tablename__ = 'swissgeocover2d_surfaces'  # TODO: rename to geocover_surfaces
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __bodId__ = 'ch.swisstopo.geologie-swissgeocover2d_surfaces'
     __template__ = 'templates/htmlpopup/swissgeocover2d_surfaces.mako'
@@ -2474,7 +2474,7 @@ register(SwissGeocover2dSurfaces.__bodId__, SwissGeocover2dSurfaces)
 
 
 class SwissGeocover2dLines(Base, Vector, SwissGeocover2dExtended):
-    __tablename__ = 'geocover_ltmom_linear_objects'  # TODO: rename to geocover_linear_objects
+    __tablename__ = 'swissgeocover2d_lines'  # TODO: rename to geocover_linear_objects
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __bodId__ = 'ch.swisstopo.geologie-swissgeocover2d_lines'
     __template__ = 'templates/htmlpopup/swissgeocover2d_lines.mako'
@@ -2488,7 +2488,7 @@ register(SwissGeocover2dLines.__bodId__, SwissGeocover2dLines)
 
 class SwissGeocover2dTectoLines(Base, Vector, SwissGeocover2dExtended):
     # Shares the geocover_ltmom_linear_objects PostGIS table
-    __tablename__ = 'geocover_ltmom_linear_objects'  # TODO: rename to geocover_linear_objects
+    __tablename__ = 'swissgeocover2d_tecto-lines'  # TODO: rename to geocover_linear_objects
     __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
     __bodId__ = 'ch.swisstopo.geologie-swissgeocover2d_tecto-lines'
     __template__ = 'templates/htmlpopup/swissgeocover2d_tecto_lines.mako'
@@ -2501,7 +2501,7 @@ register(SwissGeocover2dTectoLines.__bodId__, SwissGeocover2dTectoLines)
 
 
 class SwissGeocover2dPoints(Base, Vector, SwissGeocover2dExtended):
-    __tablename__ = 'geocover_ltmom_point_objects'  # TODO: rename to geocover_point_objects
+    __tablename__ = 'swissgeocover2d_points'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __bodId__ = 'ch.swisstopo.geologie-swissgeocover2d_points'
     __template__ = 'templates/htmlpopup/swissgeocover2d_points.mako'
@@ -2529,7 +2529,7 @@ register(SwissGeocover2dPoints.__bodId__, SwissGeocover2dPoints)
 
 
 class SwissGeocover2dFossils(Base, Vector, SwissGeocover2dExtended):
-    __tablename__ = 'geocover_ltmom_fossils'  # TODO: rename to geocover_fossils
+    __tablename__ = 'swissgeocover2d_fossils'  # TODO: rename to geocover_fossils
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __bodId__ = SwissGeocover2dPoints.__bodId__
     __template__ = 'templates/htmlpopup/swissgeocover2d_fossils.mako'
@@ -2542,7 +2542,7 @@ register(SwissGeocover2dPoints.__bodId__, SwissGeocover2dFossils)
 
 
 class SwissGeocover2dExploitPoints(Base, Vector, SwissGeocover2dExtended):
-    __tablename__ = 'geocover_ltmom_exploit_points'  # TODO: rename to geocover_exploit_points
+    __tablename__ = 'swissgeocover2d_exploit_points'  # TODO: rename to geocover_exploit_points
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __bodId__ = SwissGeocover2dPoints.__bodId__
     __template__ = 'templates/htmlpopup/swissgeocover2d_exploit_points.mako'
