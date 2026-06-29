@@ -2293,6 +2293,8 @@ class SteineHistBauwerke(Base, Vector):
 register(SteineHistBauwerke.__bodId__, SteineHistBauwerke)
 
 # Legacy ch.swisstopo.geologie-geocover
+
+
 class Geocover:
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __bodId__ = 'ch.swisstopo.geologie-geocover'
@@ -2498,13 +2500,10 @@ class SwissGeocover2dTectoLines(Base, Vector, SwissGeocover2dExtended):
 register(SwissGeocover2dTectoLines.__bodId__, SwissGeocover2dTectoLines)
 
 
-_SWISSGEOCOVER2D_POINTS_BOD_ID = 'ch.swisstopo.geologie-swissgeocover2d_points'
-
-
 class SwissGeocover2dPoints(Base, Vector, SwissGeocover2dExtended):
     __tablename__ = 'geocover_ltmom_point_objects'  # TODO: rename to geocover_point_objects
     __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __bodId__ = _SWISSGEOCOVER2D_POINTS_BOD_ID
+    __bodId__ = 'ch.swisstopo.geologie-swissgeocover2d_points'
     __template__ = 'templates/htmlpopup/swissgeocover2d_points.mako'
     __label__ = 'kind_de'
     kind = Column('kind', Integer)
@@ -2526,32 +2525,32 @@ class SwissGeocover2dPoints(Base, Vector, SwissGeocover2dExtended):
     abor_depth_wt = Column('abor_depth_wt', Float)
 
 
-register(_SWISSGEOCOVER2D_POINTS_BOD_ID, SwissGeocover2dPoints)
+register(SwissGeocover2dPoints.__bodId__, SwissGeocover2dPoints)
 
 
 class SwissGeocover2dFossils(Base, Vector, SwissGeocover2dExtended):
     __tablename__ = 'geocover_ltmom_fossils'  # TODO: rename to geocover_fossils
     __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __bodId__ = _SWISSGEOCOVER2D_POINTS_BOD_ID
+    __bodId__ = SwissGeocover2dPoints.__bodId__
     __template__ = 'templates/htmlpopup/swissgeocover2d_fossils.mako'
     __label__ = 'kind_de'
     kind_de = Column('kind_de', Unicode)
     kind_fr = Column('kind_fr', Unicode)
 
 
-register(_SWISSGEOCOVER2D_POINTS_BOD_ID, SwissGeocover2dFossils)
+register(SwissGeocover2dPoints.__bodId__, SwissGeocover2dFossils)
 
 
 class SwissGeocover2dExploitPoints(Base, Vector, SwissGeocover2dExtended):
     __tablename__ = 'geocover_ltmom_exploit_points'  # TODO: rename to geocover_exploit_points
     __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __bodId__ = _SWISSGEOCOVER2D_POINTS_BOD_ID
+    __bodId__ = SwissGeocover2dPoints.__bodId__
     __template__ = 'templates/htmlpopup/swissgeocover2d_exploit_points.mako'
     __label__ = 'kind_de'
     kind_de = Column('kind_de', Unicode)
     kind_fr = Column('kind_fr', Unicode)
 
-register(_SWISSGEOCOVER2D_POINTS_BOD_ID, SwissGeocover2dExploitPoints)
+register(SwissGeocover2dPoints.__bodId__, SwissGeocover2dExploitPoints)
 
 
 class GeolGeocoverMetadata(Base, Vector):
