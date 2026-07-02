@@ -1,5 +1,4 @@
 from sqlalchemy import Column
-
 from sqlalchemy.types import Numeric, Boolean, Integer, Float, Unicode, BigInteger, SmallInteger
 
 from chsdi.models import register, bases
@@ -2551,7 +2550,6 @@ class SwissGeocover2dExploitPoints(Base, Vector, SwissGeocover2dExtended):
     kind_fr = Column('kind_fr', Unicode)
 
 register(SwissGeocover2dPoints.__bodId__, SwissGeocover2dExploitPoints)
-
 
 
 class GeolGeocoverMetadata(Base, Vector):
