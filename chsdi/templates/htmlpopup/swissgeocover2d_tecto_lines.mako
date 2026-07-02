@@ -7,21 +7,21 @@
     spec = c['attributes'].get('spec_' + lang)
 %>
     <tr>
-        <td class="cell-left">${_('ch.swisstopo.geologie-swissgeocover2d_tecto-lines.kind')}</td>
+        <td class="cell-left">${_('ch.swisstopo.geologie-swissgeocover2d_tecto_lines.kind')}</td>
         <td>${c['attributes'][kind] or '-'}</td>
     </tr>
     % if spec:
     <tr>
-        <td class="cell-left">${_('ch.swisstopo.geologie-swissgeocover2d_tecto-lines.spec')}</td>
+        <td class="cell-left">${_('ch.swisstopo.geologie-swissgeocover2d_tecto_lines.spec')}</td>
         <td>${spec}</td>
     </tr>
     % endif
     <tr>
-        <td class="cell-left">${_('ch.swisstopo.geologie-swissgeocover2d_tecto-lines.erl_link')}</td>
+        <td class="cell-left">${_('ch.swisstopo.geologie-swissgeocover2d_tecto_lines.erl_link')}</td>
         <td>${h.pipe_links(c['attributes'].get('erl_link')) | n}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_('ch.swisstopo.geologie-swissgeocover2d_tecto-lines.ber_link')}</td>
+        <td class="cell-left">${_('ch.swisstopo.geologie-swissgeocover2d_tecto_lines.ber_link')}</td>
         <td>${h.pipe_links(c['attributes'].get('ber_link')) | n}</td>
     </tr>
 </%def>
