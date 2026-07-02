@@ -2553,11 +2553,12 @@ class SwissGeocover2dExploitPoints(Base, Vector, SwissGeocover2dExtended):
 register(SwissGeocover2dPoints.__bodId__, SwissGeocover2dExploitPoints)
 
 
+
 class GeolGeocoverMetadata(Base, Vector):
     __tablename__ = 'geocover_meta'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
     __template__ = 'templates/htmlpopup/geocover_metadata.mako'
-    __bodId__ = 'ch.swisstopo.swissgeocover2d.metadata'
+    __bodId__ = 'ch.swisstopo.geologie-geocover.metadata'
     __label__ = 'map_title'
     id = Column('bgdi_id', Integer, primary_key=True)
     map_nbr = Column('map_nbr', Integer)
