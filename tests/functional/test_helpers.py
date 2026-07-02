@@ -7,7 +7,8 @@ from chsdi.lib.helpers import (
     parse_box2d, center_from_box2d,
     parse_date_string, parse_date_datenstand, int_with_apostrophe, get_loaderjs_url,
     get_crs_from_srid, get_precision_for_proj, _round_bbox_coordinates, _round_shape_coordinates,
-    round_geometry_coordinates, _transform_coordinates, _transform_shape, transform_round_geometry
+    round_geometry_coordinates, _transform_coordinates, _transform_shape, transform_round_geometry,
+    pipe_links
 )
 from shapely.geometry import Point, Polygon
 from shapely.geometry import mapping
@@ -232,3 +233,35 @@ class TestHelpers(unittest.TestCase):
 
         self.assertEqual(mapping(point_wgs84_rounded), {'type': 'Point', 'coordinates': (7.438767, 37.274227)})
         assert_almost_equal(point_wgs84.coords[0], (7.438767146513139, 37.27422679580366), decimal=10)
+
+
+class TestPipeLinks(unittest.TestCase):
+
+    def test_single_url(self):
+        url = 'https://data.geo.admin.ch/ch.swisstopo.geologie-geocover/berichte/BER_96.pdf'
+        result = pipe_links(url)
+        self.assertEqual(result, '<a href="{}" target="_blank">BER_96.pdf</a>'.format(url))
+
+    def test_multiple_urls(self):
+        value = ('https://data.geo.admin.ch/ch.swisstopo.geologie-geocover/berichte/BER_96.pdf'
+                 '|https://data.geo.admin.ch/ch.swisstopo.geologie-geocover/berichte/BER_1.pdf')
+        result = pipe_links(value)
+        self.assertIn('<a href="https://data.geo.admin.ch/ch.swisstopo.geologie-geocover/berichte/BER_96.pdf" target="_blank">BER_96.pdf</a>', result)
+        self.assertIn('<a href="https://data.geo.admin.ch/ch.swisstopo.geologie-geocover/berichte/BER_1.pdf" target="_blank">BER_1.pdf</a>', result)
+        self.assertEqual(result.count('<a '), 2)
+
+    def test_whitespace_around_separator(self):
+        value = 'https://example.com/a.pdf | https://example.com/b.pdf'
+        result = pipe_links(value)
+        self.assertEqual(result.count('<a '), 2)
+        self.assertIn('href="https://example.com/a.pdf"', result)
+        self.assertIn('href="https://example.com/b.pdf"', result)
+
+    def test_empty_string(self):
+        self.assertEqual(pipe_links(''), '-')
+
+    def test_placeholder_dash(self):
+        self.assertEqual(pipe_links('-'), '-')
+
+    def test_none(self):
+        self.assertEqual(pipe_links(None), '-')

@@ -1,5 +1,4 @@
 from sqlalchemy import Column
-
 from sqlalchemy.types import Numeric, Boolean, Integer, Float, Unicode, BigInteger, SmallInteger
 
 from chsdi.models import register, bases
@@ -2292,6 +2291,8 @@ class SteineHistBauwerke(Base, Vector):
 
 register(SteineHistBauwerke.__bodId__, SteineHistBauwerke)
 
+# Legacy ch.swisstopo.geologie-geocover
+
 
 class Geocover:
     __table_args__ = ({'schema': 'geol', 'autoload': False})
@@ -2389,6 +2390,166 @@ register(Geocover.__bodId__, GeocoverPointStruct)
 register(Geocover.__bodId__, GeocoverPolygonAux1)
 register(Geocover.__bodId__, GeocoverPolygonAux2)
 register(Geocover.__bodId__, GeocoverPolygonMain)
+
+
+class SwissGeocover2d:
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.swissgeocover2d'
+    __label__ = 'label'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    erl_link = Column('erl_link', Unicode)
+    ber_link = Column('ber_link', Unicode)
+    the_geom = Column(Geometry2D)
+
+
+class SwissGeocover2dExtended(SwissGeocover2d):
+    spec_de = Column('spec_de', Unicode)
+    spec_fr = Column('spec_fr', Unicode)
+
+
+class SwissGeocover2dBedrock(Base, Vector, SwissGeocover2d):
+    __tablename__ = 'swissgeocover2d_bedrock'
+    __bodId__ = 'ch.swisstopo.geologie-swissgeocover2d_bedrock'
+    __template__ = 'templates/htmlpopup/swissgeocover2d_bedrock.mako'
+
+    gmu_de = Column('gmu_de', Unicode)
+    gmu_fr = Column('gmu_fr', Unicode)
+    tecto_de = Column('tecto_de', Unicode)
+    tecto_fr = Column('tecto_fr', Unicode)
+    litho_combined_de = Column('litho_combined_de', Unicode)
+    litho_combined_fr = Column('litho_combined_fr', Unicode)
+    chrono_combined_de = Column('chrono_combined_de', Unicode)
+    chrono_combined_fr = Column('chrono_combined_fr', Unicode)
+    correlation_de = Column('correlation_de', Unicode)
+    correlation_fr = Column('correlation_fr', Unicode)
+    strati_link = Column('strati_link', Unicode)
+    litstrat_formation_bank_de = Column('litstrat_formation_bank_de', Unicode)
+    litstrat_formation_bank_fr = Column('litstrat_formation_bank_fr', Unicode)
+    label = Column('label', Unicode)
+
+
+register(SwissGeocover2dBedrock.__bodId__, SwissGeocover2dBedrock)
+
+
+class SwissGeocover2dUnconsolidated(Base, Vector, SwissGeocover2d):
+    __tablename__ = 'swissgeocover2d_unconsolidated'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.geologie-swissgeocover2d_unconsolidated'
+    __template__ = 'templates/htmlpopup/swissgeocover2d_unconsolidated.mako'
+    __label__ = 'label'
+    runc_litho_de = Column('runc_litho_de', Unicode)
+    runc_litho_fr = Column('runc_litho_fr', Unicode)
+    runc_litstrat_de = Column('runc_litstrat_de', Unicode)
+    runc_litstrat_fr = Column('runc_litstrat_fr', Unicode)
+    runc_chrono_combined_de = Column('runc_chrono_combined_de', Unicode)
+    runc_chrono_combined_fr = Column('runc_chrono_combined_fr', Unicode)
+    runc_glac_typ_de = Column('runc_glac_typ_de', Unicode)
+    runc_glac_typ_fr = Column('runc_glac_typ_fr', Unicode)
+    runc_structur_de = Column('runc_structur_de', Unicode)
+    runc_structur_fr = Column('runc_structur_fr', Unicode)
+    runc_morpholo_de = Column('runc_morpholo_de', Unicode)
+    runc_morpholo_fr = Column('runc_morpholo_fr', Unicode)
+    runc_chrono_t_de = Column('runc_chrono_t_de', Unicode)
+    runc_chrono_t_fr = Column('runc_chrono_t_fr', Unicode)
+    runc_chrono_b_de = Column('runc_chrono_b_de', Unicode)
+    runc_chrono_b_fr = Column('runc_chrono_b_fr', Unicode)
+    label = Column('label', Unicode)
+
+
+register(SwissGeocover2dUnconsolidated.__bodId__, SwissGeocover2dUnconsolidated)
+
+
+class SwissGeocover2dSurfaces(Base, Vector, SwissGeocover2dExtended):
+    __tablename__ = 'swissgeocover2d_surfaces'  # TODO: rename to geocover_surfaces
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.geologie-swissgeocover2d_surfaces'
+    __template__ = 'templates/htmlpopup/swissgeocover2d_surfaces.mako'
+    __label__ = 'kind_de'
+    kind_de = Column('kind_de', Unicode)
+    kind_fr = Column('kind_fr', Unicode)
+
+
+register(SwissGeocover2dSurfaces.__bodId__, SwissGeocover2dSurfaces)
+
+
+class SwissGeocover2dLines(Base, Vector, SwissGeocover2dExtended):
+    __tablename__ = 'swissgeocover2d_lines'  # TODO: rename to geocover_linear_objects
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.geologie-swissgeocover2d_lines'
+    __template__ = 'templates/htmlpopup/swissgeocover2d_lines.mako'
+    __label__ = 'kind_de'
+    kind_de = Column('kind_de', Unicode)
+    kind_fr = Column('kind_fr', Unicode)
+
+
+register(SwissGeocover2dLines.__bodId__, SwissGeocover2dLines)
+
+
+class SwissGeocover2dTectoLines(Base, Vector, SwissGeocover2dExtended):
+    # Shares the geocover_ltmom_linear_objects PostGIS table
+    __tablename__ = 'swissgeocover2d_tecto-lines'  # TODO: rename to geocover_linear_objects
+    __table_args__ = ({'schema': 'geol', 'autoload': False, 'extend_existing': True})
+    __bodId__ = 'ch.swisstopo.geologie-swissgeocover2d_tecto-lines'
+    __template__ = 'templates/htmlpopup/swissgeocover2d_tecto_lines.mako'
+    __label__ = 'kind_de'
+    kind_de = Column('kind_de', Unicode)
+    kind_fr = Column('kind_fr', Unicode)
+
+
+register(SwissGeocover2dTectoLines.__bodId__, SwissGeocover2dTectoLines)
+
+
+class SwissGeocover2dPoints(Base, Vector, SwissGeocover2dExtended):
+    __tablename__ = 'swissgeocover2d_points'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __bodId__ = 'ch.swisstopo.geologie-swissgeocover2d_points'
+    __template__ = 'templates/htmlpopup/swissgeocover2d_points.mako'
+    __label__ = 'kind_de'
+    kind = Column('kind', Integer)
+    kind_de = Column('kind_de', Unicode)
+    kind_fr = Column('kind_fr', Unicode)
+    dip = Column('dip', Integer)
+    mpla_polarity_de = Column('mpla_polarity_de', Unicode)
+    mpla_polarity_fr = Column('mpla_polarity_fr', Unicode)
+    abor_ref_number = Column('abor_ref_number', Float)
+    azimuth = Column('azimuth', Float)
+    abor_depth_fm_a = Column('abor_depth_fm_a', Float)
+    abor_fm_a_de = Column('abor_fm_a_de', Unicode)
+    abor_fm_a_fr = Column('abor_fm_a_fr', Unicode)
+    abor_depth_fm_b = Column('abor_depth_fm_b', Float)
+    abor_fm_b_de = Column('abor_fm_b_de', Unicode)
+    abor_fm_b_fr = Column('abor_fm_b_fr', Unicode)
+    abor_depth_bedr = Column('abor_depth_bedr', Float)
+    abor_depth_tot = Column('abor_depth_tot', Float)
+    abor_depth_wt = Column('abor_depth_wt', Float)
+
+
+register(SwissGeocover2dPoints.__bodId__, SwissGeocover2dPoints)
+
+
+class SwissGeocover2dFossils(Base, Vector, SwissGeocover2dExtended):
+    __tablename__ = 'swissgeocover2d_fossils'  # TODO: rename to geocover_fossils
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __bodId__ = SwissGeocover2dPoints.__bodId__
+    __template__ = 'templates/htmlpopup/swissgeocover2d_fossils.mako'
+    __label__ = 'kind_de'
+    kind_de = Column('kind_de', Unicode)
+    kind_fr = Column('kind_fr', Unicode)
+
+
+register(SwissGeocover2dPoints.__bodId__, SwissGeocover2dFossils)
+
+
+class SwissGeocover2dExploitPoints(Base, Vector, SwissGeocover2dExtended):
+    __tablename__ = 'swissgeocover2d_exploit_points'  # TODO: rename to geocover_exploit_points
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __bodId__ = SwissGeocover2dPoints.__bodId__
+    __template__ = 'templates/htmlpopup/swissgeocover2d_exploit_points.mako'
+    __label__ = 'kind_de'
+    kind_de = Column('kind_de', Unicode)
+    kind_fr = Column('kind_fr', Unicode)
+
+register(SwissGeocover2dPoints.__bodId__, SwissGeocover2dExploitPoints)
 
 
 class GeolGeocoverMetadata(Base, Vector):
