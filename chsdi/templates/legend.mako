@@ -39,7 +39,13 @@
                  'ch.swisstopo.strassenkarte-200',
                  'ch.swisstopo.vec200-miscellaneous',
                  'ch.swisstopo.amtliches-strassenverzeichnis_issues',
-                 'ch.swisstopo.amtliches-gebaeudeadressverzeichnis_issues')
+                 'ch.swisstopo.amtliches-gebaeudeadressverzeichnis_issues',
+                 'ch.swisstopo.geologie-swissgeocover2d_bedrock',
+                 'ch.swisstopo.geologie-swissgeocover2d_unconsolidated',
+                 'ch.swisstopo.geologie-swissgeocover2d_surfaces',
+                 'ch.swisstopo.geologie-swissgeocover2d_lines',
+                 'ch.swisstopo.geologie-swissgeocover2d_tecto_lines',
+                 'ch.swisstopo.geologie-swissgeocover2d_points')
   if c['layerBodId'] in pdf_legends:
       legend_url_pdf = host + '/static/images/legends/' + c['layerBodId'] + '_' + lang + '_big.pdf'
   else:
