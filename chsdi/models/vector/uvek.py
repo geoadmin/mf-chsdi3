@@ -1083,7 +1083,6 @@ class BakomNotrufLayer:
     id = Column('bgdi_id', Integer, primary_key=True)
     routing_nr = Column('routing_nr', Unicode)
     name = Column('name', Unicode)
-    chg_date = Column('chg_date', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -1211,7 +1210,6 @@ class BakomNotrufZentral:
     ort = Column('ort', Unicode)
     kt = Column('kt', Unicode)
     routing_nr = Column('routing_nr', Unicode)
-    chg_date = Column('chg_date', Unicode)
     the_geom = Column(Geometry2D)
 
 
