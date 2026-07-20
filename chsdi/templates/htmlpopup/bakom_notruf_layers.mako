@@ -9,8 +9,4 @@
         <td class="cell-left">${_('ch.bakom.notruf-112_festnetz.name')}</td>
         <td>${c['attributes']['name'] or '-'}</td>
     </tr>
-    <tr>
-        <td class="cell-left">${_('ch.bakom.notruf-112_festnetz.chg_date')}</td>
-        <td>${c['attributes']['chg_date'] or '-'}</td>
-    </tr>
 </%def>
