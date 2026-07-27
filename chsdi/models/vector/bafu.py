@@ -2199,6 +2199,9 @@ class LebensraumkarteSchweizGehoelze(Base, Vector):
     crown_area = Column('crown_area', Integer)
     max_hght = Column('max_hght', Float)
     vol_abv3m = Column('vol_abv3m', Integer)
+    evergreen_de = Column('evergreen_de', Unicode)
+    evergreen_fr = Column('evergreen_fr', Unicode)
+    evergreen_it = Column('evergreen_it', Unicode)
     the_geom = Column('the_geom', Geometry2D)
 
 register(LebensraumkarteSchweizGehoelze.__bodId__, LebensraumkarteSchweizGehoelze)
