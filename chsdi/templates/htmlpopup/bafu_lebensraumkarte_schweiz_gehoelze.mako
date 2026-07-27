@@ -4,6 +4,7 @@
   <%
     lang = lang if lang in ('fr', 'it') else 'de'
     typoch = 'typoch_%s' % lang
+    evergreen = 'evergreen_%s' % lang
   %>
   <tr>
     <td class="cell-left">${_('ch.bafu.lebensraumkarte-schweiz_gehoelze.polyid')}</td>
@@ -36,5 +37,9 @@
     % else:
       <td>-</td>
     % endif
+  </tr>
+  <tr>
+    <td class="cell-left">${_('ch.bafu.lebensraumkarte-schweiz_gehoelze.evergreen')}</td>
+    <td>${c['attributes'][evergreen] or '-'}</td>
   </tr>
 </%def>
