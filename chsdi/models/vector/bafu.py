@@ -437,7 +437,6 @@ register(FeststoffeGeschiebemessnetz.__bodId__, FeststoffeGeschiebemessnetz)
 
 class Nawa:
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
-    __template__ = 'templates/htmlpopup/nawa.mako'
     __timeInstant__ = 'jahr'
     __label__ = 'jahr'
     id = Column('bgdi_id', Integer, primary_key=True)
@@ -454,70 +453,78 @@ class Nawa:
     the_geom = Column(Geometry2D)
 
 
-class NawaNitrat(Base, Nawa, Vector):
+class NawaChemie(Base, Nawa, Vector):
+    __template__ = 'templates/htmlpopup/nawa_chemie.mako'
+
+
+class NawaBio(Base, Nawa, Vector):
+    __template__ = 'templates/htmlpopup/nawa_bio.mako'
+
+
+class NawaNitrat(Base, NawaChemie, Vector):
     __tablename__ = 'gewaesserschutz_nitrat'
     __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_nitrat'
 
 register(NawaNitrat.__bodId__, NawaNitrat)
 
 
-class NawaNitrit(Base, Nawa, Vector):
+class NawaNitrit(Base, NawaChemie, Vector):
     __tablename__ = 'gewaesserschutz_nitrit'
     __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_nitrit'
 
 register(NawaNitrit.__bodId__, NawaNitrit)
 
 
-class NawaAmmonium(Base, Nawa, Vector):
+class NawaAmmonium(Base, NawaChemie, Vector):
     __tablename__ = 'gewaesserschutz_ammonium'
     __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_ammonium'
 
 register(NawaAmmonium.__bodId__, NawaAmmonium)
 
 
-class NawaDoc(Base, Nawa, Vector):
+class NawaDoc(Base, NawaChemie, Vector):
     __tablename__ = 'gewaesserschutz_doc'
     __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_doc'
 
 register(NawaDoc.__bodId__, NawaDoc)
 
 
-class NawaPhosphorGesamt(Base, Nawa, Vector):
+class NawaPhosphorGesamt(Base, NawaChemie, Vector):
     __tablename__ = 'gewaesserschutz_phosphor_gesamt'
     __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_phosphor_gesamt'
 
 register(NawaPhosphorGesamt.__bodId__, NawaPhosphorGesamt)
 
 
-class NawaFische(Base, Nawa, Vector):
+class NawaFische(Base, NawaBio, Vector):
     __tablename__ = 'gewaesserschutz_fische'
     __bodId__ = 'ch.bafu.gewaesserschutz-biologischer_zustand_fische'
 
 register(NawaFische.__bodId__, NawaFische)
 
 
-class NawaMakrozoobenthos(Base, Nawa, Vector):
+class NawaMakrozoobenthos(Base, NawaBio, Vector):
     __tablename__ = 'gewaessweschutz_makrozoobenthos'
     __bodId__ = 'ch.bafu.gewaesserschutz-biologischer_zustand_makrozoobenthos'
 
 register(NawaMakrozoobenthos.__bodId__, NawaMakrozoobenthos)
 
 
-class NawaMakrophyten(Base, Nawa, Vector):
+class NawaMakrophyten(Base, NawaBio, Vector):
     __tablename__ = 'gewaesserschutz_makrophyten'
     __bodId__ = 'ch.bafu.gewaesserschutz-biologischer_zustand_makrophyten'
 
 register(NawaMakrophyten.__bodId__, NawaMakrophyten)
 
 
-class NawaDiatomeen(Base, Nawa, Vector):
+class NawaDiatomeen(Base, NawaBio, Vector):
     __tablename__ = 'gewaesserschutz_diatomeen'
     __bodId__ = 'ch.bafu.gewaesserschutz-biologischer_zustand_diatomeen'
 
 register(NawaDiatomeen.__bodId__, NawaDiatomeen)
 
 
-class NawaPhosphat(Base, Nawa, Vector):
+class NawaPhosphat(Base, NawaChemie, Vector):
     __tablename__ = 'gewaesserschutz_phosphat'
     __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_phosphat'
 
