@@ -439,7 +439,7 @@ class Nawa:
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __template__ = 'templates/htmlpopup/nawa.mako'
     __timeInstant__ = 'jahr'
-    __label__ = 'jahr
+    __label__ = 'jahr'
     id = Column('bgdi_id', Integer, primary_key=True)
     klasse_de = Column('klasse_de', Unicode)
     klasse_fr = Column('klasse_fr', Unicode)
