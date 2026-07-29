@@ -453,11 +453,11 @@ class Nawa:
     the_geom = Column(Geometry2D)
 
 
-class NawaChemie(Base, Nawa, Vector):
+class NawaChemie(Nawa):
     __template__ = 'templates/htmlpopup/nawa_chemie.mako'
 
 
-class NawaBio(Base, Nawa, Vector):
+class NawaBio(Nawa):
     __template__ = 'templates/htmlpopup/nawa_bio.mako'
 
 
