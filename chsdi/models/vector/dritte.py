@@ -219,3 +219,18 @@ class AgroscopeKorridorQualitaet(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(AgroscopeKorridorQualitaet.__bodId__, AgroscopeKorridorQualitaet)
+
+
+class AgroscopeStickstoffbilanz(Base, Vector):
+    __bodId__ = 'ch.agroscope.monitoring-agrarumweltsystem_stickstoffbilanz'
+    __table_args__ = ({'schema': 'agroscope', 'autoload': False})
+    __tablename__ = 'monitoring_agrarumweltsystem_stickstoffbilanz'
+    __template__ = 'templates/htmlpopup/monitoring-agrarumweltsystem_stickstoffbilanz.mako'
+    __label__ = 'n_bilanz_kg_ha'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    n_bilanz_kg_ha = Column('n_bilanz_kg_ha', Float)
+    jahr = Column('jahr', Integer)
+    n_bilanz_kg_ha_cat = Column('n_bilanz_kg_ha_cat', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(AgroscopeStickstoffbilanz.__bodId__, AgroscopeStickstoffbilanz)
