@@ -227,6 +227,7 @@ class AgroscopeStickstoffbilanz(Base, Vector):
     __tablename__ = 'monitoring_agrarumweltsystem_stickstoffbilanz'
     __template__ = 'templates/htmlpopup/monitoring-agrarumweltsystem_stickstoffbilanz.mako'
     __label__ = 'n_bilanz_kg_ha'
+    __timeInstant__ = 'jahr'
     id = Column('bgdi_id', Integer, primary_key=True)
     n_bilanz_kg_ha = Column('n_bilanz_kg_ha', Float)
     jahr = Column('jahr', Integer)
