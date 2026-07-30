@@ -234,3 +234,20 @@ class AgroscopeStickstoffbilanz(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(AgroscopeStickstoffbilanz.__bodId__, AgroscopeStickstoffbilanz)
+
+
+class AgroscopeTreibhausgasemissionen(Base, Vector):
+    __bodId__ = 'ch.agroscope.monitoring-agrarumweltsystem_treibhausgasemissionen'
+    __table_args__ = ({'schema': 'agroscope', 'autoload': False})
+    __tablename__ = 'monitoring_agrarumweltsystem_treibhausgasemissionen'
+    __template__ = 'templates/htmlpopup/monitoring-agrarumweltsystem_treibhausgasemissionen.mako'
+    __label__ = 'thg_emissionen_t_co2eq_ha'
+    __timeInstant__ = 'jahr'
+
+    id = Column('bgdi_id', Integer, primary_key=True)
+    thg_emissionen_t_co2eq_ha = Column('thg_emissionen_t_co2eq_ha', Float)
+    jahr = Column('jahr', Integer)
+    thg_emissionen_t_co2eq_ha_cat = Column('thg_emissionen_t_co2eq_ha_cat', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(AgroscopeTreibhausgasemissionen.__bodId__, AgroscopeTreibhausgasemissionen)
