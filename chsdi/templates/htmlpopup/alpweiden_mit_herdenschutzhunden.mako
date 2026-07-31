@@ -18,39 +18,47 @@
     <% c['stable_id'] = True %>
 
     <tr>
-        <td class="cell-left">${_(layerid + '.name')}</td>
+        <td class="cell-left">${_(layerid + '.Name')}</td>
         <td>${name or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_(layerid + '.typzone')}</td>
+        <td class="cell-left">${_(layerid + '.TypZone')}</td>
         <td>${typzone or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_(layerid + '.allginfo')}</td>
-        <td>${allginfo or '-'}</td>
+        <td class="cell-left">${_(layerid + '.AllgInfo')}</td>
+        % if allginfo and allginfo.startswith('http'):
+            <td><a href="${allginfo}" target="_blank">${_('link')}</a></td>
+        % else:
+            <td>-</td>
+        % endif
     </tr>
     <tr>
-        <td class="cell-left">${_(layerid + '.refverhalten')}</td>
-        <td>${refverhalten or '-'}</td>
+        <td class="cell-left">${_(layerid + '.RefVerhalten')}</td>
+        % if refverhalten and refverhalten.startswith('http'):
+            <td><a href="${refverhalten}" target="_blank">${_('link')}</a></td>
+        % else:
+            <td>-</td>
+        % endif
     </tr>
     <tr>
-        <td class="cell-left">${_(layerid + '.hundepraesenz')}</td>
+        <td class="cell-left">${_(layerid + '.HundePraesenz')}</td>
         <td>${hundepraesenz or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_(layerid + '.hinweis')}</td>
+        <td class="cell-left">${_(layerid + '.Hinweis')}</td>
         <td>${hinweis or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_(layerid + '.kontname')}</td>
+        <td class="cell-left">${_(layerid + '.KontName')}</td>
         <td>${kontname or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_(layerid + '.konttel')}</td>
+        <td class="cell-left">${_(layerid + '.KontTel')}</td>
         <td>${konttel or '-'}</td>
     </tr>
     <tr>
-        <td class="cell-left">${_(layerid + '.kontemail')}</td>
+        <td class="cell-left">${_(layerid + '.KontEmail')}</td>
         <td>${kontemail or '-'}</td>
     </tr>
 </%def>

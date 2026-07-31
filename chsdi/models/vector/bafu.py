@@ -47,9 +47,9 @@ register(AlpweidenHerdenschutzhunde.__bodId__, AlpweidenHerdenschutzhunde)
 
 
 class AlpweidenMitHerdenschutzhunden(Base, Vector):
-    __tablename__ = 'alpenweiden_mit_herdenschutzhunde'
+    __tablename__ = 'alpweiden_mit_herdenschutzhunden'
     __table_args__ = ({'schema': 'fauna', 'autoload': False})
-    __bodId__ = 'ch.bafu.alpweiden-mit_herdenschutzhunde'
+    __bodId__ = 'ch.bafu.alpweiden-mit_herdenschutzhunden'
     __template__ = 'templates/htmlpopup/alpweiden_mit_herdenschutzhunden.mako'
     __label__ = 'name'
     id = Column('objnummer', Integer, primary_key=True)
@@ -58,7 +58,6 @@ class AlpweidenMitHerdenschutzhunden(Base, Vector):
     hundepraesenz_fr = Column('hundepraesenz_fr', Unicode)
     hundepraesenz_it = Column('hundepraesenz_it', Unicode)
     hundepraesenz_en = Column('hundepraesenz_en', Unicode)
-    typzone = Column('typzone', Integer)
     typzone_de = Column('typzone_de', Unicode)
     typzone_fr = Column('typzone_fr', Unicode)
     typzone_it = Column('typzone_it', Unicode)
