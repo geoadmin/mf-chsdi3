@@ -7,7 +7,6 @@ class Feature(EsriJSON):
 
     def __init__(self, geometry=None, wkid=None, attributes=None, id=None,
                  **extra):
-
         """
         Initialises a Feature object with the given parameters.
 

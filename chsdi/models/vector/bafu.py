@@ -46,6 +46,42 @@ class AlpweidenHerdenschutzhunde(Base, Vector):
 register(AlpweidenHerdenschutzhunde.__bodId__, AlpweidenHerdenschutzhunde)
 
 
+class AlpweidenMitHerdenschutzhunden(Base, Vector):
+    __tablename__ = 'alpweiden_mit_herdenschutzhunden'
+    __table_args__ = ({'schema': 'fauna', 'autoload': False})
+    __bodId__ = 'ch.bafu.alpweiden-mit_herdenschutzhunden'
+    __template__ = 'templates/htmlpopup/alpweiden_mit_herdenschutzhunden.mako'
+    __label__ = 'name'
+    id = Column('objnummer', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    hundepraesenz_de = Column('hundepraesenz_de', Unicode)
+    hundepraesenz_fr = Column('hundepraesenz_fr', Unicode)
+    hundepraesenz_it = Column('hundepraesenz_it', Unicode)
+    hundepraesenz_en = Column('hundepraesenz_en', Unicode)
+    typzone_de = Column('typzone_de', Unicode)
+    typzone_fr = Column('typzone_fr', Unicode)
+    typzone_it = Column('typzone_it', Unicode)
+    typzone_en = Column('typzone_en', Unicode)
+    allginfo_de = Column('allginfo_de', Unicode)
+    allginfo_fr = Column('allginfo_fr', Unicode)
+    allginfo_it = Column('allginfo_it', Unicode)
+    allginfo_en = Column('allginfo_en', Unicode)
+    refverhalten_de = Column('refverhalten_de', Unicode)
+    refverhalten_fr = Column('refverhalten_fr', Unicode)
+    refverhalten_it = Column('refverhalten_it', Unicode)
+    refverhalten_en = Column('refverhalten_en', Unicode)
+    hinweis_de = Column('hinweis_de', Unicode)
+    hinweis_fr = Column('hinweis_fr', Unicode)
+    hinweis_it = Column('hinweis_it', Unicode)
+    hinweis_en = Column('hinweis_en', Unicode)
+    kontname = Column('kontname', Unicode)
+    konttel = Column('konttel', Unicode)
+    kontemail = Column('kontemail', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(AlpweidenMitHerdenschutzhunden.__bodId__, AlpweidenMitHerdenschutzhunden)
+
+
 class Hydrogeologischekarte100(Base, Vector):
     __tablename__ = 'hydrogeologische_karte_100'
     __table_args__ = ({'schema': 'hydrologie', 'autoload': False})
@@ -439,6 +475,7 @@ class Nawa:
     __table_args__ = ({'schema': 'wasser', 'autoload': False})
     __template__ = 'templates/htmlpopup/nawa.mako'
     __timeInstant__ = 'jahr'
+    __label__ = 'jahr'
     id = Column('bgdi_id', Integer, primary_key=True)
     klasse_de = Column('klasse_de', Unicode)
     klasse_fr = Column('klasse_fr', Unicode)
@@ -448,44 +485,40 @@ class Nawa:
     stelle_neu = Column('stelle_neu', Unicode)
     jahr = Column('jahr', Integer)
     kanton = Column('kanton', Unicode)
+    station_nr = Column('station_nr', Integer)
+    id_nawa = Column('id_nawa', Integer)
     the_geom = Column(Geometry2D)
 
 
-class NawaChemie(Nawa):
-    __label__ = 'jahr'
-    station_nr = Column('station_nr', Integer)
-    id_nawa = Column('id_nawa', Integer)
-
-
-class NawaNitrat(Base, NawaChemie, Vector):
+class NawaNitrat(Base, Nawa, Vector):
     __tablename__ = 'gewaesserschutz_nitrat'
     __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_nitrat'
 
 register(NawaNitrat.__bodId__, NawaNitrat)
 
 
-class NawaNitrit(Base, NawaChemie, Vector):
+class NawaNitrit(Base, Nawa, Vector):
     __tablename__ = 'gewaesserschutz_nitrit'
     __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_nitrit'
 
 register(NawaNitrit.__bodId__, NawaNitrit)
 
 
-class NawaAmmonium(Base, NawaChemie, Vector):
+class NawaAmmonium(Base, Nawa, Vector):
     __tablename__ = 'gewaesserschutz_ammonium'
     __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_ammonium'
 
 register(NawaAmmonium.__bodId__, NawaAmmonium)
 
 
-class NawaDoc(Base, NawaChemie, Vector):
+class NawaDoc(Base, Nawa, Vector):
     __tablename__ = 'gewaesserschutz_doc'
     __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_doc'
 
 register(NawaDoc.__bodId__, NawaDoc)
 
 
-class NawaPhosphorGesamt(Base, NawaChemie, Vector):
+class NawaPhosphorGesamt(Base, Nawa, Vector):
     __tablename__ = 'gewaesserschutz_phosphor_gesamt'
     __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_phosphor_gesamt'
 
@@ -520,7 +553,7 @@ class NawaDiatomeen(Base, Nawa, Vector):
 register(NawaDiatomeen.__bodId__, NawaDiatomeen)
 
 
-class NawaPhosphat(Base, NawaChemie, Vector):
+class NawaPhosphat(Base, Nawa, Vector):
     __tablename__ = 'gewaesserschutz_phosphat'
     __bodId__ = 'ch.bafu.gewaesserschutz-chemischer_zustand_phosphat'
 
@@ -2199,6 +2232,9 @@ class LebensraumkarteSchweizGehoelze(Base, Vector):
     crown_area = Column('crown_area', Integer)
     max_hght = Column('max_hght', Float)
     vol_abv3m = Column('vol_abv3m', Integer)
+    evergreen_de = Column('evergreen_de', Unicode)
+    evergreen_fr = Column('evergreen_fr', Unicode)
+    evergreen_it = Column('evergreen_it', Unicode)
     the_geom = Column('the_geom', Geometry2D)
 
 register(LebensraumkarteSchweizGehoelze.__bodId__, LebensraumkarteSchweizGehoelze)

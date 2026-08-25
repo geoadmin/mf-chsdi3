@@ -36,9 +36,5 @@
         <td class="cell-left">${_('ch.bakom.notruf-112_zentral.routing_nr')}</td>
         <td>${_(str_output)|n}</td>
     </tr>
-    <tr>
-        <td class="cell-left">${_('ch.bakom.notruf-112_zentral.chg_date')}</td>
-        <td>${c['attributes']['chg_date'] or '-'}</td>
-    </tr>
 </%def>
 

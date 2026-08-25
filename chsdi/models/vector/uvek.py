@@ -658,6 +658,25 @@ class Energiestaedte(Base, Vector):
 register(Energiestaedte.__bodId__, Energiestaedte)
 
 
+class EnergiestaedteNachhaltigeAreale(Base, Vector):
+    __tablename__ = 'energiestaedte_nachhaltige_areale'
+    __table_args__ = ({'schema': 'bfe', 'autoload': False})
+    __template__ = 'templates/htmlpopup/energiestaedte_nachhaltige_areale.mako'
+    __bodId__ = 'ch.bfe.energiestaedte-nachhaltige_areale'
+    __extended_info__ = True
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    name = Column('name', Unicode)
+    standard = Column('standard', Unicode)
+    status = Column('status', Unicode)
+    zertifizierung = Column('zertifizierung', Unicode)
+    bfs_nummer = Column('bfs_nummer', Integer)
+    gemeinde = Column('gemeinde', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(EnergiestaedteNachhaltigeAreale.__bodId__, EnergiestaedteNachhaltigeAreale)
+
+
 class Energiestaedte2000wattAreale(Base, Vector):
     __tablename__ = 'energiestaedte_2000watt_areale'
     __table_args__ = ({'schema': 'bfe', 'autoload': False})
@@ -1083,7 +1102,6 @@ class BakomNotrufLayer:
     id = Column('bgdi_id', Integer, primary_key=True)
     routing_nr = Column('routing_nr', Unicode)
     name = Column('name', Unicode)
-    chg_date = Column('chg_date', Unicode)
     the_geom = Column(Geometry2D)
 
 
@@ -1211,7 +1229,6 @@ class BakomNotrufZentral:
     ort = Column('ort', Unicode)
     kt = Column('kt', Unicode)
     routing_nr = Column('routing_nr', Unicode)
-    chg_date = Column('chg_date', Unicode)
     the_geom = Column(Geometry2D)
 
 
