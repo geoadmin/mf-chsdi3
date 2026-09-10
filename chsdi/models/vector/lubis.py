@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, Boolean, Numeric
+from sqlalchemy import Column, Integer, Boolean, Numeric, DateTime
 from sqlalchemy.types import Unicode
 from chsdi.models import register, bases
 from chsdi.models.vector import Vector, Geometry2D
@@ -70,6 +70,29 @@ class LuftbilderSwisstopoSw(Base, LuftbilderBaseSwisstopo, Vector):
     __bodId__ = 'ch.swisstopo.lubis-luftbilder_schwarzweiss'
 
 register(LuftbilderSwisstopoSw.__bodId__, LuftbilderSwisstopoSw)
+
+
+class LuftbilderSwisstopoDigital(Base, Vector):
+    # Keep the logic aligned with the LUBIS base pattern while keeping this
+    # layer independent because it only exposes a small subset of shared fields.
+    __tablename__ = 'luftbilder_swisstopo_digital'
+    __table_args__ = ({'schema': 'public', 'autoload': False})
+    __template__ = 'templates/htmlpopup/lubis_digital.mako'
+    __bodId__ = 'ch.swisstopo.lubis-luftbilder_digital'
+    __returnedGeometry__ = 'the_geom_footprint'
+    __timeInstant__ = 'bgdi_flugjahr'
+    __label__ = 'capture_time'
+    id = Column('feature_id', Unicode, primary_key=True)
+    capture_time = Column('capture_time', DateTime)
+    easting = Column('easting', Numeric)
+    northing = Column('northing', Numeric)
+    altitude = Column('altitude', Numeric)
+    bgdi_gori_asset = Column('bgdi_gori_asset', Unicode)
+    bgdi_flugjahr = Column('bgdi_flugjahr', Integer)
+    the_geom_footprint = Column('the_geom_footprint', Geometry2D)
+    the_geom = Column(Geometry2D)
+
+register(LuftbilderSwisstopoDigital.__bodId__, LuftbilderSwisstopoDigital)
 
 
 class LuftbilderDritteFirmen(Base, LuftbilderBaseDritte, Vector):
