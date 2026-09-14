@@ -10,7 +10,7 @@ class LuftbilderBase:
     __table_args__ = ({'schema': 'public', 'autoload': False})
     __returnedGeometry__ = 'the_geom_footprint'
     __timeInstant__ = 'bgdi_flugjahr'
-    __label__ = 'flugdatum'
+    __label__ = 'id'
     id = Column('ebkey', Unicode, primary_key=True)
     filename = Column('filename', Unicode)
     flugdatum = Column('flugdatum', Unicode)
@@ -81,7 +81,7 @@ class LuftbilderSwisstopoDigital(Base, Vector):
     __bodId__ = 'ch.swisstopo.lubis-luftbilder_digital'
     __returnedGeometry__ = 'the_geom_footprint'
     __timeInstant__ = 'bgdi_flugjahr'
-    __label__ = 'capture_time'
+    __label__ = 'id'
     id = Column('feature_id', Unicode, primary_key=True)
     capture_time = Column('capture_time', DateTime)
     easting = Column('easting', Numeric)
@@ -126,7 +126,7 @@ class Bildstreifen(Base, Vector):
     __timeInstant__ = 'bgdi_flugjahr'
     __extended_info__ = True
     # Composite labels
-    __label__ = 'flugdatum'
+    __label__ = 'id'
     id = Column('bildstreifen_nr', Unicode, primary_key=True)
     flugdatum = Column('flugdatum', Unicode)
     firma = Column('firma', Unicode)
@@ -156,7 +156,7 @@ class LuftbilderSchraegaufnahmen(Base, Vector):
     __template__ = 'templates/htmlpopup/lubis_schraegaufnahmen.mako'
     __bodId__ = 'ch.swisstopo.lubis-luftbilder_schraegaufnahmen'
     __timeInstant__ = 'bgdi_flugjahr'
-    __label__ = 'flightdate'
+    __label__ = 'id'
     id = Column('ebkey', Unicode, primary_key=True)
     ebkey_old = Column('ebkey_old', Unicode)
     flightdate = Column('flightdate', Unicode)
@@ -178,7 +178,7 @@ class LuftbilderTerrA(Base, Vector):
     __bodId__ = 'ch.swisstopo.lubis-terrestrische_aufnahmen'
     __timeInstant__ = 'bgdi_flugjahr'
     __returnedGeometry__ = 'the_geom_footprint'
-    __label__ = 'flugdatum'
+    __label__ = 'id'
     id = Column('inventory_number', Unicode, primary_key=True)
     inventarnummer_old = Column('inventarnummer_old', Unicode)
     inventarnummer = Column('objectid', Integer)
