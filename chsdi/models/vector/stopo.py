@@ -1268,9 +1268,6 @@ class GeologieGeophysikGeothermie(Base, Vector):
     __label__ = 'borehole_name'
     id = Column('bgdi_id', Integer, primary_key=True)
     borehole_name = Column('borehole_name', Unicode)
-    x = Column('x', Numeric)
-    y = Column('y', Numeric)
-    z = Column('z', Numeric)
     max_depth = Column('max_depth', Numeric)
     heat_flow = Column('heat_flow', Numeric)
     reliability_de = Column('reliability_de', Unicode)
