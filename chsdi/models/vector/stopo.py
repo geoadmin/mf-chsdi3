@@ -1260,18 +1260,31 @@ class GeologieHydroKarteGrundwasservulneabilitaet(Base, Vector):
 register(GeologieHydroKarteGrundwasservulneabilitaet.__bodId__, GeologieHydroKarteGrundwasservulneabilitaet)
 
 
-class GeologieGeothermie(Base, Vector):
-    __tablename__ = 'view_geophysik_geothermie_tooltip'
+class GeologieGeophysikGeothermie(Base, Vector):
+    __tablename__ = 'geophysik_geothermie_point'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/geothermie.mako'
+    __template__ = 'templates/htmlpopup/stopo_geologie_geophysik_geothermie.mako'
     __bodId__ = 'ch.swisstopo.geologie-geophysik-geothermie'
-    __label__ = 'contour'
-    id = Column('gid', Integer, primary_key=True)
-    fid = Column('id', Integer)
-    contour = Column('contour', Numeric)
+    __label__ = 'borehole_name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    borehole_name = Column('borehole_name', Unicode)
+    x = Column('x', Numeric)
+    y = Column('y', Numeric)
+    z = Column('z', Numeric)
+    max_depth = Column('max_depth', Numeric)
+    heat_flow = Column('heat_flow', Numeric)
+    reliability_de = Column('reliability_de', Unicode)
+    reliability_fr = Column('reliability_fr', Unicode)
+    reliability_it = Column('reliability_it', Unicode)
+    reliability_en = Column('reliability_en', Unicode)
+    uncorrected_temperature_gradient = Column('uncorrected_temperature_gradient', Numeric)
+    topography_corrected_temperature_gradient = Column('topography_corrected_temperature_gradient', Numeric)
+    thermal_conductivity = Column('thermal_conductivity', Numeric)
+    boreholes_swissgeol_ch = Column('boreholes_swissgeol_ch', Unicode)
+    assets_swissgeol_ch = Column('assets_swissgeol_ch', Unicode)
     the_geom = Column(Geometry2D)
 
-register(GeologieGeothermie.__bodId__, GeologieGeothermie)
+register(GeologieGeophysikGeothermie.__bodId__, GeologieGeophysikGeothermie)
 
 
 class Geologischer_Deklination(Base, Vector):
