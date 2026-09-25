@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "workspace-tools": {
+      "command": "bun",
+      "args": [
+        "run",
+        ".claude/index.js"
+      ]
+    }
+  }
+}
