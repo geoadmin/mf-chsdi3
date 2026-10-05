@@ -1284,6 +1284,25 @@ class GeologieGeophysikGeothermie(Base, Vector):
 register(GeologieGeophysikGeothermie.__bodId__, GeologieGeophysikGeothermie)
 
 
+class GeologieGeothermieGradient(Base, Vector):
+    __tablename__ = 'geothermie_gradient'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/stopo_geologie_geothermie_gradient.mako'
+    __bodId__ = 'ch.swisstopo.geologie-geothermie_gradient'
+    __label__ = 'borehole_name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    borehole_name = Column('borehole_name', Unicode)
+    depth_t = Column('depth_t', Numeric)
+    uncorrected_temperature_gradient = Column('uncorrected_temperature_gradient', Numeric)
+    topography_corrected_temperature_gradient = Column('topography_corrected_temperature_gradient', Numeric)
+    thermal_conductivity = Column('thermal_conductivity', Numeric)
+    boreholes_swissgeol_ch = Column('boreholes_swissgeol_ch', Unicode)
+    assets_swissgeol_ch = Column('assets_swissgeol_ch', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(GeologieGeothermieGradient.__bodId__, GeologieGeothermieGradient)
+
+
 class Geologischer_Deklination(Base, Vector):
     __tablename__ = 'geophysik_deklination'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
