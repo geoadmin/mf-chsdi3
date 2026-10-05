@@ -1,9 +1,6 @@
 <%inherit file="base.mako"/>
 
 <%def name="table_body(c, lang)">
-   <%
-      lang = lang if lang in ('fr','it', 'en') else 'de'
-   %>
    <tr>
       <td class="cell-left">${_(c['layerBodId'] + '.borehole_name')}</td>
       <td>${c['attributes']['borehole_name'] or '-'}</td>
