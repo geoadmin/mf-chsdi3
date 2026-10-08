@@ -3615,3 +3615,22 @@ class FixpunkteAgnes(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(FixpunkteAgnes.__bodId__, FixpunkteAgnes)
+
+
+class GeologieSwissjura3dProfile(Base, Vector):
+    __tablename__ = 'swissjura3d_profile'
+    __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __template__ = 'templates/htmlpopup/stopo_geologie_swissjura3d_profile.mako'
+    __bodId__ = 'ch.swisstopo.geologie-swissjura3d_profile'
+    __label__ = 'profilnumm'
+    id = Column('bgdi_id', Unicode, primary_key=True)
+    profilnumm = Column('profilnumm', Unicode)
+    link_profi = Column('link_profi', Unicode)
+    document_de = Column('document_de', Unicode)
+    document_fr = Column('document_fr', Unicode)
+    document_it = Column('document_it', Unicode)
+    document_en = Column('document_en', Unicode)
+    viewer = Column('viewer', Unicode)
+    the_geom = Column(Geometry2D)
+
+register(GeologieSwissjura3dProfile.__bodId__, GeologieSwissjura3dProfile)
