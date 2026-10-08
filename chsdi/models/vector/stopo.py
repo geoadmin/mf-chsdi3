@@ -374,14 +374,17 @@ register(GeologieGeoeventsAnfrage.__bodId__, GeologieGeoeventsAnfrage)
 class GeologieGeoeventsSites(Base, Vector, GeologieGeoevents):
     __tablename__ = 'v_erlebnis_sites'
     __bodId__ = 'ch.swisstopo.geologie-geosites'
+    __label__ = 'post_title'
 
 register(GeologieGeoeventsSites.__bodId__, GeologieGeoeventsSites)
 
 
 class GeologieGeowege(Base, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
+    __tablename__ = 'v_erlebnis_geowege_tracks'
     __template__ = 'templates/htmlpopup/geologie_geowege.mako'
     __bodId__ = 'ch.swisstopo.geologie-geowege'
+    __label__ = 'post_title'
     id = Column('post_id', Integer, primary_key=True)
     post_title = Column('agg_post_title', Unicode)
     allgemein_leadtext = Column('agg_allgemein_leadtext', Unicode)
@@ -390,8 +393,6 @@ class GeologieGeowege(Base, Vector):
     kontakt_firma = Column('agg_kontakt_firma', Unicode)
     post_permalink = Column('agg_post_permalink', Unicode)
     the_geom = Column(Geometry2D)
-    __tablename__ = 'v_erlebnis_geowege_tracks'
-    __bodId__ = 'ch.swisstopo.geologie-geowege'
 
 register(GeologieGeowege.__bodId__, GeologieGeowege)
 
