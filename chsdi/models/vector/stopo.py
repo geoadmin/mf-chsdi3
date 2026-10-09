@@ -372,7 +372,7 @@ register(GeologieGeoeventsAnfrage.__bodId__, GeologieGeoeventsAnfrage)
 
 
 class GeologieGeoeventsSites(Base, Vector, GeologieGeoevents):
-    __tablename__ = 'v_erlebnis_sites'
+    __tablename__ = 'geosites'
     __bodId__ = 'ch.swisstopo.geologie-geosites'
     __label__ = 'post_title'
 
