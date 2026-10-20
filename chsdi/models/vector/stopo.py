@@ -372,19 +372,16 @@ register(GeologieGeoeventsAnfrage.__bodId__, GeologieGeoeventsAnfrage)
 
 
 class GeologieGeoeventsSites(Base, Vector, GeologieGeoevents):
-    __tablename__ = 'geosites'
+    __tablename__ = 'v_erlebnis_sites'
     __bodId__ = 'ch.swisstopo.geologie-geosites'
-    __label__ = 'post_title'
 
 register(GeologieGeoeventsSites.__bodId__, GeologieGeoeventsSites)
 
 
 class GeologieGeowege(Base, Vector):
     __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __tablename__ = 'v_erlebnis_geowege_tracks'
     __template__ = 'templates/htmlpopup/geologie_geowege.mako'
     __bodId__ = 'ch.swisstopo.geologie-geowege'
-    __label__ = 'post_title'
     id = Column('post_id', Integer, primary_key=True)
     post_title = Column('agg_post_title', Unicode)
     allgemein_leadtext = Column('agg_allgemein_leadtext', Unicode)
@@ -393,6 +390,8 @@ class GeologieGeowege(Base, Vector):
     kontakt_firma = Column('agg_kontakt_firma', Unicode)
     post_permalink = Column('agg_post_permalink', Unicode)
     the_geom = Column(Geometry2D)
+    __tablename__ = 'v_erlebnis_geowege_tracks'
+    __bodId__ = 'ch.swisstopo.geologie-geowege'
 
 register(GeologieGeowege.__bodId__, GeologieGeowege)
 
@@ -1261,47 +1260,18 @@ class GeologieHydroKarteGrundwasservulneabilitaet(Base, Vector):
 register(GeologieHydroKarteGrundwasservulneabilitaet.__bodId__, GeologieHydroKarteGrundwasservulneabilitaet)
 
 
-class GeologieGeophysikGeothermie(Base, Vector):
-    __tablename__ = 'geophysik_geothermie_point'
+class GeologieGeothermie(Base, Vector):
+    __tablename__ = 'view_geophysik_geothermie_tooltip'
     __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/stopo_geologie_geophysik_geothermie.mako'
+    __template__ = 'templates/htmlpopup/geothermie.mako'
     __bodId__ = 'ch.swisstopo.geologie-geophysik-geothermie'
-    __label__ = 'borehole_name'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    borehole_name = Column('borehole_name', Unicode)
-    max_depth = Column('max_depth', Numeric)
-    heat_flow = Column('heat_flow', Numeric)
-    reliability_de = Column('reliability_de', Unicode)
-    reliability_fr = Column('reliability_fr', Unicode)
-    reliability_it = Column('reliability_it', Unicode)
-    reliability_en = Column('reliability_en', Unicode)
-    uncorrected_temperature_gradient = Column('uncorrected_temperature_gradient', Numeric)
-    topography_corrected_temperature_gradient = Column('topography_corrected_temperature_gradient', Numeric)
-    thermal_conductivity = Column('thermal_conductivity', Numeric)
-    boreholes_swissgeol_ch = Column('boreholes_swissgeol_ch', Unicode)
-    assets_swissgeol_ch = Column('assets_swissgeol_ch', Unicode)
+    __label__ = 'contour'
+    id = Column('gid', Integer, primary_key=True)
+    fid = Column('id', Integer)
+    contour = Column('contour', Numeric)
     the_geom = Column(Geometry2D)
 
-register(GeologieGeophysikGeothermie.__bodId__, GeologieGeophysikGeothermie)
-
-
-class GeologieGeothermieGradient(Base, Vector):
-    __tablename__ = 'geothermie_gradient'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/stopo_geologie_geothermie_gradient.mako'
-    __bodId__ = 'ch.swisstopo.geologie-geothermie_gradient'
-    __label__ = 'borehole_name'
-    id = Column('bgdi_id', Integer, primary_key=True)
-    borehole_name = Column('borehole_name', Unicode)
-    depth_t = Column('depth_t', Numeric)
-    uncorrected_temperature_gradient = Column('uncorrected_temperature_gradient', Numeric)
-    topography_corrected_temperature_gradient = Column('topography_corrected_temperature_gradient', Numeric)
-    thermal_conductivity = Column('thermal_conductivity', Numeric)
-    boreholes_swissgeol_ch = Column('boreholes_swissgeol_ch', Unicode)
-    assets_swissgeol_ch = Column('assets_swissgeol_ch', Unicode)
-    the_geom = Column(Geometry2D)
-
-register(GeologieGeothermieGradient.__bodId__, GeologieGeothermieGradient)
+register(GeologieGeothermie.__bodId__, GeologieGeothermie)
 
 
 class Geologischer_Deklination(Base, Vector):
@@ -3616,22 +3586,3 @@ class FixpunkteAgnes(Base, Vector):
     the_geom = Column(Geometry2D)
 
 register(FixpunkteAgnes.__bodId__, FixpunkteAgnes)
-
-
-class GeologieSwissjura3dProfile(Base, Vector):
-    __tablename__ = 'swissjura3d_profile'
-    __table_args__ = ({'schema': 'geol', 'autoload': False})
-    __template__ = 'templates/htmlpopup/stopo_geologie_swissjura3d_profile.mako'
-    __bodId__ = 'ch.swisstopo.geologie-swissjura3d_profile'
-    __label__ = 'profilnumm'
-    id = Column('bgdi_id', Unicode, primary_key=True)
-    profilnumm = Column('profilnumm', Unicode)
-    link_profi = Column('link_profi', Unicode)
-    document_de = Column('document_de', Unicode)
-    document_fr = Column('document_fr', Unicode)
-    document_it = Column('document_it', Unicode)
-    document_en = Column('document_en', Unicode)
-    viewer = Column('viewer', Unicode)
-    the_geom = Column(Geometry2D)
-
-register(GeologieSwissjura3dProfile.__bodId__, GeologieSwissjura3dProfile)
