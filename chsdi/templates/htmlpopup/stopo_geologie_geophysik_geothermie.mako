@@ -34,18 +34,10 @@
    </tr>
    <tr>
       <td class="cell-left">${_(c['layerBodId'] + '.boreholes_swissgeol_ch')}</td>
-      % if c['attributes']['boreholes_swissgeol_ch'] and c['attributes']['boreholes_swissgeol_ch'].startswith('http'):
-         <td><a href="${c['attributes']['boreholes_swissgeol_ch']}" target="_blank">${_('link')}</a></td>
-      % else:
-         <td>-</td>
-      % endif
+      <td>${c['attributes']['boreholes_swissgeol_ch'] or '-'}</td>
    </tr>
    <tr>
       <td class="cell-left">${_(c['layerBodId'] + '.assets_swissgeol_ch')}</td>
-      % if c['attributes']['assets_swissgeol_ch'] and c['attributes']['assets_swissgeol_ch'].startswith('http'):
-         <td><a href="${c['attributes']['assets_swissgeol_ch']}" target="_blank">${_('link')}</a></td>
-      % else:
-         <td>-</td>
-      % endif
+      <td>${c['attributes']['assets_swissgeol_ch'] or '-'}</td>
    </tr>
 </%def>
