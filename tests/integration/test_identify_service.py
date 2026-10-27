@@ -851,7 +851,8 @@ class TestIdentifyService(TestsBase):
     def test_identify_query_offset(self):
         params = {'layers': 'all:ch.swisstopo.amtliches-strassenverzeichnis',
                   'returnGeometry': 'false',
-                  'where': 'com_name ilike \'%a%\''}
+                  'where': 'com_name ilike \'%a%\'',
+                  'offset': '0'}
         resp_1 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
         params.update({'offset': '2'})
         self.assertNotIn('geometry', resp_1.json['results'][0])
@@ -873,8 +874,10 @@ class TestIdentifyService(TestsBase):
                   'geometry': '573788,93220,750288,192720',
                   'imageDisplay': '1920,778,96',
                   'mapExtent': '107788,-5279,1067788,383720',
-                  'tolerance': '0'}
+                  'tolerance': '0',
+                  'offset': '0'}
         resp_1 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertGreaterEqual(len(resp_1.json['results']), 6)
         params.update({'offset': '2'})
         resp_2 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp_1.json['results'][2]['featureId'], resp_2.json['results'][0]['featureId'])

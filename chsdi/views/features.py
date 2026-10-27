@@ -541,6 +541,11 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
                 )
                 query = query.order_by(ordering)
 
+            # Offset pagination needs a deterministic order, use the primary key
+            # as (tie-breaking) ordering
+            if params.offset is not None:
+                query = query.order_by(model.primary_key_column())
+
             # Add limit
             query = query.limit(flimit) if flimit is not None else query
 
