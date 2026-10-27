@@ -224,6 +224,7 @@ def get_layers_metadata_for_params(params, query, model, layerIds=None):
         model.staging,
         params.geodataStaging
     )
+    query = query.order_by(model.layerBodId)
     if layerIds is not None:
         for layerId in layerIds:
             layer = get_layer(query, model, layerId)
