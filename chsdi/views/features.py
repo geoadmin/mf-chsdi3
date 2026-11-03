@@ -541,6 +541,16 @@ def _get_features_for_filters(params, layerBodIds, maxFeatures=None, where=None)
                 )
                 query = query.order_by(ordering)
 
+            # Make the result order (and offset pages) deterministic: nearest to the
+            # request geometry first, then by primary key. Without it, Postgres
+            # returns rows in physical/parallel scan order, which can change after
+            # a table deploy. Ordering by nearest uses the spatial index, so it stays
+            # fast; ordering only by primary key can make the planner scan the whole
+            # primary key index on large tables.
+            if params.geometry is not None:
+                query = query.order_by(model.order_by_nearest(params.geometry, params.srid))
+            query = query.order_by(model.primary_key_column())
+
             # Add limit
             query = query.limit(flimit) if flimit is not None else query
 

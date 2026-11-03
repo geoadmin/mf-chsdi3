@@ -9,6 +9,11 @@ accept_headers = {'Accept': 'application/json, text/plain, */*'}
 
 class TestIdentifyService(TestsBase):
 
+    def assertResultsOrderedByFeatureId(self, resp):
+        # without a geometry, identify sorts by primary key, which is the featureId
+        feature_ids = [result['featureId'] for result in resp.json['results']]
+        self.assertEqual(feature_ids, sorted(feature_ids))
+
     def test_identify_trivial(self):
         params = {'lang': 'fr',
                   'layers': 'all:ch.bafu.nabelstationen',
@@ -853,6 +858,8 @@ class TestIdentifyService(TestsBase):
                   'returnGeometry': 'false',
                   'where': 'com_name ilike \'%a%\''}
         resp_1 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertGreaterEqual(len(resp_1.json['results']), 6)
+        self.assertResultsOrderedByFeatureId(resp_1)
         params.update({'offset': '2'})
         self.assertNotIn('geometry', resp_1.json['results'][0])
         resp_2 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
@@ -875,6 +882,7 @@ class TestIdentifyService(TestsBase):
                   'mapExtent': '107788,-5279,1067788,383720',
                   'tolerance': '0'}
         resp_1 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
+        self.assertGreaterEqual(len(resp_1.json['results']), 6)
         params.update({'offset': '2'})
         resp_2 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
         self.assertEqual(resp_1.json['results'][2]['featureId'], resp_2.json['results'][0]['featureId'])
