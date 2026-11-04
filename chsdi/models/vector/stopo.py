@@ -2903,7 +2903,7 @@ register(SwissimageHistMetadata.__bodId__, SwissimageHistMetadata)
 
 
 class AmtlichesStrassenverzeichnis(Base, Vector):
-    __tablename__ = 'streetnames_tooltip'
+    __tablename__ = 'strassenverzeichnis_tooltip'
     __table_args__ = ({'schema': 'vd', 'autoload': False})
     __template__ = 'templates/htmlpopup/strassenverzeichnis.mako'
     __bodId__ = 'ch.swisstopo.amtliches-strassenverzeichnis'
