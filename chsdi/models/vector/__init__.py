@@ -183,9 +183,28 @@ class Vector(object):
         tolerance_meters = get_tolerance_meters(imageDisplay, mapExtent, tolerance, srid)
         geom_column = cls.geometry_column()
         wkb_geometry = from_shape(geometry, srid=srid, extended=True)
+        if tolerance_meters == 0:
+            # Same result as ST_DWithin(..., 0), but the planner can estimate the
+            # number of hits from the spatial statistics (with ST_DWithin it falls
+            # back to a fixed default and can pick very slow plans).
+            return func.ST_Intersects(geom_column,
+                                      transform_geometry(geom_column, wkb_geometry, srid))
         return func.ST_DWITHIN(geom_column,
                                transform_geometry(geom_column, wkb_geometry, srid),
                                tolerance_meters)
+
+    @classmethod
+    def order_by_nearest(cls, geometry, srid):
+        '''Orders by bounding box distance to a point on the request geometry
+        (KNN operator <#>), which the spatial index answers directly. Unlike
+        order_by_distance (ST_Distance), it doesn't need to sort all hits.
+        The point is the center for points and envelopes; for lines and polygons
+        it lies on the geometry, unlike the centroid, which can be far away from
+        a line. The exact distance operator <-> is not used: on polygon data it
+        can fail with "index returned tuples in wrong order".'''
+        geom_column = cls.geometry_column()
+        point = from_shape(geometry.representative_point(), srid=srid, extended=True)
+        return geom_column.distance_box(transform_geometry(geom_column, point, srid))
 
     @classmethod
     def geom_intersects(cls, geometry, srid):
