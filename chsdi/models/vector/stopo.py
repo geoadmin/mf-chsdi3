@@ -2890,6 +2890,7 @@ class SwissimageHistMetadata(Base, Vector):
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __template__ = 'templates/htmlpopup/swissimagehist.mako'
     __bodId__ = 'ch.swisstopo.swissimage-product.metadata'
+    __label__ = 'kbnum'
     __timeInstant__ = 'bgdi_flugjahr'
     id = Column('bgdi_id', Integer, primary_key=True)
     kbnum = Column('tilenumber', Unicode)
