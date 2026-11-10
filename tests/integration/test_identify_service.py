@@ -848,21 +848,29 @@ class TestIdentifyService(TestsBase):
         self.assertGreater(len(resp.json['results']), 0)
         self.assertGeojsonFeature(resp.json['results'][0], 21781)
 
+    def assertOffsetPage(self, resp_all, resp_offset, offset):
+        # identify has no ORDER BY, so the features can come back in any order:
+        # only check that an offset page drops `offset` features of the full result
+        all_ids = [result['featureId'] for result in resp_all.json['results']]
+        offset_ids = [result['featureId'] for result in resp_offset.json['results']]
+        self.assertEqual(len(offset_ids), len(all_ids) - offset)
+        self.assertLessEqual(set(offset_ids), set(all_ids))
+
     def test_identify_query_offset(self):
         params = {'layers': 'all:ch.swisstopo.amtliches-strassenverzeichnis',
                   'returnGeometry': 'false',
-                  'where': 'com_name ilike \'%a%\''}
+                  'where': 'com_name = \'Andermatt\''}
         resp_1 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        params.update({'offset': '2'})
+        # fewer than 201 features, so the full result is complete (not capped)
+        self.assertTrue(6 <= len(resp_1.json['results']) < 201)
         self.assertNotIn('geometry', resp_1.json['results'][0])
+        params.update({'offset': '2'})
         resp_2 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp_1.json['results'][2]['featureId'], resp_2.json['results'][0]['featureId'])
-        self.assertEqual(resp_1.json['results'][5]['featureId'], resp_2.json['results'][3]['featureId'])
+        self.assertOffsetPage(resp_1, resp_2, 2)
         self.assertNotIn('geometry', resp_2.json['results'][0])
         params.update({'offset': '5'})
         resp_3 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp_2.json['results'][3]['featureId'], resp_3.json['results'][0]['featureId'])
-        self.assertEqual(resp_1.json['results'][5]['featureId'], resp_3.json['results'][0]['featureId'])
+        self.assertOffsetPage(resp_1, resp_3, 5)
         self.assertNotIn('geometry', resp_3.json['results'][0])
 
     def test_identify_bbox_offset(self):
@@ -870,19 +878,19 @@ class TestIdentifyService(TestsBase):
                   'timeInstant': '2015',
                   'geometryFormat': 'geojson',
                   'geometryType': 'esriGeometryEnvelope',
-                  'geometry': '573788,93220,750288,192720',
+                  'geometry': '598000,198000,602000,202000',
                   'imageDisplay': '1920,778,96',
                   'mapExtent': '107788,-5279,1067788,383720',
                   'tolerance': '0'}
         resp_1 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
+        # fewer than 201 features, so the full result is complete (not capped)
+        self.assertTrue(6 <= len(resp_1.json['results']) < 201)
         params.update({'offset': '2'})
         resp_2 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp_1.json['results'][2]['featureId'], resp_2.json['results'][0]['featureId'])
-        self.assertEqual(resp_1.json['results'][5]['featureId'], resp_2.json['results'][3]['featureId'])
+        self.assertOffsetPage(resp_1, resp_2, 2)
         params.update({'offset': '4'})
         resp_3 = self.testapp.get('/rest/services/all/MapServer/identify', params=params, headers=accept_headers, status=200)
-        self.assertEqual(resp_2.json['results'][2]['featureId'], resp_3.json['results'][0]['featureId'])
-        self.assertEqual(resp_1.json['results'][4]['featureId'], resp_3.json['results'][0]['featureId'])
+        self.assertOffsetPage(resp_1, resp_3, 4)
 
     def test_identify_query_wrong_offset(self):
         params = {'layers': 'all:ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill',
