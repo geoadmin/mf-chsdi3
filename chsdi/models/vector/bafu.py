@@ -1702,6 +1702,21 @@ class Wolf(Base, Vector):
 register(Wolf.__bodId__, Wolf)
 
 
+class Luchs(Base, Vector):
+    __tablename__ = 'kompartimente_luchs'
+    __table_args__ = ({'schema': 'fauna', 'autoload': False})
+    __bodId__ = 'ch.bafu.kompartimente-luchs'
+    __template__ = 'templates/htmlpopup/luchs.mako'
+    __label__ = 'teilkomp_name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    teilkomp_name = Column('teilkomp_name', Unicode)
+    teilkomp_nr = Column('teilkomp_nr', Unicode)
+    geom_area = Column('geom_area', Float)
+    the_geom = Column(Geometry2D)
+
+register(Luchs.__bodId__, Luchs)
+
+
 class Weltensutter(Base, Vector):
     __tablename__ = 'ws'
     __table_args__ = ({'schema': 'flora', 'autoload': False})
