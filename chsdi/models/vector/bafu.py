@@ -1687,6 +1687,21 @@ class Moose(Base, Vector):
 register(Moose.__bodId__, Moose)
 
 
+class Wolf(Base, Vector):
+    __tablename__ = 'kompartimente_wolf'
+    __table_args__ = ({'schema': 'fauna', 'autoload': False})
+    __bodId__ = 'ch.bafu.kompartimente-wolf'
+    __template__ = 'templates/htmlpopup/wolf.mako'
+    __label__ = 'name'
+    id = Column('bgdi_id', Integer, primary_key=True)
+    teilkomp_name = Column('name', Unicode)
+    teilkomp_nr = Column('nummer', Unicode)
+    geom_area = Column('geom_area', Float)
+    the_geom = Column(Geometry2D)
+
+register(Wolf.__bodId__, Wolf)
+
+
 class Weltensutter(Base, Vector):
     __tablename__ = 'ws'
     __table_args__ = ({'schema': 'flora', 'autoload': False})
