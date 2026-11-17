@@ -1694,8 +1694,8 @@ class Wolf(Base, Vector):
     __template__ = 'templates/htmlpopup/wolf.mako'
     __label__ = 'name'
     id = Column('bgdi_id', Integer, primary_key=True)
-    teilkomp_name = Column('name', Unicode)
-    teilkomp_nr = Column('nummer', Unicode)
+    name = Column('name', Unicode)
+    nummer = Column('nummer', Unicode)
     geom_area = Column('geom_area', Float)
     the_geom = Column(Geometry2D)
 
