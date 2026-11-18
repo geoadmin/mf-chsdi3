@@ -7,7 +7,11 @@
    </tr>
    <tr>
       <td class="cell-left">${_(c['layerBodId'] + '.depth_t')}</td>
-      <td>${int(round(c['attributes']['depth_t'])) or '-'}</td>
+      % if c['attributes']['depth_t']:
+         <td>${int(round(c['attributes']['depth_t']))}</td>
+      % else:
+         <td>-</td>
+      % endif
    </tr>
    <tr>
       <td class="cell-left">${_(c['layerBodId'] + '.uncorrected_temperature_gradient')}</td>

@@ -10,11 +10,19 @@
    </tr>
    <tr>
       <td class="cell-left">${_(c['layerBodId'] + '.max_depth')}</td>
-      <td>${int(round(c['attributes']['max_depth'])) or '-'}</td>
+      % if c['attributes']['max_depth']:
+         <td>${int(round(c['attributes']['max_depth']))}</td>
+      % else:
+         <td>-</td>
+      % endif
    </tr>
    <tr>
       <td class="cell-left">${_(c['layerBodId'] + '.heat_flow')}</td>
-      <td>${int(round(c['attributes']['heat_flow'])) or '-'}</td>
+      % if c['attributes']['heat_flow']:
+         <td>${int(round(c['attributes']['heat_flow']))}</td>
+      % else:
+         <td>-</td>
+      % endif
    </tr>
    <tr>
       <td class="cell-left">${_(c['layerBodId'] + '.reliability')}</td>
