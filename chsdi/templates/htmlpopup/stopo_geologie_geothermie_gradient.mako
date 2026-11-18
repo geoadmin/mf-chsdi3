@@ -7,7 +7,7 @@
    </tr>
    <tr>
       <td class="cell-left">${_(c['layerBodId'] + '.depth_t')}</td>
-      <td>${c['attributes']['depth_t'] or '-'}</td>
+      <td>${int(round(c['attributes']['depth_t'])) or '-'}</td>
    </tr>
    <tr>
       <td class="cell-left">${_(c['layerBodId'] + '.uncorrected_temperature_gradient')}</td>
