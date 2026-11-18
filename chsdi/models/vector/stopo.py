@@ -1269,8 +1269,8 @@ class GeologieGeophysikGeothermie(Base, Vector):
     __label__ = 'borehole_name'
     id = Column('bgdi_id', Integer, primary_key=True)
     borehole_name = Column('borehole_name', Unicode)
-    max_depth = Column('max_depth', Numeric)
-    heat_flow = Column('heat_flow', Numeric)
+    max_depth = Column('max_depth', Integer)
+    heat_flow = Column('heat_flow', Integer)
     reliability_de = Column('reliability_de', Unicode)
     reliability_fr = Column('reliability_fr', Unicode)
     reliability_it = Column('reliability_it', Unicode)
@@ -1293,7 +1293,7 @@ class GeologieGeothermieGradient(Base, Vector):
     __label__ = 'borehole_name'
     id = Column('bgdi_id', Integer, primary_key=True)
     borehole_name = Column('borehole_name', Unicode)
-    depth_t = Column('depth_t', Numeric)
+    depth_t = Column('depth_t', Integer)
     uncorrected_temperature_gradient = Column('uncorrected_temperature_gradient', Numeric)
     topography_corrected_temperature_gradient = Column('topography_corrected_temperature_gradient', Numeric)
     thermal_conductivity = Column('thermal_conductivity', Numeric)
