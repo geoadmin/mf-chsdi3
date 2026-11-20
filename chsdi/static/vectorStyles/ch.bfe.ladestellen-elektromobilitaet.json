@@ -24,7 +24,7 @@
       "maxResolution": 250,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://api3.geo.admin.ch/featureattachments/ch.bfe.ladestellen-elektromobilitaet/test/icons/icon-pin-shadow-unknown-40px.svg.svg",
+        "src": "https://api3.geo.admin.ch/featureattachments/ch.bfe.ladestellen-elektromobilitaet/test/icons/icon-pin-shadow-unknown-40px.svg",
         "scale": 1,
         "anchor": [
           0.5,
@@ -141,7 +141,7 @@
       "maxResolution": 20,
       "vectorOptions": {
         "type": "icon",
-        "src": "https://api3.geo.admin.ch/featureattachments/ch.bfe.ladestellen-elektromobilitaet/test/icons/icon-pin-shadow-occupied-50px.svg",
+        "src": "https://api3.geo.admin.ch/featureattachments/ch.bfe.ladestellen-elektromobilitaet/test/icons/icon-pin-shadow-occupied-px50.svg",
         "scale": 1,
         "anchor": [
           0.5,
