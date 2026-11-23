@@ -938,7 +938,7 @@ register(GridstandSwisssurface3d.__bodId__, GridstandSwisssurface3d)
 
 
 class GridstandSwisssurface3dRaster(Base, Vector):
-    __tablename__ = 'view_gridstand_swisssurface3d_raster_metadata'
+    __tablename__ = 'v_gridstand_swisssurface3d_raster_metadata'
     __table_args__ = ({'schema': 'datenstand', 'autoload': False})
     __bodId__ = 'ch.swisstopo.swisssurface3d-raster.metadata'
     __template__ = 'templates/htmlpopup/swisssurface3d_raster.mako'
