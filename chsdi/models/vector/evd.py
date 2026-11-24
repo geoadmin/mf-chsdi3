@@ -231,9 +231,8 @@ class Milchmarktregionen(Base, Vector):
 register(Milchmarktregionen.__bodId__, Milchmarktregionen)
 
 
-class SachplanCernAnhoerungFac:
+class SachplanCernFac:
     __table_args__ = ({'schema': 'sbfi', 'autoload': False})
-    __bodId__ = 'ch.sbfi.sachplan-cern_anhoerung'
     __label__ = 'objname_de'
     id = Column('stabil_id', Unicode, primary_key=True)
     objname_de = Column('objname_de', Unicode)
@@ -258,23 +257,40 @@ class SachplanCernAnhoerungFac:
     the_geom = Column(Geometry2D)
 
 
-class SachplanCernAnhoerungFacPnt(Base, SachplanCernAnhoerungFac, Vector):
+class SachplanCernAnhoerungFacPnt(Base, SachplanCernFac, Vector):
     __tablename__ = 'sachplan_cern_anhoerung_fac_pnt'
     __template__ = 'templates/htmlpopup/sbfi_sachplan_cern_anhoerung_fac_pnt.mako'
+    __bodId__ = 'ch.sbfi.sachplan-cern_anhoerung'
 
 register(SachplanCernAnhoerungFacPnt.__bodId__, SachplanCernAnhoerungFacPnt)
 
 
-class SachplanCernAnhoerungFacLine(Base, SachplanCernAnhoerungFac, Vector):
+class SachplanCernAnhoerungFacLine(Base, SachplanCernFac, Vector):
     __tablename__ = 'sachplan_cern_anhoerung_fac_line'
     __template__ = 'templates/htmlpopup/sbfi_sachplan_cern_anhoerung_fac_line.mako'
+    __bodId__ = 'ch.sbfi.sachplan-cern_anhoerung'
 
 register(SachplanCernAnhoerungFacLine.__bodId__, SachplanCernAnhoerungFacLine)
 
 
-class SachplanCernAnhoerungPlm:
+class SachplanCernKraftFacPnt(Base, SachplanCernFac, Vector):
+    __tablename__ = 'sachplan_cern_kraft_fac_pnt'
+    __template__ = 'templates/htmlpopup/sbfi_sachplan_cern_anhoerung_fac_pnt.mako'
+    __bodId__ = 'ch.sbfi.sachplan-cern_kraft'
+
+register(SachplanCernKraftFacPnt.__bodId__, SachplanCernKraftFacPnt)
+
+
+class SachplanCernKraftFacLine(Base, SachplanCernFac, Vector):
+    __tablename__ = 'sachplan_cern_kraft_fac_line'
+    __template__ = 'templates/htmlpopup/sbfi_sachplan_cern_anhoerung_fac_line.mako'
+    __bodId__ = 'ch.sbfi.sachplan-cern_kraft'
+
+register(SachplanCernKraftFacLine.__bodId__, SachplanCernKraftFacLine)
+
+
+class SachplanCernPlm:
     __table_args__ = ({'schema': 'sbfi', 'autoload': False})
-    __bodId__ = 'ch.sbfi.sachplan-cern_anhoerung'
     __label__ = 'plname_de'
     id = Column('stabil_id', Unicode, primary_key=True)
     plname_de = Column('plname_de', Unicode)
@@ -303,11 +319,20 @@ class SachplanCernAnhoerungPlm:
     the_geom = Column(Geometry2D)
 
 
-class SachplanCernAnhoerungPlmPoly(Base, SachplanCernAnhoerungPlm, Vector):
+class SachplanCernAnhoerungPlmPoly(Base, SachplanCernPlm, Vector):
     __tablename__ = 'sachplan_cern_anhoerung_plm_poly'
     __template__ = 'templates/htmlpopup/sbfi_sachplan_cern_anhoerung_plm_poly.mako'
+    __bodId__ = 'ch.sbfi.sachplan-cern_anhoerung'
 
 register(SachplanCernAnhoerungPlmPoly.__bodId__, SachplanCernAnhoerungPlmPoly)
+
+
+class SachplanCernKraftPlmPoly(Base, SachplanCernPlm, Vector):
+    __tablename__ = 'sachplan_cern_kraft_plm_poly'
+    __template__ = 'templates/htmlpopup/sbfi_sachplan_cern_anhoerung_plm_poly.mako'
+    __bodId__ = 'ch.sbfi.sachplan-cern_kraft'
+
+register(SachplanCernKraftPlmPoly.__bodId__, SachplanCernKraftPlmPoly)
 
 
 class LandwirtschaftlicheNutzungsflaechen(Base, Vector):
