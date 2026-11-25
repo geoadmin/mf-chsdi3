@@ -180,6 +180,7 @@ setup: $(NODE_MODULES)
 	if [ ! -e .env.mine ]; then cp .env.default .env.mine; fi
 	mkdir -p ${LOGS_DIR}
 	chmod 777 ${LOGS_DIR}
+	touch ${LOGS_DIR}/{server-json-logs.json,server-standard-logs.txt}
 
 
 .PHONY: ci
