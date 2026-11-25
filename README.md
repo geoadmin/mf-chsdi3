@@ -268,3 +268,33 @@ jsonlint-cli --pretty temp.json > chsdi/static/vectorStyles/ch.meteoschweiz.mess
 Open in a browser or curl:
 
 http://localhost:8009/rest/services/ech/MapServer/identify?layers=all:ch.bav.haltestellen-oev&sr=2056&geometry=2596144.500865812,1192821.252700392&mapExtent=2595220.51,1191795.99,2597416.51,1193957.99&imageDisplay=1098,1081,96&geometryFormat=geojson&geometryType=esriGeometryPoint&limit=10&tolerance=10&returnGeometry=true&lang=en
+
+
+### Debug Permission Error in log File
+
+Every now and the it happens that we see the error:
+
+```
+PermissionError: [Errno 13] Permission denied: '/var/logs/server-json-logs.json'
+...
+ccbam_mf_chsdi3        | ValueError: Unable to configure handler 'file-json'
+```
+
+This is usually after a new setup.
+
+To avoid the error set the permissions of the log files:
+
+1. to run the application locally you need to have permissions on the log filse so set:  `sudo chown <your_user> logs/*`
+2. set the permissions so that users and owners can R/W and others can R: `chmod 664 logs/*`
+
+You should now see the following result in the logs folder and start the application without error:
+
+```
+$ ls -lrtah logs/
+
+-rw-rw-r--  1 ccbam ccbam 4.6K Nov 25 08:57 server-standard-logs.txt
+-rw-rw-r--  1 ccbam ccbam  25K Nov 25 08:57 server-json-logs.json
+
+```
+
+In the case where the two files do not exist in `logs/` add two empty files with the corresponding names.
