@@ -2951,7 +2951,7 @@ register(AmtlichesStrassenverzeichnisIssues.__bodId__, AmtlichesStrassenverzeich
 
 
 class CadastralWebMap(Base, Vector):
-    __tablename__ = 'view_os_realestate_cwm'
+    __tablename__ = 'v_os_realestate_cwm'
     __table_args__ = ({'schema': 'vd', 'autoload': False})
     __template__ = 'templates/htmlpopup/cadastralwebmap.mako'
     __bodId__ = 'ch.kantone.cadastralwebmap-farbe'
